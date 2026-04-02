@@ -599,10 +599,10 @@ function go(id) {
 }
 
 var TIERS = [
-  {id:'t1', label:'10K Pilot',   guests:50, disc:0},
-  {id:'t2', label:'25K Upgrade', guests:40, disc:6},
-  {id:'t3', label:'50K Rollout', guests:50, disc:12},
-  {id:'t4', label:'100K Multi',  guests:50, disc:20}
+  {id:'t1', label:'10K Pilot',   guests:50, disc:0,  budget:10000},
+  {id:'t2', label:'25K Upgrade', guests:40, disc:6,  budget:25000},
+  {id:'t3', label:'50K Rollout', guests:50, disc:12, budget:50000},
+  {id:'t4', label:'100K Multi',  guests:50, disc:20, budget:100000}
 ];
 
 var ITEMS = [
@@ -656,6 +656,12 @@ function adj(id, d) {
   var cur = kit[id] || 0;
   var nxt = cur + d;
   if (nxt < 0) return;
+  if (d > 0) {
+    var item = null;
+    for (var i = 0; i < ITEMS.length; i++) { if (ITEMS[i].id === id) { item = ITEMS[i]; break; } }
+    var pgBudget = Math.round(T.budget / T.guests);
+    if (tot() >= pgBudget) return;
+  }
   if (nxt === 0) { delete kit[id]; } else { kit[id] = nxt; }
   renderBar();
   renderCat();
@@ -677,10 +683,12 @@ function renderTabs() {
 
 function renderBar() {
   var t = tot();
-  var d = T.disc > 0 ? ' &nbsp;&middot;&nbsp; <span style="color:var(--gold);font-size:11px;">&#10022; ' + T.disc + '% volume discount</span>' : '';
+  var pgB = Math.round(T.budget / T.guests);
+  var over = t > pgB;
+  var d = T.disc > 0 ? ' &nbsp;&middot;&nbsp; <span style="color:var(--gold);font-size:11px;">&#10022; ' + T.disc + '% off</span>' : '';
   document.getElementById('TBAR').innerHTML =
-    '<div class="tbl">' + T.label + ' &middot; ' + T.guests + ' guests' + d + '<span>Add any items below &mdash; no minimums.</span></div>' +
-    '<div class="tbr"><div class="tbn">$' + t + '</div><div class="tbl2">per guest value</div></div>';
+    '<div class="tbl">' + T.label + ' &middot; ' + T.guests + ' guests' + d + '<span>$' + pgB + ' per guest budget &mdash; 1 item allowed over.</span></div>' +
+    '<div class="tbr"><div class="tbn" style="color:' + (over ? '#e8a020' : 'var(--gold)') + '">$' + t + '</div><div class="tbl2">' + (over ? 'slightly over &mdash; ok to request' : 'per guest value') + '</div></div>';
 }
 
 function getCats() {
