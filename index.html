@@ -8,7 +8,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0a;--s1:#111;--s2:#161616;--s3:#1c1c1c;--brd:#222;
+  --bg:#0a0a0a;--s1:#111;--s2:#161616;--brd:#222;
   --gold:#c9a96e;--gold2:#a68b55;--gold-g:rgba(201,169,110,.12);
   --txt:#e8e4dd;--dim:#8a8578;--dim2:#5a5550;--wht:#fff;--red:#c44;--green:#5a5;
   --fh:'Cormorant Garamond',Georgia,serif;
@@ -19,7 +19,6 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--bg);color:var(--txt);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:var(--gold);text-decoration:none}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--gold);letter-spacing:2px;cursor:pointer}
 .nlinks{display:flex;gap:24px}
@@ -28,11 +27,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 .hamburger span{width:22px;height:1.5px;background:var(--dim)}
 
-/* PAGES */
 .pg{display:none;min-height:100vh;padding-top:56px}
 .pg.on{display:block}
 
-/* HERO */
 .hero{position:relative;padding:110px 48px 90px;text-align:center}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,var(--gold-g),transparent 65%);pointer-events:none}
 .ey{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
@@ -44,14 +41,12 @@ h1 em{font-style:italic;color:var(--gold)}
 .btn-f{background:var(--gold);color:var(--bg)}
 .btn-f:hover{background:var(--gold2)}
 
-/* SECTIONS */
 .sec{padding:72px 48px}
 .sh{font-family:var(--fh);font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--wht);margin-bottom:10px}
 .sh em{color:var(--gold);font-style:italic}
 .bt{font-size:14px;color:var(--dim);max-width:540px;line-height:1.7}
 .dvd{height:1px;background:var(--brd);margin:0 48px}
 
-/* TRACKS */
 .tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:36px}
 .trk{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);padding:32px 24px;transition:.3s;cursor:pointer}
 .trk:hover{border-color:var(--gold2);transform:translateY(-3px)}
@@ -59,7 +54,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .trk h3{font-family:var(--fh);font-size:20px;color:var(--wht);margin-bottom:6px}
 .trk p{font-size:13px;color:var(--dim);line-height:1.6}
 
-/* HOLSTER PAGE */
+/* HOLSTER */
 .h-hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:90px 48px 72px;align-items:center}
 .h-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .h-img{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--dim2);overflow:hidden}
@@ -73,15 +68,12 @@ h1 em{font-style:italic;color:var(--gold)}
 .bulk-t th{color:var(--gold);font-weight:500;text-transform:uppercase;letter-spacing:1px;font-size:10px}
 .bulk-t td{color:var(--dim)}
 
-/* ═══════════════════════════════════════════
-   VIP KITS
-   ═══════════════════════════════════════════ */
+/* ═══ VIP KITS ═══ */
 .kits-hdr{text-align:center;padding:90px 48px 36px}
 .kits-hdr p{max-width:540px;margin:14px auto 0;font-size:15px;color:var(--dim);line-height:1.7}
 
-/* TIER SELECTOR */
 .tiers{display:flex;justify-content:center;gap:10px;padding:0 48px;flex-wrap:wrap}
-.tier{padding:14px 20px;border:1px solid var(--brd);border-radius:var(--r);cursor:pointer;text-align:center;transition:.3s;background:var(--s1);min-width:150px;position:relative;overflow:hidden}
+.tier{padding:14px 20px;border:1px solid var(--brd);border-radius:var(--r);cursor:pointer;text-align:center;transition:.3s;background:var(--s1);min-width:150px}
 .tier:hover{border-color:var(--gold2)}
 .tier.on{border-color:var(--gold);background:linear-gradient(135deg,rgba(201,169,110,.08),rgba(201,169,110,.03))}
 .tier .tl{font-family:var(--fh);font-size:22px;color:var(--wht);font-weight:700}
@@ -89,53 +81,49 @@ h1 em{font-style:italic;color:var(--gold)}
 .tier .td{font-size:10px;color:var(--gold);margin-top:2px;opacity:0;transition:.3s}
 .tier.on .td{opacity:1}
 
-/* BUDGET BAR */
+/* BUDGET BAR — per guest */
 .budget-strip{max-width:700px;margin:28px auto 0;padding:0 48px}
 .budget-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .budget-spent{font-family:var(--fh);font-size:32px;color:var(--wht);font-weight:700}
-.budget-spent .currency{font-size:20px;color:var(--dim);font-weight:400}
+.budget-spent .cur{font-size:20px;color:var(--dim);font-weight:400}
+.budget-right{text-align:right}
 .budget-of{font-size:13px;color:var(--dim)}
 .budget-of b{color:var(--gold)}
-.budget-guests{font-size:12px;color:var(--dim);text-align:right}
-.budget-guests b{color:var(--wht)}
 .bar-outer{height:10px;background:var(--s2);border-radius:5px;overflow:hidden}
 .bar-inner{height:100%;border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1),background .3s;background:linear-gradient(90deg,var(--gold2),var(--gold))}
 .bar-inner.over{background:linear-gradient(90deg,#a44,#c44)}
 .bar-inner.good{background:linear-gradient(90deg,#5a5,#7c7)}
 .budget-meta{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--dim2)}
-.budget-meta .remaining{color:var(--green)}
-.budget-meta .remaining.neg{color:var(--red)}
+.budget-meta .rem{color:var(--green)}
+.budget-meta .rem.neg{color:var(--red)}
 
-/* CATALOGUE rows with inline qty */
-.cat-wrap{padding:24px 48px 0}
+/* CATALOGUE — inline qty, per-guest */
+.cat-wrap{padding:24px 48px 100px}
 .cat-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:24px 0 10px;border-bottom:1px solid var(--brd)}
-.cat-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--brd);transition:background .2s}
+.cat-row{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--brd);transition:background .2s}
 .cat-row:hover{background:rgba(255,255,255,.015)}
 .cr-emoji{font-size:24px;width:40px;text-align:center;flex-shrink:0}
 .cr-info{flex:1;min-width:0}
 .cr-name{font-size:14px;color:var(--wht);font-weight:400}
 .cr-desc{font-size:12px;color:var(--dim2);margin-top:1px}
-.cr-price{font-size:14px;color:var(--dim);min-width:70px;text-align:right;flex-shrink:0}
+.cr-price{font-size:14px;color:var(--dim);min-width:60px;text-align:right;flex-shrink:0}
 .cr-price .disc{text-decoration:line-through;color:var(--dim2);font-size:12px;margin-right:6px}
-.cr-qty{display:flex;align-items:center;gap:0;flex-shrink:0;margin-left:8px}
+.cr-qty{display:flex;align-items:center;flex-shrink:0;margin-left:8px}
 .cr-qty button{width:34px;height:34px;border:1px solid var(--brd);background:transparent;color:var(--dim);font-size:16px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;font-family:var(--fb)}
 .cr-qty button:first-child{border-radius:var(--r) 0 0 var(--r)}
 .cr-qty button:last-child{border-radius:0 var(--r) var(--r) 0}
 .cr-qty button:hover{border-color:var(--gold);color:var(--gold)}
-.cr-qty .qval{width:38px;height:34px;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);background:var(--s2);color:var(--wht);font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:500}
-.cr-qty .qval.has{background:var(--gold-g);color:var(--gold)}
-.cr-total{font-size:14px;color:var(--gold);min-width:60px;text-align:right;font-weight:500;flex-shrink:0}
-.cr-total.zero{color:var(--dim2)}
+.cr-qty .qv{width:38px;height:34px;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);background:var(--s2);color:var(--wht);font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:500}
+.cr-qty .qv.has{background:var(--gold-g);color:var(--gold)}
 
-/* FLOATING SUMMARY BAR */
-.summary-bar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(17,17,17,.96);backdrop-filter:blur(14px);border-top:1px solid var(--brd);padding:14px 48px;display:flex;align-items:center;justify-content:space-between;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.summary-bar.show{transform:translateY(0)}
-.sb-left{display:flex;align-items:center;gap:24px}
-.sb-count{font-size:13px;color:var(--dim)}
-.sb-count b{color:var(--wht)}
-.sb-total{font-family:var(--fh);font-size:24px;color:var(--gold);font-weight:700}
-.sb-perguest{font-size:12px;color:var(--dim)}
-.sb-cta{padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--bg);border:none;border-radius:var(--r);cursor:pointer;font-family:var(--fb);font-weight:500;transition:.3s}
+/* FLOATING SUMMARY */
+.sbar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(17,17,17,.96);backdrop-filter:blur(14px);border-top:1px solid var(--brd);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.sbar.show{transform:translateY(0)}
+.sb-l{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.sb-pg{font-family:var(--fh);font-size:26px;color:var(--gold);font-weight:700}
+.sb-detail{font-size:12px;color:var(--dim);line-height:1.5}
+.sb-detail b{color:var(--wht)}
+.sb-cta{padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--bg);border:none;border-radius:var(--r);cursor:pointer;font-family:var(--fb);font-weight:500;transition:.3s;white-space:nowrap}
 .sb-cta:hover{background:var(--gold2)}
 
 /* AMENITY */
@@ -156,8 +144,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .psc.prob{background:var(--s1);border:1px solid var(--red)}
 .psc.sol{background:var(--s1);border:1px solid var(--gold)}
 .psc h3{font-family:var(--fh);font-size:22px;margin-bottom:10px}
-.psc.prob h3{color:var(--red)}
-.psc.sol h3{color:var(--gold)}
+.psc.prob h3{color:var(--red)}.psc.sol h3{color:var(--gold)}
 .psc ul{list-style:none}
 .psc li{font-size:13px;color:var(--dim);padding:5px 0;line-height:1.6}
 .psc li::before{content:'→ ';opacity:.4}
@@ -181,7 +168,6 @@ h1 em{font-style:italic;color:var(--gold)}
 .f-ok h2{font-family:var(--fh);font-size:26px;color:var(--wht);margin:12px 0 6px}
 .f-ok p{color:var(--dim);font-size:14px}
 
-/* FOOTER */
 footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
 .fl{font-family:var(--fh);font-size:16px;color:var(--gold);font-weight:700;letter-spacing:2px}
 .flinks{display:flex;gap:18px}
@@ -189,27 +175,19 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
 .flinks a:hover{color:var(--gold)}
 .fi{font-size:11px;color:var(--dim)}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .nlinks{display:none}.hamburger{display:flex}
   .nlinks.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:rgba(10,10,10,.97);padding:20px 40px;gap:14px;border-bottom:1px solid var(--brd)}
   .h-hero{grid-template-columns:1fr;padding:72px 24px 60px}
-  .ps{grid-template-columns:1fr}
-  .pgrid{grid-template-columns:1fr}
+  .ps{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}
   .sec,.hero,.kits-hdr,.fifa-hero,.amenity,.contact-wrap,.cat-wrap,.budget-strip{padding-left:24px;padding-right:24px}
-  .tiers{padding:0 24px}
-  .dvd{margin:0 24px}
-  nav{padding:0 24px}
-  footer{padding:36px 24px}
-  .summary-bar{padding:12px 24px}
+  .tiers{padding:0 24px}.dvd{margin:0 24px}
+  nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
   .cr-desc{display:none}
 }
 @media(max-width:600px){
-  .tiers{flex-direction:column;align-items:stretch}
-  .tier{min-width:auto}
-  .h-imgs{grid-template-columns:1fr}
-  .cr-emoji{display:none}
-  .cr-price .disc{display:none}
+  .tiers{flex-direction:column;align-items:stretch}.tier{min-width:auto}
+  .h-imgs{grid-template-columns:1fr}.cr-emoji{display:none}
 }
 </style>
 </head>
@@ -224,12 +202,10 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
     <a onclick="go('fifa')">FIFA 2026</a>
     <a onclick="go('contact')">Contact</a>
   </div>
-  <div class="hamburger" onclick="document.getElementById('nl').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" onclick="document.getElementById('nl').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- ═══ HOME ═══ -->
+<!-- HOME -->
 <div class="pg on" id="pg-home">
   <div class="hero">
     <div class="ey">FIFA 2026 · Hotel Amenity Programme</div>
@@ -244,22 +220,20 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
     <div class="ey">Three Ways to Work With Us</div>
     <h2 class="sh">Your Property. <em>Your Level.</em></h2>
     <div class="tracks">
-      <div class="trk" onclick="go('kits')"><div class="trk-i">🎁</div><h3>VIP Guest Kits</h3><p>Build a custom gift kit for each guest — pick items from our catalogue within your budget. We brand, pack, and deliver.</p></div>
-      <div class="trk" onclick="go('holster')"><div class="trk-i">🔒</div><h3>The Holster</h3><p>Our signature leather shoulder rig — anti-pickpocket security that guests wear all day and post about all night.</p></div>
-      <div class="trk" onclick="go('contact')"><div class="trk-i">🏨</div><h3>Hotel Property Items</h3><p>Leather accessories for rooms — trays, pen holders, coffee cabinets. Permanent upgrades that elevate every stay.</p></div>
+      <div class="trk" onclick="go('kits')"><div class="trk-i">🎁</div><h3>VIP Guest Kits</h3><p>Build a custom gift kit for each guest — pick items from our catalogue within your budget.</p></div>
+      <div class="trk" onclick="go('holster')"><div class="trk-i">🔒</div><h3>The Holster</h3><p>Our signature leather shoulder rig — anti-pickpocket security that guests wear and post about.</p></div>
+      <div class="trk" onclick="go('contact')"><div class="trk-i">🏨</div><h3>Hotel Property Items</h3><p>Leather accessories for rooms — trays, pen holders, coffee cabinets. Permanent upgrades.</p></div>
     </div>
   </div>
   <footer><div class="fl">GOLDY BROWN</div><div class="flinks"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="fi">info@goldybrown.com · 1-604-794-0937</div></footer>
 </div>
 
-<!-- ═══ THE HOLSTER ═══ -->
+<!-- THE HOLSTER -->
 <div class="pg" id="pg-holster">
   <div class="h-hero">
     <div class="h-imgs">
-      <div class="h-img">Holster Front</div>
-      <div class="h-img">Holster Side</div>
-      <div class="h-img">Holster Back</div>
-      <div class="h-img">On Body</div>
+      <div class="h-img">Holster Front</div><div class="h-img">Holster Side</div>
+      <div class="h-img">Holster Back</div><div class="h-img">On Body</div>
     </div>
     <div class="h-det">
       <div class="ey">Signature Product</div>
@@ -270,49 +244,43 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
         <li>Anti-pickpocket shoulder rig design</li>
         <li>Custom name engraving included</li>
         <li>Adjustable harness — fits all body types</li>
-        <li>Carry-on friendly — no metal detection triggers</li>
+        <li>Carry-on friendly</li>
         <li>Available in Green Suede, Nude, Black</li>
       </ul>
       <table class="bulk-t">
         <tr><th>Order Size</th><th>Per Unit</th><th>Savings</th></tr>
         <tr><td>1 – 24</td><td>$300</td><td>—</td></tr>
-        <tr><td>25 – 49</td><td>$282</td><td>6% off</td></tr>
-        <tr><td>50 – 99</td><td>$264</td><td>12% off</td></tr>
-        <tr><td>100+</td><td>$240</td><td>20% off</td></tr>
+        <tr><td>25 – 49</td><td>$282</td><td>6%</td></tr>
+        <tr><td>50 – 99</td><td>$264</td><td>12%</td></tr>
+        <tr><td>100+</td><td>$240</td><td>20%</td></tr>
       </table>
-      <button class="btn btn-f" onclick="prefill('','I am interested in ordering The Holster in bulk for our hotel property. Please send pricing and lead times.')">Request Bulk Quote</button>
+      <button class="btn btn-f" onclick="prefill('Holster Bulk','Interested in ordering The Holster in bulk. Please send pricing and lead times.')">Request Bulk Quote</button>
     </div>
-  </div>
-  <div class="sec" style="text-align:center">
-    <div class="ey">Why Hotels Love It</div>
-    <h2 class="sh">Security Meets <em>Social Proof</em></h2>
-    <p class="bt" style="margin:0 auto">The holster solves a real problem — pickpocket security — while looking like a premium fashion piece. Guests photograph it on arrival, wear it to the match, and post it. Your hotel stays visible through every photo. Custom name engraving means the guest never forgets where it came from.</p>
   </div>
   <footer><div class="fl">GOLDY BROWN</div><div class="flinks"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="fi">info@goldybrown.com · 1-604-794-0937</div></footer>
 </div>
 
-<!-- ═══ VIP KITS ═══ -->
+<!-- VIP KITS -->
 <div class="pg" id="pg-kits">
   <div class="kits-hdr">
     <div class="ey">VIP Guest Kits</div>
     <h1>Pick Your Budget.<br>Fill Your <em>Kit.</em></h1>
-    <p>Choose a tier, then pick which leather gifts your guests receive. Every item is travel-friendly and carry-on ready. Custom branding, packaging and delivery included in every tier.</p>
+    <p>Choose a tier, then build what each guest receives. Custom branding, packaging and delivery included.</p>
   </div>
-
   <div class="tiers" id="tierEl"></div>
   <div class="budget-strip" id="budgetEl"></div>
   <div class="cat-wrap" id="catEl"></div>
 
-  <div class="amenity" style="margin-top:40px">
+  <div class="amenity" style="margin-top:0">
     <div class="ey">Hotel Property Items</div>
     <h2 class="sh">For Your Rooms, <em>Not Your Guests.</em></h2>
-    <p class="bt" style="margin-top:10px">These pieces stay at the hotel — permanent in-room leather goods, ordered separately.</p>
+    <p class="bt" style="margin-top:10px">Permanent in-room leather goods, ordered separately.</p>
     <div class="am-grid">
       <div class="am-card"><div class="ai">☕</div><div class="an">Coffee Cabinet</div><div class="ap">From $350</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Coffee Cabinet')">Inquire</button></div>
       <div class="am-card"><div class="ai">📦</div><div class="an">Storage Cabinet</div><div class="ap">From $500</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Storage Cabinet')">Inquire</button></div>
       <div class="am-card"><div class="ai">◼</div><div class="an">Premium Tray</div><div class="ap">From $40</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Premium Tray')">Inquire</button></div>
       <div class="am-card"><div class="ai">🖊</div><div class="an">Pen Holder</div><div class="ap">From $40</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Pen Holder')">Inquire</button></div>
-      <div class="am-card"><div class="ai">⬡</div><div class="an">Coaster Set</div><div class="ap">From $5 each</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Coasters')">Inquire</button></div>
+      <div class="am-card"><div class="ai">⬡</div><div class="an">Coaster Set</div><div class="ap">From $5 ea</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Coasters')">Inquire</button></div>
       <div class="am-card"><div class="ai">🏷</div><div class="an">Door Tag</div><div class="ap">From $10</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Door Tags')">Inquire</button></div>
       <div class="am-card"><div class="ai">📁</div><div class="an">Leather Folder</div><div class="ap">From $40</div><button class="ab" onclick="prefill('Hotel Property','Hotel property inquiry: Leather Folder')">Inquire</button></div>
     </div>
@@ -320,7 +288,7 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
   <footer><div class="fl">GOLDY BROWN</div><div class="flinks"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="fi">info@goldybrown.com · 1-604-794-0937</div></footer>
 </div>
 
-<!-- ═══ FIFA ═══ -->
+<!-- FIFA -->
 <div class="pg" id="pg-fifa">
   <div class="fifa-hero">
     <div class="ey">FIFA World Cup 2026</div>
@@ -338,18 +306,18 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
     <div class="pgrid">
       <div class="pcard"><div class="pn">87%</div><div class="plbl">of travellers keep premium leather gifts vs 12% for branded swag</div></div>
       <div class="pcard"><div class="pn">3.2x</div><div class="plbl">more social media posts when guests receive wearable gifts</div></div>
-      <div class="pcard"><div class="pn">$0</div><div class="plbl">extra cost — kits come fully branded, packed, and delivered</div></div>
+      <div class="pcard"><div class="pn">$0</div><div class="plbl">extra — kits come fully branded, packed, and delivered</div></div>
     </div>
   </div>
   <div class="sec" style="text-align:center">
     <h2 class="sh">Ready to <em>Stand Out?</em></h2>
-    <p class="bt" style="margin:0 auto 24px">Request a proposal and we'll build a custom kit recommendation for your property.</p>
+    <p class="bt" style="margin:0 auto 24px">Request a proposal for your property.</p>
     <button class="btn btn-f" onclick="go('contact')">Request Proposal</button>
   </div>
   <footer><div class="fl">GOLDY BROWN</div><div class="flinks"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="fi">info@goldybrown.com · 1-604-794-0937</div></footer>
 </div>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- CONTACT -->
 <div class="pg" id="pg-contact">
   <div class="contact-wrap">
     <div class="ey" style="text-align:center">Get In Touch</div>
@@ -362,123 +330,120 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
       <div class="fg"><label>Interested In</label>
         <select id="f-pkg">
           <option value="">Select...</option>
-          <option value="10K Pilot">$10K Pilot (50 guests)</option>
-          <option value="25K Upgrade">$25K Upgrade (40 guests)</option>
-          <option value="50K Rollout">$50K Rollout (50 guests)</option>
-          <option value="100K Multi">$100K Multi-Property (50 guests)</option>
+          <option value="10K Pilot">$10K Pilot</option>
+          <option value="25K Upgrade">$25K Upgrade</option>
+          <option value="50K Rollout">$50K Rollout</option>
+          <option value="100K Multi">$100K Multi-Property</option>
           <option value="Custom">Custom Kit</option>
           <option value="Hotel Property">Hotel Property Items</option>
-          <option value="Holster Bulk">The Holster — Bulk Order</option>
+          <option value="Holster Bulk">The Holster — Bulk</option>
         </select>
       </div>
       <div class="fg"><label>Message</label><textarea id="f-msg" placeholder="Tell us about your property..."></textarea></div>
       <button class="f-sub" onclick="submitForm()">Send Request</button>
     </div>
-    <div class="f-ok" id="fOk">
-      <div style="font-size:44px">✓</div>
-      <h2>Request Sent</h2>
-      <p>We'll get back to you within 24 hours with a custom proposal.</p>
-    </div>
+    <div class="f-ok" id="fOk"><div style="font-size:44px">✓</div><h2>Request Sent</h2><p>We'll reply within 24 hours with a custom proposal.</p></div>
   </div>
   <footer><div class="fl">GOLDY BROWN</div><div class="flinks"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="fi">info@goldybrown.com · 1-604-794-0937</div></footer>
 </div>
 
-<!-- FLOATING SUMMARY BAR -->
-<div class="summary-bar" id="sumBar">
-  <div class="sb-left">
-    <span class="sb-count" id="sbCount"></span>
-    <span class="sb-total" id="sbTotal"></span>
-    <span class="sb-perguest" id="sbPer"></span>
+<!-- FLOATING SUMMARY -->
+<div class="sbar" id="sumBar">
+  <div class="sb-l">
+    <div class="sb-pg" id="sbPG"></div>
+    <div class="sb-detail" id="sbDetail"></div>
   </div>
   <button class="sb-cta" onclick="submitKit()">Request This Kit →</button>
 </div>
 
 <script>
-// ═══ NAV ═══
 function go(id){
   document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('on')});
   document.getElementById('pg-'+id).classList.add('on');
   document.getElementById('nl').classList.remove('open');
   window.scrollTo(0,0);
   if(id!=='kits') document.getElementById('sumBar').classList.remove('show');
-  else updateSummary();
+  else updateBar();
 }
 
-// ═══ REAL PRODUCT DATA ═══
-var PRODUCTS = [
-  {id:'h_m',  cat:'The Holster',       name:"Holster — Men's",    emoji:'🟢', price:300, desc:'Green suede · custom name engraved'},
-  {id:'h_w',  cat:'The Holster',       name:"Holster — Women's",  emoji:'⬜', price:300, desc:'Nude leather · shoulder or hip'},
-  {id:'luggage',cat:'Travel Essentials',name:'Luggage Tag',        emoji:'🏷️', price:30,  desc:'Branded & embossed'},
-  {id:'passport',cat:'Travel Essentials',name:'Passport Holder',   emoji:'📘', price:60,  desc:'Every FIFA guest is international'},
-  {id:'cardholder',cat:'Travel Essentials',name:'Card Holder',     emoji:'💳', price:60,  desc:'Slim leather, unisex'},
-  {id:'pencase',cat:'Travel Essentials',name:'Pen Case',           emoji:'🖊️', price:30,  desc:'Carry precision with you'},
-  {id:'tiecase',cat:"Men's Gifts",     name:'Tie Case',           emoji:'👔', price:100, desc:'Preserves shape on the road'},
-  {id:'cigar', cat:"Men's Gifts",      name:'Cigar Case',         emoji:'🚬', price:200, desc:'Distinguished ritual'},
-  {id:'belt',  cat:"Men's Gifts",      name:'Leather Belt',       emoji:'➰', price:100, desc:'Clean, minimal'},
-  {id:'jewellery',cat:"Women's Gifts", name:'Jewellery Roll',     emoji:'💍', price:120, desc:'Travel-safe elegance'},
-  {id:'cosmetic',cat:"Women's Gifts",  name:'Cosmetic Case',      emoji:'💄', price:110, desc:'Structured leather'},
-  {id:'clutch',cat:"Women's Gifts",    name:'Leather Clutch',     emoji:'👜', price:150, desc:'Evening & match days'},
-  {id:'watchroll',cat:"Women's Gifts", name:'Watch Roll',         emoji:'⌚', price:140, desc:'Padded 3-slot travel roll'},
+// ═══ DATA — REAL PRICES ═══
+var P=[
+  {id:'h_m',cat:'The Holster',name:"Holster — Men's",emoji:'🟢',price:300,desc:'Green suede · custom engraving'},
+  {id:'h_w',cat:'The Holster',name:"Holster — Women's",emoji:'⬜',price:300,desc:'Nude leather · shoulder or hip'},
+  {id:'luggage',cat:'Travel Essentials',name:'Luggage Tag',emoji:'🏷️',price:30,desc:'Branded & embossed'},
+  {id:'passport',cat:'Travel Essentials',name:'Passport Holder',emoji:'📘',price:60,desc:'Every FIFA guest is international'},
+  {id:'cardholder',cat:'Travel Essentials',name:'Card Holder',emoji:'💳',price:60,desc:'Slim leather, unisex'},
+  {id:'pencase',cat:'Travel Essentials',name:'Pen Case',emoji:'🖊️',price:30,desc:'Carry precision with you'},
+  {id:'tiecase',cat:"Men's Gifts",name:'Tie Case',emoji:'👔',price:100,desc:'Preserves shape on the road'},
+  {id:'cigar',cat:"Men's Gifts",name:'Cigar Case',emoji:'🚬',price:200,desc:'Distinguished ritual'},
+  {id:'belt',cat:"Men's Gifts",name:'Leather Belt',emoji:'➰',price:100,desc:'Clean, minimal'},
+  {id:'jewellery',cat:"Women's Gifts",name:'Jewellery Roll',emoji:'💍',price:120,desc:'Travel-safe elegance'},
+  {id:'cosmetic',cat:"Women's Gifts",name:'Cosmetic Case',emoji:'💄',price:110,desc:'Structured leather'},
+  {id:'clutch',cat:"Women's Gifts",name:'Leather Clutch',emoji:'👜',price:150,desc:'Evening & match days'},
+  {id:'watchroll',cat:"Women's Gifts",name:'Watch Roll',emoji:'⌚',price:140,desc:'Padded 3-slot travel roll'},
 ];
 
-// 15% margin kept. Budget = total × 0.85
-var TIERS = [
-  {id:'t10k', label:'$10K',  sub:'Pilot · 50 guests',          budget:8500,  guests:50, disc:0},
-  {id:'t25k', label:'$25K',  sub:'Upgrade · 40 guests',        budget:21250, guests:40, disc:0.06},
-  {id:'t50k', label:'$50K',  sub:'Rollout · 50 guests',        budget:42500, guests:50, disc:0.12},
-  {id:'t100k',label:'$100K', sub:'Multi-Property · 50 guests', budget:85000, guests:50, disc:0.20},
+// Budget = tier × 0.85 (15% margin). Per-guest budget = budget / guests.
+var T=[
+  {label:'$10K',sub:'Pilot',budget:8500,guests:50,disc:0},
+  {label:'$25K',sub:'Upgrade',budget:21250,guests:40,disc:0.06},
+  {label:'$50K',sub:'Rollout',budget:42500,guests:50,disc:0.12},
+  {label:'$100K',sub:'Multi-Property',budget:85000,guests:50,disc:0.20},
 ];
 
-var cTier = 0;
-var kit = {};
+var cT=0, kit={};
 
-function dp(p){ return Math.round(p.price * (1 - TIERS[cTier].disc)); }
-function perGuest(){ var s=0; for(var id in kit){ if(kit[id]>0){ var p=PRODUCTS.find(function(x){return x.id===id}); s+=dp(p)*kit[id]; }} return s; }
-function totalOrder(){ return perGuest() * TIERS[cTier].guests; }
-function itemCount(){ var c=0; for(var id in kit) c+=kit[id]; return c; }
+function dp(p){return Math.round(p.price*(1-T[cT].disc))}
 
-// ═══ RENDER TIERS ═══
+// per-guest total (just the sum of items × qty, no guest multiplication)
+function pgTotal(){
+  var s=0;
+  for(var id in kit){if(kit[id]>0){var p=P.find(function(x){return x.id===id});s+=dp(p)*kit[id]}}
+  return s;
+}
+function pgBudget(){return Math.floor(T[cT].budget/T[cT].guests)}
+function itemCount(){var c=0;for(var id in kit)c+=kit[id];return c}
+
+// ═══ TIERS ═══
 function renderTiers(){
   var h='';
-  TIERS.forEach(function(t,i){
-    h+='<div class="tier'+(i===cTier?' on':'')+'" onclick="pickTier('+i+')">';
+  T.forEach(function(t,i){
+    var pgb=Math.floor(t.budget/t.guests);
+    h+='<div class="tier'+(i===cT?' on':'')+'" onclick="pickTier('+i+')">';
     h+='<div class="tl">'+t.label+'</div>';
-    h+='<div class="ts">'+t.sub+'</div>';
+    h+='<div class="ts">'+t.sub+' · '+t.guests+' guests · $'+pgb+'/guest</div>';
     h+='<div class="td">'+(t.disc>0?Math.round(t.disc*100)+'% volume discount':'Standard pricing')+'</div>';
     h+='</div>';
   });
   document.getElementById('tierEl').innerHTML=h;
 }
-function pickTier(i){ cTier=i; kit={}; renderAll(); }
+function pickTier(i){cT=i;kit={};renderAll()}
 
-// ═══ RENDER BUDGET BAR ═══
+// ═══ BUDGET BAR — per guest ═══
 function renderBudget(){
-  var t=TIERS[cTier];
-  var spent=totalOrder();
-  var pct=Math.min((spent/t.budget)*100,100);
-  var over=spent>t.budget;
-  var remain=t.budget-spent;
-  var barClass=over?'over':(pct>70?'':'good');
-  var pgv=perGuest();
+  var spent=pgTotal();
+  var budget=pgBudget();
+  var pct=Math.min((spent/budget)*100,100);
+  var over=spent>budget;
+  var remain=budget-spent;
+  var cls=over?'over':(pct>70?'':'good');
 
   var h='<div class="budget-row">';
-  h+='<div><div class="budget-spent"><span class="currency">$</span>'+spent.toLocaleString()+'</div></div>';
-  h+='<div style="text-align:right"><div class="budget-of">of <b>$'+t.budget.toLocaleString()+'</b> product budget</div>';
-  h+='<div class="budget-guests"><b>'+t.guests+'</b> guests × <b>$'+pgv+'</b>/guest</div></div>';
+  h+='<div><div class="budget-spent"><span class="cur">$</span>'+spent+' <span class="cur">/ guest</span></div></div>';
+  h+='<div class="budget-right"><div class="budget-of">budget: <b>$'+budget+'</b> per guest</div></div>';
   h+='</div>';
-  h+='<div class="bar-outer"><div class="bar-inner '+barClass+'" style="width:'+pct+'%"></div></div>';
+  h+='<div class="bar-outer"><div class="bar-inner '+cls+'" style="width:'+pct+'%"></div></div>';
   h+='<div class="budget-meta">';
-  h+='<span>'+(t.disc>0?Math.round(t.disc*100)+'% discount applied':'No discount on this tier')+'</span>';
-  h+='<span class="remaining'+(remain<0?' neg':'')+'">'+( remain>=0 ? '$'+remain.toLocaleString()+' remaining' : '$'+Math.abs(remain).toLocaleString()+' over budget' )+'</span>';
+  h+='<span>'+(T[cT].disc>0?Math.round(T[cT].disc*100)+'% discount applied':'Standard pricing')+'</span>';
+  h+='<span class="rem'+(remain<0?' neg':'')+'">'+( remain>=0?'$'+remain+' remaining':'$'+Math.abs(remain)+' over')+'</span>';
   h+='</div>';
   document.getElementById('budgetEl').innerHTML=h;
 }
 
-// ═══ RENDER CATALOGUE (inline qty — no separate basket) ═══
+// ═══ CATALOGUE — per-guest qty, no multiplication ═══
 function renderCat(){
   var cats={};
-  PRODUCTS.forEach(function(p){ if(!cats[p.cat]) cats[p.cat]=[]; cats[p.cat].push(p); });
-
+  P.forEach(function(p){if(!cats[p.cat])cats[p.cat]=[];cats[p.cat].push(p)});
   var h='';
   for(var cat in cats){
     h+='<div class="cat-label">'+cat+'</div>';
@@ -486,88 +451,76 @@ function renderCat(){
       var price=dp(p);
       var hasDisc=price<p.price;
       var qty=kit[p.id]||0;
-      var lineTotal=price*qty*TIERS[cTier].guests;
-
       h+='<div class="cat-row">';
       h+='<span class="cr-emoji">'+p.emoji+'</span>';
       h+='<div class="cr-info"><div class="cr-name">'+p.name+'</div><div class="cr-desc">'+p.desc+'</div></div>';
       h+='<div class="cr-price">'+(hasDisc?'<span class="disc">$'+p.price+'</span>':'')+'$'+price+'</div>';
       h+='<div class="cr-qty">';
       h+='<button onclick="adj(\''+p.id+'\',-1)">−</button>';
-      h+='<div class="qval'+(qty>0?' has':'')+'">'+qty+'</div>';
+      h+='<div class="qv'+(qty>0?' has':'')+'">'+qty+'</div>';
       h+='<button onclick="adj(\''+p.id+'\',1)">+</button>';
       h+='</div>';
-      h+='<div class="cr-total'+(qty===0?' zero':'')+'">$'+lineTotal.toLocaleString()+'</div>';
       h+='</div>';
     });
   }
   document.getElementById('catEl').innerHTML=h;
 }
 
-// ═══ KIT ACTIONS ═══
 function adj(id,d){
-  if(!kit[id]) kit[id]=0;
+  if(!kit[id])kit[id]=0;
   kit[id]+=d;
-  if(kit[id]<0) kit[id]=0;
-  if(kit[id]===0) delete kit[id];
-  renderBudget();
-  renderCat();
-  updateSummary();
+  if(kit[id]<0)kit[id]=0;
+  if(kit[id]===0)delete kit[id];
+  renderBudget();renderCat();updateBar();
 }
 
-function updateSummary(){
-  var count=itemCount();
+function updateBar(){
+  var n=itemCount();
   var bar=document.getElementById('sumBar');
-  if(count>0){
+  if(n>0){
     bar.classList.add('show');
-    var t=TIERS[cTier];
-    document.getElementById('sbCount').innerHTML='<b>'+count+'</b> item'+(count!==1?'s':'')+' per guest';
-    document.getElementById('sbTotal').textContent='$'+totalOrder().toLocaleString();
-    document.getElementById('sbPer').textContent='$'+perGuest()+'/guest × '+t.guests+' guests';
+    var t=T[cT];
+    var pg=pgTotal();
+    var total=pg*t.guests;
+    document.getElementById('sbPG').textContent='$'+pg+' / guest';
+    document.getElementById('sbDetail').innerHTML='<b>'+n+'</b> item'+(n!==1?'s':'')+' per guest · <b>'+t.guests+'</b> guests · total order <b>$'+total.toLocaleString()+'</b>';
   } else {
     bar.classList.remove('show');
   }
 }
 
-function renderAll(){ renderTiers(); renderBudget(); renderCat(); updateSummary(); }
+function renderAll(){renderTiers();renderBudget();renderCat();updateBar()}
 
 function submitKit(){
   var ids=Object.keys(kit).filter(function(id){return kit[id]>0});
   var lines=ids.map(function(id){
-    var p=PRODUCTS.find(function(x){return x.id===id});
-    return p.name+' ×'+kit[id];
+    var p=P.find(function(x){return x.id===id});
+    return p.name+(kit[id]>1?' ×'+kit[id]:'');
   });
-  var t=TIERS[cTier];
-  var msg='VIP Kit Request — '+t.label+' ('+t.sub+')\n\nItems per guest:\n'+lines.join('\n')+'\n\nPer-guest value: $'+perGuest()+'\nTotal order: $'+totalOrder().toLocaleString();
+  var t=T[cT];
+  var pg=pgTotal();
+  var msg='VIP Kit Request — '+t.label+' '+t.sub+'\n\nEach guest receives:\n'+lines.join('\n')+'\n\nPer-guest value: $'+pg+'\nGuests: '+t.guests+'\nTotal order: $'+(pg*t.guests).toLocaleString();
   prefill(t.label.replace('$',''),msg);
 }
 
-// ═══ CONTACT ═══
 function prefill(pkg,msg){
   go('contact');
   setTimeout(function(){
-    if(pkg){
-      var sel=document.getElementById('f-pkg');
-      for(var i=0;i<sel.options.length;i++){
-        if(sel.options[i].value.toLowerCase().includes(pkg.toLowerCase())){sel.selectedIndex=i;break;}
-      }
-    }
-    if(msg) document.getElementById('f-msg').value=msg;
+    if(pkg){var s=document.getElementById('f-pkg');for(var i=0;i<s.options.length;i++){if(s.options[i].value.toLowerCase().includes(pkg.toLowerCase())){s.selectedIndex=i;break}}}
+    if(msg)document.getElementById('f-msg').value=msg;
   },50);
 }
 function submitForm(){
   var n=document.getElementById('f-name').value.trim();
   var e=document.getElementById('f-email').value.trim();
   var h=document.getElementById('f-hotel').value.trim();
-  if(!n||!e||!h){alert('Please fill in name, hotel, and email.');return;}
+  if(!n||!e||!h){alert('Please fill in name, hotel, and email.');return}
   document.getElementById('cForm').style.display='none';
   document.getElementById('fOk').style.display='block';
 }
 
-// ═══ SHOPIFY IFRAME ═══
 (function(){try{if(window.parent!==window){var s=function(){window.parent.postMessage({type:'gb-resize',h:document.body.scrollHeight},'*')};window.addEventListener('load',s);new MutationObserver(s).observe(document.body,{subtree:true,childList:true,attributes:true})}}catch(e){}})();
 
-// ═══ INIT ═══
 renderAll();
 </script>
 </body>
