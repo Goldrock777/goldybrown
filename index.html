@@ -37,6 +37,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .trk:hover{border-color:var(--gold2);transform:translateY(-3px)}
 .trk h3{font-family:var(--fh);font-size:20px;color:var(--wht);margin-bottom:6px}
 .trk p{font-size:13px;color:var(--dim);line-height:1.6}
+
+/* HOLSTER */
 .hh{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:90px 48px 72px;align-items:center}
 .h-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .h-img{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--dim2)}
@@ -49,6 +51,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .bkt th,.bkt td{padding:9px 14px;text-align:left;font-size:12px;border-bottom:1px solid var(--brd)}
 .bkt th{color:var(--gold);font-weight:500;text-transform:uppercase;letter-spacing:1px;font-size:10px}
 .bkt td{color:var(--dim)}
+
+/* VIP KITS */
 .kh{text-align:center;padding:90px 48px 36px}
 .kh p{max-width:540px;margin:14px auto 0;font-size:15px;color:var(--dim);line-height:1.7}
 .tiers{display:flex;justify-content:center;gap:10px;padding:0 48px;flex-wrap:wrap}
@@ -58,11 +62,12 @@ h1 em{font-style:italic;color:var(--gold)}
 .ti-l{font-family:var(--fh);font-size:24px;color:var(--wht);font-weight:700}
 .ti-s{font-size:11px;color:var(--dim);margin-top:3px}
 .ti-d{font-size:10px;color:var(--gold);margin-top:3px;font-weight:500}
+
+/* BUDGET */
 .bstrip{max-width:700px;margin:28px auto 0;padding:0 48px}
 .brow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .bamt{font-family:var(--fh);font-size:36px;color:var(--wht);font-weight:700}
-.bof{font-size:13px;color:var(--dim);text-align:right}
-.bof b{color:var(--gold)}
+.bof{font-size:13px;color:var(--dim);text-align:right}.bof b{color:var(--gold)}
 .bar-o{height:10px;background:var(--s2);border-radius:5px;overflow:hidden}
 .bar-i{height:100%;border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1),background .3s}
 .bar-g{background:linear-gradient(90deg,#4a7,#6b6)}
@@ -70,25 +75,32 @@ h1 em{font-style:italic;color:var(--gold)}
 .bar-r{background:linear-gradient(90deg,#a44,#c44)}
 .bmeta{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--dim2)}
 .brem{color:var(--grn)}.brem.neg{color:var(--red)}
+
+/* CATALOGUE - SQUARE CARD GRID */
 .cw{padding:24px 48px 100px}
-.cl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:24px 0 10px;border-bottom:1px solid var(--brd)}
-.crow{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--brd);transition:background .2s}
-.crow:hover{background:rgba(255,255,255,.015)}
-.ce{font-size:24px;width:40px;text-align:center;flex-shrink:0}
-.ci{flex:1;min-width:0}
-.cn{font-size:14px;color:var(--wht)}
-.cd{font-size:12px;color:var(--dim2);margin-top:1px}
-.cp{font-size:14px;color:var(--dim);min-width:60px;text-align:right;flex-shrink:0}
-.cp .x{text-decoration:line-through;color:var(--dim2);font-size:12px;margin-right:6px}
-.cq{display:flex;align-items:center;flex-shrink:0;margin-left:8px}
-.cq button{width:36px;height:36px;border:1px solid var(--brd);background:transparent;color:var(--dim);font-size:18px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;font-family:var(--fb)}
-.cq button:first-child{border-radius:var(--r) 0 0 var(--r)}
-.cq button:last-child{border-radius:0 var(--r) var(--r) 0}
-.cq button:hover{border-color:var(--gold);color:var(--gold)}
-.qv{width:42px;height:36px;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);background:var(--s2);color:var(--wht);font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:500}
-.qv.has{background:var(--gg);color:var(--gold)}
-.clt{font-family:var(--fh);font-size:16px;color:var(--gold);min-width:70px;text-align:right;font-weight:600;flex-shrink:0}
-.clt.zero{color:var(--dim2);font-weight:300}
+.cl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:28px 0 14px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.card{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--gold2)}
+.card.inkit{border-color:var(--gold);box-shadow:0 0 20px rgba(201,169,110,.08)}
+.card-img{aspect-ratio:1;background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:48px;position:relative}
+.card-img .card-lt{position:absolute;top:8px;right:8px;font-family:var(--fh);font-size:14px;color:var(--gold);font-weight:600;background:rgba(10,10,10,.8);padding:3px 8px;border-radius:4px;opacity:0;transition:.3s}
+.card.inkit .card-lt{opacity:1}
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column}
+.card-name{font-size:13px;color:var(--wht);font-weight:400;margin-bottom:2px}
+.card-desc{font-size:11px;color:var(--dim2);margin-bottom:auto;line-height:1.4}
+.card-price{display:flex;align-items:baseline;gap:6px;margin:10px 0 10px}
+.card-price .now{font-family:var(--fh);font-size:20px;color:var(--gold);font-weight:600}
+.card-price .was{font-size:12px;color:var(--dim2);text-decoration:line-through}
+.card-qty{display:flex;align-items:center;width:100%}
+.card-qty button{flex:1;height:36px;border:1px solid var(--brd);background:transparent;color:var(--dim);font-size:18px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;font-family:var(--fb)}
+.card-qty button:first-child{border-radius:var(--r) 0 0 var(--r)}
+.card-qty button:last-child{border-radius:0 var(--r) var(--r) 0}
+.card-qty button:hover{border-color:var(--gold);color:var(--gold)}
+.card-qty .qv{flex:1;height:36px;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);background:var(--s2);color:var(--wht);font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:500}
+.card-qty .qv.has{background:var(--gg);color:var(--gold)}
+
+/* FLOATING BAR */
 .sbar{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(17,17,17,.96);backdrop-filter:blur(14px);border-top:1px solid var(--brd);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
 .sbar.show{transform:translateY(0)}
 .sbl{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -96,6 +108,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .sbd{font-size:12px;color:var(--dim)}.sbd b{color:var(--wht)}
 .sbtn{padding:12px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--bg);border:none;border-radius:var(--r);cursor:pointer;font-family:var(--fb);font-weight:500;transition:.3s;white-space:nowrap}
 .sbtn:hover{background:var(--gold2)}
+
+/* AMENITY */
 .amy{padding:60px 48px;border-top:1px solid var(--brd)}
 .amg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:22px}
 .amc{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);padding:20px;text-align:center;transition:.3s}
@@ -105,7 +119,9 @@ h1 em{font-style:italic;color:var(--gold)}
 .amc .ap{font-size:12px;color:var(--dim);margin-bottom:10px}
 .amc .ab{padding:6px 14px;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--brd);color:var(--dim);border-radius:var(--r);cursor:pointer;transition:.3s;background:transparent;font-family:var(--fb)}
 .amc .ab:hover{border-color:var(--gold);color:var(--gold)}
-.fh{padding:110px 48px 72px;text-align:center}
+
+/* FIFA */
+.fifah{padding:110px 48px 72px;text-align:center}
 .ps{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:0 48px 60px}
 .psc{padding:32px;border-radius:var(--r);background:var(--s1)}
 .psc.prob{border:1px solid var(--red)}.psc.sol{border:1px solid var(--gold)}
@@ -117,6 +133,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .prc{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r);padding:28px 18px}
 .prn{font-family:var(--fh);font-size:34px;color:var(--gold);font-weight:700}
 .prl{font-size:12px;color:var(--dim);margin-top:4px}
+
+/* CONTACT */
 .ctw{max-width:540px;margin:0 auto;padding:90px 48px 80px}
 .fg{margin-bottom:18px}
 .fg label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:5px;font-weight:500}
@@ -135,17 +153,21 @@ footer{padding:36px 48px;border-top:1px solid var(--brd);display:flex;align-item
 .fla a{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:.3s}
 .fla a:hover{color:var(--gold)}
 .finf{font-size:11px;color:var(--dim)}
+
 @media(max-width:900px){
 .nlinks{display:none}.ham{display:flex}
 .nlinks.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:rgba(10,10,10,.97);padding:20px 40px;gap:14px;border-bottom:1px solid var(--brd)}
 .hh{grid-template-columns:1fr;padding:72px 24px 60px}
 .ps{grid-template-columns:1fr}.prg{grid-template-columns:1fr}
-.sec,.hero,.kh,.fh,.amy,.ctw,.cw,.bstrip{padding-left:24px;padding-right:24px}
+.sec,.hero,.kh,.fifah,.amy,.ctw,.cw,.bstrip{padding-left:24px;padding-right:24px}
 .tiers{padding:0 24px}.dvd{margin:0 24px}
 nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
-.cd{display:none}
 }
-@media(max-width:600px){.tiers{flex-direction:column;align-items:stretch}.ti{min-width:auto}.h-imgs{grid-template-columns:1fr}.ce{display:none}}
+@media(max-width:600px){
+.tiers{flex-direction:column;align-items:stretch}.ti{min-width:auto}
+.h-imgs{grid-template-columns:1fr}
+.cgrid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -180,7 +202,7 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 <div class="trk" onclick="go('contact')"><div style="font-size:28px;margin-bottom:14px">&#127976;</div><h3>Hotel Property Items</h3><p>Leather accessories for rooms. Trays, pen holders, coffee cabinets.</p></div>
 </div>
 </div>
-<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="foot-email"></div></footer>
+<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="fe1"></div></footer>
 </div>
 
 <div class="pg" id="pg-holster">
@@ -202,7 +224,7 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 <button class="btn btn-f" onclick="pf('Holster Bulk','Interested in ordering The Holster in bulk. Please send pricing.')">Request Bulk Quote</button>
 </div>
 </div>
-<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="foot-email2"></div></footer>
+<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="fe2"></div></footer>
 </div>
 
 <div class="pg" id="pg-kits">
@@ -228,11 +250,11 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 <div class="amc"><div class="ai">&#128193;</div><div class="an">Leather Folder</div><div class="ap">From $40</div><button class="ab" onclick="pf('Hotel Property','Inquiry: Leather Folder')">Inquire</button></div>
 </div>
 </div>
-<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="foot-email3"></div></footer>
+<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="fe3"></div></footer>
 </div>
 
 <div class="pg" id="pg-fifa">
-<div class="fh">
+<div class="fifah">
 <div class="ey">FIFA World Cup 2026</div>
 <h1>Turn FIFA Guests Into<br><em>VIP Experiences</em></h1>
 <p class="bt" style="margin:0 auto 32px">Your hotel is already booked. The question is what will guests remember?</p>
@@ -256,7 +278,7 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 <p class="bt" style="margin:0 auto 24px">Request a proposal for your property.</p>
 <button class="btn btn-f" onclick="go('contact')">Request Proposal</button>
 </div>
-<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="foot-email4"></div></footer>
+<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="fe4"></div></footer>
 </div>
 
 <div class="pg" id="pg-contact">
@@ -274,7 +296,7 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 </div>
 <div class="fok" id="fOk"><div style="font-size:44px">&#10003;</div><h2>Request Sent</h2><p>We will reply within 24 hours.</p></div>
 </div>
-<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="foot-email5"></div></footer>
+<footer><div class="fl">GOLDY BROWN</div><div class="fla"><a onclick="go('home')">Home</a><a onclick="go('kits')">VIP Kits</a><a onclick="go('contact')">Contact</a></div><div class="finf" id="fe5"></div></footer>
 </div>
 
 <div class="sbar" id="sbar">
@@ -286,7 +308,6 @@ nav{padding:0 24px}footer{padding:36px 24px}.sbar{padding:12px 24px}
 </div>
 
 <script>
-/* NAV */
 function go(id){
   document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('on')});
   document.getElementById('pg-'+id).classList.add('on');
@@ -296,12 +317,9 @@ function go(id){
   else upBar();
 }
 
-/* EMAIL - built via JS so Cloudflare cant touch it */
-var EM='inf'+'o'+'@g'+'oldybr'+'own.c'+'om';
-var PH='1-604-794-0937';
-document.querySelectorAll('[id^="foot-email"]').forEach(function(el){el.textContent=EM+' \u00B7 '+PH});
+var EM='inf'+'o'+'@'+'goldy'+'brown.com';
+document.querySelectorAll('[id^="fe"]').forEach(function(el){el.textContent=EM+' \u00B7 1-604-794-0937'});
 
-/* PRODUCTS */
 var P=[
   {id:'h_m',c:'The Holster',n:'Holster (Mens)',e:'\uD83D\uDFE2',p:300,d:'Green suede, custom engraving'},
   {id:'h_w',c:'The Holster',n:'Holster (Womens)',e:'\u2B1C',p:300,d:'Nude leather, shoulder or hip'},
@@ -318,7 +336,6 @@ var P=[
   {id:'wat',c:'Womens Gifts',n:'Watch Roll',e:'\u231A',p:140,d:'Padded 3-slot travel roll'}
 ];
 
-/* TIERS - straight dollar amounts, no margin math */
 var T=[
   {l:'$10K',budget:10000,disc:0,tag:'Standard pricing'},
   {l:'$25K',budget:25000,disc:0.06,tag:'6% off everything'},
@@ -338,8 +355,7 @@ function rTiers(){
     h+='<div class="ti'+(i===cT?' on':'')+'" onclick="pickT('+i+')">';
     h+='<div class="ti-l">'+t.l+'</div>';
     h+='<div class="ti-s">Budget: $'+t.budget.toLocaleString()+'</div>';
-    h+='<div class="ti-d">'+t.tag+'</div>';
-    h+='</div>';
+    h+='<div class="ti-d">'+t.tag+'</div></div>';
   });
   document.getElementById('tierEl').innerHTML=h;
 }
@@ -347,18 +363,13 @@ function pickT(i){cT=i;cart={};rAll()}
 
 function rBudget(){
   var t=total(),b=T[cT].budget;
-  var pct=Math.min((t/b)*100,100);
-  var over=t>b,rem=b-t;
+  var pct=Math.min((t/b)*100,100),over=t>b,rem=b-t;
   var cls=over?'bar-r':(pct>60?'bar-n':'bar-g');
-  var h='<div class="brow">';
-  h+='<div class="bamt">$'+t.toLocaleString()+'</div>';
-  h+='<div class="bof">of <b>$'+b.toLocaleString()+'</b> budget</div>';
-  h+='</div>';
+  var h='<div class="brow"><div class="bamt">$'+t.toLocaleString()+'</div>';
+  h+='<div class="bof">of <b>$'+b.toLocaleString()+'</b> budget</div></div>';
   h+='<div class="bar-o"><div class="bar-i '+cls+'" style="width:'+pct+'%"></div></div>';
-  h+='<div class="bmeta">';
-  h+='<span>'+T[cT].tag+'</span>';
-  h+='<span class="brem'+(rem<0?' neg':'')+'">'+( rem>=0?'$'+rem.toLocaleString()+' remaining':'$'+Math.abs(rem).toLocaleString()+' over')+'</span>';
-  h+='</div>';
+  h+='<div class="bmeta"><span>'+T[cT].tag+'</span>';
+  h+='<span class="brem'+(rem<0?' neg':'')+'">'+( rem>=0?'$'+rem.toLocaleString()+' remaining':'$'+Math.abs(rem).toLocaleString()+' over')+'</span></div>';
   document.getElementById('budgetEl').innerHTML=h;
 }
 
@@ -367,21 +378,22 @@ function rCat(){
   P.forEach(function(p){if(!cats[p.c])cats[p.c]=[];cats[p.c].push(p)});
   var h='';
   for(var c in cats){
-    h+='<div class="cl">'+c+'</div>';
+    h+='<div class="cl">'+c+'</div><div class="cgrid">';
     cats[c].forEach(function(p){
       var pr=price(p),q=cart[p.id]||0,lt=pr*q,disc=pr<p.p;
-      h+='<div class="crow">';
-      h+='<span class="ce">'+p.e+'</span>';
-      h+='<div class="ci"><div class="cn">'+p.n+'</div><div class="cd">'+p.d+'</div></div>';
-      h+='<div class="cp">'+(disc?'<span class="x">$'+p.p+'</span>':'')+'$'+pr+'</div>';
-      h+='<div class="cq">';
+      h+='<div class="card'+(q>0?' inkit':'')+'">';
+      h+='<div class="card-img">'+p.e+'<div class="card-lt">$'+lt.toLocaleString()+'</div></div>';
+      h+='<div class="card-body">';
+      h+='<div class="card-name">'+p.n+'</div>';
+      h+='<div class="card-desc">'+p.d+'</div>';
+      h+='<div class="card-price">'+(disc?'<span class="was">$'+p.p+'</span>':'')+'<span class="now">$'+pr+'</span></div>';
+      h+='<div class="card-qty">';
       h+='<button onclick="adj(\''+p.id+'\',-1)">\u2212</button>';
       h+='<div class="qv'+(q>0?' has':'')+'">'+q+'</div>';
       h+='<button onclick="adj(\''+p.id+'\',1)">+</button>';
-      h+='</div>';
-      h+='<div class="clt'+(q===0?' zero':'')+'">$'+lt.toLocaleString()+'</div>';
-      h+='</div>';
+      h+='</div></div></div>';
     });
+    h+='</div>';
   }
   document.getElementById('catEl').innerHTML=h;
 }
