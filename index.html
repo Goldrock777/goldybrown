@@ -391,7 +391,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price">$249 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping on orders over $200</div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="#" class="btn btn-f" onclick="go('about');return false">Purchase</a>
+<a href="https://YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster" target="_blank" class="btn btn-f">Add to Cart</a>
 <a href="#" class="btn" onclick="go('lookbook');return false">See It Worn</a>
 </div>
 <div class="holster-variants">
@@ -578,18 +578,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <script>
 var P=[
-{id:'holster',name:'The Holster',price:300,qty:0,desc:'Concealed leather shoulder rig with custom engraving',retail:249},
-{id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle',retail:30},
-{id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim fit, all international passports',retail:60},
-{id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six slot bifold with center pocket',retail:60},
-{id:'pen-case',name:'Pen Case',price:30,qty:0,desc:'Single pen sleeve with snap closure',retail:30},
-{id:'tie-case',name:'Tie Case',price:100,qty:0,desc:'Roll style, fits two ties without creasing',retail:100},
-{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar lined, three finger capacity',retail:200},
-{id:'belt',name:'Leather Belt',price:100,qty:0,desc:'32mm strap with stainless steel buckle',retail:100},
-{id:'jewellery',name:'Jewellery Roll',price:120,qty:0,desc:'Four compartment roll with ring bar',retail:120},
-{id:'cosmetic',name:'Cosmetic Case',price:110,qty:0,desc:'Zippered pouch with interior pockets',retail:110},
-{id:'clutch',name:'Clutch',price:150,qty:0,desc:'Envelope style with magnetic closure',retail:150},
-{id:'watch-roll',name:'Watch Roll',price:140,qty:0,desc:'Two watch capacity with cushion inserts',retail:140}
+{id:'holster',name:'The Holster',price:300,qty:0,desc:'Concealed leather shoulder rig with custom engraving',retail:249,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster'},
+{id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle',retail:30,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
+{id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim fit, all international passports',retail:60,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
+{id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six slot bifold with center pocket',retail:60,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
+{id:'pen-case',name:'Pen Case',price:30,qty:0,desc:'Single pen sleeve with snap closure',retail:30,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/pen-case'},
+{id:'tie-case',name:'Tie Case',price:100,qty:0,desc:'Roll style, fits two ties without creasing',retail:100,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/tie-case'},
+{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar lined, three finger capacity',retail:200,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
+{id:'belt',name:'Leather Belt',price:100,qty:0,desc:'32mm strap with stainless steel buckle',retail:100,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/leather-belt'},
+{id:'jewellery',name:'Jewellery Roll',price:120,qty:0,desc:'Four compartment roll with ring bar',retail:120,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/jewellery-roll'},
+{id:'cosmetic',name:'Cosmetic Case',price:110,qty:0,desc:'Zippered pouch with interior pockets',retail:110,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cosmetic-case'},
+{id:'clutch',name:'Clutch',price:150,qty:0,desc:'Envelope style with magnetic closure',retail:150,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/clutch'},
+{id:'watch-roll',name:'Watch Roll',price:140,qty:0,desc:'Two watch capacity with cushion inserts',retail:140,shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/watch-roll'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
 var cT=0;
@@ -599,8 +599,7 @@ function fmt(n){return '$'+n.toLocaleString('en-US')}
 function renderProds(){
 var g=document.getElementById('productGrid');g.innerHTML='';
 P.forEach(function(p){
-var pr=p.id==='holster'?p.retail:p.retail;
-g.innerHTML+='<div class="pcard"><div class="pcard-img ph">'+p.name+'</div><div class="pcard-body"><h4>'+p.name+'</h4><div class="pp">'+fmt(pr)+'</div><p class="pd">'+p.desc+'</p><a href="#" class="btn" onclick="go(\'about\');return false">Purchase</a></div></div>';
+g.innerHTML+='<div class="pcard"><div class="pcard-img ph">'+p.name+'</div><div class="pcard-body"><h4>'+p.name+'</h4><div class="pp">'+fmt(p.retail)+'</div><p class="pd">'+p.desc+'</p><a href="https://'+p.shop+'" target="_blank" class="btn">Add to Cart</a></div></div>';
 });
 }
 
