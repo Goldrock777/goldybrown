@@ -220,7 +220,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* Process */
 .pstep{display:grid;grid-template-columns:1fr 1fr;min-height:400px;align-items:center;border-bottom:1px solid var(--b)}
 .pstep:nth-child(even){direction:rtl}.pstep:nth-child(even)>*{direction:ltr}
-.pstep-img{height:400px}
+.pstep-img{height:400px;overflow:hidden}
+.pstep-img img{width:100%;height:100%;object-fit:cover;display:block}
 .pstep-text{padding:44px 60px}
 .pstep-num{font-family:var(--fd);font-size:12px;color:var(--gl);margin-bottom:10px;letter-spacing:3px}
 .pstep-text h3{margin-bottom:10px}
@@ -297,7 +298,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .aud-grid{grid-template-columns:repeat(2,1fr)}
 .aud-item:nth-child(2){border-right:0}.aud-item:nth-child(3),.aud-item:nth-child(4){border-top:1px solid var(--b)}.aud-item:nth-child(4){border-right:0}
 .comp{grid-template-columns:1fr;gap:20px}
-.pstep{grid-template-columns:1fr}.pstep:nth-child(even){direction:ltr}.pstep-img{height:220px}.pstep-text{padding:24px 24px}
+.pstep{grid-template-columns:1fr}.pstep:nth-child(even){direction:ltr}.pstep-img{height:220px;overflow:hidden}.pstep-text{padding:24px 24px}
 .mat-grid{grid-template-columns:repeat(2,1fr)}.mat-card:nth-child(2){border-right:0}.mat-card:nth-child(3),.mat-card:nth-child(4){border-top:1px solid var(--b)}.mat-card:nth-child(4){border-right:0}
 .about-hero{padding:84px 24px 20px}
 .about-split{grid-template-columns:1fr}.about-img{height:240px}.about-txt{padding:28px 24px}
@@ -508,12 +509,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-manufacturing">
 <div class="page-hero"><div class="slabel">Craftsmanship</div><h1>Manufacturing</h1><p class="sub">Six steps from raw hide to finished product. Each piece meticulously handmade.</p></div>
 <section>
-<div class="pstep fade-in"><div class="pstep-img ph">Raw Hides — Tannery</div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img ph">Tanning Drums</div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img ph">Pattern Cutting</div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img ph">Assembly</div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img ph">Edge Finishing</div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img ph">Hot Stamp &amp; Packaging</div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="cutting.png" alt="Pattern Cutting"></div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="assembly.png" alt="Assembly"></div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="finishing.png" alt="Finishing"></div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
+<div class="pstep fade-in"><div class="pstep-img"><img src="branding.png" alt="Branding"></div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
 </section>
 <section class="section section-border fade-in"><div style="text-align:center;margin-bottom:36px"><div class="slabel">What We Work With</div><h2>Materials</h2></div>
 <div class="mat-grid">
