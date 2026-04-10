@@ -109,8 +109,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
 
-/* ===== LOOKBOOK FLIPBOOK ===== */
-.lb-wrap{padding:88px 0 40px;display:flex;flex-direction:column;align-items:center}
+/* ===== LOOKBOOK — PDF FLIPBOOK ===== */
+.lb-wrap{padding:88px 0 40px;display:flex;flex-direction:column;align-items:center;min-height:80vh}
 .lb-header{text-align:center;margin-bottom:20px}
 .lb-header h1{font-family:var(--fd);font-size:clamp(28px,4vw,42px);color:var(--w);margin-bottom:4px}
 .lb-header .sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
@@ -122,49 +122,58 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .fp{background:#faf9f6;overflow:hidden;position:relative}
 .fp::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.006) 3px,rgba(0,0,0,.006) 4px);pointer-events:none;z-index:1}
 .fp-num{position:absolute;bottom:16px;font-family:var(--fd);font-size:10px;color:var(--tm);letter-spacing:2px;z-index:2}
-.fp:nth-child(odd) .fp-num{right:22px}
-.fp:nth-child(even) .fp-num{left:22px}
-
-/* Cover */
+.fp:nth-child(odd) .fp-num{right:22px}.fp:nth-child(even) .fp-num{left:22px}
 .fp-cover{background:#1a1a18;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px}
 .fp-cover .cv-border{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.06);pointer-events:none}
 .fp-cover h1{font-family:var(--fd);font-size:32px;font-weight:400;color:#faf9f6;letter-spacing:7px;text-transform:uppercase;line-height:1.3}
 .fp-cover h2{font-family:var(--fd);font-size:14px;font-weight:300;color:#b8a070;letter-spacing:4px;text-transform:uppercase}
 .fp-cover .cv-line{width:36px;height:1px;background:#b8a070;margin:16px auto}
-.fp-cover .cv-yr{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;margin-top:20px}
-
-/* Image page */
+.fp-cover .cv-yr{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:3px;margin-top:20px}
 .fp-img{padding:0}
 .fp-img .fi-area{width:100%;height:100%;background:#f0efec;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);position:relative;overflow:hidden}
 .fp-img .fi-area img{width:100%;height:100%;object-fit:cover}
-.fp-img .fi-cap{position:absolute;bottom:0;left:0;right:0;padding:22px 28px;background:linear-gradient(transparent,rgba(0,0,0,.55));z-index:2}
-.fp-img .fi-cap h3{font-family:var(--fd);font-size:18px;color:#fff;margin-bottom:2px}
-.fp-img .fi-cap p{font-size:11px;color:rgba(255,255,255,.65);font-weight:300}
-
-/* Text page */
-.fp-text{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
-.fp-text .ft-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--g);margin-bottom:10px;font-weight:500}
-.fp-text h2{font-family:var(--fd);font-size:24px;font-weight:400;line-height:1.3;margin-bottom:14px;color:#1a1a18}
-.fp-text p{font-size:14px;font-weight:300;line-height:1.85;color:#3a3a36;max-width:360px}
-.fp-text blockquote{font-family:var(--fd);font-size:20px;font-style:italic;line-height:1.5;color:#1a1a18;border-left:2px solid #b8a070;padding-left:20px;margin:16px 0}
-.fp-text .fd-item{padding:8px 0;border-bottom:1px solid #d8d4cc;display:flex;justify-content:space-between;font-size:13px}
-.fp-text .fd-item .dl{font-weight:500;color:#1a1a18}.fp-text .fd-item .dv{color:#8a8880;font-weight:300}
-.fp-text .fp-price{font-family:var(--fd);font-size:32px;color:var(--g);margin:12px 0 4px}
-.fp-text .fp-pnote{font-size:11px;color:#8a8880;letter-spacing:1px}
-
-/* Back cover */
 .fp-back{background:#1a1a18;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px}
 .fp-back h2{font-family:var(--fd);font-size:18px;font-weight:400;color:#faf9f6;letter-spacing:5px;text-transform:uppercase;margin-bottom:10px}
 .fp-back .bk-line{width:36px;height:1px;background:#b8a070;margin:0 auto 12px}
 .fp-back p{font-size:12px;color:rgba(255,255,255,.35);font-weight:300;letter-spacing:1px;line-height:1.8}
 .fp-back .bk-email{font-size:11px;color:#b8a070;letter-spacing:2px;margin-top:16px}
-
-/* Nav arrows */
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:1px solid var(--b);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;z-index:20;border-radius:50%}
 .lb-nav:hover{background:var(--g);border-color:var(--g);color:#fff}
 .lb-nav svg{width:16px;height:16px}
 .lb-prev{left:6px}.lb-next{right:6px}
 .lb-counter{padding:16px;text-align:center;font-size:11px;letter-spacing:3px;color:var(--tm);font-weight:300}
+
+/* ===== HOLSTER CAROUSEL ===== */
+.carousel-wrap{display:grid;grid-template-columns:80px 1fr;gap:12px;min-height:500px}
+.carousel-thumbs{display:flex;flex-direction:column;gap:8px}
+.carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
+.carousel-thumb.active{border-color:var(--g)}
+.carousel-thumb img{width:100%;height:100%;object-fit:cover}
+.carousel-main{position:relative;overflow:hidden;background:var(--bg-card)}
+.carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
+.carousel-main img.active{opacity:1;position:relative}
+.carousel-arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:1px solid var(--b);background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;transition:all .3s;z-index:5}
+.carousel-arr:hover{background:var(--g);border-color:var(--g);color:#fff}
+.carousel-arr svg{width:16px;height:16px}
+.carousel-arr.prev{left:12px}
+.carousel-arr.next{right:12px}
+
+/* ===== TIER PROGRESS BAR ===== */
+.tier-progress{margin-bottom:32px;padding:0}
+.tier-progress-labels{display:flex;justify-content:space-between;margin-bottom:6px;font-size:11px}
+.tier-progress-labels .tp-tier{color:var(--w);font-weight:400}
+.tier-progress-labels .tp-discount{color:var(--g);font-weight:500}
+.tier-progress-track{width:100%;height:8px;background:var(--bg-el);border-radius:4px;overflow:hidden;position:relative}
+.tier-progress-fill{height:100%;background:var(--g);border-radius:4px;transition:width .6s ease}
+.tier-progress-markers{display:flex;justify-content:space-between;margin-top:8px;position:relative}
+.tier-marker{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:all .3s}
+.tier-marker .tm-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--b);background:#fff;transition:all .3s;margin-bottom:4px}
+.tier-marker.active .tm-dot{border-color:var(--g);background:var(--g)}
+.tier-marker.passed .tm-dot{border-color:var(--g);background:var(--g)}
+.tier-marker .tm-amount{font-family:var(--fd);font-size:14px;color:var(--tm);transition:color .3s}
+.tier-marker.active .tm-amount,.tier-marker.passed .tm-amount{color:var(--w)}
+.tier-marker .tm-disc{font-size:9px;color:var(--tm);letter-spacing:1px}
+.tier-marker.active .tm-disc{color:var(--g)}
 
 /* ===== HOTEL ===== */
 .page-hero{padding:88px 60px 24px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
@@ -336,6 +345,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .section{padding:36px 24px}
 .home-hero{padding:84px 24px 20px}
 .holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:32px 24px}
+.carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-thumbs{flex-direction:row;order:2}.carousel-thumb{width:60px;height:60px}.carousel-main{order:1}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
 .products-hero{padding:84px 24px 20px}
@@ -423,11 +433,28 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- THE HOLSTER -->
 <div class="holster-home">
-<div class="holster-home-img"><img src="holster.png" alt="The Holster"></div>
+<div class="holster-home-img">
+<div class="carousel-wrap">
+<div class="carousel-thumbs" id="carouselThumbs">
+<div class="carousel-thumb active" onclick="showSlide(0)"><img src="holster.png" alt="On Body"></div>
+<div class="carousel-thumb" onclick="showSlide(1)"><img src="holsterback.png" alt="Front"></div>
+<div class="carousel-thumb" onclick="showSlide(2)"><img src="holsterpouch.png" alt="Pouch"></div>
+<div class="carousel-thumb" onclick="showSlide(3)"><img src="holsterclose.png" alt="Close Up"></div>
+</div>
+<div class="carousel-main" id="carouselMain">
+<img src="holster.png" alt="On Body" class="active">
+<img src="holsterback.png" alt="Front View">
+<img src="holsterpouch.png" alt="Pouch Detail">
+<img src="holsterclose.png" alt="Close Up Detail">
+<button class="carousel-arr prev" onclick="prevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+<button class="carousel-arr next" onclick="nextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
+</div>
+</div>
 <div class="holster-home-text">
-<div class="slabel">Signature Piece</div>
+<div class="slabel">Choose Leather Over Plastic</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
-<p class="desc">A concealed leather shoulder rig, designed for travellers who refuse to compromise. Hand cut from full grain calfskin, assembled with stainless steel fittings, and finished with your name engraved into the leather. Worn under a jacket, it holds your essentials against your body. Invisible to everyone else, unmistakable to you.</p>
+<p class="desc">A concealed leather shoulder rig, designed for travellers who refuse to compromise. Hand cut from top grain calfskin, assembled with precision hardware, and finished with your name engraved into the leather. Worn under a jacket, it holds your essentials against your body. Invisible to everyone else, unmistakable to you.</p>
 <ul class="detail-list">
 <li><strong>Material</strong> Full grain Italian calfskin</li>
 <li><strong>Hardware</strong> Stainless steel buckles and D rings</li>
@@ -496,55 +523,19 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="lb-flip-wrap">
 <button class="lb-nav lb-prev" onclick="if(window.LB)LB.flipPrev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <div id="lookbookFlip">
-
 <!-- COVER -->
-<div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Collection</h2><div class="cv-yr">2025 &mdash; 2026</div></div>
-
-<!-- 1 INTRO -->
-<div class="fp fp-text"><div class="ft-label">The Philosophy</div><h2>Quietly Made,<br>Built to Last</h2><p>Every piece in this collection begins with top grain leather, sourced from vetted tanneries, and is finished entirely by hand in our Vancouver workshop.</p><p style="margin-top:10px">No plated hardware. No bonded leather. No shortcuts.</p><span class="fp-num">1</span></div>
-
-<!-- 2 HOLSTER -->
-<div class="fp fp-img"><div class="fi-area"><img src="holster.png" alt="The Holster"><div class="fi-cap"><h3>The Holster</h3><p>Forest green suede, stainless steel fittings</p></div></div><span class="fp-num">2</span></div>
-
-<!-- 3 HOLSTER DETAILS -->
-<div class="fp fp-text"><div class="ft-label">Signature Piece</div><h2>The Holster</h2><p>A concealed leather shoulder rig. Worn under a jacket, invisible to everyone else, unmistakable to you.</p><div class="fd-item"><span class="dl">Material</span><span class="dv">Top grain calfskin</span></div><div class="fd-item"><span class="dl">Hardware</span><span class="dv">Stainless steel</span></div><div class="fd-item"><span class="dl">Stitching</span><span class="dv">Waxed polyester, saddle stitched</span></div><div class="fd-item"><span class="dl">Engraving</span><span class="dv">Custom name, laser engraved</span></div><div class="fp-price">$249</div><div class="fp-pnote">Free shipping on orders over $200</div><span class="fp-num">3</span></div>
-
-<!-- 4 LUGGAGE TAG -->
-<div class="fp fp-img"><div class="fi-area"><img src="luggagetag.png" alt="Luggage Tag"><div class="fi-cap"><h3>Luggage Tag</h3><p>$30 &mdash; Full grain calfskin</p></div></div><span class="fp-num">4</span></div>
-
-<!-- 5 PASSPORT -->
-<div class="fp fp-img"><div class="fi-area"><img src="passport.png" alt="Passport Holder"><div class="fi-cap"><h3>Passport Holder</h3><p>$60 &mdash; Fits all international passports</p></div></div><span class="fp-num">5</span></div>
-
-<!-- 6 CARD HOLDER -->
-<div class="fp fp-img"><div class="fi-area"><img src="cardholder.png" alt="Card Holder"><div class="fi-cap"><h3>Card Holder</h3><p>$60 &mdash; Six slot bifold</p></div></div><span class="fp-num">6</span></div>
-
-<!-- 7 QUOTE -->
-<div class="fp fp-text"><blockquote>"Security that gets photographed. Craftsmanship that gets remembered."</blockquote><p style="font-size:12px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-top:12px">&mdash; Goldy Brown</p><span class="fp-num">7</span></div>
-
-<!-- 8 CIGAR -->
-<div class="fp fp-img"><div class="fi-area"><img src="cigar.png" alt="Cigar Case"><div class="fi-cap"><h3>Cigar Case</h3><p>$200 &mdash; Cedar lined, three finger</p></div></div><span class="fp-num">8</span></div>
-
-<!-- 9 TIE CASE -->
-<div class="fp fp-img"><div class="fi-area"><img src="suitholder.png" alt="Tie Case"><div class="fi-cap"><h3>Tie Case</h3><p>$100 &mdash; Roll style, fits two ties</p></div></div><span class="fp-num">9</span></div>
-
-<!-- 10 CLUTCH -->
-<div class="fp fp-img"><div class="fi-area"><img src="briefcase.png" alt="Clutch"><div class="fi-cap"><h3>Clutch</h3><p>$150 &mdash; Envelope style, magnetic closure</p></div></div><span class="fp-num">10</span></div>
-
-<!-- 11 LEATHER CASE -->
-<div class="fp fp-img"><div class="fi-area"><img src="leathercase.png" alt="Leather Case"><div class="fi-cap"><h3>The Collection</h3><p>Handcrafted to order in Vancouver</p></div></div><span class="fp-num">11</span></div>
-
-<!-- 12 HOTEL -->
-<div class="fp fp-text"><div class="ft-label">For Hotels</div><h2>The Hotel Programme</h2><p>Curated leather gift kits for VIP guests. We work with 4 and 5 star hotels worldwide.</p><div style="margin-top:16px"><div class="fd-item"><span class="dl">$10K Tier</span><span class="dv">Standard pricing</span></div><div class="fd-item"><span class="dl">$25K Tier</span><span class="dv">6% discount</span></div><div class="fd-item"><span class="dl">$50K Tier</span><span class="dv">12% discount</span></div><div class="fd-item"><span class="dl">$100K Tier</span><span class="dv">20% discount</span></div></div><span class="fp-num">12</span></div>
-
-<!-- 13 COFFEE CABINET -->
-<div class="fp fp-img"><div class="fi-area"><img src="coffeecabinet.png" alt="Coffee Cabinet"><div class="fi-cap"><h3>Coffee Cabinet</h3><p>From $350 &mdash; Hotel property item</p></div></div><span class="fp-num">13</span></div>
-
-<!-- 14 DOOR TAG -->
-<div class="fp fp-img"><div class="fi-area"><img src="doortag.png" alt="Door Tag"><div class="fi-cap"><h3>Door Tag</h3><p>From $10 &mdash; Hotel property item</p></div></div><span class="fp-num">14</span></div>
-
+<div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Lookbook</h2><div class="cv-yr">2025 &mdash; 2026</div></div>
+<!-- PAGES — Replace these with your PDF page images: lookbook-1.jpg, lookbook-2.jpg, etc -->
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 1</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 2</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 3</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 4</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 5</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 6</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 7</div></div>
+<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 8</div></div>
 <!-- BACK COVER -->
-<div class="fp fp-back"><h2>Goldy Brown</h2><div class="bk-line"></div><p>Handcrafted in Vancouver, Canada</p><p style="margin-top:6px">Top grain leather &middot; Precision hardware</p><div class="bk-email" id="lbEmail"></div><p style="margin-top:4px;font-size:10px;color:rgba(255,255,255,.25)">1-604-794-0937</p></div>
-
+<div class="fp fp-back"><h2>Goldy Brown</h2><div class="bk-line"></div><p>Handcrafted in Vancouver, Canada</p><div class="bk-email" id="lbEmail"></div></div>
 </div>
 <button class="lb-nav lb-next" onclick="if(window.LB)LB.flipNext()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
 </div>
@@ -564,12 +555,21 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="step-arr"><svg viewBox="0 0 32 32" fill="none"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="#3a7a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 <div class="step-h"><div class="step-h-n">3</div><h3>We Handle the Rest</h3><p>Branding, packaging, delivery</p></div>
 </div>
-<div class="slabel">Select Your Tier</div>
-<div class="tier-sel" style="margin-bottom:44px" id="tierSel">
-<div class="tier-b active" onclick="selTier(0)"><div class="ta">$10K</div><div class="td">0% discount</div></div>
-<div class="tier-b" onclick="selTier(1)"><div class="ta">$25K</div><div class="td">6% off</div></div>
-<div class="tier-b" onclick="selTier(2)"><div class="ta">$50K</div><div class="td">12% off</div></div>
-<div class="tier-b" onclick="selTier(3)"><div class="ta">$100K</div><div class="td">20% off</div></div>
+<div class="slabel">Select Your Budget</div>
+<div class="tier-progress" id="tierProgress">
+<div class="tier-progress-labels">
+<span class="tp-tier" id="tpTier">$10K Budget</span>
+<span class="tp-discount" id="tpDisc">0% Discount</span>
+</div>
+<div class="tier-progress-track">
+<div class="tier-progress-fill" id="tpFill" style="width:25%"></div>
+</div>
+<div class="tier-progress-markers">
+<div class="tier-marker active" onclick="selTier(0)"><div class="tm-dot"></div><div class="tm-amount">$10K</div><div class="tm-disc">0% off</div></div>
+<div class="tier-marker" onclick="selTier(1)"><div class="tm-dot"></div><div class="tm-amount">$25K</div><div class="tm-disc">6% off</div></div>
+<div class="tier-marker" onclick="selTier(2)"><div class="tm-dot"></div><div class="tm-amount">$50K</div><div class="tm-disc">12% off</div></div>
+<div class="tier-marker" onclick="selTier(3)"><div class="tm-dot"></div><div class="tm-amount">$100K</div><div class="tm-disc">20% off</div></div>
+</div>
 </div>
 <div class="slabel">Build Your Kit</div>
 <h2 style="margin-bottom:6px">Guest Kit Items</h2>
@@ -727,6 +727,19 @@ var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},
 var cT=0;
 function fmt(n){return '$'+n.toLocaleString('en-US')}
 
+// HOLSTER CAROUSEL
+var curSlide=0;
+function showSlide(n){
+  var imgs=document.querySelectorAll('#carouselMain img');
+  var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');
+  if(!imgs.length)return;
+  curSlide=((n%imgs.length)+imgs.length)%imgs.length;
+  imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});
+  thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)});
+}
+function nextSlide(){showSlide(curSlide+1)}
+function prevSlide(){showSlide(curSlide-1)}
+
 // Products page is hardcoded
 
 // Kit builder
@@ -740,7 +753,22 @@ g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">I
 });
 }
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
-function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
+function selTier(t){
+  cT=t;
+  // Update progress bar
+  var fills=[25,50,75,100];
+  var labels=['$10K Budget','$25K Budget','$50K Budget','$100K Budget'];
+  var discs=['0% Discount','6% Discount','12% Discount','20% Discount'];
+  document.getElementById('tpFill').style.width=fills[t]+'%';
+  document.getElementById('tpTier').textContent=labels[t];
+  document.getElementById('tpDisc').textContent=discs[t];
+  document.querySelectorAll('.tier-marker').forEach(function(m,i){
+    m.classList.remove('active','passed');
+    if(i===t)m.classList.add('active');
+    if(i<t)m.classList.add('passed');
+  });
+  renderCat();updBudget();
+}
 
 function updBudget(){
 var tier=T[cT],total=0,count=0;
