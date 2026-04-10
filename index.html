@@ -17,8 +17,6 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--g);color:#fff}
-
-/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--b)}
 .nav-top{padding:16px 60px;text-align:center;position:relative;border-bottom:1px solid var(--b)}
 .nav-logo{font-family:var(--fd);font-size:20px;font-weight:500;letter-spacing:6px;text-transform:uppercase;cursor:pointer;color:var(--w);display:inline-block}
@@ -34,7 +32,6 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .mob-menu.open{display:flex}
 .mob-menu a{font-family:var(--fd);font-size:24px;text-decoration:none;color:var(--w)}
-
 .page{display:none}.page.active{display:block}
 .section{padding:56px 60px;max-width:1400px;margin:0 auto}
 .section-border{border-top:1px solid var(--b)}
@@ -50,40 +47,33 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ph{background:#f0efec;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);text-align:center;padding:20px;position:relative;overflow:hidden}
 .ph::before{content:'';position:absolute;inset:14px;border:1px solid var(--b);pointer-events:none}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* ===== HOME ===== */
-.home-hero{padding:76px 60px 12px;text-align:center}
-.home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:6px;letter-spacing:-1px}
+.home-hero{padding:76px 60px 4px;text-align:center}
+.home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
-
-/* Holster Feature */
-.holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:center;border-top:1px solid var(--b)}
+.holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:start;border-top:1px solid var(--b)}
 .holster-home-img{min-height:400px;overflow:hidden;background:var(--bg-card)}
 .holster-home-img img{width:100%;height:100%;object-fit:contain}
-.holster-home-text{padding:36px 48px}
-.holster-home-text .slabel{margin-bottom:8px}
+.holster-home-text{padding:16px 48px 36px}
+.holster-home-text .slabel{margin-bottom:6px}
 .holster-home-text h2{font-size:clamp(30px,3.5vw,44px);margin-bottom:4px}
 .holster-home-text h2 span{color:var(--gl)}
-.holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:14px 0 4px}
-.holster-home-text .price-note{font-size:11px;color:var(--tm);margin-bottom:18px}
-.holster-home-text .desc{font-size:14px;font-weight:200;color:var(--td);line-height:1.85;max-width:400px;margin-bottom:18px}
-.holster-home-text .detail-list{list-style:none;margin-bottom:18px}
-.holster-home-text .detail-list li{font-size:12.5px;color:var(--td);font-weight:200;padding:5px 0;border-bottom:1px solid var(--b)}
+.holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:12px 0 3px}
+.holster-home-text .price-note{font-size:11px;color:var(--tm);margin-bottom:14px}
+.holster-home-text .desc{font-size:14px;font-weight:200;color:var(--td);line-height:1.85;max-width:400px;margin-bottom:14px}
+.holster-home-text .detail-list{list-style:none;margin-bottom:14px}
+.holster-home-text .detail-list li{font-size:12.5px;color:var(--td);font-weight:200;padding:4px 0;border-bottom:1px solid var(--b)}
 .holster-home-text .detail-list li strong{color:var(--w);font-weight:400}
 .holster-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}
 .holster-gallery-img{height:320px;overflow:hidden;background:var(--bg-card)}
 .holster-gallery-img img{width:100%;height:100%;object-fit:cover}
-.holster-variants{display:flex;gap:20px;margin-top:24px}
+.holster-variants{display:flex;gap:20px;margin-top:20px}
 .hv{text-align:center}
 .hv-swatch{width:44px;height:44px;border-radius:50%;border:2px solid var(--b);margin:0 auto 6px;transition:border-color .3s;cursor:pointer}
 .hv-swatch:hover{border-color:var(--gl)}
 .hv-swatch.green{background:#3a5a3a}
 .hv-swatch.nude{background:#c4a882}
 .hv-swatch.black{background:#1a1a1a}
-.hv-swatch.black{background:#1a1a1a}
 .hv-label{font-size:10px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
-
-/* Section Cards */
 .section-cards{display:grid;grid-template-columns:1fr 1fr;gap:3px}
 .section-card{position:relative;cursor:pointer;overflow:hidden;transition:opacity .3s}
 .section-card:hover{opacity:.85}
@@ -94,8 +84,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .section-card .sc-desc{font-size:12px;color:#ccc;font-weight:200;max-width:300px;line-height:1.5}
 .section-card-wide{grid-column:1/-1}
 .section-card-wide .sc-img{height:240px}
-
-/* ===== PRODUCTS ===== */
 .products-hero{padding:96px 60px 36px;text-align:center;max-width:1400px;margin:0 auto}
 .products-hero h1{margin-bottom:8px}
 .products-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:460px;margin:0 auto 28px;line-height:1.8}
@@ -108,8 +96,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
-
-/* ===== LOOKBOOK — PDF FLIPBOOK ===== */
 .lb-wrap{padding:88px 0 40px;display:flex;flex-direction:column;align-items:center;min-height:80vh}
 .lb-header{text-align:center;margin-bottom:20px}
 .lb-header h1{font-family:var(--fd);font-size:clamp(28px,4vw,42px);color:var(--w);margin-bottom:4px}
@@ -117,8 +103,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-hint{font-size:10px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
 .lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 56px;width:100%;max-width:1060px}
-.lb-flip-container{box-shadow:0 2px 20px rgba(0,0,0,.06),0 8px 40px rgba(0,0,0,.03);position:relative}
-.lb-flip-container::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:36px;height:100%;background:linear-gradient(90deg,rgba(0,0,0,.04) 0%,transparent 35%,transparent 65%,rgba(0,0,0,.04) 100%);pointer-events:none;z-index:10}
 .fp{background:#faf9f6;overflow:hidden;position:relative}
 .fp::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.006) 3px,rgba(0,0,0,.006) 4px);pointer-events:none;z-index:1}
 .fp-num{position:absolute;bottom:16px;font-family:var(--fd);font-size:10px;color:var(--tm);letter-spacing:2px;z-index:2}
@@ -142,8 +126,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-nav svg{width:16px;height:16px}
 .lb-prev{left:6px}.lb-next{right:6px}
 .lb-counter{padding:16px;text-align:center;font-size:11px;letter-spacing:3px;color:var(--tm);font-weight:300}
-
-/* ===== HOLSTER CAROUSEL ===== */
 .carousel-wrap{display:grid;grid-template-columns:80px 1fr;gap:12px;min-height:500px}
 .carousel-thumbs{display:flex;flex-direction:column;gap:8px}
 .carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
@@ -157,25 +139,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-arr svg{width:16px;height:16px}
 .carousel-arr.prev{left:12px}
 .carousel-arr.next{right:12px}
-
-/* ===== TIER PROGRESS BAR ===== */
-.tier-progress{margin-bottom:32px;padding:0}
+.tier-progress{margin-bottom:32px}
 .tier-progress-labels{display:flex;justify-content:space-between;margin-bottom:6px;font-size:11px}
 .tier-progress-labels .tp-tier{color:var(--w);font-weight:400}
 .tier-progress-labels .tp-discount{color:var(--g);font-weight:500}
-.tier-progress-track{width:100%;height:8px;background:var(--bg-el);border-radius:4px;overflow:hidden;position:relative}
+.tier-progress-track{width:100%;height:8px;background:var(--bg-el);border-radius:4px;overflow:hidden}
 .tier-progress-fill{height:100%;background:var(--g);border-radius:4px;transition:width .6s ease}
-.tier-progress-markers{display:flex;justify-content:space-between;margin-top:8px;position:relative}
+.tier-progress-markers{display:flex;justify-content:space-between;margin-top:8px}
 .tier-marker{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:all .3s}
 .tier-marker .tm-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--b);background:#fff;transition:all .3s;margin-bottom:4px}
-.tier-marker.active .tm-dot{border-color:var(--g);background:var(--g)}
-.tier-marker.passed .tm-dot{border-color:var(--g);background:var(--g)}
+.tier-marker.active .tm-dot,.tier-marker.passed .tm-dot{border-color:var(--g);background:var(--g)}
 .tier-marker .tm-amount{font-family:var(--fd);font-size:14px;color:var(--tm);transition:color .3s}
 .tier-marker.active .tm-amount,.tier-marker.passed .tm-amount{color:var(--w)}
 .tier-marker .tm-disc{font-size:9px;color:var(--tm);letter-spacing:1px}
 .tier-marker.active .tm-disc{color:var(--g)}
-
-/* ===== HOTEL ===== */
 .page-hero{padding:88px 60px 24px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
 .page-hero h1{margin-bottom:8px}
 .page-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:480px;line-height:1.8}
@@ -186,14 +163,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .step-h p{font-size:11.5px;color:var(--td);font-weight:200;line-height:1.6}
 .step-arr{display:flex;align-items:center;justify-content:center;width:44px;flex-shrink:0}
 .step-arr svg{width:22px;height:22px}
-.tier-sel{display:flex;border:1px solid var(--b);overflow:hidden}
-.tier-b{flex:1;text-align:center;padding:18px 12px;cursor:pointer;border-right:1px solid var(--b);transition:all .3s;background:var(--bg-card);position:relative}
-.tier-b:last-child{border-right:0}
-.tier-b:hover{background:var(--gg)}
-.tier-b.active{background:var(--gm)}
-.tier-b.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gl)}
-.tier-b .ta{font-family:var(--fd);font-size:20px;color:var(--w);margin-bottom:2px}
-.tier-b .td{font-size:11px;color:var(--gl);font-weight:400}
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px}
 .ccard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:border-color .3s;position:relative}
 .ccard.in-cart{border-color:var(--g)}
@@ -210,8 +179,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .qb:hover{background:var(--g);color:#fff}
 .qb.dis{opacity:.2;cursor:not-allowed;pointer-events:none}
 .qd{width:34px;height:30px;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:400;color:var(--w);background:var(--bg);border-left:1px solid var(--b);border-right:1px solid var(--b)}
-
-/* Budget bar */
 .bbar{position:sticky;bottom:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--b);padding:11px 60px;transition:transform .3s}
 .bbar.empty{transform:translateY(100%)}
 .bbar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:18px}
@@ -226,8 +193,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .bb .ct{color:var(--gl);font-weight:500}
 .bb-f{background:var(--g);border-color:var(--g);color:#fff}
 .bb-f:hover{background:var(--gb)}
-
-/* Cart drawer */
 .cart-ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.35);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
 .cart-ov.open{opacity:1;pointer-events:all}
 .cart-dr{position:fixed;top:0;right:-420px;bottom:0;width:400px;background:#fff;border-left:1px solid var(--b);z-index:1200;transition:right .35s;display:flex;flex-direction:column}
@@ -251,8 +216,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .cr.big{font-size:14px;margin-top:7px;padding-top:7px;border-top:1px solid var(--b)}.cr.big .l{font-family:var(--fd);color:var(--w)}.cr.big .v{font-family:var(--fd);font-size:16px}
 .cart-iq{width:100%;padding:12px;margin-top:12px;background:var(--g);border:1px solid var(--g);color:#fff;font-family:var(--fb);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s}
 .cart-iq:hover{background:var(--gb)}
-
-/* Audience */
 .aud-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b)}
 .aud-item{padding:36px 18px;text-align:center;border-right:1px solid var(--b);transition:background .3s}
 .aud-item:last-child{border-right:0}
@@ -260,22 +223,16 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .aud-ico{width:40px;height:40px;margin:0 auto 10px;border:1px solid var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gl)}
 .aud-item h4{margin-bottom:4px;font-size:13px}
 .aud-item p{font-size:11px;color:var(--tm);font-weight:200}
-
-/* Comparison */
 .comp{display:grid;grid-template-columns:1fr 1fr;gap:50px}
 .comp-stat{padding:16px 0;border-bottom:1px solid var(--b)}
 .comp-stat .cv{font-family:var(--fd);font-size:28px;margin-bottom:3px}
 .comp-stat .cv.good{color:var(--gl)}.comp-stat .cv.bad{color:var(--tm)}
 .comp-stat .cl{font-size:12px;color:var(--td);font-weight:200}
-
-/* Property */
 .prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .prop-item{text-align:center;padding:20px 8px;border:1px solid var(--b);background:var(--bg-card);transition:border-color .3s}
 .prop-item:hover{border-color:var(--g)}
 .prop-item h4{font-size:12px;margin-bottom:3px}
 .prop-item .price{font-size:12px;color:var(--gl);font-weight:300}
-
-/* Process */
 .pstep{display:grid;grid-template-columns:1fr 1fr;min-height:400px;align-items:center;border-bottom:1px solid var(--b)}
 .pstep:nth-child(even){direction:rtl}.pstep:nth-child(even)>*{direction:ltr}
 .pstep-img{height:400px;overflow:hidden}
@@ -284,15 +241,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pstep-num{font-family:var(--fd);font-size:14px;color:var(--gl);margin-bottom:12px;letter-spacing:3px}
 .pstep-text h3{margin-bottom:12px;font-size:clamp(24px,3vw,32px)}
 .pstep-text p{color:var(--td);font-weight:200;line-height:1.85;max-width:400px;font-size:15.5px}
-
 .mat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b)}
 .mat-card{padding:32px 20px;border-right:1px solid var(--b);transition:background .3s}
 .mat-card:last-child{border-right:0}
 .mat-card:hover{background:var(--gg)}
 .mat-card h4{font-size:14px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--b)}
 .mat-card p{font-size:11.5px;color:var(--td);font-weight:200;line-height:1.8}
-
-/* About */
 .about-hero{padding:96px 60px 36px;text-align:center}
 .about-hero h1{margin-bottom:12px}
 .about-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:560px;margin:0 auto;line-height:1.85}
@@ -306,8 +260,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .about-val:last-child{border-right:0}
 .about-val h4{margin-bottom:5px;font-size:14px}
 .about-val p{font-size:11.5px;color:var(--tm);font-weight:200}
-
-/* Contact */
 .contact-s{display:grid;grid-template-columns:1fr 1fr}
 .contact-l{padding:48px 52px;display:flex;flex-direction:column;justify-content:center}
 .contact-l h2{margin-bottom:8px}
@@ -324,27 +276,22 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .fg textarea{resize:vertical;min-height:56px}
 .fg select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a5850' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center}
 .fg select option{background:var(--bg);color:var(--t)}
-
 .footer{border-top:1px solid var(--b);padding:44px 60px;text-align:center}
 .footer-logo{font-family:var(--fd);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;color:var(--w)}
 .footer-links{list-style:none;display:flex;gap:22px;justify-content:center;margin-bottom:12px}
 .footer-links a{font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--tm);transition:color .3s}
 .footer-links a:hover{color:var(--gl)}
 .footer-copy{font-size:10px;color:var(--tm);font-weight:200}
-
-/* Pricing */
 .ptable{max-width:620px;margin:0 auto;border:1px solid var(--b);overflow:hidden}
 .prow{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid var(--b);font-size:13px;font-weight:300}
 .prow:last-child{border-bottom:0}
 .prow.hdr{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;background:var(--bg-card)}
 .prow .disc{color:var(--gl);font-weight:400}
-
-/* RESPONSIVE */
 @media(max-width:1024px){
 .nav-top{padding:10px 24px 0}.nav-tabs{flex-wrap:wrap}.nav-tab{padding:8px 8px;font-size:8px;letter-spacing:1.5px}
 .section{padding:36px 24px}
-.home-hero{padding:84px 24px 20px}
-.holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:32px 24px}
+.home-hero{padding:84px 24px 8px}
+.holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:16px 24px 28px}
 .carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-thumbs{flex-direction:row;order:2}.carousel-thumb{width:60px;height:60px}.carousel-main{order:1}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
@@ -353,7 +300,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-wrap{padding:80px 0 28px}.lb-flip-wrap{padding:0 20px}.lb-nav{width:34px;height:34px}.lb-prev{left:2px}.lb-next{right:2px}
 .page-hero{padding:84px 24px 20px}
 .steps-h{flex-direction:column}.step-arr{width:auto;height:24px;transform:rotate(90deg)}
-.tier-sel{flex-direction:column}.tier-b{border-right:0;border-bottom:1px solid var(--b)}.tier-b:last-child{border-bottom:0}
 .aud-grid{grid-template-columns:repeat(2,1fr)}
 .aud-item:nth-child(2){border-right:0}.aud-item:nth-child(3),.aud-item:nth-child(4){border-top:1px solid var(--b)}.aud-item:nth-child(4){border-right:0}
 .comp{grid-template-columns:1fr;gap:20px}
@@ -372,13 +318,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .nav-tab{padding:9px 12px;font-size:8px;letter-spacing:1.5px;flex-shrink:0}
 .mob-toggle{display:none!important}
 .section{padding:28px 16px}
-.home-hero{padding:72px 16px 16px}
+.home-hero{padding:72px 16px 8px}
 .product-grid{grid-template-columns:repeat(2,1fr);gap:8px}.pcard-img{height:160px}
 .cat-grid{grid-template-columns:repeat(2,1fr);gap:6px}
-.lb-flip-wrap{padding:0 12px}.fp-text{padding:24px}.fp-text h2{font-size:20px}.fp-cover h1{font-size:24px}
+.lb-flip-wrap{padding:0 12px}
 .aud-grid{grid-template-columns:1fr}.aud-item{border-right:0!important;border-bottom:1px solid var(--b)}.aud-item:last-child{border-bottom:0}
 .mat-grid{grid-template-columns:1fr}.mat-card{border-right:0!important;border-bottom:1px solid var(--b)}.mat-card:last-child{border-bottom:0}
-.holster-home-text{padding:28px 16px}
+.holster-home-text{padding:12px 16px 24px}
 .section-card .sc-img{height:180px}
 }
 </style>
@@ -406,7 +352,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="#" onclick="go('about');closeMob()">About Us</a>
 </div>
 
-<!-- Cart -->
 <div class="cart-ov" id="cartOv" onclick="closeCart()"></div>
 <div class="cart-dr" id="cartDr">
 <div class="cart-hd"><h3>Your Kit</h3><button class="cart-x" onclick="closeCart()">&times;</button></div>
@@ -421,7 +366,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 
-
 <!-- ======================== HOME ======================== -->
 <div class="page active" id="page-home">
 
@@ -431,7 +375,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p class="sub">We work with top grain leather and precision hardware to create pieces that age beautifully and last a lifetime. Designed for those who appreciate quiet craftsmanship over loud branding.</p>
 </section>
 
-<!-- THE HOLSTER -->
 <div class="holster-home">
 <div class="holster-home-img">
 <div class="carousel-wrap">
@@ -452,67 +395,36 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div class="holster-home-text">
+<div class="slabel">Choose Leather Over Plastic</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
-<p class="desc">A concealed leather shoulder rig, designed for individuals who refuse to compromise. Hand cut from full grain calfskin, assembled with quality hardware. Worn under a jacket, it holds your essentials against your body giving you piece of mind when you're going outside. </p>
+<p class="desc">A concealed leather shoulder rig, designed for individuals who refuse to compromise. Hand cut from full grain calfskin, assembled with quality hardware. Worn under a jacket, it holds your essentials against your body giving you piece of mind when you're going outside.</p>
 <ul class="detail-list">
-<li><strong>Material</strong> Full grain calfskin</li>
+<li id="materialLine"><strong>Material</strong> Full grain suede</li>
 <li><strong>Hardware</strong> Stainless steel hardware</li>
-<li><strong>Stitching</strong> Machine stitched with premium nylon thread </li>
-<li><strong>Finishing</strong> Edge finished to precision </li>
+<li><strong>Stitching</strong> Machine stitched with premium nylon thread</li>
+<li><strong>Finishing</strong> Edge finished to precision</li>
 <li><strong>Fits</strong> Adjustable shoulder straps, one size</li>
 </ul>
 <div class="price">$249 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping on all orders</div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <a href="https://YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster" target="_blank" class="btn btn-f">Add to Cart</a>
-<a href="#" class="btn" onclick="go('lookbook');return false">See It Worn</a>
+<a href="https://YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster" target="_blank" class="btn">Buy Now</a>
 </div>
 <div class="holster-variants">
-<div class="hv"><div class="hv-swatch green"></div><div class="hv-label">Green</div></div>
-<div class="hv"><div class="hv-swatch black"></div><div class="hv-label">Black</div></div>
+<div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
+<div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack"></div><div class="hv-label">Black</div></div>
 </div>
 </div>
 </div>
 
-<!-- TWO VARIANTS -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:3px">
-<div class="pcard">
-<div class="pcard-img" style="height:360px;background:var(--bg-card);overflow:hidden"><img src="holster.png" alt="Green Holster" style="width:100%;height:100%;object-fit:contain;padding:12px"></div>
-<div class="pcard-body">
-<h4>The Holster — Green</h4>
-<div class="pp">$249</div>
-<p class="pd">Forest green suede. Adjustable straps. Custom engraving included.</p>
-<a href="https://YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster-green" target="_blank" class="btn">Add to Cart</a>
-</div>
-</div>
-<div class="pcard">
-<div class="pcard-img ph" style="height:360px">Black Holster</div>
-<div class="pcard-body">
-<h4>The Holster — Black</h4>
-<div class="pp">$249</div>
-<p class="pd">Full black calfskin. Adjustable straps. Custom engraving included.</p>
-<a href="https://YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster-black" target="_blank" class="btn">Add to Cart</a>
-</div>
-</div>
-</div>
-
-<!-- HOLSTER GALLERY — 3 MORE ANGLES -->
-<div class="holster-gallery">
-<div class="holster-gallery-img ph">Holster — Side View</div>
-<div class="holster-gallery-img ph">Holster — Back Detail</div>
-<div class="holster-gallery-img ph">Holster — Hardware Close Up</div>
-</div>
-
-<!-- SECTION CARDS -->
 <div class="section-cards">
 <div class="section-card" onclick="go('lookbook')"><div class="sc-img" style="background:url(briefcase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecabinet.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
 <div class="section-card" onclick="go('about')"><div class="sc-img" style="background:url(suitholder.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
 </div>
-
 </div>
-
 
 <!-- ======================== LOOKBOOK ======================== -->
 <div class="page" id="page-lookbook">
@@ -522,9 +434,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="lb-flip-wrap">
 <button class="lb-nav lb-prev" onclick="if(window.LB)LB.flipPrev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <div id="lookbookFlip">
-<!-- COVER -->
 <div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Lookbook</h2><div class="cv-yr">2025 &mdash; 2026</div></div>
-<!-- PAGES — Replace these with your PDF page images: lookbook-1.jpg, lookbook-2.jpg, etc -->
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 1</div></div>
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 2</div></div>
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 3</div></div>
@@ -533,7 +443,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 6</div></div>
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 7</div></div>
 <div class="fp fp-img"><div class="fi-area ph">Lookbook Page 8</div></div>
-<!-- BACK COVER -->
 <div class="fp fp-back"><h2>Goldy Brown</h2><div class="bk-line"></div><p>Handcrafted in Vancouver, Canada</p><div class="bk-email" id="lbEmail"></div></div>
 </div>
 <button class="lb-nav lb-next" onclick="if(window.LB)LB.flipNext()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -541,7 +450,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="lb-counter" id="lbCounter">Cover</div>
 </div>
 </div>
-
 
 <!-- ======================== HOTEL PROGRAMME ======================== -->
 <div class="page" id="page-hotel">
@@ -556,13 +464,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <div class="slabel">Select Your Budget</div>
 <div class="tier-progress" id="tierProgress">
-<div class="tier-progress-labels">
-<span class="tp-tier" id="tpTier">$10K Budget</span>
-<span class="tp-discount" id="tpDisc">0% Discount</span>
-</div>
-<div class="tier-progress-track">
-<div class="tier-progress-fill" id="tpFill" style="width:25%"></div>
-</div>
+<div class="tier-progress-labels"><span class="tp-tier" id="tpTier">$10K Budget</span><span class="tp-discount" id="tpDisc">0% Discount</span></div>
+<div class="tier-progress-track"><div class="tier-progress-fill" id="tpFill" style="width:25%"></div></div>
 <div class="tier-progress-markers">
 <div class="tier-marker active" onclick="selTier(0)"><div class="tm-dot"></div><div class="tm-amount">$10K</div><div class="tm-disc">0% off</div></div>
 <div class="tier-marker" onclick="selTier(1)"><div class="tm-dot"></div><div class="tm-amount">$25K</div><div class="tm-disc">6% off</div></div>
@@ -605,7 +508,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 </div>
 
-
 <!-- ======================== MANUFACTURING ======================== -->
 <div class="page" id="page-manufacturing">
 <div class="page-hero"><div class="slabel">Craftsmanship</div><h1>Manufacturing</h1><p class="sub">Six steps from raw hide to finished product. Each piece meticulously handmade.</p></div>
@@ -626,7 +528,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </section>
 </div>
-
 
 <!-- ======================== ABOUT US ======================== -->
 <div class="page" id="page-about">
@@ -668,7 +569,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="footer-copy">&copy; 2025 Goldy Brown. All rights reserved.</div>
 </footer>
 
-<!-- Budget Bar -->
 <div class="bbar empty" id="bbar">
 <div class="bbar-inner">
 <div class="bbar-prog"><div class="bbar-labels"><span class="sp" id="bSp">$0 spent</span><span class="rm" id="bRm">$10,000 remaining</span></div><div class="bbar-track"><div class="bbar-fill" id="bFill" style="width:0%"></div></div></div>
@@ -679,33 +579,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/page-flip/2.0.7/js/page-flip.browser.js"></script>
 <script>
-// LOOKBOOK FLIPBOOK
 var LB;
 function initLookbook(){
-  var c=document.getElementById('lookbookFlip');
-  if(!c)return;
-  var w=Math.min(window.innerWidth-120,1000);
-  var pw=Math.floor(w/2),ph=Math.floor(pw*1.35);
+  var c=document.getElementById('lookbookFlip');if(!c)return;
+  var w=Math.min(window.innerWidth-120,1000),pw=Math.floor(w/2),ph=Math.floor(pw*1.35);
   if(window.innerWidth<600){pw=window.innerWidth-40;ph=Math.floor(pw*1.45)}
   LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.25,mobileScrollSupport:true,useMouseEvents:true,flippingTime:700,drawShadow:true,startPage:0,autoSize:true});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
-  LB.on('flip',function(e){
-    var total=document.querySelectorAll('#lookbookFlip .fp').length;
-    var el=document.getElementById('lbCounter');
-    if(e.data===0)el.textContent='Cover';
-    else if(e.data>=total-1)el.textContent='Back Cover';
-    else el.textContent=e.data+' / '+(total-2);
-  });
-  // Back cover email
-  var em='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';
-  var lbe=document.getElementById('lbEmail');
-  if(lbe)lbe.textContent=em;
+  LB.on('flip',function(e){var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);});
+  var em='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var lbe=document.getElementById('lbEmail');if(lbe)lbe.textContent=em;
 }
-document.addEventListener('keydown',function(e){
-  if(!LB)return;
-  if(e.key==='ArrowRight'||e.key===' '){LB.flipNext();e.preventDefault()}
-  if(e.key==='ArrowLeft'){LB.flipPrev();e.preventDefault()}
-});
+document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowRight'||e.key===' '){LB.flipNext();e.preventDefault()}if(e.key==='ArrowLeft'){LB.flipPrev();e.preventDefault()}});
 </script>
 <script>
 var P=[
@@ -725,105 +609,66 @@ var P=[
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
 var cT=0;
 function fmt(n){return '$'+n.toLocaleString('en-US')}
-
-// HOLSTER CAROUSEL
 var curSlide=0;
-function showSlide(n){
-  var imgs=document.querySelectorAll('#carouselMain img');
-  var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');
-  if(!imgs.length)return;
-  curSlide=((n%imgs.length)+imgs.length)%imgs.length;
-  imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});
-  thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)});
+var colorSets={
+  green:{
+    imgs:['holster.png','holsterback.png','holsterpouch.png','holsterclose.png'],
+    material:'Full grain suede',
+    shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster-green'
+  },
+  black:{
+    imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png'],
+    material:'Full grain calfskin',
+    shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster-black'
+  }
+};
+var curColor='green';
+function switchColor(color){
+  curColor=color;
+  var set=colorSets[color];
+  // Update carousel main images
+  var main=document.getElementById('carouselMain');
+  var arrows=main.querySelectorAll('.carousel-arr');
+  var arrowHTML='';arrows.forEach(function(a){arrowHTML+=a.outerHTML});
+  var imgHTML='';
+  set.imgs.forEach(function(src,i){imgHTML+='<img src="'+src+'" alt="Holster"'+(i===0?' class="active"':'')+'>'});
+  main.innerHTML=imgHTML+arrowHTML;
+  // Update thumbs
+  var thumbs=document.getElementById('carouselThumbs');
+  var thHTML='';
+  set.imgs.forEach(function(src,i){thHTML+='<div class="carousel-thumb'+(i===0?' active':'')+'" onclick="showSlide('+i+')"><img src="'+src+'" alt="Thumb"></div>'});
+  thumbs.innerHTML=thHTML;
+  // Update material
+  document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
+  // Update buy links
+  var btns=document.querySelectorAll('.holster-home-text .btn, .holster-home-text .btn-f');
+  btns.forEach(function(b){if(b.getAttribute('target')==='_blank')b.href='https://'+set.shop});
+  // Update swatch borders
+  document.getElementById('swatchGreen').style.borderColor=color==='green'?'var(--g)':'';
+  document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
+  curSlide=0;
 }
+function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)})}
 function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
-
-// Products page is hardcoded
-
-// Kit builder
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
-function renderCat(){
-var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';
-P.forEach(function(p,i){
-var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;
-g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>';
-});
-}
+function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
-function selTier(t){
-  cT=t;
-  // Update progress bar
-  var fills=[25,50,75,100];
-  var labels=['$10K Budget','$25K Budget','$50K Budget','$100K Budget'];
-  var discs=['0% Discount','6% Discount','12% Discount','20% Discount'];
-  document.getElementById('tpFill').style.width=fills[t]+'%';
-  document.getElementById('tpTier').textContent=labels[t];
-  document.getElementById('tpDisc').textContent=discs[t];
-  document.querySelectorAll('.tier-marker').forEach(function(m,i){
-    m.classList.remove('active','passed');
-    if(i===t)m.classList.add('active');
-    if(i<t)m.classList.add('passed');
-  });
-  renderCat();updBudget();
-}
-
-function updBudget(){
-var tier=T[cT],total=0,count=0;
-P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});
-var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
-document.getElementById('bbar').classList.toggle('empty',count===0);
-document.getElementById('bSp').textContent=fmt(total)+' spent';
-var re=document.getElementById('bRm');
-if(rem===0&&count>0){re.textContent='Budget full';re.style.color='var(--gl)'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}
-document.getElementById('bFill').style.width=pct+'%';document.getElementById('bCt').textContent=count;
-document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';
-document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);
-var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'var(--red)':'';
-renderCart();
-}
-
+function selTier(t){cT=t;var fills=[25,50,75,100];var labels=['$10K Budget','$25K Budget','$50K Budget','$100K Budget'];var discs=['0% Discount','6% Discount','12% Discount','20% Discount'];document.getElementById('tpFill').style.width=fills[t]+'%';document.getElementById('tpTier').textContent=labels[t];document.getElementById('tpDisc').textContent=discs[t];document.querySelectorAll('.tier-marker').forEach(function(m,i){m.classList.remove('active','passed');if(i===t)m.classList.add('active');if(i<t)m.classList.add('passed')});renderCat();updBudget()}
+function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);document.getElementById('bbar').classList.toggle('empty',count===0);document.getElementById('bSp').textContent=fmt(total)+' spent';var re=document.getElementById('bRm');if(rem===0&&count>0){re.textContent='Budget full';re.style.color='var(--gl)'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}document.getElementById('bFill').style.width=pct+'%';document.getElementById('bCt').textContent=count;document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'var(--red)':'';renderCart()}
 function openCart(){document.getElementById('cartOv').classList.add('open');document.getElementById('cartDr').classList.add('open');document.body.style.overflow='hidden'}
 function closeCart(){document.getElementById('cartOv').classList.remove('open');document.getElementById('cartDr').classList.remove('open');document.body.style.overflow=''}
-function renderCart(){
-var b=document.getElementById('cartBd'),f=document.getElementById('cartFt'),ic=P.filter(function(p){return p.qty>0});
-if(!ic.length){b.innerHTML='<div class="cart-empty">Your kit is empty.</div>';f.style.display='none';return}
-f.style.display='';var d=T[cT].d,h='';
-ic.forEach(function(p){var u=Math.round(p.price*(1-d)),l=u*p.qty;h+='<div class="cart-it"><div class="ci-info"><div class="ci-name">'+p.name+'</div><div class="ci-meta">'+p.qty+' &times; '+fmt(u)+'</div></div><div class="ci-price">'+fmt(l)+'</div><button class="ci-rm" onclick="rmItem(\''+p.id+'\')">&times;</button></div>'});
-b.innerHTML=h;
-}
+function renderCart(){var b=document.getElementById('cartBd'),f=document.getElementById('cartFt'),ic=P.filter(function(p){return p.qty>0});if(!ic.length){b.innerHTML='<div class="cart-empty">Your kit is empty.</div>';f.style.display='none';return}f.style.display='';var d=T[cT].d,h='';ic.forEach(function(p){var u=Math.round(p.price*(1-d)),l=u*p.qty;h+='<div class="cart-it"><div class="ci-info"><div class="ci-name">'+p.name+'</div><div class="ci-meta">'+p.qty+' &times; '+fmt(u)+'</div></div><div class="ci-price">'+fmt(l)+'</div><button class="ci-rm" onclick="rmItem(\''+p.id+'\')">&times;</button></div>'});b.innerHTML=h}
 function rmItem(id){P.forEach(function(p){if(p.id===id)p.qty=0});renderCat();updBudget()}
-function inquireKit(){
-var tier=T[cT],d=tier.d,lines=[],total=0;
-P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push(p.name+' x'+p.qty+' @ '+fmt(u)+' = '+fmt(l))}});
-if(!lines.length){openCart();return}
-var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';
-var subj=encodeURIComponent('Goldy Brown Kit Inquiry \u2014 '+tier.l+' Tier');
-var body=encodeURIComponent('Kit Inquiry\n\nTier: '+tier.l+' ('+d*100+'% discount)\n\nItems:\n'+lines.join('\n')+'\n\nTotal: '+fmt(total)+'\nBudget: '+fmt(tier.b)+'\nRemaining: '+fmt(tier.b-total)+'\n\n---\nPlease contact me to finalize this order.');
-window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body;
-}
-
-// Email
+function inquireKit(){var tier=T[cT],d=tier.d,lines=[],total=0;P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push(p.name+' x'+p.qty+' @ '+fmt(u)+' = '+fmt(l))}});if(!lines.length){openCart();return}var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Kit Inquiry \u2014 '+tier.l+' Tier');var body=encodeURIComponent('Kit Inquiry\n\nTier: '+tier.l+' ('+d*100+'% discount)\n\nItems:\n'+lines.join('\n')+'\n\nTotal: '+fmt(total)+'\nBudget: '+fmt(tier.b)+'\nRemaining: '+fmt(tier.b-total)+'\n\n---\nPlease contact me to finalize this order.');window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-
-// Nav
-function go(page){
-document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
-var t=document.getElementById('page-'+page);if(t)t.classList.add('active');
-document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});
-window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);
-document.getElementById('bbar').style.display=(page==='hotel')?'':'none';
-if(page==='hotel')updBudget();
-if(page==='lookbook')setTimeout(initLookbook,200);
-}
+function go(page){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var t=document.getElementById('page-'+page);if(t)t.classList.add('active');document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)}
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
-// Nav always visible;
 function initFI(){var els=document.querySelectorAll('.page.active .fade-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
 function handleSubmit(e){e.preventDefault();var f=e.target;var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Inquiry');var body=encodeURIComponent('Name: '+f.name.value+'\nCompany: '+(f.company?f.company.value:'')+'\nEmail: '+f.email.value+'\nInterest: '+f.interest.value+'\n\n'+f.message.value);window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
-
 renderCat();initFI();document.getElementById('bbar').style.display='none';
 </script>
 </body>
