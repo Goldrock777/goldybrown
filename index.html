@@ -17,10 +17,10 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--g);color:#fff}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
-.nav-inner{display:flex;align-items:center;padding:0 40px;height:136px;position:relative}
-.nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
-.nav-logo img{height:128px;display:block}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none;overflow:visible}
+.nav-inner{display:flex;align-items:center;padding:0 40px;height:72px;overflow:visible;position:relative}
+.nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0;z-index:1001}
+.nav-logo img{height:128px;display:block;margin:-28px 0}
 .nav-tabs{display:flex;justify-content:center;flex:1;gap:0;padding:0}
 .nav-tab{padding:22px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
@@ -321,7 +321,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prow.hdr{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;background:var(--bg-card)}
 .prow .disc{color:var(--gl);font-weight:400}
 @media(max-width:1024px){
-.nav-inner{padding:0 16px;height:104px}.nav-logo img{height:96px}
+.nav-inner{padding:0 16px;height:56px}.nav-logo img{height:96px;margin:-20px 0}
 .nav-tabs{display:none}
 .mob-toggle{display:block}
 .nav-right{gap:14px}
@@ -351,7 +351,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .scart-dr{width:100%;right:-100%}
 }
 @media(max-width:768px){
-.nav-inner{padding:0 12px;height:92px}.nav-logo img{height:84px}
+.nav-inner{padding:0 12px;height:50px}.nav-logo img{height:84px;margin:-17px 0}
 .nav-tabs{display:none}
 .mob-toggle{display:block!important}
 .section{padding:28px 16px}
