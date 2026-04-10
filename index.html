@@ -58,8 +58,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero .sub{font-size:14.5px;font-weight:200;color:var(--td);max-width:500px;line-height:1.85;margin-bottom:28px}
 
 /* Holster Feature */
-.holster-home{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
-.holster-home-img{height:520px}
+.holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:center;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.holster-home-img{min-height:400px;overflow:hidden;background:var(--bg-card)}
+.holster-home-img img{width:100%;height:100%;object-fit:contain}
 .holster-home-text{padding:44px 56px}
 .holster-home-text .slabel{margin-bottom:14px}
 .holster-home-text h2{font-size:clamp(30px,3.5vw,44px);margin-bottom:4px}
@@ -287,7 +288,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .nav-top{padding:10px 24px 0}.nav-tabs{flex-wrap:wrap}.nav-tab{padding:8px 8px;font-size:8px;letter-spacing:1.5px}
 .section{padding:36px 24px}
 .home-hero{padding:84px 24px 20px}
-.holster-home{grid-template-columns:1fr}.holster-home-img{height:340px}.holster-home-text{padding:32px 24px}
+.holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:32px 24px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
 .products-hero{padding:84px 24px 20px}
 .product-grid{grid-template-columns:repeat(2,1fr)}
@@ -378,7 +379,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- THE HOLSTER -->
 <div class="holster-home">
-<div class="holster-home-img" style="background:url(holster.png) center/cover"></div>
+<div class="holster-home-img"><img src="holster.png" alt="The Holster"></div>
 <div class="holster-home-text">
 <div class="slabel">Signature Piece</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
@@ -405,7 +406,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- SECTION CARDS -->
 <div class="section-cards">
-<div class="section-card" onclick="go('products')"><div class="sc-img" style="background:url(holster.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop</div><div class="sc-desc">The Holster collection, handcrafted to order</div></div></div>
+<div class="section-card" onclick="go('products')"><div class="sc-img" style="background:url(holster.png) center/contain no-repeat;background-color:var(--bg-card)"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop</div><div class="sc-desc">The Holster collection, handcrafted to order</div></div></div>
 <div class="section-card" onclick="go('lookbook')"><div class="sc-img" style="background:url(briefcase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecabinet.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
@@ -423,7 +424,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <section class="section" style="padding-top:0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
 <div class="pcard" style="grid-column:1/-1">
-<div class="pcard-img" style="height:400px;background:url(holster.png) center/cover"></div>
+<div style="height:500px;background:var(--bg-card);overflow:hidden"><img src="holster.png" alt="The Holster" style="width:100%;height:100%;object-fit:contain"></div>
 <div class="pcard-body" style="padding:28px 32px">
 <div class="slabel">Signature Piece</div>
 <h2 style="margin-bottom:8px"><em>The Holster</em></h2>
@@ -476,7 +477,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-lookbook">
 <div class="lb-hero"><div class="slabel">Lookbook</div><h1>Worn, Not Stored</h1><p class="sub">Every piece designed to be seen. On the street, at the airport, on camera.</p></div>
 <div class="lb-grid">
-<div class="lb-item" style="background:url(holster.png) center/cover"><div class="lb-cap"><h3>On the Move</h3><p>The Holster in forest green suede</p></div></div>
+<div class="lb-item" style="background:url(holster.png) center/contain no-repeat;background-color:var(--bg-card)"><div class="lb-cap"><h3>On the Move</h3><p>The Holster in forest green suede</p></div></div>
 <div class="lb-item" style="background:url(coffeecabinet.png) center/cover"><div class="lb-cap"><h3>The Unboxing</h3><p>Custom branded packaging for VIP guests</p></div></div>
 </div>
 <div class="lb-full ph" style="background:url(briefcase.png) center/cover"><div class="lb-cap" style="text-align:center"><h3>The Full Kit</h3><p>Holster, passport holder, card holder, luggage tag, pen case</p></div></div>
