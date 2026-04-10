@@ -62,9 +62,9 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .scart-ft .sct-total .v{color:var(--gl)}
 .scart-checkout{width:100%;padding:14px;margin-top:14px;background:var(--g);border:1px solid var(--g);color:#fff;font-family:var(--fb);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;text-align:center}
 .scart-checkout:hover{background:var(--gb)}
-.mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#000;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .mob-menu.open{display:flex}
-.mob-menu a{font-family:var(--fd);font-size:24px;text-decoration:none;color:var(--w)}
+.mob-menu a{font-family:var(--fd);font-size:24px;text-decoration:none;color:#fff;letter-spacing:2px}
 .page{display:none}.page.active{display:block}
 .section{padding:56px 60px;max-width:1400px;margin:0 auto}
 .section-border{border-top:1px solid var(--b)}
@@ -321,7 +321,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prow.hdr{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;background:var(--bg-card)}
 .prow .disc{color:var(--gl);font-weight:400}
 @media(max-width:1024px){
-.nav-inner{padding:0 16px;height:56px}.nav-logo img{height:48px}.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}.nav-tab{padding:8px 12px;font-size:9px;letter-spacing:1.5px;flex-shrink:0}
+.nav-inner{padding:0 16px;height:56px}.nav-logo img{height:48px}
+.nav-tabs{display:none}
+.mob-toggle{display:block}
+.nav-right{gap:14px}
 .section{padding:36px 24px}
 .home-hero{padding:84px 24px 8px}
 .holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:16px 24px 28px}
@@ -349,11 +352,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 }
 @media(max-width:768px){
 .nav-inner{padding:0 12px;height:50px}.nav-logo img{height:42px}
-.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;gap:0;flex-wrap:nowrap}
-.nav-tab{padding:8px 10px;font-size:8px;letter-spacing:1.5px;flex-shrink:0}
-.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;gap:0}
-.nav-tab{padding:9px 12px;font-size:8px;letter-spacing:1.5px;flex-shrink:0}
-.mob-toggle{display:none!important}
+.nav-tabs{display:none}
+.mob-toggle{display:block!important}
 .section{padding:28px 16px}
 .home-hero{padding:72px 16px 8px}
 .product-grid{grid-template-columns:repeat(2,1fr);gap:8px}.pcard-img{height:160px}
@@ -457,7 +457,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price-note">Free shipping on all orders</div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
-<a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
+<a href="https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
 <div class="holster-variants">
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
@@ -664,7 +664,7 @@ var colorSets={
     imgs:['holster.png','holsterback.png','holsterpouch.png','holsterclose.png'],
     material:'Full grain suede',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924',
-    cart:'https://kuibri-ev.myshopify.com/cart/52629444165924:1'
+    cart:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924'
   },
   black:{
     imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png'],
