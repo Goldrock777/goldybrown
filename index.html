@@ -139,23 +139,23 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-arr svg{width:16px;height:16px}
 .carousel-arr.prev{left:12px}
 .carousel-arr.next{right:12px}
-.tier-progress{margin-bottom:32px}
-.tier-progress-labels{display:flex;justify-content:space-between;margin-bottom:6px;font-size:11px}
-.tier-progress-labels .tp-tier{color:var(--w);font-weight:400}
-.tier-progress-labels .tp-discount{color:var(--g);font-weight:500}
-.tier-progress-track{width:100%;height:8px;background:var(--bg-el);border-radius:4px;overflow:hidden}
-.tier-progress-fill{height:100%;background:var(--g);border-radius:4px;transition:width .6s ease}
-.tier-progress-markers{display:flex;justify-content:space-between;margin-top:8px}
-.tier-marker{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:all .3s}
-.tier-marker .tm-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--b);background:#fff;transition:all .3s;margin-bottom:4px}
-.tier-marker.active .tm-dot,.tier-marker.passed .tm-dot{border-color:var(--g);background:var(--g)}
-.tier-marker .tm-amount{font-family:var(--fd);font-size:14px;color:var(--tm);transition:color .3s}
-.tier-marker.active .tm-amount,.tier-marker.passed .tm-amount{color:var(--w)}
-.tier-marker .tm-disc{font-size:9px;color:var(--tm);letter-spacing:1px}
-.tier-marker.active .tm-disc{color:var(--g)}
 .page-hero{padding:88px 60px 24px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
 .page-hero h1{margin-bottom:8px}
 .page-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:480px;line-height:1.8}
+.tier-sel{display:flex;border:1px solid var(--b);overflow:hidden}
+.tier-b{flex:1;text-align:center;padding:18px 12px;cursor:pointer;border-right:1px solid var(--b);transition:all .3s;background:var(--bg-card);position:relative}
+.tier-b:last-child{border-right:0}
+.tier-b:hover{background:var(--gg)}
+.tier-b.active{background:var(--gm)}
+.tier-b.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gl)}
+.tier-b .ta{font-family:var(--fd);font-size:20px;color:var(--w);margin-bottom:2px}
+.tier-b .td{font-size:11px;color:var(--gl);font-weight:400}
+.kit-budget-bar{margin-top:20px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--b)}
+.kbb-labels{display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px}
+.kbb-labels .kbb-spent{color:var(--gl);font-weight:500}
+.kbb-labels .kbb-remaining{color:var(--td);font-weight:300}
+.kbb-track{width:100%;height:10px;background:var(--bg-el);border-radius:5px;overflow:hidden}
+.kbb-fill{height:100%;background:var(--g);border-radius:5px;transition:width .5s ease}
 .steps-h{display:flex;align-items:stretch;justify-content:center;width:100%;max-width:920px;margin:0 auto}
 .step-h{flex:1;text-align:center;padding:28px 20px;background:var(--bg-card);border:1px solid var(--b)}
 .step-h-n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--g);color:var(--gl);font-family:var(--fd);font-size:15px;margin-bottom:12px}
@@ -300,6 +300,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-wrap{padding:80px 0 28px}.lb-flip-wrap{padding:0 20px}.lb-nav{width:34px;height:34px}.lb-prev{left:2px}.lb-next{right:2px}
 .page-hero{padding:84px 24px 20px}
 .steps-h{flex-direction:column}.step-arr{width:auto;height:24px;transform:rotate(90deg)}
+.tier-sel{flex-direction:column}.tier-b{border-right:0;border-bottom:1px solid var(--b)}.tier-b:last-child{border-bottom:0}
 .aud-grid{grid-template-columns:repeat(2,1fr)}
 .aud-item:nth-child(2){border-right:0}.aud-item:nth-child(3),.aud-item:nth-child(4){border-top:1px solid var(--b)}.aud-item:nth-child(4){border-right:0}
 .comp{grid-template-columns:1fr;gap:20px}
@@ -463,17 +464,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="step-h"><div class="step-h-n">3</div><h3>We Handle the Rest</h3><p>Branding, packaging, delivery</p></div>
 </div>
 <div class="slabel">Select Your Budget</div>
-<div class="tier-progress" id="tierProgress">
-<div class="tier-progress-labels"><span class="tp-tier" id="tpTier">$10K Budget</span><span class="tp-discount" id="tpDisc">0% Discount</span></div>
-<div class="tier-progress-track"><div class="tier-progress-fill" id="tpFill" style="width:25%"></div></div>
-<div class="tier-progress-markers">
-<div class="tier-marker active" onclick="selTier(0)"><div class="tm-dot"></div><div class="tm-amount">$10K</div><div class="tm-disc">0% off</div></div>
-<div class="tier-marker" onclick="selTier(1)"><div class="tm-dot"></div><div class="tm-amount">$25K</div><div class="tm-disc">6% off</div></div>
-<div class="tier-marker" onclick="selTier(2)"><div class="tm-dot"></div><div class="tm-amount">$50K</div><div class="tm-disc">12% off</div></div>
-<div class="tier-marker" onclick="selTier(3)"><div class="tm-dot"></div><div class="tm-amount">$100K</div><div class="tm-disc">20% off</div></div>
+<div class="tier-sel" style="margin-bottom:28px" id="tierSel">
+<div class="tier-b active" onclick="selTier(0)"><div class="ta">$10K</div><div class="td">0% discount</div></div>
+<div class="tier-b" onclick="selTier(1)"><div class="ta">$25K</div><div class="td">6% off</div></div>
+<div class="tier-b" onclick="selTier(2)"><div class="ta">$50K</div><div class="td">12% off</div></div>
+<div class="tier-b" onclick="selTier(3)"><div class="ta">$100K</div><div class="td">20% off</div></div>
 </div>
+<!-- BUDGET BAR ON TOP -->
+<div class="kit-budget-bar" id="kitBudgetBar">
+<div class="kbb-labels"><span class="kbb-spent" id="kbSpent">$0 spent</span><span class="kbb-remaining" id="kbRemaining">$10,000 remaining</span></div>
+<div class="kbb-track"><div class="kbb-fill" id="kbFill" style="width:0%"></div></div>
 </div>
-<div class="slabel">Build Your Kit</div>
+<div class="slabel" style="margin-top:24px">Build Your Kit</div>
 <h2 style="margin-bottom:6px">Guest Kit Items</h2>
 <p style="color:var(--td);font-weight:200;margin-bottom:20px;font-size:13px">Add items below. Budget bar appears at the bottom.</p>
 <div class="cat-grid" id="catGrid"></div>
@@ -655,8 +657,19 @@ function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.r
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
 function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
-function selTier(t){cT=t;var fills=[25,50,75,100];var labels=['$10K Budget','$25K Budget','$50K Budget','$100K Budget'];var discs=['0% Discount','6% Discount','12% Discount','20% Discount'];document.getElementById('tpFill').style.width=fills[t]+'%';document.getElementById('tpTier').textContent=labels[t];document.getElementById('tpDisc').textContent=discs[t];document.querySelectorAll('.tier-marker').forEach(function(m,i){m.classList.remove('active','passed');if(i===t)m.classList.add('active');if(i<t)m.classList.add('passed')});renderCat();updBudget()}
-function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);document.getElementById('bbar').classList.toggle('empty',count===0);document.getElementById('bSp').textContent=fmt(total)+' spent';var re=document.getElementById('bRm');if(rem===0&&count>0){re.textContent='Budget full';re.style.color='var(--gl)'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}document.getElementById('bFill').style.width=pct+'%';document.getElementById('bCt').textContent=count;document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'var(--red)':'';renderCart()}
+function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
+function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
+document.getElementById('bbar').classList.toggle('empty',count===0);
+document.getElementById('bSp').textContent=fmt(total)+' spent';
+var re=document.getElementById('bRm');if(rem===0&&count>0){re.textContent='Budget full';re.style.color='var(--gl)'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}
+document.getElementById('bFill').style.width=pct+'%';document.getElementById('bCt').textContent=count;
+// Top budget bar
+document.getElementById('kbSpent').textContent=fmt(total)+' spent';
+var kbr=document.getElementById('kbRemaining');
+if(rem===0&&count>0){kbr.textContent='Budget full';kbr.style.color='var(--gl)'}else{kbr.textContent=fmt(rem)+' remaining';kbr.style.color=''}
+document.getElementById('kbFill').style.width=pct+'%';
+// Cart
+document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'var(--red)':'';renderCart()}
 function openCart(){document.getElementById('cartOv').classList.add('open');document.getElementById('cartDr').classList.add('open');document.body.style.overflow='hidden'}
 function closeCart(){document.getElementById('cartOv').classList.remove('open');document.getElementById('cartDr').classList.remove('open');document.body.style.overflow=''}
 function renderCart(){var b=document.getElementById('cartBd'),f=document.getElementById('cartFt'),ic=P.filter(function(p){return p.qty>0});if(!ic.length){b.innerHTML='<div class="cart-empty">Your kit is empty.</div>';f.style.display='none';return}f.style.display='';var d=T[cT].d,h='';ic.forEach(function(p){var u=Math.round(p.price*(1-d)),l=u*p.qty;h+='<div class="cart-it"><div class="ci-info"><div class="ci-name">'+p.name+'</div><div class="ci-meta">'+p.qty+' &times; '+fmt(u)+'</div></div><div class="ci-price">'+fmt(l)+'</div><button class="ci-rm" onclick="rmItem(\''+p.id+'\')">&times;</button></div>'});b.innerHTML=h}
