@@ -17,14 +17,14 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--g);color:#fff}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1a1a1a;border-bottom:none}
-.nav-inner{display:flex;align-items:center;padding:0 40px;height:56px;position:relative}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
+.nav-inner{display:flex;align-items:center;padding:0 40px;height:64px;position:relative}
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
 .nav-tabs{display:flex;justify-content:center;flex:1;gap:0;padding:0}
-.nav-tab{padding:18px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
+.nav-tab{padding:22px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
 .nav-tab.active{color:#fff}
-.nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:#fff}
+.nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--gl)}
 .nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
 .nav-cart-icon{cursor:pointer;color:rgba(255,255,255,.6);transition:color .3s;display:flex;align-items:center;position:relative}
 .nav-cart-icon:hover{color:#fff}
@@ -33,9 +33,6 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .mob-toggle span{display:block;width:100%;height:1px;background:#fff;position:absolute;left:0;transition:all .3s}
 .mob-toggle span:nth-child(1){top:0}.mob-toggle span:nth-child(2){top:50%}.mob-toggle span:nth-child(3){bottom:0}
 .mob-toggle.open span:nth-child(1){top:50%;transform:rotate(45deg)}.mob-toggle.open span:nth-child(2){opacity:0}.mob-toggle.open span:nth-child(3){bottom:50%;transform:rotate(-45deg)}
-.nav-cart-icon{position:absolute;right:60px;top:50%;transform:translateY(-50%);cursor:pointer;color:rgba(255,255,255,.6);transition:color .3s;display:flex;align-items:center}
-.nav-cart-icon:hover{color:#fff}
-.nav-cart-badge{position:absolute;top:-6px;right:-10px;background:var(--g);color:#fff;font-size:9px;font-weight:500;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 /* Shop Cart Drawer */
 .scart-ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.35);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
 .scart-ov.open{opacity:1;pointer-events:all}
@@ -82,7 +79,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ph{background:#f0efec;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);text-align:center;padding:20px;position:relative;overflow:hidden}
 .ph::before{content:'';position:absolute;inset:14px;border:1px solid var(--b);pointer-events:none}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}
-.home-hero{padding:68px 60px 4px;text-align:center}
+.home-hero{padding:78px 60px 4px;text-align:center}
 .home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 .holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:start}
@@ -370,7 +367,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <nav class="nav" id="mainNav">
 <div class="nav-inner">
-<div class="nav-logo" onclick="go('home')"><img src="gb-silver.png" alt="Goldy Brown" style="height:28px;display:block"></div>
+<div class="nav-logo" onclick="go('home')"><img src="gb-silver.png" alt="Goldy Brown" style="height:50px;display:block"></div>
 <div class="nav-tabs" id="navTabs">
 <a class="nav-tab active" data-page="home">Shop</a>
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
