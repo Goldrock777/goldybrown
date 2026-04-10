@@ -18,8 +18,9 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--g);color:#fff}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
-.nav-inner{display:flex;align-items:center;padding:0 40px;height:64px;position:relative}
+.nav-inner{display:flex;align-items:center;padding:0 40px;height:72px;position:relative}
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
+.nav-logo img{height:64px;display:block}
 .nav-tabs{display:flex;justify-content:center;flex:1;gap:0;padding:0}
 .nav-tab{padding:22px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
@@ -79,7 +80,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ph{background:#f0efec;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);text-align:center;padding:20px;position:relative;overflow:hidden}
 .ph::before{content:'';position:absolute;inset:14px;border:1px solid var(--b);pointer-events:none}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}
-.home-hero{padding:78px 60px 4px;text-align:center}
+.home-hero{padding:84px 60px 4px;text-align:center}
 .home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 .holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:start}
@@ -320,7 +321,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prow.hdr{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;background:var(--bg-card)}
 .prow .disc{color:var(--gl);font-weight:400}
 @media(max-width:1024px){
-.nav-inner{padding:0 16px;height:48px}.nav-tabs{flex-wrap:wrap}.nav-tab{padding:8px 8px;font-size:8px;letter-spacing:1.5px}
+.nav-inner{padding:0 16px;height:56px}.nav-logo img{height:48px}.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}.nav-tab{padding:8px 12px;font-size:9px;letter-spacing:1.5px;flex-shrink:0}
 .section{padding:36px 24px}
 .home-hero{padding:84px 24px 8px}
 .holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:16px 24px 28px}
@@ -347,7 +348,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .scart-dr{width:100%;right:-100%}
 }
 @media(max-width:768px){
-.nav-inner{padding:0 12px;height:44px}
+.nav-inner{padding:0 12px;height:50px}.nav-logo img{height:42px}
+.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;gap:0;flex-wrap:nowrap}
+.nav-tab{padding:8px 10px;font-size:8px;letter-spacing:1.5px;flex-shrink:0}
 .nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;gap:0}
 .nav-tab{padding:9px 12px;font-size:8px;letter-spacing:1.5px;flex-shrink:0}
 .mob-toggle{display:none!important}
@@ -367,7 +370,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <nav class="nav" id="mainNav">
 <div class="nav-inner">
-<div class="nav-logo" onclick="go('home')"><img src="gb-silver.png" alt="Goldy Brown" style="height:56px;display:block"></div>
+<div class="nav-logo" onclick="go('home')"><img src="gb-silver.png" alt="Goldy Brown"></div>
 <div class="nav-tabs" id="navTabs">
 <a class="nav-tab active" data-page="home">Shop</a>
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
