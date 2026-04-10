@@ -142,7 +142,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ccard.in-cart{border-color:var(--g)}
 .ccard .badge{position:absolute;top:7px;right:7px;background:var(--g);color:#fff;font-size:8px;letter-spacing:1px;font-weight:500;padding:2px 6px;display:none;text-transform:uppercase}
 .ccard.in-cart .badge{display:block}
-.ccard-img{height:130px;background:var(--bg-el);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b)}
+.ccard-img{height:180px;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b);overflow:hidden}
+.ccard-img img{width:100%;height:100%;object-fit:contain;padding:8px}
 .ccard-info{padding:10px 12px}
 .ccard-info h4{font-size:12.5px;margin-bottom:2px}
 .ccard-info .price{font-size:12.5px;color:var(--gl);font-weight:300;margin-bottom:8px}
@@ -377,7 +378,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- THE HOLSTER -->
 <div class="holster-home">
-<div class="holster-home-img ph">The Holster — Forest Green Suede<br>On Body Editorial</div>
+<div class="holster-home-img" style="background:url(holster.png) center/cover"></div>
 <div class="holster-home-text">
 <div class="slabel">Signature Piece</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
@@ -404,7 +405,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- SECTION CARDS -->
 <div class="section-cards">
-<div class="section-card" onclick="go('products')"><div class="sc-img" style="background:url(leathercase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop</div><div class="sc-desc">The Holster collection, handcrafted to order</div></div></div>
+<div class="section-card" onclick="go('products')"><div class="sc-img" style="background:url(holster.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop</div><div class="sc-desc">The Holster collection, handcrafted to order</div></div></div>
 <div class="section-card" onclick="go('lookbook')"><div class="sc-img" style="background:url(briefcase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecabinet.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
@@ -422,7 +423,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <section class="section" style="padding-top:0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
 <div class="pcard" style="grid-column:1/-1">
-<div class="pcard-img ph" style="height:400px">The Holster — Men's Forest Green Suede</div>
+<div class="pcard-img" style="height:400px;background:url(holster.png) center/cover"></div>
 <div class="pcard-body" style="padding:28px 32px">
 <div class="slabel">Signature Piece</div>
 <h2 style="margin-bottom:8px"><em>The Holster</em></h2>
@@ -475,13 +476,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-lookbook">
 <div class="lb-hero"><div class="slabel">Lookbook</div><h1>Worn, Not Stored</h1><p class="sub">Every piece designed to be seen. On the street, at the airport, on camera.</p></div>
 <div class="lb-grid">
-<div class="lb-item ph">Editorial — Holster On Body, Street<div class="lb-cap"><h3>On the Move</h3><p>The Holster in forest green suede</p></div></div>
-<div class="lb-item ph">Editorial — Hotel Lobby, Gift Unboxing<div class="lb-cap"><h3>The Unboxing</h3><p>Custom branded packaging for VIP guests</p></div></div>
+<div class="lb-item" style="background:url(holster.png) center/cover"><div class="lb-cap"><h3>On the Move</h3><p>The Holster in forest green suede</p></div></div>
+<div class="lb-item" style="background:url(coffeecabinet.png) center/cover"><div class="lb-cap"><h3>The Unboxing</h3><p>Custom branded packaging for VIP guests</p></div></div>
 </div>
 <div class="lb-full ph" style="background:url(briefcase.png) center/cover"><div class="lb-cap" style="text-align:center"><h3>The Full Kit</h3><p>Holster, passport holder, card holder, luggage tag, pen case</p></div></div>
 <div class="lb-quote"><blockquote>"Security that gets photographed. Craftsmanship that gets remembered."</blockquote><cite>Goldy Brown</cite></div>
 <div class="lb-grid">
-<div class="lb-item ph">Detail — Stitching Close Up<div class="lb-cap"><h3>The Details</h3><p>Saddle stitched with waxed polyester thread</p></div></div>
+<div class="lb-item" style="background:url(cardholder.png) center/cover"><div class="lb-cap"><h3>The Details</h3><p>Saddle stitched with waxed polyester thread</p></div></div>
 <div class="lb-item ph" style="background:url(cigar.png) center/cover"><div class="lb-cap"><h3>Built to Last</h3><p>Precision hardware, top grain leather</p></div></div>
 </div>
 <div class="lb-grid">
@@ -619,7 +620,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <script>
 var P=[
-{id:'holster',name:'The Holster',price:300,qty:0,desc:'Concealed leather shoulder rig with custom engraving',retail:249,img:'leathercase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster'},
+{id:'holster',name:'The Holster',price:300,qty:0,desc:'Concealed leather shoulder rig with custom engraving',retail:249,img:'holster.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/the-holster'},
 {id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle',retail:30,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
 {id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim fit, all international passports',retail:60,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
 {id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six slot bifold with center pocket',retail:60,img:'cardholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
@@ -645,7 +646,7 @@ function renderCat(){
 var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';
 P.forEach(function(p,i){
 var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;
-g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>';
+g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>';
 });
 }
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
