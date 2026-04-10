@@ -18,15 +18,15 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--g);color:#fff}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
-.nav-inner{display:flex;align-items:center;padding:4px 40px;position:relative}
+.nav-inner{display:flex;align-items:center;padding:4px 14px;position:relative}
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
-.nav-logo img{height:56px;display:block}
+.nav-logo img{height:45px;display:block}
+.nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0;margin-left:auto}
 .nav-tabs{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:0;padding:0}
 .nav-tab{padding:22px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
 .nav-tab.active{color:#fff}
 .nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--gl)}
-.nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
 .nav-cart-icon{cursor:pointer;color:rgba(255,255,255,.6);transition:color .3s;display:flex;align-items:center;position:relative}
 .nav-cart-icon:hover{color:#fff}
 .nav-cart-badge{position:absolute;top:-6px;right:-10px;background:var(--g);color:#fff;font-size:9px;font-weight:500;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -321,10 +321,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prow.hdr{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;background:var(--bg-card)}
 .prow .disc{color:var(--gl);font-weight:400}
 @media(max-width:1024px){
-.nav-inner{padding:4px 16px}.nav-logo img{height:48px}
+.nav-inner{padding:4px 10px}.nav-logo img{height:38px}
 .nav-tabs{display:none}
 .mob-toggle{display:block}
-.nav-right{gap:14px;flex-direction:row-reverse}
+.nav-right{gap:14px}
 .section{padding:36px 24px}
 .home-hero{padding:72px 24px 8px}
 .holster-home{grid-template-columns:1fr}.holster-home-img{min-height:300px}.holster-home-text{padding:16px 24px 28px}
@@ -351,7 +351,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .scart-dr{width:100%;right:-100%}
 }
 @media(max-width:768px){
-.nav-inner{padding:4px 12px}.nav-logo img{height:42px}
+.nav-inner{padding:4px 8px}.nav-logo img{height:34px}
 .nav-tabs{display:none}
 .mob-toggle{display:block!important}
 .section{padding:28px 16px}
