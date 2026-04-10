@@ -396,7 +396,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div class="holster-home-text">
-<div class="slabel">Choose Leather Over Plastic</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
 <p class="desc">A concealed leather shoulder rig, designed for individuals who refuse to compromise. Hand cut from full grain calfskin, assembled with quality hardware. Worn under a jacket, it holds your essentials against your body giving you piece of mind when you're going outside.</p>
 <ul class="detail-list">
@@ -409,8 +408,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price">$249 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping on all orders</div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Add to Cart</a>
-<a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn">Buy Now</a>
+<a href="https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924" target="_blank" class="btn">Add to Cart</a>
+<a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
 <div class="holster-variants">
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
@@ -616,12 +615,14 @@ var colorSets={
   green:{
     imgs:['holster.png','holsterback.png','holsterpouch.png','holsterclose.png'],
     material:'Full grain suede',
-    shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'
+    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924',
+    cart:'https://kuibri-ev.myshopify.com/cart/52629444165924:1'
   },
   black:{
     imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png'],
     material:'Full grain calfskin',
-    shop:'kuibri-ev.myshopify.com/cart/52799540429092:1'
+    product:'https://kuibri-ev.myshopify.com/products/black-shoulder-holster?variant=52799540429092',
+    cart:'https://kuibri-ev.myshopify.com/cart/52799540429092:1'
   }
 };
 var curColor='green';
@@ -643,8 +644,11 @@ function switchColor(color){
   // Update material
   document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
   // Update buy links
-  var btns=document.querySelectorAll('.holster-home-text .btn, .holster-home-text .btn-f');
-  btns.forEach(function(b){if(b.getAttribute('target')==='_blank')b.href='https://'+set.shop});
+  var btns=document.querySelectorAll('.holster-home-text a[target="_blank"]');
+  btns.forEach(function(b){
+    if(b.classList.contains('btn-f'))b.href=set.cart;
+    else b.href=set.product;
+  });
   // Update swatch borders
   document.getElementById('swatchGreen').style.borderColor=color==='green'?'var(--g)':'';
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
