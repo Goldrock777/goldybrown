@@ -655,19 +655,17 @@ var flipAudioCtx;
 function playFlipSound(){
   try{
     if(!flipAudioCtx)flipAudioCtx=new(window.AudioContext||window.webkitAudioContext)();
-    var ctx=flipAudioCtx,sr=ctx.sampleRate,dur=0.4,buf=ctx.createBuffer(2,sr*dur,sr),now=ctx.currentTime;
-    for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);for(var i=0;i<d.length;i++){var t=i/sr;
-      var whoosh=Math.sin(t*800*(1-t*2))*Math.exp(-t*8)*0.15;
-      var crackle=(Math.random()*2-1)*Math.exp(-t*12)*0.2;
-      var snap=(Math.random()*2-1)*Math.exp(-(t-0.02)*(t-0.02)*8000)*0.35;
-      var settle=(Math.random()*2-1)*Math.exp(-(t-0.15)*18)*0.08*(t>0.12?1:0);
-      d[i]=(whoosh+crackle+snap+settle)*(1+ch*0.05*(Math.random()-0.5));
-    }}
+    var ctx=flipAudioCtx,sr=ctx.sampleRate,dur=0.25,buf=ctx.createBuffer(1,sr*dur,sr),d=buf.getChannelData(0),now=ctx.currentTime;
+    for(var i=0;i<d.length;i++){var t=i/sr;var p=t/dur;
+      var swoosh=Math.sin(2*Math.PI*(300+2000*p*(1-p))*t)*Math.sin(Math.PI*p)*0.12;
+      var brush=(Math.random()*2-1)*Math.sin(Math.PI*p)*0.18*Math.exp(-Math.abs(p-0.4)*8);
+      var tap=(Math.random()*2-1)*Math.exp(-(t-0.18)*(t-0.18)*20000)*0.2*(t>0.15?1:0);
+      d[i]=swoosh+brush+tap;
+    }
     var src=ctx.createBufferSource(),gain=ctx.createGain();
-    var lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=3500;lp.Q.value=0.7;
-    var hp=ctx.createBiquadFilter();hp.type='highpass';hp.frequency.value=200;hp.Q.value=0.5;
-    src.buffer=buf;src.connect(hp);hp.connect(lp);lp.connect(gain);gain.connect(ctx.destination);
-    gain.gain.setValueAtTime(0.5,now);gain.gain.linearRampToValueAtTime(0.3,now+0.05);gain.gain.exponentialRampToValueAtTime(0.01,now+dur);
+    var bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=1800;bp.Q.value=0.4;
+    src.buffer=buf;src.connect(bp);bp.connect(gain);gain.connect(ctx.destination);
+    gain.gain.setValueAtTime(0.6,now);gain.gain.exponentialRampToValueAtTime(0.01,now+dur);
     src.start();
   }catch(e){}
 }
