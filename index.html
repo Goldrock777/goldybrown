@@ -139,13 +139,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
-.lb-wrap{padding:84px 0 40px;display:flex;flex-direction:column;align-items:center;min-height:80vh}
-.lb-header{text-align:center;margin-bottom:20px}
-.lb-header h1{font-family:var(--fd);font-size:clamp(28px,4vw,42px);color:var(--w);margin-bottom:4px}
-.lb-header .sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
-.lb-hint{font-size:10px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;animation:hintPulse 2s ease-in-out infinite}
+.lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden}
+.lb-header{text-align:center;margin-bottom:4px;padding-top:72px}
+.lb-header h1{font-family:var(--fd);font-size:clamp(22px,3vw,32px);color:var(--w);margin-bottom:2px}
+.lb-header .sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
+.lb-hint{font-size:10px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
-.lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 56px;width:100%;max-width:1060px}
+.lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 56px;width:100%;flex:1;min-height:0}
 .fp{background:#faf9f6;overflow:hidden;position:relative}
 .fp::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.006) 3px,rgba(0,0,0,.006) 4px);pointer-events:none;z-index:1}
 .fp-num{position:absolute;bottom:16px;font-family:var(--fd);font-size:10px;color:var(--tm);letter-spacing:2px;z-index:2}
@@ -168,7 +168,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-nav:hover{background:var(--g);border-color:var(--g);color:#fff}
 .lb-nav svg{width:16px;height:16px}
 .lb-prev{left:6px}.lb-next{right:6px}
-.lb-counter{padding:16px;text-align:center;font-size:11px;letter-spacing:3px;color:var(--tm);font-weight:300}
+.lb-counter{padding:4px;text-align:center;font-size:11px;letter-spacing:3px;color:var(--tm);font-weight:300}
 .carousel-wrap{display:grid;grid-template-columns:80px 1fr;gap:12px;min-height:500px}
 .carousel-thumbs{display:flex;flex-direction:column;gap:8px}
 .carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
@@ -346,7 +346,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
 .products-hero{padding:72px 24px 20px}
 .product-grid{grid-template-columns:repeat(2,1fr)}
-.lb-wrap{padding:72px 0 28px}.lb-flip-wrap{padding:0 20px}.lb-nav{width:34px;height:34px}.lb-prev{left:2px}.lb-next{right:2px}
+.lb-wrap{padding:0;height:100vh}.lb-header{padding-top:60px}.lb-flip-wrap{padding:0 20px}.lb-nav{width:34px;height:34px}.lb-prev{left:2px}.lb-next{right:2px}
 .page-hero{padding:72px 24px 20px}
 .steps-h{flex-direction:column}.step-arr{width:auto;height:24px;transform:rotate(90deg)}
 .tier-sel{flex-direction:column}.tier-b{border-right:0;border-bottom:1px solid var(--b)}.tier-b:last-child{border-bottom:0}
@@ -664,8 +664,13 @@ function playFlipSound(){
 }
 function initLookbook(){
   var c=document.getElementById('lookbookFlip');if(!c)return;
-  var w=Math.min(window.innerWidth-120,1000),pw=Math.floor(w/2),ph=Math.floor(pw*1.35);
-  if(window.innerWidth<600){pw=window.innerWidth-40;ph=Math.floor(pw*1.45)}
+  var navH=70,headerH=90,counterH=30,pad=20;
+  var availH=window.innerHeight-navH-headerH-counterH-pad;
+  var availW=window.innerWidth-120;
+  var ph=Math.floor(Math.max(availH,300));
+  var pw=Math.floor(ph/1.35);
+  if(pw*2>availW){pw=Math.floor(availW/2);ph=Math.floor(pw*1.35)}
+  if(window.innerWidth<600){pw=window.innerWidth-40;ph=Math.floor(Math.min(pw*1.45,availH))}
   LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.25,mobileScrollSupport:true,useMouseEvents:true,flippingTime:700,drawShadow:true,startPage:0,autoSize:true});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
   LB.on('flip',function(e){playFlipSound();var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);});
