@@ -161,6 +161,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-hint{font-size:9px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:0;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
 .lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 48px;width:100%;flex:1;min-height:0}
+#lookbookFlip{visibility:hidden}
+#lookbookFlip.ready{visibility:visible}
 .fp{background:#faf9f6;overflow:hidden;position:relative}
 .fp::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.006) 3px,rgba(0,0,0,.006) 4px);pointer-events:none;z-index:1}
 .fp-num{position:absolute;bottom:16px;font-family:var(--fd);font-size:10px;color:var(--tm);letter-spacing:2px;z-index:2}
@@ -702,6 +704,7 @@ function initLookbook(){
   if(window.innerWidth<600){pw=window.innerWidth-40;ph=Math.floor(Math.min(pw*1.45,availH))}
   LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.5,mobileScrollSupport:true,useMouseEvents:true,flippingTime:1000,drawShadow:true,startPage:0,autoSize:true,usePortrait:false,startZIndex:0,swipeDistance:30});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
+  c.classList.add('ready');
   LB.on('flip',function(e){playFlipSound();var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);updateLbThumbs(e.data);});
   var em='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var lbe=document.getElementById('lbEmail');if(lbe)lbe.textContent=em;
 }
