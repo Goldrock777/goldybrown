@@ -498,14 +498,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <button class="lb-nav lb-prev" onclick="if(window.LB)LB.flipPrev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <div id="lookbookFlip">
 <div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Lookbook</h2><div class="cv-yr">2025 &mdash; 2026</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 1</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 2</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 3</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 4</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 5</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 6</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 7</div></div>
-<div class="fp fp-img"><div class="fi-area ph">Lookbook Page 8</div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC03213.JPG" alt="Lookbook 1"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC03215.JPG" alt="Lookbook 2"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04641.JPG" alt="Lookbook 3"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC03218.JPG" alt="Lookbook 4"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04679.JPG" alt="Lookbook 5"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC03240.JPG" alt="Lookbook 6"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC03244.JPG" alt="Lookbook 7"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04573.JPG" alt="Lookbook 8"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04591.JPG" alt="Lookbook 9"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04620.JPG" alt="Lookbook 10"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04623.JPG" alt="Lookbook 11"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img src="DSC04625.JPG" alt="Lookbook 12"></div></div>
 <div class="fp fp-back"><h2>Goldy Brown</h2><div class="bk-line"></div><p>Handcrafted in Vancouver, Canada</p><div class="bk-email" id="lbEmail"></div></div>
 </div>
 <button class="lb-nav lb-next" onclick="if(window.LB)LB.flipNext()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -645,13 +649,26 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/page-flip/2.0.7/js/page-flip.browser.js"></script>
 <script>
 var LB;
+var flipAudioCtx;
+function playFlipSound(){
+  try{
+    if(!flipAudioCtx)flipAudioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    var ctx=flipAudioCtx,dur=0.15,buf=ctx.createBuffer(1,ctx.sampleRate*dur,ctx.sampleRate),data=buf.getChannelData(0);
+    for(var i=0;i<data.length;i++){var t=i/ctx.sampleRate;data[i]=(Math.random()*2-1)*Math.exp(-t*35)*0.3}
+    var src=ctx.createBufferSource(),gain=ctx.createGain(),filter=ctx.createBiquadFilter();
+    filter.type='bandpass';filter.frequency.value=2000;filter.Q.value=0.5;
+    src.buffer=buf;src.connect(filter);filter.connect(gain);gain.connect(ctx.destination);
+    gain.gain.setValueAtTime(0.4,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(0.01,ctx.currentTime+dur);
+    src.start();
+  }catch(e){}
+}
 function initLookbook(){
   var c=document.getElementById('lookbookFlip');if(!c)return;
   var w=Math.min(window.innerWidth-120,1000),pw=Math.floor(w/2),ph=Math.floor(pw*1.35);
   if(window.innerWidth<600){pw=window.innerWidth-40;ph=Math.floor(pw*1.45)}
   LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.25,mobileScrollSupport:true,useMouseEvents:true,flippingTime:700,drawShadow:true,startPage:0,autoSize:true});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
-  LB.on('flip',function(e){var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);});
+  LB.on('flip',function(e){playFlipSound();var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);});
   var em='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var lbe=document.getElementById('lbEmail');if(lbe)lbe.textContent=em;
 }
 document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowRight'||e.key===' '){LB.flipNext();e.preventDefault()}if(e.key==='ArrowLeft'){LB.flipPrev();e.preventDefault()}});
