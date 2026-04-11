@@ -323,8 +323,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .about-hero{padding:92px 60px 36px;text-align:center}
 .about-hero h1{margin-bottom:12px}
 .about-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:560px;margin:0 auto;line-height:1.85}
-.about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;align-items:stretch}
-.about-img{min-height:560px;background-size:cover;background-position:center top}
+.about-split{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.about-img{overflow:hidden}
+.about-img img{width:100%;height:auto;display:block}
 .about-txt{padding:40px 52px}
 .about-txt h2{margin-bottom:10px}
 .about-txt p{color:var(--td);font-weight:200;line-height:1.85;max-width:380px;font-size:13px;margin-bottom:10px}
@@ -388,7 +389,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pstep{grid-template-columns:1fr}.pstep:nth-child(even){direction:ltr}.pstep-img{height:220px;overflow:hidden}.pstep-text{padding:24px 24px}
 .mat-grid{grid-template-columns:repeat(2,1fr)}
 .about-hero{padding:72px 24px 20px}
-.about-split{grid-template-columns:1fr}.about-img{min-height:400px}.about-txt{padding:28px 24px}
+.about-split{grid-template-columns:1fr}.about-txt{padding:28px 24px}
 .about-vals{grid-template-columns:1fr}.about-val{border-right:0;border-bottom:1px solid var(--b)}.about-val:last-child{border-bottom:0}
 .contact-s{grid-template-columns:1fr}.contact-l,.contact-r{padding:36px 24px}.contact-r{border-left:0;border-top:1px solid var(--b)}
 .bbar{padding:9px 16px}.bbar-inner{flex-wrap:wrap;gap:8px}.bbar-prog{min-width:100%}
@@ -650,7 +651,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-about">
 <div class="about-hero"><div class="slabel">About Us</div><h1>Goldy Brown</h1><p class="sub">A luxury leather goods house based in Vancouver, Canada. We design and produce refined leather pieces for discerning individuals, world class hotels, and the global hospitality industry. Top grain leather. Precision hardware. Nothing unnecessary.</p></div>
 <section class="about-split section-border">
-<div class="about-img" style="background:url(DSC04620.JPG) center/cover"></div>
+<div class="about-img"><img src="DSC04620.JPG" alt="Goldy Brown"></div>
 <div class="about-txt fade-in"><div class="slabel">Our Story</div><h2>Quietly Made, Built to Last</h2><p>Goldy Brown was founded on a simple principle: the finest things don't announce themselves. We design leather goods for people who notice materials, construction, and the weight of something well made.</p><p>Every piece begins with top grain leather, sourced from vetted tanneries. The hardware is solid, never plated. The stitching is done by hand. We serve private clients, luxury hotels, and hospitality partners who understand that quality is the only brand that matters.</p></div>
 </section>
 <section class="section"><div class="about-vals">
