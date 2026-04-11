@@ -27,8 +27,9 @@
 --fd:'Playfair Display',Georgia,serif;--fb:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:default}
 ::selection{background:var(--g);color:#fff}
+.btn,.nav-tab,.section-card,.hv-swatch,.carousel-thumb,.carousel-arr,.lb-nav,.lb-thumb,.tier-b,.qb,.nav-cart-icon,.cart-x,.mob-toggle,.prop-item,.pcard{cursor:pointer}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
 .nav-inner{display:flex;align-items:center;padding:4px 14px;position:relative}
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
@@ -77,7 +78,6 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#000;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .mob-menu.open{display:flex}
 .mob-menu a{font-family:var(--fd);font-size:24px;text-decoration:none;color:#fff;letter-spacing:2px}
-.page{display:none}.page.active{display:block}
 .section{padding:56px 60px;max-width:1400px;margin:0 auto}
 .section-border{border-top:1px solid var(--b)}
 .slabel{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gl);font-weight:500;margin-bottom:10px}
@@ -91,7 +91,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .btn-f:hover{background:var(--gb);border-color:var(--gb)}
 .ph{background:#f0efec;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);text-align:center;padding:20px;position:relative;overflow:hidden}
 .ph::before{content:'';position:absolute;inset:14px;border:1px solid var(--b);pointer-events:none}
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}.fade-in.visible{opacity:1;transform:translateY(0)}
+.slide-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}.slide-left.visible{opacity:1;transform:translateX(0)}
+.slide-right{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}.slide-right.visible{opacity:1;transform:translateX(0)}
+.scale-in{opacity:0;transform:scale(.92);transition:opacity .8s,transform .8s}.scale-in.visible{opacity:1;transform:scale(1)}
+.page{display:none;opacity:0;transition:opacity .4s ease}.page.active{display:block;opacity:1}
+.page.fading-out{opacity:0}
+.section-card .sc-img{height:280px;background-size:cover;background-position:center;background-attachment:scroll;transition:transform 6s ease-out}
+.section-card:hover .sc-img{transform:scale(1.05)}
+.btn{position:relative;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+.btn::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.1);border-radius:50%;transform:translate(-50%,-50%);transition:width .6s,height .6s}
+.btn:hover::after{width:300px;height:300px}
+.hcv-badge{position:fixed;bottom:24px;left:24px;z-index:800;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);font-weight:300;writing-mode:vertical-rl;text-orientation:mixed;opacity:.4;transition:opacity .3s;pointer-events:none}
+.leather-bg{position:relative}
+.leather-bg::before{content:'';position:absolute;inset:0;opacity:.03;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 .home-hero{padding:80px 60px 4px;text-align:center}
 .home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
@@ -491,10 +504,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 
 <div class="section-cards">
-<div class="section-card" onclick="go('lookbook')"><div class="sc-img" style="background:url(briefcase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
-<div class="section-card" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecabinet.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
-<div class="section-card" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
-<div class="section-card" onclick="go('about')"><div class="sc-img" style="background:url(suitholder.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
+<div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(briefcase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
+<div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecabinet.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
+<div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
+<div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(suitholder.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
 </div>
 </div>
 
@@ -605,14 +618,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-manufacturing">
 <div class="page-hero"><div class="slabel">Craftsmanship</div><h1>Manufacturing</h1><p class="sub">Six steps from raw hide to finished product. Each piece meticulously handmade.</p></div>
 <section>
-<div class="pstep fade-in"><div class="pstep-img"><img src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img"><img src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img"><img src="cutting.png" alt="Pattern Cutting"></div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img"><img src="assembly.png" alt="Assembly"></div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img"><img src="finishing.png" alt="Finishing"></div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
-<div class="pstep fade-in"><div class="pstep-img"><img src="branding.png" alt="Branding"></div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img src="cutting.png" alt="Pattern Cutting"></div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img src="assembly.png" alt="Assembly"></div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img src="finishing.png" alt="Finishing"></div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img src="branding.png" alt="Branding"></div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
 </section>
-<section class="section section-border fade-in"><div style="text-align:center;margin-bottom:36px"><div class="slabel">What We Work With</div><h2>Materials</h2></div>
+<section class="section section-border fade-in leather-bg"><div style="text-align:center;margin-bottom:36px"><div class="slabel">What We Work With</div><h2>Materials</h2></div>
 <div class="mat-grid">
 <div class="mat-card"><h4>Full Grain Calfskin</h4><p>Outermost layer. No sanding, no buffing. Develops patina unique to its owner.</p></div>
 <div class="mat-card"><h4>Vegetable Tanning</h4><p>Tree bark extract. Takes weeks. Ages beautifully as the colour deepens.</p></div>
@@ -649,6 +662,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </section>
 </div>
+
+<div class="hcv-badge">Handcrafted in Vancouver</div>
 
 <footer class="footer">
 <div class="footer-logo">Goldy Brown</div>
@@ -784,11 +799,11 @@ function renderCart(){var b=document.getElementById('cartBd'),f=document.getElem
 function rmItem(id){P.forEach(function(p){if(p.id===id)p.qty=0});renderCat();updBudget()}
 function inquireKit(){var tier=T[cT],d=tier.d,lines=[],total=0;P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push(p.name+' x'+p.qty+' @ '+fmt(u)+' = '+fmt(l))}});if(!lines.length){openCart();return}var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Kit Inquiry \u2014 '+tier.l+' Tier');var body=encodeURIComponent('Kit Inquiry\n\nTier: '+tier.l+' ('+d*100+'% discount)\n\nItems:\n'+lines.join('\n')+'\n\nTotal: '+fmt(total)+'\nBudget: '+fmt(tier.b)+'\nRemaining: '+fmt(tier.b-total)+'\n\n---\nPlease contact me to finalize this order.');window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-function go(page){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var t=document.getElementById('page-'+page);if(t)t.classList.add('active');document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)}
+function go(page){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)}}
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
-function initFI(){var els=document.querySelectorAll('.page.active .fade-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
+function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page.active .slide-left,.page.active .slide-right,.page.active .scale-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
 function handleSubmit(e){e.preventDefault();var f=e.target;var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Inquiry');var body=encodeURIComponent('Name: '+f.name.value+'\nCompany: '+(f.company?f.company.value:'')+'\nEmail: '+f.email.value+'\nInterest: '+f.interest.value+'\n\n'+f.message.value);window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
 // ===== SHOP CART =====
 var shopCart=[];
