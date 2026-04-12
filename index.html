@@ -187,7 +187,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-header .sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
 .lb-hint{font-size:9px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:0;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
-.lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 48px;width:100%;flex:1;min-height:0}
+.lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 20px;width:100%;flex:1;min-height:0}
 #lookbookFlip{visibility:hidden}
 #lookbookFlip.ready{visibility:visible}
 .fp{background:#faf9f6;overflow:hidden;position:relative}
@@ -753,7 +753,7 @@ function initLookbook(){
   var isMobile=window.innerWidth<768;
   var navH=isMobile?52:58,headerH=isMobile?40:50,counterH=16,thumbH=isMobile?60:76,pad=8;
   var availH=window.innerHeight-navH-headerH-counterH-thumbH-pad;
-  var availW=window.innerWidth-(isMobile?16:100);
+  var availW=window.innerWidth-(isMobile?16:40);
   var ph,pw;
   if(isMobile){
     pw=availW;ph=Math.floor(Math.min(pw*1.4,availH));
