@@ -35,6 +35,7 @@
 {"@context":"https://schema.org","@type":"Product","name":"The Holster — Luxury Leather Travel Bag","description":"A concealed leather shoulder rig for travel. Hand cut from full grain leather with stainless steel hardware. The ultimate luxury travel accessory. Ships to New York, LA, Miami, Toronto, London, and worldwide.","image":"https://goldybrown.com/holster.png","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Luxury Travel Bags","offers":{"@type":"Offer","price":"249","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://goldybrown.com","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":"14","maxValue":"28","unitCode":"d"}}}},"material":"Full grain leather","manufacturer":{"@type":"Organization","name":"Goldy Brown"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" href="holster.png" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -48,7 +49,8 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:default}
 ::selection{background:var(--g);color:#fff}
 .btn,.nav-tab,.section-card,.hv-swatch,.carousel-thumb,.carousel-arr,.lb-nav,.lb-thumb,.tier-b,.qb,.nav-cart-icon,.cart-x,.mob-toggle,.prop-item,.pcard{cursor:pointer}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#000;border-bottom:none;transition:transform .3s ease}
+.nav.nav-hidden{transform:translateY(-100%)}
 .nav-inner{display:flex;align-items:center;padding:4px 14px;position:relative}
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
 .nav-logo img{height:45px;display:block}
@@ -226,6 +228,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-main{position:relative;overflow:hidden;background:var(--bg-card);aspect-ratio:3/4}
 .carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
 .carousel-main img.active{opacity:1}
+.carousel-main:hover img.active{transform:scale(1.08);transition:transform 4s ease-out}
+.btt{position:fixed;bottom:24px;right:24px;z-index:800;width:40px;height:40px;background:#000;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.btt.show{opacity:.6;pointer-events:all}
+.btt:hover{opacity:1;transform:translateY(-2px)}
+.btt svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2}
 .carousel-arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:1px solid var(--b);background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;transition:all .3s;z-index:5}
 .carousel-arr:hover{background:var(--g);border-color:var(--g);color:#fff}
 .carousel-arr svg{width:16px;height:16px}
@@ -511,16 +518,16 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home-img">
 <div class="carousel-wrap">
 <div class="carousel-thumbs" id="carouselThumbs">
-<div class="carousel-thumb active" onclick="showSlide(0)"><img src="holster.png" alt="On Body"></div>
-<div class="carousel-thumb" onclick="showSlide(1)"><img src="holsterback.png" alt="Front"></div>
-<div class="carousel-thumb" onclick="showSlide(2)"><img src="holsterpouch.png" alt="Pouch"></div>
-<div class="carousel-thumb" onclick="showSlide(3)"><img src="holsterclose.png" alt="Close Up"></div>
+<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="holster.png" alt="On Body"></div>
+<div class="carousel-thumb" onclick="showSlide(1)"><img loading="lazy" src="holsterback.png" alt="Front"></div>
+<div class="carousel-thumb" onclick="showSlide(2)"><img loading="lazy" src="holsterpouch.png" alt="Pouch"></div>
+<div class="carousel-thumb" onclick="showSlide(3)"><img loading="lazy" src="holsterclose.png" alt="Close Up"></div>
 </div>
 <div class="carousel-main" id="carouselMain">
-<img src="holster.png" alt="On Body" class="active">
-<img src="holsterback.png" alt="Front View">
-<img src="holsterpouch.png" alt="Pouch Detail">
-<img src="holsterclose.png" alt="Close Up Detail">
+<img loading="lazy" src="holster.png" alt="On Body" class="active">
+<img loading="lazy" src="holsterback.png" alt="Front View">
+<img loading="lazy" src="holsterpouch.png" alt="Pouch Detail">
+<img loading="lazy" src="holsterclose.png" alt="Close Up Detail">
 <button class="carousel-arr prev" onclick="prevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <button class="carousel-arr next" onclick="nextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
 </div>
@@ -569,18 +576,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <button class="lb-nav lb-prev" onclick="if(window.LB)LB.flipPrev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <div id="lookbookFlip">
 <div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Lookbook</h2><div class="cv-yr">2025 &mdash; 2026</div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC03213.JPG" alt="Lookbook 1"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC03215.JPG" alt="Lookbook 2"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04641.JPG" alt="Lookbook 3"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC03218.JPG" alt="Lookbook 4"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04679.JPG" alt="Lookbook 5"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC03240.JPG" alt="Lookbook 6"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC03244.JPG" alt="Lookbook 7"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04573.JPG" alt="Lookbook 8"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04591.JPG" alt="Lookbook 9"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04620.JPG" alt="Lookbook 10"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04623.JPG" alt="Lookbook 11"></div></div>
-<div class="fp fp-img"><div class="fi-area"><img src="DSC04625.JPG" alt="Lookbook 12"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC03213.JPG" alt="Lookbook 1"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC03215.JPG" alt="Lookbook 2"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04641.JPG" alt="Lookbook 3"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC03218.JPG" alt="Lookbook 4"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04679.JPG" alt="Lookbook 5"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC03240.JPG" alt="Lookbook 6"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC03244.JPG" alt="Lookbook 7"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04573.JPG" alt="Lookbook 8"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04591.JPG" alt="Lookbook 9"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04620.JPG" alt="Lookbook 10"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04623.JPG" alt="Lookbook 11"></div></div>
+<div class="fp fp-img"><div class="fi-area"><img loading="lazy" src="DSC04625.JPG" alt="Lookbook 12"></div></div>
 <div class="fp fp-back"><h2>Goldy Brown</h2><div class="bk-line"></div><p>Handcrafted in Vancouver, Canada</p><div class="bk-email" id="lbEmail"></div></div>
 </div>
 <button class="lb-nav lb-next" onclick="if(window.LB)LB.flipNext()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -588,18 +595,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="lb-counter" id="lbCounter">Cover</div>
 <div class="lb-thumbs" id="lbThumbs">
 <div class="lb-thumb active" onclick="lbGoTo(0)"><div class="lb-thumb-cover">Cover</div></div>
-<div class="lb-thumb" onclick="lbGoTo(1)"><img src="DSC03213.JPG" alt="1"></div>
-<div class="lb-thumb" onclick="lbGoTo(2)"><img src="DSC03215.JPG" alt="2"></div>
-<div class="lb-thumb" onclick="lbGoTo(3)"><img src="DSC04641.JPG" alt="3"></div>
-<div class="lb-thumb" onclick="lbGoTo(4)"><img src="DSC03218.JPG" alt="4"></div>
-<div class="lb-thumb" onclick="lbGoTo(5)"><img src="DSC04679.JPG" alt="5"></div>
-<div class="lb-thumb" onclick="lbGoTo(6)"><img src="DSC03240.JPG" alt="6"></div>
-<div class="lb-thumb" onclick="lbGoTo(7)"><img src="DSC03244.JPG" alt="7"></div>
-<div class="lb-thumb" onclick="lbGoTo(8)"><img src="DSC04573.JPG" alt="8"></div>
-<div class="lb-thumb" onclick="lbGoTo(9)"><img src="DSC04591.JPG" alt="9"></div>
-<div class="lb-thumb" onclick="lbGoTo(10)"><img src="DSC04620.JPG" alt="10"></div>
-<div class="lb-thumb" onclick="lbGoTo(11)"><img src="DSC04623.JPG" alt="11"></div>
-<div class="lb-thumb" onclick="lbGoTo(12)"><img src="DSC04625.JPG" alt="12"></div>
+<div class="lb-thumb" onclick="lbGoTo(1)"><img loading="lazy" src="DSC03213.JPG" alt="1"></div>
+<div class="lb-thumb" onclick="lbGoTo(2)"><img loading="lazy" src="DSC03215.JPG" alt="2"></div>
+<div class="lb-thumb" onclick="lbGoTo(3)"><img loading="lazy" src="DSC04641.JPG" alt="3"></div>
+<div class="lb-thumb" onclick="lbGoTo(4)"><img loading="lazy" src="DSC03218.JPG" alt="4"></div>
+<div class="lb-thumb" onclick="lbGoTo(5)"><img loading="lazy" src="DSC04679.JPG" alt="5"></div>
+<div class="lb-thumb" onclick="lbGoTo(6)"><img loading="lazy" src="DSC03240.JPG" alt="6"></div>
+<div class="lb-thumb" onclick="lbGoTo(7)"><img loading="lazy" src="DSC03244.JPG" alt="7"></div>
+<div class="lb-thumb" onclick="lbGoTo(8)"><img loading="lazy" src="DSC04573.JPG" alt="8"></div>
+<div class="lb-thumb" onclick="lbGoTo(9)"><img loading="lazy" src="DSC04591.JPG" alt="9"></div>
+<div class="lb-thumb" onclick="lbGoTo(10)"><img loading="lazy" src="DSC04620.JPG" alt="10"></div>
+<div class="lb-thumb" onclick="lbGoTo(11)"><img loading="lazy" src="DSC04623.JPG" alt="11"></div>
+<div class="lb-thumb" onclick="lbGoTo(12)"><img loading="lazy" src="DSC04625.JPG" alt="12"></div>
 <div class="lb-thumb" onclick="lbGoTo(13)"><div class="lb-thumb-cover">Back</div></div>
 </div>
 </div>
@@ -652,13 +659,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <section class="section section-border fade-in">
 <div class="slabel">Separate from Guest Kits</div><h2 style="margin-bottom:10px">Hotel Property Items</h2><p style="color:var(--td);font-weight:200;margin-bottom:28px;font-size:13px;max-width:420px">Leather fixtures for your rooms and lobbies. Ordered separately.</p>
 <div class="prop-grid">
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img src="coffeecabinet.png" alt="Coffee Cabinet" style="width:100%;height:100%;object-fit:cover"></div><h4>Coffee Cabinet</h4><div class="price">From $350</div></div>
+<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="coffeecabinet.png" alt="Coffee Cabinet" style="width:100%;height:100%;object-fit:cover"></div><h4>Coffee Cabinet</h4><div class="price">From $350</div></div>
 <div class="prop-item"><h4>Storage Cabinet</h4><div class="price">From $500</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img src="tray.png" alt="Premium Tray" style="width:100%;height:100%;object-fit:cover"></div><h4>Premium Tray</h4><div class="price">From $40</div></div>
+<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="tray.png" alt="Premium Tray" style="width:100%;height:100%;object-fit:cover"></div><h4>Premium Tray</h4><div class="price">From $40</div></div>
 <div class="prop-item"><h4>Pen Holder</h4><div class="price">From $40</div></div>
 <div class="prop-item"><h4>Coaster Set</h4><div class="price">$5 each</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img src="doortag.png" alt="Door Tag" style="width:100%;height:100%;object-fit:cover"></div><h4>Door Tag</h4><div class="price">From $10</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img src="folder.png" alt="Leather Folder" style="width:100%;height:100%;object-fit:cover"></div><h4>Leather Folder</h4><div class="price">From $40</div></div>
+<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="doortag.png" alt="Door Tag" style="width:100%;height:100%;object-fit:cover"></div><h4>Door Tag</h4><div class="price">From $10</div></div>
+<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="folder.png" alt="Leather Folder" style="width:100%;height:100%;object-fit:cover"></div><h4>Leather Folder</h4><div class="price">From $40</div></div>
 </div>
 </section>
 </div>
@@ -667,12 +674,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="page" id="page-manufacturing">
 <div class="page-hero"><div class="slabel">Craftsmanship</div><h1>Manufacturing</h1><p class="sub">Six steps from raw hide to finished product. Each piece meticulously handmade.</p></div>
 <section>
-<div class="pstep slide-left"><div class="pstep-img"><img src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
-<div class="pstep slide-right"><div class="pstep-img"><img src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
-<div class="pstep slide-left"><div class="pstep-img"><img src="cutting.png" alt="Pattern Cutting"></div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
-<div class="pstep slide-right"><div class="pstep-img"><img src="assembly.png" alt="Assembly"></div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
-<div class="pstep slide-left"><div class="pstep-img"><img src="finishing.png" alt="Finishing"></div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
-<div class="pstep slide-right"><div class="pstep-img"><img src="branding.png" alt="Branding"></div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img loading="lazy" src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img loading="lazy" src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img loading="lazy" src="cutting.png" alt="Pattern Cutting"></div><div class="pstep-text"><div class="pstep-num">Step 03</div><h3>Pattern Cutting</h3><p>Master patterns, rotary knives, steel dies. The cutter reads the hide, avoids weak spots, maximizes yield.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img loading="lazy" src="assembly.png" alt="Assembly"></div><div class="pstep-text"><div class="pstep-num">Step 04</div><h3>Assembly</h3><p>Panels skived to precise thickness, glued, then saddle stitched. Hardware set by hand. Seams hammered flat.</p></div></div>
+<div class="pstep slide-left"><div class="pstep-img"><img loading="lazy" src="finishing.png" alt="Finishing"></div><div class="pstep-text"><div class="pstep-num">Step 05</div><h3>Finishing</h3><p>Raw edges sanded, painted, dried, sanded, painted again. Burnished with gum tragacanth until glass smooth.</p></div></div>
+<div class="pstep slide-right"><div class="pstep-img"><img loading="lazy" src="branding.png" alt="Branding"></div><div class="pstep-text"><div class="pstep-num">Step 06</div><h3>Branding</h3><p>Hot stamped or laser engraved. Wrapped in tissue, placed in a branded box. The unboxing is part of the product.</p></div></div>
 </section>
 <section class="section section-border fade-in leather-bg"><div style="text-align:center;margin-bottom:36px"><div class="slabel">What We Work With</div><h2>Materials</h2></div>
 <div class="mat-grid">
@@ -713,6 +720,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 
 <div class="hcv-badge">Handcrafted in Vancouver</div>
+<button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
 
 <footer class="footer">
 <div class="footer-logo">Goldy Brown</div>
@@ -811,12 +819,12 @@ function switchColor(color){
   var arrows=main.querySelectorAll('.carousel-arr');
   var arrowHTML='';arrows.forEach(function(a){arrowHTML+=a.outerHTML});
   var imgHTML='';
-  set.imgs.forEach(function(src,i){imgHTML+='<img src="'+src+'" alt="Holster"'+(i===0?' class="active"':'')+'>'});
+  set.imgs.forEach(function(src,i){imgHTML+='<img loading="lazy" src="'+src+'" alt="Holster"'+(i===0?' class="active"':'')+'>'});
   main.innerHTML=imgHTML+arrowHTML;
   // Update thumbs
   var thumbs=document.getElementById('carouselThumbs');
   var thHTML='';
-  set.imgs.forEach(function(src,i){thHTML+='<div class="carousel-thumb'+(i===0?' active':'')+'" onclick="showSlide('+i+')"><img src="'+src+'" alt="Thumb"></div>'});
+  set.imgs.forEach(function(src,i){thHTML+='<div class="carousel-thumb'+(i===0?' active':'')+'" onclick="showSlide('+i+')"><img loading="lazy" src="'+src+'" alt="Thumb"></div>'});
   thumbs.innerHTML=thHTML;
   // Update material
   document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
@@ -833,7 +841,7 @@ function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
-function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
+function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
 function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
 function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
@@ -886,7 +894,7 @@ function renderShopCart(){
   ft.style.display='';
   var h='';
   shopCart.forEach(function(item,idx){
-    h+='<div class="scart-item"><img src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div><div class="sci-price">$'+item.price+'</div><div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
+    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div><div class="sci-price">$'+item.price+'</div><div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
   });
   bd.innerHTML=h;
   document.getElementById('scItemCount').textContent=totalItems;
@@ -906,6 +914,10 @@ function shopCheckout(){
 }
 
 renderCat();initFI();document.getElementById('bbar').style.display='none';
+// Smart nav + back to top
+(function(){var lastY=0,nav=document.getElementById('mainNav'),btt=document.getElementById('bttBtn');window.addEventListener('scroll',function(){var y=window.pageYOffset;if(y>300){nav.classList.toggle('nav-hidden',y>lastY&&y>200);btt.classList.add('show')}else{nav.classList.remove('nav-hidden');btt.classList.remove('show')}lastY=y},{passive:true})})();
+// Lazy load images
+document.addEventListener('DOMContentLoaded',function(){var imgs=document.querySelectorAll('img[data-src]');if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.src=e.target.dataset.src;e.target.removeAttribute('data-src');obs.unobserve(e.target)}})},{rootMargin:'200px'});imgs.forEach(function(img){obs.observe(img)})}else{imgs.forEach(function(img){img.src=img.dataset.src})}});
 </script>
 </body>
 </html>
