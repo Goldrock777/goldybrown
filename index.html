@@ -238,47 +238,51 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-arr svg{width:16px;height:16px}
 .carousel-arr.prev{left:12px}
 .carousel-arr.next{right:12px}
-.page-hero{padding:84px 60px 32px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--b)}
-.page-hero h1{margin-bottom:8px;color:var(--w)}
-.page-hero .slabel{color:#b8a070}
-.page-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:480px;line-height:1.8}
-.tier-sel{display:flex;border:none;overflow:hidden;gap:4px}
-.tier-b{flex:1;text-align:center;padding:20px 12px;cursor:pointer;border:1px solid var(--b);transition:all .3s;background:var(--bg-card);position:relative}
-.tier-b:hover{background:var(--gg);border-color:var(--gl)}
-.tier-b.active{background:var(--gm);border-color:var(--gl)}
+.page-hero{padding:100px 60px 48px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--b);position:relative}
+.page-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#b8a070}
+.page-hero h1{margin-bottom:10px;color:var(--w);letter-spacing:-0.5px}
+.page-hero .slabel{color:#b8a070;margin-bottom:12px;font-size:10px;letter-spacing:5px}
+.page-hero .sub{font-size:15px;font-weight:200;color:var(--td);max-width:520px;line-height:1.85}
+.tier-sel{display:flex;border:none;overflow:hidden;gap:8px}
+.tier-b{flex:1;text-align:center;padding:28px 16px;cursor:pointer;border:1px solid var(--b);transition:all .4s;background:var(--bg-card);position:relative}
+.tier-b:hover{background:var(--gg);border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.06)}
+.tier-b.active{background:var(--gm);border-color:var(--gl);box-shadow:0 4px 20px rgba(45,90,61,.1)}
 .tier-b.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gl)}
-.tier-b .ta{font-family:var(--fd);font-size:20px;color:var(--w);margin-bottom:2px}
-.tier-b .td{font-size:11px;color:var(--gl);font-weight:400}
-.kit-budget-bar{margin-top:20px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--b)}
+.tier-b .ta{font-family:var(--fd);font-size:24px;color:var(--w);margin-bottom:4px}
+.tier-b .td{font-size:11px;color:var(--gl);font-weight:400;letter-spacing:.5px}
+.kit-budget-bar{margin-top:24px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--b)}
 .kbb-labels{display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px}
 .kbb-labels .kbb-spent{color:var(--gl);font-weight:500}
 .kbb-labels .kbb-remaining{color:var(--td);font-weight:300}
 .kbb-track{width:100%;height:10px;background:var(--bg-el);border-radius:5px;overflow:hidden}
 .kbb-fill{height:100%;background:var(--g);border-radius:5px;transition:width .5s ease}
-.steps-h{display:flex;align-items:stretch;justify-content:center;width:100%;max-width:920px;margin:0 auto}
-.step-h{flex:1;text-align:center;padding:28px 20px;background:var(--bg-card);border:1px solid var(--b)}
-.step-h-n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid #b8a070;color:#b8a070;font-family:var(--fd);font-size:15px;margin-bottom:12px}
-.step-h h3{font-size:15px;margin-bottom:5px}
-.step-h p{font-size:11.5px;color:var(--td);font-weight:200;line-height:1.6}
-.step-arr{display:flex;align-items:center;justify-content:center;width:44px;flex-shrink:0}
-.step-arr svg{width:22px;height:22px}
+.steps-h{display:flex;align-items:stretch;justify-content:center;width:100%;max-width:1000px;margin:0 auto}
+.step-h{flex:1;text-align:center;padding:36px 24px;background:var(--bg-card);border:1px solid var(--b)}
+.step-h-n{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1px solid #b8a070;color:#b8a070;font-family:var(--fd);font-size:17px;margin-bottom:14px}
+.step-h h3{font-size:16px;margin-bottom:6px}
+.step-h p{font-size:12px;color:var(--td);font-weight:200;line-height:1.7}
+.step-arr{display:flex;align-items:center;justify-content:center;width:48px;flex-shrink:0}
+.step-arr svg{width:24px;height:24px}
 .step-arr path{stroke:#b8a070}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px}
-.ccard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:border-color .3s;position:relative}
-.ccard.in-cart{border-color:var(--g)}
-.ccard .badge{position:absolute;top:7px;right:7px;background:var(--g);color:#fff;font-size:8px;letter-spacing:1px;font-weight:500;padding:2px 6px;display:none;text-transform:uppercase}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.ccard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s;position:relative}
+.ccard:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
+.ccard.in-cart{border-color:var(--g);box-shadow:0 4px 20px rgba(45,90,61,.1)}
+.ccard .badge{position:absolute;top:12px;right:12px;background:var(--g);color:#fff;font-size:8px;letter-spacing:1.5px;font-weight:500;padding:4px 10px;display:none;text-transform:uppercase;z-index:2}
 .ccard.in-cart .badge{display:block}
-.ccard-img{height:180px;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b);overflow:hidden}
-.ccard-img img{width:100%;height:100%;object-fit:contain;padding:8px}
-.ccard-info{padding:10px 12px}
-.ccard-info h4{font-size:12.5px;margin-bottom:2px}
-.ccard-info .price{font-size:12.5px;color:var(--gl);font-weight:300;margin-bottom:8px}
-.ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:10.5px;margin-left:4px}
-.qc{display:flex;align-items:center;border:1px solid var(--b);overflow:hidden}
-.qb{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:var(--bg-el);border:0;color:var(--td);cursor:pointer;font-size:14px;font-family:var(--fb);transition:all .2s}
+.ccard-img{height:280px;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b);overflow:hidden;position:relative}
+.ccard-img img{width:100%;height:100%;object-fit:contain;padding:16px;transition:transform .6s ease}
+.ccard:hover .ccard-img img{transform:scale(1.05)}
+.ccard-info{padding:18px 20px 20px}
+.ccard-info h4{font-size:15px;margin-bottom:4px;letter-spacing:.3px}
+.ccard-info .cdesc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:10px}
+.ccard-info .price{font-size:16px;color:var(--gl);font-weight:400;margin-bottom:14px;font-family:var(--fd)}
+.ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:12px;margin-left:6px;font-family:var(--fb)}
+.qc{display:flex;align-items:center;border:1px solid var(--b);overflow:hidden;width:fit-content}
+.qb{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg-el);border:0;color:var(--td);cursor:pointer;font-size:15px;font-family:var(--fb);transition:all .2s}
 .qb:hover{background:var(--g);color:#fff}
 .qb.dis{opacity:.2;cursor:not-allowed;pointer-events:none}
-.qd{width:34px;height:30px;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:400;color:var(--w);background:var(--bg);border-left:1px solid var(--b);border-right:1px solid var(--b)}
+.qd{width:42px;height:36px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:400;color:var(--w);background:var(--bg);border-left:1px solid var(--b);border-right:1px solid var(--b)}
 .bbar{position:sticky;bottom:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--b);padding:11px 60px;transition:transform .3s}
 .bbar.empty{transform:translateY(100%)}
 .bbar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:18px}
@@ -316,23 +320,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .cr.big{font-size:14px;margin-top:7px;padding-top:7px;border-top:1px solid var(--b)}.cr.big .l{font-family:var(--fd);color:var(--w)}.cr.big .v{font-family:var(--fd);font-size:16px}
 .cart-iq{width:100%;padding:12px;margin-top:12px;background:var(--g);border:1px solid var(--g);color:#fff;font-family:var(--fb);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s}
 .cart-iq:hover{background:var(--gb)}
-.aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.aud-item{padding:36px 18px;text-align:center;transition:all .3s;background:var(--bg-card);border:1px solid var(--b)}
-.aud-item:hover{background:var(--gg);border-color:var(--gl)}
-.aud-ico{width:40px;height:40px;margin:0 auto 10px;border:1px solid #b8a070;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:#b8a070}
-.aud-item h4{margin-bottom:4px;font-size:13px}
-.aud-item p{font-size:11px;color:var(--tm);font-weight:200}
-.comp{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.comp-stat{padding:20px;border:1px solid var(--b);margin-bottom:8px;background:var(--bg-card);transition:border-color .3s}
-.comp-stat:hover{border-color:var(--gl)}
-.comp-stat .cv{font-family:var(--fd);font-size:28px;margin-bottom:3px}
+.aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.aud-item{padding:40px 24px;text-align:center;transition:all .4s;background:var(--bg-card);border:1px solid var(--b)}
+.aud-item:hover{background:var(--gg);border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.06)}
+.aud-ico{width:52px;height:52px;margin:0 auto 16px;border:1px solid #b8a070;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#b8a070}
+.aud-item h4{margin-bottom:6px;font-size:14px;letter-spacing:.3px}
+.aud-item p{font-size:12px;color:var(--td);font-weight:200;line-height:1.6}
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.comp-col-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:500;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--b)}
+.comp-stat{padding:24px;border:1px solid var(--b);margin-bottom:10px;background:var(--bg-card);transition:all .3s}
+.comp-stat:hover{border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.05)}
+.comp-stat .cv{font-family:var(--fd);font-size:32px;margin-bottom:6px}
 .comp-stat .cv.good{color:var(--gl)}.comp-stat .cv.bad{color:var(--tm)}
-.comp-stat .cl{font-size:12px;color:var(--td);font-weight:200}
-.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.prop-item{text-align:center;padding:20px 8px;border:1px solid var(--b);background:var(--bg-card);transition:border-color .3s}
-.prop-item:hover{border-color:var(--g)}
-.prop-item h4{font-size:12px;margin-bottom:3px}
-.prop-item .price{font-size:12px;color:var(--gl);font-weight:300}
+.comp-stat .cl{font-size:13px;color:var(--td);font-weight:200;line-height:1.5}
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.prop-item{text-align:left;border:1px solid var(--b);background:var(--bg-card);transition:all .4s;overflow:hidden}
+.prop-item:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
+.prop-item .prop-img{height:220px;overflow:hidden;border-bottom:1px solid var(--b)}
+.prop-item .prop-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.prop-item:hover .prop-img img{transform:scale(1.05)}
+.prop-item .prop-body{padding:18px 20px 20px}
+.prop-item h4{font-size:15px;margin-bottom:4px;letter-spacing:.3px}
+.prop-item .prop-desc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:8px}
+.prop-item .price{font-size:16px;color:var(--gl);font-weight:400;font-family:var(--fd)}
 .pstep{display:grid;grid-template-columns:1fr 1fr;min-height:400px;align-items:center;border-bottom:1px solid var(--b)}
 .pstep:nth-child(even){direction:rtl}.pstep:nth-child(even)>*{direction:ltr}
 .pstep:nth-child(odd) .pstep-text{background:var(--bg-card)}
@@ -420,10 +430,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-wrap{padding:0;height:100vh}.lb-header{padding-top:62px;margin-bottom:0}.lb-header h1{font-size:14px}.lb-header .sub{font-size:8px}.lb-hint{font-size:8px}.lb-flip-wrap{padding:0 8px}
 .lb-thumbs{padding:2px 8px;gap:3px}.lb-thumb{width:36px;height:48px}
 .lb-counter{padding:2px;font-size:9px}.lb-nav{width:34px;height:34px}.lb-prev{left:2px}.lb-next{right:2px}
-.page-hero{padding:72px 24px 20px}
-.steps-h{flex-direction:column}.step-arr{width:auto;height:24px;transform:rotate(90deg)}
-.tier-sel{flex-direction:column;gap:4px}
-.aud-grid{grid-template-columns:repeat(2,1fr)}
+.page-hero{padding:80px 24px 28px}
+.page-hero::after{width:40px}
+.steps-h{flex-direction:column;gap:0}.step-arr{width:auto;height:28px;transform:rotate(90deg)}
+.tier-sel{flex-direction:column;gap:6px}
+.tier-b{padding:22px 16px}
+.aud-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.cat-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.ccard-img{height:240px}
+.prop-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.prop-item .prop-img{height:180px}
+.comp{gap:28px}
 .comp{grid-template-columns:1fr;gap:20px}
 .pstep{grid-template-columns:1fr}.pstep:nth-child(even){direction:ltr}.pstep-img{height:220px;overflow:hidden}.pstep-text{padding:24px 24px}
 .mat-grid{grid-template-columns:repeat(2,1fr)}
@@ -442,9 +459,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .section{padding:28px 16px}
 .home-hero{padding:64px 16px 8px}
 .product-grid{grid-template-columns:repeat(2,1fr);gap:8px}.pcard-img{height:160px}
-.cat-grid{grid-template-columns:repeat(2,1fr);gap:6px}
+.cat-grid{grid-template-columns:1fr;gap:12px}
+.ccard-img{height:220px}
+.prop-grid{grid-template-columns:1fr;gap:12px}
+.prop-item .prop-img{height:200px}
+.comp{grid-template-columns:1fr;gap:20px}
 .lb-flip-wrap{padding:0 12px}
-.aud-grid{grid-template-columns:1fr}
+.aud-grid{grid-template-columns:1fr;gap:8px}
 .mat-grid{grid-template-columns:1fr}
 .holster-home-text{padding:24px 20px 32px}
 .holster-home-text h2{font-size:24px}
@@ -614,9 +635,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <!-- ======================== HOTEL PROGRAMME ======================== -->
 <div class="page" id="page-hotel">
-<div class="page-hero"><div class="slabel">For Hotel Partners</div><h1>The Hotel Programme</h1><p class="sub">Curated leather gift kits for your VIP guests. Choose a tier, build your kit, we handle everything.</p></div>
-<section class="section" style="padding-top:0">
-<div class="steps-h" style="margin-bottom:44px">
+<div class="page-hero"><div class="slabel">For Hotel Partners</div><h1>The Hotel Programme</h1><p class="sub">Curated leather gift kits for your most valued guests. Select a budget tier, build your custom kit, and we handle the branding, packaging, and delivery.</p></div>
+<section class="section" style="padding-top:8px">
+<div class="steps-h" style="margin-bottom:52px">
 <div class="step-h"><div class="step-h-n">1</div><h3>Pick a Tier</h3><p>$10K, $25K, $50K, or $100K</p></div>
 <div class="step-arr"><svg viewBox="0 0 32 32" fill="none"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="#3a7a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 <div class="step-h"><div class="step-h-n">2</div><h3>Add to Your Kit</h3><p>Budget bar tracks your spend live</p></div>
@@ -635,13 +656,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="kbb-labels"><span class="kbb-spent" id="kbSpent">$0 spent</span><span class="kbb-remaining" id="kbRemaining">$10,000 remaining</span></div>
 <div class="kbb-track"><div class="kbb-fill" id="kbFill" style="width:0%"></div></div>
 </div>
-<div class="slabel" style="margin-top:24px">Build Your Kit</div>
-<h2 style="margin-bottom:6px">Guest Kit Items</h2>
-<p style="color:var(--td);font-weight:200;margin-bottom:20px;font-size:13px">Add items below. Budget bar appears at the bottom.</p>
+<div class="slabel" style="margin-top:32px">Build Your Kit</div>
+<h2 style="margin-bottom:8px">Guest Kit Items</h2>
+<p style="color:var(--td);font-weight:200;margin-bottom:24px;font-size:14px;max-width:520px;line-height:1.8">Select items to include in your guest kit. Use the quantity controls to adjust amounts within your budget.</p>
 <div class="cat-grid" id="catGrid"></div>
 </section>
 <section class="section section-border fade-in">
-<div class="slabel" style="text-align:center;margin-bottom:28px">Who It's For</div>
+<div style="text-align:center;margin-bottom:36px"><div class="slabel">Who It's For</div><h2 style="margin-bottom:8px">Built for World-Class Properties</h2><p style="color:var(--td);font-weight:200;font-size:14px;max-width:480px;margin:0 auto;line-height:1.8">Trusted by premium hospitality brands who understand the value of lasting impressions.</p></div>
 <div class="aud-grid">
 <div class="aud-item"><div class="aud-ico">&#9733;</div><h4>4 &amp; 5 Star Hotels</h4><p>Elevate your VIP amenity programme</p></div>
 <div class="aud-item"><div class="aud-ico">&#9782;</div><h4>Resort Properties</h4><p>Welcome gifts guests actually keep</p></div>
@@ -650,22 +671,22 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </section>
 <section class="section section-border fade-in">
-<div class="slabel">The Case for Leather</div><h2 style="margin-bottom:28px">Why Leather Over Swag</h2>
+<div class="slabel">The Case for Leather</div><h2 style="margin-bottom:8px">Why Leather Over Swag</h2><p style="color:var(--td);font-weight:200;margin-bottom:36px;font-size:14px;max-width:520px;line-height:1.8">Premium leather goods outperform generic branded merchandise in every measurable category.</p>
 <div class="comp">
-<div><div class="comp-stat"><div class="cv good">87%</div><div class="cl">of travellers keep premium leather gifts</div></div><div class="comp-stat"><div class="cv good">3.2&times;</div><div class="cl">more social media posts with wearable gifts</div></div><div class="comp-stat"><div class="cv good">Long term</div><div class="cl">brand recall from physical keepsakes</div></div></div>
-<div><div class="comp-stat"><div class="cv bad">12%</div><div class="cl">of travellers keep branded swag</div></div><div class="comp-stat"><div class="cv bad">Forgotten</div><div class="cl">generic amenities no one photographs</div></div><div class="comp-stat"><div class="cv bad">Zero</div><div class="cl">differentiation from competitor giveaways</div></div></div>
+<div><div class="comp-col-label">Goldy Brown Leather</div><div class="comp-stat"><div class="cv good">87%</div><div class="cl">of travellers keep premium leather gifts</div></div><div class="comp-stat"><div class="cv good">3.2&times;</div><div class="cl">more social media posts with wearable gifts</div></div><div class="comp-stat"><div class="cv good">Long term</div><div class="cl">brand recall from physical keepsakes</div></div></div>
+<div><div class="comp-col-label" style="color:var(--tm)">Generic Branded Swag</div><div class="comp-stat"><div class="cv bad">12%</div><div class="cl">of travellers keep branded swag</div></div><div class="comp-stat"><div class="cv bad">Forgotten</div><div class="cl">generic amenities no one photographs</div></div><div class="comp-stat"><div class="cv bad">Zero</div><div class="cl">differentiation from competitor giveaways</div></div></div>
 </div>
 </section>
 <section class="section section-border fade-in">
-<div class="slabel">Separate from Guest Kits</div><h2 style="margin-bottom:10px">Hotel Property Items</h2><p style="color:var(--td);font-weight:200;margin-bottom:28px;font-size:13px;max-width:420px">Leather fixtures for your rooms and lobbies. Ordered separately.</p>
+<div class="slabel">Separate from Guest Kits</div><h2 style="margin-bottom:8px">Hotel Property Items</h2><p style="color:var(--td);font-weight:200;margin-bottom:36px;font-size:14px;max-width:520px;line-height:1.8">Leather fixtures and accessories for your rooms and lobbies. Ordered separately from guest kits.</p>
 <div class="prop-grid">
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="coffeecabinet.png" alt="Coffee Cabinet" style="width:100%;height:100%;object-fit:cover"></div><h4>Coffee Cabinet</h4><div class="price">From $350</div></div>
-<div class="prop-item"><h4>Storage Cabinet</h4><div class="price">From $500</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="tray.png" alt="Premium Tray" style="width:100%;height:100%;object-fit:cover"></div><h4>Premium Tray</h4><div class="price">From $40</div></div>
-<div class="prop-item"><h4>Pen Holder</h4><div class="price">From $40</div></div>
-<div class="prop-item"><h4>Coaster Set</h4><div class="price">$5 each</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="doortag.png" alt="Door Tag" style="width:100%;height:100%;object-fit:cover"></div><h4>Door Tag</h4><div class="price">From $10</div></div>
-<div class="prop-item"><div style="height:100px;overflow:hidden;margin:-20px -8px 12px;border-bottom:1px solid var(--b)"><img loading="lazy" src="folder.png" alt="Leather Folder" style="width:100%;height:100%;object-fit:cover"></div><h4>Leather Folder</h4><div class="price">From $40</div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="coffeecabinet.png" alt="Coffee Cabinet"></div><div class="prop-body"><h4>Coffee Cabinet</h4><div class="prop-desc">Full grain leather-wrapped cabinet for in-room coffee service. Fits standard hotel coffee machines.</div><div class="price">From $350</div></div></div>
+<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Storage Cabinet</h4><div class="prop-desc">Leather-clad storage unit for minibar or wardrobe areas. Custom sizing available per property.</div><div class="price">From $500</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="tray.png" alt="Premium Tray"></div><div class="prop-body"><h4>Premium Tray</h4><div class="prop-desc">Leather-lined serving tray for welcome drinks, keys, or turndown amenities. Available in multiple sizes.</div><div class="price">From $40</div></div></div>
+<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Pen Holder</h4><div class="prop-desc">Desk-top leather pen holder for guest room writing stations. Weighted base, single or double slot.</div><div class="price">From $40</div></div></div>
+<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Coaster Set</h4><div class="prop-desc">Set of four leather coasters with embossed hotel branding. Edge-burnished, non-slip backing.</div><div class="price">$5 each</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="doortag.png" alt="Door Tag"></div><div class="prop-body"><h4>Door Tag</h4><div class="prop-desc">Leather do-not-disturb tag with hot-stamped messaging. Dual-sided, brass grommet hardware.</div><div class="price">From $10</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="folder.png" alt="Leather Folder"></div><div class="prop-body"><h4>Leather Folder</h4><div class="prop-desc">Guest information folder with interior pockets for welcome letter, room guide, and brand collateral.</div><div class="price">From $40</div></div></div>
 </div>
 </section>
 </div>
@@ -841,7 +862,7 @@ function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
-function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
+function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
 function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
 function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
