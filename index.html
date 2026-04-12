@@ -182,10 +182,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
 .lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden}
-.lb-header{text-align:center;margin-bottom:0;padding-top:58px}
-.lb-header h1{font-family:var(--fd);font-size:18px;color:var(--w);margin-bottom:0}
-.lb-header .sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
-.lb-hint{font-size:9px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:0;animation:hintPulse 2s ease-in-out infinite}
+.lb-header{text-align:center;margin-bottom:0;padding-top:56px}
+.lb-header h1{font-family:var(--fd);font-size:16px;color:var(--w);margin-bottom:0}
+.lb-header .sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
+.lb-hint{font-size:8px;color:var(--tm);letter-spacing:2px;text-transform:uppercase;margin-bottom:0;animation:hintPulse 2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4}50%{opacity:1}}
 .lb-flip-wrap{position:relative;display:flex;align-items:center;justify-content:center;padding:0 10px;width:100%;flex:1;min-height:0}
 #lookbookFlip{visibility:hidden}
@@ -751,16 +751,16 @@ function playFlipSound(){var s=flipAudio.cloneNode();s.volume=0.06;s.play().catc
 function initLookbook(){
   var c=document.getElementById('lookbookFlip');if(!c)return;
   var isMobile=window.innerWidth<768;
-  var navH=isMobile?52:58,headerH=isMobile?40:50,counterH=16,thumbH=isMobile?60:76,pad=8;
+  var navH=isMobile?52:54,headerH=isMobile?40:36,counterH=12,thumbH=isMobile?60:72,pad=4;
   var availH=window.innerHeight-navH-headerH-counterH-thumbH-pad;
-  var availW=window.innerWidth-(isMobile?16:20);
+  var availW=window.innerWidth-(isMobile?16:10);
   var ph,pw;
   if(isMobile){
     pw=availW;ph=Math.floor(Math.min(pw*1.4,availH));
     if(ph>availH){ph=availH;pw=Math.floor(ph/1.4)}
   }else{
-    pw=Math.floor(availW/2);ph=Math.floor(pw*1.35);
-    if(ph>availH){ph=availH;pw=Math.floor(ph/1.35)}
+    ph=availH;pw=Math.floor(ph/1.1);
+    if(pw*2>availW){pw=Math.floor(availW/2);ph=Math.floor(pw*1.1)}
   }
   LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.5,mobileScrollSupport:true,useMouseEvents:true,flippingTime:1000,drawShadow:true,startPage:0,autoSize:true,usePortrait:isMobile,startZIndex:0,swipeDistance:20});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
