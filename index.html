@@ -278,6 +278,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ccard-info .cdesc{font-size:12.5px;color:var(--td);font-weight:200;line-height:1.7;margin-bottom:14px}
 .ccard-info .price{font-size:18px;color:var(--gl);font-weight:400;margin-bottom:16px;font-family:var(--fd)}
 .ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:13px;margin-left:6px;font-family:var(--fb)}
+.ccard-info .ctier{font-size:11px;color:var(--gl);font-weight:400;margin-top:-10px;margin-bottom:14px;letter-spacing:.2px}
 .qc{display:flex;align-items:center;border:1px solid var(--b);overflow:hidden;width:fit-content}
 .qb{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-el);border:0;color:var(--td);cursor:pointer;font-size:16px;font-family:var(--fb);transition:all .2s}
 .qb:hover{background:var(--g);color:#fff}
@@ -336,8 +337,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .prop-item{text-align:left;border:1px solid var(--b);background:var(--bg-card);transition:all .4s;overflow:hidden}
 .prop-item:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
-.prop-item .prop-img{height:220px;overflow:hidden;border-bottom:1px solid var(--b)}
-.prop-item .prop-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.prop-item .prop-img{height:220px;overflow:hidden;border-bottom:1px solid var(--b);background:var(--bg-el)}
+.prop-item .prop-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .6s ease}
 .prop-item:hover .prop-img img{transform:scale(1.05)}
 .prop-item .prop-body{padding:18px 20px 20px}
 .prop-item h4{font-size:15px;margin-bottom:4px;letter-spacing:.3px}
@@ -686,6 +687,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h2 style="margin-bottom:8px">Guest Kit Items</h2>
 <p style="color:var(--td);font-weight:200;margin-bottom:32px;font-size:14px;max-width:560px;line-height:1.8">Each piece is handcrafted from full grain leather and can be hot-stamped with your property's branding. Select items and quantities below.</p>
 <div class="cat-grid" id="catGrid"></div>
+<div class="slabel" style="margin-top:48px">Hotel Property</div>
+<h2 style="margin-bottom:8px">Room &amp; Lobby Items</h2>
+<p style="color:var(--td);font-weight:200;margin-bottom:32px;font-size:14px;max-width:560px;line-height:1.8">Leather fixtures for your rooms and lobbies. Ordered separately from guest kits. Priced per unit.</p>
+<div class="prop-grid">
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="coffeecabinet.png" alt="Coffee Cabinet"></div><div class="prop-body"><h4>Coffee Cabinet</h4><div class="prop-desc">Full grain leather-wrapped cabinet for in-room coffee service. Fits standard hotel coffee machines.</div><div class="price">From $350</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="tray.png" alt="Premium Tray"></div><div class="prop-body"><h4>Premium Tray</h4><div class="prop-desc">Leather-lined serving tray for welcome drinks, keys, or turndown amenities. Available in multiple sizes.</div><div class="price">From $50</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="doortag.png" alt="Door Tag"></div><div class="prop-body"><h4>Door Tag</h4><div class="prop-desc">Leather do-not-disturb tag with hot-stamped messaging. Dual-sided, brass grommet hardware.</div><div class="price">From $15</div></div></div>
+<div class="prop-item"><div class="prop-img"><img loading="lazy" src="folder.png" alt="Leather Folder"></div><div class="prop-body"><h4>Leather Folder</h4><div class="prop-desc">Guest information folder with interior pockets for welcome letter, room guide, and brand collateral.</div><div class="price">From $60</div></div></div>
+</div>
 </section>
 <section class="section section-border fade-in">
 <div style="text-align:center;margin-bottom:36px"><div class="slabel">Who It's For</div><h2 style="margin-bottom:8px">Built for World-Class Properties</h2><p style="color:var(--td);font-weight:200;font-size:14px;max-width:480px;margin:0 auto;line-height:1.8">Trusted by premium hospitality brands who understand the value of lasting impressions.</p></div>
@@ -701,18 +711,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="comp">
 <div><div class="comp-col-label">Goldy Brown Leather</div><div class="comp-stat"><div class="cv good">87%</div><div class="cl">of travellers keep premium leather gifts</div></div><div class="comp-stat"><div class="cv good">3.2&times;</div><div class="cl">more social media posts with wearable gifts</div></div><div class="comp-stat"><div class="cv good">Long term</div><div class="cl">brand recall from physical keepsakes</div></div></div>
 <div><div class="comp-col-label" style="color:var(--tm)">Generic Branded Swag</div><div class="comp-stat"><div class="cv bad">12%</div><div class="cl">of travellers keep branded swag</div></div><div class="comp-stat"><div class="cv bad">Forgotten</div><div class="cl">generic amenities no one photographs</div></div><div class="comp-stat"><div class="cv bad">Zero</div><div class="cl">differentiation from competitor giveaways</div></div></div>
-</div>
-</section>
-<section class="section section-border fade-in">
-<div class="slabel">Separate from Guest Kits</div><h2 style="margin-bottom:8px">Hotel Property Items</h2><p style="color:var(--td);font-weight:200;margin-bottom:36px;font-size:14px;max-width:520px;line-height:1.8">Leather fixtures and accessories for your rooms and lobbies. Ordered separately from guest kits.</p>
-<div class="prop-grid">
-<div class="prop-item"><div class="prop-img"><img loading="lazy" src="coffeecabinet.png" alt="Coffee Cabinet"></div><div class="prop-body"><h4>Coffee Cabinet</h4><div class="prop-desc">Full grain leather-wrapped cabinet for in-room coffee service. Fits standard hotel coffee machines.</div><div class="price">From $350</div></div></div>
-<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Storage Cabinet</h4><div class="prop-desc">Leather-clad storage unit for minibar or wardrobe areas. Custom sizing available per property.</div><div class="price">From $500</div></div></div>
-<div class="prop-item"><div class="prop-img"><img loading="lazy" src="tray.png" alt="Premium Tray"></div><div class="prop-body"><h4>Premium Tray</h4><div class="prop-desc">Leather-lined serving tray for welcome drinks, keys, or turndown amenities. Available in multiple sizes.</div><div class="price">From $40</div></div></div>
-<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Pen Holder</h4><div class="prop-desc">Desk-top leather pen holder for guest room writing stations. Weighted base, single or double slot.</div><div class="price">From $40</div></div></div>
-<div class="prop-item"><div class="prop-img" style="background:var(--bg-el);display:flex;align-items:center;justify-content:center"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm)">Coming Soon</span></div><div class="prop-body"><h4>Coaster Set</h4><div class="prop-desc">Set of four leather coasters with embossed hotel branding. Edge-burnished, non-slip backing.</div><div class="price">$5 each</div></div></div>
-<div class="prop-item"><div class="prop-img"><img loading="lazy" src="doortag.png" alt="Door Tag"></div><div class="prop-body"><h4>Door Tag</h4><div class="prop-desc">Leather do-not-disturb tag with hot-stamped messaging. Dual-sided, brass grommet hardware.</div><div class="price">From $10</div></div></div>
-<div class="prop-item"><div class="prop-img"><img loading="lazy" src="folder.png" alt="Leather Folder"></div><div class="prop-body"><h4>Leather Folder</h4><div class="prop-desc">Guest information folder with interior pockets for welcome letter, room guide, and brand collateral.</div><div class="price">From $40</div></div></div>
 </div>
 </section>
 </div>
@@ -933,13 +931,13 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 </script>
 <script>
 var P=[
-{id:'holster',name:'The Holster',price:300,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster.png',shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'},
-{id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:30,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
-{id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:60,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
+{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster.png',shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'},
+{id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
+{id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
 {id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six-slot bifold with center pocket. Vegetable-tanned leather that develops a rich patina over time. Guests carry your brand daily.',retail:60,img:'cardholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
-{id:'tie-case',name:'Tie Case',price:100,qty:0,desc:'Roll-style case that holds two ties without creasing. Secured with a leather strap and snap closure. Ideal for the business traveller.',retail:100,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/tie-case'},
+{id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/garment-holder'},
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
-{id:'clutch',name:'Clutch',price:150,qty:0,desc:'Envelope-style clutch with magnetic closure. Fits phone, cards, and essentials. A luxury evening accessory your guests will use repeatedly.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/clutch'}
+{id:'suitcase',name:'Suit Case',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
 var cT=0;
@@ -990,7 +988,7 @@ function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
-function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div><div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
+function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0,sv=p.price-dp;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div>'+(hd?'<div class="ctier">'+T[cT].l+' tier &mdash; save '+fmt(sv)+' per unit ('+(d*100)+'% off)</div>':'')+'<div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
 function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
 function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
