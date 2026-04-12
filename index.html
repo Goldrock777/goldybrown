@@ -264,25 +264,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .step-arr{display:flex;align-items:center;justify-content:center;width:48px;flex-shrink:0}
 .step-arr svg{width:24px;height:24px}
 .step-arr path{stroke:#b8a070}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .ccard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s;position:relative}
-.ccard:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
-.ccard.in-cart{border-color:var(--g);box-shadow:0 4px 20px rgba(45,90,61,.1)}
-.ccard .badge{position:absolute;top:12px;right:12px;background:var(--g);color:#fff;font-size:8px;letter-spacing:1.5px;font-weight:500;padding:4px 10px;display:none;text-transform:uppercase;z-index:2}
+.ccard:hover{border-color:var(--g);box-shadow:0 12px 40px rgba(45,90,61,.1)}
+.ccard.in-cart{border-color:var(--g);box-shadow:0 4px 24px rgba(45,90,61,.12)}
+.ccard .badge{position:absolute;top:14px;right:14px;background:var(--g);color:#fff;font-size:8px;letter-spacing:1.5px;font-weight:500;padding:5px 12px;display:none;text-transform:uppercase;z-index:2}
 .ccard.in-cart .badge{display:block}
-.ccard-img{height:280px;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b);overflow:hidden;position:relative}
-.ccard-img img{width:100%;height:100%;object-fit:contain;padding:16px;transition:transform .6s ease}
+.ccard-img{height:300px;background:var(--bg-el);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);border-bottom:1px solid var(--b);overflow:hidden;position:relative}
+.ccard-img img{width:100%;height:100%;object-fit:contain;padding:20px;transition:transform .6s ease}
 .ccard:hover .ccard-img img{transform:scale(1.05)}
-.ccard-info{padding:18px 20px 20px}
-.ccard-info h4{font-size:15px;margin-bottom:4px;letter-spacing:.3px}
-.ccard-info .cdesc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:10px}
-.ccard-info .price{font-size:16px;color:var(--gl);font-weight:400;margin-bottom:14px;font-family:var(--fd)}
-.ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:12px;margin-left:6px;font-family:var(--fb)}
+.ccard-info{padding:22px 24px 24px}
+.ccard-info h4{font-size:16px;margin-bottom:6px;letter-spacing:.3px}
+.ccard-info .cdesc{font-size:12.5px;color:var(--td);font-weight:200;line-height:1.7;margin-bottom:14px}
+.ccard-info .price{font-size:18px;color:var(--gl);font-weight:400;margin-bottom:16px;font-family:var(--fd)}
+.ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:13px;margin-left:6px;font-family:var(--fb)}
 .qc{display:flex;align-items:center;border:1px solid var(--b);overflow:hidden;width:fit-content}
-.qb{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg-el);border:0;color:var(--td);cursor:pointer;font-size:15px;font-family:var(--fb);transition:all .2s}
+.qb{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-el);border:0;color:var(--td);cursor:pointer;font-size:16px;font-family:var(--fb);transition:all .2s}
 .qb:hover{background:var(--g);color:#fff}
 .qb.dis{opacity:.2;cursor:not-allowed;pointer-events:none}
-.qd{width:42px;height:36px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:400;color:var(--w);background:var(--bg);border-left:1px solid var(--b);border-right:1px solid var(--b)}
+.qd{width:48px;height:40px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:400;color:var(--w);background:var(--bg);border-left:1px solid var(--b);border-right:1px solid var(--b)}
 .bbar{position:sticky;bottom:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--b);padding:11px 60px;transition:transform .3s}
 .bbar.empty{transform:translateY(100%)}
 .bbar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:18px}
@@ -451,8 +451,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tier-sel{flex-direction:column;gap:6px}
 .tier-b{padding:22px 16px}
 .aud-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.cat-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-.ccard-img{height:240px}
+.cat-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+.ccard-img{height:260px}
+.ccard-info{padding:18px 20px 20px}
 .prop-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .prop-item .prop-img{height:180px}
 .comp{gap:28px}
@@ -477,8 +478,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .section{padding:28px 16px}
 .home-hero{padding:64px 16px 8px}
 .product-grid{grid-template-columns:repeat(2,1fr);gap:8px}.pcard-img{height:160px}
-.cat-grid{grid-template-columns:1fr;gap:12px}
-.ccard-img{height:220px}
+.cat-grid{grid-template-columns:1fr;gap:14px}
+.ccard-img{height:240px}
+.ccard-info{padding:16px 18px 20px}
 .prop-grid{grid-template-columns:1fr;gap:12px}
 .prop-item .prop-img{height:200px}
 .comp{grid-template-columns:1fr;gap:20px}
@@ -660,8 +662,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <!-- ======================== HOTEL PROGRAMME ======================== -->
 <div class="page" id="page-hotel">
 <div class="page-hero"><div class="slabel">For Hotel Partners</div><h1>The Hotel Programme</h1><p class="sub">Curated leather gift kits for your most valued guests. Select a budget tier, build your custom kit, and we handle the branding, packaging, and delivery.</p></div>
-<section class="section" style="padding-top:8px">
-<div class="steps-h" style="margin-bottom:52px">
+<section class="section" style="padding-top:12px">
+<div class="steps-h" style="margin-bottom:56px">
 <div class="step-h"><div class="step-h-n">1</div><h3>Pick a Tier</h3><p>$10K, $25K, $50K, or $100K</p></div>
 <div class="step-arr"><svg viewBox="0 0 32 32" fill="none"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="#3a7a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 <div class="step-h"><div class="step-h-n">2</div><h3>Add to Your Kit</h3><p>Budget bar tracks your spend live</p></div>
@@ -680,9 +682,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="kbb-labels"><span class="kbb-spent" id="kbSpent">$0 spent</span><span class="kbb-remaining" id="kbRemaining">$10,000 remaining</span></div>
 <div class="kbb-track"><div class="kbb-fill" id="kbFill" style="width:0%"></div></div>
 </div>
-<div class="slabel" style="margin-top:32px">Build Your Kit</div>
+<div class="slabel" style="margin-top:36px">Build Your Kit</div>
 <h2 style="margin-bottom:8px">Guest Kit Items</h2>
-<p style="color:var(--td);font-weight:200;margin-bottom:24px;font-size:14px;max-width:520px;line-height:1.8">Select items to include in your guest kit. Use the quantity controls to adjust amounts within your budget.</p>
+<p style="color:var(--td);font-weight:200;margin-bottom:32px;font-size:14px;max-width:560px;line-height:1.8">Each piece is handcrafted from full grain leather and can be hot-stamped with your property's branding. Select items and quantities below.</p>
 <div class="cat-grid" id="catGrid"></div>
 </section>
 <section class="section section-border fade-in">
@@ -931,18 +933,13 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 </script>
 <script>
 var P=[
-{id:'holster',name:'The Holster',price:300,qty:0,desc:'Concealed leather shoulder rig with custom engraving',retail:249,img:'holster.png',shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'},
-{id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle',retail:30,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
-{id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim fit, all international passports',retail:60,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
-{id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six slot bifold with center pocket',retail:60,img:'cardholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
-{id:'pen-case',name:'Pen Case',price:30,qty:0,desc:'Single pen sleeve with snap closure',retail:30,img:'',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/pen-case'},
-{id:'tie-case',name:'Tie Case',price:100,qty:0,desc:'Roll style, fits two ties without creasing',retail:100,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/tie-case'},
-{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar lined, three finger capacity',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
-{id:'belt',name:'Leather Belt',price:100,qty:0,desc:'32mm strap with stainless steel buckle',retail:100,img:'',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/leather-belt'},
-{id:'jewellery',name:'Jewellery Roll',price:120,qty:0,desc:'Four compartment roll with ring bar',retail:120,img:'',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/jewellery-roll'},
-{id:'cosmetic',name:'Cosmetic Case',price:110,qty:0,desc:'Zippered pouch with interior pockets',retail:110,img:'',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cosmetic-case'},
-{id:'clutch',name:'Clutch',price:150,qty:0,desc:'Envelope style with magnetic closure',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/clutch'},
-{id:'watch-roll',name:'Watch Roll',price:140,qty:0,desc:'Two watch capacity with cushion inserts',retail:140,img:'',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/watch-roll'}
+{id:'holster',name:'The Holster',price:300,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster.png',shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'},
+{id:'luggage-tag',name:'Luggage Tag',price:30,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:30,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'},
+{id:'passport',name:'Passport Holder',price:60,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:60,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
+{id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six-slot bifold with center pocket. Vegetable-tanned leather that develops a rich patina over time. Guests carry your brand daily.',retail:60,img:'cardholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
+{id:'tie-case',name:'Tie Case',price:100,qty:0,desc:'Roll-style case that holds two ties without creasing. Secured with a leather strap and snap closure. Ideal for the business traveller.',retail:100,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/tie-case'},
+{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
+{id:'clutch',name:'Clutch',price:150,qty:0,desc:'Envelope-style clutch with magnetic closure. Fits phone, cards, and essentials. A luxury evening accessory your guests will use repeatedly.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/clutch'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
 var cT=0;
