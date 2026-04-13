@@ -222,3 +222,36 @@ goldybrown.com
 
 *Total leads: 58 across Vancouver & Toronto*
 *Priority targets: 5 newly appointed GMs who are most likely to try new vendors*
+
+---
+
+## VERIFIED DIRECT EMAILS & EMAIL PATTERNS
+
+### Confirmed Direct Emails
+| Person | Title | Property | Email |
+|--------|-------|----------|-------|
+| **Maykel Escalona** | Managing Director | Rosewood Hotel Georgia, Vancouver | maykel.escalona@rosewoodhotels.com |
+| **Olivia Chiarastella** | PR Manager | Fairmont Pacific Rim, Vancouver | olivia.chiarastella@fairmont.com |
+| **Cole Millen** | General Manager | Fairmont Hotel Vancouver | cole.millen@fairmont.com |
+| **Irina Gerchikov** | VP Hotel Operations | Loden Hotel, Vancouver | irina@theloden.com |
+| **Alina Popova** | Asst. Marketing & Comms | Four Seasons Dubai DIFC | alina.popova@fourseasons.com |
+| **Mohamed Hawwam** | General Manager | Sofitel Dubai Downtown | H7492@SOFITEL.COM |
+| **Gaurav Dutta** | General Manager | Hazelton Hotel, Toronto | gaurav.dutta@thehazeltonhotel.com |
+
+### Email Patterns (Use to build emails for named GMs)
+| Hotel Chain | Email Format | Example |
+|-------------|-------------|---------|
+| **Four Seasons** | firstname.lastname@fourseasons.com (97.8%) | chelan.goonetilleke@fourseasons.com |
+| **Fairmont** | firstname.lastname@fairmont.com | cole.millen@fairmont.com |
+| **Rosewood** | firstname.lastname@rosewoodhotels.com | maykel.escalona@rosewoodhotels.com |
+| **Shangri-La** | firstname.lastname@shangri-la.com | ashwin.mathur@shangri-la.com |
+| **Hazelton** | firstname.lastname@thehazeltonhotel.com | gaurav.dutta@thehazeltonhotel.com |
+
+### Built from patterns (UNVERIFIED — use Hunter.io to verify before sending)
+| Person | Title | Likely Email |
+|--------|-------|-------------|
+| **Chelan Goonetilleke** | GM, Four Seasons Toronto | chelan.goonetilleke@fourseasons.com |
+| **Mary Ann Gamboa** | Commercial Dir, Four Seasons Toronto | maryann.gamboa@fourseasons.com |
+| **Kristi Grotsch** | Hotel Manager, Four Seasons Toronto | kristi.grotsch@fourseasons.com |
+| **Ashwin Mathur** | GM, Shangri-La Toronto | ashwin.mathur@shangri-la.com |
+| **Jens Moesker** | Regional VP & GM, Fairmont Pacific Rim | jens.moesker@fairmont.com |
