@@ -508,8 +508,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 }
 .curr-toggle{position:relative;display:flex;align-items:center;gap:5px;cursor:pointer;color:rgba(255,255,255,.6);transition:color .3s;font-size:11px;letter-spacing:.5px;padding:6px 0}
 .curr-toggle:hover{color:#fff}
-.curr-flag{font-size:13px;line-height:1}
-.curr-code{font-family:var(--fb);font-weight:400}
+.curr-flag{width:20px;height:14px;border-radius:2px;overflow:hidden;flex-shrink:0}
+.cf{width:20px;height:14px;border-radius:2px;overflow:hidden;flex-shrink:0}
 .curr-menu{position:absolute;top:100%;right:0;background:#fff;border:1px solid var(--b);box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:160px;opacity:0;visibility:hidden;transform:translateY(4px);transition:all .25s;z-index:1100}
 .curr-menu.open{opacity:1;visibility:visible;transform:translateY(0)}
 .curr-opt{display:flex;align-items:center;gap:8px;padding:11px 16px;font-size:11px;letter-spacing:.5px;color:var(--td);font-family:var(--fb);cursor:pointer;transition:all .2s}
@@ -532,15 +532,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <div class="nav-right">
 <div class="curr-toggle" id="currToggle" onclick="toggleCurrMenu()">
-<span class="curr-flag" id="currFlag">&#127482;&#127480;</span>
-<span class="curr-code" id="currCode">USD</span>
+<svg class="curr-flag" id="currFlag" viewBox="0 0 21 15"><rect width="21" height="5" fill="#B22234"/><rect y="5" width="21" height="5" fill="#fff"/><rect y="10" width="21" height="5" fill="#B22234"/><rect width="9" height="8" fill="#3C3B6E"/></svg>
 <svg viewBox="0 0 12 12" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l3 3 3-3"/></svg>
 <div class="curr-menu" id="currMenu">
-<div class="curr-opt active" data-curr="USD" onclick="setCurrency('USD',event)"><span>&#127482;&#127480;</span> USD <span class="curr-sym">$</span></div>
-<div class="curr-opt" data-curr="CAD" onclick="setCurrency('CAD',event)"><span>&#127464;&#127462;</span> CAD <span class="curr-sym">CA$</span></div>
-<div class="curr-opt" data-curr="GBP" onclick="setCurrency('GBP',event)"><span>&#127468;&#127463;</span> GBP <span class="curr-sym">&pound;</span></div>
-<div class="curr-opt" data-curr="EUR" onclick="setCurrency('EUR',event)"><span>&#127466;&#127482;</span> EUR <span class="curr-sym">&euro;</span></div>
-<div class="curr-opt" data-curr="AED" onclick="setCurrency('AED',event)"><span>&#127462;&#127466;</span> AED <span class="curr-sym">د.إ</span></div>
+<div class="curr-opt active" data-curr="USD" onclick="setCurrency('USD',event)"><svg class="cf" viewBox="0 0 21 15"><rect width="21" height="5" fill="#B22234"/><rect y="5" width="21" height="5" fill="#fff"/><rect y="10" width="21" height="5" fill="#B22234"/><rect width="9" height="8" fill="#3C3B6E"/></svg><span>USD</span><span class="curr-sym">$</span></div>
+<div class="curr-opt" data-curr="CAD" onclick="setCurrency('CAD',event)"><svg class="cf" viewBox="0 0 21 15"><rect width="5.25" height="15" fill="#D52B1E"/><rect x="5.25" width="10.5" height="15" fill="#fff"/><rect x="15.75" width="5.25" height="15" fill="#D52B1E"/><path d="M10.5 3l-.8 2.5H7l2.2 1.6-.8 2.5 2.1-1.5 2.1 1.5-.8-2.5L14 7.5h-2.7z" fill="#D52B1E"/></svg><span>CAD</span><span class="curr-sym">CA$</span></div>
+<div class="curr-opt" data-curr="GBP" onclick="setCurrency('GBP',event)"><svg class="cf" viewBox="0 0 21 15"><rect width="21" height="15" fill="#012169"/><path d="M0 0l21 15M21 0L0 15" stroke="#fff" stroke-width="2.5"/><path d="M0 0l21 15M21 0L0 15" stroke="#C8102E" stroke-width="1.5"/><path d="M10.5 0v15M0 7.5h21" stroke="#fff" stroke-width="4"/><path d="M10.5 0v15M0 7.5h21" stroke="#C8102E" stroke-width="2.5"/></svg><span>GBP</span><span class="curr-sym">&pound;</span></div>
+<div class="curr-opt" data-curr="EUR" onclick="setCurrency('EUR',event)"><svg class="cf" viewBox="0 0 21 15"><rect width="21" height="15" fill="#003399"/><circle cx="10.5" cy="7.5" r="4" fill="none" stroke="#FFCC00" stroke-width=".5"/><g fill="#FFCC00"><polygon points="10.5,3.2 10.7,3.8 11.3,3.8 10.8,4.2 11,4.8 10.5,4.5 10,4.8 10.2,4.2 9.7,3.8 10.3,3.8"/><polygon points="7.8,4.3 8,4.9 8.6,4.9 8.1,5.3 8.3,5.9 7.8,5.5 7.3,5.9 7.5,5.3 7,4.9 7.6,4.9"/><polygon points="6.8,6.7 7,7.3 7.6,7.3 7.1,7.7 7.3,8.3 6.8,7.9 6.3,8.3 6.5,7.7 6,7.3 6.6,7.3"/><polygon points="7.8,9.1 8,9.7 8.6,9.7 8.1,10.1 8.3,10.7 7.8,10.3 7.3,10.7 7.5,10.1 7,9.7 7.6,9.7"/><polygon points="10.5,10.2 10.7,10.8 11.3,10.8 10.8,11.2 11,11.8 10.5,11.4 10,11.8 10.2,11.2 9.7,10.8 10.3,10.8"/><polygon points="13.2,9.1 13.4,9.7 14,9.7 13.5,10.1 13.7,10.7 13.2,10.3 12.7,10.7 12.9,10.1 12.4,9.7 13,9.7"/><polygon points="14.2,6.7 14.4,7.3 15,7.3 14.5,7.7 14.7,8.3 14.2,7.9 13.7,8.3 13.9,7.7 13.4,7.3 14,7.3"/><polygon points="13.2,4.3 13.4,4.9 14,4.9 13.5,5.3 13.7,5.9 13.2,5.5 12.7,5.9 12.9,5.3 12.4,4.9 13,4.9"/></g></svg><span>EUR</span><span class="curr-sym">&euro;</span></div>
+<div class="curr-opt" data-curr="AED" onclick="setCurrency('AED',event)"><svg class="cf" viewBox="0 0 21 15"><rect width="21" height="5" fill="#00732F"/><rect y="5" width="21" height="5" fill="#fff"/><rect y="10" width="21" height="5" fill="#000"/><rect width="5.25" height="15" fill="#EE1C25"/></svg><span>AED</span><span class="curr-sym">د.إ</span></div>
 </div>
 </div>
 <a href="https://instagram.com/goldybrowncouture" target="_blank" class="nav-social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -981,7 +980,7 @@ var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function fmtMain(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
-function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];document.getElementById('currCode').textContent=code;document.getElementById('currFlag').textContent=FLAGS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
+function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var active=document.querySelector('.curr-opt[data-curr="'+code+'"] .cf');if(active){var nf=active.cloneNode(true);nf.classList.remove('cf');nf.classList.add('curr-flag');nf.id='currFlag';var old=document.getElementById('currFlag');old.parentNode.replaceChild(nf,old)}document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
 function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmtMain(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
