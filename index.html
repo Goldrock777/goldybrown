@@ -188,7 +188,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
-.lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden}
+.lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1}
 .lb-header{text-align:center;margin-bottom:0;padding-top:68px}
 .lb-header h1{font-family:var(--fd);font-size:16px;color:var(--w);margin-bottom:0}
 .lb-header .sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:300}
@@ -648,7 +648,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="lb-wrap">
 <div class="lb-header fade-in"><div class="slabel">Lookbook</div><h1>The Collection</h1><div class="sub">Volume One &mdash; 2026</div></div>
 <div class="lb-hint">Click or drag to turn pages</div>
-<div class="lb-flip-wrap scale-in">
+<div class="lb-flip-wrap">
 <button class="lb-nav lb-prev" onclick="if(window.LB)LB.flipPrev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <div id="lookbookFlip">
 <div class="fp fp-cover"><div class="cv-border"></div><h2>The</h2><h1>Goldy<br>Brown</h1><div class="cv-line"></div><h2>Lookbook</h2><div class="cv-yr">2026</div></div>
@@ -945,7 +945,7 @@ function initLookbook(){
     ph=availH;pw=Math.floor(ph/1.1);
     if(pw*2>availW){pw=Math.floor(availW/2);ph=Math.floor(pw*1.1)}
   }
-  LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.5,mobileScrollSupport:true,useMouseEvents:true,flippingTime:1000,drawShadow:true,startPage:0,autoSize:true,usePortrait:isMobile,startZIndex:0,swipeDistance:20});
+  LB=new St.PageFlip(c,{width:pw,height:ph,size:'fixed',showCover:true,maxShadowOpacity:0.5,mobileScrollSupport:false,useMouseEvents:true,flippingTime:1000,drawShadow:true,startPage:0,autoSize:true,usePortrait:isMobile,startZIndex:0,swipeDistance:30});
   LB.loadFromHTML(document.querySelectorAll('#lookbookFlip .fp'));
   c.classList.add('ready');
   LB.on('flip',function(e){playFlipSound();var total=document.querySelectorAll('#lookbookFlip .fp').length;var el=document.getElementById('lbCounter');if(e.data===0)el.textContent='Cover';else if(e.data>=total-1)el.textContent='Back Cover';else el.textContent=e.data+' / '+(total-2);updateLbThumbs(e.data);});
@@ -1049,7 +1049,7 @@ function renderCart(){var b=document.getElementById('cartBd'),f=document.getElem
 function rmItem(id){P.forEach(function(p){if(p.id===id)p.qty=0});renderCat();updBudget()}
 function inquireKit(){var tier=T[cT],d=tier.d,lines=[],total=0;P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push(p.name+' x'+p.qty+' @ '+fmt(u)+' = '+fmt(l))}});if(!lines.length){openCart();return}var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Kit Inquiry \u2014 '+tier.l+' Tier');var body=encodeURIComponent('Kit Inquiry\n\nTier: '+tier.l+' ('+d*100+'% discount)\n\nItems:\n'+lines.join('\n')+'\n\nTotal: '+fmt(total)+'\nBudget: '+fmt(tier.b)+'\nRemaining: '+fmt(tier.b-total)+'\n\n---\nPlease contact me to finalize this order.');window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'#'+page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook')setTimeout(initLookbook,200)}}
+function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'#'+page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,200)}else{document.body.style.overflow=''}},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,200)}else{document.body.style.overflow=''}}}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var h=location.hash.replace('#','');go(h||'home',true)}});
 (function(){var h=location.hash.replace('#','');if(h&&document.getElementById('page-'+h)){go(h,true)}else{history.replaceState({page:'home'},'','/')}})();
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
