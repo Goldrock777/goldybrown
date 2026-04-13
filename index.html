@@ -508,8 +508,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 }
 .curr-toggle{position:relative;display:flex;align-items:center;gap:5px;cursor:pointer;color:rgba(255,255,255,.6);transition:color .3s;font-size:11px;letter-spacing:.5px;padding:6px 0}
 .curr-toggle:hover{color:#fff}
-.curr-flag{width:22px;height:15px;border-radius:2px;object-fit:contain;flex-shrink:0;background:#fff}
-.cf{width:22px;height:15px;border-radius:2px;object-fit:contain;flex-shrink:0;background:#fff}
+.curr-sym-nav{font-family:var(--fb);font-size:12px;font-weight:400}
+.curr-flag{width:22px;height:15px;border-radius:2px;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,.2)}
+.cf{width:22px;height:15px;border-radius:2px;object-fit:cover;flex-shrink:0;border:1px solid var(--b)}
 .curr-menu{position:absolute;top:100%;right:0;background:#fff;border:1px solid var(--b);box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:160px;opacity:0;visibility:hidden;transform:translateY(4px);transition:all .25s;z-index:1100}
 .curr-menu.open{opacity:1;visibility:visible;transform:translateY(0)}
 .curr-opt{display:flex;align-items:center;gap:8px;padding:11px 16px;font-size:11px;letter-spacing:.5px;color:var(--td);font-family:var(--fb);cursor:pointer;transition:all .2s}
@@ -533,6 +534,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="nav-right">
 <div class="curr-toggle" id="currToggle" onclick="toggleCurrMenu()">
 <img class="curr-flag" id="currFlag" src="usa.png" alt="USD">
+<span class="curr-sym-nav" id="currSymNav">$</span>
 <svg viewBox="0 0 12 12" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l3 3 3-3"/></svg>
 <div class="curr-menu" id="currMenu">
 <div class="curr-opt active" data-curr="USD" data-flag="usa.png" onclick="setCurrency('USD',event)"><img class="cf" src="usa.png" alt="US"><span>USD</span><span class="curr-sym">$</span></div>
@@ -976,7 +978,7 @@ var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function fmtMain(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
-function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
+function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
 function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmtMain(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
