@@ -444,9 +444,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .price{font-size:26px;padding-top:16px}
 .holster-home-text .btn-row .btn{padding:14px 16px;font-size:9px}
 .holster-variants{margin-top:16px}
-.carousel-wrap{grid-template-columns:1fr;min-height:auto}.carousel-main{aspect-ratio:3/4}
-.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:52px;height:52px}
-.carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-thumbs{flex-direction:row;order:2}.carousel-thumb{width:60px;height:60px}.carousel-main{order:1}
+.carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
 .products-hero{padding:72px 24px 20px}
@@ -1039,15 +1037,15 @@ function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b
 function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
 document.getElementById('bbar').classList.toggle('empty',count===0);
 document.getElementById('bSp').textContent=fmt(total)+' spent';
-var re=document.getElementById('bRm');if(rem===0&&count>0){re.textContent='Budget full';re.style.color='var(--gl)'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}
+var re=document.getElementById('bRm');if(rem===0&&count>0){re.textContent='Budget full';re.style.color='#2a6b3f'}else{re.textContent=fmt(Math.abs(rem))+' remaining';re.style.color=''}
 document.getElementById('bFill').style.width=pct+'%';document.getElementById('bCt').textContent=count;
 // Top budget bar
 document.getElementById('kbSpent').textContent=fmt(total)+' spent';
 var kbr=document.getElementById('kbRemaining');
-if(rem===0&&count>0){kbr.textContent='Budget full';kbr.style.color='var(--gl)'}else{kbr.textContent=fmt(rem)+' remaining';kbr.style.color=''}
+if(rem===0&&count>0){kbr.textContent='Budget full';kbr.style.color='#2a6b3f'}else{kbr.textContent=fmt(rem)+' remaining';kbr.style.color=''}
 document.getElementById('kbFill').style.width=pct+'%';
 // Cart
-document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'var(--red)':'';renderCart()}
+document.getElementById('cBud').textContent=fmt(tier.b);document.getElementById('cDisc').textContent=(tier.d*100)+'%';document.getElementById('cCnt').textContent=count;document.getElementById('cTot').textContent=fmt(total);var cr=document.getElementById('cRem');cr.textContent=fmt(Math.abs(rem));cr.style.color=rem<0?'#a04040':'';renderCart()}
 function openCart(){document.getElementById('cartOv').classList.add('open');document.getElementById('cartDr').classList.add('open');document.body.style.overflow='hidden'}
 function closeCart(){document.getElementById('cartOv').classList.remove('open');document.getElementById('cartDr').classList.remove('open');document.body.style.overflow=''}
 function renderCart(){var b=document.getElementById('cartBd'),f=document.getElementById('cartFt'),ic=P.filter(function(p){return p.qty>0});if(!ic.length){b.innerHTML='<div class="cart-empty">Your kit is empty.</div>';f.style.display='none';return}f.style.display='';var d=T[cT].d,h='';ic.forEach(function(p){var u=Math.round(p.price*(1-d)),l=u*p.qty;h+='<div class="cart-it"><div class="ci-info"><div class="ci-name">'+p.name+'</div><div class="ci-meta">'+p.qty+' &times; '+fmt(u)+'</div></div><div class="ci-price">'+fmt(l)+'</div><button class="ci-rm" onclick="rmItem(\''+p.id+'\')">&times;</button></div>'});b.innerHTML=h}
