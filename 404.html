@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+// Redirect to index with the path stored, so the SPA can pick it up
+var path = location.pathname;
+sessionStorage.setItem('gb-redirect', path);
+location.replace('/');
+</script>
+</head>
+<body></body>
+</html>
