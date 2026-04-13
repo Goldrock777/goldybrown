@@ -130,12 +130,19 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero{padding:80px 60px 4px;text-align:center}
 .home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
+@keyframes heroImgIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;height:calc(100vh - 76px)}
-.holster-home-img{overflow:hidden;background:#fff}
+.holster-home-img{overflow:hidden;background:#fff;animation:heroImgIn 1s cubic-bezier(.25,.46,.45,.94) both}
 .holster-home-img img{width:100%;height:100%;object-fit:contain}
-.holster-home-text{padding:20px 44px 20px;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
+.holster-home-text{padding:20px 44px 20px;display:flex;flex-direction:column;justify-content:center;overflow-y:auto;animation:heroTextIn 1s cubic-bezier(.25,.46,.45,.94) .3s both}
 .holster-home-text .slabel{margin-bottom:4px}
-.holster-home-text .est{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:400;margin-bottom:6px}
+.holster-home-text .est{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:400;margin-bottom:6px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .5s both}
+.holster-home-text h2{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .6s both}
+.holster-home-text .desc{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+.holster-home-text .detail-list{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .8s both}
+.holster-home-text .price{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .9s both}
+.holster-home-text .btn-row{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1s both}
 .holster-home-text h2{font-size:clamp(26px,3vw,38px);margin-bottom:0}
 .holster-home-text h2 span{color:var(--gl)}
 .holster-home-text .h2-accent{width:36px;height:1px;background:var(--gl);margin:8px 0 12px}
