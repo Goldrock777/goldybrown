@@ -35,7 +35,7 @@
 {"@context":"https://schema.org","@type":"Product","name":"The Holster — Luxury Leather Travel Bag","description":"A concealed leather shoulder rig for travel. Hand cut from full grain leather with stainless steel hardware. The ultimate luxury travel accessory. Ships to New York, LA, Miami, Toronto, London, and worldwide.","image":"https://goldybrown.com/holster.png","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Luxury Travel Bags","offers":{"@type":"Offer","price":"249","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://goldybrown.com","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":"14","maxValue":"28","unitCode":"d"}}}},"material":"Full grain leather","manufacturer":{"@type":"Organization","name":"Goldy Brown"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" href="holster.png" as="image">
+<link rel="preload" href="holster1.png" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -131,7 +131,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:4px;letter-spacing:-1px}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 .holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;height:calc(100vh - 76px)}
-.holster-home-img{overflow:hidden;background:var(--bg-card)}
+.holster-home-img{overflow:hidden;background:#fff}
 .holster-home-img img{width:100%;height:100%;object-fit:contain}
 .holster-home-text{padding:20px 44px 20px;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
 .holster-home-text .slabel{margin-bottom:4px}
@@ -225,7 +225,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
 .carousel-thumb.active{border-color:var(--g)}
 .carousel-thumb img{width:100%;height:100%;object-fit:cover}
-.carousel-main{position:relative;overflow:hidden;background:var(--bg-card);aspect-ratio:3/4}
+.carousel-main{position:relative;overflow:hidden;background:#fff;aspect-ratio:3/4}
 .carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
 .carousel-main img.active{opacity:1}
 .carousel-main:hover img.active{transform:scale(1.08);transition:transform 4s ease-out}
@@ -565,13 +565,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home-img">
 <div class="carousel-wrap">
 <div class="carousel-thumbs" id="carouselThumbs">
-<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="holster.png" alt="On Body"></div>
+<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="holster1.png" alt="On Body"></div>
 <div class="carousel-thumb" onclick="showSlide(1)"><img loading="lazy" src="holsterback.png" alt="Front"></div>
 <div class="carousel-thumb" onclick="showSlide(2)"><img loading="lazy" src="holsterpouch.png" alt="Pouch"></div>
 <div class="carousel-thumb" onclick="showSlide(3)"><img loading="lazy" src="holsterclose.png" alt="Close Up"></div>
 </div>
 <div class="carousel-main" id="carouselMain">
-<img loading="lazy" src="holster.png" alt="On Body" class="active">
+<img loading="lazy" src="holster1.png" alt="On Body" class="active">
 <img loading="lazy" src="holsterback.png" alt="Front View">
 <img loading="lazy" src="holsterpouch.png" alt="Pouch Detail">
 <img loading="lazy" src="holsterclose.png" alt="Close Up Detail">
@@ -949,7 +949,7 @@ function fmt(n){return '$'+n.toLocaleString('en-US')}
 var curSlide=0;
 var colorSets={
   green:{
-    imgs:['holster.png','holsterback.png','holsterpouch.png','holsterclose.png'],
+    imgs:['holster1.png','holsterback.png','holsterpouch.png','holsterclose.png'],
     material:'Full grain suede',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924',
     cart:'https://kuibri-ev.myshopify.com/cart/52629444165924:1'
@@ -1025,7 +1025,7 @@ function handleSubmit(e){e.preventDefault();var f=e.target;var email='inf'+'o'+S
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
-  green:{name:'The Holster — Green',variant:'52629444165924',price:249,img:'holster.png',material:'Full grain suede'},
+  green:{name:'The Holster — Green',variant:'52629444165924',price:249,img:'holster1.png',material:'Full grain suede'},
   black:{name:'The Holster — Black',variant:'52799540429092',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
 function addToShopCart(){
