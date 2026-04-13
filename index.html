@@ -228,7 +228,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-main{position:relative;overflow:hidden;background:#fff;aspect-ratio:3/4}
 .carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
 .carousel-main img.active{opacity:1}
-.carousel-main:hover img.active{transform:scale(1.08);transition:transform 4s ease-out}
+@media(hover:hover){.carousel-main:hover img.active{transform:scale(1.08);transition:transform 4s ease-out}}
 .btt{position:fixed;bottom:24px;right:24px;z-index:800;width:40px;height:40px;background:#000;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .btt.show{opacity:.6;pointer-events:all}
 .btt:hover{opacity:1;transform:translateY(-2px)}
