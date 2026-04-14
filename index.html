@@ -496,7 +496,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prop-item .prop-body{padding:18px 20px 20px}
 .prop-item h4{font-size:16px}
 .prop-item .prop-desc{font-size:13px}
-.heritage-grid{grid-template-columns:1fr!important;gap:24px!important}
+.heritage-strip{display:flex;align-items:center;gap:24px;max-width:1400px;margin:0 auto;padding:28px 60px;border-top:1px solid var(--b)}
+.heritage-strip img{width:60px;height:60px;object-fit:contain;flex-shrink:0;opacity:.8}
+.heritage-text{display:flex;flex-direction:column;gap:2px}
+.heritage-title{font-family:var(--fd);font-size:14px;color:var(--w);letter-spacing:.3px}
+.heritage-sub{font-size:11px;color:#b8a070;font-weight:300;letter-spacing:.5px}
 .why-grid{grid-template-columns:1fr;gap:12px}
 .why-item{padding:24px 20px}
 .lb-flip-wrap{padding:0 12px}
@@ -770,17 +774,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="why-item"><div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b8a070" stroke-width="1.2" width="28" height="28"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h4>Sustainable by Nature</h4><p>Full grain leather is a byproduct of the food industry. Vegetable tanning uses natural bark extracts. A leather product that lasts 20 years replaces dozens of disposable alternatives.</p></div>
 </div>
 </section>
-<section class="section section-border fade-in">
-<div class="heritage-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1000px;margin:0 auto">
-<div style="overflow:hidden;border:1px solid var(--b)"><img src="made in india.png" alt="Made in India" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div>
-<div class="slabel" style="color:#b8a070">Heritage &amp; Craft</div>
-<h2 style="margin-bottom:12px">Designed in Canada.<br>Handcrafted in India.</h2>
-<p style="color:var(--td);font-weight:200;font-size:14px;line-height:1.9;margin-bottom:16px">Every Goldy Brown piece is brought to life by master artisans in India, a land with an unbroken tradition of leather craftsmanship spanning centuries. Passed down through generations, these techniques carry the precision and reverence of royal ateliers that once served Mughal emperors and maharajas.</p>
-<p style="color:var(--td);font-weight:200;font-size:14px;line-height:1.9">Our designs are conceived in Vancouver and entrusted to the finest hands in the subcontinent — artisans who cut, stitch, and finish each piece with a devotion to perfection that no factory can replicate. The result is leather goods of extraordinary quality, steeped in heritage, and made to endure a lifetime.</p>
+<div class="heritage-strip fade-in">
+<img src="made in india.png" alt="Made in India">
+<div class="heritage-text">
+<span class="heritage-title">Designed in Vancouver. Handcrafted in India.</span>
+<span class="heritage-sub">By master artisans whose leather craft tradition spans generations.</span>
 </div>
 </div>
-</section>
 <section class="section section-border" style="padding-top:12px">
 <div class="steps-h" style="margin-bottom:56px">
 <div class="step-h"><div class="step-h-n">1</div><h3>Pick a Tier</h3><p>$10K, $25K, $50K, or $100K</p></div>
