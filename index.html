@@ -284,7 +284,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ccard-img img{width:100%;height:100%;object-fit:contain;transition:transform .6s ease}
 .ccard:hover .ccard-img img{transform:scale(1.05)}
 .ccard-info{padding:22px 24px 24px}
-.ccard-info h4{font-size:16px;margin-bottom:6px;letter-spacing:.3px}
+.ccard-info h4{font-size:16px;margin-bottom:2px;letter-spacing:.3px}
+.ccard-info .csub{font-size:11px;color:var(--gl);font-weight:400;letter-spacing:.5px;margin-bottom:6px}
 .ccard-info .cdesc{font-size:12.5px;color:var(--td);font-weight:200;line-height:1.7;margin-bottom:14px}
 .ccard-info .price{font-size:18px;color:var(--gl);font-weight:400;margin-bottom:16px;font-family:var(--fd)}
 .ccard-info .price .og{text-decoration:line-through;color:var(--tm);font-size:13px;margin-left:6px;font-family:var(--fb)}
@@ -1092,6 +1093,7 @@ var P=[
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
 {id:'card-holder',name:'Card Holder',price:60,qty:0,desc:'Six-slot bifold with center pocket. Vegetable-tanned leather that develops a rich patina over time. Guests carry your brand daily.',retail:60,img:'cardholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/card-holder'},
+{id:'fragrance-kit',name:'Fragrance Kit',price:50,qty:0,desc:'Refillable glass atomizers in a croc-embossed leather holder with gold hardware. Holds 8 sample vials. Hotel branding included.',retail:50,img:'samplewallet.png',sub:'Croc Leather Edition',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-kit'},
 {id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
@@ -1152,7 +1154,7 @@ function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
-function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0,sv=p.price-dp;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4><div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div>'+(hd?'<div class="ctier">'+T[cT].l+' tier &mdash; save '+fmt(sv)+' per unit ('+(d*100)+'% off)</div>':'')+'<div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
+function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0,sv=p.price-dp;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4>'+(p.sub?'<div class="csub">'+p.sub+'</div>':'')+'<div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div>'+(hd?'<div class="ctier">'+T[cT].l+' tier &mdash; save '+fmt(sv)+' per unit ('+(d*100)+'% off)</div>':'')+'<div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
 function chgQty(i,d){if(d>0&&!canAdd(i))return;P[i].qty=Math.max(0,P[i].qty+d);renderCat();updBudget()}
 function selTier(t){cT=t;document.querySelectorAll('.tier-b').forEach(function(b,i){b.classList.toggle('active',i===t)});renderCat();updBudget()}
 function updBudget(){var tier=T[cT],total=0,count=0;P.forEach(function(p){if(p.qty>0){total+=Math.round(p.price*(1-tier.d))*p.qty;count+=p.qty}});var rem=tier.b-total,pct=Math.min((total/tier.b)*100,100);
