@@ -149,25 +149,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:0 0 2px;padding-top:14px;border-top:1px solid var(--b)}
 .holster-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:4px}
 .holster-home-text .preorder-note{font-size:10px;color:var(--gl);font-weight:400;letter-spacing:.5px;padding:8px 12px;border:1px solid rgba(42,107,63,.15);background:rgba(42,107,63,.03);margin-bottom:14px}
-.gift-box{border:1px solid var(--b);padding:16px;margin-bottom:14px;background:linear-gradient(135deg,rgba(42,107,63,.03),rgba(184,160,112,.03))}
-.gift-header{font-family:var(--fd);font-size:14px;color:var(--g);display:flex;align-items:center;gap:8px;margin-bottom:2px}
-.gift-tag{display:inline-block;font-family:var(--fb);font-size:8px;letter-spacing:2px;text-transform:uppercase;background:var(--g);color:#fff;padding:2px 8px;margin-left:8px;font-weight:500}
-.gift-desc{font-size:10px;color:var(--tm);letter-spacing:.5px;margin-bottom:12px;font-weight:300;line-height:1.6}
-.gift-counter{font-family:var(--fb);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gl);margin-bottom:8px;transition:color .3s}
-.gift-counter.full{color:var(--g)}
-.gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.gift-item{display:flex;flex-direction:column;align-items:center;padding:10px 6px 8px;border:1px solid var(--b);cursor:pointer;transition:all .4s;position:relative;background:var(--bg-card);overflow:hidden}
-.gift-item:hover{border-color:var(--tm);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.gift-item.selected{border-color:var(--g);background:rgba(42,107,63,.04)}
-.gift-item.selected .gi-badge{opacity:1;transform:scale(1)}
-.gift-item input{position:absolute;opacity:0;pointer-events:none}
-.gi-badge{position:absolute;top:6px;right:6px;width:16px;height:16px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.5);transition:all .3s}
-.gi-badge::after{content:'';width:4px;height:7px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-1px}
-.gi-img{width:48px;height:60px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
-.gift-item:hover .gi-img{transform:scale(1.1)}
-.gi-img img{max-width:100%;max-height:100%;object-fit:contain}
-.gi-brand{font-family:var(--fd);font-size:10px;color:var(--w);text-align:center;line-height:1.2;margin-bottom:2px}
-.gi-name{font-size:7px;color:var(--tm);letter-spacing:.5px;text-align:center;font-weight:300;line-height:1.3;text-transform:uppercase}
 .holster-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:420px;margin-bottom:12px}
 .holster-home-text .detail-list{list-style:none;margin-bottom:12px}
 .holster-home-text .detail-list li{font-size:11.5px;color:var(--td);font-weight:200;padding:5px 0;border-bottom:1px solid var(--b);display:flex;gap:8px}
@@ -207,6 +188,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
+.frag-product{display:grid;grid-template-columns:1fr 1fr;max-width:1400px;margin:0 auto;padding:60px 60px;gap:48px;align-items:center}
+.frag-product-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px}
+.frag-bottle{background:var(--bg-card);border:1px solid var(--b);padding:16px;display:flex;align-items:center;justify-content:center;transition:all .4s;overflow:hidden}
+.frag-bottle:hover{border-color:var(--g);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.frag-bottle img{max-width:100%;max-height:140px;object-fit:contain;transition:transform .4s}
+.frag-bottle:hover img{transform:scale(1.1)}
+.frag-product-info{padding:0 20px}
+.frag-product-info h3{margin-bottom:6px}
+.frag-sub{font-size:13px;color:var(--tm);font-weight:200;line-height:1.7;margin-bottom:16px}
+.frag-list{display:flex;flex-direction:column;gap:6px;margin-bottom:4px}
+.frag-li{font-size:12px;color:var(--td);font-weight:300;padding:6px 0;border-bottom:1px solid var(--b)}
+.frag-li strong{color:var(--w);font-weight:500;margin-right:6px;font-family:var(--fd)}
 .lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden;background:#fff}
 .page.active .lb-wrap{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1;background:#fff}
 .lb-header{text-align:center;margin-bottom:0;padding-top:68px}
@@ -487,7 +480,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home{grid-template-columns:1fr}
 .holster-home-img{min-height:auto}
 .holster-home-text{padding:28px 24px 36px}
-.gift-grid{grid-template-columns:repeat(4,1fr);gap:6px}
 .holster-home-text .est{margin-bottom:4px}
 .holster-home-text h2{font-size:28px}
 .holster-home-text .desc{font-size:13.5px;line-height:1.85;margin-bottom:16px}
@@ -498,6 +490,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
+.frag-product{grid-template-columns:1fr;padding:40px 24px;gap:28px}
 .products-hero{padding:72px 24px 20px}
 .product-grid{grid-template-columns:repeat(2,1fr)}
 .lb-wrap{padding:0;height:100vh}.lb-header{padding-top:56px;margin-bottom:0}.lb-header h1{font-size:13px}.lb-header .sub{font-size:7px}.lb-hint{font-size:7px}.lb-flip-wrap{padding:0 8px}
@@ -773,17 +766,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping on all orders</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
-<div class="gift-box">
-<div class="gift-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16" height="16"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Complimentary Gift<span class="gift-tag">Free</span></div>
-<div class="gift-desc">Select your 4 luxury fragrance samples (5ml each) &mdash; presented in a leather sample case</div>
-<div class="gift-counter" id="giftCounter">4 of 4 selected</div>
-<div class="gift-grid" id="giftGrid">
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="kilian" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-kilian.jpg" alt="Kilian"></div><div class="gi-brand">Kilian</div><div class="gi-name">Straight to Heaven</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="armani" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-armani.jpg" alt="Armani"></div><div class="gi-brand">Armani</div><div class="gi-name">Stronger With You</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="chanel" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-chanel.jpg" alt="Chanel"></div><div class="gi-brand">Chanel</div><div class="gi-name">Bleu de Chanel</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="dior" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-dior.jpg" alt="Dior"></div><div class="gi-brand">Dior</div><div class="gi-name">Sauvage</div></label>
-</div>
-</div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -792,6 +774,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
 <div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack"></div><div class="hv-label">Black</div></div>
 </div>
+</div>
+</div>
+
+<div class="frag-product fade-in">
+<div class="frag-product-imgs">
+<div class="frag-bottle"><img src="frag-kilian.jpg" alt="Kilian"></div>
+<div class="frag-bottle"><img src="frag-armani.jpg" alt="Armani"></div>
+<div class="frag-bottle"><img src="frag-chanel.jpg" alt="Chanel"></div>
+<div class="frag-bottle"><img src="frag-dior.jpg" alt="Dior"></div>
+</div>
+<div class="frag-product-info">
+<div class="slabel">New Product</div>
+<h3>The Fragrance Sampler</h3>
+<p class="frag-sub">Leather case with 4 designer fragrances &mdash; 10ml each</p>
+<div class="frag-list">
+<div class="frag-li"><strong>Kilian</strong> Straight to Heaven</div>
+<div class="frag-li"><strong>Armani</strong> Stronger With You Intensely</div>
+<div class="frag-li"><strong>Chanel</strong> Bleu de Chanel EDP</div>
+<div class="frag-li"><strong>Dior</strong> Sauvage EDP</div>
+</div>
+<div class="price" style="margin-top:12px">$100 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="price-note" style="margin-bottom:12px">Free shipping &middot; Also available for hotel programmes</div>
+<a href="YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler" target="_blank" class="btn btn-f" style="text-align:center;display:block">Buy Now</a>
 </div>
 </div>
 
@@ -1206,7 +1211,7 @@ var P=[
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
-{id:'fragrance-kit',name:'Fragrance Kit',price:50,qty:0,desc:'Refillable glass atomizers in a croc-embossed leather holder with gold hardware. Holds 8 sample vials. Hotel branding included.',retail:50,img:'samplewallet.png',sub:'Croc Leather Edition',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-kit'},
+{id:'fragrance-sampler',name:'Fragrance Sampler',price:100,qty:0,desc:'Leather sample case with 4 luxury fragrance samples (10ml each). Kilian Straight to Heaven, Armani Stronger With You, Bleu de Chanel, and Dior Sauvage. Custom hotel branding available.',retail:100,img:'samplewallet.png',sub:'4 Designer Fragrances',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler'},
 {id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
@@ -1307,20 +1312,6 @@ var shopProducts={
   green:{name:'The Holster — Green',variant:'52629444165924',price:249,img:'holster1.png',material:'Full grain suede'},
   black:{name:'The Holster — Black',variant:'52799540429092',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
-function toggleGift(el){
-  var cb=el.querySelector('input');
-  var checked=document.querySelectorAll('#giftGrid input:checked').length;
-  if(cb.checked&&checked<=1)return;
-  if(!cb.checked&&checked>=4){cb.checked=false;el.classList.remove('selected');updateGiftCounter();return}
-  el.classList.toggle('selected',cb.checked);
-  updateGiftCounter();
-}
-function updateGiftCounter(){
-  var n=document.querySelectorAll('#giftGrid input:checked').length;
-  var el=document.getElementById('giftCounter');
-  el.textContent=n+' of 4 selected';
-  el.classList.toggle('full',n===4);
-}
 function addToShopCart(){
   var p=shopProducts[curColor];
   var existing=shopCart.find(function(i){return i.variant===p.variant});
