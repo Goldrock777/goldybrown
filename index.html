@@ -637,29 +637,27 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-disclaimer{font-size:10px;color:var(--tm);font-weight:200;line-height:1.8;max-width:800px;margin:0 auto;text-align:center;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
 .frag-bundle-badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(42,107,63,.08),rgba(184,160,112,.08));border:1px solid rgba(42,107,63,.2);color:var(--gl);padding:6px 14px;font-weight:500;margin-bottom:12px}
 /* Fragrance composite image strip */
-.frag-strip{display:flex;width:100%;height:100%;overflow:hidden;gap:0;background:#0a0a0a}
+.frag-strip{display:flex;width:100%;height:100%;overflow:hidden;gap:0;background:#fff}
 .frag-strip-item{flex:1 1 0%;position:relative;overflow:hidden;min-width:0}
 .frag-strip-item img{transition:none}
 @keyframes fragFlashIn{0%{opacity:0;transform:scale(1.1)}60%{opacity:1;transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
 .frag-strip-stagger .frag-strip-item img{opacity:0}
-.frag-strip-item:nth-child(1) .fsi-name{background:#0a0a0a}
+.frag-strip-item:nth-child(1) .fsi-name{background:rgba(0,0,0,.85)}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(1) img{animation:fragFlashIn .4s ease-out .05s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(2) img{animation:fragFlashIn .4s ease-out .15s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(3) img{animation:fragFlashIn .4s ease-out .25s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(4) img{animation:fragFlashIn .4s ease-out .35s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(5) img{animation:fragFlashIn .4s ease-out .45s forwards}
 .frag-strip-item img{width:100%;height:100%;object-fit:cover;display:block}
-.frag-strip-item:nth-child(1){background:#0a0a0a}
-.frag-strip-item:nth-child(1) img{transform:scale(1.25);object-position:center 55%}
-.frag-strip-item.fsi-blend{background:#0a0a0a}
-.frag-strip-item.fsi-blend::after{background:rgba(0,0,0,.55)}
-.frag-strip-item.fsi-blend img{transform:scale(1.3);object-position:center 45%}
+.frag-strip-item:nth-child(1){background:#fff}
+.frag-strip-item.fsi-blend{background:#fff}
+.frag-strip-item.fsi-blend::after{background:rgba(0,0,0,.4)}
 .frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4);pointer-events:none}
 .frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.92));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
 .frag-strip-item .fsi-name span{display:block;font-family:var(--fb);font-size:7px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;font-weight:300}
 /* Discovery Set home card */
 .discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:#0a0a0a;margin-top:32px;border-top:1px solid rgba(184,160,112,.15);border-bottom:1px solid rgba(184,160,112,.15)}
-.discovery-home-img{height:400px;overflow:hidden;background:#0a0a0a}
+.discovery-home-img{height:400px;overflow:hidden;background:#fff}
 .discovery-home-text{padding:36px 44px;display:flex;flex-direction:column;justify-content:center;background:#0a0a0a}
 .discovery-home-text .slabel{margin-bottom:8px;color:#b8a070}
 .discovery-home-text h2{font-size:clamp(24px,2.5vw,34px);margin-bottom:4px;color:#faf9f6}
