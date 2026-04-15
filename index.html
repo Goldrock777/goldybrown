@@ -1141,8 +1141,9 @@ function initLookbook(){
   if(window.LB){try{LB.destroy()}catch(e){}window.LB=null;c.classList.remove('ready')}
   window.scrollTo(0,0);
   var isMobile=window.innerWidth<768;
-  var navH=isMobile?52:54,headerH=isMobile?34:36,counterH=10,thumbH=isMobile?46:72,pad=4;
-  var availH=window.innerHeight-navH-headerH-counterH-thumbH-pad;
+  var hdrEl=document.querySelector('.lb-header');var hintEl=document.querySelector('.lb-hint');
+  var navH=isMobile?52:54,headerH=hdrEl?hdrEl.offsetHeight:( isMobile?34:36),hintH=hintEl?hintEl.offsetHeight:10,counterH=10,thumbH=isMobile?46:72,pad=4;
+  var availH=window.innerHeight-navH-headerH-hintH-counterH-thumbH-pad;
   var availW=window.innerWidth-(isMobile?16:10);
   var ph,pw;
   if(isMobile){
