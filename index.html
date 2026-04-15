@@ -897,7 +897,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
-<a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
+<a href="https://kuibri-ev.myshopify.com/cart/53325154124068:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
 <div class="holster-variants">
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
@@ -1582,7 +1582,7 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 <script>
 var P=[
 {id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/garment-holder'},
-{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster1.png',shop:'kuibri-ev.myshopify.com/cart/52629444165924:1'},
+{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster1.png',shop:'kuibri-ev.myshopify.com/cart/53325154124068:1'},
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
@@ -1605,14 +1605,14 @@ var colorSets={
   green:{
     imgs:['holster1.png','holsterback.png','holsterpouch.png','holsterclose.png'],
     material:'Full grain suede',
-    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=52629444165924',
-    cart:'https://kuibri-ev.myshopify.com/cart/52629444165924:1'
+    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154124068',
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154124068:1'
   },
   black:{
     imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png'],
     material:'Full grain calfskin',
-    product:'https://kuibri-ev.myshopify.com/products/black-shoulder-holster?variant=52799540429092',
-    cart:'https://kuibri-ev.myshopify.com/cart/52799540429092:1'
+    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154156836',
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   }
 };
 var curColor='green';
@@ -1685,8 +1685,8 @@ function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
-  green:{name:'The Holster — Green',variant:'52629444165924',price:249,img:'holster1.png',material:'Full grain suede'},
-  black:{name:'The Holster — Black',variant:'52799540429092',price:249,img:'blackholster.png',material:'Full grain calfskin'}
+  green:{name:'The Holster — Green',variant:'53325154124068',price:249,img:'holster1.png',material:'Full grain suede'},
+  black:{name:'The Holster — Black',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
