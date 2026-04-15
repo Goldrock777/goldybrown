@@ -35,6 +35,7 @@
 {"@context":"https://schema.org","@type":"Product","name":"The Holster — Luxury Leather Travel Bag","description":"A concealed leather shoulder rig for travel. Hand cut from full grain leather with stainless steel hardware. The ultimate luxury travel accessory. Ships to New York, LA, Miami, Toronto, London, and worldwide.","image":"https://goldybrown.com/holster.png","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Luxury Travel Bags","offers":{"@type":"Offer","price":"249","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://goldybrown.com","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":"14","maxValue":"28","unitCode":"d"}}}},"material":"Full grain leather","manufacturer":{"@type":"Organization","name":"Goldy Brown"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="holster1.png" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -163,7 +164,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .hv-swatch{width:44px;height:44px;border-radius:50%;border:2px solid var(--b);margin:0 auto 6px;transition:all .3s;cursor:pointer}
 .hv-swatch:hover{border-color:var(--gl);transform:scale(1.08)}
 .hv-swatch.green{background:#3a5a3a}
-.hv-swatch.nude{background:#c4a882}
+
 .hv-swatch.black{background:#1a1a1a}
 .hv-label{font-size:10px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
 .section-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:56px;padding:0 20px}
@@ -188,12 +189,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
-.gift-banner{border:1px solid rgba(42,107,63,.2);padding:10px 12px;margin-bottom:14px;background:linear-gradient(135deg,rgba(42,107,63,.04),rgba(184,160,112,.04))}
-.gift-banner-head{font-family:var(--fd);font-size:11px;color:var(--g);display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.gift-banner-body{display:flex;align-items:center;gap:10px}
-.gift-banner-imgs{display:flex;gap:4px;flex-shrink:0}
-.gift-banner-imgs img{width:32px;height:40px;object-fit:contain;border:1px solid var(--b);padding:2px;background:#fff}
-.gift-banner-text{font-size:9px;color:var(--tm);line-height:1.5;font-weight:300}
 .hotel-deal{max-width:1400px;margin:0 auto;padding:0 60px}
 .hotel-deal-inner{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:32px 36px;border:1px solid rgba(42,107,63,.2);background:linear-gradient(135deg,rgba(42,107,63,.03),rgba(184,160,112,.03))}
 .hotel-deal-imgs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
@@ -703,20 +698,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-strip{display:flex;width:100%;height:100%;overflow:hidden}
 .frag-strip-item{flex:1;position:relative;overflow:hidden}
 .frag-strip-item img{width:100%;height:100%;object-fit:cover}
-.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:6px 4px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400}
+.frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.2);pointer-events:none}
+.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
 .frag-strip-item .fsi-name span{display:block;font-family:var(--fb);font-size:7px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;font-weight:300}
 /* Discovery Set home card */
-.discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;border-bottom:1px solid var(--b)}
-.discovery-home-img{height:400px;overflow:hidden;background:#1a1a18}
-.discovery-home-text{padding:36px 44px;display:flex;flex-direction:column;justify-content:center}
-.discovery-home-text .slabel{margin-bottom:8px}
-.discovery-home-text h2{font-size:clamp(24px,2.5vw,34px);margin-bottom:4px}
-.discovery-home-text h2 span{color:var(--gl)}
-.discovery-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:400px;margin-bottom:14px}
-.discovery-home-text .price{font-family:var(--fd);font-size:24px;color:var(--w);margin-bottom:2px}
-.discovery-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:12px}
+.discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:#0a0a0a;margin-top:32px;border-top:1px solid rgba(184,160,112,.15);border-bottom:1px solid rgba(184,160,112,.15)}
+.discovery-home-img{height:400px;overflow:hidden;background:#0a0a0a}
+.discovery-home-text{padding:36px 44px;display:flex;flex-direction:column;justify-content:center;background:#0a0a0a}
+.discovery-home-text .slabel{margin-bottom:8px;color:#b8a070}
+.discovery-home-text h2{font-size:clamp(24px,2.5vw,34px);margin-bottom:4px;color:#faf9f6}
+.discovery-home-text h2 span{color:#b8a070}
+.discovery-home-text .desc{font-size:13px;font-weight:200;color:rgba(255,255,255,.5);line-height:1.8;max-width:400px;margin-bottom:14px}
+.discovery-home-text .price{font-family:var(--fd);font-size:24px;color:#faf9f6;margin-bottom:2px}
+.discovery-home-text .price-note{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:12px}
 .discovery-home-text .btn-row{display:flex;gap:12px;flex-wrap:wrap}
-.discovery-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
+.discovery-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px;border-color:#b8a070;color:#faf9f6}
+.discovery-home-text .btn-row .btn:hover{background:#b8a070;color:#0a0a0a}
+.discovery-home-text .btn-row .btn-f{background:#b8a070;color:#0a0a0a;border-color:#b8a070}
+.discovery-home-text .btn-row .btn-f:hover{background:#cdb88a;border-color:#cdb88a}
+.discovery-home-text .frag-bundle-badge{background:rgba(184,160,112,.1);border-color:rgba(184,160,112,.3);color:#b8a070}
 @media(max-width:1024px){
 .frag-hero{padding:90px 24px 48px}
 .frag-products{grid-template-columns:1fr 1fr;gap:16px}
@@ -745,6 +745,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .discovery-home-text{padding:24px 20px}
 .frag-strip-item .fsi-name{font-size:8px;padding:4px 2px}
 .frag-strip-item .fsi-name span{font-size:6px}
+}
+@media(max-width:420px){
+.discovery-home-img{height:180px}
+.discovery-home-text{padding:20px 16px}
+.discovery-home-text h2{font-size:22px}
+.discovery-home-text .btn-row .btn{padding:12px 10px;font-size:8px;letter-spacing:1.5px}
+.frag-strip-item .fsi-name{font-size:7px;padding:3px 1px}
+.frag-strip-item .fsi-name span{font-size:5px}
+.frag-profiles{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -881,17 +890,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 </ul>
 <div class="price">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="price-note">Free shipping on all orders</div>
+<div class="price-note">Custom made to order</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
-<div class="gift-banner">
-<div class="gift-banner-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="15" height="15"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Free Gift with Every Holster</div>
-<div class="gift-banner-body">
-<div class="gift-banner-imgs">
-<img src="killian.jpg" alt="Kilian Angels' Share"><img src="kilianblack.jpg" alt="Kilian Black Phantom"><img src="armani.jpg" alt="Armani"><img src="chanel.jpg" alt="Chanel"><img src="diorhomme.jpg" alt="Dior Homme">
-</div>
-<div class="gift-banner-text">Leather fragrance case with 5 designer samples (5ml each) &mdash; Kilian Angels' Share, Kilian Black Phantom, Bleu de Chanel, Dior Homme &amp; Armani Stronger With You</div>
-</div>
-</div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -903,7 +903,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 
-<div class="discovery-home">
+<div class="discovery-home fade-in">
 <div class="discovery-home-img">
 <div class="frag-strip">
 <div class="frag-strip-item"><img loading="lazy" src="killian.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div>
@@ -918,7 +918,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h2>The <span>Discovery Set</span></h2>
 <p class="desc">5 luxury fragrances in 10mL Goldy Brown branded vials, housed in a full grain leather case with velvet carrying pouch. Individually decanted from authentic retail bottles.</p>
 <div class="price">$299 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="price-note">Free shipping &bull; Custom made to order</div>
+<div class="price-note">Custom made to order</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
 <div class="btn-row">
 <button class="btn" onclick="addDiscoveryToCart()">Add to Cart</button>
@@ -1309,7 +1309,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </ul>
 <div class="fp-value">Competitors charge $250+ for 4 loose decants with no case. We give you 5 + leather case + velvet pouch.</div>
 <div class="fp-price" data-base="299">$299 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="fp-price-note">Free shipping &bull; Custom made to order</div>
+<div class="fp-price-note">Custom made to order</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
 <button class="btn btn-f" onclick="addDiscoveryToCart()">Add to Cart</button>
 </div>
@@ -1584,10 +1584,9 @@ var RATES={USD:1,CAD:1.38,GBP:0.79,EUR:0.92,AED:3.67};
 var FLAGS={USD:'\u{1F1FA}\u{1F1F8}',CAD:'\u{1F1E8}\u{1F1E6}',GBP:'\u{1F1EC}\u{1F1E7}',EUR:'\u{1F1EA}\u{1F1FA}',AED:'\u{1F1E6}\u{1F1EA}'};
 var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
-function fmtMain(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
-function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmtMain(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
+function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmt(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
 var colorSets={
