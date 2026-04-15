@@ -924,8 +924,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price">$299 <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
+<div style="margin-bottom:14px">
+<label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500;margin-bottom:6px">Case Colour</label>
+<select id="homeCaseColor" style="width:100%;padding:8px 10px;border:1px solid rgba(255,255,255,.15);font-family:var(--fb);font-size:12px;font-weight:300;color:#faf9f6;background:#1a1a1a;margin-bottom:12px;appearance:none;cursor:pointer">
+<option value="Black">Black</option>
+<option value="Green">Green</option>
+</select>
+<label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500;margin-bottom:6px">Embossing (optional)</label>
+<input type="text" id="homeEmbossName" placeholder="Your name or initials" maxlength="20" style="width:100%;padding:8px 10px;border:1px solid rgba(255,255,255,.15);font-family:var(--fb);font-size:12px;font-weight:300;color:#faf9f6;background:#1a1a1a">
+</div>
 <div class="btn-row">
-<button class="btn" onclick="addDiscoveryToCart()">Add to Cart</button>
+<button class="btn" onclick="addDiscoveryToCart('home')">Add to Cart</button>
 <a class="btn btn-f" href="javascript:void(0)" onclick="go('fragrance')">View Collection</a>
 </div>
 </div>
@@ -1316,7 +1325,16 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="fp-price-note">Free shipping</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
 <div style="font-size:11px;color:var(--td);font-weight:300;line-height:1.7;margin-bottom:14px">100% authentic fragrances, individually decanted into <em>Goldy Brown</em> branded vials. Try before you commit to a full bottle. Not affiliated with or endorsed by any referenced fragrance house.</div>
-<button class="btn btn-f" onclick="addDiscoveryToCart()">Add to Cart</button>
+<div style="margin-bottom:14px">
+<label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;margin-bottom:6px">Case Colour</label>
+<select id="fragCaseColor" style="width:100%;padding:8px 10px;border:1px solid var(--b);font-family:var(--fb);font-size:12px;font-weight:300;color:var(--t);background:#fff;margin-bottom:12px;appearance:none;cursor:pointer">
+<option value="Black">Black</option>
+<option value="Green">Green</option>
+</select>
+<label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;margin-bottom:6px">Embossing (optional)</label>
+<input type="text" id="fragEmbossName" placeholder="Your name or initials" maxlength="20" style="width:100%;padding:8px 10px;border:1px solid var(--b);font-family:var(--fb);font-size:12px;font-weight:300;color:var(--t);background:#fff">
+</div>
+<button class="btn btn-f" onclick="addDiscoveryToCart('frag')">Add to Cart</button>
 </div>
 </div>
 
@@ -1694,9 +1712,14 @@ function addToShopCart(){
   if(existing){existing.qty++}else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'holster'})}
   renderShopCart();toggleShopCart(true);
 }
-function addDiscoveryToCart(){
-  var existing=shopCart.find(function(i){return i.variant==='53324620529956'});
-  if(existing){existing.qty++}else{shopCart.push({name:'The Goldy Brown Discovery Set',variant:'53324620529956',price:299,img:'samplewallet.png',material:'5 × 10mL vials + leather case',qty:1,type:'fragrance'})}
+function addDiscoveryToCart(src){
+  var colorEl=document.getElementById(src==='home'?'homeCaseColor':'fragCaseColor');
+  var nameEl=document.getElementById(src==='home'?'homeEmbossName':'fragEmbossName');
+  var caseColor=colorEl?colorEl.value:'Black';
+  var emboss=nameEl?nameEl.value.trim():'';
+  var detail=caseColor+' case'+(emboss?' · Embossed: '+emboss:'');
+  var existing=shopCart.find(function(i){return i.variant==='53324620529956'&&i.customDetail===detail});
+  if(existing){existing.qty++}else{shopCart.push({name:'The Goldy Brown Discovery Set',variant:'53324620529956',price:299,img:'samplewallet.png',material:detail,customDetail:detail,qty:1,type:'fragrance'})}
   renderShopCart();toggleShopCart(true);
 }
 function toggleShopCart(forceOpen){
