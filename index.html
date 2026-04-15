@@ -196,7 +196,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gift-banner-text{font-size:9px;color:var(--tm);line-height:1.5;font-weight:300}
 .hotel-deal{max-width:1400px;margin:0 auto;padding:0 60px}
 .hotel-deal-inner{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:32px 36px;border:1px solid rgba(42,107,63,.2);background:linear-gradient(135deg,rgba(42,107,63,.03),rgba(184,160,112,.03))}
-.hotel-deal-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hotel-deal-imgs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .hotel-deal-imgs img{width:80px;height:100px;object-fit:contain;border:1px solid var(--b);padding:6px;background:#fff;transition:transform .3s}
 .hotel-deal-imgs img:hover{transform:scale(1.08)}
 .hotel-deal-info .slabel{color:var(--g)}
@@ -638,6 +638,88 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .auc-admin .aa-full{grid-column:1/-1}
 @media(max-width:1024px){.auc-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
 @media(max-width:768px){.auc-grid{grid-template-columns:1fr;gap:14px}.auc-card .ac-img{height:260px}.auc-admin .aa-form{grid-template-columns:1fr}}
+/* ===== FRAGRANCE COLLECTION ===== */
+.frag-hero{background:#0a0a0a;padding:120px 60px 64px;text-align:center;position:relative;overflow:hidden}
+.frag-hero::before{content:'';position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.frag-hero .slabel{color:#b8a070;margin-bottom:12px;font-size:10px;letter-spacing:5px}
+.frag-hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,58px);color:#faf9f6;margin-bottom:12px;letter-spacing:-0.5px}
+.frag-hero .sub{font-size:15px;font-weight:200;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto 32px;line-height:1.85}
+.frag-hero .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.frag-hero .btn{border-color:#b8a070;color:#faf9f6}
+.frag-hero .btn:hover{background:#b8a070;color:#0a0a0a}
+.frag-hero .btn-f{background:#b8a070;border-color:#b8a070;color:#0a0a0a}
+.frag-hero .btn-f:hover{background:#cdb88a;border-color:#cdb88a}
+.frag-products{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+.frag-pcard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s}
+.frag-pcard:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
+.frag-pcard-img{height:280px;background:#1a1a18;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.frag-pcard-img img{width:100%;height:100%;object-fit:cover}
+.frag-pcard-img .fpi-placeholder{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;padding:20px}
+.frag-pcard-body{padding:28px 28px 32px}
+.frag-pcard-body .fp-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:500;margin-bottom:8px}
+.frag-pcard-body h3{font-family:var(--fd);font-size:22px;margin-bottom:8px}
+.frag-pcard-body .fp-includes{font-size:12px;color:var(--td);font-weight:200;line-height:1.8;margin-bottom:16px}
+.frag-pcard-body .fp-includes li{padding:3px 0;list-style:none}
+.frag-pcard-body .fp-price{font-family:var(--fd);font-size:26px;color:var(--gl);margin-bottom:4px}
+.frag-pcard-body .fp-price-note{font-size:10px;color:var(--tm);margin-bottom:16px}
+.frag-pcard-body .btn{width:100%;text-align:center}
+.frag-pcard-body .fp-value{font-size:11px;color:var(--gl);font-weight:400;padding:8px 12px;border:1px solid rgba(42,107,63,.15);background:rgba(42,107,63,.03);margin-bottom:16px}
+.frag-profiles{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.frag-profile{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s;text-align:center}
+.frag-profile:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
+.frag-profile-img{height:200px;overflow:hidden;background:#1a1a18}
+.frag-profile-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.frag-profile:hover .frag-profile-img img{transform:scale(1.05)}
+.frag-profile-body{padding:20px 16px 24px}
+.frag-profile-body h4{font-size:14px;margin-bottom:4px;letter-spacing:.2px}
+.frag-profile-body .fpb-house{font-size:10px;color:var(--gl);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:400}
+.frag-profile-body .fpb-notes{font-size:11px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:10px}
+.frag-profile-body .fpb-vibe{font-size:11px;color:var(--td);font-weight:200;font-style:italic;margin-bottom:10px;line-height:1.5}
+.frag-profile-body .fpb-tag{display:inline-block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;border:1px solid rgba(184,160,112,.3);padding:4px 12px;font-weight:500}
+.frag-how{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.frag-step{text-align:center;padding:32px 20px;background:var(--bg-card);border:1px solid var(--b);transition:all .4s}
+.frag-step:hover{border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.06)}
+.frag-step-num{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1px solid #b8a070;color:#b8a070;font-family:var(--fd);font-size:17px;margin-bottom:14px}
+.frag-step h4{font-size:14px;margin-bottom:6px}
+.frag-step p{font-size:12px;color:var(--td);font-weight:200;line-height:1.7}
+.frag-usecases{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.frag-usecase{padding:32px 20px;text-align:center;background:var(--bg-card);border:1px solid var(--b);transition:all .4s}
+.frag-usecase:hover{background:var(--gg);border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.06)}
+.frag-usecase-ico{width:52px;height:52px;margin:0 auto 14px;border:1px solid #b8a070;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:#b8a070}
+.frag-usecase h4{font-size:13px;margin-bottom:6px}
+.frag-usecase p{font-size:11px;color:var(--td);font-weight:200;line-height:1.6}
+.frag-form-wrap{display:grid;grid-template-columns:1fr 1fr;max-width:900px;margin:0 auto;border:1px solid var(--b)}
+.frag-form-info{padding:40px 36px;background:var(--bg-card);display:flex;flex-direction:column;justify-content:center}
+.frag-form-info h3{margin-bottom:8px}
+.frag-form-info p{font-size:13px;color:var(--td);font-weight:200;line-height:1.8;margin-bottom:16px}
+.frag-form-info .ffi-contact{font-size:12px;color:var(--td);font-weight:300}
+.frag-form-info .ffi-contact a{color:var(--gl);text-decoration:none}
+.frag-form-fields{padding:40px 36px}
+.frag-form-fields .fg{margin-bottom:18px}
+.frag-form-fields .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.frag-disclaimer{font-size:10px;color:var(--tm);font-weight:200;line-height:1.8;max-width:800px;margin:0 auto;text-align:center;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
+.frag-bundle-badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(42,107,63,.08),rgba(184,160,112,.08));border:1px solid rgba(42,107,63,.2);color:var(--gl);padding:6px 14px;font-weight:500;margin-bottom:12px}
+@media(max-width:1024px){
+.frag-hero{padding:90px 24px 48px}
+.frag-products{grid-template-columns:1fr 1fr;gap:16px}
+.frag-profiles{grid-template-columns:repeat(3,1fr);gap:12px}
+.frag-how{grid-template-columns:repeat(2,1fr);gap:12px}
+.frag-usecases{grid-template-columns:repeat(3,1fr);gap:12px}
+.frag-form-wrap{grid-template-columns:1fr}
+.frag-form-info{border-bottom:1px solid var(--b)}
+}
+@media(max-width:768px){
+.frag-hero{padding:80px 16px 36px}
+.frag-products{grid-template-columns:1fr;gap:16px}
+.frag-profiles{grid-template-columns:1fr 1fr;gap:10px}
+.frag-profile-img{height:180px}
+.frag-how{grid-template-columns:1fr 1fr;gap:10px}
+.frag-usecases{grid-template-columns:1fr;gap:10px}
+.frag-form-wrap{grid-template-columns:1fr}
+.frag-form-info,.frag-form-fields{padding:28px 20px}
+.frag-form-fields .fg-row{grid-template-columns:1fr}
+.frag-pcard-body{padding:22px 20px 24px}
+}
 </style>
 </head>
 <body>
@@ -649,6 +731,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a class="nav-tab active" data-page="home">Shop</a>
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
 <a class="nav-tab" data-page="hotel">Hotel Programme</a>
+<a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
 <a class="nav-tab" data-page="about">About Us</a>
 <a class="nav-tab" data-page="auction">Auction</a>
@@ -680,6 +763,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="javascript:void(0)" onclick="go('home');closeMob()">Shop</a>
 <a href="javascript:void(0)" onclick="go('lookbook');closeMob()">Lookbook</a>
 <a href="javascript:void(0)" onclick="go('hotel');closeMob()">Hotel Programme</a>
+<a href="javascript:void(0)" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
 <a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
 <a href="javascript:void(0)" onclick="go('about');closeMob()">About Us</a>
 <a href="javascript:void(0)" onclick="go('auction');closeMob()">Auction</a>
@@ -777,9 +861,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="gift-banner-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="15" height="15"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Free Gift with Every Holster</div>
 <div class="gift-banner-body">
 <div class="gift-banner-imgs">
-<img src="frag-kilian.jpg" alt="Kilian"><img src="frag-armani.jpg" alt="Armani"><img src="frag-chanel.jpg" alt="Chanel"><img src="frag-dior.jpg" alt="Dior">
+<img src="killian.jpg" alt="Kilian Angels' Share"><img src="kilianblack.jpg" alt="Kilian Black Phantom"><img src="armani.jpg" alt="Armani"><img src="chanel.jpg" alt="Chanel"><img src="diorhomme.jpg" alt="Dior Homme">
 </div>
-<div class="gift-banner-text">Leather fragrance case with 4 designer samples (5ml each) &mdash; Kilian, Armani, Chanel &amp; Dior</div>
+<div class="gift-banner-text">Leather fragrance case with 5 designer samples (5ml each) &mdash; Kilian Angels' Share, Kilian Black Phantom, Bleu de Chanel, Dior Homme &amp; Armani Stronger With You</div>
 </div>
 </div>
 <div class="btn-row">
@@ -796,6 +880,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="section-cards">
 <div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(GB111.JPG) center 55%/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecab.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
+<div class="section-card section-card-wide scale-in" onclick="go('fragrance')"><div class="sc-img" style="background:url(leathercase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">New</div><div class="sc-title">Fragrance Collection</div><div class="sc-desc">Luxury leather sampler cases with curated designer scents. Your brand or ours.</div></div></div>
 <div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
 <div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(DSC04620.JPG) center 10%/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
 </div>
@@ -854,20 +939,22 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="hotel-deal fade-in">
 <div class="hotel-deal-inner">
 <div class="hotel-deal-imgs">
-<img src="frag-kilian.jpg" alt="Kilian">
-<img src="frag-armani.jpg" alt="Armani">
-<img src="frag-chanel.jpg" alt="Chanel">
-<img src="frag-dior.jpg" alt="Dior">
+<img src="killian.jpg" alt="Kilian Angels' Share">
+<img src="kilianblack.jpg" alt="Kilian Black Phantom">
+<img src="chanel.jpg" alt="Bleu de Chanel">
+<img src="diorhomme.jpg" alt="Dior Homme">
+<img src="armani.jpg" alt="Armani">
 </div>
 <div class="hotel-deal-info">
 <div class="slabel">Featured Add-On</div>
 <h3>The Fragrance Sampler</h3>
-<div class="hotel-deal-desc">A leather sample case with 4 designer fragrances (10ml each). The perfect in-room amenity or VIP welcome gift. Custom hotel branding available.</div>
+<div class="hotel-deal-desc">A leather sample case with 5 designer fragrances (10ml each). The perfect in-room amenity or VIP welcome gift. Custom hotel branding available.</div>
 <div class="hotel-deal-frags">
-<span class="hotel-deal-frag"><strong>Kilian</strong> Straight to Heaven</span>
-<span class="hotel-deal-frag"><strong>Armani</strong> Stronger With You</span>
+<span class="hotel-deal-frag"><strong>Kilian</strong> Angels' Share</span>
+<span class="hotel-deal-frag"><strong>Kilian</strong> Black Phantom</span>
 <span class="hotel-deal-frag"><strong>Chanel</strong> Bleu de Chanel</span>
-<span class="hotel-deal-frag"><strong>Dior</strong> Sauvage</span>
+<span class="hotel-deal-frag"><strong>Dior</strong> Homme Parfum</span>
+<span class="hotel-deal-frag"><strong>Armani</strong> Stronger With You Intensely</span>
 </div>
 <div class="hotel-deal-price">$100 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD per unit</span></div>
 <div class="hotel-deal-note">Volume discounts apply with kit tier pricing</div>
@@ -982,7 +1069,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="fg"><label>Name</label><input type="text" name="name" required placeholder="Your full name"></div>
 <div class="fg"><label>Company / Hotel</label><input type="text" name="company" placeholder="Property or company name"></div>
 <div class="fg"><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
-<div class="fg"><label>Interested In</label><select name="interest" required><option value="" disabled selected>Select an option</option><option>The Holster</option><option>Individual Purchase</option><option>$10K Kit</option><option>$25K Kit</option><option>$50K Kit</option><option>$100K Kit</option><option>Hotel Property Items</option><option>Manufacturing Partnership</option></select></div>
+<div class="fg"><label>Interested In</label><select name="interest" required><option value="" disabled selected>Select an option</option><option>The Holster</option><option>Individual Purchase</option><option>$10K Kit</option><option>$25K Kit</option><option>$50K Kit</option><option>$100K Kit</option><option>Fragrance Discovery Set</option><option>Fragrance Private Label</option><option>Hotel Property Items</option><option>Manufacturing Partnership</option></select></div>
 <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us what you need..."></textarea></div>
 <button type="submit" class="btn btn-f" style="width:100%;text-align:center">Send Inquiry</button>
 </form>
@@ -1131,6 +1218,208 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 </div>
 
+<!-- ======================== FRAGRANCE COLLECTION ======================== -->
+<div class="page" id="page-fragrance">
+<div class="frag-hero">
+<div class="slabel">The Collection</div>
+<h1>The Fragrance Collection</h1>
+<p class="sub">Luxury leather sampler cases. Curated scents. Your brand or ours.</p>
+<div class="btn-row">
+<a href="#frag-discovery" class="btn btn-f" onclick="document.getElementById('frag-discovery').scrollIntoView({behavior:'smooth'});return false">Shop Now</a>
+<a href="#frag-form" class="btn" onclick="document.getElementById('frag-form').scrollIntoView({behavior:'smooth'});return false">Request Custom Quote</a>
+</div>
+</div>
+
+<section class="section fade-in" id="frag-discovery">
+<div style="text-align:center;margin-bottom:40px">
+<div class="slabel">Two Ways to Own</div>
+<h2 style="margin-bottom:8px">Choose Your Experience</h2>
+<p style="color:var(--td);font-weight:200;font-size:14px;max-width:520px;margin:0 auto;line-height:1.8">Whether you want our signature set for yourself or a custom-branded collection for your business, we've got you covered.</p>
+</div>
+<div class="frag-products">
+
+<div class="frag-pcard">
+<div class="frag-pcard-img"><div class="fpi-placeholder">
+<img loading="lazy" src="leathercase.png" alt="The Goldy Brown Discovery Set" style="width:100%;height:100%;object-fit:cover">
+</div></div>
+<div class="frag-pcard-body">
+<div class="fp-tag">Signature</div>
+<h3>The Goldy Brown Discovery Set</h3>
+<ul class="fp-includes">
+<li>5 &times; 10mL Goldy Brown branded vials (50mL total)</li>
+<li>Full grain leather carrying case</li>
+<li>Velvet drawstring pouch</li>
+<li>Kilian Angels' Share &bull; Kilian Black Phantom &bull; Bleu de Chanel &bull; Dior Homme Parfum &bull; Armani Stronger With You Intensely</li>
+</ul>
+<div class="fp-value">Competitors charge $250+ for 4 loose decants with no case. We give you 5 + leather case + velvet pouch.</div>
+<div class="fp-price" data-base="299">$299 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="fp-price-note">Free shipping &bull; Custom made to order</div>
+<div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
+<button class="btn btn-f" onclick="addDiscoveryToCart()">Add to Cart</button>
+</div>
+</div>
+
+<div class="frag-pcard">
+<div class="frag-pcard-img"><div class="fpi-placeholder">
+<img loading="lazy" src="samplewallet.png" alt="Private Label Program" style="width:100%;height:100%;object-fit:contain">
+</div></div>
+<div class="frag-pcard-body">
+<div class="fp-tag">Custom &amp; White Label</div>
+<h3>Private Label Program</h3>
+<ul class="fp-includes">
+<li><strong>4-Pack:</strong> 4 &times; 10mL vials + custom leather case &mdash; $89&ndash;$119/unit</li>
+<li><strong>8-Pack:</strong> 8 &times; 10mL vials + custom leather case &mdash; $159&ndash;$199/unit</li>
+<li>Minimum order: 25 units</li>
+<li>Custom logo embossing, leather colours, vial labels</li>
+<li>Optional custom signature scent development</li>
+</ul>
+<div class="fp-price">From $89 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD / unit</span></div>
+<div class="fp-price-note">4&ndash;6 week lead time &bull; Minimum 25 units</div>
+<button class="btn" onclick="document.getElementById('frag-form').scrollIntoView({behavior:'smooth'})">Request Quote</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section section-border fade-in">
+<div style="text-align:center;margin-bottom:40px">
+<div class="slabel">The Lineup</div>
+<h2 style="margin-bottom:8px">Five Curated Fragrances</h2>
+<p style="color:var(--td);font-weight:200;font-size:14px;max-width:520px;margin:0 auto;line-height:1.8">Each vial features Goldy Brown primary branding with the original fragrance name referenced in small text.</p>
+</div>
+<div class="frag-profiles">
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="killian.jpg" alt="Kilian Angels' Share"></div>
+<div class="frag-profile-body">
+<h4>Angels' Share</h4>
+<div class="fpb-house">By Kilian</div>
+<div class="fpb-notes">Cognac &bull; Tonka Bean &bull; Cinnamon &bull; Oak</div>
+<div class="fpb-vibe">A warm embrace of aged spirits and spice. Sophisticated and intoxicating.</div>
+<div class="fpb-tag">Boozy &amp; Warm</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="kilianblack.jpg" alt="Kilian Black Phantom"></div>
+<div class="frag-profile-body">
+<h4>Black Phantom</h4>
+<div class="fpb-house">By Kilian</div>
+<div class="fpb-notes">Rum &bull; Coffee &bull; Sandalwood &bull; Caramel</div>
+<div class="fpb-vibe">Dark and hypnotic. Like a midnight rendezvous you won't forget.</div>
+<div class="fpb-tag">Dark &amp; Addictive</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"></div>
+<div class="frag-profile-body">
+<h4>Bleu de Chanel</h4>
+<div class="fpb-house">By Chanel</div>
+<div class="fpb-notes">Cedar &bull; Sandalwood &bull; Amber &bull; Citrus</div>
+<div class="fpb-vibe">The quintessential gentleman's scent. Clean, confident, universally admired.</div>
+<div class="fpb-tag">Refined &amp; Woody</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme Parfum"></div>
+<div class="frag-profile-body">
+<h4>Dior Homme Parfum</h4>
+<div class="fpb-house">By Dior</div>
+<div class="fpb-notes">Iris &bull; Leather &bull; Vetiver &bull; Amber</div>
+<div class="fpb-vibe">Powdery iris meets raw leather. Understated elegance with quiet power.</div>
+<div class="fpb-tag">Elegant &amp; Masculine</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="armani.jpg" alt="Armani Stronger With You Intensely"></div>
+<div class="frag-profile-body">
+<h4>Stronger With You Intensely</h4>
+<div class="fpb-house">By Armani</div>
+<div class="fpb-notes">Pink Pepper &bull; Vanilla &bull; Amber &bull; Suede</div>
+<div class="fpb-vibe">Warm vanilla meets soft suede. Magnetic, intimate, unforgettable.</div>
+<div class="fpb-tag">Warm &amp; Magnetic</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section section-border fade-in">
+<div style="text-align:center;margin-bottom:40px">
+<div class="slabel">Private Label</div>
+<h2 style="margin-bottom:8px">How It Works</h2>
+<p style="color:var(--td);font-weight:200;font-size:14px;max-width:520px;margin:0 auto;line-height:1.8">Four simple steps from concept to delivery. We handle everything.</p>
+</div>
+<div class="frag-how">
+<div class="frag-step"><div class="frag-step-num">1</div><h4>Choose Pack Size</h4><p>Select 4-pack or 8-pack vial configuration for your custom set.</p></div>
+<div class="frag-step"><div class="frag-step-num">2</div><h4>Select Fragrances</h4><p>Pick from our curated lineup or request a custom fragrance selection.</p></div>
+<div class="frag-step"><div class="frag-step-num">3</div><h4>Send Your Branding</h4><p>Share your logo and brand colours. We design the embossing and labels.</p></div>
+<div class="frag-step"><div class="frag-step-num">4</div><h4>We Produce &amp; Ship</h4><p>We handcraft your order and deliver in 4&ndash;6 weeks. Minimum 25 units.</p></div>
+</div>
+<div style="text-align:center;margin-top:24px">
+<p style="font-size:12px;color:var(--td);font-weight:200">Leather case colours available: <strong style="color:var(--w);font-weight:400">Black</strong>, <strong style="color:var(--w);font-weight:400">Tan</strong>, <strong style="color:var(--w);font-weight:400">Burgundy</strong>, <strong style="color:var(--w);font-weight:400">Navy</strong>, <strong style="color:var(--w);font-weight:400">Forest Green</strong></p>
+</div>
+</section>
+
+<section class="section section-border fade-in">
+<div style="text-align:center;margin-bottom:36px">
+<div class="slabel">Target Markets</div>
+<h2 style="margin-bottom:8px">Built For Every Occasion</h2>
+<p style="color:var(--td);font-weight:200;font-size:14px;max-width:480px;margin:0 auto;line-height:1.8">From intimate weddings to international tournaments, our fragrance sets make the perfect impression.</p>
+</div>
+<div class="frag-usecases">
+<div class="frag-usecase"><div class="frag-usecase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4>Weddings &amp; Events</h4><p>Groomsmen gifts, bridesmaid gifts, head table favours, bachelor party keepsakes</p></div>
+<div class="frag-usecase"><div class="frag-usecase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Hotels &amp; Hospitality</h4><p>VIP welcome amenity, suite upgrade gift, FIFA 2026 host city hotels</p></div>
+<div class="frag-usecase"><div class="frag-usecase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h4>Corporate</h4><p>Executive gifts, conference swag, client appreciation, employee milestones</p></div>
+<div class="frag-usecase"><div class="frag-usecase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h4>Sports &amp; Entertainment</h4><p>VIP suite gifts, player gifting, tournament hospitality, celebrity events</p></div>
+<div class="frag-usecase"><div class="frag-usecase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Real Estate</h4><p>Luxury home closing gifts, open house giveaways, agent client appreciation</p></div>
+</div>
+</section>
+
+<section class="section section-border fade-in" id="frag-form">
+<div style="text-align:center;margin-bottom:36px">
+<div class="slabel">Get Started</div>
+<h2 style="margin-bottom:8px">Request a Quote</h2>
+<p style="color:var(--td);font-weight:200;font-size:14px;max-width:480px;margin:0 auto;line-height:1.8">Tell us about your project and we'll put together a custom proposal within 24 hours.</p>
+</div>
+<div class="frag-form-wrap">
+<div class="frag-form-info">
+<h3>Let's Build Your Set</h3>
+<p>Whether you need 25 custom sets for a wedding or 5,000 for a hotel chain, we'll make it happen. Custom branding, custom fragrances, custom everything.</p>
+<div class="ffi-contact">
+<p style="margin-bottom:6px"><strong style="color:var(--w);font-weight:400">Email:</strong> <a href="mailto:info@goldybrown.com">info@goldybrown.com</a></p>
+<p style="margin-bottom:6px"><strong style="color:var(--w);font-weight:400">Phone:</strong> 1-604-794-0937</p>
+<p><strong style="color:var(--w);font-weight:400">WhatsApp:</strong> <a href="https://wa.me/16047040937">+1 604 704 0937</a></p>
+</div>
+</div>
+<div class="frag-form-fields">
+<form id="fragForm" onsubmit="handleFragSubmit(event)">
+<div class="fg fg-row">
+<div><label>Name</label><input type="text" name="name" required placeholder="Your full name"></div>
+<div><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
+</div>
+<div class="fg"><label>Company / Event</label><input type="text" name="company" placeholder="Company, hotel, or event name"></div>
+<div class="fg fg-row">
+<div><label>Pack Size</label><select name="packsize" required><option value="" disabled selected>Select</option><option value="4-pack">4-Pack ($89–$119/unit)</option><option value="8-pack">8-Pack ($159–$199/unit)</option><option value="discovery">Discovery Set ($299)</option></select></div>
+<div><label>Quantity</label><input type="number" name="quantity" min="1" placeholder="Min 25 for custom"></div>
+</div>
+<div class="fg"><label>Custom Logo</label><select name="logo"><option value="yes">Yes — I'll provide my logo</option><option value="no">No — Use Goldy Brown branding</option></select></div>
+<div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your project, timeline, fragrance preferences..."></textarea></div>
+<button type="submit" class="btn btn-f" style="width:100%;text-align:center" id="fragSubmitBtn">Send Inquiry</button>
+</form>
+</div>
+</div>
+</section>
+
+<section class="section fade-in">
+<div class="frag-disclaimer">All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners.</div>
+</section>
+</div>
+
 <div class="hcv-badge">Handcrafted in Vancouver</div>
 <button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
 
@@ -1140,6 +1429,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><a href="javascript:void(0)" onclick="go('home')">Shop</a></li>
 <li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
 <li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
+<li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance Collection</a></li>
 <li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
 <li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
 <li><a href="javascript:void(0)" onclick="go('auction')">Auction</a></li>
@@ -1171,6 +1461,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div class="footer-copy">&copy; 2026 Goldy Brown. All rights reserved. Vancouver, BC, Canada.</div>
+<div style="font-size:9px;color:var(--tm);font-weight:200;line-height:1.7;max-width:600px;margin:16px auto 0;opacity:.6">All fragrance brand names referenced on this site are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners.</div>
 </footer>
 
 <div class="bbar empty" id="bbar">
@@ -1227,7 +1518,7 @@ var P=[
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
-{id:'fragrance-sampler',name:'Fragrance Sampler',price:100,qty:0,desc:'Leather sample case with 4 luxury fragrance samples (10ml each). Kilian Straight to Heaven, Armani Stronger With You, Bleu de Chanel, and Dior Sauvage. Custom hotel branding available.',retail:100,img:'samplewallet.png',sub:'4 Designer Fragrances',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler'},
+{id:'fragrance-sampler',name:'Fragrance Sampler',price:100,qty:0,desc:'Leather sample case with 5 luxury fragrance samples (10ml each). Kilian Angels\' Share, Kilian Black Phantom, Bleu de Chanel, Dior Homme Parfum, and Armani Stronger With You Intensely. Custom hotel branding available.',retail:100,img:'samplewallet.png',sub:'5 Designer Fragrances',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler'},
 {id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
@@ -1240,7 +1531,7 @@ function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('
 function fmtMain(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
-function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmtMain(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});renderShopCart()}
+function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmtMain(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
 var colorSets={
@@ -1322,6 +1613,8 @@ function toggleMob(){document.getElementById('mobTog').classList.toggle('open');
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page.active .slide-left,.page.active .slide-right,.page.active .scale-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
 function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll be in touch within 24 hours.</p></div>'})}
+// ===== FRAGRANCE FORM =====
+function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
@@ -1331,7 +1624,12 @@ var shopProducts={
 function addToShopCart(){
   var p=shopProducts[curColor];
   var existing=shopCart.find(function(i){return i.variant===p.variant});
-  if(existing){existing.qty++}else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1})}
+  if(existing){existing.qty++}else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'holster'})}
+  renderShopCart();toggleShopCart(true);
+}
+function addDiscoveryToCart(){
+  var existing=shopCart.find(function(i){return i.variant==='discovery-set'});
+  if(existing){existing.qty++}else{shopCart.push({name:'The Goldy Brown Discovery Set',variant:'discovery-set',price:299,img:'leathercase.png',material:'5 × 10mL vials + leather case',qty:1,type:'fragrance'})}
   renderShopCart();toggleShopCart(true);
 }
 function toggleShopCart(forceOpen){
@@ -1339,16 +1637,26 @@ function toggleShopCart(forceOpen){
   if(forceOpen||!dr.classList.contains('open')){ov.classList.add('open');dr.classList.add('open');document.body.style.overflow='hidden'}
   else{ov.classList.remove('open');dr.classList.remove('open');document.body.style.overflow=''}
 }
+function hasHolsterInCart(){return shopCart.some(function(i){return i.type==='holster'})}
 function renderShopCart(){
   var bd=document.getElementById('scartBd'),ft=document.getElementById('scartFt'),badge=document.getElementById('shopCartBadge');
   var totalItems=0,totalPrice=0;
-  shopCart.forEach(function(i){totalItems+=i.qty;totalPrice+=i.price*i.qty});
+  var holsterPresent=hasHolsterInCart();
+  shopCart.forEach(function(i){
+    totalItems+=i.qty;
+    var price=i.price;
+    if(i.variant==='discovery-set'&&holsterPresent)price=Math.round(i.price*0.8);
+    totalPrice+=price*i.qty;
+  });
   badge.textContent=totalItems;badge.style.display=totalItems>0?'flex':'none';
   if(!shopCart.length){bd.innerHTML='<div class="scart-empty">Your cart is empty.</div>';ft.style.display='none';return}
   ft.style.display='';
   var h='';
   shopCart.forEach(function(item,idx){
-    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div><div class="sci-price">'+fmt(item.price)+'</div><div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
+    var price=item.price;
+    var discounted=item.variant==='discovery-set'&&holsterPresent;
+    if(discounted)price=Math.round(item.price*0.8);
+    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+(discounted?'<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Holster</div>':'<div class="sci-price">'+fmt(price)+'</div>')+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
   });
   bd.innerHTML=h;
   document.getElementById('scItemCount').textContent=totalItems;
@@ -1363,7 +1671,13 @@ function removeShopItem(idx){shopCart.splice(idx,1);renderShopCart()}
 function shopCheckout(){
   if(!shopCart.length)return;
   var parts=[];
-  shopCart.forEach(function(i){parts.push(i.variant+':'+i.qty)});
+  shopCart.forEach(function(i){
+    if(i.variant==='discovery-set'){
+      parts.push('DISCOVERY_SET_VARIANT:'+i.qty);
+    }else{
+      parts.push(i.variant+':'+i.qty);
+    }
+  });
   window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
 }
 
