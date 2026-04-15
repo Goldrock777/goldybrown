@@ -1738,15 +1738,8 @@ function removeShopItem(idx){shopCart.splice(idx,1);renderShopCart()}
 function shopCheckout(){
   if(!shopCart.length)return;
   var parts=[];
-  var hasHolster=false,hasDiscovery=false;
-  shopCart.forEach(function(i){
-    parts.push(i.variant+':'+i.qty);
-    if(i.type==='holster')hasHolster=true;
-    if(i.variant==='53324620529956')hasDiscovery=true;
-  });
-  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',');
-  if(hasHolster&&hasDiscovery)url+='?discount=HOLSTER20';
-  window.open(url,'_blank');
+  shopCart.forEach(function(i){parts.push(i.variant+':'+i.qty)});
+  window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
 }
 
 renderCat();initFI();document.getElementById('bbar').style.display='none';
