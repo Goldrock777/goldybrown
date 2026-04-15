@@ -662,7 +662,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-profiles{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .frag-profile{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s;text-align:center}
 .frag-profile:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
-.frag-profile-img{height:200px;overflow:hidden;background:#1a1a18}
+.frag-profile-img{height:200px;overflow:hidden;background:#0a0a0a;position:relative}
+.frag-profile-img::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.3);pointer-events:none}
 .frag-profile-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .frag-profile:hover .frag-profile-img img{transform:scale(1.05)}
 .frag-profile-body{padding:20px 16px 24px}
@@ -695,11 +696,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-disclaimer{font-size:10px;color:var(--tm);font-weight:200;line-height:1.8;max-width:800px;margin:0 auto;text-align:center;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
 .frag-bundle-badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(42,107,63,.08),rgba(184,160,112,.08));border:1px solid rgba(42,107,63,.2);color:var(--gl);padding:6px 14px;font-weight:500;margin-bottom:12px}
 /* Fragrance composite image strip */
-.frag-strip{display:flex;width:100%;height:100%;overflow:hidden}
-.frag-strip-item{flex:1;position:relative;overflow:hidden}
-.frag-strip-item img{width:100%;height:100%;object-fit:cover}
-.frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.2);pointer-events:none}
-.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
+.frag-strip{display:flex;width:100%;height:100%;overflow:hidden;gap:0;background:#0a0a0a}
+.frag-strip-item{flex:1 1 0%;position:relative;overflow:hidden;min-width:0}
+.frag-strip-item img{width:100%;height:100%;object-fit:cover;display:block}
+.frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:none}
+.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.92));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
 .frag-strip-item .fsi-name span{display:block;font-family:var(--fb);font-size:7px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;font-weight:300}
 /* Discovery Set home card */
 .discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:#0a0a0a;margin-top:32px;border-top:1px solid rgba(184,160,112,.15);border-bottom:1px solid rgba(184,160,112,.15)}
@@ -916,9 +917,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="discovery-home-text">
 <div class="slabel">New &mdash; The Fragrance Collection</div>
 <h2>The <span>Discovery Set</span></h2>
-<p class="desc">5 luxury fragrances in 10mL Goldy Brown branded vials, housed in a full grain leather case with velvet carrying pouch. Individually decanted from authentic retail bottles.</p>
-<div class="price">$299 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="price-note">Custom made to order</div>
+<p class="desc">5 luxury fragrances in 10mL <em style="font-style:italic;color:#faf9f6">Goldy Brown</em> branded vials, housed in a full grain leather case with velvet carrying pouch. Individually decanted from authentic retail bottles.</p>
+<div style="font-size:9px;color:rgba(255,255,255,.35);font-weight:200;line-height:1.5;margin-bottom:12px">100% authentic fragrances, individually decanted into <em>Goldy Brown</em> branded vials. Not affiliated with or endorsed by any referenced fragrance house.</div>
+<div class="price">$299 <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="price-note">Free shipping</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
 <div class="btn-row">
 <button class="btn" onclick="addDiscoveryToCart()">Add to Cart</button>
@@ -1309,16 +1311,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </ul>
 <div class="fp-value">Competitors charge $250+ for 4 loose decants with no case. We give you 5 + leather case + velvet pouch.</div>
 <div class="fp-price" data-base="299">$299 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="fp-price-note">Custom made to order</div>
+<div class="fp-price-note">Free shipping</div>
 <div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
+<div style="font-size:9px;color:var(--tm);font-weight:200;line-height:1.5;margin-bottom:12px">100% authentic fragrances, individually decanted into <em>Goldy Brown</em> branded vials. Not affiliated with or endorsed by any referenced fragrance house.</div>
 <button class="btn btn-f" onclick="addDiscoveryToCart()">Add to Cart</button>
 </div>
 </div>
 
 <div class="frag-pcard">
-<div class="frag-pcard-img"><div class="fpi-placeholder">
+<div class="frag-pcard-img" style="background:var(--bg-card)">
 <img loading="lazy" src="samplewallet.png" alt="Private Label Program" style="width:100%;height:100%;object-fit:contain">
-</div></div>
+</div>
 <div class="frag-pcard-body">
 <div class="fp-tag">Custom &amp; White Label</div>
 <h3>Private Label Program</h3>
@@ -1472,7 +1475,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 
 <section class="section fade-in">
-<div class="frag-disclaimer">Each fragrance is individually decanted from authentic retail bottles into Goldy Brown branded vials. Goldy Brown does not manufacture, reformulate, or replicate any fragrance. All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners. Fragrance is a personal product &mdash; by purchasing, you acknowledge that scent preferences are subjective and that Goldy Brown is not liable for allergic reactions, skin sensitivities, or dissatisfaction with any fragrance selection. Always test on a small area of skin before full use. All sales are final on opened fragrance products.</div>
+<div class="frag-disclaimer">
+<strong style="color:var(--w);font-weight:500;display:block;margin-bottom:8px;font-size:11px;letter-spacing:1px;text-transform:uppercase">Important Notice</strong>
+At Goldy Brown, we take pride in crafting each decant fresh upon order placement, using meticulously sterile equipment to transfer the fragrance into your chosen bottle size. Goldy Brown operates independently and is not affiliated with, endorsed by, sponsored, or supported by any of the brands whose scents we offer. We make no attempt to replicate, duplicate, or imitate any brand logos or trademarks, ensuring full respect for intellectual property rights.<br><br>
+While you will not receive a licensed product in its original bottle, rest assured that you will receive the authentic perfume in one of our thoughtfully designed, custom-labelled <em>Goldy Brown</em> bottles. Our commitment remains unwavering in delivering 100% genuine scents, while our packaging is exclusively crafted by us at Goldy Brown.<br><br>
+Goldy Brown stands firm in its dedication to the original artists behind each fragrance, ensuring their work is passed on to you in its purest form, devoid of any adulteration or modification. We uphold a strict policy against the sale of fakes, copies, duplicates, or diluted products.<br><br>
+<strong style="color:var(--w);font-weight:500;font-size:10px">Usage Disclaimer:</strong> Use Goldy Brown fragrance products as intended and store in a cool, dry place away from direct sunlight. Always test on a small area of skin before full use. Goldy Brown is not responsible for misuse, mishandling, allergic reactions, or skin sensitivities. All sales are final on opened fragrance products.<br><br>
+Thank you for choosing Goldy Brown for your fragrance needs.
+</div>
 </section>
 </div>
 
