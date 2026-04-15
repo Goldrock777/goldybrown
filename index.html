@@ -188,18 +188,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .pcard-body .pp{font-size:15px;color:var(--gl);font-weight:400;margin-bottom:12px;font-family:var(--fd)}
 .pcard-body .pd{font-size:12px;color:var(--tm);font-weight:200;line-height:1.6;margin-bottom:16px}
 .pcard-body .btn{padding:10px 24px;font-size:9px;width:100%;text-align:center}
-.frag-product{display:grid;grid-template-columns:1fr 1fr;max-width:1400px;margin:0 auto;padding:60px 60px;gap:48px;align-items:center}
-.frag-product-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px}
-.frag-bottle{background:var(--bg-card);border:1px solid var(--b);padding:16px;display:flex;align-items:center;justify-content:center;transition:all .4s;overflow:hidden}
-.frag-bottle:hover{border-color:var(--g);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.frag-bottle img{max-width:100%;max-height:140px;object-fit:contain;transition:transform .4s}
-.frag-bottle:hover img{transform:scale(1.1)}
-.frag-product-info{padding:0 20px}
-.frag-product-info h3{margin-bottom:6px}
-.frag-sub{font-size:13px;color:var(--tm);font-weight:200;line-height:1.7;margin-bottom:16px}
-.frag-list{display:flex;flex-direction:column;gap:6px;margin-bottom:4px}
-.frag-li{font-size:12px;color:var(--td);font-weight:300;padding:6px 0;border-bottom:1px solid var(--b)}
-.frag-li strong{color:var(--w);font-weight:500;margin-right:6px;font-family:var(--fd)}
+.gift-banner{border:1px solid rgba(42,107,63,.2);padding:10px 12px;margin-bottom:14px;background:linear-gradient(135deg,rgba(42,107,63,.04),rgba(184,160,112,.04))}
+.gift-banner-head{font-family:var(--fd);font-size:11px;color:var(--g);display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.gift-banner-body{display:flex;align-items:center;gap:10px}
+.gift-banner-imgs{display:flex;gap:4px;flex-shrink:0}
+.gift-banner-imgs img{width:32px;height:40px;object-fit:contain;border:1px solid var(--b);padding:2px;background:#fff}
+.gift-banner-text{font-size:9px;color:var(--tm);line-height:1.5;font-weight:300}
+.hotel-deal{max-width:1400px;margin:0 auto;padding:0 60px}
+.hotel-deal-inner{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:32px 36px;border:1px solid rgba(42,107,63,.2);background:linear-gradient(135deg,rgba(42,107,63,.03),rgba(184,160,112,.03))}
+.hotel-deal-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hotel-deal-imgs img{width:80px;height:100px;object-fit:contain;border:1px solid var(--b);padding:6px;background:#fff;transition:transform .3s}
+.hotel-deal-imgs img:hover{transform:scale(1.08)}
+.hotel-deal-info .slabel{color:var(--g)}
+.hotel-deal-info h3{margin-bottom:6px}
+.hotel-deal-desc{font-size:13px;color:var(--tm);font-weight:200;line-height:1.7;margin-bottom:8px}
+.hotel-deal-frags{display:flex;flex-wrap:wrap;gap:4px 12px;margin-bottom:10px}
+.hotel-deal-frag{font-size:10px;color:var(--td);font-weight:300}
+.hotel-deal-frag strong{color:var(--w);font-family:var(--fd);font-weight:500}
+.hotel-deal-price{font-family:var(--fd);font-size:22px;color:var(--gl)}
+.hotel-deal-note{font-size:10px;color:var(--tm);font-weight:300;margin-top:2px}
 .lb-wrap{padding:0;display:flex;flex-direction:column;align-items:center;height:100vh;overflow:hidden;background:#fff}
 .page.active .lb-wrap{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1;background:#fff}
 .lb-header{text-align:center;margin-bottom:0;padding-top:68px}
@@ -490,7 +497,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
-.frag-product{grid-template-columns:1fr;padding:40px 24px;gap:28px}
+.hotel-deal{padding:0 24px}.hotel-deal-inner{grid-template-columns:1fr;gap:20px;padding:24px 20px}.hotel-deal-imgs{justify-content:center}
 .products-hero{padding:72px 24px 20px}
 .product-grid{grid-template-columns:repeat(2,1fr)}
 .lb-wrap{padding:0;height:100vh}.lb-header{padding-top:56px;margin-bottom:0}.lb-header h1{font-size:13px}.lb-header .sub{font-size:7px}.lb-hint{font-size:7px}.lb-flip-wrap{padding:0 8px}
@@ -766,6 +773,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Free shipping on all orders</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
+<div class="gift-banner">
+<div class="gift-banner-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="15" height="15"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Free Gift with Every Holster</div>
+<div class="gift-banner-body">
+<div class="gift-banner-imgs">
+<img src="frag-kilian.jpg" alt="Kilian"><img src="frag-armani.jpg" alt="Armani"><img src="frag-chanel.jpg" alt="Chanel"><img src="frag-dior.jpg" alt="Dior">
+</div>
+<div class="gift-banner-text">Leather fragrance case with 4 designer samples (5ml each) &mdash; Kilian, Armani, Chanel &amp; Dior</div>
+</div>
+</div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/52629444165924:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -774,29 +790,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
 <div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack"></div><div class="hv-label">Black</div></div>
 </div>
-</div>
-</div>
-
-<div class="frag-product fade-in">
-<div class="frag-product-imgs">
-<div class="frag-bottle"><img src="frag-kilian.jpg" alt="Kilian"></div>
-<div class="frag-bottle"><img src="frag-armani.jpg" alt="Armani"></div>
-<div class="frag-bottle"><img src="frag-chanel.jpg" alt="Chanel"></div>
-<div class="frag-bottle"><img src="frag-dior.jpg" alt="Dior"></div>
-</div>
-<div class="frag-product-info">
-<div class="slabel">New Product</div>
-<h3>The Fragrance Sampler</h3>
-<p class="frag-sub">Leather case with 4 designer fragrances &mdash; 10ml each</p>
-<div class="frag-list">
-<div class="frag-li"><strong>Kilian</strong> Straight to Heaven</div>
-<div class="frag-li"><strong>Armani</strong> Stronger With You Intensely</div>
-<div class="frag-li"><strong>Chanel</strong> Bleu de Chanel EDP</div>
-<div class="frag-li"><strong>Dior</strong> Sauvage EDP</div>
-</div>
-<div class="price" style="margin-top:12px">$100 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="price-note" style="margin-bottom:12px">Free shipping &middot; Also available for hotel programmes</div>
-<a href="YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler" target="_blank" class="btn btn-f" style="text-align:center;display:block">Buy Now</a>
 </div>
 </div>
 
@@ -858,6 +851,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <!-- ======================== HOTEL PROGRAMME ======================== -->
 <div class="page" id="page-hotel">
 <div class="page-hero"><div class="slabel">For Hotel Partners</div><h1>The Hotel Programme</h1><p class="sub">Curated leather gift kits for your most valued guests. Select a budget tier, build your custom kit, and we handle the branding, packaging, and delivery.</p></div>
+<div class="hotel-deal fade-in">
+<div class="hotel-deal-inner">
+<div class="hotel-deal-imgs">
+<img src="frag-kilian.jpg" alt="Kilian">
+<img src="frag-armani.jpg" alt="Armani">
+<img src="frag-chanel.jpg" alt="Chanel">
+<img src="frag-dior.jpg" alt="Dior">
+</div>
+<div class="hotel-deal-info">
+<div class="slabel">Featured Add-On</div>
+<h3>The Fragrance Sampler</h3>
+<div class="hotel-deal-desc">A leather sample case with 4 designer fragrances (10ml each). The perfect in-room amenity or VIP welcome gift. Custom hotel branding available.</div>
+<div class="hotel-deal-frags">
+<span class="hotel-deal-frag"><strong>Kilian</strong> Straight to Heaven</span>
+<span class="hotel-deal-frag"><strong>Armani</strong> Stronger With You</span>
+<span class="hotel-deal-frag"><strong>Chanel</strong> Bleu de Chanel</span>
+<span class="hotel-deal-frag"><strong>Dior</strong> Sauvage</span>
+</div>
+<div class="hotel-deal-price">$100 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD per unit</span></div>
+<div class="hotel-deal-note">Volume discounts apply with kit tier pricing</div>
+</div>
+</div>
+</div>
 <section class="section fade-in">
 <div style="text-align:center;margin-bottom:44px"><div class="slabel">The Natural Choice</div><h2 style="margin-bottom:8px">Why Choose Leather</h2><p style="color:var(--td);font-weight:200;font-size:14px;max-width:560px;margin:0 auto;line-height:1.8">Full grain leather is one of the oldest and most enduring materials known to man. Here's why it remains the gold standard for luxury goods.</p></div>
 <div class="why-grid">
