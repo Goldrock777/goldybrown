@@ -649,9 +649,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(5) img{animation:fragFlashIn .4s ease-out .45s forwards}
 .frag-strip-item img{width:100%;height:100%;object-fit:cover;display:block}
 .frag-strip-item.fsi-blend{background:#fff}
-.frag-strip-item.fsi-blend::after{background:rgba(0,0,0,.4)}
-.frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4);pointer-events:none}
-.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:8px 4px;background:linear-gradient(transparent,rgba(0,0,0,.92));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
+.frag-strip-item::after{display:none}
+.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:10px 4px 8px;background:rgba(0,0,0,.8);font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400;z-index:1}
 .frag-strip-item .fsi-name span{display:block;font-family:var(--fb);font-size:7px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;font-weight:300}
 /* Discovery Set home card */
 .discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:#0a0a0a;margin-top:32px;border-top:1px solid rgba(184,160,112,.15);border-bottom:1px solid rgba(184,160,112,.15)}
