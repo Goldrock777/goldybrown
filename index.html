@@ -1695,8 +1695,8 @@ function addToShopCart(){
   renderShopCart();toggleShopCart(true);
 }
 function addDiscoveryToCart(){
-  var existing=shopCart.find(function(i){return i.variant==='discovery-set'});
-  if(existing){existing.qty++}else{shopCart.push({name:'The Goldy Brown Discovery Set',variant:'discovery-set',price:299,img:'leathercase.png',material:'5 × 10mL vials + leather case',qty:1,type:'fragrance'})}
+  var existing=shopCart.find(function(i){return i.variant==='53324620529956'});
+  if(existing){existing.qty++}else{shopCart.push({name:'The Goldy Brown Discovery Set',variant:'53324620529956',price:299,img:'leathercase.png',material:'5 × 10mL vials + leather case',qty:1,type:'fragrance'})}
   renderShopCart();toggleShopCart(true);
 }
 function toggleShopCart(forceOpen){
@@ -1712,7 +1712,7 @@ function renderShopCart(){
   shopCart.forEach(function(i){
     totalItems+=i.qty;
     var price=i.price;
-    if(i.variant==='discovery-set'&&holsterPresent)price=Math.round(i.price*0.8);
+    if(i.variant==='53324620529956'&&holsterPresent)price=Math.round(i.price*0.8);
     totalPrice+=price*i.qty;
   });
   badge.textContent=totalItems;badge.style.display=totalItems>0?'flex':'none';
@@ -1721,7 +1721,7 @@ function renderShopCart(){
   var h='';
   shopCart.forEach(function(item,idx){
     var price=item.price;
-    var discounted=item.variant==='discovery-set'&&holsterPresent;
+    var discounted=item.variant==='53324620529956'&&holsterPresent;
     if(discounted)price=Math.round(item.price*0.8);
     h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+(discounted?'<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Holster</div>':'<div class="sci-price">'+fmt(price)+'</div>')+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
   });
@@ -1738,14 +1738,15 @@ function removeShopItem(idx){shopCart.splice(idx,1);renderShopCart()}
 function shopCheckout(){
   if(!shopCart.length)return;
   var parts=[];
+  var hasHolster=false,hasDiscovery=false;
   shopCart.forEach(function(i){
-    if(i.variant==='discovery-set'){
-      parts.push('DISCOVERY_SET_VARIANT:'+i.qty);
-    }else{
-      parts.push(i.variant+':'+i.qty);
-    }
+    parts.push(i.variant+':'+i.qty);
+    if(i.type==='holster')hasHolster=true;
+    if(i.variant==='53324620529956')hasDiscovery=true;
   });
-  window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
+  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',');
+  if(hasHolster&&hasDiscovery)url+='?discount=HOLSTER20';
+  window.open(url,'_blank');
 }
 
 renderCat();initFI();document.getElementById('bbar').style.display='none';
