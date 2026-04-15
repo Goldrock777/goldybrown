@@ -149,19 +149,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:0 0 2px;padding-top:14px;border-top:1px solid var(--b)}
 .holster-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:4px}
 .holster-home-text .preorder-note{font-size:10px;color:var(--gl);font-weight:400;letter-spacing:.5px;padding:8px 12px;border:1px solid rgba(42,107,63,.15);background:rgba(42,107,63,.03);margin-bottom:14px}
-.gift-box{border:1px solid var(--b);padding:14px 16px;margin-bottom:14px;background:rgba(42,107,63,.02)}
-.gift-header{font-family:var(--fd);font-size:13px;color:var(--g);display:flex;align-items:center;gap:8px;margin-bottom:4px}
-.gift-desc{font-size:10px;color:var(--tm);letter-spacing:.5px;margin-bottom:10px;font-weight:300}
-.gift-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.gift-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--b);cursor:pointer;transition:all .3s;position:relative}
-.gift-item:hover{border-color:var(--g)}
+.gift-box{border:1px solid var(--b);padding:16px;margin-bottom:14px;background:linear-gradient(135deg,rgba(42,107,63,.03),rgba(184,160,112,.03))}
+.gift-header{font-family:var(--fd);font-size:14px;color:var(--g);display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.gift-tag{display:inline-block;font-family:var(--fb);font-size:8px;letter-spacing:2px;text-transform:uppercase;background:var(--g);color:#fff;padding:2px 8px;margin-left:8px;font-weight:500}
+.gift-desc{font-size:10px;color:var(--tm);letter-spacing:.5px;margin-bottom:12px;font-weight:300;line-height:1.6}
+.gift-counter{font-family:var(--fb);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gl);margin-bottom:8px;transition:color .3s}
+.gift-counter.full{color:var(--g)}
+.gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gift-item{display:flex;flex-direction:column;align-items:center;padding:10px 6px 8px;border:1px solid var(--b);cursor:pointer;transition:all .4s;position:relative;background:var(--bg-card);overflow:hidden}
+.gift-item:hover{border-color:var(--tm);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.gift-item.selected{border-color:var(--g);background:rgba(42,107,63,.04)}
+.gift-item.selected .gi-badge{opacity:1;transform:scale(1)}
 .gift-item input{position:absolute;opacity:0;pointer-events:none}
-.gi-check{width:14px;height:14px;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
-.gift-item input:checked~.gi-check{background:var(--g);border-color:var(--g)}
-.gift-item input:checked~.gi-check::after{content:'';width:4px;height:7px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-1px}
-.gift-item input:checked~.gi-name{color:var(--w)}
-.gi-name{font-family:var(--fd);font-size:11px;color:var(--tm);transition:color .3s}
-.gi-sub{font-size:8px;color:var(--tm);letter-spacing:.5px;margin-left:auto;font-weight:300}
+.gi-badge{position:absolute;top:6px;right:6px;width:16px;height:16px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.5);transition:all .3s}
+.gi-badge::after{content:'';width:4px;height:7px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-1px}
+.gi-img{width:48px;height:60px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;transition:transform .3s;border-radius:4px;font-family:var(--fd);font-size:20px;color:rgba(255,255,255,.7);letter-spacing:1px}
+.gift-item:hover .gi-img{transform:scale(1.1)}
+.gi-img[data-brand="kilian"]{background:linear-gradient(160deg,#1a1a18,#2a2520);color:#c9a84c}
+.gi-img[data-brand="armani"]{background:linear-gradient(160deg,#8b4513,#c56a2e);color:#fff}
+.gi-img[data-brand="chanel"]{background:linear-gradient(160deg,#0a0a0a,#2a2a2a);color:#5a8a9a}
+.gi-img[data-brand="dior"]{background:linear-gradient(160deg,#1a2a3a,#2a4a5a);color:#8ab}
+.gi-img img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px}
+.gi-brand{font-family:var(--fd);font-size:10px;color:var(--w);text-align:center;line-height:1.2;margin-bottom:2px}
+.gi-name{font-size:7px;color:var(--tm);letter-spacing:.5px;text-align:center;font-weight:300;line-height:1.3;text-transform:uppercase}
 .holster-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:420px;margin-bottom:12px}
 .holster-home-text .detail-list{list-style:none;margin-bottom:12px}
 .holster-home-text .detail-list li{font-size:11.5px;color:var(--td);font-weight:200;padding:5px 0;border-bottom:1px solid var(--b);display:flex;gap:8px}
@@ -481,6 +491,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home{grid-template-columns:1fr}
 .holster-home-img{min-height:auto}
 .holster-home-text{padding:28px 24px 36px}
+.gift-grid{grid-template-columns:repeat(4,1fr);gap:6px}
 .holster-home-text .est{margin-bottom:4px}
 .holster-home-text h2{font-size:28px}
 .holster-home-text .desc{font-size:13.5px;line-height:1.85;margin-bottom:16px}
@@ -767,13 +778,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="price-note">Free shipping on all orders</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
 <div class="gift-box">
-<div class="gift-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16" height="16"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Free Gift with Purchase</div>
-<div class="gift-desc">Choose 4 luxury fragrance samples (5ml each) in a leather sample case</div>
+<div class="gift-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16" height="16"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Complimentary Gift<span class="gift-tag">Free</span></div>
+<div class="gift-desc">Select your 4 luxury fragrance samples (5ml each) &mdash; presented in a leather sample case</div>
+<div class="gift-counter" id="giftCounter">4 of 4 selected</div>
 <div class="gift-grid" id="giftGrid">
-<label class="gift-item"><input type="checkbox" name="frag" value="kilian" checked><span class="gi-check"></span><span class="gi-name">Kilian</span><span class="gi-sub">Straight to Heaven</span></label>
-<label class="gift-item"><input type="checkbox" name="frag" value="armani" checked><span class="gi-check"></span><span class="gi-name">Armani</span><span class="gi-sub">Stronger With You</span></label>
-<label class="gift-item"><input type="checkbox" name="frag" value="chanel" checked><span class="gi-check"></span><span class="gi-name">Chanel</span><span class="gi-sub">Bleu de Chanel</span></label>
-<label class="gift-item"><input type="checkbox" name="frag" value="dior" checked><span class="gi-check"></span><span class="gi-name">Dior</span><span class="gi-sub">Sauvage</span></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="kilian" checked><span class="gi-badge"></span><div class="gi-img" data-brand="kilian">K</div><div class="gi-brand">Kilian</div><div class="gi-name">Straight to Heaven</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="armani" checked><span class="gi-badge"></span><div class="gi-img" data-brand="armani">A</div><div class="gi-brand">Armani</div><div class="gi-name">Stronger With You</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="chanel" checked><span class="gi-badge"></span><div class="gi-img" data-brand="chanel">C</div><div class="gi-brand">Chanel</div><div class="gi-name">Bleu de Chanel</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="dior" checked><span class="gi-badge"></span><div class="gi-img" data-brand="dior">D</div><div class="gi-brand">Dior</div><div class="gi-name">Sauvage</div></label>
 </div>
 </div>
 <div class="btn-row">
@@ -1299,6 +1311,20 @@ var shopProducts={
   green:{name:'The Holster — Green',variant:'52629444165924',price:249,img:'holster1.png',material:'Full grain suede'},
   black:{name:'The Holster — Black',variant:'52799540429092',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
+function toggleGift(el){
+  var cb=el.querySelector('input');
+  var checked=document.querySelectorAll('#giftGrid input:checked').length;
+  if(cb.checked&&checked<=1)return;
+  if(!cb.checked&&checked>=4){cb.checked=false;el.classList.remove('selected');updateGiftCounter();return}
+  el.classList.toggle('selected',cb.checked);
+  updateGiftCounter();
+}
+function updateGiftCounter(){
+  var n=document.querySelectorAll('#giftGrid input:checked').length;
+  var el=document.getElementById('giftCounter');
+  el.textContent=n+' of 4 selected';
+  el.classList.toggle('full',n===4);
+}
 function addToShopCart(){
   var p=shopProducts[curColor];
   var existing=shopCart.find(function(i){return i.variant===p.variant});
