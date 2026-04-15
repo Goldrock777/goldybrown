@@ -163,13 +163,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gift-item input{position:absolute;opacity:0;pointer-events:none}
 .gi-badge{position:absolute;top:6px;right:6px;width:16px;height:16px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.5);transition:all .3s}
 .gi-badge::after{content:'';width:4px;height:7px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-1px}
-.gi-img{width:48px;height:60px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;transition:transform .3s;border-radius:4px;font-family:var(--fd);font-size:20px;color:rgba(255,255,255,.7);letter-spacing:1px}
+.gi-img{width:48px;height:60px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .gift-item:hover .gi-img{transform:scale(1.1)}
-.gi-img[data-brand="kilian"]{background:linear-gradient(160deg,#1a1a18,#2a2520);color:#c9a84c}
-.gi-img[data-brand="armani"]{background:linear-gradient(160deg,#8b4513,#c56a2e);color:#fff}
-.gi-img[data-brand="chanel"]{background:linear-gradient(160deg,#0a0a0a,#2a2a2a);color:#5a8a9a}
-.gi-img[data-brand="dior"]{background:linear-gradient(160deg,#1a2a3a,#2a4a5a);color:#8ab}
-.gi-img img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px}
+.gi-img img{max-width:100%;max-height:100%;object-fit:contain}
 .gi-brand{font-family:var(--fd);font-size:10px;color:var(--w);text-align:center;line-height:1.2;margin-bottom:2px}
 .gi-name{font-size:7px;color:var(--tm);letter-spacing:.5px;text-align:center;font-weight:300;line-height:1.3;text-transform:uppercase}
 .holster-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:420px;margin-bottom:12px}
@@ -782,10 +778,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="gift-desc">Select your 4 luxury fragrance samples (5ml each) &mdash; presented in a leather sample case</div>
 <div class="gift-counter" id="giftCounter">4 of 4 selected</div>
 <div class="gift-grid" id="giftGrid">
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="kilian" checked><span class="gi-badge"></span><div class="gi-img" data-brand="kilian">K</div><div class="gi-brand">Kilian</div><div class="gi-name">Straight to Heaven</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="armani" checked><span class="gi-badge"></span><div class="gi-img" data-brand="armani">A</div><div class="gi-brand">Armani</div><div class="gi-name">Stronger With You</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="chanel" checked><span class="gi-badge"></span><div class="gi-img" data-brand="chanel">C</div><div class="gi-brand">Chanel</div><div class="gi-name">Bleu de Chanel</div></label>
-<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="dior" checked><span class="gi-badge"></span><div class="gi-img" data-brand="dior">D</div><div class="gi-brand">Dior</div><div class="gi-name">Sauvage</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="kilian" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-kilian.jpg" alt="Kilian"></div><div class="gi-brand">Kilian</div><div class="gi-name">Straight to Heaven</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="armani" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-armani.jpg" alt="Armani"></div><div class="gi-brand">Armani</div><div class="gi-name">Stronger With You</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="chanel" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-chanel.jpg" alt="Chanel"></div><div class="gi-brand">Chanel</div><div class="gi-name">Bleu de Chanel</div></label>
+<label class="gift-item selected" onclick="toggleGift(this)"><input type="checkbox" name="frag" value="dior" checked><span class="gi-badge"></span><div class="gi-img"><img src="frag-dior.jpg" alt="Dior"></div><div class="gi-brand">Dior</div><div class="gi-name">Sauvage</div></label>
 </div>
 </div>
 <div class="btn-row">
