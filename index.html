@@ -332,6 +332,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .cr.big{font-size:14px;margin-top:7px;padding-top:7px;border-top:1px solid var(--b)}.cr.big .l{font-family:var(--fd);color:var(--w)}.cr.big .v{font-family:var(--fd);font-size:16px}
 .cart-iq{width:100%;padding:12px;margin-top:12px;background:var(--g);border:1px solid var(--g);color:#fff;font-family:var(--fb);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s}
 .cart-iq:hover{background:var(--gb)}
+.prop-ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.45);z-index:1300;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+.prop-ov.open{opacity:1;pointer-events:all}
+.prop-modal{background:#fff;width:560px;max-width:92vw;max-height:88vh;overflow-y:auto;position:relative;padding:40px 36px;border:1px solid var(--b)}
+.prop-modal h3{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:4px}
+.prop-modal .pm-sub{font-size:13px;color:var(--td);font-weight:200;margin-bottom:24px;line-height:1.7}
+.pm-summary{background:var(--bg-card);border:1px solid var(--b);padding:16px 18px;margin-bottom:24px;font-size:12px}
+.pm-summary .pm-line{display:flex;justify-content:space-between;margin-bottom:3px;color:var(--td)}
+.pm-summary .pm-line.pm-total{margin-top:8px;padding-top:8px;border-top:1px solid var(--b);font-weight:400;color:var(--w);font-size:13px}
+.pm-summary .pm-tier{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gl);margin-bottom:8px;font-weight:500}
+.pm-form .fg{margin-bottom:16px}
+.pm-form label{display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:500;margin-bottom:6px}
+.pm-form input,.pm-form textarea,.pm-form select{width:100%;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300;color:var(--t);background:#fff;transition:border-color .3s}
+.pm-form input:focus,.pm-form textarea:focus,.pm-form select:focus{outline:none;border-color:var(--gl)}
+.pm-form textarea{height:80px;resize:vertical}
+.pm-form .pm-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pm-submit{width:100%;padding:14px;background:var(--g);border:1px solid var(--g);color:#fff;font-family:var(--fb);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:8px}
+.pm-submit:hover{background:var(--gb)}
+.pm-submit:disabled{opacity:.5;cursor:not-allowed}
+.pm-close{position:absolute;top:14px;right:18px;background:0;border:0;font-size:22px;color:var(--tm);cursor:pointer;transition:color .3s;line-height:1}
+.pm-close:hover{color:var(--w)}
+.pm-success{text-align:center;padding:40px 20px}
+.pm-success h3{margin-bottom:12px}
+.pm-success p{font-size:14px;color:var(--td);font-weight:200;line-height:1.8;margin-bottom:24px}
 .aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .aud-item{padding:40px 24px;text-align:center;transition:all .4s;background:var(--bg-card);border:1px solid var(--b)}
 .aud-item:hover{background:var(--gg);border-color:var(--gl);box-shadow:0 4px 16px rgba(45,90,61,.06)}
@@ -478,6 +501,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .about-vals{grid-template-columns:1fr}.about-val{border-right:0;border-bottom:1px solid var(--b)}.about-val:last-child{border-bottom:0}
 .contact-s{grid-template-columns:1fr}.contact-l,.contact-r{padding:36px 24px}.contact-r{border-left:0;border-top:1px solid var(--b)}
 .bbar{padding:9px 16px}.bbar-inner{flex-wrap:wrap;gap:8px}.bbar-prog{min-width:100%}
+.prop-modal{padding:28px 20px}.pm-form .pm-row{grid-template-columns:1fr}
 .cart-dr{width:100%;right:-100%}
 .scart-dr{width:100%;right:-100%}
 .footer{padding:40px 24px 32px}
@@ -650,7 +674,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="cr"><span class="l">Items</span><span class="v" id="cCnt">0</span></div>
 <div class="cr big"><span class="l">Total</span><span class="v green" id="cTot">$0</span></div>
 <div class="cr"><span class="l">Remaining</span><span class="v" id="cRem">$10,000</span></div>
-<button class="cart-iq" onclick="inquireKit()">Inquire About This Kit</button>
+<button class="cart-iq" onclick="inquireKit()">Request Proposal</button>
 </div>
 </div>
 
@@ -663,6 +687,31 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="sct-row"><span class="l">Items</span><span class="v" id="scItemCount">0</span></div>
 <div class="sct-total"><span>Total</span><span class="v" id="scTotal">$0</span></div>
 <button class="scart-checkout" onclick="shopCheckout()">Checkout</button>
+</div>
+</div>
+
+<!-- Proposal Modal -->
+<div class="prop-ov" id="propOv" onclick="closeProp(event)">
+<div class="prop-modal" id="propModal">
+<button class="pm-close" onclick="closeProp()">&times;</button>
+<div id="propBody">
+<h3>Request a Proposal</h3>
+<p class="pm-sub">We'll send you a formal proposal with pricing, lead times, and branding options for your selected kit.</p>
+<div class="pm-summary" id="propSummary"></div>
+<form class="pm-form" id="propForm" onsubmit="submitProp(event)">
+<div class="fg pm-row">
+<div><label>Name</label><input type="text" name="name" required placeholder="Your full name"></div>
+<div><label>Title</label><input type="text" name="title" placeholder="e.g. GM, Procurement"></div>
+</div>
+<div class="fg"><label>Hotel / Company</label><input type="text" name="company" required placeholder="Property or company name"></div>
+<div class="fg pm-row">
+<div><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
+<div><label>Phone</label><input type="tel" name="phone" placeholder="+1 604 000 0000"></div>
+</div>
+<div class="fg"><label>Notes</label><textarea name="notes" placeholder="Number of rooms, timeline, branding requirements..."></textarea></div>
+<button type="submit" class="pm-submit" id="propSubmitBtn">Send Proposal Request</button>
+</form>
+</div>
 </div>
 </div>
 
@@ -1204,7 +1253,11 @@ function openCart(){document.getElementById('cartOv').classList.add('open');docu
 function closeCart(){document.getElementById('cartOv').classList.remove('open');document.getElementById('cartDr').classList.remove('open');document.body.style.overflow=''}
 function renderCart(){var b=document.getElementById('cartBd'),f=document.getElementById('cartFt'),ic=P.filter(function(p){return p.qty>0});if(!ic.length){b.innerHTML='<div class="cart-empty">Your kit is empty.</div>';f.style.display='none';return}f.style.display='';var d=T[cT].d,h='';ic.forEach(function(p){var u=Math.round(p.price*(1-d)),l=u*p.qty;h+='<div class="cart-it"><div class="ci-info"><div class="ci-name">'+p.name+'</div><div class="ci-meta">'+p.qty+' &times; '+fmt(u)+'</div></div><div class="ci-price">'+fmt(l)+'</div><button class="ci-rm" onclick="rmItem(\''+p.id+'\')">&times;</button></div>'});b.innerHTML=h}
 function rmItem(id){P.forEach(function(p){if(p.id===id)p.qty=0});renderCat();updBudget()}
-function inquireKit(){var tier=T[cT],d=tier.d,lines=[],total=0;P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push(p.name+' x'+p.qty+' @ '+fmt(u)+' = '+fmt(l))}});if(!lines.length){openCart();return}var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Kit Inquiry \u2014 '+tier.l+' Tier');var body=encodeURIComponent('Kit Inquiry\n\nTier: '+tier.l+' ('+d*100+'% discount)\n\nItems:\n'+lines.join('\n')+'\n\nTotal: '+fmt(total)+'\nBudget: '+fmt(tier.b)+'\nRemaining: '+fmt(tier.b-total)+'\n\n---\nPlease contact me to finalize this order.');window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
+var FORM_URL='https://formspree.io/f/YOUR_FORM_ID';
+function inquireKit(){var tier=T[cT],d=tier.d,lines=[],total=0;P.forEach(function(p){if(p.qty>0){var u=Math.round(p.price*(1-d)),l=u*p.qty;total+=l;lines.push({name:p.name,qty:p.qty,unit:fmt(u),line:fmt(l)})}});if(!lines.length){openCart();return}closeCart();var s=document.getElementById('propSummary');var h='<div class="pm-tier">'+tier.l+' Tier &mdash; '+Math.round(d*100)+'% discount</div>';lines.forEach(function(l){h+='<div class="pm-line"><span>'+l.name+' &times; '+l.qty+'</span><span>'+l.line+'</span></div>'});h+='<div class="pm-line pm-total"><span>Total</span><span>'+fmt(total)+'</span></div>';s.innerHTML=h;document.getElementById('propBody').dataset.tier=tier.l;document.getElementById('propBody').dataset.total=fmt(total);document.getElementById('propBody').dataset.items=lines.map(function(l){return l.name+' x'+l.qty+' = '+l.line}).join(', ');document.getElementById('propOv').classList.add('open');document.body.style.overflow='hidden'}
+function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('propOv').classList.remove('open');document.body.style.overflow=''}
+function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Sending...';fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){if(r.ok)return r.json();throw new Error('Network error')}).then(function(){btn.disabled=false;onSuccess()}).catch(function(){btn.disabled=false;btn.textContent='Send Failed \u2014 Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},3000)})}
+function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Proposal Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a formal proposal for your '+data.tier+' kit and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
 function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'/'+page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
@@ -1214,7 +1267,7 @@ document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('cl
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page.active .slide-left,.page.active .slide-right,.page.active .scale-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.08});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
-function handleSubmit(e){e.preventDefault();var f=e.target;var email='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var subj=encodeURIComponent('Goldy Brown Inquiry');var body=encodeURIComponent('Name: '+f.name.value+'\nCompany: '+(f.company?f.company.value:'')+'\nEmail: '+f.email.value+'\nInterest: '+f.interest.value+'\n\n'+f.message.value);window.location.href='mai'+'lto:'+email+'?subject='+subj+'&body='+body}
+function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll be in touch within 24 hours.</p></div>'})}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
