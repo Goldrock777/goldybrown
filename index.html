@@ -652,7 +652,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-products{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
 .frag-pcard{background:var(--bg-card);border:1px solid var(--b);overflow:hidden;transition:all .4s}
 .frag-pcard:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
-.frag-pcard-img{height:280px;background:#1a1a18;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.frag-pcard-img{height:340px;background:#1a1a18;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .frag-pcard-img img{width:100%;height:100%;object-fit:cover}
 .frag-pcard-img .fpi-placeholder{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;padding:20px}
 .frag-pcard-body{padding:28px 28px 32px}
@@ -699,6 +699,24 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-form-fields .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .frag-disclaimer{font-size:10px;color:var(--tm);font-weight:200;line-height:1.8;max-width:800px;margin:0 auto;text-align:center;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
 .frag-bundle-badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(135deg,rgba(42,107,63,.08),rgba(184,160,112,.08));border:1px solid rgba(42,107,63,.2);color:var(--gl);padding:6px 14px;font-weight:500;margin-bottom:12px}
+/* Fragrance composite image strip */
+.frag-strip{display:flex;width:100%;height:100%;overflow:hidden}
+.frag-strip-item{flex:1;position:relative;overflow:hidden}
+.frag-strip-item img{width:100%;height:100%;object-fit:cover}
+.frag-strip-item .fsi-name{position:absolute;bottom:0;left:0;right:0;padding:6px 4px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-family:var(--fd);font-size:9px;color:#faf9f6;text-align:center;letter-spacing:.5px;line-height:1.3;font-weight:400}
+.frag-strip-item .fsi-name span{display:block;font-family:var(--fb);font-size:7px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;font-weight:300}
+/* Discovery Set home card */
+.discovery-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;border-bottom:1px solid var(--b)}
+.discovery-home-img{height:400px;overflow:hidden;background:#1a1a18}
+.discovery-home-text{padding:36px 44px;display:flex;flex-direction:column;justify-content:center}
+.discovery-home-text .slabel{margin-bottom:8px}
+.discovery-home-text h2{font-size:clamp(24px,2.5vw,34px);margin-bottom:4px}
+.discovery-home-text h2 span{color:var(--gl)}
+.discovery-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:400px;margin-bottom:14px}
+.discovery-home-text .price{font-family:var(--fd);font-size:24px;color:var(--w);margin-bottom:2px}
+.discovery-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:12px}
+.discovery-home-text .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.discovery-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
 @media(max-width:1024px){
 .frag-hero{padding:90px 24px 48px}
 .frag-products{grid-template-columns:1fr 1fr;gap:16px}
@@ -707,6 +725,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-usecases{grid-template-columns:repeat(3,1fr);gap:12px}
 .frag-form-wrap{grid-template-columns:1fr}
 .frag-form-info{border-bottom:1px solid var(--b)}
+.discovery-home{grid-template-columns:1fr}
+.discovery-home-img{height:280px}
+.discovery-home-text{padding:28px 24px}
 }
 @media(max-width:768px){
 .frag-hero{padding:80px 16px 36px}
@@ -719,6 +740,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-form-info,.frag-form-fields{padding:28px 20px}
 .frag-form-fields .fg-row{grid-template-columns:1fr}
 .frag-pcard-body{padding:22px 20px 24px}
+.discovery-home{grid-template-columns:1fr}
+.discovery-home-img{height:240px}
+.discovery-home-text{padding:24px 20px}
+.frag-strip-item .fsi-name{font-size:8px;padding:4px 2px}
+.frag-strip-item .fsi-name span{font-size:6px}
 }
 </style>
 </head>
@@ -877,10 +903,34 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 
+<div class="discovery-home">
+<div class="discovery-home-img">
+<div class="frag-strip">
+<div class="frag-strip-item"><img loading="lazy" src="killian.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="kilianblack.jpg" alt="Black Phantom"><div class="fsi-name">Black Phantom<span>Kilian</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"><div class="fsi-name">Bleu de Chanel<span>Chanel</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme"><div class="fsi-name">Dior Homme<span>Dior</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="armani.jpg" alt="Stronger With You"><div class="fsi-name">Stronger With You<span>Armani</span></div></div>
+</div>
+</div>
+<div class="discovery-home-text">
+<div class="slabel">New &mdash; The Fragrance Collection</div>
+<h2>The <span>Discovery Set</span></h2>
+<p class="desc">5 luxury fragrances in 10mL Goldy Brown branded vials, housed in a full grain leather case with velvet carrying pouch. Individually decanted from authentic retail bottles.</p>
+<div class="price">$299 <span style="font-size:14px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="price-note">Free shipping &bull; Custom made to order</div>
+<div class="frag-bundle-badge">Save 20% when purchased with The Holster</div>
+<div class="btn-row">
+<button class="btn" onclick="addDiscoveryToCart()">Add to Cart</button>
+<a class="btn btn-f" href="javascript:void(0)" onclick="go('fragrance')">View Collection</a>
+</div>
+</div>
+</div>
+
 <div class="section-cards">
 <div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(GB111.JPG) center 55%/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(coffeecab.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
-<div class="section-card section-card-wide scale-in" onclick="go('fragrance')"><div class="sc-img" style="background:url(leathercase.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">New</div><div class="sc-title">Fragrance Collection</div><div class="sc-desc">Luxury leather sampler cases with curated designer scents. Your brand or ours.</div></div></div>
+<div class="section-card section-card-wide scale-in" onclick="go('fragrance')"><div class="sc-img" style="position:relative;overflow:hidden"><div class="frag-strip" style="position:absolute;inset:0"><div class="frag-strip-item"><img loading="lazy" src="killian.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div><div class="frag-strip-item"><img loading="lazy" src="kilianblack.jpg" alt="Black Phantom"><div class="fsi-name">Black Phantom<span>Kilian</span></div></div><div class="frag-strip-item"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"><div class="fsi-name">Bleu de Chanel<span>Chanel</span></div></div><div class="frag-strip-item"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme"><div class="fsi-name">Dior Homme<span>Dior</span></div></div><div class="frag-strip-item"><img loading="lazy" src="armani.jpg" alt="Stronger With You"><div class="fsi-name">Stronger With You<span>Armani</span></div></div></div></div><div class="sc-overlay"><div class="sc-label">New</div><div class="sc-title">Fragrance Collection</div><div class="sc-desc">Luxury leather sampler cases with curated designer scents. Your brand or ours.</div></div></div>
 <div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
 <div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(DSC04620.JPG) center 10%/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
 </div>
@@ -956,7 +1006,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="hotel-deal-frag"><strong>Dior</strong> Homme Parfum</span>
 <span class="hotel-deal-frag"><strong>Armani</strong> Stronger With You Intensely</span>
 </div>
-<div class="hotel-deal-price">$100 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD per unit</span></div>
+<div class="hotel-deal-price">$249 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD per unit</span></div>
 <div class="hotel-deal-note">Volume discounts apply with kit tier pricing</div>
 </div>
 </div>
@@ -1239,9 +1289,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="frag-products">
 
 <div class="frag-pcard">
-<div class="frag-pcard-img"><div class="fpi-placeholder">
-<img loading="lazy" src="leathercase.png" alt="The Goldy Brown Discovery Set" style="width:100%;height:100%;object-fit:cover">
-</div></div>
+<div class="frag-pcard-img">
+<div class="frag-strip">
+<div class="frag-strip-item"><img loading="lazy" src="killian.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="kilianblack.jpg" alt="Black Phantom"><div class="fsi-name">Black Phantom<span>Kilian</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"><div class="fsi-name">Bleu de Chanel<span>Chanel</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme"><div class="fsi-name">Dior Homme<span>Dior</span></div></div>
+<div class="frag-strip-item"><img loading="lazy" src="armani.jpg" alt="Stronger With You"><div class="fsi-name">Stronger With You<span>Armani</span></div></div>
+</div>
+</div>
 <div class="frag-pcard-body">
 <div class="fp-tag">Signature</div>
 <h3>The Goldy Brown Discovery Set</h3>
@@ -1416,7 +1472,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 
 <section class="section fade-in">
-<div class="frag-disclaimer">All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners.</div>
+<div class="frag-disclaimer">Each fragrance is individually decanted from authentic retail bottles into Goldy Brown branded vials. Goldy Brown does not manufacture, reformulate, or replicate any fragrance. All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners. Fragrance is a personal product &mdash; by purchasing, you acknowledge that scent preferences are subjective and that Goldy Brown is not liable for allergic reactions, skin sensitivities, or dissatisfaction with any fragrance selection. Always test on a small area of skin before full use. All sales are final on opened fragrance products.</div>
 </section>
 </div>
 
@@ -1461,7 +1517,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div class="footer-copy">&copy; 2026 Goldy Brown. All rights reserved. Vancouver, BC, Canada.</div>
-<div style="font-size:9px;color:var(--tm);font-weight:200;line-height:1.7;max-width:600px;margin:16px auto 0;opacity:.6">All fragrance brand names referenced on this site are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners.</div>
+<div style="font-size:9px;color:var(--tm);font-weight:200;line-height:1.7;max-width:700px;margin:16px auto 0;opacity:.6">Each fragrance is individually decanted from authentic retail bottles. All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners. Goldy Brown is not liable for allergic reactions, skin sensitivities, or dissatisfaction with any fragrance. All sales final on opened fragrance products.</div>
 </footer>
 
 <div class="bbar empty" id="bbar">
@@ -1518,7 +1574,7 @@ var P=[
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
-{id:'fragrance-sampler',name:'Fragrance Sampler',price:100,qty:0,desc:'Leather sample case with 5 luxury fragrance samples (10ml each). Kilian Angels\' Share, Kilian Black Phantom, Bleu de Chanel, Dior Homme Parfum, and Armani Stronger With You Intensely. Custom hotel branding available.',retail:100,img:'samplewallet.png',sub:'5 Designer Fragrances',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler'},
+{id:'fragrance-sampler',name:'Fragrance Sampler',price:249,qty:0,desc:'Leather sample case with 5 luxury fragrance samples (10ml each). Kilian Angels\' Share, Kilian Black Phantom, Bleu de Chanel, Dior Homme Parfum, and Armani Stronger With You Intensely. Custom hotel branding available.',retail:249,img:'samplewallet.png',sub:'5 Designer Fragrances',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/fragrance-sampler'},
 {id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
