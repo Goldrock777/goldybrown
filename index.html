@@ -642,14 +642,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-strip-item img{transition:none}
 @keyframes fragFlashIn{0%{opacity:0;transform:scale(1.1)}60%{opacity:1;transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
 .frag-strip-stagger .frag-strip-item img{opacity:0}
-.frag-strip-item:nth-child(1) .fsi-name{background:rgba(0,0,0,.85)}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(1) img{animation:fragFlashIn .4s ease-out .05s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(2) img{animation:fragFlashIn .4s ease-out .15s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(3) img{animation:fragFlashIn .4s ease-out .25s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(4) img{animation:fragFlashIn .4s ease-out .35s forwards}
 .frag-strip-stagger.visible .frag-strip-item:nth-child(5) img{animation:fragFlashIn .4s ease-out .45s forwards}
 .frag-strip-item img{width:100%;height:100%;object-fit:cover;display:block}
-.frag-strip-item:nth-child(1){background:#fff}
 .frag-strip-item.fsi-blend{background:#fff}
 .frag-strip-item.fsi-blend::after{background:rgba(0,0,0,.4)}
 .frag-strip-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4);pointer-events:none}
