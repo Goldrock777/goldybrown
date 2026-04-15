@@ -574,65 +574,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .curr-opt:hover{background:var(--gg);color:var(--w)}
 .curr-opt.active{color:var(--gl);font-weight:500}
 .curr-opt .curr-sym{margin-left:auto;color:var(--tm);font-size:10px}
-/* ===== AUCTION ===== */
-.auc-event-bar{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 24px;background:var(--bg-card);border:1px solid var(--b);margin-bottom:32px;flex-wrap:wrap}
-.auc-event-bar .aev-name{font-family:var(--fd);font-size:18px;color:var(--w)}
-.auc-event-bar .aev-loc{font-size:11px;color:var(--td);letter-spacing:1px;text-transform:uppercase}
-.auc-countdown{display:flex;gap:8px;align-items:center}
-.auc-countdown .acd{text-align:center;background:var(--g);color:#fff;padding:6px 10px;border-radius:4px;min-width:44px}
-.auc-countdown .acd .n{font-family:var(--fd);font-size:20px;display:block;line-height:1.2}
-.auc-countdown .acd .u{font-size:7px;letter-spacing:1px;text-transform:uppercase;opacity:.7}
-.auc-status{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:3px;font-weight:500}
-.auc-status.live{background:#d44;color:#fff;animation:statusPulse 1.5s ease infinite}
-.auc-status.upcoming{background:var(--gl);color:#fff}
-.auc-status.ended{background:var(--tm);color:#fff}
-@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:.6}}
-.auc-register{padding:20px 24px;background:var(--bg-card);border:1px solid var(--b);margin-bottom:32px;text-align:center}
-.auc-register p{font-size:13px;color:var(--td);margin-bottom:12px}
-.auc-register input{padding:10px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;width:180px;margin-right:8px}
-.auc-register input:focus{outline:none;border-color:var(--gl)}
-.auc-bidder-info{padding:12px 20px;background:var(--gm);border:1px solid var(--gl);margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.auc-bidder-info span{font-size:12px;color:var(--gl);font-weight:400}
-.auc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.auc-card{border:1px solid var(--b);background:var(--bg-card);overflow:hidden;transition:all .4s}
-.auc-card:hover{border-color:var(--g);box-shadow:0 8px 32px rgba(45,90,61,.08)}
-.auc-card.sold{opacity:.6;pointer-events:none}
-.auc-card .ac-img{height:300px;overflow:hidden;background:var(--bg-card)}
-.auc-card .ac-img img{width:100%;height:100%;object-fit:contain}
-.auc-card .ac-body{padding:20px 22px}
-.auc-card .ac-lot{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gl);margin-bottom:4px}
-.auc-card .ac-name{font-family:var(--fd);font-size:18px;color:var(--w);margin-bottom:6px}
-.auc-card .ac-desc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:12px}
-.auc-card .ac-bids{display:flex;gap:20px;margin-bottom:14px;padding:12px 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
-.auc-card .ac-bid-col{text-align:center;flex:1}
-.auc-card .ac-bid-label{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);margin-bottom:2px}
-.auc-card .ac-bid-val{font-family:var(--fd);font-size:22px;color:var(--gl)}
-.auc-card .ac-bid-val.start{color:var(--tm);font-size:16px}
-.auc-card .ac-bidder{font-size:10px;color:var(--td);margin-top:2px}
-.auc-card .ac-bid-row{display:flex;gap:8px;align-items:center}
-.auc-card .ac-bid-input{flex:1;padding:10px 12px;border:1px solid var(--b);font-family:var(--fb);font-size:14px;text-align:center}
-.auc-card .ac-bid-input:focus{outline:none;border-color:var(--gl)}
-.auc-card .ac-bid-btn{padding:10px 20px;background:var(--g);color:#fff;border:1px solid var(--g);font-family:var(--fb);font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;white-space:nowrap}
-.auc-card .ac-bid-btn:hover{background:var(--gb)}
-.auc-card .ac-bid-btn:disabled{background:var(--tm);border-color:var(--tm);cursor:not-allowed}
-.auc-card .ac-history{margin-top:10px;max-height:0;overflow:hidden;transition:max-height .3s}
-.auc-card .ac-history.open{max-height:200px;overflow-y:auto}
-.auc-card .ac-history-toggle{font-size:10px;color:var(--gl);cursor:pointer;text-align:center;padding:6px;letter-spacing:1px;text-transform:uppercase}
-.auc-card .ac-hist-item{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--b);font-size:11px}
-.auc-card .ac-hist-item .hn{color:var(--td)}.auc-card .ac-hist-item .hv{color:var(--gl);font-weight:400}
-.auc-card .ac-sold-badge{text-align:center;padding:10px;background:#d44;color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
-.auc-qr{text-align:center;margin-top:32px;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
-.auc-qr canvas{margin:0 auto 12px}
-.auc-qr p{font-size:11px;color:var(--td);letter-spacing:1px}
-.auc-admin{margin-top:32px;padding:24px;border:1px solid var(--b);background:var(--bg-card)}
-.auc-admin summary{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);cursor:pointer;padding:4px 0}
-.auc-admin .aa-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.auc-admin .aa-form input,.auc-admin .aa-form textarea,.auc-admin .aa-form select{padding:10px 12px;border:1px solid var(--b);font-family:var(--fb);font-size:12px;width:100%}
-.auc-admin .aa-form textarea{grid-column:1/-1;height:60px;resize:vertical}
-.auc-admin .aa-form input:focus,.auc-admin .aa-form textarea:focus{outline:none;border-color:var(--gl)}
-.auc-admin .aa-full{grid-column:1/-1}
-@media(max-width:1024px){.auc-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
-@media(max-width:768px){.auc-grid{grid-template-columns:1fr;gap:14px}.auc-card .ac-img{height:260px}.auc-admin .aa-form{grid-template-columns:1fr}}
 /* ===== FRAGRANCE COLLECTION ===== */
 .frag-hero{background:#0a0a0a;padding:120px 60px 64px;text-align:center;position:relative;overflow:hidden}
 .frag-hero::before{content:'';position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
@@ -772,7 +713,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
 <a class="nav-tab" data-page="about">About Us</a>
-<a class="nav-tab" data-page="auction">Auction</a>
 </div>
 <div class="nav-right">
 <div class="curr-toggle" id="currToggle" onclick="toggleCurrMenu()">
@@ -804,7 +744,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="javascript:void(0)" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
 <a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
 <a href="javascript:void(0)" onclick="go('about');closeMob()">About Us</a>
-<a href="javascript:void(0)" onclick="go('auction');closeMob()">Auction</a>
 </div>
 
 <div class="cart-ov" id="cartOv" onclick="closeCart()"></div>
@@ -1223,65 +1162,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 </div>
 
-<!-- ======================== AUCTION ======================== -->
-<div class="page" id="page-auction">
-<div class="page-hero"><div class="slabel">Live Events</div><h1>Auction House</h1><p class="sub">Bid on exclusive, one-of-a-kind leather pieces. Scan the QR code at the event or bid from anywhere.</p></div>
-<section class="section">
-<div class="auc-event-bar" id="aucEventBar">
-<div><div class="aev-name" id="aucEventName">Goldy Brown Auction</div><div class="aev-loc" id="aucEventLoc">Vancouver, BC</div></div>
-<div class="auc-countdown" id="aucCountdown"></div>
-<div class="auc-status live" id="aucStatus">Live</div>
-</div>
-<div class="auc-register" id="aucRegister">
-<p>Enter your name to start bidding</p>
-<input type="text" id="aucName" placeholder="Your name">
-<input type="tel" id="aucPhone" placeholder="Phone number">
-<button class="btn btn-f" onclick="registerBidder()" style="padding:10px 24px">Enter Auction</button>
-</div>
-<div class="auc-bidder-info" id="aucBidderInfo" style="display:none">
-<span>Bidding as: <strong id="aucBidderName"></strong></span>
-<button class="btn" onclick="logoutBidder()" style="padding:6px 16px;font-size:8px">Leave</button>
-</div>
-<div class="auc-grid" id="aucGrid"></div>
-<div class="auc-qr" id="aucQR">
-<div class="slabel">Scan to Bid</div>
-<canvas id="aucQRCanvas"></canvas>
-<p>Point your phone camera at this code to join the auction</p>
-</div>
-<details class="auc-admin">
-<summary>Admin Panel</summary>
-<div id="aucAdminLock">
-<input type="password" id="aucAdminPw" placeholder="Admin password" style="padding:8px 12px;border:1px solid var(--b);margin:12px 0">
-<button class="btn" onclick="unlockAdmin()" style="padding:8px 16px;font-size:9px">Unlock</button>
-</div>
-<div id="aucAdminPanel" style="display:none">
-<h4 style="margin:16px 0 8px">Event Settings</h4>
-<div class="aa-form">
-<input type="text" id="aaEventName" placeholder="Event name">
-<input type="text" id="aaEventLoc" placeholder="Location">
-<input type="datetime-local" id="aaEventEnd" class="aa-full">
-<button class="btn btn-f aa-full" onclick="saveEvent()" style="text-align:center;padding:10px">Save Event</button>
-</div>
-<h4 style="margin:20px 0 8px">Add Auction Item</h4>
-<div class="aa-form">
-<input type="text" id="aaItemName" placeholder="Item name">
-<input type="text" id="aaItemImg" placeholder="Image filename (e.g. holster1.png)">
-<input type="number" id="aaItemStart" placeholder="Starting bid ($)">
-<input type="number" id="aaItemIncrement" placeholder="Bid increment ($)">
-<textarea id="aaItemDesc" placeholder="Item description"></textarea>
-<button class="btn btn-f aa-full" onclick="addAucItem()" style="text-align:center;padding:10px">Add Item</button>
-</div>
-<h4 style="margin:20px 0 8px">Manage Items</h4>
-<div id="aaItemList"></div>
-<div style="margin-top:16px;display:flex;gap:8px">
-<button class="btn" onclick="exportAuction()" style="padding:8px 16px;font-size:9px">Export Results</button>
-<button class="btn" onclick="if(confirm('Clear all auction data?'))clearAuction()" style="padding:8px 16px;font-size:9px;color:var(--red)">Reset Auction</button>
-</div>
-</div>
-</details>
-</section>
-</div>
-
 <!-- ======================== FRAGRANCE COLLECTION ======================== -->
 <div class="page" id="page-fragrance">
 <div class="frag-hero">
@@ -1520,7 +1400,6 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance Collection</a></li>
 <li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
 <li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
-<li><a href="javascript:void(0)" onclick="go('auction')">Auction</a></li>
 </ul>
 <div class="footer-ig"><a href="https://instagram.com/goldybrowncouture" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" style="vertical-align:-2px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@goldybrowncouture</a></div>
 <ul class="footer-legal">
@@ -1774,72 +1653,7 @@ renderCat();initFI();document.getElementById('bbar').style.display='none';
 document.addEventListener('DOMContentLoaded',function(){var imgs=document.querySelectorAll('img[data-src]');if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.src=e.target.dataset.src;e.target.removeAttribute('data-src');obs.unobserve(e.target)}})},{rootMargin:'200px'});imgs.forEach(function(img){obs.observe(img)})}else{imgs.forEach(function(img){img.src=img.dataset.src})}});
 </script>
 <script>
-// ===== AUCTION SYSTEM =====
-var AUC_PW='goldy2026';
-var aucData=JSON.parse(localStorage.getItem('gb-auction')||'null')||{event:{name:'Goldy Brown Auction',location:'Vancouver, BC',endTime:''},items:[],bidder:null};
-function saveAuc(){localStorage.setItem('gb-auction',JSON.stringify(aucData))}
-function registerBidder(){var n=document.getElementById('aucName').value.trim(),p=document.getElementById('aucPhone').value.trim();if(!n){alert('Please enter your name');return}aucData.bidder={name:n,phone:p};saveAuc();renderAuction()}
-function logoutBidder(){aucData.bidder=null;saveAuc();renderAuction()}
-function placeBid(idx){var item=aucData.items[idx];if(!aucData.bidder){alert('Please register first');return}var input=document.getElementById('bid-input-'+idx);var amount=parseInt(input.value);var minBid=item.currentBid>0?item.currentBid+item.increment:item.startBid;if(!amount||amount<minBid){alert('Minimum bid: $'+minBid.toLocaleString());return}if(item.sold){alert('This item has been sold');return}item.currentBid=amount;item.highBidder=aucData.bidder.name;item.bids.push({name:aucData.bidder.name,amount:amount,time:new Date().toISOString()});saveAuc();renderAuction()}
-function toggleHistory(idx){var el=document.getElementById('hist-'+idx);el.classList.toggle('open')}
-function renderAuction(){
-var eb=document.getElementById('aucEventBar');
-document.getElementById('aucEventName').textContent=aucData.event.name;
-document.getElementById('aucEventLoc').textContent=aucData.event.location;
-// Countdown
-var cd=document.getElementById('aucCountdown'),st=document.getElementById('aucStatus');
-if(aucData.event.endTime){var end=new Date(aucData.event.endTime).getTime(),now=Date.now(),diff=end-now;
-if(diff>0){var h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
-cd.innerHTML='<div class="acd"><span class="n">'+h+'</span><span class="u">hrs</span></div><div class="acd"><span class="n">'+m+'</span><span class="u">min</span></div><div class="acd"><span class="n">'+s+'</span><span class="u">sec</span></div>';
-st.textContent='Live';st.className='auc-status live'}
-else{cd.innerHTML='';st.textContent='Ended';st.className='auc-status ended'}}
-else{cd.innerHTML='';st.textContent=aucData.items.length?'Live':'No Event';st.className='auc-status '+(aucData.items.length?'live':'upcoming')}
-// Bidder
-var reg=document.getElementById('aucRegister'),info=document.getElementById('aucBidderInfo');
-if(aucData.bidder){reg.style.display='none';info.style.display='flex';document.getElementById('aucBidderName').textContent=aucData.bidder.name}
-else{reg.style.display='';info.style.display='none'}
-// Items
-var g=document.getElementById('aucGrid');
-if(!aucData.items.length){g.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--tm)">No auction items yet. Use the admin panel to add items.</div>';return}
-var h='';
-aucData.items.forEach(function(item,i){
-var minNext=item.currentBid>0?item.currentBid+item.increment:item.startBid;
-var isWinning=aucData.bidder&&item.highBidder===aucData.bidder.name;
-h+='<div class="auc-card'+(item.sold?' sold':'')+'">'+
-(item.img?'<div class="ac-img"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"></div>':'')+
-'<div class="ac-body">'+
-'<div class="ac-lot">Lot '+(i+1)+'</div>'+
-'<div class="ac-name">'+item.name+'</div>'+
-'<div class="ac-desc">'+item.desc+'</div>'+
-'<div class="ac-bids">'+
-'<div class="ac-bid-col"><div class="ac-bid-label">Starting</div><div class="ac-bid-val start">$'+item.startBid.toLocaleString()+'</div></div>'+
-'<div class="ac-bid-col"><div class="ac-bid-label">Current Bid</div><div class="ac-bid-val">'+(item.currentBid>0?'$'+item.currentBid.toLocaleString():'No bids')+'</div>'+
-(item.highBidder?'<div class="ac-bidder">'+(isWinning?'You are winning!':item.highBidder)+'</div>':'')+'</div>'+
-'<div class="ac-bid-col"><div class="ac-bid-label">Bids</div><div class="ac-bid-val start">'+item.bids.length+'</div></div>'+
-'</div>'+
-(item.sold?'<div class="ac-sold-badge">Sold to '+item.highBidder+' for $'+item.currentBid.toLocaleString()+'</div>':
-(aucData.bidder?'<div class="ac-bid-row"><input type="number" class="ac-bid-input" id="bid-input-'+i+'" placeholder="Min $'+minNext.toLocaleString()+'" min="'+minNext+'" step="'+item.increment+'"><button class="ac-bid-btn" onclick="placeBid('+i+')">Place Bid</button></div>':''))+
-(item.bids.length?'<div class="ac-history-toggle" onclick="toggleHistory('+i+')">'+item.bids.length+' bid'+(item.bids.length>1?'s':'')+' — tap to view</div><div class="ac-history" id="hist-'+i+'">'+
-item.bids.slice().reverse().map(function(b){return '<div class="ac-hist-item"><span class="hn">'+b.name+'</span><span class="hv">$'+b.amount.toLocaleString()+'</span></div>'}).join('')+'</div>':'')+
-'</div></div>'});
-g.innerHTML=h}
-// Admin
-function unlockAdmin(){if(document.getElementById('aucAdminPw').value===AUC_PW){document.getElementById('aucAdminLock').style.display='none';document.getElementById('aucAdminPanel').style.display='';renderAdminItems()}else{alert('Wrong password')}}
-function saveEvent(){aucData.event.name=document.getElementById('aaEventName').value||aucData.event.name;aucData.event.location=document.getElementById('aaEventLoc').value||aucData.event.location;aucData.event.endTime=document.getElementById('aaEventEnd').value||'';saveAuc();renderAuction();alert('Event saved')}
-function addAucItem(){var name=document.getElementById('aaItemName').value.trim();var img=document.getElementById('aaItemImg').value.trim();var start=parseInt(document.getElementById('aaItemStart').value)||100;var inc=parseInt(document.getElementById('aaItemIncrement').value)||10;var desc=document.getElementById('aaItemDesc').value.trim();if(!name){alert('Enter item name');return}aucData.items.push({name:name,img:img,desc:desc,startBid:start,increment:inc,currentBid:0,highBidder:'',bids:[],sold:false});saveAuc();document.getElementById('aaItemName').value='';document.getElementById('aaItemImg').value='';document.getElementById('aaItemStart').value='';document.getElementById('aaItemIncrement').value='';document.getElementById('aaItemDesc').value='';renderAuction();renderAdminItems();alert(name+' added')}
-function sellItem(idx){if(confirm('Mark as SOLD to '+aucData.items[idx].highBidder+'?')){aucData.items[idx].sold=true;saveAuc();renderAuction();renderAdminItems()}}
-function removeItem(idx){if(confirm('Remove '+aucData.items[idx].name+'?')){aucData.items.splice(idx,1);saveAuc();renderAuction();renderAdminItems()}}
-function renderAdminItems(){var el=document.getElementById('aaItemList');if(!aucData.items.length){el.innerHTML='<p style="color:var(--tm);font-size:12px">No items added yet</p>';return}var h='';aucData.items.forEach(function(item,i){h+='<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--b)"><span style="flex:1;font-size:13px">Lot '+(i+1)+': <strong>'+item.name+'</strong> — '+(item.currentBid>0?'$'+item.currentBid.toLocaleString():'No bids')+(item.sold?' (SOLD)':'')+'</span>'+(item.sold?'':'<button class="btn" onclick="sellItem('+i+')" style="padding:4px 10px;font-size:8px">Sell</button>')+'<button class="btn" onclick="removeItem('+i+')" style="padding:4px 10px;font-size:8px;color:var(--red)">Remove</button></div>'});el.innerHTML=h}
-function clearAuction(){aucData.items=[];aucData.event.endTime='';saveAuc();renderAuction();renderAdminItems()}
-function exportAuction(){var lines=['Goldy Brown Auction Results','Event: '+aucData.event.name,'Location: '+aucData.event.location,'',''];aucData.items.forEach(function(item,i){lines.push('Lot '+(i+1)+': '+item.name);lines.push('Status: '+(item.sold?'SOLD':'Open'));if(item.currentBid>0){lines.push('Winning Bid: $'+item.currentBid.toLocaleString()+' by '+item.highBidder)}lines.push('Total Bids: '+item.bids.length);lines.push('')});var blob=new Blob([lines.join('\n')],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='auction-results.txt';a.click()}
-// QR Code (simple canvas-based)
-function generateQR(){var canvas=document.getElementById('aucQRCanvas');if(!canvas)return;var ctx=canvas.getContext('2d');var url='https://goldybrown.com/auction';var size=160;canvas.width=size;canvas.height=size;ctx.fillStyle='#fff';ctx.fillRect(0,0,size,size);ctx.fillStyle='#000';ctx.font='bold 11px Arial';ctx.textAlign='center';ctx.fillText('SCAN TO BID',size/2,40);ctx.font='10px Arial';ctx.fillText('goldybrown.com',size/2,58);ctx.fillText('/auction',size/2,72);ctx.strokeStyle='#000';ctx.lineWidth=2;ctx.strokeRect(10,10,size-20,size-20);ctx.strokeRect(14,14,size-28,size-28);ctx.fillStyle='var(--g)';ctx.font='bold 14px Playfair Display,serif';ctx.fillText('GOLDY BROWN',size/2,110);ctx.font='9px Arial';ctx.fillText('AUCTION HOUSE',size/2,126)}
-// Countdown timer
-setInterval(function(){if(document.querySelector('#page-auction.active'))renderAuction()},1000);
-// Init
 function switchRobe(color){var img=document.getElementById('robeImg');var sg=document.getElementById('robeSwGreen');var sb=document.getElementById('robeSwBlue');if(color==='green'){img.src='greenrobe.png';sg.style.borderColor='var(--g)';sb.style.borderColor='var(--b)'}else{img.src='bluerobe.png';sg.style.borderColor='var(--b)';sb.style.borderColor='#5ba4c9'}}
-function initAuction(){renderAuction();generateQR()}
-document.addEventListener('DOMContentLoaded',initAuction);
 </script>
 </body>
 </html>
