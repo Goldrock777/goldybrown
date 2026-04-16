@@ -575,7 +575,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .curr-opt.active{color:var(--gl);font-weight:500}
 .curr-opt .curr-sym{margin-left:auto;color:var(--tm);font-size:10px}
 /* ===== FRAGRANCE COLLECTION ===== */
-.frag-hero{background:#0a0a0a;padding:120px 60px 64px;text-align:center;position:relative;overflow:hidden}
+.frag-hero{background:#0a0a0a;padding:100px 60px 48px;text-align:center;position:relative;overflow:hidden}
+.frag-hero .sub{max-width:420px}
 .frag-hero::before{content:'';position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 .frag-hero .slabel{color:#b8a070;margin-bottom:12px;font-size:10px;letter-spacing:5px}
 .frag-hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,58px);color:#faf9f6;margin-bottom:12px;letter-spacing:-0.5px}
@@ -1178,14 +1179,76 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="slabel">The Collection</div>
 <h1>The Fragrance Collection</h1>
 <p class="sub">Luxury leather sampler cases. Curated scents. Your brand or ours.</p>
-<div class="btn-row">
-<a href="#frag-discovery" class="btn btn-f" onclick="document.getElementById('frag-discovery').scrollIntoView({behavior:'smooth'});return false">Shop Now</a>
-<a href="#frag-form" class="btn" onclick="document.getElementById('frag-form').scrollIntoView({behavior:'smooth'});return false">Request Custom Quote</a>
+<a href="#frag-form" class="btn" onclick="document.getElementById('frag-form').scrollIntoView({behavior:'smooth'});return false" style="border-color:#b8a070;color:#faf9f6">Request Custom Quote</a>
+</div>
+
+<section class="section section-border fade-in">
+<div style="text-align:center;margin-bottom:40px">
+<div class="slabel">The Lineup</div>
+<h2 style="margin-bottom:8px">Five Curated Fragrances</h2>
+</div>
+<div class="frag-profiles">
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="killian.jpg" alt="Kilian Angels' Share"></div>
+<div class="frag-profile-body">
+<h4>Angels' Share</h4>
+<div class="fpb-house">By Kilian</div>
+<div class="fpb-notes">Cognac &bull; Tonka Bean &bull; Cinnamon &bull; Oak</div>
+<div class="fpb-vibe">A warm embrace of aged spirits and spice. Sophisticated and intoxicating.</div>
+<div class="fpb-tag">Boozy &amp; Warm</div>
 </div>
 </div>
 
-<section class="section fade-in" id="frag-discovery">
-<div style="text-align:center;margin-bottom:40px">
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="kilianblack.jpg" alt="Kilian Black Phantom"></div>
+<div class="frag-profile-body">
+<h4>Black Phantom</h4>
+<div class="fpb-house">By Kilian</div>
+<div class="fpb-notes">Rum &bull; Coffee &bull; Sandalwood &bull; Caramel</div>
+<div class="fpb-vibe">Dark and hypnotic. Like a midnight rendezvous you won't forget.</div>
+<div class="fpb-tag">Dark &amp; Addictive</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"></div>
+<div class="frag-profile-body">
+<h4>Bleu de Chanel</h4>
+<div class="fpb-house">By Chanel</div>
+<div class="fpb-notes">Cedar &bull; Sandalwood &bull; Amber &bull; Citrus</div>
+<div class="fpb-vibe">The quintessential gentleman's scent. Clean, confident, universally admired.</div>
+<div class="fpb-tag">Refined &amp; Woody</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img" style="background:#0a0a0a"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme Parfum"></div>
+<div class="frag-profile-body">
+<h4>Dior Homme Parfum</h4>
+<div class="fpb-house">By Dior</div>
+<div class="fpb-notes">Iris &bull; Leather &bull; Vetiver &bull; Amber</div>
+<div class="fpb-vibe">Powdery iris meets raw leather. Understated elegance with quiet power.</div>
+<div class="fpb-tag">Elegant &amp; Masculine</div>
+</div>
+</div>
+
+<div class="frag-profile">
+<div class="frag-profile-img"><img loading="lazy" src="armani.jpg" alt="Armani Stronger With You Intensely"></div>
+<div class="frag-profile-body">
+<h4>Stronger With You Intensely</h4>
+<div class="fpb-house">By Armani</div>
+<div class="fpb-notes">Pink Pepper &bull; Vanilla &bull; Amber &bull; Suede</div>
+<div class="fpb-vibe">Warm vanilla meets soft suede. Magnetic, intimate, unforgettable.</div>
+<div class="fpb-tag">Warm &amp; Magnetic</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="fade-in" id="frag-discovery" style="padding:56px 0 0">
+<div style="text-align:center;margin-bottom:40px;padding:0 60px">
 <div class="slabel">Two Ways to Own</div>
 <h2 style="margin-bottom:8px">Choose Your Experience</h2>
 <p style="color:var(--td);font-weight:200;font-size:14px;max-width:520px;margin:0 auto;line-height:1.8">Whether you want our signature set for yourself or a custom-branded collection for your business, we've got you covered.</p>
@@ -1247,71 +1310,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="fp-price">From $89 <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">USD / unit</span></div>
 <div class="fp-price-note">2&ndash;4 week lead time &bull; Minimum 25 units</div>
 <button class="btn" onclick="document.getElementById('frag-form').scrollIntoView({behavior:'smooth'})">Request Quote</button>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="section section-border fade-in">
-<div style="text-align:center;margin-bottom:40px">
-<div class="slabel">The Lineup</div>
-<h2 style="margin-bottom:8px">Five Curated Fragrances</h2>
-</div>
-<div class="frag-profiles">
-
-<div class="frag-profile">
-<div class="frag-profile-img"><img loading="lazy" src="killian.jpg" alt="Kilian Angels' Share"></div>
-<div class="frag-profile-body">
-<h4>Angels' Share</h4>
-<div class="fpb-house">By Kilian</div>
-<div class="fpb-notes">Cognac &bull; Tonka Bean &bull; Cinnamon &bull; Oak</div>
-<div class="fpb-vibe">A warm embrace of aged spirits and spice. Sophisticated and intoxicating.</div>
-<div class="fpb-tag">Boozy &amp; Warm</div>
-</div>
-</div>
-
-<div class="frag-profile">
-<div class="frag-profile-img"><img loading="lazy" src="kilianblack.jpg" alt="Kilian Black Phantom"></div>
-<div class="frag-profile-body">
-<h4>Black Phantom</h4>
-<div class="fpb-house">By Kilian</div>
-<div class="fpb-notes">Rum &bull; Coffee &bull; Sandalwood &bull; Caramel</div>
-<div class="fpb-vibe">Dark and hypnotic. Like a midnight rendezvous you won't forget.</div>
-<div class="fpb-tag">Dark &amp; Addictive</div>
-</div>
-</div>
-
-<div class="frag-profile">
-<div class="frag-profile-img"><img loading="lazy" src="chanel.jpg" alt="Bleu de Chanel"></div>
-<div class="frag-profile-body">
-<h4>Bleu de Chanel</h4>
-<div class="fpb-house">By Chanel</div>
-<div class="fpb-notes">Cedar &bull; Sandalwood &bull; Amber &bull; Citrus</div>
-<div class="fpb-vibe">The quintessential gentleman's scent. Clean, confident, universally admired.</div>
-<div class="fpb-tag">Refined &amp; Woody</div>
-</div>
-</div>
-
-<div class="frag-profile">
-<div class="frag-profile-img" style="background:#0a0a0a"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme Parfum"></div>
-<div class="frag-profile-body">
-<h4>Dior Homme Parfum</h4>
-<div class="fpb-house">By Dior</div>
-<div class="fpb-notes">Iris &bull; Leather &bull; Vetiver &bull; Amber</div>
-<div class="fpb-vibe">Powdery iris meets raw leather. Understated elegance with quiet power.</div>
-<div class="fpb-tag">Elegant &amp; Masculine</div>
-</div>
-</div>
-
-<div class="frag-profile">
-<div class="frag-profile-img"><img loading="lazy" src="armani.jpg" alt="Armani Stronger With You Intensely"></div>
-<div class="frag-profile-body">
-<h4>Stronger With You Intensely</h4>
-<div class="fpb-house">By Armani</div>
-<div class="fpb-notes">Pink Pepper &bull; Vanilla &bull; Amber &bull; Suede</div>
-<div class="fpb-vibe">Warm vanilla meets soft suede. Magnetic, intimate, unforgettable.</div>
-<div class="fpb-tag">Warm &amp; Magnetic</div>
 </div>
 </div>
 
