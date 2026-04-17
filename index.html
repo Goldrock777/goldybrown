@@ -717,6 +717,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .frag-strip-item .fsi-name span{font-size:5px}
 .frag-profiles{grid-template-columns:1fr}
 }
+/* Image Zoom Lightbox */
+.img-zoom-ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.9);z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;cursor:zoom-out}
+.img-zoom-ov.open{opacity:1;pointer-events:all}
+.img-zoom-ov img{max-width:90vw;max-height:90vh;object-fit:contain;transform:scale(.9);transition:transform .3s ease}
+.img-zoom-ov.open img{transform:scale(1)}
+.img-zoom-close{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.6;transition:opacity .3s;z-index:2001}
+.img-zoom-close:hover{opacity:1}
+.zoomable{cursor:zoom-in}
 </style>
 </head>
 <body>
@@ -1669,6 +1677,21 @@ function shopCheckout(){
 }
 
 renderCat();initFI();document.getElementById('bbar').style.display='none';
+// Image Zoom Lightbox
+(function(){
+var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
+var zImg=ov.querySelector('img'),closeBtn=ov.querySelector('.img-zoom-close');
+function openZoom(src){zImg.src=src;ov.classList.add('open');document.body.style.overflow='hidden'}
+function closeZoom(){ov.classList.remove('open');document.body.style.overflow=''}
+ov.addEventListener('click',closeZoom);closeBtn.addEventListener('click',closeZoom);
+zImg.addEventListener('click',function(e){e.stopPropagation()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeZoom()});
+document.addEventListener('click',function(e){
+var img=e.target.closest('.prop-item .prop-img img, .ccard-img img, .pcard-img img, .frag-profile-img img, .frag-pcard-img img:not(.frag-strip-item img), .carousel-main img');
+if(img){e.preventDefault();openZoom(img.src)}
+});
+document.querySelectorAll('.prop-item .prop-img img, .ccard-img img, .pcard-img img, .frag-profile-img img, .carousel-main img').forEach(function(img){img.classList.add('zoomable')});
+})();
 // Smart nav + back to top
 (function(){var lastY=0,nav=document.getElementById('mainNav'),btt=document.getElementById('bttBtn');window.addEventListener('scroll',function(){var y=window.pageYOffset;if(y>300){nav.classList.toggle('nav-hidden',y>lastY&&y>200);btt.classList.add('show')}else{nav.classList.remove('nav-hidden');btt.classList.remove('show')}lastY=y},{passive:true})})();
 // Lazy load images
