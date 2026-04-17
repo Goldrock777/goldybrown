@@ -1687,13 +1687,11 @@ ov.addEventListener('click',closeZoom);
 closeBtn.addEventListener('click',function(e){e.stopPropagation();closeZoom()});
 zImg.addEventListener('click',function(e){e.stopPropagation()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeZoom()});
-document.body.addEventListener('click',function(e){
-var t=e.target;
-if(!t||t.tagName!=='IMG')return;
-var p=t.parentElement;if(!p)return;
-var isZoomable=p.classList.contains('prop-img')||p.classList.contains('ccard-img')||p.classList.contains('pcard-img')||p.classList.contains('frag-profile-img');
-if(isZoomable){openZoom(t.src);return}
-if(p.classList.contains('carousel-main')&&t.classList.contains('active')){openZoom(t.src)}
+document.querySelectorAll('.prop-item .prop-img, .ccard-img, .frag-profile-img').forEach(function(el){
+el.addEventListener('click',function(e){
+var img=this.querySelector('img');
+if(img)openZoom(img.src);
+});
 });
 })();
 })();
