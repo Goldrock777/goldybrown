@@ -1311,7 +1311,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <div class="ap-card fade-in">
 <div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)">
-<video autoplay muted loop playsinline preload="metadata" poster=""><source src="240gsmwhite.mp4" type="video/mp4"></video>
+<video id="classicVideo" autoplay muted loop playsinline preload="auto" poster="" src="240gsmwhite.mp4"></video>
 <div class="ap-placeholder">Classic Tee</div>
 </div>
 <div class="ap-body">
@@ -1919,7 +1919,7 @@ var blankVar={suvin:'cream',classic:'white',acid:'stone',terry:'cream'};
 var blankSize='M';
 var curBlank=null;
 function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(id==='classic')updClassicVideo()}
-function updClassicVideo(){var map={white:'240gsmwhite.mp4',black:'240gsmblack.mp4'};var src=map[blankVar.classic];if(!src)return;var vid=document.querySelector('.ap-img-video video');if(!vid)return;var srcEl=vid.querySelector('source');if(srcEl.getAttribute('src')===src)return;srcEl.setAttribute('src',src);vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}
+function updClassicVideo(){var map={white:'240gsmwhite.mp4',black:'240gsmblack.mp4'};var src=map[blankVar.classic];if(!src)return;var vid=document.getElementById('classicVideo');if(!vid)return;if(vid.src&&vid.src.split('/').pop()===src)return;vid.src=src;vid.muted=true;vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}
 function setBlankSize(s,el){blankSize=s;var par=el.parentElement;par.querySelectorAll('.ap-size').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
 function adjBlankQty(d){if(!curBlank)return;var el=document.getElementById('blankQty');var v=parseInt(el.value,10)||curBlank.min;v=Math.max(curBlank.min,v+d);el.value=v;updBlankTotal()}
