@@ -1329,7 +1329,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <label class="ap-fab" data-fab="biowash180" onclick="setBlankFabric('classic','biowash180',this)"><b>180gsm</b><span>Bio-Washed &middot; Ultra Soft</span></label>
 <label class="ap-fab" data-fab="jersey150" onclick="setBlankFabric('classic','jersey150',this)"><b>150gsm</b><span>Single Jersey &middot; Summer</span></label>
 </div>
-<div class="ap-row"><div class="ap-price">$15<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
+<div class="ap-row"><div class="ap-price">$11<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
 </div>
 </div>
 
@@ -1349,7 +1349,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <label class="ap-sw active" data-var="black" onclick="setBlankVar('acid','black',this)"><span style="background:linear-gradient(135deg,#1d1d1d 20%,#3a3a3a 55%,#1a1a1a 85%);border-color:#0a0a0a"></span>Black</label>
 <label class="ap-sw" data-var="lightblue" onclick="setBlankVar('acid','lightblue',this)"><span style="background:linear-gradient(135deg,#6e8bad 20%,#98b2cb 55%,#b8cde0 85%);border-color:#4a6a8c"></span>Light Blue</label>
 </div>
-<div class="ap-row"><div class="ap-price">$15<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
+<div class="ap-row"><div class="ap-price">$11<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
 </div>
 </div>
 
@@ -1890,7 +1890,7 @@ function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelect
 // ===== FRAGRANCE FORM =====
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
 // ===== APPAREL =====
-var BLANKS={classic:{name:'The Classic Tee',price:15,min:10},acid:{name:'The Acid Wash Tee',price:15,min:10}};
+var BLANKS={classic:{name:'The Classic Tee',price:11,min:10},acid:{name:'The Acid Wash Tee',price:11,min:10}};
 var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',black:'Black',stone:'Stone Grey',lightblue:'Light Blue'};
 var BLANK_FABRICS={hw250:'250gsm Heavyweight Oversized',biowash180:'180gsm Bio-Washed',jersey150:'150gsm Single Jersey'};
 var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,label:'15% off'},{min:30,disc:0.10,label:'10% off'},{min:20,disc:0.05,label:'5% off'}];
