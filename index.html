@@ -759,6 +759,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-card-premium::before{content:'';display:block;height:2px;background:linear-gradient(90deg,#a8c6de,#c9b89a)}
 .ap-img{height:340px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .ap-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.35),transparent 70%);pointer-events:none}
+.ap-img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ap-img-video .ap-placeholder{position:relative;z-index:0}
+.ap-img-video::after{z-index:2}
 .ap-badge{position:absolute;top:16px;left:16px;background:#1c2d42;color:#f5ede0;font-size:9px;letter-spacing:2px;font-weight:500;padding:5px 12px;text-transform:uppercase;z-index:2}
 .ap-placeholder{font-family:var(--fd);font-size:18px;color:#3d5a75;letter-spacing:3px;text-transform:uppercase;opacity:.5;position:relative;z-index:1}
 .ap-body{padding:26px 26px 24px;display:flex;flex-direction:column;flex:1}
@@ -1307,13 +1310,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="apparel-grid">
 
 <div class="ap-card fade-in">
-<div class="ap-img" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)"><div class="ap-placeholder">Classic Tee</div></div>
+<div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)">
+<video autoplay muted loop playsinline preload="metadata" poster=""><source src="240gsmwhite.mp4" type="video/mp4"></video>
+<div class="ap-placeholder">Classic Tee</div>
+</div>
 <div class="ap-body">
 <div class="ap-slabel">Cotton &middot; Three Weights</div>
 <h4>The Classic Tee</h4>
-<p>Premium white tee in three fabric options &mdash; same price. 250gsm heavyweight for built-to-last oversized fits, 180gsm bio-washed for everyday softness, or 150gsm jersey for summer drops.</p>
+<p>Premium cotton tee in three fabric options &mdash; same price. 250gsm heavyweight for built-to-last oversized fits, 180gsm bio-washed for everyday softness, or 150gsm jersey for summer drops. White or black.</p>
 <div class="ap-vars">
 <label class="ap-sw active" data-var="white" onclick="setBlankVar('classic','white',this)"><span style="background:#fafafa;border-color:#ccc"></span>White</label>
+<label class="ap-sw" data-var="black" onclick="setBlankVar('classic','black',this)"><span style="background:#171717;border-color:#171717"></span>Black</label>
 </div>
 <div class="ap-fab-row">
 <label class="ap-fab active" data-fab="hw250" onclick="setBlankFabric('classic','hw250',this)"><b>250gsm</b><span>Heavyweight Oversized &middot; Premium</span></label>
@@ -1329,9 +1336,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-body">
 <div class="ap-slabel">150gsm Single Jersey &middot; Stonewashed</div>
 <h4>The Acid Wash</h4>
-<p>150gsm single jersey, stone-washed for that lived-in, sun-faded feel. Lightweight and summer-ready. Each piece washes slightly different &mdash; no two alike.</p>
+<p>150gsm single jersey, stone-washed for that lived-in, sun-faded feel. Lightweight and summer-ready. Choose stone grey or the light-blue wash &mdash; each piece washes slightly different, no two alike.</p>
 <div class="ap-vars">
-<label class="ap-sw active" data-var="acid" onclick="setBlankVar('acid','acid',this)"><span style="background:linear-gradient(135deg,#b5b1a8 20%,#cac6bd 60%,#8e8a82 100%);border-color:#888"></span>Acid Wash</label>
+<label class="ap-sw active" data-var="stone" onclick="setBlankVar('acid','stone',this)"><span style="background:linear-gradient(135deg,#b5b1a8 20%,#cac6bd 60%,#8e8a82 100%);border-color:#888"></span>Stone Grey</label>
+<label class="ap-sw" data-var="lightblue" onclick="setBlankVar('acid','lightblue',this)"><span style="background:linear-gradient(135deg,#6e8bad 20%,#98b2cb 55%,#b8cde0 85%);border-color:#4a6a8c"></span>Light Blue</label>
 </div>
 <div class="ap-row"><div class="ap-price">$15<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
 </div>
@@ -1902,12 +1910,12 @@ function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelect
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
 // ===== APPAREL =====
 var BLANKS={classic:{name:'The Classic Tee',price:15,min:10},acid:{name:'The Acid Wash Tee',price:15,min:10},suvin:{name:'The Suvin Tee',price:50,min:10},terry:{name:'The Towel Set',price:100,min:1}};
-var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',acid:'Acid Wash'};
+var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',black:'Black',stone:'Stone Grey',lightblue:'Light Blue'};
 var BLANK_FABRICS={hw250:'250gsm Heavyweight Oversized',biowash180:'180gsm Bio-Washed',jersey150:'150gsm Single Jersey'};
 var blankFabric={classic:'hw250'};
 function setBlankFabric(id,f,el){blankFabric[id]=f;var par=el.parentElement;par.querySelectorAll('.ap-fab').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,label:'15% off'},{min:30,disc:0.10,label:'10% off'},{min:20,disc:0.05,label:'5% off'}];
-var blankVar={suvin:'cream',classic:'white',acid:'acid',terry:'cream'};
+var blankVar={suvin:'cream',classic:'white',acid:'stone',terry:'cream'};
 var blankSize='M';
 var curBlank=null;
 function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
