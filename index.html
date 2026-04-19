@@ -870,7 +870,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-modal.ap-modal-custom .pm-submit{background:linear-gradient(135deg,#c9b89a 0%,#8a6d3b 100%);border-color:#8a6d3b}
 .ap-sm-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
 .ap-sm-hint{font-size:10.5px;color:#4a5a6c;font-style:italic;font-weight:300;max-width:280px;text-align:right}
-.ap-sm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;background:#fff;border:1px solid #d8e2ec;padding:14px}
+.ap-sm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;background:#fff;border:1px solid #d8e2ec;padding:14px}
+@media(max-width:640px){.ap-sm-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
 .ap-sm-row{display:flex;flex-direction:column;align-items:center;gap:8px}
 .ap-sm-row label{font-family:var(--fd);font-size:11px;color:#1c2d42;font-weight:500;letter-spacing:1.5px}
 .ap-sm-row .ap-qty-controls{flex-direction:column;gap:4px;width:100%}
@@ -1003,6 +1004,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-sm-row"><label>M</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('M',-1)">&minus;</button><input id="qSize_M" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('M',1)">+</button></div></div>
 <div class="ap-sm-row"><label>L</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('L',-1)">&minus;</button><input id="qSize_L" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('L',1)">+</button></div></div>
 <div class="ap-sm-row"><label>XL</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XL',-1)">&minus;</button><input id="qSize_XL" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XL',1)">+</button></div></div>
+<div class="ap-sm-row"><label>XXL</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XXL',-1)">&minus;</button><input id="qSize_XXL" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XXL',1)">+</button></div></div>
 </div>
 <div class="ap-sm-totalpill"><span>Total pieces</span><span id="apTotalPieces">0</span></div>
 <div class="ap-tier-status" id="apTierStatus">
@@ -1895,14 +1897,14 @@ var BLANKS={classic:{name:'The Classic Tee',price:8,min:10},acid:{name:'The Acid
 var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',black:'Black',stone:'Stone Grey',lightblue:'Light Blue'};
 var BLANK_FABRICS={hw250:'250gsm Heavyweight Oversized',biowash180:'180gsm Bio-Washed',jersey150:'150gsm Single Jersey'};
 var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.10,label:'10% off'},{min:30,disc:0.07,label:'7% off'},{min:20,disc:0.05,label:'5% off'}];
-var APP_SIZES=['XS','S','M','L','XL'];
+var APP_SIZES=['XS','S','M','L','XL','XXL'];
 var SHOPIFY_STORE='kuibri-ev.myshopify.com';
 // Shopify variant IDs. Same variant per colour for now (no size-level variants
 // set up in Shopify yet) — size breakdown + fabric are sent to Shopify as an
 // order note so fulfilment can see exactly what sizes the buyer wants.
 // Schema: SHOPIFY_VARIANTS[productId][colorKey][fabricKey?][size] = 'numeric_variant_id'
 var CL_W='53339065090340',CL_B='53339065123108',AC_B='53339060175140',AC_LB='53339060207908';
-var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W},biowash180:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W},jersey150:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W}},black:{hw250:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B},biowash180:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B},jersey150:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B}}},acid:{black:{XS:AC_B,S:AC_B,M:AC_B,L:AC_B,XL:AC_B},lightblue:{XS:AC_LB,S:AC_LB,M:AC_LB,L:AC_LB,XL:AC_LB}}};
+var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W},biowash180:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W},jersey150:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W}},black:{hw250:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B},biowash180:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B},jersey150:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B}}},acid:{black:{XS:AC_B,S:AC_B,M:AC_B,L:AC_B,XL:AC_B,XXL:AC_B},lightblue:{XS:AC_LB,S:AC_LB,M:AC_LB,L:AC_LB,XL:AC_LB,XXL:AC_LB}}};
 var blankVar={classic:'white',acid:'black'};
 var blankFabric={classic:'hw250'};
 var curBlank=null,curBlankId=null;
