@@ -725,6 +725,26 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .img-zoom-close{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.6;transition:opacity .3s;z-index:2001}
 .img-zoom-close:hover{opacity:1}
 .prop-item .prop-img img,.ccard-img img,.pcard-img img,.frag-profile-img img,.carousel-main img.active{cursor:zoom-in}
+.blank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.blank-card{background:#fff;border:1px solid var(--b);display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
+.blank-card:hover{border-color:var(--gl)}
+.blank-img{height:260px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blank-placeholder{font-family:var(--fd);font-size:16px;color:var(--tm);letter-spacing:3px;text-transform:uppercase;opacity:.5}
+.blank-body{padding:22px 22px 22px;display:flex;flex-direction:column;flex:1}
+.blank-slabel{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);margin-bottom:6px;font-weight:500}
+.blank-body h4{font-family:var(--fd);font-size:20px;margin-bottom:8px;letter-spacing:.3px;color:var(--w);font-weight:400}
+.blank-body p{font-size:12.5px;color:var(--td);line-height:1.7;font-weight:200;margin-bottom:14px}
+.blank-vars{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.blank-sw{display:inline-flex;align-items:center;gap:8px;padding:6px 10px 6px 8px;border:1px solid var(--b);cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;background:#fff;color:var(--td)}
+.blank-sw:hover{border-color:var(--gl);color:var(--w)}
+.blank-sw.active{border-color:var(--gl);color:var(--gl)}
+.blank-sw span{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid var(--b)}
+.blank-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid var(--b);gap:12px}
+.blank-price{font-family:var(--fd);font-size:22px;color:var(--w)}
+.blank-price-note{font-size:10px;color:var(--tm);letter-spacing:1.5px;text-transform:uppercase;margin-left:6px;font-family:inherit}
+.blank-row .btn{padding:11px 16px;font-size:10px;flex-shrink:0}
+@media(max-width:1024px){.blank-grid{grid-template-columns:repeat(2,1fr);gap:16px}.blank-img{height:220px}}
+@media(max-width:768px){.blank-grid{grid-template-columns:1fr;gap:14px}.blank-img{height:240px}}
 </style>
 </head>
 <body>
@@ -818,6 +838,31 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <div class="fg"><label>Notes</label><textarea name="notes" placeholder="Number of rooms, timeline, branding requirements..."></textarea></div>
 <button type="submit" class="pm-submit" id="propSubmitBtn">Send Proposal Request</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Blank Order Modal -->
+<div class="prop-ov" id="blankOv" onclick="closeBlank(event)">
+<div class="prop-modal">
+<button class="pm-close" onclick="closeBlank()">&times;</button>
+<div id="blankBody">
+<h3>Request to Order</h3>
+<p class="pm-sub">Small-batch local production &mdash; Vancouver pickup or local delivery. We'll confirm your order and schedule within 24 hours.</p>
+<div class="pm-summary"><div class="pm-line"><span id="blankProdName">&mdash;</span><span id="blankProdPrice">&mdash;</span></div></div>
+<form class="pm-form" id="blankForm" onsubmit="submitBlank(event)">
+<div class="fg pm-row">
+<div><label>Name</label><input type="text" name="name" required placeholder="Your full name"></div>
+<div><label>Phone</label><input type="tel" name="phone" placeholder="+1 604 000 0000"></div>
+</div>
+<div class="fg"><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
+<div class="fg pm-row">
+<div><label>Quantity</label><input type="number" name="quantity" min="1" value="1" required></div>
+<div><label>Fulfillment</label><select name="fulfillment" required><option value="Vancouver Pickup">Vancouver Pickup</option><option value="Local Delivery">Local Delivery</option></select></div>
+</div>
+<div class="fg"><label>Notes</label><textarea name="notes" placeholder="Size, custom requests, timing..."></textarea></div>
+<button type="submit" class="pm-submit" id="blankSubmitBtn">Submit Order Request</button>
 </form>
 </div>
 </div>
@@ -1084,6 +1129,47 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="mat-card"><h4>Waxed Polyester Thread</h4><p>UV resistant. Saddle stitched, if one stitch breaks the rest hold.</p></div>
 <div class="mat-card"><h4>Stainless Steel Fittings</h4><p>No plated zinc. Will never rust, never flake, never fail.</p></div>
 </div>
+</section>
+<section class="section section-border fade-in" style="background:var(--bg-card)">
+<div style="text-align:center;margin-bottom:32px">
+<div class="slabel">Apparel — Vancouver Local</div>
+<h2>Cotton &amp; Towel Blanks</h2>
+<p class="sub" style="max-width:620px;margin:8px auto 0">Small-batch apparel produced locally in Vancouver. Pickup or local delivery. Custom embroidery and private label on request.</p>
+</div>
+<div class="blank-grid">
+<div class="blank-card">
+<div class="blank-img" style="background:linear-gradient(135deg,#f5f5f0 0%,#e8e5df 60%,#d8d4cc 100%)"><div class="blank-placeholder">Cotton Tee</div></div>
+<div class="blank-body">
+<div class="blank-slabel">100% Cotton</div>
+<h4>Cotton Blank Tee</h4>
+<p>Heavyweight 220gsm combed cotton. Dropped shoulder, relaxed fit. Available in classic white or stonewashed acid wash.</p>
+<div class="blank-vars">
+<label class="blank-sw active" data-var="white" onclick="setBlankVar('tee','white',this)"><span style="background:#fafafa"></span>White</label>
+<label class="blank-sw" data-var="acid" onclick="setBlankVar('tee','acid',this)"><span style="background:linear-gradient(135deg,#aaa8a0 20%,#c8c4bc 60%,#807e78 100%);border-color:var(--tm)"></span>Acid Wash</label>
+</div>
+<div class="blank-row"><div class="blank-price">$45</div><button class="btn btn-f" onclick="orderBlank('tee')">Request to Order</button></div>
+</div>
+</div>
+<div class="blank-card">
+<div class="blank-img" style="background:linear-gradient(135deg,#faf4e8 0%,#ede3cc 60%,#d9ccb0 100%)"><div class="blank-placeholder">Towel Set</div></div>
+<div class="blank-body">
+<div class="blank-slabel">Premium Terry</div>
+<h4>Towel Shirt &amp; Shorts Set</h4>
+<p>Dense 400gsm loop terry. Matching pullover and elastic-waist shorts. Hotel-grade cotton, pre-shrunk, yarn-dyed natural.</p>
+<div class="blank-row"><div class="blank-price">$185<span class="blank-price-note">set</span></div><button class="btn btn-f" onclick="orderBlank('towel')">Request to Order</button></div>
+</div>
+</div>
+<div class="blank-card">
+<div class="blank-img" style="background:linear-gradient(135deg,#f0e8de 0%,#ddcfbc 60%,#b8a582 100%)"><div class="blank-placeholder">Women's Bikini</div></div>
+<div class="blank-body">
+<div class="blank-slabel">Women's Swim</div>
+<h4>Bikini Set</h4>
+<p>Italian four-way stretch, double-lined. Triangle top with adjustable tie straps, cheeky bottom. Neutral palette. Sizes XS&ndash;L.</p>
+<div class="blank-row"><div class="blank-price">$95</div><button class="btn btn-f" onclick="orderBlank('bikini')">Request to Order</button></div>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:28px;font-size:11px;color:var(--tm);letter-spacing:1px;text-transform:uppercase">Minimum 1 unit for pickup &mdash; Volume pricing on bulk orders</p>
 </section>
 </div>
 
@@ -1611,6 +1697,13 @@ function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page
 function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll be in touch within 24 hours.</p></div>'})}
 // ===== FRAGRANCE FORM =====
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
+// ===== APPAREL BLANKS =====
+var BLANKS={tee:{name:'Cotton Blank Tee',price:45},towel:{name:'Towel Shirt & Shorts Set',price:185},bikini:{name:'Womens Bikini Set',price:95}};
+var blankVar={tee:'white'};
+function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.blank-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
+function orderBlank(id){var b=BLANKS[id];var label=b.name;if(id==='tee')label+=' \u2014 '+(blankVar.tee==='acid'?'Acid Wash':'White');var form=document.getElementById('blankForm');form.reset();document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.price=fmt(b.price);document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
+function closeBlank(e){if(e&&e.target!==document.getElementById('blankOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('blankOv').classList.remove('open');document.body.style.overflow=''}
+function submitBlank(e){e.preventDefault();var f=e.target;var btn=document.getElementById('blankSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Apparel Blank Order \u2014 '+f.dataset.product,type:'blank_order',product:f.dataset.product,unit_price:f.dataset.price,name:f.name.value,email:f.email.value,phone:f.phone.value,quantity:f.quantity.value,fulfillment:f.fulfillment.value,notes:f.notes.value};submitForm(FORM_URL,data,btn,function(){document.getElementById('blankBody').innerHTML='<div class="pm-success"><h3>Order Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll confirm your '+data.product+' order and '+data.fulfillment.toLowerCase()+' details at <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeBlank()" style="margin-top:8px">Close</button></div>'})}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
