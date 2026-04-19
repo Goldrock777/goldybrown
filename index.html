@@ -1310,7 +1310,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <div class="ap-card fade-in">
 <div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)">
-<video id="classicVideo" autoplay muted loop playsinline preload="auto" poster="" src="240gsmwhite.mp4"></video>
+<video id="classicVideo" autoplay muted loop playsinline preload="auto" poster="" src="240whitefull.mp4"></video>
 <img id="classicImg" class="ap-media-img" alt="" hidden>
 <button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('classic',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
 <button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('classic',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
@@ -1335,7 +1335,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <div class="ap-card fade-in">
 <div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#e6e4de 0%,#cac7c0 55%,#a5a29a 100%)">
-<video id="acidVideo" autoplay muted loop playsinline preload="auto" poster="" src="240blackacidwash.mp4"></video>
+<video id="acidVideo" autoplay muted loop playsinline preload="auto" poster="" src="240blackacidwashfull.mp4"></video>
 <img id="acidImg" class="ap-media-img" alt="" hidden>
 <button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('acid',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
 <button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('acid',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
@@ -1905,7 +1905,7 @@ var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_
 var blankVar={classic:'white',acid:'black'};
 var blankFabric={classic:'hw250'};
 var curBlank=null,curBlankId=null;
-var APP_MEDIA={classic:{white:[{t:'v',s:'240gsmwhite.mp4'},{t:'v',s:'240whitefull.mp4'},{t:'i',s:'240white.jpg'}],black:[{t:'v',s:'240gsmblack.mp4'},{t:'v',s:'240blackfull.mp4'},{t:'i',s:'240black.jpg'}]},acid:{black:[{t:'v',s:'240blackacidwash.mp4'},{t:'v',s:'240blackacidwashfull.mp4'},{t:'i',s:'blackacid.jpg'}],lightblue:[{t:'v',s:'240blueacidwash.mp4'},{t:'v',s:'240blueacidwashfull.mp4'},{t:'i',s:'blueacid.jpg'}]}};
+var APP_MEDIA={classic:{white:[{t:'v',s:'240whitefull.mp4'},{t:'v',s:'240gsmwhite.mp4'},{t:'i',s:'240white.jpg'}],black:[{t:'v',s:'240blackfull.mp4'},{t:'v',s:'240gsmblack.mp4'},{t:'i',s:'240black.jpg'}]},acid:{black:[{t:'v',s:'240blackacidwashfull.mp4'},{t:'v',s:'240blackacidwash.mp4'},{t:'i',s:'blackacid.jpg'}],lightblue:[{t:'v',s:'240blueacidwashfull.mp4'},{t:'v',s:'240blueacidwash.mp4'},{t:'i',s:'blueacid.jpg'}]}};
 var mediaIdx={classic:0,acid:0};
 var APP_CARDS={classic:{vid:'classicVideo',img:'classicImg',dots:'classicDots'},acid:{vid:'acidVideo',img:'acidImg',dots:'acidDots'}};
 function setMedia(prodId,idx){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];if(!list||!list[idx])return;mediaIdx[prodId]=idx;var ids=APP_CARDS[prodId];var vid=document.getElementById(ids.vid),img=document.getElementById(ids.img);var m=list[idx];if(m.t==='v'){if(img){img.hidden=true}if(vid){vid.hidden=false;var fname=vid.src?vid.src.split('/').pop():'';if(fname!==m.s){vid.src=m.s;vid.muted=true;vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}}}else{if(vid){vid.hidden=true;vid.pause&&vid.pause()}if(img){img.hidden=false;if(img.getAttribute('src')!==m.s)img.src=m.s}}renderDots(prodId)}
