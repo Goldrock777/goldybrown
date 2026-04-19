@@ -851,9 +851,24 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-total-big span:last-child{font-size:22px}
 .ap-divider{display:flex;align-items:center;gap:12px;margin:6px 0 0;color:#3d5a75;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
 .ap-divider::before,.ap-divider::after{content:'';flex:1;height:1px;background:rgba(61,90,117,.2)}
-.ap-form .pm-submit{background:#1c2d42;color:#f5ede0;border-color:#1c2d42;margin-top:4px}
-.ap-form .pm-submit:hover{background:#3d5a75}
-.ap-form.ap-form-custom .pm-submit{background:linear-gradient(135deg,#c9b89a 0%,#8a6d3b 100%);border-color:#8a6d3b}
+.ap-modal .pm-submit{background:#1c2d42;color:#f5ede0;border-color:#1c2d42;margin-top:10px;width:100%;padding:14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .2s}
+.ap-modal .pm-submit:hover{background:#3d5a75}
+.ap-modal .pm-submit[disabled]{background:#cfd6dd;color:#6a7b8c;cursor:not-allowed;border-color:#cfd6dd}
+.ap-modal .pm-submit[disabled]:hover{background:#cfd6dd}
+.ap-modal.ap-modal-custom .pm-submit{background:linear-gradient(135deg,#c9b89a 0%,#8a6d3b 100%);border-color:#8a6d3b}
+.ap-sm-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.ap-sm-hint{font-size:10.5px;color:#4a5a6c;font-style:italic;font-weight:300;max-width:280px;text-align:right}
+.ap-sm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;background:#fff;border:1px solid #d8e2ec;padding:14px}
+.ap-sm-row{display:flex;flex-direction:column;align-items:center;gap:8px}
+.ap-sm-row label{font-family:var(--fd);font-size:11px;color:#1c2d42;font-weight:500;letter-spacing:1.5px}
+.ap-sm-row .ap-qty-controls{flex-direction:column;gap:4px;width:100%}
+.ap-sm-row .ap-qb{width:100%;height:28px;font-size:14px}
+.ap-sm-row input{width:100%;height:34px;text-align:center;font-family:var(--fd);font-size:15px;border:1px solid #d8e2ec;background:#fff;color:#1c2d42;font-weight:500;-moz-appearance:textfield}
+.ap-sm-row input::-webkit-outer-spin-button,.ap-sm-row input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.ap-sm-totalpill{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#eaf1f7;border:1px solid #c9dcec;margin-top:-1px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#1c2d42;font-weight:500}
+.ap-sm-totalpill span:last-child{font-family:var(--fd);font-size:18px;color:#1c2d42;font-weight:500}
+.ap-sm-totalpill.ap-sm-hit{background:#f5ede0;border-color:#c9b89a;color:#8a6d3b}
+.ap-sm-totalpill.ap-sm-hit span:last-child{color:#8a6d3b}
 .ap-legal{font-size:11px;color:#4a5a6c;text-align:center;margin-top:6px;line-height:1.6;font-weight:200}
 @media(max-width:768px){
 .ap-modal{padding:24px 20px 22px;max-height:92vh;overflow-y:auto}
@@ -967,58 +982,30 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-modal-hdr">
 <div class="slabel" style="color:#3d5a75">Direct Order &middot; Free Shipping</div>
 <h3 id="blankProdName">&mdash;</h3>
-<div class="ap-modal-unit">Unit price <strong id="blankProdPrice">&mdash;</strong> &middot; Ships in 5 business days</div>
+<div class="ap-modal-unit">Unit price <strong id="blankProdPrice">&mdash;</strong> &middot; Checkout via Shopify &middot; Free worldwide shipping</div>
 </div>
-<form class="pm-form ap-form" id="blankForm" onsubmit="submitBlank(event)">
-<div class="ap-qty-block">
-<div class="ap-qty-header"><label class="ap-qty-label">Quantity</label><span class="ap-min-pill" id="apMinNote"></span></div>
-<div class="ap-qty-controls">
-<button type="button" class="ap-qb" onclick="adjBlankQty(-1)">&minus;</button>
-<input type="number" name="quantity" id="blankQty" min="1" value="10" required oninput="updBlankTotal()">
-<button type="button" class="ap-qb" onclick="adjBlankQty(1)">+</button>
+<div class="ap-sm-head"><label class="ap-qty-label">Mix Sizes <span class="ap-min-pill" id="apMinNote"></span></label><span class="ap-sm-hint">Pick any sizes &mdash; total must hit the minimum for your chosen colour.</span></div>
+<div class="ap-sm-grid" id="apSizeGrid">
+<div class="ap-sm-row"><label>XS</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XS',-1)">&minus;</button><input id="qSize_XS" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XS',1)">+</button></div></div>
+<div class="ap-sm-row"><label>S</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('S',-1)">&minus;</button><input id="qSize_S" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('S',1)">+</button></div></div>
+<div class="ap-sm-row"><label>M</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('M',-1)">&minus;</button><input id="qSize_M" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('M',1)">+</button></div></div>
+<div class="ap-sm-row"><label>L</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('L',-1)">&minus;</button><input id="qSize_L" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('L',1)">+</button></div></div>
+<div class="ap-sm-row"><label>XL</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XL',-1)">&minus;</button><input id="qSize_XL" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XL',1)">+</button></div></div>
 </div>
-<div class="ap-size-row">
-<label class="ap-qty-label">Size</label>
-<div class="ap-size-opts">
-<label class="ap-size active" onclick="setBlankSize('M',this)">M</label>
-<label class="ap-size" onclick="setBlankSize('XS',this)">XS</label>
-<label class="ap-size" onclick="setBlankSize('S',this)">S</label>
-<label class="ap-size" onclick="setBlankSize('L',this)">L</label>
-<label class="ap-size" onclick="setBlankSize('XL',this)">XL</label>
-<label class="ap-size" onclick="setBlankSize('Mixed',this)">Mix</label>
-</div>
-</div>
-</div>
+<div class="ap-sm-totalpill"><span>Total pieces</span><span id="apTotalPieces">0</span></div>
 <div class="ap-tier-status" id="apTierStatus">
 <div class="ap-ts-label">Current tier</div>
-<div class="ap-ts-val" id="apTierVal">1 unit &middot; No discount yet</div>
-<div class="ap-ts-next" id="apTierNext">Add 9 more for 5% off</div>
+<div class="ap-ts-val" id="apTierVal">0 pieces</div>
+<div class="ap-ts-next" id="apTierNext">Add pieces to meet the minimum</div>
 </div>
 <div class="ap-total-block">
-<div class="ap-total-row"><span>Subtotal</span><span id="apSubtotal">$15</span></div>
+<div class="ap-total-row"><span>Subtotal</span><span id="apSubtotal">$0</span></div>
 <div class="ap-total-row ap-disc-row" id="apDiscRow" style="display:none"><span id="apDiscLbl">Discount</span><span id="apDiscAmt">&mdash;</span></div>
 <div class="ap-total-row"><span>Shipping</span><span class="ap-free">FREE</span></div>
-<div class="ap-total-row ap-total-big"><span>Total</span><span id="apGrand">$15</span></div>
+<div class="ap-total-row ap-total-big"><span>Total</span><span id="apGrand">$0</span></div>
 </div>
-<div class="ap-divider"><span>Ships To</span></div>
-<div class="fg pm-row">
-<div><label>Name</label><input type="text" name="name" required placeholder="Your full name"></div>
-<div><label>Phone</label><input type="tel" name="phone" required placeholder="+1 604 000 0000"></div>
-</div>
-<div class="fg"><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
-<div class="fg"><label>Shipping Address</label><input type="text" name="address" required placeholder="Street address, unit"></div>
-<div class="fg pm-row">
-<div><label>City</label><input type="text" name="city" required placeholder="City"></div>
-<div><label>State / Province</label><input type="text" name="state" required placeholder="State or Province"></div>
-</div>
-<div class="fg pm-row">
-<div><label>Postal / ZIP</label><input type="text" name="postal" required placeholder="Postal code"></div>
-<div><label>Country</label><input type="text" name="country" required value="Canada" placeholder="Country"></div>
-</div>
-<div class="fg"><label>Notes (optional)</label><textarea name="notes" placeholder="Mixed sizing breakdown, custom embroidery, timing..."></textarea></div>
-<button type="submit" class="pm-submit" id="blankSubmitBtn">Place Order &middot; Free Shipping</button>
-<p class="ap-legal">You'll receive a confirmation and secure payment link by email within 24 hours. Nothing is charged until you confirm.</p>
-</form>
+<button type="button" class="pm-submit" id="blankSubmitBtn" onclick="submitBlank()">Continue to Checkout</button>
+<p class="ap-legal">Secure checkout via Shopify. Enter name, address, and payment on the next page. Free worldwide shipping in 5 business days.</p>
 </div>
 </div>
 </div>
@@ -1915,21 +1902,28 @@ function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.
 var BLANKS={classic:{name:'The Classic Tee',price:15,min:10},acid:{name:'The Acid Wash Tee',price:15,min:10},suvin:{name:'The Suvin Tee',price:30,min:50},terry:{name:'The Towel Set',price:100,min:1}};
 var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',black:'Black',stone:'Stone Grey',lightblue:'Light Blue'};
 var BLANK_FABRICS={hw250:'250gsm Heavyweight Oversized',biowash180:'180gsm Bio-Washed',jersey150:'150gsm Single Jersey'};
-var blankFabric={classic:'hw250'};
-function setBlankFabric(id,f,el){blankFabric[id]=f;var par=el.parentElement;par.querySelectorAll('.ap-fab').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,label:'15% off'},{min:30,disc:0.10,label:'10% off'},{min:20,disc:0.05,label:'5% off'}];
+var APP_SIZES=['XS','S','M','L','XL'];
+var SHOPIFY_STORE='kuibri-ev.myshopify.com';
+// Shopify variant IDs — fill these in as you create variants in Shopify.
+// Schema: SHOPIFY_VARIANTS[productId][colorKey][fabricKey?][size] = 'numeric_variant_id'
+// For products without fabrics (acid, suvin, terry), flatten: SHOPIFY_VARIANTS[productId][colorKey][size]
+var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:null,S:null,M:null,L:null,XL:null},biowash180:{XS:null,S:null,M:null,L:null,XL:null},jersey150:{XS:null,S:null,M:null,L:null,XL:null}},black:{hw250:{XS:null,S:null,M:null,L:null,XL:null},biowash180:{XS:null,S:null,M:null,L:null,XL:null},jersey150:{XS:null,S:null,M:null,L:null,XL:null}}},acid:{black:{XS:null,S:null,M:null,L:null,XL:null},lightblue:{XS:null,S:null,M:null,L:null,XL:null}},suvin:{cream:{XS:null,S:null,M:null,L:null,XL:null},sky:{XS:null,S:null,M:null,L:null,XL:null}},terry:{cream:{XS:null,S:null,M:null,L:null,XL:null},sky:{XS:null,S:null,M:null,L:null,XL:null}}};
 var blankVar={suvin:'cream',classic:'white',acid:'black',terry:'cream'};
-var blankSize='M';
-var curBlank=null;
+var blankFabric={classic:'hw250'};
+var curBlank=null,curBlankId=null;
 function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(id==='classic')updProductVideo('classicVideo',{white:'240gsmwhite.mp4',black:'240gsmblack.mp4'},v);if(id==='acid')updProductVideo('acidVideo',{black:'240blackacidwash.mp4',lightblue:'240blueacidwash.mp4'},v)}
 function updProductVideo(vidId,map,key){var src=map[key];if(!src)return;var vid=document.getElementById(vidId);if(!vid)return;if(vid.src&&vid.src.split('/').pop()===src)return;vid.src=src;vid.muted=true;vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}
-function setBlankSize(s,el){blankSize=s;var par=el.parentElement;par.querySelectorAll('.ap-size').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
+function setBlankFabric(id,f,el){blankFabric[id]=f;var par=el.parentElement;par.querySelectorAll('.ap-fab').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
-function adjBlankQty(d){if(!curBlank)return;var el=document.getElementById('blankQty');var v=parseInt(el.value,10)||curBlank.min;v=Math.max(curBlank.min,v+d);el.value=v;updBlankTotal()}
-function updBlankTotal(){if(!curBlank)return;var minQ=curBlank.min;var el=document.getElementById('blankQty');var raw=parseInt(el.value,10);var q=(isNaN(raw)||raw<minQ)?minQ:raw;el.value=q;var unit=curBlank.price;var sub=unit*q;var tier=getBlankTier(q);var status=document.getElementById('apTierStatus');var form=document.getElementById('blankForm');status.classList.remove('ap-tier-hit','ap-tier-custom');form.classList.remove('ap-form-custom');var btn=document.getElementById('blankSubmitBtn');var minNote=document.getElementById('apMinNote');if(minNote)minNote.textContent=minQ>1?('Minimum order: '+minQ+' units'):'';if(q>=100){status.classList.add('ap-tier-custom');form.classList.add('ap-form-custom');document.getElementById('apTierVal').textContent=q+' units \u2014 Custom pricing zone';document.getElementById('apTierNext').textContent='We\'ll quote volume pricing within 24 hours';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent='Custom Quote';btn.textContent='Request Custom Pricing \u2014 Free Shipping';return}if(tier&&tier.disc&&tier.disc>0){status.classList.add('ap-tier-hit');var discAmt=Math.round(sub*tier.disc);var total=sub-discAmt;document.getElementById('apTierVal').textContent=q+' units \u2014 '+tier.label;var next=BLANK_TIERS.filter(function(t){return t.min>q&&t.min<=100}).sort(function(a,b){return a.min-b.min})[0];if(next){var add=next.min-q;document.getElementById('apTierNext').textContent='Add '+add+' more for '+(next.disc===null?'custom pricing':next.label)}else{document.getElementById('apTierNext').textContent='Top volume tier reached'}document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='';document.getElementById('apDiscLbl').textContent='Discount ('+Math.round(tier.disc*100)+'%)';document.getElementById('apDiscAmt').textContent='\u2212'+fmt(discAmt);document.getElementById('apGrand').textContent=fmt(total)}else{document.getElementById('apTierVal').textContent=q+' unit'+(q>1?'s':'')+' \u2014 Base price';if(minQ===1){document.getElementById('apTierNext').textContent='Add '+(20-q)+' more for 5% off'}else{document.getElementById('apTierNext').textContent='Add '+(20-q)+' more to unlock 5% off'}document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub)}btn.textContent='Place Order \u2014 Free Shipping'}
-function orderBlank(id){var b=BLANKS[id];curBlank=b;var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var fab=blankFabric[id];if(fab&&BLANK_FABRICS[fab])label+=' \u2014 '+BLANK_FABRICS[fab];var form=document.getElementById('blankForm');form.reset();form.classList.remove('ap-form-custom');blankSize='M';document.querySelectorAll('#blankForm .ap-size').forEach(function(e){e.classList.remove('active');if(e.textContent.trim()==='M')e.classList.add('active')});var qEl=document.getElementById('blankQty');qEl.value=b.min;qEl.min=b.min;document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.unitprice=b.price;form.dataset.min=b.min;updBlankTotal();document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
+function getSizeQty(s){var el=document.getElementById('qSize_'+s);return el?Math.max(0,parseInt(el.value,10)||0):0}
+function getTotalPieces(){var t=0;APP_SIZES.forEach(function(s){t+=getSizeQty(s)});return t}
+function adjSize(s,d){var el=document.getElementById('qSize_'+s);var v=Math.max(0,(parseInt(el.value,10)||0)+d);el.value=v;updBlankTotal()}
+function lookupShopifyVariant(id,color,fabric,size){var p=SHOPIFY_VARIANTS[id];if(!p)return null;var c=p[color];if(!c)return null;if(fabric){var f=c[fabric];return f?(f[size]||null):null}return c[size]||null}
+function updBlankTotal(){if(!curBlank)return;var minQ=curBlank.min;var q=getTotalPieces();var unit=curBlank.price;var sub=unit*q;var tier=getBlankTier(q);var status=document.getElementById('apTierStatus');var modal=document.querySelector('.ap-modal');status.classList.remove('ap-tier-hit','ap-tier-custom');if(modal)modal.classList.remove('ap-modal-custom');var btn=document.getElementById('blankSubmitBtn');var minNote=document.getElementById('apMinNote');if(minNote)minNote.textContent=minQ>1?('Min '+minQ+' pieces'):'';document.getElementById('apTotalPieces').textContent=q;var pill=document.querySelector('.ap-sm-totalpill');if(pill){pill.classList.remove('ap-sm-hit');if(q>=minQ)pill.classList.add('ap-sm-hit')}if(q===0){document.getElementById('apTierVal').textContent='0 pieces';document.getElementById('apTierNext').textContent='Add sizes to meet the '+minQ+' piece minimum';document.getElementById('apSubtotal').textContent=fmt(0);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(0);btn.textContent='Add pieces to checkout';btn.disabled=true;return}if(q<minQ){document.getElementById('apTierVal').textContent=q+' piece'+(q>1?'s':'')+' \u2014 Below minimum';document.getElementById('apTierNext').textContent='Add '+(minQ-q)+' more to meet the '+minQ+' piece minimum';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub);btn.textContent='Minimum not met';btn.disabled=true;return}btn.disabled=false;if(q>=100){status.classList.add('ap-tier-custom');if(modal)modal.classList.add('ap-modal-custom');document.getElementById('apTierVal').textContent=q+' pieces \u2014 Custom pricing zone';document.getElementById('apTierNext').textContent='Contact us for volume pricing';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent='Custom Quote';btn.textContent='Request Custom Quote';return}if(tier&&tier.disc&&tier.disc>0){status.classList.add('ap-tier-hit');var discAmt=Math.round(sub*tier.disc);var total=sub-discAmt;document.getElementById('apTierVal').textContent=q+' pieces \u2014 '+tier.label;var next=BLANK_TIERS.filter(function(t){return t.min>q&&t.min<=100}).sort(function(a,b){return a.min-b.min})[0];document.getElementById('apTierNext').textContent=next?('Add '+(next.min-q)+' more for '+(next.disc===null?'custom pricing':next.label)):'Top volume tier reached';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='';document.getElementById('apDiscLbl').textContent='Discount ('+Math.round(tier.disc*100)+'%)';document.getElementById('apDiscAmt').textContent='\u2212'+fmt(discAmt);document.getElementById('apGrand').textContent=fmt(total)}else{document.getElementById('apTierVal').textContent=q+' piece'+(q>1?'s':'')+' \u2014 Base price';document.getElementById('apTierNext').textContent='Add '+(20-q)+' more to unlock 5% off';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub)}btn.textContent='Continue to Checkout \u2014 Free Shipping'}
+function orderBlank(id){var b=BLANKS[id];curBlank=b;curBlankId=id;var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var fab=blankFabric[id];if(fab&&BLANK_FABRICS[fab])label+=' \u2014 '+BLANK_FABRICS[fab];APP_SIZES.forEach(function(s){var el=document.getElementById('qSize_'+s);if(el)el.value=0});document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);updBlankTotal();document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeBlank(e){if(e&&e.target!==document.getElementById('blankOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('blankOv').classList.remove('open');document.body.style.overflow=''}
-function submitBlank(e){e.preventDefault();var f=e.target;var btn=document.getElementById('blankSubmitBtn');var minQ=parseInt(f.dataset.min,10)||1;var q=parseInt(f.quantity.value,10)||minQ;if(q<minQ){alert('Minimum order for this product is '+minQ+' units.');f.quantity.value=minQ;updBlankTotal();return}btn.dataset.label=btn.textContent;var unit=parseFloat(f.dataset.unitprice)||0;var sub=unit*q;var tier=getBlankTier(q);var isCustom=q>=100;var disc=0;var total=sub;if(!isCustom&&tier&&tier.disc){disc=Math.round(sub*tier.disc);total=sub-disc}var subject=isCustom?'Custom Quote Request \u2014 '+f.dataset.product:'Apparel Direct Order \u2014 '+f.dataset.product;var data={_subject:subject,type:isCustom?'custom_quote':'direct_order',product:f.dataset.product,unit_price:fmt(unit),quantity:q,size:blankSize,subtotal:fmt(sub),discount_tier:tier?tier.label:'Base price',discount_amount:disc?fmt(disc):'None',total:isCustom?'Custom Quote':fmt(total),shipping:'Free Worldwide',delivery:'5 business days',name:f.name.value,email:f.email.value,phone:f.phone.value,address:f.address.value,city:f.city.value,state:f.state.value,postal:f.postal.value,country:f.country.value,notes:f.notes.value};submitForm(FORM_URL,data,btn,function(){var heading=isCustom?'Custom Quote Requested':'Order Received';var body=isCustom?'We\'ll prepare volume pricing for <strong>'+q+' units</strong> of '+data.product+' and send a full quote to <strong>'+data.email+'</strong> within 24 hours. Free worldwide shipping included.':'Thank you, '+data.name.split(' ')[0]+'. Your order for <strong>'+q+' '+data.product+'</strong> has been received. We\'ll send a payment link to <strong>'+data.email+'</strong> within 24 hours. Ships free worldwide in 5 business days.';document.getElementById('blankBody').innerHTML='<div class="pm-success"><h3>'+heading+'</h3><p>'+body+'</p><button class="btn btn-f" onclick="closeBlank()" style="margin-top:12px">Close</button></div>'})}
+function submitBlank(){if(!curBlank||!curBlankId)return;var minQ=curBlank.min;var q=getTotalPieces();if(q<minQ){alert('Minimum order is '+minQ+' pieces for this colour. Add '+(minQ-q)+' more across any sizes.');return}var color=blankVar[curBlankId];var fabric=blankFabric[curBlankId];var lines=[];var missing=[];APP_SIZES.forEach(function(s){var qty=getSizeQty(s);if(qty<=0)return;var vid=lookupShopifyVariant(curBlankId,color,fabric,s);if(!vid){missing.push(s)}else{lines.push(vid+':'+qty)}});if(q>=100){var subj='Custom Quote Request \u2014 '+curBlank.name+' \u2014 '+q+' pieces';var body='Product: '+curBlank.name+'\nColour: '+(BLANK_COLORS[color]||color)+(fabric?('\nFabric: '+BLANK_FABRICS[fabric]):'')+'\nTotal pieces: '+q+'\nSize breakdown:\n'+APP_SIZES.map(function(s){var n=getSizeQty(s);return n>0?('  '+s+': '+n):''}).filter(Boolean).join('\n');window.location.href='mailto:info@goldybrown.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);return}if(missing.length){alert('Checkout setup is still pending for: '+missing.join(', ')+'. Please email info@goldybrown.com to place your order, or try again shortly.');return}if(!lines.length){alert('Please add at least one size.');return}window.open('https://'+SHOPIFY_STORE+'/cart/'+lines.join(','),'_blank')}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
