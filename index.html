@@ -725,26 +725,67 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .img-zoom-close{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.6;transition:opacity .3s;z-index:2001}
 .img-zoom-close:hover{opacity:1}
 .prop-item .prop-img img,.ccard-img img,.pcard-img img,.frag-profile-img img,.carousel-main img.active{cursor:zoom-in}
-.blank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
-.blank-card{background:#fff;border:1px solid var(--b);display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
-.blank-card:hover{border-color:var(--gl)}
-.blank-img{height:260px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.blank-placeholder{font-family:var(--fd);font-size:16px;color:var(--tm);letter-spacing:3px;text-transform:uppercase;opacity:.5}
-.blank-body{padding:22px 22px 22px;display:flex;flex-direction:column;flex:1}
-.blank-slabel{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);margin-bottom:6px;font-weight:500}
-.blank-body h4{font-family:var(--fd);font-size:20px;margin-bottom:8px;letter-spacing:.3px;color:var(--w);font-weight:400}
-.blank-body p{font-size:12.5px;color:var(--td);line-height:1.7;font-weight:200;margin-bottom:14px}
-.blank-vars{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
-.blank-sw{display:inline-flex;align-items:center;gap:8px;padding:6px 10px 6px 8px;border:1px solid var(--b);cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;background:#fff;color:var(--td)}
-.blank-sw:hover{border-color:var(--gl);color:var(--w)}
-.blank-sw.active{border-color:var(--gl);color:var(--gl)}
-.blank-sw span{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid var(--b)}
-.blank-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid var(--b);gap:12px}
-.blank-price{font-family:var(--fd);font-size:22px;color:var(--w)}
-.blank-price-note{font-size:10px;color:var(--tm);letter-spacing:1.5px;text-transform:uppercase;margin-left:6px;font-family:inherit}
-.blank-row .btn{padding:11px 16px;font-size:10px;flex-shrink:0}
-@media(max-width:1024px){.blank-grid{grid-template-columns:repeat(2,1fr);gap:16px}.blank-img{height:220px}}
-@media(max-width:768px){.blank-grid{grid-template-columns:1fr;gap:14px}.blank-img{height:240px}}
+/* ===== APPAREL PAGE ===== */
+#page-apparel{background:linear-gradient(180deg,#eaf1f7 0%,#f2ead8 100%)}
+.apparel-hero{position:relative;padding:140px 60px 80px;text-align:center;overflow:hidden;background:linear-gradient(180deg,#c9dcec 0%,#e8eef3 55%,#f5ede0 100%)}
+.apparel-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#3d5a75}
+.apparel-clouds{position:absolute;inset:0;pointer-events:none;opacity:.45;background-image:radial-gradient(ellipse 640px 180px at 15% 18%,rgba(255,255,255,.9),transparent 60%),radial-gradient(ellipse 480px 140px at 80% 30%,rgba(255,255,255,.75),transparent 65%),radial-gradient(ellipse 360px 110px at 45% 68%,rgba(255,255,255,.6),transparent 60%)}
+.apparel-hero-inner{position:relative;max-width:720px;margin:0 auto;z-index:1}
+.apparel-hero .slabel{color:#3d5a75;letter-spacing:5px;font-weight:500;margin-bottom:16px}
+.apparel-hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,68px);letter-spacing:-1.5px;color:#1c2d42;margin-bottom:14px;font-weight:400;line-height:1.05}
+.apparel-hero .sub{max-width:540px;margin:0 auto 20px;color:#4a5a6c;font-size:14px;line-height:1.85;font-weight:200}
+.apparel-hero-meta{display:flex;justify-content:center;gap:14px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;font-weight:500;margin-top:24px}
+.apparel-section{padding:80px 60px;background:linear-gradient(180deg,rgba(245,237,224,.25) 0%,#fcf9f2 100%)}
+.apparel-intro{text-align:center;max-width:640px;margin:0 auto 56px}
+.apparel-intro .slabel{color:#3d5a75;margin-bottom:12px}
+.apparel-intro h2{font-family:var(--fd);font-size:clamp(28px,3.2vw,38px);color:#1c2d42;margin-bottom:14px;font-weight:400;letter-spacing:-.5px}
+.apparel-intro p{font-size:13.5px;color:#4a5a6c;line-height:1.9;font-weight:200}
+.apparel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.ap-card{background:#fff;border:1px solid #d8e2ec;border-radius:2px;display:flex;flex-direction:column;transition:all .3s;box-shadow:0 1px 3px rgba(28,45,66,.04);overflow:hidden}
+.ap-card:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(28,45,66,.1);border-color:#a8c6de}
+.ap-card-premium{border-color:#a8c6de}
+.ap-card-premium::before{content:'';display:block;height:2px;background:linear-gradient(90deg,#a8c6de,#c9b89a)}
+.ap-img{height:340px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ap-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.35),transparent 70%);pointer-events:none}
+.ap-badge{position:absolute;top:16px;left:16px;background:#1c2d42;color:#f5ede0;font-size:9px;letter-spacing:2px;font-weight:500;padding:5px 12px;text-transform:uppercase;z-index:2}
+.ap-placeholder{font-family:var(--fd);font-size:18px;color:#3d5a75;letter-spacing:3px;text-transform:uppercase;opacity:.5;position:relative;z-index:1}
+.ap-body{padding:26px 26px 24px;display:flex;flex-direction:column;flex:1}
+.ap-slabel{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;margin-bottom:8px;font-weight:500}
+.ap-body h4{font-family:var(--fd);font-size:22px;margin-bottom:10px;letter-spacing:.3px;color:#1c2d42;font-weight:400}
+.ap-body p{font-size:13px;color:#4a5a6c;line-height:1.8;font-weight:200;margin-bottom:18px}
+.ap-vars{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.ap-sw{display:inline-flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;border:1px solid #d8e2ec;cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;background:#fff;color:#4a5a6c;font-weight:500}
+.ap-sw:hover{border-color:#3d5a75;color:#1c2d42}
+.ap-sw.active{border-color:#1c2d42;color:#1c2d42;background:#f5ede0}
+.ap-sw span{width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid #d8e2ec;flex-shrink:0}
+.ap-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid #ebe3d0;gap:12px}
+.ap-price{font-family:var(--fd);font-size:26px;color:#1c2d42;font-weight:400}
+.ap-price-note{font-size:10px;color:#8295a8;letter-spacing:1.5px;text-transform:uppercase;margin-left:6px;font-family:inherit}
+.ap-row .btn{padding:12px 18px;font-size:10px;flex-shrink:0;background:#1c2d42;color:#f5ede0;border-color:#1c2d42}
+.ap-row .btn:hover{background:#3d5a75;border-color:#3d5a75;color:#fff}
+.apparel-note{padding:80px 60px;background:linear-gradient(180deg,#f5ede0 0%,#ebe3d0 100%);border-top:1px solid rgba(61,90,117,.12)}
+.apparel-note-inner{max-width:960px;margin:0 auto;text-align:center}
+.apparel-note h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);color:#1c2d42;margin:8px 0 40px;font-weight:400;letter-spacing:-.5px}
+.apparel-why{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;text-align:left}
+.apw{padding:28px 24px;background:rgba(255,255,255,.5);border:1px solid rgba(61,90,117,.14);border-radius:2px;backdrop-filter:blur(6px)}
+.apw-num{font-family:var(--fd);font-size:11px;letter-spacing:3px;color:#3d5a75;margin-bottom:10px;font-weight:500}
+.apw h4{font-family:var(--fd);font-size:18px;color:#1c2d42;margin-bottom:8px;font-weight:400}
+.apw p{font-size:12.5px;color:#4a5a6c;line-height:1.75;font-weight:200}
+@media(max-width:1024px){
+.apparel-hero{padding:110px 24px 60px}
+.apparel-section{padding:56px 24px}
+.apparel-grid{grid-template-columns:1fr;gap:20px}
+.ap-img{height:280px}
+.apparel-note{padding:56px 24px}
+.apparel-why{grid-template-columns:1fr;gap:14px}
+.apparel-hero-meta{flex-wrap:wrap;gap:8px}
+}
+@media(max-width:768px){
+.apparel-hero{padding:96px 18px 50px}
+.apparel-hero h1{font-size:40px}
+.ap-img{height:260px}
+.ap-body{padding:22px 20px 22px}
+}
 </style>
 </head>
 <body>
@@ -757,6 +798,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
 <a class="nav-tab" data-page="hotel">Hotel Programme</a>
 <a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
+<a class="nav-tab" data-page="apparel">Apparel</a>
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
 <a class="nav-tab" data-page="about">About Us</a>
 </div>
@@ -788,6 +830,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="javascript:void(0)" onclick="go('lookbook');closeMob()">Lookbook</a>
 <a href="javascript:void(0)" onclick="go('hotel');closeMob()">Hotel Programme</a>
 <a href="javascript:void(0)" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
+<a href="javascript:void(0)" onclick="go('apparel');closeMob()">Apparel</a>
 <a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
 <a href="javascript:void(0)" onclick="go('about');closeMob()">About Us</a>
 </div>
@@ -1130,46 +1173,94 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="mat-card"><h4>Stainless Steel Fittings</h4><p>No plated zinc. Will never rust, never flake, never fail.</p></div>
 </div>
 </section>
-<section class="section section-border fade-in" style="background:var(--bg-card)">
-<div style="text-align:center;margin-bottom:32px">
-<div class="slabel">Apparel — Vancouver Local</div>
-<h2>Cotton &amp; Towel Blanks</h2>
-<p class="sub" style="max-width:620px;margin:8px auto 0">Small-batch apparel produced locally in Vancouver. Pickup or local delivery. Custom embroidery and private label on request.</p>
 </div>
-<div class="blank-grid">
-<div class="blank-card">
-<div class="blank-img" style="background:linear-gradient(135deg,#f5f5f0 0%,#e8e5df 60%,#d8d4cc 100%)"><div class="blank-placeholder">Cotton Tee</div></div>
-<div class="blank-body">
-<div class="blank-slabel">100% Cotton</div>
-<h4>Cotton Blank Tee</h4>
-<p>Heavyweight 220gsm combed cotton. Dropped shoulder, relaxed fit. Available in classic white or stonewashed acid wash.</p>
-<div class="blank-vars">
-<label class="blank-sw active" data-var="white" onclick="setBlankVar('tee','white',this)"><span style="background:#fafafa"></span>White</label>
-<label class="blank-sw" data-var="acid" onclick="setBlankVar('tee','acid',this)"><span style="background:linear-gradient(135deg,#aaa8a0 20%,#c8c4bc 60%,#807e78 100%);border-color:var(--tm)"></span>Acid Wash</label>
-</div>
-<div class="blank-row"><div class="blank-price">$45</div><button class="btn btn-f" onclick="orderBlank('tee')">Request to Order</button></div>
+
+<!-- ======================== APPAREL ======================== -->
+<div class="page" id="page-apparel">
+<div class="apparel-hero">
+<div class="apparel-clouds"></div>
+<div class="apparel-hero-inner">
+<div class="slabel" style="color:#3d5a75">Apparel &middot; Vancouver Local</div>
+<h1>Blanks &amp; Basics</h1>
+<p class="sub">Quietly considered cotton. Cut, sewn, and washed in Vancouver. Pickup or local delivery &mdash; a small-batch line for the everyday uniform.</p>
+<div class="apparel-hero-meta"><span>Suvin Cotton</span><span>&middot;</span><span>Small Batch</span><span>&middot;</span><span>Made Local</span></div>
 </div>
 </div>
-<div class="blank-card">
-<div class="blank-img" style="background:linear-gradient(135deg,#faf4e8 0%,#ede3cc 60%,#d9ccb0 100%)"><div class="blank-placeholder">Towel Set</div></div>
-<div class="blank-body">
-<div class="blank-slabel">Premium Terry</div>
-<h4>Towel Shirt &amp; Shorts Set</h4>
-<p>Dense 400gsm loop terry. Matching pullover and elastic-waist shorts. Hotel-grade cotton, pre-shrunk, yarn-dyed natural.</p>
-<div class="blank-row"><div class="blank-price">$185<span class="blank-price-note">set</span></div><button class="btn btn-f" onclick="orderBlank('towel')">Request to Order</button></div>
+<section class="apparel-section">
+<div class="apparel-intro fade-in">
+<div class="slabel">The Collection</div>
+<h2>Four Pieces. Nothing More.</h2>
+<p>A tight edit of basics. The premium Suvin tee for people who care about the fabric. The classic tee for everyone else. An acid wash for the off-duty days. And a matching terry set for home or the beach.</p>
+</div>
+<div class="apparel-grid">
+
+<div class="ap-card ap-card-premium fade-in">
+<div class="ap-img" style="background:linear-gradient(155deg,#e8f1f7 0%,#d4e3ef 45%,#c4d7e6 100%)"><div class="ap-badge">Premium</div><div class="ap-placeholder">Suvin Cotton Tee</div></div>
+<div class="ap-body">
+<div class="ap-slabel">Suvin &middot; Long-Staple Combed</div>
+<h4>The Suvin Tee</h4>
+<p>Indian Suvin long-staple cotton, combed and ring-spun. Buttery hand, dense 240gsm drape. Boxed silhouette. The tee you reach for every morning.</p>
+<div class="ap-vars">
+<label class="ap-sw active" data-var="cream" onclick="setBlankVar('suvin','cream',this)"><span style="background:#f2ead8"></span>Cream White</label>
+<label class="ap-sw" data-var="sky" onclick="setBlankVar('suvin','sky',this)"><span style="background:#a8c6de"></span>Sky Blue</label>
+</div>
+<div class="ap-row"><div class="ap-price">$50</div><button class="btn btn-f" onclick="orderBlank('suvin')">Request to Order</button></div>
 </div>
 </div>
-<div class="blank-card">
-<div class="blank-img" style="background:linear-gradient(135deg,#f0e8de 0%,#ddcfbc 60%,#b8a582 100%)"><div class="blank-placeholder">Women's Bikini</div></div>
-<div class="blank-body">
-<div class="blank-slabel">Women's Swim</div>
-<h4>Bikini Set</h4>
-<p>Italian four-way stretch, double-lined. Triangle top with adjustable tie straps, cheeky bottom. Neutral palette. Sizes XS&ndash;L.</p>
-<div class="blank-row"><div class="blank-price">$95</div><button class="btn btn-f" onclick="orderBlank('bikini')">Request to Order</button></div>
+
+<div class="ap-card fade-in">
+<div class="ap-img" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)"><div class="ap-placeholder">Classic Tee</div></div>
+<div class="ap-body">
+<div class="ap-slabel">Cotton Jersey</div>
+<h4>The Classic Tee</h4>
+<p>Mid-weight 180gsm cotton jersey. Clean, honest basic. Relaxed fit. Made for everyday rotation and price-point essentials.</p>
+<div class="ap-vars">
+<label class="ap-sw active" data-var="white" onclick="setBlankVar('classic','white',this)"><span style="background:#fafafa;border-color:#ccc"></span>White</label>
+</div>
+<div class="ap-row"><div class="ap-price">$15</div><button class="btn btn-f" onclick="orderBlank('classic')">Request to Order</button></div>
 </div>
 </div>
+
+<div class="ap-card fade-in">
+<div class="ap-img" style="background:linear-gradient(155deg,#e6e4de 0%,#cac7c0 55%,#a5a29a 100%)"><div class="ap-placeholder">Acid Wash Tee</div></div>
+<div class="ap-body">
+<div class="ap-slabel">Stonewashed</div>
+<h4>The Acid Wash</h4>
+<p>Cotton jersey, stone-washed for that lived-in, sun-faded feel. Each piece washes slightly different &mdash; no two alike. Local marketplace pricing.</p>
+<div class="ap-vars">
+<label class="ap-sw active" data-var="acid" onclick="setBlankVar('acid','acid',this)"><span style="background:linear-gradient(135deg,#b5b1a8 20%,#cac6bd 60%,#8e8a82 100%);border-color:#888"></span>Acid Wash</label>
 </div>
-<p style="text-align:center;margin-top:28px;font-size:11px;color:var(--tm);letter-spacing:1px;text-transform:uppercase">Minimum 1 unit for pickup &mdash; Volume pricing on bulk orders</p>
+<div class="ap-row"><div class="ap-price">$15</div><button class="btn btn-f" onclick="orderBlank('acid')">Request to Order</button></div>
+</div>
+</div>
+
+<div class="ap-card fade-in">
+<div class="ap-img" style="background:linear-gradient(155deg,#eaf0f5 0%,#d3e0ec 50%,#b8cbdf 100%)"><div class="ap-placeholder">Terry Set</div></div>
+<div class="ap-body">
+<div class="ap-slabel">Premium Terry &middot; Shirt + Shorts</div>
+<h4>The Towel Set</h4>
+<p>Dense 400gsm loop terry. Matching pullover shirt and elastic-waist shorts. Hotel-grade cotton, pre-shrunk. A set for the pool, the morning, the plane.</p>
+<div class="ap-vars">
+<label class="ap-sw active" data-var="cream" onclick="setBlankVar('terry','cream',this)"><span style="background:#f2ead8"></span>Cream White</label>
+<label class="ap-sw" data-var="sky" onclick="setBlankVar('terry','sky',this)"><span style="background:#a8c6de"></span>Sky Blue</label>
+</div>
+<div class="ap-row"><div class="ap-price">$100<span class="ap-price-note">set</span></div><button class="btn btn-f" onclick="orderBlank('terry')">Request to Order</button></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="apparel-note">
+<div class="apparel-note-inner fade-in">
+<div class="slabel" style="color:#3d5a75">How It Works</div>
+<h2>Made Slowly, Bought Simply</h2>
+<div class="apparel-why">
+<div class="apw"><div class="apw-num">01</div><h4>Request</h4><p>Pick a piece, tell us your size and colour. Quick form, no friction.</p></div>
+<div class="apw"><div class="apw-num">02</div><h4>Confirm</h4><p>We confirm stock and pickup time within 24 hours by email.</p></div>
+<div class="apw"><div class="apw-num">03</div><h4>Collect</h4><p>Vancouver pickup or local delivery. Pay on handoff &mdash; cash, e-transfer, or card.</p></div>
+</div>
+</div>
 </section>
 </div>
 
@@ -1515,6 +1606,7 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
 <li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
 <li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance Collection</a></li>
+<li><a href="javascript:void(0)" onclick="go('apparel')">Apparel</a></li>
 <li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
 <li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
 </ul>
@@ -1697,11 +1789,12 @@ function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page
 function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll be in touch within 24 hours.</p></div>'})}
 // ===== FRAGRANCE FORM =====
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
-// ===== APPAREL BLANKS =====
-var BLANKS={tee:{name:'Cotton Blank Tee',price:45},towel:{name:'Towel Shirt & Shorts Set',price:185},bikini:{name:'Womens Bikini Set',price:95}};
-var blankVar={tee:'white'};
-function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.blank-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
-function orderBlank(id){var b=BLANKS[id];var label=b.name;if(id==='tee')label+=' \u2014 '+(blankVar.tee==='acid'?'Acid Wash':'White');var form=document.getElementById('blankForm');form.reset();document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.price=fmt(b.price);document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
+// ===== APPAREL =====
+var BLANKS={suvin:{name:'The Suvin Tee',price:50},classic:{name:'The Classic Tee',price:15},acid:{name:'The Acid Wash Tee',price:15},terry:{name:'The Towel Set',price:100}};
+var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',acid:'Acid Wash'};
+var blankVar={suvin:'cream',classic:'white',acid:'acid',terry:'cream'};
+function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
+function orderBlank(id){var b=BLANKS[id];var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var form=document.getElementById('blankForm');form.reset();document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.price=fmt(b.price);document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeBlank(e){if(e&&e.target!==document.getElementById('blankOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('blankOv').classList.remove('open');document.body.style.overflow=''}
 function submitBlank(e){e.preventDefault();var f=e.target;var btn=document.getElementById('blankSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Apparel Blank Order \u2014 '+f.dataset.product,type:'blank_order',product:f.dataset.product,unit_price:f.dataset.price,name:f.name.value,email:f.email.value,phone:f.phone.value,quantity:f.quantity.value,fulfillment:f.fulfillment.value,notes:f.notes.value};submitForm(FORM_URL,data,btn,function(){document.getElementById('blankBody').innerHTML='<div class="pm-success"><h3>Order Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll confirm your '+data.product+' order and '+data.fulfillment.toLowerCase()+' details at <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeBlank()" style="margin-top:8px">Close</button></div>'})}
 // ===== SHOP CART =====
