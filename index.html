@@ -746,6 +746,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-chip-custom{background:rgba(201,184,154,.18)}
 .ap-chip-custom b,.ap-chip-custom span{color:#f5ede0}
 .ap-chip-custom span{color:#f0d9a8}
+.ap-chip-min{background:rgba(201,184,154,.12)}
+.ap-chip-min b{color:#f0d9a8}
+.ap-chip-min span{color:rgba(240,217,168,.82);font-size:9px}
+.ap-min-tag{display:inline-block;padding:4px 10px;background:#f5ede0;color:#8a6d3b;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border:1px solid #c9b89a;margin-left:8px;vertical-align:middle}
+.ap-price-min{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8a6d3b;font-weight:500;margin-left:6px;font-family:inherit}
 .apparel-section{padding:48px 60px 56px;background:linear-gradient(180deg,rgba(245,237,224,.25) 0%,#fcf9f2 100%)}
 .apparel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1200px;margin:0 auto}
 .ap-card{background:#fff;border:1px solid #d8e2ec;border-radius:2px;display:flex;flex-direction:column;transition:all .3s;box-shadow:0 1px 3px rgba(28,45,66,.04);overflow:hidden}
@@ -804,7 +809,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-modal-unit strong{color:#1c2d42;font-weight:500}
 .ap-form{display:flex;flex-direction:column;gap:14px}
 .ap-qty-block{display:flex;flex-direction:column;gap:14px;padding:16px;background:#fff;border:1px solid #d8e2ec}
-.ap-qty-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;font-weight:500;margin-bottom:8px;display:block}
+.ap-qty-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;font-weight:500;display:block}
+.ap-qty-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.ap-min-pill{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8a6d3b;background:#f5ede0;padding:3px 9px;border:1px solid #c9b89a;font-weight:600}
+.ap-min-pill:empty{display:none}
 .ap-qty-controls{display:flex;align-items:center;gap:10px}
 .ap-qb{width:38px;height:38px;border:1px solid #d8e2ec;background:#fff;font-size:18px;cursor:pointer;color:#1c2d42;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .ap-qb:hover{border-color:#1c2d42;background:#f5ede0}
@@ -953,10 +961,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <form class="pm-form ap-form" id="blankForm" onsubmit="submitBlank(event)">
 <div class="ap-qty-block">
-<label class="ap-qty-label">Quantity</label>
+<div class="ap-qty-header"><label class="ap-qty-label">Quantity</label><span class="ap-min-pill" id="apMinNote"></span></div>
 <div class="ap-qty-controls">
 <button type="button" class="ap-qb" onclick="adjBlankQty(-1)">&minus;</button>
-<input type="number" name="quantity" id="blankQty" min="1" value="1" required oninput="updBlankTotal()">
+<input type="number" name="quantity" id="blankQty" min="1" value="10" required oninput="updBlankTotal()">
 <button type="button" class="ap-qb" onclick="adjBlankQty(1)">+</button>
 </div>
 <div class="ap-size-row">
@@ -1279,9 +1287,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-hero-deal">
 <div class="ap-deal-top"><span class="ap-deal-ship">Free Worldwide Shipping &middot; 5 Business Days</span><span class="ap-deal-stock">Local stock sold out &mdash; shipping direct from our wholesaler</span></div>
 <div class="ap-deal-tiers">
-<div class="ap-chip"><b>10+</b><span>5% off</span></div>
-<div class="ap-chip"><b>20+</b><span>8% off</span></div>
-<div class="ap-chip"><b>30+</b><span>12% off</span></div>
+<div class="ap-chip ap-chip-min"><b>10</b><span>Min Order</span></div>
+<div class="ap-chip"><b>20+</b><span>5% off</span></div>
+<div class="ap-chip"><b>30+</b><span>10% off</span></div>
 <div class="ap-chip"><b>50+</b><span>15% off</span></div>
 <div class="ap-chip ap-chip-custom"><b>100+</b><span>Custom</span></div>
 </div>
@@ -1300,7 +1308,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-vars">
 <label class="ap-sw active" data-var="white" onclick="setBlankVar('classic','white',this)"><span style="background:#fafafa;border-color:#ccc"></span>White</label>
 </div>
-<div class="ap-row"><div class="ap-price">$15</div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
+<div class="ap-row"><div class="ap-price">$15<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
 </div>
 </div>
 
@@ -1313,7 +1321,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-vars">
 <label class="ap-sw active" data-var="acid" onclick="setBlankVar('acid','acid',this)"><span style="background:linear-gradient(135deg,#b5b1a8 20%,#cac6bd 60%,#8e8a82 100%);border-color:#888"></span>Acid Wash</label>
 </div>
-<div class="ap-row"><div class="ap-price">$15</div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
+<div class="ap-row"><div class="ap-price">$15<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
 </div>
 </div>
 
@@ -1327,7 +1335,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <label class="ap-sw active" data-var="cream" onclick="setBlankVar('suvin','cream',this)"><span style="background:#f2ead8"></span>Cream White</label>
 <label class="ap-sw" data-var="sky" onclick="setBlankVar('suvin','sky',this)"><span style="background:#a8c6de"></span>Sky Blue</label>
 </div>
-<div class="ap-row"><div class="ap-price">$50</div><button class="btn btn-f" onclick="orderBlank('suvin')">Order Direct</button></div>
+<div class="ap-row"><div class="ap-price">$50<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('suvin')">Order Direct</button></div>
 </div>
 </div>
 
@@ -1881,20 +1889,20 @@ function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelect
 // ===== FRAGRANCE FORM =====
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
 // ===== APPAREL =====
-var BLANKS={classic:{name:'The Classic Tee',price:15},acid:{name:'The Acid Wash Tee',price:15},suvin:{name:'The Suvin Tee',price:50},terry:{name:'The Towel Set',price:100}};
+var BLANKS={classic:{name:'The Classic Tee',price:15,min:10},acid:{name:'The Acid Wash Tee',price:15,min:10},suvin:{name:'The Suvin Tee',price:50,min:10},terry:{name:'The Towel Set',price:100,min:1}};
 var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',acid:'Acid Wash'};
-var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,label:'15% off'},{min:30,disc:0.12,label:'12% off'},{min:20,disc:0.08,label:'8% off'},{min:10,disc:0.05,label:'5% off'},{min:1,disc:0,label:'No discount yet'}];
+var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,label:'15% off'},{min:30,disc:0.10,label:'10% off'},{min:20,disc:0.05,label:'5% off'}];
 var blankVar={suvin:'cream',classic:'white',acid:'acid',terry:'cream'};
 var blankSize='M';
 var curBlank=null;
 function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 function setBlankSize(s,el){blankSize=s;var par=el.parentElement;par.querySelectorAll('.ap-size').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
-function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return BLANK_TIERS[BLANK_TIERS.length-1]}
-function adjBlankQty(d){var el=document.getElementById('blankQty');var v=parseInt(el.value,10)||1;v=Math.max(1,v+d);el.value=v;updBlankTotal()}
-function updBlankTotal(){if(!curBlank)return;var q=Math.max(1,parseInt(document.getElementById('blankQty').value,10)||1);document.getElementById('blankQty').value=q;var unit=curBlank.price;var sub=unit*q;var tier=getBlankTier(q);var status=document.getElementById('apTierStatus');var form=document.getElementById('blankForm');status.classList.remove('ap-tier-hit','ap-tier-custom');form.classList.remove('ap-form-custom');var btn=document.getElementById('blankSubmitBtn');if(q>=100){status.classList.add('ap-tier-custom');form.classList.add('ap-form-custom');document.getElementById('apTierVal').textContent=q+' units \u2014 Custom pricing zone';document.getElementById('apTierNext').textContent='We\'ll quote volume pricing within 24 hours';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent='Custom Quote';btn.textContent='Request Custom Pricing \u2014 Free Shipping';return}if(tier.disc&&tier.disc>0){status.classList.add('ap-tier-hit');var discAmt=Math.round(sub*tier.disc);var total=sub-discAmt;document.getElementById('apTierVal').textContent=q+' units \u2014 '+tier.label;var next=BLANK_TIERS.filter(function(t){return t.min>q&&t.min<=100})[0];if(next){var add=next.min-q;document.getElementById('apTierNext').textContent='Add '+add+' more for '+(next.disc===null?'custom pricing':next.label)}else{document.getElementById('apTierNext').textContent='Top tier \u2014 best volume rate'}document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='';document.getElementById('apDiscLbl').textContent='Discount ('+Math.round(tier.disc*100)+'%)';document.getElementById('apDiscAmt').textContent='\u2212'+fmt(discAmt);document.getElementById('apGrand').textContent=fmt(total)}else{document.getElementById('apTierVal').textContent=q+' unit'+(q>1?'s':'')+' \u2014 No discount yet';document.getElementById('apTierNext').textContent='Add '+(10-q)+' more for 5% off';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub)}btn.textContent='Place Order \u2014 Free Shipping'}
-function orderBlank(id){var b=BLANKS[id];curBlank=b;var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var form=document.getElementById('blankForm');form.reset();form.classList.remove('ap-form-custom');blankSize='M';document.querySelectorAll('#blankForm .ap-size').forEach(function(e){e.classList.remove('active');if(e.textContent.trim()==='M')e.classList.add('active')});document.getElementById('blankQty').value=1;document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.unitprice=b.price;updBlankTotal();document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
+function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
+function adjBlankQty(d){if(!curBlank)return;var el=document.getElementById('blankQty');var v=parseInt(el.value,10)||curBlank.min;v=Math.max(curBlank.min,v+d);el.value=v;updBlankTotal()}
+function updBlankTotal(){if(!curBlank)return;var minQ=curBlank.min;var el=document.getElementById('blankQty');var raw=parseInt(el.value,10);var q=(isNaN(raw)||raw<minQ)?minQ:raw;el.value=q;var unit=curBlank.price;var sub=unit*q;var tier=getBlankTier(q);var status=document.getElementById('apTierStatus');var form=document.getElementById('blankForm');status.classList.remove('ap-tier-hit','ap-tier-custom');form.classList.remove('ap-form-custom');var btn=document.getElementById('blankSubmitBtn');var minNote=document.getElementById('apMinNote');if(minNote)minNote.textContent=minQ>1?('Minimum order: '+minQ+' units'):'';if(q>=100){status.classList.add('ap-tier-custom');form.classList.add('ap-form-custom');document.getElementById('apTierVal').textContent=q+' units \u2014 Custom pricing zone';document.getElementById('apTierNext').textContent='We\'ll quote volume pricing within 24 hours';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent='Custom Quote';btn.textContent='Request Custom Pricing \u2014 Free Shipping';return}if(tier&&tier.disc&&tier.disc>0){status.classList.add('ap-tier-hit');var discAmt=Math.round(sub*tier.disc);var total=sub-discAmt;document.getElementById('apTierVal').textContent=q+' units \u2014 '+tier.label;var next=BLANK_TIERS.filter(function(t){return t.min>q&&t.min<=100}).sort(function(a,b){return a.min-b.min})[0];if(next){var add=next.min-q;document.getElementById('apTierNext').textContent='Add '+add+' more for '+(next.disc===null?'custom pricing':next.label)}else{document.getElementById('apTierNext').textContent='Top volume tier reached'}document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='';document.getElementById('apDiscLbl').textContent='Discount ('+Math.round(tier.disc*100)+'%)';document.getElementById('apDiscAmt').textContent='\u2212'+fmt(discAmt);document.getElementById('apGrand').textContent=fmt(total)}else{document.getElementById('apTierVal').textContent=q+' unit'+(q>1?'s':'')+' \u2014 Base price';if(minQ===1){document.getElementById('apTierNext').textContent='Add '+(20-q)+' more for 5% off'}else{document.getElementById('apTierNext').textContent='Add '+(20-q)+' more to unlock 5% off'}document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub)}btn.textContent='Place Order \u2014 Free Shipping'}
+function orderBlank(id){var b=BLANKS[id];curBlank=b;var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var form=document.getElementById('blankForm');form.reset();form.classList.remove('ap-form-custom');blankSize='M';document.querySelectorAll('#blankForm .ap-size').forEach(function(e){e.classList.remove('active');if(e.textContent.trim()==='M')e.classList.add('active')});var qEl=document.getElementById('blankQty');qEl.value=b.min;qEl.min=b.min;document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);form.dataset.product=label;form.dataset.unitprice=b.price;form.dataset.min=b.min;updBlankTotal();document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeBlank(e){if(e&&e.target!==document.getElementById('blankOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('blankOv').classList.remove('open');document.body.style.overflow=''}
-function submitBlank(e){e.preventDefault();var f=e.target;var btn=document.getElementById('blankSubmitBtn');btn.dataset.label=btn.textContent;var q=parseInt(f.quantity.value,10)||1;var unit=parseFloat(f.dataset.unitprice)||0;var sub=unit*q;var tier=getBlankTier(q);var isCustom=q>=100;var disc=0;var total=sub;if(!isCustom&&tier.disc){disc=Math.round(sub*tier.disc);total=sub-disc}var subject=isCustom?'Custom Quote Request \u2014 '+f.dataset.product:'Apparel Direct Order \u2014 '+f.dataset.product;var data={_subject:subject,type:isCustom?'custom_quote':'direct_order',product:f.dataset.product,unit_price:fmt(unit),quantity:q,size:blankSize,subtotal:fmt(sub),discount_tier:tier.label,discount_amount:disc?fmt(disc):'None',total:isCustom?'Custom Quote':fmt(total),shipping:'Free Worldwide',delivery:'5 business days',name:f.name.value,email:f.email.value,phone:f.phone.value,address:f.address.value,city:f.city.value,state:f.state.value,postal:f.postal.value,country:f.country.value,notes:f.notes.value};submitForm(FORM_URL,data,btn,function(){var heading=isCustom?'Custom Quote Requested':'Order Received';var body=isCustom?'We\'ll prepare volume pricing for <strong>'+q+' units</strong> of '+data.product+' and send a full quote to <strong>'+data.email+'</strong> within 24 hours. Free worldwide shipping included.':'Thank you, '+data.name.split(' ')[0]+'. Your order for <strong>'+q+' '+data.product+'</strong> has been received. We\'ll send a payment link to <strong>'+data.email+'</strong> within 24 hours. Ships free worldwide in 5 business days.';document.getElementById('blankBody').innerHTML='<div class="pm-success"><h3>'+heading+'</h3><p>'+body+'</p><button class="btn btn-f" onclick="closeBlank()" style="margin-top:12px">Close</button></div>'})}
+function submitBlank(e){e.preventDefault();var f=e.target;var btn=document.getElementById('blankSubmitBtn');var minQ=parseInt(f.dataset.min,10)||1;var q=parseInt(f.quantity.value,10)||minQ;if(q<minQ){alert('Minimum order for this product is '+minQ+' units.');f.quantity.value=minQ;updBlankTotal();return}btn.dataset.label=btn.textContent;var unit=parseFloat(f.dataset.unitprice)||0;var sub=unit*q;var tier=getBlankTier(q);var isCustom=q>=100;var disc=0;var total=sub;if(!isCustom&&tier&&tier.disc){disc=Math.round(sub*tier.disc);total=sub-disc}var subject=isCustom?'Custom Quote Request \u2014 '+f.dataset.product:'Apparel Direct Order \u2014 '+f.dataset.product;var data={_subject:subject,type:isCustom?'custom_quote':'direct_order',product:f.dataset.product,unit_price:fmt(unit),quantity:q,size:blankSize,subtotal:fmt(sub),discount_tier:tier?tier.label:'Base price',discount_amount:disc?fmt(disc):'None',total:isCustom?'Custom Quote':fmt(total),shipping:'Free Worldwide',delivery:'5 business days',name:f.name.value,email:f.email.value,phone:f.phone.value,address:f.address.value,city:f.city.value,state:f.state.value,postal:f.postal.value,country:f.country.value,notes:f.notes.value};submitForm(FORM_URL,data,btn,function(){var heading=isCustom?'Custom Quote Requested':'Order Received';var body=isCustom?'We\'ll prepare volume pricing for <strong>'+q+' units</strong> of '+data.product+' and send a full quote to <strong>'+data.email+'</strong> within 24 hours. Free worldwide shipping included.':'Thank you, '+data.name.split(' ')[0]+'. Your order for <strong>'+q+' '+data.product+'</strong> has been received. We\'ll send a payment link to <strong>'+data.email+'</strong> within 24 hours. Ships free worldwide in 5 business days.';document.getElementById('blankBody').innerHTML='<div class="pm-success"><h3>'+heading+'</h3><p>'+body+'</p><button class="btn btn-f" onclick="closeBlank()" style="margin-top:12px">Close</button></div>'})}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
