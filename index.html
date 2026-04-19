@@ -759,9 +759,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .ap-card-premium::before{content:'';display:block;height:2px;background:linear-gradient(90deg,#a8c6de,#c9b89a)}
 .ap-img{height:460px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .ap-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.35),transparent 70%);pointer-events:none}
-.ap-img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ap-img video,.ap-img img.ap-media-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .ap-img-video .ap-placeholder{position:relative;z-index:0}
-.ap-img-video::after{z-index:2}
+.ap-img-video::after{z-index:2;pointer-events:none}
+.ap-arr{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(28,45,66,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:4;opacity:0;transition:opacity .25s,background .2s,border-color .2s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:0}
+.ap-img-video:hover .ap-arr{opacity:1}
+.ap-arr:hover{background:rgba(28,45,66,.6);border-color:rgba(255,255,255,.7)}
+.ap-arr-prev{left:12px}
+.ap-arr-next{right:12px}
+.ap-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:4;padding:6px 10px;background:rgba(28,45,66,.22);border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ap-dots:empty{display:none}
+.ap-dot{width:7px;height:7px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;padding:0;transition:all .2s}
+.ap-dot:hover{background:rgba(255,255,255,.75)}
+.ap-dot.active{background:#fff;width:20px;border-radius:4px}
+@media(max-width:768px){.ap-arr{opacity:1;width:34px;height:34px}}
 .ap-badge{position:absolute;top:16px;left:16px;background:#1c2d42;color:#f5ede0;font-size:9px;letter-spacing:2px;font-weight:500;padding:5px 12px;text-transform:uppercase;z-index:2}
 .ap-placeholder{font-family:var(--fd);font-size:18px;color:#3d5a75;letter-spacing:3px;text-transform:uppercase;opacity:.5;position:relative;z-index:1}
 .ap-body{padding:30px 32px 30px;display:flex;flex-direction:column;flex:1}
@@ -1300,7 +1311,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-card fade-in">
 <div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)">
 <video id="classicVideo" autoplay muted loop playsinline preload="auto" poster="" src="240gsmwhite.mp4"></video>
-<div class="ap-placeholder">Classic Tee</div>
+<img id="classicImg" class="ap-media-img" alt="" hidden>
+<button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('classic',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
+<button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('classic',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
+<div class="ap-dots" id="classicDots"></div>
 </div>
 <div class="ap-body">
 <div class="ap-slabel">Cotton &middot; Three Weights</div>
@@ -1322,7 +1336,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="ap-card fade-in">
 <div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#e6e4de 0%,#cac7c0 55%,#a5a29a 100%)">
 <video id="acidVideo" autoplay muted loop playsinline preload="auto" poster="" src="240blackacidwash.mp4"></video>
-<div class="ap-placeholder">Acid Wash Tee</div>
+<img id="acidImg" class="ap-media-img" alt="" hidden>
+<button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('acid',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
+<button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('acid',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
+<div class="ap-dots" id="acidDots"></div>
 </div>
 <div class="ap-body">
 <div class="ap-slabel">240gsm Heavyweight &middot; Acid Washed</div>
@@ -1886,8 +1903,13 @@ var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:null,S:null,M:null,L:null,XL:nul
 var blankVar={classic:'white',acid:'black'};
 var blankFabric={classic:'hw250'};
 var curBlank=null,curBlankId=null;
-function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(id==='classic')updProductVideo('classicVideo',{white:'240gsmwhite.mp4',black:'240gsmblack.mp4'},v);if(id==='acid')updProductVideo('acidVideo',{black:'240blackacidwash.mp4',lightblue:'240blueacidwash.mp4'},v)}
-function updProductVideo(vidId,map,key){var src=map[key];if(!src)return;var vid=document.getElementById(vidId);if(!vid)return;if(vid.src&&vid.src.split('/').pop()===src)return;vid.src=src;vid.muted=true;vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}
+var APP_MEDIA={classic:{white:[{t:'v',s:'240gsmwhite.mp4'},{t:'v',s:'240whitefull.mp4'},{t:'i',s:'240cottonwhite.jpg'}],black:[{t:'v',s:'240gsmblack.mp4'},{t:'v',s:'240blackfull.mp4'}]},acid:{black:[{t:'v',s:'240blackacidwash.mp4'},{t:'v',s:'240blackacidwashfull.mp4'}],lightblue:[{t:'v',s:'240blueacidwash.mp4'}]}};
+var mediaIdx={classic:0,acid:0};
+var APP_CARDS={classic:{vid:'classicVideo',img:'classicImg',dots:'classicDots'},acid:{vid:'acidVideo',img:'acidImg',dots:'acidDots'}};
+function setMedia(prodId,idx){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];if(!list||!list[idx])return;mediaIdx[prodId]=idx;var ids=APP_CARDS[prodId];var vid=document.getElementById(ids.vid),img=document.getElementById(ids.img);var m=list[idx];if(m.t==='v'){if(img){img.hidden=true}if(vid){vid.hidden=false;var fname=vid.src?vid.src.split('/').pop():'';if(fname!==m.s){vid.src=m.s;vid.muted=true;vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}}}else{if(vid){vid.hidden=true;vid.pause&&vid.pause()}if(img){img.hidden=false;if(img.getAttribute('src')!==m.s)img.src=m.s}}renderDots(prodId)}
+function renderDots(prodId){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];var dots=document.getElementById(APP_CARDS[prodId].dots);if(!dots)return;if(!list||list.length<2){dots.innerHTML='';return}var html='';for(var i=0;i<list.length;i++){html+='<button type="button" class="ap-dot'+(i===mediaIdx[prodId]?' active':'')+'" onclick="setMedia(\''+prodId+'\','+i+');event.stopPropagation()" aria-label="Slide '+(i+1)+'"></button>'}dots.innerHTML=html}
+function cycleMedia(prodId,dir){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];if(!list||list.length<2)return;var cur=mediaIdx[prodId]||0;var next=(cur+dir+list.length)%list.length;setMedia(prodId,next)}
+function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(APP_MEDIA[id]){mediaIdx[id]=0;setMedia(id,0)}}
 function setBlankFabric(id,f,el){blankFabric[id]=f;var par=el.parentElement;par.querySelectorAll('.ap-fab').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
 function getSizeQty(s){var el=document.getElementById('qSize_'+s);return el?Math.max(0,parseInt(el.value,10)||0):0}
@@ -1963,7 +1985,7 @@ function shopCheckout(){
   window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
 }
 
-renderCat();initFI();document.getElementById('bbar').style.display='none';
+renderCat();initFI();document.getElementById('bbar').style.display='none';renderDots('classic');renderDots('acid');(function(){Object.keys(APP_CARDS).forEach(function(pid){var card=document.getElementById(APP_CARDS[pid].vid);if(!card||!card.parentElement)return;var wrap=card.parentElement;var sx=0;wrap.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});wrap.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)<40)return;cycleMedia(pid,dx<0?1:-1)},{passive:true})})})();
 // Image Zoom Lightbox
 (function(){
 var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
