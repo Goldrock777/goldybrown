@@ -1918,7 +1918,8 @@ var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.15,la
 var blankVar={suvin:'cream',classic:'white',acid:'stone',terry:'cream'};
 var blankSize='M';
 var curBlank=null;
-function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
+function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(id==='classic')updClassicVideo()}
+function updClassicVideo(){var map={white:'240gsmwhite.mp4',black:'240gsmblack.mp4'};var src=map[blankVar.classic];if(!src)return;var vid=document.querySelector('.ap-img-video video');if(!vid)return;var srcEl=vid.querySelector('source');if(srcEl.getAttribute('src')===src)return;srcEl.setAttribute('src',src);vid.load();var p=vid.play();if(p&&p.catch)p.catch(function(){})}
 function setBlankSize(s,el){blankSize=s;var par=el.parentElement;par.querySelectorAll('.ap-size').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
 function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
 function adjBlankQty(d){if(!curBlank)return;var el=document.getElementById('blankQty');var v=parseInt(el.value,10)||curBlank.min;v=Math.max(curBlank.min,v+d);el.value=v;updBlankTotal()}
