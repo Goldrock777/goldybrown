@@ -32,7 +32,7 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Goldy Brown","url":"https://goldybrown.com","logo":"https://goldybrown.com/gb-silver.png","description":"Luxury leather travel bags and accessories handcrafted in Vancouver, BC. Full grain leather goods for discerning travellers worldwide.","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"},"contactPoint":{"@type":"ContactPoint","telephone":"+1-604-704-0937","contactType":"sales"},"sameAs":["https://instagram.com/goldybrowncouture"],"areaServed":[{"@type":"City","name":"New York"},{"@type":"City","name":"Los Angeles"},{"@type":"City","name":"Miami"},{"@type":"City","name":"Toronto"},{"@type":"City","name":"London"},{"@type":"City","name":"Milan"},{"@type":"City","name":"Dubai"},{"@type":"City","name":"Vancouver"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"The Holster — Luxury Leather Travel Bag","description":"A concealed leather shoulder rig for travel. Hand cut from full grain leather with stainless steel hardware. The ultimate luxury travel accessory. Ships to New York, LA, Miami, Toronto, London, and worldwide.","image":"https://goldybrown.com/holster.png","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Luxury Travel Bags","offers":{"@type":"Offer","price":"249","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://goldybrown.com","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":"14","maxValue":"28","unitCode":"d"}}}},"material":"Full grain leather","manufacturer":{"@type":"Organization","name":"Goldy Brown"}}
+{"@context":"https://schema.org","@type":"Product","name":"The Holster — Luxury Leather Travel Bag","description":"A concealed leather shoulder rig for travel. Hand cut from full grain leather with stainless steel hardware. The ultimate luxury travel accessory. Ships to New York, LA, Miami, Toronto, London, and worldwide.","image":"https://goldybrown.com/holster.png","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Luxury Travel Bags","offers":{"@type":"Offer","price":"199","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://goldybrown.com","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":"14","maxValue":"28","unitCode":"d"}}}},"material":"Full grain leather","manufacturer":{"@type":"Organization","name":"Goldy Brown"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1064,7 +1064,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Pouch</strong> 7" x 5" — Fits iPhone 17 Pro Max with case</li>
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 </ul>
-<div class="price">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="price" id="holsterPrice">$229 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="price-note">Custom made to order</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
 <div class="btn-row">
@@ -1799,7 +1799,7 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 <script>
 var P=[
 {id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/garment-holder'},
-{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster1.png',shop:'kuibri-ev.myshopify.com/cart/53325154124068:1'},
+{id:'holster',name:'The Holster',price:229,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:229,img:'holster1.png',shop:'kuibri-ev.myshopify.com/cart/53325154124068:1'},
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
@@ -1814,7 +1814,7 @@ var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
-function updateAllPrices(){renderCat();updBudget();var mp=document.querySelector('.holster-home-text .price');if(mp)mp.innerHTML=fmt(249)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
+function updateAllPrices(){renderCat();updBudget();var mp=document.getElementById('holsterPrice');if(mp)mp.innerHTML=fmt((shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:229))+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
 var colorSets={
@@ -1855,6 +1855,8 @@ function switchColor(color){
   // Update swatch borders
   document.getElementById('swatchGreen').style.borderColor=color==='green'?'var(--g)':'';
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
+  // Update hero price
+  var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';
   curSlide=0;
 }
 function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)})}
@@ -1934,8 +1936,8 @@ function submitBlank(){if(!curBlank||!curBlankId)return;var minQ=curBlank.min;va
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
-  green:{name:'The Holster — Green',variant:'53325154124068',price:249,img:'holster1.png',material:'Full grain suede'},
-  black:{name:'The Holster — Black',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'}
+  green:{name:'The Holster — Green',variant:'53325154124068',price:229,img:'holster1.png',material:'Full grain suede'},
+  black:{name:'The Holster — Black',variant:'53325154156836',price:199,img:'blackholster.png',material:'Full grain calfskin'}
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
