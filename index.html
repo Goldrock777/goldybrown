@@ -438,26 +438,46 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .fg textarea{resize:vertical;min-height:56px}
 .fg select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a5850' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center}
 .fg select option{background:var(--bg);color:var(--t)}
-.footer{border-top:none;padding:52px 60px 40px;text-align:center;position:relative}
-.footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#b8a070}
-.footer-logo{font-family:var(--fd);font-size:14px;letter-spacing:5px;text-transform:uppercase;margin-bottom:14px;color:var(--w)}
-.footer-links{list-style:none;display:flex;gap:22px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
-.footer-links a{font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--tm);transition:color .3s}
-.footer-links a:hover{color:var(--gl)}
-.footer-ig{margin-bottom:12px}
-.footer-ig a{font-size:10px;letter-spacing:1px;text-decoration:none;color:var(--tm);transition:color .3s}
-.footer-ig a:hover{color:var(--gl)}
-.footer-copy{font-size:10px;color:var(--tm);font-weight:200;margin-bottom:0}
-.footer-legal{list-style:none;display:flex;gap:18px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--b)}
-.footer-legal a{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--tm);transition:color .3s;font-weight:300}
-.footer-legal a:hover{color:var(--gl)}
-.footer-trust{display:flex;justify-content:center;gap:48px;padding:20px 0;margin-bottom:16px;flex-wrap:wrap}
+.footer{background:#0a0a0a;color:#d4c9b5;padding:60px 60px 24px;position:relative;border-top:1px solid #0a0a0a}
+.footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;max-width:1400px;margin:0 auto;padding-bottom:44px;border-bottom:1px solid rgba(212,201,181,.12)}
+.footer-brand{display:flex;flex-direction:column;max-width:380px}
+.footer-logo-img{height:54px;width:auto;margin-bottom:18px;display:block;filter:brightness(1.1) drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.footer-bio{font-size:13.5px;line-height:1.75;color:#a8a091;font-weight:300;margin-bottom:22px}
+.footer-subscribe{display:flex;gap:0;margin-bottom:14px;border:1px solid rgba(212,201,181,.22);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.03);transition:border-color .25s}
+.footer-subscribe:focus-within{border-color:#b8a070}
+.footer-subscribe input{flex:1;padding:11px 18px;background:transparent;border:0;color:#faf6ec;font-size:12.5px;font-family:inherit;outline:none;letter-spacing:.3px}
+.footer-subscribe input::placeholder{color:#6a655a}
+.footer-subscribe button{padding:11px 22px;background:#faf6ec;color:#0a0a0a;border:0;font-family:inherit;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .25s;border-radius:999px;margin:3px}
+.footer-subscribe button:hover{background:#b8a070;color:#0a0a0a}
+.footer-drops{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:#6a655a;font-weight:500;margin-top:4px}
+.footer-col-h{font-family:var(--fd);font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:#8a8373;font-weight:500;margin-bottom:18px}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.footer-col a{font-size:14px;color:#d4c9b5;text-decoration:none;cursor:pointer;transition:color .2s;font-weight:300;letter-spacing:.2px}
+.footer-col a:hover{color:#faf6ec}
+.footer-trust-bar{display:flex;justify-content:center;gap:72px;padding:30px 0;max-width:1400px;margin:0 auto;border-bottom:1px solid rgba(212,201,181,.08);flex-wrap:wrap}
 .footer-trust-col{text-align:center}
-.footer-trust-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:400;margin-bottom:10px}
+.footer-trust-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#6a655a;font-weight:500;margin-bottom:12px}
 .footer-trust-icons{display:flex;align-items:center;justify-content:center;gap:10px}
-.footer-trust-icon{display:inline-flex;align-items:center;justify-content:center;width:72px;height:46px;background:#fff;border:1px solid var(--b);border-radius:6px;transition:border-color .3s;overflow:hidden;padding:6px}
-.footer-trust-icon:hover{border-color:var(--gl)}
+.footer-trust-icon{display:inline-flex;align-items:center;justify-content:center;width:72px;height:42px;background:#faf6ec;border-radius:5px;overflow:hidden;padding:5px;transition:transform .2s}
+.footer-trust-icon:hover{transform:translateY(-1px)}
 .footer-trust-icon img{width:100%;height:100%;object-fit:contain}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:22px 0 10px;max-width:1400px;margin:0 auto;flex-wrap:wrap;gap:16px}
+.footer-bottom-l{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:#6a655a;font-weight:500}
+.footer-bottom-ig{font-size:11px;color:#a8a091;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .2s;letter-spacing:.3px}
+.footer-bottom-ig:hover{color:#faf6ec}
+.footer-disclaimer{font-size:9px;color:#4a4540;font-weight:300;line-height:1.7;max-width:960px;margin:14px auto 0;text-align:center;opacity:.7}
+@media(max-width:1024px){
+.footer{padding:44px 28px 20px}
+.footer-main{grid-template-columns:1fr 1fr;gap:36px 32px;padding-bottom:36px}
+.footer-brand{grid-column:1/-1;max-width:none}
+.footer-trust-bar{gap:40px;padding:24px 0}
+.footer-bottom{flex-direction:column;text-align:center;gap:12px;padding-top:20px}
+}
+@media(max-width:600px){
+.footer-main{grid-template-columns:1fr;gap:32px}
+.footer-subscribe{max-width:100%}
+.footer-trust-bar{gap:32px}
+}
 .policy-content{max-width:720px;margin:0 auto}
 .policy-content h3{font-size:18px;margin:28px 0 8px;color:var(--w)}
 .policy-content h3:first-child{margin-top:0}
@@ -1190,7 +1210,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="slabel" style="margin-bottom:8px">Featured Add-On</div>
 <h2 style="font-size:clamp(22px,2.5vw,30px);margin-bottom:6px">The Fragrance <span>Sampler</span></h2>
 <p class="desc" style="font-size:13px;margin-bottom:14px">A leather sample case with 5 designer fragrances (10ml each). The perfect in-room amenity or VIP welcome gift. Custom hotel branding available.</p>
-<div class="price" style="font-size:22px">$249 <span style="font-size:13px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">USD per unit</span></div>
+<div class="price" style="font-size:22px">$299 <span style="font-size:13px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">USD per unit</span></div>
 <div class="price-note" style="margin-bottom:14px">Volume discounts apply with kit tier pricing</div>
 <a href="javascript:void(0)" onclick="go('fragrance')" class="btn btn-f" style="padding:10px 28px;border-color:#b8a070;background:#b8a070;color:#0a0a0a">Shop Collection</a>
 </div>
@@ -1381,7 +1401,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="about-txt fade-in"><div class="slabel">Our Story</div><h2>Quietly Made, Built to Last</h2><p>Goldy Brown is a fashion designer from Vancouver, BC, with a singular belief: the finest things don't need to announce themselves.</p><p>Every piece is designed by hand. From selecting the hide at the tannery to the final stitch. Full grain leather, solid hardware, precise finishing. Each item is made for people who feel the difference before they see it.</p><p>What started as one holster has grown into a full leather goods house serving private clients, luxury hotels, and the global hospitality industry. But the approach hasn't changed. One piece at a time, no shortcuts, no compromise.</p></div>
 </section>
 <section class="section"><div class="about-vals">
-<div class="about-val"><h4>No Shortcuts</h4><p>Top grain leather, precision hardware, waxed thread. Every material earns its place.</p></div>
+<div class="about-val"><h4>No Shortcuts</h4><p>Full grain leather, precision hardware, waxed thread. Every material earns its place.</p></div>
 <div class="about-val"><h4>Handmade</h4><p>Each piece cut, stitched, finished, and inspected by hand.</p></div>
 <div class="about-val"><h4>Turnkey</h4><p>Custom branding, packaging, delivery direct to your property.</p></div>
 </div></section>
@@ -1709,24 +1729,45 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
 
 <footer class="footer">
-<div class="footer-logo">Goldy Brown</div>
-<ul class="footer-links">
-<li><a href="javascript:void(0)" onclick="go('home')">Shop</a></li>
-<li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
-<li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
-<li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance Collection</a></li>
+<div class="footer-main">
+<div class="footer-brand">
+<img src="gb-silver.png" alt="Goldy Brown" class="footer-logo-img">
+<p class="footer-bio">Handcrafted luxury leather goods, cut and stitched in Vancouver, British Columbia. Full grain leather, solid hardware, precise finishing. Nothing unnecessary.</p>
+<form class="footer-subscribe" onsubmit="return subscribeFooter(event)">
+<input type="email" name="email" required placeholder="you@domain.com" aria-label="Email address">
+<button type="submit">Subscribe</button>
+</form>
+<div class="footer-drops">Est. 1992 &middot; Vancouver, Canada</div>
+</div>
+<div class="footer-col">
+<div class="footer-col-h">Shop</div>
+<ul>
+<li><a href="javascript:void(0)" onclick="go('home')">The Holster</a></li>
 <li><a href="javascript:void(0)" onclick="go('apparel')">Apparel</a></li>
-<li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
+<li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance</a></li>
+<li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<div class="footer-col-h">Goldy Brown</div>
+<ul>
 <li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
+<li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
+<li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
+<li><a href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener">Instagram</a></li>
 </ul>
-<div class="footer-ig"><a href="https://instagram.com/goldybrowncouture" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" style="vertical-align:-2px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@goldybrowncouture</a></div>
-<ul class="footer-legal">
-<li><a href="javascript:void(0)" onclick="go('privacy')">Privacy Policy</a></li>
-<li><a href="javascript:void(0)" onclick="go('terms')">Terms &amp; Conditions</a></li>
-<li><a href="javascript:void(0)" onclick="go('shipping')">Shipping &amp; Handling</a></li>
-<li><a href="javascript:void(0)" onclick="go('returns')">Returns &amp; Exchanges</a></li>
+</div>
+<div class="footer-col">
+<div class="footer-col-h">Support</div>
+<ul>
+<li><a href="javascript:void(0)" onclick="go('shipping')">Shipping</a></li>
+<li><a href="javascript:void(0)" onclick="go('returns')">Returns</a></li>
+<li><a href="javascript:void(0)" onclick="go('privacy')">Privacy</a></li>
+<li><a href="javascript:void(0)" onclick="go('terms')">Terms</a></li>
 </ul>
-<div class="footer-trust">
+</div>
+</div>
+<div class="footer-trust-bar">
 <div class="footer-trust-col">
 <div class="footer-trust-label">Pay Securely With</div>
 <div class="footer-trust-icons">
@@ -1741,12 +1782,15 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <div class="footer-trust-icons">
 <div class="footer-trust-icon"><img src="dhl.png" alt="DHL"></div>
 <div class="footer-trust-icon"><img src="fedex.png" alt="FedEx"></div>
-<div class="footer-trust-icon" style="width:90px"><img src="canadapost.png" alt="Canada Post"></div>
+<div class="footer-trust-icon" style="width:94px"><img src="canadapost.png" alt="Canada Post"></div>
 </div>
 </div>
 </div>
-<div class="footer-copy">&copy; 2026 Goldy Brown. All rights reserved. Vancouver, BC, Canada.</div>
-<div style="font-size:9px;color:var(--tm);font-weight:200;line-height:1.7;max-width:700px;margin:16px auto 0;opacity:.6">Each fragrance is individually decanted from authentic retail bottles. All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners. Goldy Brown is not liable for allergic reactions, skin sensitivities, or dissatisfaction with any fragrance. All sales final on opened fragrance products.</div>
+<div class="footer-bottom">
+<div class="footer-bottom-l">&copy; 2026 Goldy Brown Leather Co. &middot; Made in Vancouver</div>
+<a class="footer-bottom-ig" href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@goldybrowncouture</a>
+</div>
+<div class="footer-disclaimer">Each fragrance is individually decanted from authentic retail bottles. All fragrance brand names are used for identification purposes only under nominative fair use. Goldy Brown is not affiliated with, endorsed by, or sponsored by any referenced fragrance house. All trademarks are the property of their respective owners.</div>
 </footer>
 
 <div class="bbar empty" id="bbar">
@@ -1889,7 +1933,10 @@ function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.tar
 function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Sending...';fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){if(r.ok)return r.json();throw new Error('Network error')}).then(function(){btn.disabled=false;onSuccess()}).catch(function(){btn.disabled=false;btn.textContent='Send Failed \u2014 Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},3000)})}
 function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Proposal Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a formal proposal for your '+data.tier+' kit and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'/'+page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
+var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Vancouver',d:'Handcrafted full grain leather holsters, travel bags, and accessories from Vancouver. Custom made to order. Ships worldwide.'},lookbook:{t:'Lookbook — The Collection Styled & Worn | Goldy Brown',d:'See Goldy Brown leather goods styled, worn, and photographed. Editorial lookbook for the full collection.'},hotel:{t:'Hotel Programme — Curated VIP Leather Gift Kits | Goldy Brown',d:'Custom-branded leather gift kits for 4 and 5 star hotels. Tier pricing from $10K to $100K. Turnkey branding, packaging, and worldwide delivery.'},fragrance:{t:'The Fragrance Collection — Designer Sampler Cases | Goldy Brown',d:'Full grain leather sampler cases with five curated designer fragrances. Private label and hotel branding available.'},apparel:{t:'Apparel — Cotton Blank Tees & French Terry | Goldy Brown',d:'Premium cotton blanks from $8. Free worldwide shipping, 5 business day delivery. Volume pricing on 20+ units. Shopify secure checkout.'},manufacturing:{t:'Manufacturing — Six-Step Leather Craftsmanship | Goldy Brown',d:'Six steps from raw hide to finished product. Full grain leather, vegetable tanning, saddle stitching, hot-stamped branding.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown is a Vancouver-based fashion designer creating luxury leather goods for discerning individuals, hotels, and the hospitality industry.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling | Goldy Brown',d:'Worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Handling times and rates.'},returns:{t:'Returns & Exchanges | Goldy Brown',d:'Return and exchange policy for Goldy Brown leather goods.'}};
+function setPageMeta(page){var m=PAGE_META[page]||PAGE_META.home;document.title=m.t;var dEl=document.querySelector('meta[name="description"]');if(dEl)dEl.setAttribute('content',m.d);var ogT=document.querySelector('meta[property="og:title"]');if(ogT)ogT.setAttribute('content',m.t);var ogD=document.querySelector('meta[property="og:description"]');if(ogD)ogD.setAttribute('content',m.d);var twT=document.querySelector('meta[name="twitter:title"]');if(twT)twT.setAttribute('content',m.t);var twD=document.querySelector('meta[name="twitter:description"]');if(twD)twD.setAttribute('content',m.d);var canon=document.querySelector('link[rel="canonical"]');if(canon)canon.setAttribute('href','https://goldybrown.com'+(page==='home'?'/':'/'+page))}
+function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'/'+page);setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
+function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">You\u2019re on the list.</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
 (function(){var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var p=r.replace('/','');if(p&&document.getElementById('page-'+p)){history.replaceState({page:p},'',r);go(p,true);return}}var p=location.pathname.replace('/','');if(p&&document.getElementById('page-'+p)){go(p,true)}else{history.replaceState({page:'home'},'','/')}})();
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
