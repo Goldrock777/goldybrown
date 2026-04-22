@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="canonical" href="https://goldybrown.com">
+<script async src="https://cdn.shopify.com/shopifycloud/shop-js/client.js"></script>
 <meta name="description" content="Goldy Brown designs luxury leather travel bags, holsters, and accessories handcrafted in Vancouver. Full grain leather goods for discerning travellers. Custom made to order. Ships to New York, LA, Miami, Toronto, London, and worldwide.">
 <meta name="keywords" content="luxury travel bags, luxury leather bags, leather travel accessories, handcrafted leather goods, designer leather bags, leather holster, travel leather goods, luxury luggage accessories, full grain leather bags, custom leather goods, leather passport holder, Vancouver leather designer, luxury gift sets, hotel VIP amenities, leather goods New York, luxury bags Miami, designer leather Toronto, leather accessories London, travel bags LA, luxury leather Milan, bespoke leather goods">
 <meta name="author" content="Goldy Brown">
@@ -59,6 +60,8 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .holster-home-text .shoppay-badge{color:var(--w)}
 .ap-card .shoppay-badge{color:#4a5a6c;margin:12px 0 0}
 .shoppay-badge-sm{font-size:11px;padding:7px 11px}
+.sp-terms{display:block;margin:12px 0 8px;font-size:12px}
+shopify-payment-terms{display:block !important;margin:12px 0 8px}
 @media(max-width:600px){.shoppay-badge{font-size:11px;padding:7px 10px}.shoppay-badge .sp-icon{width:20px;height:20px}}
 .nav{position:fixed;top:32px;left:0;right:0;z-index:1000;background:#000;border-bottom:none;transition:transform .3s ease}
 @media(max-width:640px){.top-bar{font-size:9px;letter-spacing:2px;padding:7px 10px;height:30px}.nav{top:30px}}
@@ -1098,10 +1101,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 </ul>
 <div class="price" id="holsterPrice">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
-<div class="shoppay-badge" id="holsterShopPay">
-<svg class="sp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5a31f4" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path fill="#fff" d="M10.2 9.2c-.9 0-1.6.3-2.1.9v-.7H6.5v7.7h1.6v-2.7c.5.5 1.1.8 2 .8 1.8 0 3-1.4 3-3s-1.2-3-2.9-3zm-.4 4.5c-.9 0-1.5-.7-1.5-1.5s.6-1.5 1.5-1.5 1.5.7 1.5 1.5-.6 1.5-1.5 1.5zm5.9-4.5c-.8 0-1.4.3-1.8.9V7.5h-1.6v7.7h1.6v-3.1c0-.9.5-1.5 1.3-1.5.7 0 1.2.4 1.2 1.3v3.3h1.6v-3.6c0-1.5-.9-2.4-2.3-2.4z"/></svg>
-<span>or 4 interest-free payments of <b id="holsterShopPayAmt">$62.25</b> with <span class="sp-name">Shop&nbsp;Pay</span></span>
-</div>
+<shopify-payment-terms id="holsterShopPay" variant-id="53325154124068" shopify-meta='{"type":"product","variants":[{"id":53325154124068,"price_per_term":"$62.25","full_price":"$249.00"}],"min_price":"50","max_price":"17500","financing_plans":[{"min_price":"50.00","max_price":"149.99","terms":[{"apr":"0","loan_type":"split_pay","installments_count":4}]},{"min_price":"150.00","max_price":"999.99","terms":[{"apr":"0","loan_type":"split_pay","installments_count":4},{"apr":"10","loan_type":"interest","installments_count":3},{"apr":"10","loan_type":"interest","installments_count":6},{"apr":"10","loan_type":"interest","installments_count":12}]}]}' class="sp-terms"></shopify-payment-terms>
 <div class="price-note">Custom made to order</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
 <div class="btn-row">
@@ -1877,7 +1877,7 @@ var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
-function updShopPayHolster(){var p=(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249);var a=document.getElementById('holsterShopPayAmt');if(a){var v=(Math.round(p*CURR.rate*100)/4)/100;a.textContent=CURR.sym+v.toFixed(2)}}
+function updShopPayHolster(){var el=document.getElementById('holsterShopPay');if(!el||!shopProducts||!shopProducts[curColor])return;var sp=shopProducts[curColor];var vid=sp.variant;var full=(Math.round(sp.price*CURR.rate*100)/100).toFixed(2);var per=(Math.round(sp.price*CURR.rate*25)/100).toFixed(2);el.setAttribute('variant-id',vid);el.setAttribute('shopify-meta',JSON.stringify({type:'product',variants:[{id:parseInt(vid,10),price_per_term:'$'+per,full_price:'$'+full}],min_price:'50',max_price:'17500'}))}
 function updateAllPrices(){renderCat();updBudget();var mp=document.getElementById('holsterPrice');if(mp)mp.innerHTML=fmt((shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249))+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
