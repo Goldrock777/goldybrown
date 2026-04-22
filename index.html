@@ -36,7 +36,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="holster1.png" as="image">
+<link rel="preload" href="blackholster.png" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -1113,16 +1113,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home-img">
 <div class="carousel-wrap">
 <div class="carousel-thumbs" id="carouselThumbs">
-<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="holster1.png" alt="On Body"></div>
-<div class="carousel-thumb" onclick="showSlide(1)"><img loading="lazy" src="holsterback.png" alt="Front"></div>
-<div class="carousel-thumb" onclick="showSlide(2)"><img loading="lazy" src="holsterpouch.png" alt="Pouch"></div>
-<div class="carousel-thumb" onclick="showSlide(3)"><img loading="lazy" src="holsterclose.png" alt="Close Up"></div>
+<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="blackholster.png" alt="On Body"></div>
+<div class="carousel-thumb" onclick="showSlide(1)"><img loading="lazy" src="blackholsterfront.png" alt="Front"></div>
+<div class="carousel-thumb" onclick="showSlide(2)"><img loading="lazy" src="blackholsterclose.png" alt="Close Up"></div>
 </div>
 <div class="carousel-main" id="carouselMain">
-<img loading="lazy" src="holster1.png" alt="On Body" class="active">
-<img loading="lazy" src="holsterback.png" alt="Front View">
-<img loading="lazy" src="holsterpouch.png" alt="Pouch Detail">
-<img loading="lazy" src="holsterclose.png" alt="Close Up Detail">
+<img loading="lazy" src="blackholster.png" alt="On Body" class="active">
+<img loading="lazy" src="blackholsterfront.png" alt="Front View">
+<img loading="lazy" src="blackholsterclose.png" alt="Close Up Detail">
 <button class="carousel-arr prev" onclick="prevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <button class="carousel-arr next" onclick="nextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
 </div>
@@ -1133,7 +1131,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h2>Goldy Brown's <span>Holster</span></h2>
 <p class="desc">A concealed leather shoulder rig for people who carry with intention. Hand cut from full grain leather, assembled with stainless steel hardware, and worn invisible under a jacket. Your essentials stay against your body. Staying secure, silent and always within reach. The perfect gift for a loved one, birthday, anniversary, or any special occasion.</p>
 <ul class="detail-list">
-<li id="materialLine"><strong>Material</strong> Full grain suede</li>
+<li id="materialLine"><strong>Material</strong> Full grain calfskin</li>
 <li><strong>Hardware</strong> Stainless steel fittings</li>
 <li><strong>Stitching</strong> Machine stitched with premium nylon thread</li>
 <li><strong>Finishing</strong> Edge paint finished</li>
@@ -1144,11 +1142,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="shoppay-badge shoppay-badge-dark" id="holsterShopPay"><span class="spp-msg">4 interest-free installments, or from <b id="holsterSppMo">$22.47</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span></span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('holster')">View sample plans</a></div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
-<a href="https://kuibri-ev.myshopify.com/cart/53325154124068:1" target="_blank" class="btn btn-f">Buy Now</a>
+<a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
 <div class="holster-variants">
-<div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen" style="border-color:var(--g)"></div><div class="hv-label">Green</div></div>
-<div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack"></div><div class="hv-label">Black</div></div>
+<div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack" style="border-color:var(--g)"></div><div class="hv-label">Black</div></div>
 </div>
 </div>
 </div>
@@ -1902,7 +1899,7 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 <script>
 var P=[
 {id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/garment-holder'},
-{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'holster1.png',shop:'kuibri-ev.myshopify.com/cart/53325154124068:1'},
+{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'blackholster.png',shop:'kuibri-ev.myshopify.com/cart/53325154156836:1'},
 {id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
 {id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
 {id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
@@ -1919,7 +1916,7 @@ function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
 function sppMonthlyAmt(p){var r=0.15/12,n=12,f=Math.pow(1+r,n);return p*(r*f)/(f-1)}
 function sppFmt(v){return CURR.sym+(Math.round(v*CURR.rate*100)/100).toFixed(2)}
-var SPP_PRODUCTS={holster:{name:'The Holster',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154124068')}},discovery:{name:'The Discovery Set',price:299,variant:'53324620529956'},classic:{name:'The Classic Tee (min 10)',price:80,variant:'53339065090340'},acid:{name:'The French Terry (min 10)',price:100,variant:'53339060175140'}};
+var SPP_PRODUCTS={holster:{name:'The Holster',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}},discovery:{name:'The Discovery Set',price:299,variant:'53324620529956'},classic:{name:'The Classic Tee (min 10)',price:80,variant:'53339065090340'},acid:{name:'The French Terry (min 10)',price:100,variant:'53339060175140'}};
 function openSpp(key){var cfg=SPP_PRODUCTS[key];if(!cfg)return;var price=(typeof cfg.getPrice==='function'?cfg.getPrice():cfg.price);var variant=(typeof cfg.getVariant==='function'?cfg.getVariant():cfg.variant);var per4=price/4;var perMo=sppMonthlyAmt(price);var totalMo=perMo*12;var intMo=totalMo-price;document.getElementById('sppPurchase').textContent=sppFmt(price);document.getElementById('spp4Amt').textContent=sppFmt(per4);document.getElementById('spp4Total').textContent=sppFmt(price);document.getElementById('sppMoAmt').textContent=sppFmt(perMo);document.getElementById('sppMoInt').textContent=sppFmt(intMo);document.getElementById('sppMoTotal').textContent=sppFmt(totalMo);document.getElementById('sppCta').setAttribute('href','https://'+SHOPIFY_STORE+'/cart/'+variant+':1');document.getElementById('sppOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeSpp(e){if(e&&e.target!==document.getElementById('sppOv')&&!e.target.classList.contains('spp-x'))return;document.getElementById('sppOv').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('sppOv').classList.contains('open'))closeSpp()});
@@ -1928,12 +1925,6 @@ function updateAllPrices(){renderCat();updBudget();var mp=document.getElementByI
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
 var colorSets={
-  green:{
-    imgs:['holster1.png','holsterback.png','holsterpouch.png','holsterclose.png'],
-    material:'Full grain suede',
-    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154124068',
-    cart:'https://kuibri-ev.myshopify.com/cart/53325154124068:1'
-  },
   black:{
     imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png'],
     material:'Full grain calfskin',
@@ -1941,7 +1932,7 @@ var colorSets={
     cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   }
 };
-var curColor='green';
+var curColor='black';
 function switchColor(color){
   curColor=color;
   var set=colorSets[color];
@@ -1963,7 +1954,6 @@ function switchColor(color){
   var buyBtn=document.querySelector('.holster-home-text .btn-f');
   if(buyBtn)buyBtn.href=set.cart;
   // Update swatch borders
-  document.getElementById('swatchGreen').style.borderColor=color==='green'?'var(--g)':'';
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
   // Update hero price
   var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();
@@ -2049,7 +2039,6 @@ function submitBlank(){if(!curBlank||!curBlankId)return;var minQ=curBlank.min;va
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
-  green:{name:'The Holster — Green',variant:'53325154124068',price:249,img:'holster1.png',material:'Full grain suede'},
   black:{name:'The Holster — Black',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
 function addToShopCart(){
