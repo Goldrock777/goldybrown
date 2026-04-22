@@ -52,6 +52,14 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .btn,.nav-tab,.section-card,.hv-swatch,.carousel-thumb,.carousel-arr,.lb-nav,.lb-thumb,.tier-b,.qb,.nav-cart-icon,.cart-x,.mob-toggle,.prop-item,.pcard{cursor:pointer}
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:1001;background:#0a0a0a;color:#d4c9b5;text-align:center;padding:8px 16px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;border-bottom:1px solid rgba(212,201,181,.1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4;height:32px}
 .top-bar-inner{display:inline-block}
+.shoppay-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;margin:10px 0 6px;background:rgba(90,49,244,.06);border:1px solid rgba(90,49,244,.18);border-radius:8px;font-size:12px;line-height:1.3;color:var(--t);font-weight:300;max-width:fit-content}
+.shoppay-badge b{color:#5a31f4;font-weight:600}
+.shoppay-badge .sp-name{color:#5a31f4;font-weight:600;letter-spacing:.2px}
+.shoppay-badge .sp-icon{width:22px;height:22px;flex-shrink:0;display:block}
+.holster-home-text .shoppay-badge{color:var(--w)}
+.ap-card .shoppay-badge{color:#4a5a6c;margin:12px 0 0}
+.shoppay-badge-sm{font-size:11px;padding:7px 11px}
+@media(max-width:600px){.shoppay-badge{font-size:11px;padding:7px 10px}.shoppay-badge .sp-icon{width:20px;height:20px}}
 .nav{position:fixed;top:32px;left:0;right:0;z-index:1000;background:#000;border-bottom:none;transition:transform .3s ease}
 @media(max-width:640px){.top-bar{font-size:9px;letter-spacing:2px;padding:7px 10px;height:30px}.nav{top:30px}}
 .nav.nav-hidden{transform:translateY(-100%)}
@@ -1090,6 +1098,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 </ul>
 <div class="price" id="holsterPrice">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<div class="shoppay-badge" id="holsterShopPay">
+<svg class="sp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5a31f4" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path fill="#fff" d="M10.2 9.2c-.9 0-1.6.3-2.1.9v-.7H6.5v7.7h1.6v-2.7c.5.5 1.1.8 2 .8 1.8 0 3-1.4 3-3s-1.2-3-2.9-3zm-.4 4.5c-.9 0-1.5-.7-1.5-1.5s.6-1.5 1.5-1.5 1.5.7 1.5 1.5-.6 1.5-1.5 1.5zm5.9-4.5c-.8 0-1.4.3-1.8.9V7.5h-1.6v7.7h1.6v-3.1c0-.9.5-1.5 1.3-1.5.7 0 1.2.4 1.2 1.3v3.3h1.6v-3.6c0-1.5-.9-2.4-2.3-2.4z"/></svg>
+<span>or 4 interest-free payments of <b id="holsterShopPayAmt">$62.25</b> with <span class="sp-name">Shop&nbsp;Pay</span></span>
+</div>
 <div class="price-note">Custom made to order</div>
 <div class="preorder-note">Custom made to order. Please allow 2–4 weeks for delivery.</div>
 <div class="btn-row">
@@ -1364,6 +1376,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <label class="ap-fab" data-fab="jersey150" onclick="setBlankFabric('classic','jersey150',this)"><b>150gsm</b><span>Single Jersey &middot; Summer</span></label>
 </div>
 <div class="ap-row"><div class="ap-price">$8<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
+<div class="shoppay-badge shoppay-badge-sm"><svg class="sp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5a31f4" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path fill="#fff" d="M10.2 9.2c-.9 0-1.6.3-2.1.9v-.7H6.5v7.7h1.6v-2.7c.5.5 1.1.8 2 .8 1.8 0 3-1.4 3-3s-1.2-3-2.9-3zm-.4 4.5c-.9 0-1.5-.7-1.5-1.5s.6-1.5 1.5-1.5 1.5.7 1.5 1.5-.6 1.5-1.5 1.5zm5.9-4.5c-.8 0-1.4.3-1.8.9V7.5h-1.6v7.7h1.6v-3.1c0-.9.5-1.5 1.3-1.5.7 0 1.2.4 1.2 1.3v3.3h1.6v-3.6c0-1.5-.9-2.4-2.3-2.4z"/></svg><span>or 4 payments of <b>$20</b> with <span class="sp-name">Shop&nbsp;Pay</span> &middot; min 10 order</span></div>
 </div>
 </div>
 
@@ -1384,6 +1397,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <label class="ap-sw" data-var="lightblue" onclick="setBlankVar('acid','lightblue',this)"><span style="background:linear-gradient(135deg,#6e8bad 20%,#98b2cb 55%,#b8cde0 85%);border-color:#4a6a8c"></span>Light Blue</label>
 </div>
 <div class="ap-row"><div class="ap-price">$10<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
+<div class="shoppay-badge shoppay-badge-sm"><svg class="sp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5a31f4" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path fill="#fff" d="M10.2 9.2c-.9 0-1.6.3-2.1.9v-.7H6.5v7.7h1.6v-2.7c.5.5 1.1.8 2 .8 1.8 0 3-1.4 3-3s-1.2-3-2.9-3zm-.4 4.5c-.9 0-1.5-.7-1.5-1.5s.6-1.5 1.5-1.5 1.5.7 1.5 1.5-.6 1.5-1.5 1.5zm5.9-4.5c-.8 0-1.4.3-1.8.9V7.5h-1.6v7.7h1.6v-3.1c0-.9.5-1.5 1.3-1.5.7 0 1.2.4 1.2 1.3v3.3h1.6v-3.6c0-1.5-.9-2.4-2.3-2.4z"/></svg><span>or 4 payments of <b>$25</b> with <span class="sp-name">Shop&nbsp;Pay</span> &middot; min 10 order</span></div>
 </div>
 </div>
 
@@ -1863,7 +1877,8 @@ var SYMS={USD:'$',CAD:'CA$',GBP:'\u00A3',EUR:'\u20AC',AED:'\u062F.\u0625'};
 function fmt(n){var v=Math.round(n*CURR.rate);return CURR.sym+v.toLocaleString('en-US')}
 function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('open')}
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
-function updateAllPrices(){renderCat();updBudget();var mp=document.getElementById('holsterPrice');if(mp)mp.innerHTML=fmt((shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249))+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
+function updShopPayHolster(){var p=(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249);var a=document.getElementById('holsterShopPayAmt');if(a){var v=(Math.round(p*CURR.rate*100)/4)/100;a.textContent=CURR.sym+v.toFixed(2)}}
+function updateAllPrices(){renderCat();updBudget();var mp=document.getElementById('holsterPrice');if(mp)mp.innerHTML=fmt((shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249))+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();var dp=document.querySelector('.discovery-home-text .price');if(dp)dp.innerHTML=fmt(299)+' <span style="font-size:14px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';document.querySelectorAll('.prop-item .price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.textContent='From '+fmt(parseInt(base))});document.querySelectorAll('.frag-pcard-body .fp-price').forEach(function(el){var base=el.getAttribute('data-base');if(base)el.innerHTML=fmt(parseInt(base))+' <span style="font-size:13px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>'});renderShopCart()}
 document.addEventListener('click',function(e){var t=document.getElementById('currToggle');if(t&&!t.contains(e.target))document.getElementById('currMenu').classList.remove('open')});
 var curSlide=0;
 var colorSets={
@@ -1905,7 +1920,7 @@ function switchColor(color){
   document.getElementById('swatchGreen').style.borderColor=color==='green'?'var(--g)':'';
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
   // Update hero price
-  var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';
+  var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();
   curSlide=0;
 }
 function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)})}
@@ -2050,7 +2065,7 @@ function shopCheckout(){
   window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
 }
 
-renderCat();initFI();document.getElementById('bbar').style.display='none';renderDots('classic');renderDots('acid');setMedia('classic',0);setMedia('acid',0);(function(){Object.keys(APP_CARDS).forEach(function(pid){var card=document.getElementById(APP_CARDS[pid].vid);if(!card||!card.parentElement)return;var wrap=card.parentElement;var sx=0;wrap.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});wrap.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)<40)return;cycleMedia(pid,dx<0?1:-1)},{passive:true})})})();
+renderCat();initFI();document.getElementById('bbar').style.display='none';renderDots('classic');renderDots('acid');setMedia('classic',0);setMedia('acid',0);updShopPayHolster();(function(){Object.keys(APP_CARDS).forEach(function(pid){var card=document.getElementById(APP_CARDS[pid].vid);if(!card||!card.parentElement)return;var wrap=card.parentElement;var sx=0;wrap.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});wrap.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)<40)return;cycleMedia(pid,dx<0?1:-1)},{passive:true})})})();
 // Image Zoom Lightbox
 (function(){
 var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
