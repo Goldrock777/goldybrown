@@ -110,9 +110,8 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .nav-logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}
 .nav-logo img{height:45px;display:block}
 .nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0;margin-left:auto}
-.nav-tabs{flex:1;display:flex;justify-content:center;gap:0;padding:0 12px;min-width:0;overflow-x:auto;scrollbar-width:none}
-.nav-tabs::-webkit-scrollbar{display:none}
-.nav-tab{padding:22px 16px;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
+.nav-tabs{flex:1;display:flex;justify-content:space-evenly;align-items:center;gap:0;padding:0 24px;min-width:0}
+.nav-tab{padding:22px 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;text-align:center;position:relative;line-height:1}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
 .nav-tab.active{color:#fff}
 .nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--gl)}
@@ -173,7 +172,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .slide-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}.slide-left.visible{opacity:1;transform:translateX(0)}
 .slide-right{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}.slide-right.visible{opacity:1;transform:translateX(0)}
 .scale-in{opacity:0;transform:scale(.92);transition:opacity .8s,transform .8s}.scale-in.visible{opacity:1;transform:scale(1)}
-.page{display:none;opacity:0;transition:opacity .4s ease}.page.active{display:block;opacity:1}
+.page{display:none;opacity:0;transition:opacity .2s ease}.page.active{display:block;opacity:1}
 .page.fading-out{opacity:0}
 .section-card .sc-img{height:280px;background-size:cover;background-position:center;background-attachment:scroll;transition:transform 6s ease-out}
 .section-card:hover .sc-img{transform:scale(1.05)}
@@ -327,7 +326,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-arr svg{width:16px;height:16px}
 .carousel-arr.prev{left:12px}
 .carousel-arr.next{right:12px}
-.page-hero{padding:104px 60px 52px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--b);position:relative}
+.page-hero{padding:92px 60px 28px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--b);position:relative}
 .page-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#b8a070}
 .page-hero h1{margin-bottom:10px;color:var(--w);letter-spacing:-0.5px}
 .page-hero .slabel{color:#b8a070;margin-bottom:12px;font-size:10px;letter-spacing:5px}
@@ -987,11 +986,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="nav-tabs" id="navTabs">
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
 <a class="nav-tab" data-page="hotel">Hotel Programme</a>
-<a class="nav-tab" data-page="fragrance">Fragrance</a>
+<a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
 <a class="nav-tab" data-page="apparel">Apparel</a>
-<a class="nav-tab" data-page="custom">Custom Tattoo</a>
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
-<a class="nav-tab" data-page="about">About</a>
+<a class="nav-tab" data-page="about">About Us</a>
 </div>
 <div class="nav-right">
 <div class="curr-toggle" id="currToggle" onclick="toggleCurrMenu()">
@@ -2051,7 +2049,7 @@ function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElem
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
 var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Vancouver',d:'Handcrafted full grain leather holsters, travel bags, and accessories from Vancouver. Ships worldwide.'},lookbook:{t:'Lookbook — The Collection Styled & Worn | Goldy Brown',d:'See Goldy Brown leather goods styled, worn, and photographed. Editorial lookbook for the full collection.'},hotel:{t:'Hotel Programme — Curated VIP Leather Gift Kits | Goldy Brown',d:'Custom-branded leather gift kits for 4 and 5 star hotels. Tier pricing from $10K to $100K. Turnkey branding, packaging, and worldwide delivery.'},fragrance:{t:'The Fragrance Collection — Designer Sampler Cases | Goldy Brown',d:'Full grain leather sampler cases with five curated designer fragrances. Private label and hotel branding available.'},apparel:{t:'Apparel — Cotton Blank Tees & French Terry | Goldy Brown',d:'Premium cotton blanks from $8. Free worldwide shipping, 5 business day delivery. Volume pricing on 20+ units. Shopify secure checkout.'},manufacturing:{t:'Manufacturing — Six-Step Leather Craftsmanship | Goldy Brown',d:'Six steps from raw hide to finished product. Full grain leather, vegetable tanning, saddle stitching, hot-stamped branding.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown is a Vancouver-based fashion designer creating luxury leather goods for discerning individuals, hotels, and the hospitality industry.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling | Goldy Brown',d:'Worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Handling times and rates.'},returns:{t:'Returns & Exchanges | Goldy Brown',d:'Return and exchange policy for Goldy Brown leather goods.'},custom:{t:'Custom Tattoo Pouches — Personalised Holsters | Goldy Brown',d:'Have any design hand-tattooed into your Goldy Brown holster pouch. Names, dates, signatures, sketches. Starting at $50 USD on top of the holster price.'}};
 function setPageMeta(page){var m=PAGE_META[page]||PAGE_META.home;document.title=m.t;var dEl=document.querySelector('meta[name="description"]');if(dEl)dEl.setAttribute('content',m.d);var ogT=document.querySelector('meta[property="og:title"]');if(ogT)ogT.setAttribute('content',m.t);var ogD=document.querySelector('meta[property="og:description"]');if(ogD)ogD.setAttribute('content',m.d);var twT=document.querySelector('meta[name="twitter:title"]');if(twT)twT.setAttribute('content',m.t);var twD=document.querySelector('meta[name="twitter:description"]');if(twD)twD.setAttribute('content',m.d);var canon=document.querySelector('link[rel="canonical"]');if(canon)canon.setAttribute('href','https://goldybrown.com'+(page==='home'?'/':'/'+page))}
-function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'/'+page);setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},350)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
+function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',page==='home'?'/':'/'+page);setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},180)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
 function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">You\u2019re on the list.</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
 (function(){var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var p=r.replace('/','');if(p&&document.getElementById('page-'+p)){history.replaceState({page:p},'',r);go(p,true);return}}var p=location.pathname.replace('/','');if(p&&document.getElementById('page-'+p)){go(p,true)}else{history.replaceState({page:'home'},'','/')}})();
