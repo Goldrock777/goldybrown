@@ -218,8 +218,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .hv-swatch{width:44px;height:44px;border-radius:50%;border:2px solid var(--b);margin:0 auto 6px;transition:all .3s;cursor:pointer}
 .hv-swatch:hover{border-color:var(--gl);transform:scale(1.08)}
 .hv-swatch.green{background:#3a5a3a}
-
+.hv-swatch.white{background:#fafaf5;border-color:#d8d6cf}
 .hv-swatch.black{background:#1a1a1a}
+.hv-soon{position:absolute;top:-6px;right:-6px;background:#0a0a0a;color:#fff;font-size:8px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;padding:2px 5px;border-radius:3px;line-height:1.2;pointer-events:none}
+.hv{position:relative}
 .hv-label{font-size:10px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
 .section-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:56px;padding:0 20px}
 .section-card{position:relative;cursor:pointer;overflow:hidden;transition:opacity .3s}
@@ -1153,6 +1155,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
+<div class="holster-variants">
+<div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack" style="border-color:var(--g)"></div><div class="hv-label">Black</div></div>
+<div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen"></div><span class="hv-soon">Soon</span><div class="hv-label">Green</div></div>
+<div class="hv" onclick="switchColor('white')"><div class="hv-swatch white" id="swatchWhite"></div><span class="hv-soon">Soon</span><div class="hv-label">White</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -1964,6 +1971,20 @@ var colorSets={
     material:'Full grain calfskin',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154156836',
     cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
+  },
+  green:{
+    imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
+    material:'Full grain calfskin — Forest Green (photos coming soon)',
+    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154156836',
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1',
+    soon:true
+  },
+  white:{
+    imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
+    material:'Full grain calfskin — White (photos coming soon)',
+    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-holster?variant=53325154156836',
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1',
+    soon:true
   }
 };
 var curColor='black';
@@ -1991,6 +2012,8 @@ function switchColor(color){
   if(buyBtn)buyBtn.href=set.cart;
   // Update swatch borders
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
+  var sg=document.getElementById('swatchGreen');if(sg)sg.style.borderColor=color==='green'?'var(--g)':'';
+  var sw=document.getElementById('swatchWhite');if(sw)sw.style.borderColor=color==='white'?'var(--g)':'#d8d6cf';
   // Update hero price
   var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();
   curSlide=0;
@@ -2075,7 +2098,9 @@ function submitBlank(){if(!curBlank||!curBlankId)return;var minQ=curBlank.min;va
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
-  black:{name:'The Holster — Black',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'}
+  black:{name:'The Holster — Black',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'},
+  green:{name:'The Holster — Green',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'},
+  white:{name:'The Holster — White',variant:'53325154156836',price:249,img:'blackholster.png',material:'Full grain calfskin'}
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
