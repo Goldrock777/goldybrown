@@ -477,6 +477,28 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .mat-card:hover{background:var(--gg);border-color:var(--gl)}
 .mat-card h4{font-size:14px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--b);color:var(--w)}
 .mat-card p{font-size:11.5px;color:var(--td);font-weight:200;line-height:1.8}
+/* Manufacturing heritage band */
+.mfg-heritage{position:relative;padding:72px 60px;background:linear-gradient(180deg,#f4ecdc 0%,#ebe0c8 65%,#e2d4b6 100%);overflow:hidden;border-top:1px solid #c9b89a;border-bottom:1px solid #c9b89a}
+.mfg-heritage::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.07;pointer-events:none;mix-blend-mode:multiply}
+.mfg-heritage-inner{position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.mfg-heritage-img{position:relative;border:8px solid #fbf6e8;box-shadow:0 18px 50px -12px rgba(58,32,12,.45),inset 0 0 0 1px rgba(112,72,28,.18);background:#fbf6e8;transform:rotate(-1deg)}
+.mfg-heritage-img img{width:100%;height:auto;display:block;filter:sepia(.18) saturate(.95)}
+.mfg-heritage-img .mh-stamp{position:absolute;bottom:-22px;right:-22px;width:108px;height:108px;border:2px solid #8a6d3b;background:#fbf6e8;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(7deg);font-family:var(--fd);color:#5a3f18;box-shadow:0 8px 22px -6px rgba(58,32,12,.4);text-align:center}
+.mfg-heritage-img .mh-stamp .mhs-l1{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#8a6d3b;font-family:var(--fb);font-weight:600}
+.mfg-heritage-img .mh-stamp .mhs-l2{font-size:30px;line-height:1;margin-top:2px;font-style:italic;font-weight:500}
+.mfg-heritage-img .mh-stamp .mhs-l3{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#8a6d3b;font-family:var(--fb);font-weight:600;margin-top:4px}
+.mfg-heritage-text{display:flex;flex-direction:column;gap:18px}
+.mfg-heritage-text .mh-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#8a6d3b;font-weight:600;width:fit-content}
+.mfg-heritage-text .mh-eyebrow::before,.mfg-heritage-text .mh-eyebrow::after{content:'';width:24px;height:1px;background:#8a6d3b}
+.mfg-heritage-text h2{font-family:var(--fd);font-size:clamp(28px,3.4vw,40px);line-height:1.15;color:#3a2410;font-weight:500;letter-spacing:-.3px}
+.mfg-heritage-text h2 em{font-style:italic;color:#8a6d3b}
+.mfg-heritage-text p{font-size:14px;line-height:1.95;color:#503820;font-weight:300;max-width:520px}
+.mfg-heritage-text .mh-quote{font-family:var(--fd);font-style:italic;font-size:17px;line-height:1.55;color:#5a3f18;border-left:2px solid #8a6d3b;padding:6px 0 6px 18px;margin:6px 0;font-weight:400}
+.mfg-heritage-text .mh-spool-row{display:flex;align-items:center;gap:18px;margin-top:14px;padding-top:18px;border-top:1px dashed #c9b89a}
+.mfg-heritage-text .mh-spool-row img{width:64px;height:80px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(58,32,12,.35))}
+.mfg-heritage-text .mh-spool-row .mh-spool-cap{font-size:11.5px;color:#503820;font-weight:300;line-height:1.65;font-style:italic;font-family:var(--fd)}
+.mfg-heritage-text .mh-spool-row .mh-spool-cap b{font-style:normal;font-weight:500;color:#3a2410;display:block;margin-bottom:2px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--fb)}
+@media(max-width:880px){.mfg-heritage{padding:52px 24px}.mfg-heritage-inner{grid-template-columns:1fr;gap:42px}.mfg-heritage-img{transform:none}.mfg-heritage-img .mh-stamp{width:88px;height:88px;bottom:-16px;right:-16px}.mfg-heritage-img .mh-stamp .mhs-l2{font-size:24px}.mfg-heritage-text .mh-spool-row img{width:54px;height:68px}}
 .about-hero{padding:102px 60px 24px;text-align:center}
 .about-hero h1{margin-bottom:12px}
 .about-hero .sub{font-size:14px;font-weight:200;color:var(--td);max-width:560px;margin:0 auto;line-height:1.85}
@@ -1375,6 +1397,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <!-- ======================== MANUFACTURING ======================== -->
 <div class="page" id="page-manufacturing">
 <div class="page-hero"><div class="slabel">Craftsmanship</div><h1>Manufacturing</h1><p class="sub">Six steps from raw hide to finished product. Each piece meticulously handmade.</p></div>
+<section class="mfg-heritage fade-in">
+<div class="mfg-heritage-inner">
+<div class="mfg-heritage-img slide-left">
+<img loading="lazy" src="goldybrownleathers.png" alt="Goldy Brown Leathers — original tannery, India">
+<div class="mh-stamp"><span class="mhs-l1">Est.</span><span class="mhs-l2">1992</span><span class="mhs-l3">Vancouver</span></div>
+</div>
+<div class="mfg-heritage-text slide-right">
+<span class="mh-eyebrow">Our Story</span>
+<h2>From a small tannery in India <em>to a leather house in Vancouver</em></h2>
+<p>Goldy Brown began in 1992 as a family workshop on the southern coast of India &mdash; vegetable vats, sun-dried hides, and a few hand-stitched commissions for travellers passing through. Three decades on, every piece still moves through the same atelier, cut and stitched by master artisans whose craft was handed down across generations.</p>
+<p class="mh-quote">&ldquo;Built to outlast the box it ships in.&rdquo;</p>
+<p>What changed is the desk it&rsquo;s designed at. Patterns are now drafted in Vancouver, prototyped in Tamil Nadu, then refined in person before any piece carries the Goldy Brown stamp. The same hands. The same hides. A quieter kind of luxury.</p>
+<div class="mh-spool-row">
+<img loading="lazy" src="spoolgreen.png" alt="Goldy Brown waxed thread spool">
+<div class="mh-spool-cap"><b>Our House Thread</b>Custom-spun waxed polyester in Goldy Brown sage and gold &mdash; the same spool used on every saddle stitch since the workshop opened.</div>
+</div>
+</div>
+</div>
+</section>
 <section>
 <div class="pstep slide-left"><div class="pstep-img"><img loading="lazy" src="sourcing.png" alt="Sourcing"></div><div class="pstep-text"><div class="pstep-num">Step 01</div><h3>Sourcing</h3><p>Full grain calfskin from vetted tanneries. Every hide inspected for grain consistency, thickness, and natural markings.</p></div></div>
 <div class="pstep slide-right"><div class="pstep-img"><img loading="lazy" src="tanning.png" alt="Tanning"></div><div class="pstep-text"><div class="pstep-num">Step 02</div><h3>Tanning</h3><p>Vegetable tanned for structured pieces. Chrome tanned for softer goods. Method selected per product.</p></div></div>
