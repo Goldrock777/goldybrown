@@ -228,33 +228,27 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .customize-link .cz-sub{font-size:11.5px;color:var(--td);font-weight:300;line-height:1.45}
 .holster-home-text .customize-link .cz-arr{flex:0 0 auto;color:var(--gl);font-size:18px;transition:transform .25s}
 .holster-home-text .customize-link:hover .cz-arr{transform:translateX(3px)}
-/* Free shipping cities strip */
-.holster-home-text .city-strip{display:inline-flex;align-items:center;gap:8px;margin:8px 0 10px;padding:5px 10px 5px 8px;border:1px solid rgba(184,160,112,.35);background:linear-gradient(90deg,rgba(184,160,112,.07),rgba(184,160,112,.02));border-radius:999px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .65s both;max-width:100%;flex-wrap:wrap}
-.holster-home-text .city-strip .cs-dot{width:6px;height:6px;border-radius:50%;background:#b8a070;box-shadow:0 0 8px rgba(184,160,112,.65);flex:0 0 auto;animation:csPulse 2.4s ease-in-out infinite}
-@keyframes csPulse{0%,100%{opacity:.6}50%{opacity:1}}
-.holster-home-text .city-strip .cs-label{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:#7a5a1e;font-weight:600;flex:0 0 auto}
-.holster-home-text .city-strip .cs-cities{font-size:10.5px;color:var(--td);font-weight:300;letter-spacing:.3px;line-height:1.4}
-/* Lifetime warranty gold emblem */
-.holster-home-text .warranty-emblem{display:flex;align-items:center;gap:14px;margin:10px 0 8px;padding:11px 16px 11px 12px;border:1.5px solid #b8a070;background:linear-gradient(135deg,rgba(244,224,166,.18) 0%,rgba(184,160,112,.08) 50%,rgba(244,224,166,.14) 100%);text-decoration:none;color:inherit;cursor:pointer;transition:all .3s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .55s both;box-shadow:0 2px 10px -4px rgba(184,160,112,.35)}
-.holster-home-text .warranty-emblem::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,240,192,.35),transparent);transition:left 1s ease;pointer-events:none}
-.holster-home-text .warranty-emblem:hover{border-color:#c9a94e;background:linear-gradient(135deg,rgba(244,224,166,.28) 0%,rgba(184,160,112,.14) 50%,rgba(244,224,166,.22) 100%);transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(184,160,112,.55)}
-.holster-home-text .warranty-emblem:hover::before{left:140%}
-.holster-home-text .warranty-emblem .we-medal{flex:0 0 auto;width:48px;height:48px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 3px 6px rgba(106,74,26,.45));transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
-.holster-home-text .warranty-emblem:hover .we-medal{transform:rotate(-8deg) scale(1.06)}
-.holster-home-text .warranty-emblem .we-text{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
-.holster-home-text .warranty-emblem .we-title{font-family:var(--fd);font-size:15.5px;color:#5a3f12;font-weight:700;letter-spacing:.2px;line-height:1.1}
-.holster-home-text .warranty-emblem .we-sub{font-size:11px;color:var(--td);font-weight:400;letter-spacing:.2px;line-height:1.45}
-.holster-home-text .warranty-emblem .we-arr{flex:0 0 auto;color:#7a5a1e;font-size:20px;font-weight:400;transition:transform .25s}
-.holster-home-text .warranty-emblem:hover .we-arr{transform:translateX(3px)}
+/* Price row with inline lifetime warranty chip */
+.holster-home-text .price-row{display:flex;align-items:center;gap:14px;padding-top:14px;border-top:1px solid var(--b);margin:0 0 4px;flex-wrap:wrap;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .9s both}
+.holster-home-text .price-row .price{padding-top:0;border-top:0;margin:0;animation:none;flex:0 0 auto}
+.holster-home-text .warranty-chip{display:inline-flex;align-items:center;gap:9px;padding:6px 12px 6px 6px;border:1px solid #c9a94e;background:linear-gradient(135deg,#1c3a26 0%,#0e2a1a 100%);text-decoration:none;color:#e8cf85;cursor:pointer;transition:all .3s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden;border-radius:999px;flex:0 1 auto;min-width:0;box-shadow:0 2px 8px -3px rgba(14,42,26,.55),inset 0 0 0 1px rgba(201,169,78,.18)}
+.holster-home-text .warranty-chip::before{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(232,207,133,.18),transparent);transition:left 1s ease;pointer-events:none}
+.holster-home-text .warranty-chip:hover{border-color:#e8cf85;transform:translateY(-1px);box-shadow:0 6px 16px -4px rgba(14,42,26,.65),inset 0 0 0 1px rgba(232,207,133,.28)}
+.holster-home-text .warranty-chip:hover::before{left:140%}
+.holster-home-text .warranty-chip .wc-medal{flex:0 0 auto;width:34px;height:34px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45));transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.holster-home-text .warranty-chip:hover .wc-medal{transform:rotate(-7deg) scale(1.05)}
+.holster-home-text .warranty-chip .wc-text{display:flex;flex-direction:column;gap:1px;min-width:0;line-height:1.1}
+.holster-home-text .warranty-chip .wc-title{font-family:var(--fd);font-size:13px;color:#e8cf85;font-weight:600;letter-spacing:.2px;white-space:nowrap}
+.holster-home-text .warranty-chip .wc-sub{font-size:9.5px;color:rgba(232,207,133,.62);font-weight:400;letter-spacing:1.4px;text-transform:uppercase;white-space:nowrap}
 /* Goldy Brown Guarantee band */
-.gb-guar{position:relative;padding:80px 60px 88px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 70%);color:#e9dcc1;overflow:hidden;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17}
+.gb-guar{position:relative;padding:120px 60px 110px;margin-top:32px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 70%);color:#e9dcc1;overflow:hidden;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
 .gb-guar-inner{position:relative;max-width:980px;margin:0 auto;text-align:center}
-.gb-guar-seal{width:120px;height:120px;margin:0 auto 26px;border-radius:50%;border:2px solid #b8a070;background:radial-gradient(ellipse at 50% 35%,#23201a 0%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#b8a070;font-family:var(--fd);position:relative;box-shadow:0 14px 36px -10px rgba(0,0,0,.7),inset 0 0 0 1px rgba(184,160,112,.22),inset 0 -10px 26px -10px rgba(0,0,0,.6)}
-.gb-guar-seal::before{content:'';position:absolute;inset:7px;border:1px solid rgba(184,160,112,.55);border-radius:50%}
-.gb-guar-seal::after{content:'';position:absolute;inset:11px;border:1px dashed rgba(184,160,112,.35);border-radius:50%}
-.gb-guar-seal .gbs-mono{font-size:34px;letter-spacing:1.5px;font-weight:600;line-height:1;background:linear-gradient(180deg,#f4e0a6 0%,#c9a94e 55%,#9a7a3a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 1px 0 rgba(0,0,0,.4);padding-top:2px}
-.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:#d4be8a;font-weight:600;margin-top:6px;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+.gb-guar-seal{width:130px;height:130px;margin:0 auto 30px;border-radius:50%;background:radial-gradient(circle at 50% 30%,#5a9a72 0%,#3a7350 35%,#1f4a30 75%,#143828 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--fd);position:relative;box-shadow:0 18px 42px -12px rgba(0,0,0,.7),0 0 0 1px #5a4220,0 0 0 4px #c9a94e,0 0 0 5px #5a4220,inset 0 -8px 22px rgba(0,0,0,.35),inset 0 6px 18px rgba(255,255,255,.06)}
+.gb-guar-seal::before{content:'';position:absolute;inset:8px;border:1px solid rgba(232,207,133,.55);border-radius:50%;pointer-events:none}
+.gb-guar-seal::after{content:'';position:absolute;inset:13px;border:1px dashed rgba(232,207,133,.42);border-radius:50%;pointer-events:none}
+.gb-guar-seal .gbs-mono{font-size:40px;letter-spacing:1.5px;font-weight:600;line-height:1;background:linear-gradient(180deg,#fff1c6 0%,#f0d590 30%,#d6b25a 60%,#9a7530 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.5));padding-top:6px}
+.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:8px;letter-spacing:4.5px;text-transform:uppercase;color:#e8cf85;font-weight:700;margin-top:8px;text-shadow:0 1px 1px rgba(0,0,0,.7)}
 .gb-guar .gbg-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:600;margin-bottom:10px;display:inline-flex;align-items:center;gap:10px}
 .gb-guar .gbg-eyebrow::before,.gb-guar .gbg-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
 .gb-guar h2{font-family:var(--fd);font-size:clamp(28px,3.6vw,42px);color:#faf6ec;font-weight:500;letter-spacing:-.3px;line-height:1.15;margin-bottom:14px}
@@ -268,7 +262,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gbg-cell h4{font-family:var(--fb);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#faf6ec;font-weight:500;margin-bottom:8px}
 .gbg-cell p{font-size:12.5px;line-height:1.7;color:#a8957c;font-weight:300;max-width:220px;margin:0 auto}
 .gb-guar .gbg-fine{font-size:11.5px;line-height:1.75;color:#7a6a4a;font-weight:300;max-width:540px;margin:0 auto;font-style:italic;font-family:var(--fd)}
-@media(max-width:760px){.gb-guar{padding:56px 22px 62px}.gb-guar-seal{width:88px;height:88px;margin-bottom:18px}.gb-guar-seal .gbs-mono{font-size:20px}.gbg-grid{grid-template-columns:1fr;border-top:1px solid rgba(184,160,112,.18);border-bottom:1px solid rgba(184,160,112,.18)}.gbg-cell{border-right:0;border-bottom:1px solid rgba(184,160,112,.12);padding:20px 12px}.gbg-cell:last-child{border-bottom:0}}
+@media(max-width:760px){.gb-guar{padding:80px 22px 80px;margin-top:20px}.gb-guar-seal{width:100px;height:100px;margin-bottom:22px}.gb-guar-seal .gbs-mono{font-size:30px}.gb-guar-seal .gbs-cap{font-size:7px;letter-spacing:3.5px}.gbg-grid{grid-template-columns:1fr;border-top:1px solid rgba(184,160,112,.18);border-bottom:1px solid rgba(184,160,112,.18)}.gbg-cell{border-right:0;border-bottom:1px solid rgba(184,160,112,.12);padding:20px 12px}.gbg-cell:last-child{border-bottom:0}}
 .holster-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:420px;margin-bottom:12px}
 .holster-home-text .detail-list{list-style:none;margin-bottom:12px}
 .holster-home-text .detail-list li{font-size:11.5px;color:var(--td);font-weight:200;padding:5px 0;border-bottom:1px solid var(--b);display:flex;gap:8px}
@@ -521,37 +515,39 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prop-item .prop-desc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:8px}
 .prop-item .price{font-size:16px;color:var(--gl);font-weight:400;font-family:var(--fd)}
 .pstep{display:grid;grid-template-columns:1fr 1fr;min-height:400px;align-items:center;border-bottom:1px solid var(--b)}
-/* Prototype journey: sketch -> finished holster */
-.proto-journey{padding:80px 24px 90px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 80%);color:#e9dcc1;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17;position:relative;overflow:hidden}
+/* Prototype journey: sketch -> finished holster (horizontal) */
+.proto-journey{padding:90px 40px 96px;background:radial-gradient(ellipse at center top,#181614 0%,#0a0a0a 80%);color:#e9dcc1;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17;position:relative;overflow:hidden}
 .proto-journey::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nj'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nj)' opacity='.55'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;mix-blend-mode:screen}
-.proto-journey-inner{position:relative;max-width:760px;margin:0 auto;text-align:center}
-.proto-journey .pj-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:600;margin-bottom:12px;display:inline-flex;align-items:center;gap:10px}
-.proto-journey .pj-eyebrow::before,.proto-journey .pj-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
+.proto-journey-inner{position:relative;max-width:1240px;margin:0 auto;text-align:center}
+.proto-journey .pj-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#c9a94e;font-weight:600;margin-bottom:12px;display:inline-flex;align-items:center;gap:10px}
+.proto-journey .pj-eyebrow::before,.proto-journey .pj-eyebrow::after{content:'';width:24px;height:1px;background:#c9a94e}
 .proto-journey h2{font-family:var(--fd);font-size:clamp(28px,3.6vw,40px);color:#faf6ec;font-weight:500;letter-spacing:-.3px;line-height:1.2;margin-bottom:14px}
-.proto-journey h2 em{font-style:italic;color:#b8a070}
-.proto-journey .pj-lede{font-size:14.5px;line-height:1.85;color:#cfc3a8;font-weight:300;max-width:560px;margin:0 auto 48px}
-.pj-flow{display:flex;flex-direction:column;align-items:center;gap:0;position:relative}
-.pj-flow::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent 0%,rgba(184,160,112,.35) 8%,rgba(184,160,112,.35) 92%,transparent 100%);transform:translateX(-50%);z-index:0}
-.pj-stage{position:relative;z-index:1;width:100%;max-width:520px;margin:0 auto;padding:14px 0}
-.pj-stage-num{font-family:var(--fd);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:14px;display:inline-block;padding:5px 14px;background:#0a0a0a;border:1px solid rgba(184,160,112,.3);border-radius:999px;position:relative;z-index:2}
-.pj-stage-img{position:relative;background:#faf6ec;border:1px solid rgba(184,160,112,.25);box-shadow:0 18px 40px -16px rgba(0,0,0,.7),0 0 0 1px rgba(184,160,112,.08);overflow:hidden;aspect-ratio:4/3;margin-bottom:14px}
-.pj-stage-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .5s ease}
-.pj-stage-img:hover img{transform:scale(1.02)}
-.pj-stage-final .pj-stage-img{background:#fff;aspect-ratio:3/4;max-width:340px;margin-left:auto;margin-right:auto;border:1px solid #b8a070;box-shadow:0 22px 50px -16px rgba(0,0,0,.8),0 0 0 1px rgba(184,160,112,.18),inset 0 0 0 4px rgba(255,255,255,.4)}
-.pj-stage-final .pj-stage-img img{object-fit:contain}
-.pj-stage-final .pj-stage-num{color:#3a2a08;background:linear-gradient(135deg,#f4e0a6 0%,#c9a94e 60%,#a98832 100%);border-color:#7a5a1e;font-weight:700}
-.pj-stage-cap{font-size:12.5px;line-height:1.7;color:#a8957c;font-weight:300;max-width:420px;margin:0 auto;font-style:italic;font-family:var(--fd)}
-.pj-stage-final .pj-stage-cap{color:#cfc3a8;font-style:normal;font-family:var(--fb);font-size:13px}
-.pj-arrow{position:relative;z-index:1;width:28px;height:42px;display:flex;align-items:center;justify-content:center;color:#b8a070;font-size:20px;line-height:1;background:#0a0a0a;border:1px solid rgba(184,160,112,.3);border-radius:50%;margin:6px auto;animation:pjPulse 2.6s ease-in-out infinite}
-@keyframes pjPulse{0%,100%{transform:translateY(0);opacity:.85}50%{transform:translateY(3px);opacity:1}}
-@media(max-width:760px){
-.proto-journey{padding:56px 18px 64px}
+.proto-journey h2 em{font-style:italic;color:#c9a94e}
+.proto-journey .pj-lede{font-size:14.5px;line-height:1.85;color:#cfc3a8;font-weight:300;max-width:620px;margin:0 auto 56px}
+.pj-flow{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr;gap:0;align-items:start;position:relative}
+.pj-stage{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.pj-stage-num{font-family:var(--fd);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c9a94e;font-weight:500;margin-bottom:14px;display:inline-block;padding:5px 12px;background:rgba(20,20,18,.7);border:1px solid rgba(201,169,78,.35);border-radius:999px}
+.pj-stage-img{width:100%;position:relative;background:#faf6ec;border:1px solid rgba(201,169,78,.28);box-shadow:0 16px 36px -14px rgba(0,0,0,.7),0 0 0 1px rgba(201,169,78,.06);overflow:hidden;aspect-ratio:4/5;margin-bottom:16px}
+.pj-stage-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .55s cubic-bezier(.25,.46,.45,.94)}
+.pj-stage:hover .pj-stage-img img{transform:scale(1.04)}
+.pj-stage-cap{font-size:12px;line-height:1.65;color:#a8957c;font-weight:300;max-width:240px;margin:0 auto;font-style:italic;font-family:var(--fd)}
+/* Final stage: gold accents to mark "the result" */
+.pj-stage-final .pj-stage-img{background:#fff;border:1px solid #c9a94e;box-shadow:0 22px 46px -14px rgba(0,0,0,.85),0 0 0 1px rgba(201,169,78,.25),inset 0 0 0 3px rgba(255,255,255,.5)}
+.pj-stage-final .pj-stage-num{color:#1a1208;background:linear-gradient(135deg,#f0d590 0%,#c9a94e 55%,#9a7530 100%);border-color:#7a5a1e;font-weight:700}
+.pj-stage-final .pj-stage-cap{color:#e8cf85;font-style:normal;font-family:var(--fb);font-size:12.5px;font-weight:400;letter-spacing:.2px}
+/* Connector arrow between stages */
+.pj-arrow{align-self:center;justify-self:center;color:#c9a94e;font-size:18px;line-height:1;opacity:.7;animation:pjPulse 2.6s ease-in-out infinite;margin-top:74px}
+@keyframes pjPulse{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(3px);opacity:1}}
+@media(max-width:1024px){
+.pj-flow{grid-template-columns:1fr 1fr;gap:32px 22px}
+.pj-arrow{display:none}
+}
+@media(max-width:540px){
+.proto-journey{padding:60px 22px 64px}
 .proto-journey .pj-lede{font-size:13.5px;margin-bottom:36px}
-.pj-stage{padding:10px 0}
-.pj-stage-num{font-size:10px;letter-spacing:3px;padding:4px 12px;margin-bottom:12px}
+.pj-flow{grid-template-columns:1fr;gap:24px}
+.pj-stage-img{max-width:340px;margin-left:auto;margin-right:auto}
 .pj-stage-cap{font-size:12px}
-.pj-stage-final .pj-stage-img{max-width:260px}
-.pj-arrow{width:26px;height:36px;font-size:18px}
 }
 .pstep:nth-child(even){direction:rtl}.pstep:nth-child(even)>*{direction:ltr}
 .pstep:nth-child(odd) .pstep-text{background:var(--bg-card)}
@@ -711,12 +707,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .detail-list li{padding:7px 0;font-size:12px}
 .holster-home-text .price{font-size:26px;padding-top:16px}
 .holster-home-text .btn-row .btn{padding:14px 16px;font-size:9px}
-.holster-home-text .city-strip{padding:5px 10px;margin:6px 0 10px}
-.holster-home-text .city-strip .cs-cities{font-size:10px;line-height:1.35}
-.holster-home-text .warranty-emblem{padding:10px 12px;gap:12px}
-.holster-home-text .warranty-emblem .we-medal{width:42px;height:42px}
-.holster-home-text .warranty-emblem .we-title{font-size:14.5px}
-.holster-home-text .warranty-emblem .we-sub{font-size:10.5px}
+.holster-home-text .price-row{gap:10px}
+.holster-home-text .warranty-chip{padding:5px 11px 5px 5px;gap:8px}
+.holster-home-text .warranty-chip .wc-medal{width:30px;height:30px}
+.holster-home-text .warranty-chip .wc-title{font-size:12.5px}
+.holster-home-text .warranty-chip .wc-sub{font-size:9px;letter-spacing:1.2px}
 .holster-variants{margin-top:16px}
 .carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
@@ -1286,39 +1281,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home-text">
 <div class="est">Est. 1992 — Vancouver, Canada</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
-<a class="warranty-emblem" href="#gb-guarantee" onclick="document.getElementById('gb-guarantee').scrollIntoView({behavior:'smooth',block:'start'});return false;" aria-label="Lifetime warranty — Goldy Brown Guarantee">
-<span class="we-medal" aria-hidden="true">
-<svg viewBox="0 0 60 60" width="48" height="48" focusable="false">
-<defs>
-<radialGradient id="weGold" cx="50%" cy="38%" r="62%">
-<stop offset="0%" stop-color="#fff0c0"/>
-<stop offset="40%" stop-color="#e8c878"/>
-<stop offset="75%" stop-color="#c9a94e"/>
-<stop offset="100%" stop-color="#6a4a1a"/>
-</radialGradient>
-<linearGradient id="weShine" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="#fff" stop-opacity=".55"/>
-<stop offset="50%" stop-color="#fff" stop-opacity="0"/>
-</linearGradient>
-</defs>
-<circle cx="30" cy="30" r="28" fill="url(#weGold)" stroke="#6a4a1a" stroke-width="1.2"/>
-<circle cx="30" cy="30" r="24" fill="none" stroke="#3a2a08" stroke-width=".5" opacity=".5"/>
-<ellipse cx="30" cy="20" rx="22" ry="12" fill="url(#weShine)" opacity=".6"/>
-<text x="30" y="28" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#2a1a04" letter-spacing="1">GB</text>
-<text x="30" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.2" font-weight="800" fill="#2a1a04" letter-spacing="1.2">LIFETIME</text>
-</svg>
-</span>
-<span class="we-text">
-<span class="we-title">Lifetime Warranty</span>
-<span class="we-sub">The Goldy Brown Guarantee &middot; covered for life, free repair &amp; shipping</span>
-</span>
-<span class="we-arr" aria-hidden="true">&rsaquo;</span>
-</a>
-<div class="city-strip" aria-label="Free shipping to North America's major cities">
-<span class="cs-dot"></span>
-<span class="cs-label">Free shipping</span>
-<span class="cs-cities">New York &middot; Toronto &middot; Vancouver &middot; Los Angeles &middot; Miami</span>
-</div>
 <p class="desc">A concealed leather shoulder rig for people who carry with intention. Hand cut from full grain leather, assembled with stainless steel hardware, and worn invisible under a jacket. Your essentials stay against your body. Staying secure, silent and always within reach. The perfect gift for a loved one, birthday, anniversary, or any special occasion.</p>
 <ul class="detail-list">
 <li id="materialLine"><strong>Material</strong> Full grain calfskin</li>
@@ -1329,7 +1291,32 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 <li><strong>Warranty</strong> Lifetime &mdash; any defect covered, repair &amp; shipping free</li>
 </ul>
+<div class="price-row">
 <div class="price" id="holsterPrice">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
+<a class="warranty-chip" href="#gb-guarantee" onclick="document.getElementById('gb-guarantee').scrollIntoView({behavior:'smooth',block:'start'});return false;" aria-label="Lifetime warranty — Goldy Brown Guarantee">
+<span class="wc-medal" aria-hidden="true">
+<svg viewBox="0 0 48 48" width="34" height="34" focusable="false">
+<defs>
+<radialGradient id="wcGreen" cx="50%" cy="40%" r="62%">
+<stop offset="0%" stop-color="#3a7350"/>
+<stop offset="55%" stop-color="#1f4a30"/>
+<stop offset="100%" stop-color="#0e2a1a"/>
+</radialGradient>
+<linearGradient id="wcShine" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#fff" stop-opacity=".22"/>
+<stop offset="55%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<circle cx="24" cy="24" r="22" fill="url(#wcGreen)" stroke="#c9a94e" stroke-width="1.4"/>
+<circle cx="24" cy="24" r="18" fill="none" stroke="#c9a94e" stroke-width=".4" opacity=".55"/>
+<ellipse cx="24" cy="16" rx="17" ry="9" fill="url(#wcShine)"/>
+<text x="24" y="22" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="13" font-weight="700" fill="#e8cf85" letter-spacing=".8">GB</text>
+<text x="24" y="33" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.6" font-weight="800" fill="#e8cf85" letter-spacing="1">LIFETIME</text>
+</svg>
+</span>
+<span class="wc-text"><span class="wc-title">Lifetime Warranty</span><span class="wc-sub">The Goldy Brown Guarantee</span></span>
+</a>
+</div>
 <div class="shoppay-badge shoppay-badge-dark" id="holsterShopPay"><span class="spp-msg">4 interest-free installments, or from <b id="holsterSppMo">$22.47</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span></span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('holster')">View sample plans</a></div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
@@ -1620,19 +1607,19 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="pj-stage-img"><img loading="lazy" src="holstersketch1.jpg" alt="First concept sketch of the Goldy Brown holster"></div>
 <div class="pj-stage-cap">First concept sketch. Silhouette, fit, where the body meets the bag.</div>
 </div>
-<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-arrow" aria-hidden="true">&rarr;</div>
 <div class="pj-stage scale-in">
 <div class="pj-stage-num">02 &mdash; Refinement</div>
 <div class="pj-stage-img"><img loading="lazy" src="holstersketch2.jpg" alt="Refined drawing of the holster, with strap geometry and pouch dimensions"></div>
 <div class="pj-stage-cap">Refinement. Strap geometry, pouch dimensions, how it sits invisible under a jacket.</div>
 </div>
-<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-arrow" aria-hidden="true">&rarr;</div>
 <div class="pj-stage scale-in">
 <div class="pj-stage-num">03 &mdash; Technical Draft</div>
 <div class="pj-stage-img"><img loading="lazy" src="holstersketch3.jpg" alt="Technical draft of the holster with stitch lines and hardware placement"></div>
 <div class="pj-stage-cap">Technical draft. Stitch lines, hardware placement, edge measurements &mdash; sent to the master cutter.</div>
 </div>
-<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-arrow" aria-hidden="true">&rarr;</div>
 <div class="pj-stage pj-stage-final scale-in">
 <div class="pj-stage-num">04 &mdash; The Holster</div>
 <div class="pj-stage-img"><img loading="lazy" src="blackholster.png" alt="The finished Goldy Brown holster"></div>
