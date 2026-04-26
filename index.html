@@ -520,6 +520,38 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .prop-item .prop-desc{font-size:12px;color:var(--td);font-weight:200;line-height:1.6;margin-bottom:8px}
 .prop-item .price{font-size:16px;color:var(--gl);font-weight:400;font-family:var(--fd)}
 .pstep{display:grid;grid-template-columns:1fr 1fr;min-height:400px;align-items:center;border-bottom:1px solid var(--b)}
+/* Prototype journey: sketch -> finished holster */
+.proto-journey{padding:80px 24px 90px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 80%);color:#e9dcc1;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17;position:relative;overflow:hidden}
+.proto-journey::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nj'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nj)' opacity='.55'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;mix-blend-mode:screen}
+.proto-journey-inner{position:relative;max-width:760px;margin:0 auto;text-align:center}
+.proto-journey .pj-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:600;margin-bottom:12px;display:inline-flex;align-items:center;gap:10px}
+.proto-journey .pj-eyebrow::before,.proto-journey .pj-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
+.proto-journey h2{font-family:var(--fd);font-size:clamp(28px,3.6vw,40px);color:#faf6ec;font-weight:500;letter-spacing:-.3px;line-height:1.2;margin-bottom:14px}
+.proto-journey h2 em{font-style:italic;color:#b8a070}
+.proto-journey .pj-lede{font-size:14.5px;line-height:1.85;color:#cfc3a8;font-weight:300;max-width:560px;margin:0 auto 48px}
+.pj-flow{display:flex;flex-direction:column;align-items:center;gap:0;position:relative}
+.pj-flow::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent 0%,rgba(184,160,112,.35) 8%,rgba(184,160,112,.35) 92%,transparent 100%);transform:translateX(-50%);z-index:0}
+.pj-stage{position:relative;z-index:1;width:100%;max-width:520px;margin:0 auto;padding:14px 0}
+.pj-stage-num{font-family:var(--fd);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:14px;display:inline-block;padding:5px 14px;background:#0a0a0a;border:1px solid rgba(184,160,112,.3);border-radius:999px;position:relative;z-index:2}
+.pj-stage-img{position:relative;background:#faf6ec;border:1px solid rgba(184,160,112,.25);box-shadow:0 18px 40px -16px rgba(0,0,0,.7),0 0 0 1px rgba(184,160,112,.08);overflow:hidden;aspect-ratio:4/3;margin-bottom:14px}
+.pj-stage-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .5s ease}
+.pj-stage-img:hover img{transform:scale(1.02)}
+.pj-stage-final .pj-stage-img{background:#fff;aspect-ratio:3/4;max-width:340px;margin-left:auto;margin-right:auto;border:1px solid #b8a070;box-shadow:0 22px 50px -16px rgba(0,0,0,.8),0 0 0 1px rgba(184,160,112,.18),inset 0 0 0 4px rgba(255,255,255,.4)}
+.pj-stage-final .pj-stage-img img{object-fit:contain}
+.pj-stage-final .pj-stage-num{color:#3a2a08;background:linear-gradient(135deg,#f4e0a6 0%,#c9a94e 60%,#a98832 100%);border-color:#7a5a1e;font-weight:700}
+.pj-stage-cap{font-size:12.5px;line-height:1.7;color:#a8957c;font-weight:300;max-width:420px;margin:0 auto;font-style:italic;font-family:var(--fd)}
+.pj-stage-final .pj-stage-cap{color:#cfc3a8;font-style:normal;font-family:var(--fb);font-size:13px}
+.pj-arrow{position:relative;z-index:1;width:28px;height:42px;display:flex;align-items:center;justify-content:center;color:#b8a070;font-size:20px;line-height:1;background:#0a0a0a;border:1px solid rgba(184,160,112,.3);border-radius:50%;margin:6px auto;animation:pjPulse 2.6s ease-in-out infinite}
+@keyframes pjPulse{0%,100%{transform:translateY(0);opacity:.85}50%{transform:translateY(3px);opacity:1}}
+@media(max-width:760px){
+.proto-journey{padding:56px 18px 64px}
+.proto-journey .pj-lede{font-size:13.5px;margin-bottom:36px}
+.pj-stage{padding:10px 0}
+.pj-stage-num{font-size:10px;letter-spacing:3px;padding:4px 12px;margin-bottom:12px}
+.pj-stage-cap{font-size:12px}
+.pj-stage-final .pj-stage-img{max-width:260px}
+.pj-arrow{width:26px;height:36px;font-size:18px}
+}
 .pstep:nth-child(even){direction:rtl}.pstep:nth-child(even)>*{direction:ltr}
 .pstep:nth-child(odd) .pstep-text{background:var(--bg-card)}
 .pstep-img{height:400px;overflow:hidden}
@@ -1565,6 +1597,38 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="mfg-sig-sw mfg-sig-sw-silver"></div>
 <div class="mfg-sig-info"><div class="mfg-sig-name">Polished <em>Silver</em></div><div class="mfg-sig-desc">The steel. The hardware, the buckles, the awl and the stitching tools. A lineage of trade passed hand to hand.</div></div>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section class="proto-journey fade-in">
+<div class="proto-journey-inner">
+<span class="pj-eyebrow">From Sketch to Stitch</span>
+<h2>Every piece, <em>drawn before it&rsquo;s made.</em></h2>
+<p class="pj-lede">Each Goldy Brown holster begins as a pencil sketch on the desk in Vancouver. The lines are refined, the proportions tuned, the hardware mapped &mdash; only then does the master pattern travel to South India to be cut. Here is the holster, from first stroke to finished piece.</p>
+<div class="pj-flow">
+<div class="pj-stage scale-in">
+<div class="pj-stage-num">01 &mdash; Concept</div>
+<div class="pj-stage-img"><img loading="lazy" src="holstersketch1.png" alt="First concept sketch of the Goldy Brown holster"></div>
+<div class="pj-stage-cap">First concept sketch. Silhouette, fit, where the body meets the bag.</div>
+</div>
+<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-stage scale-in">
+<div class="pj-stage-num">02 &mdash; Refinement</div>
+<div class="pj-stage-img"><img loading="lazy" src="holstersketch2.png" alt="Refined drawing of the holster, with strap geometry and pouch dimensions"></div>
+<div class="pj-stage-cap">Refinement. Strap geometry, pouch dimensions, how it sits invisible under a jacket.</div>
+</div>
+<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-stage scale-in">
+<div class="pj-stage-num">03 &mdash; Technical Draft</div>
+<div class="pj-stage-img"><img loading="lazy" src="holstersketch3.png" alt="Technical draft of the holster with stitch lines and hardware placement"></div>
+<div class="pj-stage-cap">Technical draft. Stitch lines, hardware placement, edge measurements &mdash; sent to the master cutter.</div>
+</div>
+<div class="pj-arrow" aria-hidden="true">&darr;</div>
+<div class="pj-stage pj-stage-final scale-in">
+<div class="pj-stage-num">04 &mdash; The Holster</div>
+<div class="pj-stage-img"><img loading="lazy" src="blackholster.png" alt="The finished Goldy Brown holster"></div>
+<div class="pj-stage-cap">The piece, exactly as drawn. Cut, stitched, finished &mdash; in your hand.</div>
 </div>
 </div>
 </div>
