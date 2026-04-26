@@ -155,6 +155,7 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .scart-item .sci-name{font-size:13px;color:var(--w);font-weight:400;margin-bottom:2px}
 .scart-item .sci-variant{font-size:11px;color:var(--tm);margin-bottom:6px}
 .scart-item .sci-price{font-size:13px;color:var(--gl);font-weight:400}
+.scart-item .sci-preorder{display:inline-block;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:#7a5a1e;background:rgba(201,169,78,.14);border:1px solid rgba(201,169,78,.45);padding:3px 8px;border-radius:3px;margin-bottom:6px;font-weight:600}
 .scart-item .sci-qty{display:flex;align-items:center;border:1px solid var(--b);margin-top:6px;width:fit-content}
 .scart-item .sci-qty button{width:28px;height:28px;border:0;background:var(--bg-el);cursor:pointer;font-size:13px;color:var(--td);display:flex;align-items:center;justify-content:center}
 .scart-item .sci-qty button:hover{background:var(--g);color:#fff}
@@ -219,7 +220,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .h2-accent{width:36px;height:1px;background:var(--gl);margin:8px 0 12px}
 .holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:0 0 2px;padding-top:14px;border-top:1px solid var(--b)}
 .holster-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:4px}
-.holster-home-text .preorder-note{font-size:10px;color:var(--gl);font-weight:400;letter-spacing:.5px;padding:8px 12px;border:1px solid rgba(42,107,63,.15);background:rgba(42,107,63,.03);margin-bottom:14px}
 .holster-home-text .customize-link{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 14px;border:1px solid var(--b);background:var(--bg-card);text-decoration:none;color:inherit;cursor:pointer;transition:all .25s;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1.1s both}
 .holster-home-text .customize-link:hover{border-color:var(--g);background:var(--gm)}
 .holster-home-text .customize-link .cz-ico{flex:0 0 auto;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--gl);font-size:18px;font-family:var(--fd)}
@@ -240,6 +240,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .warranty-chip .wc-text{display:flex;flex-direction:column;gap:1px;min-width:0;line-height:1.1}
 .holster-home-text .warranty-chip .wc-title{font-family:var(--fd);font-size:13px;color:#e8cf85;font-weight:600;letter-spacing:.2px;white-space:nowrap}
 .holster-home-text .warranty-chip .wc-sub{font-size:9.5px;color:rgba(232,207,133,.62);font-weight:400;letter-spacing:1.4px;text-transform:uppercase;white-space:nowrap}
+/* Pre-order notice (shown when a Soon colour is active) */
+.holster-home-text .preorder-note{display:flex;align-items:center;gap:10px;margin:10px 0 12px;padding:10px 14px;border:1px solid rgba(201,169,78,.4);background:linear-gradient(135deg,rgba(201,169,78,.08) 0%,rgba(201,169,78,.02) 100%);border-radius:6px}
+.holster-home-text .preorder-note .po-pulse{flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:#c9a94e;box-shadow:0 0 0 0 rgba(201,169,78,.55);animation:poPulse 1.8s ease-in-out infinite}
+@keyframes poPulse{0%{box-shadow:0 0 0 0 rgba(201,169,78,.5)}70%{box-shadow:0 0 0 8px rgba(201,169,78,0)}100%{box-shadow:0 0 0 0 rgba(201,169,78,0)}}
+.holster-home-text .preorder-note .po-text{display:flex;flex-direction:column;gap:1px;line-height:1.25}
+.holster-home-text .preorder-note .po-text b{font-family:var(--fd);font-size:13px;color:#7a5a1e;font-weight:600;letter-spacing:.2px}
+.holster-home-text .preorder-note .po-eta{font-size:10.5px;color:var(--td);font-weight:400}
 /* Goldy Brown Guarantee band */
 .gb-guar{position:relative;padding:120px 60px 110px;margin-top:32px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 70%);color:#e9dcc1;overflow:hidden;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
@@ -1319,6 +1326,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </a>
 </div>
 <div class="shoppay-badge shoppay-badge-dark" id="holsterShopPay"><span class="spp-msg">4 interest-free installments, or from <b id="holsterSppMo">$22.47</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span></span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('holster')">View sample plans</a></div>
+<div class="preorder-note" id="preorderNote" style="display:none" aria-live="polite">
+<span class="po-pulse" aria-hidden="true"></span>
+<span class="po-text"><b>Pre-Order &middot; <span class="po-color">Green</span></b><span class="po-eta">Made-to-order &middot; arrives in 2&ndash;3 weeks</span></span>
+</div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -2270,21 +2281,27 @@ function switchColor(color){
   thumbs.innerHTML=thHTML;
   // Update material
   document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
-  // Update buy links (route "Soon" colours to a notify mailto so we don't
-  // collect orders against a variant we can't ship yet)
+  // Update buy links / Add-to-Cart label. "Soon" colours become pre-orders:
+  // we tag the line item with a Pre-Order note so production knows the
+  // intended colour even though all variants currently share one Shopify ID.
   var buyBtn=document.querySelector('.holster-home-text .btn-f');
+  var addBtn=document.querySelector('.holster-home-text .btn-row .btn:not(.btn-f)');
+  var colorLabel=color.charAt(0).toUpperCase()+color.slice(1);
   if(buyBtn){
     if(set.soon){
-      var subj='Notify me when '+(color.charAt(0).toUpperCase()+color.slice(1))+' releases';
-      buyBtn.href='mailto:info@goldybrown.com?subject='+encodeURIComponent(subj);
-      buyBtn.textContent='Notify Me';
-      buyBtn.removeAttribute('target');
+      var note='Pre-Order: '+colorLabel+' Holster — arrives in 2-3 weeks';
+      buyBtn.href=set.cart+'?note='+encodeURIComponent(note);
+      buyBtn.textContent='Pre-Order';
+      buyBtn.setAttribute('target','_blank');
     }else{
       buyBtn.href=set.cart;
       buyBtn.textContent='Buy Now';
       buyBtn.setAttribute('target','_blank');
     }
   }
+  if(addBtn){addBtn.textContent=set.soon?'Pre-Order — Add to Cart':'Add to Cart'}
+  var preNote=document.getElementById('preorderNote');
+  if(preNote){preNote.style.display=set.soon?'flex':'none';preNote.querySelector('.po-color').textContent=colorLabel}
   // Update swatch borders
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
   var sg=document.getElementById('swatchGreen');if(sg)sg.style.borderColor=color==='green'?'var(--g)':'';
@@ -2381,12 +2398,12 @@ var shopProducts={
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
-  if(colorSets[curColor]&&colorSets[curColor].soon){
-    alert(p.name.split(' — ')[1]+' is releasing soon. Email info@goldybrown.com or DM @goldybrowncouture to be notified the moment it ships.');
-    return;
-  }
-  var existing=shopCart.find(function(i){return i.variant===p.variant});
-  if(existing){existing.qty++}else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'holster'})}
+  var soon=!!(colorSets[curColor]&&colorSets[curColor].soon);
+  // Pre-orders: keep distinct cart lines per colour so the local UI shows
+  // the correct colour, even though all variants share one Shopify ID for now.
+  var existing=shopCart.find(function(i){return i.variant===p.variant&&!!i.preorder===soon&&i.color===curColor});
+  if(existing){existing.qty++}
+  else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'holster',color:curColor,preorder:soon})}
   renderShopCart();toggleShopCart(true);
 }
 function addDiscoveryToCart(src){
@@ -2423,7 +2440,8 @@ function renderShopCart(){
     var price=item.price;
     var discounted=item.variant==='53324620529956'&&holsterPresent;
     if(discounted)price=Math.round(item.price*0.8);
-    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+(discounted?'<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Holster</div>':'<div class="sci-price">'+fmt(price)+'</div>')+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
+    var preBadge=item.preorder?'<div class="sci-preorder">Pre-Order &middot; arrives in 2&ndash;3 weeks</div>':'';
+    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+preBadge+(discounted?'<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Holster</div>':'<div class="sci-price">'+fmt(price)+'</div>')+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
   });
   bd.innerHTML=h;
   document.getElementById('scItemCount').textContent=totalItems;
@@ -2437,9 +2455,14 @@ function updateShopQty(idx,d){
 function removeShopItem(idx){shopCart.splice(idx,1);renderShopCart()}
 function shopCheckout(){
   if(!shopCart.length)return;
-  var parts=[];
-  shopCart.forEach(function(i){parts.push(i.variant+':'+i.qty)});
-  window.open('https://kuibri-ev.myshopify.com/cart/'+parts.join(','),'_blank');
+  var parts=[],preorders=[];
+  shopCart.forEach(function(i){
+    parts.push(i.variant+':'+i.qty);
+    if(i.preorder){var c=(i.color||'').charAt(0).toUpperCase()+(i.color||'').slice(1);preorders.push(c+' x '+i.qty)}
+  });
+  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',');
+  if(preorders.length){url+='?note='+encodeURIComponent('Pre-Order: '+preorders.join(', ')+' — arrives in 2-3 weeks')}
+  window.open(url,'_blank');
 }
 
 renderCat();initFI();document.getElementById('bbar').style.display='none';renderDots('classic');renderDots('acid');setMedia('classic',0);setMedia('acid',0);updShopPayHolster();(function(){Object.keys(APP_CARDS).forEach(function(pid){var card=document.getElementById(APP_CARDS[pid].vid);if(!card||!card.parentElement)return;var wrap=card.parentElement;var sx=0;wrap.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});wrap.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)<40)return;cycleMedia(pid,dx<0?1:-1)},{passive:true})})})();
