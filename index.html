@@ -251,12 +251,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gb-guar{position:relative;padding:120px 60px 110px;margin-top:32px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 70%);color:#e9dcc1;overflow:hidden;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
 .gb-guar-inner{position:relative;max-width:980px;margin:0 auto;text-align:center}
-.gb-guar-seal{width:132px;height:132px;margin:0 auto 32px;border-radius:50%;background:radial-gradient(circle at 50% 32%,#5a9a72 0%,#357048 40%,#1c4528 80%,#0f2e1c 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--fd);position:relative;box-shadow:0 18px 42px -12px rgba(0,0,0,.7),0 0 0 1px #5a4220,0 0 0 4px #c9a94e,0 0 0 5px #5a4220,inset 0 0 30px rgba(0,0,0,.25)}
-.gb-guar-seal::before{content:'';position:absolute;inset:9px;border:1px solid rgba(232,207,133,.5);border-radius:50%;pointer-events:none}
-.gb-guar-seal::after{content:'';position:absolute;inset:14px;border:1px dashed rgba(232,207,133,.32);border-radius:50%;pointer-events:none}
-.gb-guar-seal .gbs-mono{font-size:36px;letter-spacing:1px;font-weight:600;line-height:.9;background:linear-gradient(180deg,#fff1c6 0%,#f0d590 35%,#d6b25a 70%,#9a7530 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6));margin:0 0 8px;position:relative;z-index:1}
-.gb-guar-seal .gbs-mono::after{content:'';display:block;width:30px;height:1px;background:linear-gradient(90deg,transparent,#c9a94e,transparent);margin:8px auto 0;opacity:.7}
-.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:7.5px;letter-spacing:3.8px;text-transform:uppercase;color:#e8cf85;font-weight:700;text-shadow:0 1px 1px rgba(0,0,0,.7);position:relative;z-index:1}
+.gb-guar-seal{width:140px;height:140px;margin:0 auto 32px;border-radius:50%;background:radial-gradient(circle at 50% 32%,#5a9a72 0%,#357048 40%,#1c4528 80%,#0f2e1c 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--fd);position:relative;box-shadow:0 18px 42px -12px rgba(0,0,0,.7),0 0 0 1px #5a4220,0 0 0 4px #c9a94e,0 0 0 5px #5a4220,inset 0 0 30px rgba(0,0,0,.25)}
+.gb-guar-seal::before{content:'';position:absolute;inset:10px;border:1px solid rgba(232,207,133,.5);border-radius:50%;pointer-events:none}
+.gb-guar-seal::after{content:'';position:absolute;inset:16px;border:1px dashed rgba(232,207,133,.32);border-radius:50%;pointer-events:none}
+.gb-guar-seal .gbs-mono{font-size:30px;letter-spacing:1px;font-weight:600;line-height:1;background:linear-gradient(180deg,#fff1c6 0%,#f0d590 35%,#d6b25a 70%,#9a7530 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6));margin:0;position:relative;z-index:1}
+.gb-guar-seal .gbs-divider{display:block;width:26px;height:1px;background:linear-gradient(90deg,transparent,#c9a94e,transparent);margin:10px auto;opacity:.65;position:relative;z-index:1}
+.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#e8cf85;font-weight:700;text-shadow:0 1px 1px rgba(0,0,0,.7);position:relative;z-index:1;line-height:1}
 .gb-guar .gbg-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:600;margin-bottom:10px;display:inline-flex;align-items:center;gap:10px}
 .gb-guar .gbg-eyebrow::before,.gb-guar .gbg-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
 .gb-guar h2{font-family:var(--fd);font-size:clamp(28px,3.6vw,42px);color:#faf6ec;font-weight:500;letter-spacing:-.3px;line-height:1.15;margin-bottom:14px}
@@ -266,11 +266,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gbg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(184,160,112,.18);border-bottom:1px solid rgba(184,160,112,.18);max-width:840px;margin:0 auto 32px}
 .gbg-cell{padding:24px 20px;text-align:center;border-right:1px solid rgba(184,160,112,.18)}
 .gbg-cell:last-child{border-right:0}
-.gbg-cell .gbg-ico{font-family:var(--fd);font-size:22px;color:#b8a070;font-style:italic;margin-bottom:6px;font-weight:500;line-height:1}
+.gbg-cell .gbg-ico{font-family:var(--fd);font-size:20px;color:#c9a94e;font-style:italic;margin-bottom:10px;font-weight:500;line-height:1;letter-spacing:.5px}
 .gbg-cell h4{font-family:var(--fb);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#faf6ec;font-weight:500;margin-bottom:8px}
 .gbg-cell p{font-size:12.5px;line-height:1.7;color:#a8957c;font-weight:300;max-width:220px;margin:0 auto}
 .gb-guar .gbg-fine{font-size:11.5px;line-height:1.75;color:#7a6a4a;font-weight:300;max-width:540px;margin:0 auto;font-style:italic;font-family:var(--fd)}
-@media(max-width:760px){.gb-guar{padding:80px 22px 80px;margin-top:20px}.gb-guar-seal{width:100px;height:100px;margin-bottom:22px}.gb-guar-seal .gbs-mono{font-size:30px}.gb-guar-seal .gbs-cap{font-size:7px;letter-spacing:3.5px}.gbg-grid{grid-template-columns:1fr;border-top:1px solid rgba(184,160,112,.18);border-bottom:1px solid rgba(184,160,112,.18)}.gbg-cell{border-right:0;border-bottom:1px solid rgba(184,160,112,.12);padding:20px 12px}.gbg-cell:last-child{border-bottom:0}}
+@media(max-width:760px){.gb-guar{padding:80px 22px 80px;margin-top:20px}.gb-guar-seal{width:114px;height:114px;margin-bottom:22px}.gb-guar-seal::before{inset:8px}.gb-guar-seal::after{inset:13px}.gb-guar-seal .gbs-mono{font-size:24px}.gb-guar-seal .gbs-divider{width:22px;margin:8px auto}.gb-guar-seal .gbs-cap{font-size:6.5px;letter-spacing:2.5px}.gbg-grid{grid-template-columns:1fr;border-top:1px solid rgba(184,160,112,.18);border-bottom:1px solid rgba(184,160,112,.18)}.gbg-cell{border-right:0;border-bottom:1px solid rgba(184,160,112,.12);padding:20px 12px}.gbg-cell:last-child{border-bottom:0}}
 .holster-home-text .desc{font-size:13px;font-weight:200;color:var(--td);line-height:1.8;max-width:420px;margin-bottom:12px}
 .holster-home-text .detail-list{list-style:none;margin-bottom:12px}
 .holster-home-text .detail-list li{font-size:11.5px;color:var(--td);font-weight:200;padding:5px 0;border-bottom:1px solid var(--b);display:flex;gap:8px}
@@ -1349,14 +1349,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <section class="gb-guar fade-in" id="gb-guarantee">
 <div class="gb-guar-inner">
-<div class="gb-guar-seal scale-in"><span class="gbs-mono">GB</span><span class="gbs-cap">Guarantee</span></div>
+<div class="gb-guar-seal scale-in"><span class="gbs-mono">GB</span><span class="gbs-divider" aria-hidden="true"></span><span class="gbs-cap">Guarantee</span></div>
 <span class="gbg-eyebrow">The Goldy Brown Guarantee</span>
 <h2>Lifetime warranty.<br><em>Every piece, forever.</em></h2>
 <p class="gbg-lede">Stitching, hardware, leather &mdash; <b>any defect, any time</b>, repaired or replaced at our atelier. Shipping covered both ways. No fine print, no proof of purchase chases. We make it once, by hand. <b>We stand behind it for life.</b></p>
 <div class="gbg-grid">
-<div class="gbg-cell"><div class="gbg-ico">&#10070;</div><h4>Lifetime Coverage</h4><p>Stitching, leather, hardware. Original owner or gift recipient, no time limit.</p></div>
-<div class="gbg-cell"><div class="gbg-ico">&#9774;</div><h4>Free Repair or Replace</h4><p>Worked by the same artisans who made it. Restored to original, or remade if beyond repair.</p></div>
-<div class="gbg-cell"><div class="gbg-ico">&#9992;</div><h4>Shipping On Us</h4><p>Sent to us, returned to you. Worldwide. All costs covered, both ways.</p></div>
+<div class="gbg-cell"><div class="gbg-ico">I.</div><h4>Lifetime Coverage</h4><p>Stitching, leather, hardware. Original owner or gift recipient, no time limit.</p></div>
+<div class="gbg-cell"><div class="gbg-ico">II.</div><h4>Free Repair or Replace</h4><p>Worked by the same artisans who made it. Restored to original, or remade if beyond repair.</p></div>
+<div class="gbg-cell"><div class="gbg-ico">III.</div><h4>Shipping On Us</h4><p>Sent to us, returned to you. Worldwide. All costs covered, both ways.</p></div>
 </div>
 <p class="gbg-fine">A handwritten guarantee card ships with every order. One direct line to our atelier &mdash; for life.</p>
 </div>
