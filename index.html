@@ -2214,12 +2214,12 @@ document.addEventListener('keydown',function(e){if(!LB)return;if(e.key==='ArrowR
 </script>
 <script>
 var P=[
-{id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/garment-holder'},
-{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'blackholster.png',shop:'kuibri-ev.myshopify.com/cart/53325154156836:1'},
-{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/cigar-case'},
-{id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/suitcase'},
-{id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/passport-holder'},
-{id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png',shop:'YOUR_SHOPIFY_STORE.myshopify.com/products/luggage-tag'}
+{id:'garment-holder',name:'Garment Holder',price:350,qty:0,desc:'Full-length garment bag with interior hanger loops and zippered closure. Protects suits, dresses, and formalwear during travel.',retail:350,img:'suitholder.png'},
+{id:'holster',name:'The Holster',price:249,qty:0,desc:'Our flagship concealed shoulder rig. Hand-cut from full grain leather with stainless steel hardware. Custom hotel engraving included.',retail:249,img:'blackholster.png'},
+{id:'cigar-case',name:'Cigar Case',price:200,qty:0,desc:'Cedar-lined interior with three-finger capacity. Spanish cedar preserves humidity and flavour. A standout gift for VIP and suite guests.',retail:200,img:'cigar.png'},
+{id:'suitcase',name:'Briefcase',price:150,qty:0,desc:'Structured leather case for travel essentials. Reinforced corners, brass hardware, and interior compartments. Built to last a lifetime.',retail:150,img:'briefcase.png'},
+{id:'passport',name:'Passport Holder',price:120,qty:0,desc:'Slim profile, fits all international passports. Interior card slots and boarding pass pocket. Hot-stamped with your property name.',retail:120,img:'passport.png'},
+{id:'luggage-tag',name:'Luggage Tag',price:40,qty:0,desc:'Full grain calfskin with stainless steel buckle. Engraved with your hotel logo. The first brand touchpoint for arriving guests.',retail:40,img:'luggagetag.png'}
 ];
 var T=[{b:10000,d:0,l:'$10K'},{b:25000,d:.06,l:'$25K'},{b:50000,d:.12,l:'$50K'},{b:100000,d:.20,l:'$100K'}];
 var cT=0;
@@ -2282,9 +2282,21 @@ function switchColor(color){
   thumbs.innerHTML=thHTML;
   // Update material
   document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
-  // Update buy links
+  // Update buy links (route "Soon" colours to a notify mailto so we don't
+  // collect orders against a variant we can't ship yet)
   var buyBtn=document.querySelector('.holster-home-text .btn-f');
-  if(buyBtn)buyBtn.href=set.cart;
+  if(buyBtn){
+    if(set.soon){
+      var subj='Notify me when '+(color.charAt(0).toUpperCase()+color.slice(1))+' releases';
+      buyBtn.href='mailto:info@goldybrown.com?subject='+encodeURIComponent(subj);
+      buyBtn.textContent='Notify Me';
+      buyBtn.removeAttribute('target');
+    }else{
+      buyBtn.href=set.cart;
+      buyBtn.textContent='Buy Now';
+      buyBtn.setAttribute('target','_blank');
+    }
+  }
   // Update swatch borders
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
   var sg=document.getElementById('swatchGreen');if(sg)sg.style.borderColor=color==='green'?'var(--g)':'';
@@ -2381,6 +2393,10 @@ var shopProducts={
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
+  if(colorSets[curColor]&&colorSets[curColor].soon){
+    alert(p.name.split(' — ')[1]+' is releasing soon. Email info@goldybrown.com or DM @goldybrowncouture to be notified the moment it ships.');
+    return;
+  }
   var existing=shopCart.find(function(i){return i.variant===p.variant});
   if(existing){existing.qty++}else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'holster'})}
   renderShopCart();toggleShopCart(true);
