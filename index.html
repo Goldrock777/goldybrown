@@ -235,25 +235,26 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .city-strip .cs-label{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:#7a5a1e;font-weight:600;flex:0 0 auto}
 .holster-home-text .city-strip .cs-cities{font-size:10.5px;color:var(--td);font-weight:300;letter-spacing:.3px;line-height:1.4}
 /* Lifetime warranty gold emblem */
-.holster-home-text .warranty-emblem{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:10px 14px 10px 10px;border:1px solid rgba(184,160,112,.35);background:linear-gradient(135deg,rgba(184,160,112,.08) 0%,rgba(184,160,112,.02) 60%,rgba(184,160,112,.05) 100%);text-decoration:none;color:inherit;cursor:pointer;transition:all .3s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .85s both}
-.holster-home-text .warranty-emblem::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(244,224,166,.18),transparent);transition:left .9s ease}
-.holster-home-text .warranty-emblem:hover{border-color:#b8a070;background:linear-gradient(135deg,rgba(184,160,112,.14) 0%,rgba(184,160,112,.04) 60%,rgba(184,160,112,.1) 100%);transform:translateY(-1px);box-shadow:0 6px 18px -8px rgba(184,160,112,.45)}
+.holster-home-text .warranty-emblem{display:flex;align-items:center;gap:14px;margin:10px 0 8px;padding:11px 16px 11px 12px;border:1.5px solid #b8a070;background:linear-gradient(135deg,rgba(244,224,166,.18) 0%,rgba(184,160,112,.08) 50%,rgba(244,224,166,.14) 100%);text-decoration:none;color:inherit;cursor:pointer;transition:all .3s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .55s both;box-shadow:0 2px 10px -4px rgba(184,160,112,.35)}
+.holster-home-text .warranty-emblem::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,240,192,.35),transparent);transition:left 1s ease;pointer-events:none}
+.holster-home-text .warranty-emblem:hover{border-color:#c9a94e;background:linear-gradient(135deg,rgba(244,224,166,.28) 0%,rgba(184,160,112,.14) 50%,rgba(244,224,166,.22) 100%);transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(184,160,112,.55)}
 .holster-home-text .warranty-emblem:hover::before{left:140%}
-.holster-home-text .warranty-emblem .we-medal{flex:0 0 auto;width:38px;height:38px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 4px rgba(122,90,30,.35));transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.holster-home-text .warranty-emblem .we-medal{flex:0 0 auto;width:48px;height:48px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 3px 6px rgba(106,74,26,.45));transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
 .holster-home-text .warranty-emblem:hover .we-medal{transform:rotate(-8deg) scale(1.06)}
-.holster-home-text .warranty-emblem .we-text{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
-.holster-home-text .warranty-emblem .we-title{font-family:var(--fd);font-size:14px;color:#7a5a1e;font-weight:600;letter-spacing:.2px;line-height:1.1}
-.holster-home-text .warranty-emblem .we-sub{font-size:10.5px;color:var(--td);font-weight:300;letter-spacing:.3px;line-height:1.4}
-.holster-home-text .warranty-emblem .we-arr{flex:0 0 auto;color:#b8a070;font-size:18px;font-weight:300;transition:transform .25s}
+.holster-home-text .warranty-emblem .we-text{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.holster-home-text .warranty-emblem .we-title{font-family:var(--fd);font-size:15.5px;color:#5a3f12;font-weight:700;letter-spacing:.2px;line-height:1.1}
+.holster-home-text .warranty-emblem .we-sub{font-size:11px;color:var(--td);font-weight:400;letter-spacing:.2px;line-height:1.45}
+.holster-home-text .warranty-emblem .we-arr{flex:0 0 auto;color:#7a5a1e;font-size:20px;font-weight:400;transition:transform .25s}
 .holster-home-text .warranty-emblem:hover .we-arr{transform:translateX(3px)}
 /* Goldy Brown Guarantee band */
 .gb-guar{position:relative;padding:80px 60px 88px;background:radial-gradient(ellipse at center top,#161513 0%,#0a0a0a 70%);color:#e9dcc1;overflow:hidden;border-top:1px solid #1f1c17;border-bottom:1px solid #1f1c17}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
 .gb-guar-inner{position:relative;max-width:980px;margin:0 auto;text-align:center}
-.gb-guar-seal{width:104px;height:104px;margin:0 auto 22px;border-radius:50%;border:2px solid #b8a070;background:radial-gradient(ellipse at center,#1c1a16 0%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#b8a070;font-family:var(--fd);position:relative;box-shadow:0 12px 30px -10px rgba(0,0,0,.6),inset 0 0 0 1px rgba(184,160,112,.18)}
-.gb-guar-seal::before{content:'';position:absolute;inset:6px;border:1px dashed rgba(184,160,112,.45);border-radius:50%}
-.gb-guar-seal .gbs-mono{font-size:24px;letter-spacing:1px;font-weight:500;line-height:1}
-.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:7px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(184,160,112,.85);font-weight:600;margin-top:4px}
+.gb-guar-seal{width:120px;height:120px;margin:0 auto 26px;border-radius:50%;border:2px solid #b8a070;background:radial-gradient(ellipse at 50% 35%,#23201a 0%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#b8a070;font-family:var(--fd);position:relative;box-shadow:0 14px 36px -10px rgba(0,0,0,.7),inset 0 0 0 1px rgba(184,160,112,.22),inset 0 -10px 26px -10px rgba(0,0,0,.6)}
+.gb-guar-seal::before{content:'';position:absolute;inset:7px;border:1px solid rgba(184,160,112,.55);border-radius:50%}
+.gb-guar-seal::after{content:'';position:absolute;inset:11px;border:1px dashed rgba(184,160,112,.35);border-radius:50%}
+.gb-guar-seal .gbs-mono{font-size:34px;letter-spacing:1.5px;font-weight:600;line-height:1;background:linear-gradient(180deg,#f4e0a6 0%,#c9a94e 55%,#9a7a3a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:0 1px 0 rgba(0,0,0,.4);padding-top:2px}
+.gb-guar-seal .gbs-cap{font-family:var(--fb);font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:#d4be8a;font-weight:600;margin-top:6px;text-shadow:0 1px 0 rgba(0,0,0,.5)}
 .gb-guar .gbg-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:600;margin-bottom:10px;display:inline-flex;align-items:center;gap:10px}
 .gb-guar .gbg-eyebrow::before,.gb-guar .gbg-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
 .gb-guar h2{font-family:var(--fd);font-size:clamp(28px,3.6vw,42px);color:#faf6ec;font-weight:500;letter-spacing:-.3px;line-height:1.15;margin-bottom:14px}
@@ -712,9 +713,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .btn-row .btn{padding:14px 16px;font-size:9px}
 .holster-home-text .city-strip{padding:5px 10px;margin:6px 0 10px}
 .holster-home-text .city-strip .cs-cities{font-size:10px;line-height:1.35}
-.holster-home-text .warranty-emblem{padding:10px 12px;gap:10px}
-.holster-home-text .warranty-emblem .we-title{font-size:13.5px}
-.holster-home-text .warranty-emblem .we-sub{font-size:10px}
+.holster-home-text .warranty-emblem{padding:10px 12px;gap:12px}
+.holster-home-text .warranty-emblem .we-medal{width:42px;height:42px}
+.holster-home-text .warranty-emblem .we-title{font-size:14.5px}
+.holster-home-text .warranty-emblem .we-sub{font-size:10.5px}
 .holster-variants{margin-top:16px}
 .carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
@@ -1284,6 +1286,34 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home-text">
 <div class="est">Est. 1992 — Vancouver, Canada</div>
 <h2>Goldy Brown's <span>Holster</span></h2>
+<a class="warranty-emblem" href="#gb-guarantee" onclick="document.getElementById('gb-guarantee').scrollIntoView({behavior:'smooth',block:'start'});return false;" aria-label="Lifetime warranty — Goldy Brown Guarantee">
+<span class="we-medal" aria-hidden="true">
+<svg viewBox="0 0 60 60" width="48" height="48" focusable="false">
+<defs>
+<radialGradient id="weGold" cx="50%" cy="38%" r="62%">
+<stop offset="0%" stop-color="#fff0c0"/>
+<stop offset="40%" stop-color="#e8c878"/>
+<stop offset="75%" stop-color="#c9a94e"/>
+<stop offset="100%" stop-color="#6a4a1a"/>
+</radialGradient>
+<linearGradient id="weShine" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#fff" stop-opacity=".55"/>
+<stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<circle cx="30" cy="30" r="28" fill="url(#weGold)" stroke="#6a4a1a" stroke-width="1.2"/>
+<circle cx="30" cy="30" r="24" fill="none" stroke="#3a2a08" stroke-width=".5" opacity=".5"/>
+<ellipse cx="30" cy="20" rx="22" ry="12" fill="url(#weShine)" opacity=".6"/>
+<text x="30" y="28" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="16" font-weight="700" fill="#2a1a04" letter-spacing="1">GB</text>
+<text x="30" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.2" font-weight="800" fill="#2a1a04" letter-spacing="1.2">LIFETIME</text>
+</svg>
+</span>
+<span class="we-text">
+<span class="we-title">Lifetime Warranty</span>
+<span class="we-sub">The Goldy Brown Guarantee &middot; covered for life, free repair &amp; shipping</span>
+</span>
+<span class="we-arr" aria-hidden="true">&rsaquo;</span>
+</a>
 <div class="city-strip" aria-label="Free shipping to North America's major cities">
 <span class="cs-dot"></span>
 <span class="cs-label">Free shipping</span>
@@ -1299,28 +1329,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
 <li><strong>Warranty</strong> Lifetime &mdash; any defect covered, repair &amp; shipping free</li>
 </ul>
-<a class="warranty-emblem" href="#gb-guarantee" onclick="document.getElementById('gb-guarantee').scrollIntoView({behavior:'smooth',block:'start'});return false;" aria-label="Lifetime warranty — Goldy Brown Guarantee">
-<span class="we-medal" aria-hidden="true">
-<svg viewBox="0 0 44 44" width="34" height="34" focusable="false">
-<defs>
-<radialGradient id="weGold" cx="50%" cy="40%" r="60%">
-<stop offset="0%" stop-color="#f4e0a6"/>
-<stop offset="55%" stop-color="#c9a94e"/>
-<stop offset="100%" stop-color="#7a5a1e"/>
-</radialGradient>
-</defs>
-<circle cx="22" cy="22" r="20" fill="url(#weGold)" stroke="#7a5a1e" stroke-width="1"/>
-<circle cx="22" cy="22" r="16" fill="none" stroke="#fff5d6" stroke-width=".6" stroke-dasharray="1.2 1.6" opacity=".75"/>
-<text x="22" y="20" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="11" font-weight="600" fill="#3a2a08" letter-spacing=".5">GB</text>
-<text x="22" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.2" font-weight="700" fill="#3a2a08" letter-spacing=".8">LIFETIME</text>
-</svg>
-</span>
-<span class="we-text">
-<span class="we-title">Lifetime Warranty</span>
-<span class="we-sub">The Goldy Brown Guarantee &middot; covered for life</span>
-</span>
-<span class="we-arr" aria-hidden="true">&rsaquo;</span>
-</a>
 <div class="price" id="holsterPrice">$249 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
 <div class="shoppay-badge shoppay-badge-dark" id="holsterShopPay"><span class="spp-msg">4 interest-free installments, or from <b id="holsterSppMo">$22.47</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span></span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('holster')">View sample plans</a></div>
 <div class="btn-row">
@@ -1397,7 +1405,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(GB111.JPG) center 55%/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(greenrobe.png) center 5%/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card section-card-wide scale-in" onclick="go('fragrance')"><div class="sc-img" style="position:relative;overflow:hidden"><div class="frag-strip" style="position:absolute;inset:0"><div class="frag-strip-item"><img loading="lazy" src="killian1.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div><div class="frag-strip-item"><img loading="lazy" src="kilianblack.jpg" alt="Black Phantom"><div class="fsi-name">Black Phantom<span>Kilian</span></div></div><div class="frag-strip-item fsi-blend"><img loading="lazy" src="chanel2.jpg" alt="Bleu de Chanel"><div class="fsi-name">Bleu de Chanel<span>Chanel</span></div></div><div class="frag-strip-item fsi-blend"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme"><div class="fsi-name">Dior Homme<span>Dior</span></div></div><div class="frag-strip-item"><img loading="lazy" src="armani.jpg" alt="Stronger With You"><div class="fsi-name">Stronger With You<span>Armani</span></div></div></div></div><div class="sc-overlay"><div class="sc-label">New</div><div class="sc-title">Fragrance Collection</div><div class="sc-desc">Luxury leather sampler cases with curated designer scents. Your brand or ours.</div></div></div>
-<div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">Six steps from raw hide to finished product</div></div></div>
+<div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">From sketch to stitch. See the prototype drawings, then six steps from raw hide to finished product.</div></div></div>
 <div class="section-card scale-in" onclick="go('apparel')"><div class="sc-img" style="background:url(240cottonwhite.jpg) center top/contain no-repeat;background-color:#f2ead8"></div><div class="sc-overlay"><div class="sc-label">Direct Order</div><div class="sc-title">Apparel</div><div class="sc-desc">Premium blanks from $8. Free worldwide shipping, 5 day delivery.</div></div></div>
 <div class="section-card scale-in" onclick="go('custom')"><div class="sc-img" style="background:url(blackholsterclose.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Made Personal</div><div class="sc-title">Custom</div><div class="sc-desc">Tattoo any design into the leather. Names, signatures, sketches. From $50.</div></div></div>
 <div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(DSC04620.JPG) center 10%/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
