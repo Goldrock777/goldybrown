@@ -203,25 +203,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 @keyframes heroImgIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
 @keyframes heroTextIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:calc(100vh - 76px)}
+.holster-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:calc(100dvh - 76px)}
 .holster-home-img{overflow:hidden;background:#fff;animation:heroImgIn 1s cubic-bezier(.25,.46,.45,.94) both;position:relative}
-.holster-home-img img{width:100%;height:100%;object-fit:contain;min-height:520px}
-.holster-home-text{padding:48px 56px 40px;display:flex;flex-direction:column;justify-content:flex-start;animation:heroTextIn 1s cubic-bezier(.25,.46,.45,.94) .3s both}
+.holster-home-img img{width:100%;height:100%;object-fit:contain;min-height:480px}
+.holster-home-text{padding:32px 44px 28px;display:flex;flex-direction:column;justify-content:center;animation:heroTextIn 1s cubic-bezier(.25,.46,.45,.94) .3s both}
 .holster-home-text .slabel{margin-bottom:4px}
-.holster-home-text .est{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:400;margin-bottom:8px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .5s both}
+.holster-home-text .est{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:400;margin-bottom:4px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .5s both}
 .holster-home-text h2{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .6s both}
 .holster-home-text .desc{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .7s both}
 .holster-home-text .detail-list{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .8s both}
 .holster-home-text .price{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .9s both}
 .holster-home-text .btn-row{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1s both}
-.holster-home-text h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:10px;line-height:1.15}
+.holster-home-text h2{font-size:clamp(24px,2.2vw,30px);margin-bottom:8px;line-height:1.15}
 .holster-home-text h2 span{color:var(--gl)}
 .holster-home-text .h2-accent{width:36px;height:1px;background:var(--gl);margin:8px 0 12px}
 .holster-home-text .price{font-family:var(--fd);font-size:28px;color:var(--w);margin:0 0 2px;padding-top:14px;border-top:1px solid var(--b)}
 .holster-home-text .price-note{font-size:10px;color:var(--tm);margin-bottom:4px}
-.holster-home-text .customize-link{display:flex;align-items:center;gap:12px;margin-top:12px;padding:10px 14px;border:1px solid var(--b);background:var(--bg-card);text-decoration:none;color:inherit;cursor:pointer;transition:all .25s;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1.1s both}
+.holster-home-text .customize-link{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 12px;border:1px solid var(--b);background:var(--bg-card);text-decoration:none;color:inherit;cursor:pointer;transition:all .25s;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1.1s both}
 .holster-home-text .customize-link:hover{border-color:var(--g);background:var(--gm)}
-.holster-home-text .customize-link .cz-ico{flex:0 0 auto;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--gl);font-size:18px;font-family:var(--fd)}
+.holster-home-text .customize-link .cz-ico{flex:0 0 auto;width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:var(--gl);font-size:16px;font-family:var(--fd)}
 .holster-home-text .customize-link .cz-txt{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
 .holster-home-text .customize-link .cz-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w);font-weight:500}
 .holster-home-text .customize-link .cz-sub{font-size:11.5px;color:var(--td);font-weight:300;line-height:1.45}
@@ -291,25 +291,25 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .gbf-item .gbf-a p{font-size:13.5px;line-height:1.85;color:var(--td);font-weight:300;max-width:680px}
 @keyframes gbfFade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){.gb-faq{padding:60px 22px 64px}.gb-faq .gbf-lede{margin-bottom:24px}.gbf-item summary{padding:16px 2px;gap:12px}.gbf-item .gbf-q{font-size:14px}.gbf-item .gbf-a p{font-size:13px}}
-.holster-home-text .desc{font-size:12.5px;font-weight:200;color:var(--td);line-height:1.7;max-width:480px;margin-bottom:14px}
-.holster-home-text .detail-list{list-style:none;margin-bottom:10px}
-.holster-home-text .detail-list li{font-size:11px;color:var(--td);font-weight:200;padding:4px 0;border-bottom:1px solid var(--b);display:flex;gap:8px}
+.holster-home-text .desc{font-size:12px;font-weight:200;color:var(--td);line-height:1.6;max-width:480px;margin-bottom:10px}
+.holster-home-text .detail-list{list-style:none;margin-bottom:8px}
+.holster-home-text .detail-list li{font-size:10.5px;color:var(--td);font-weight:200;padding:3px 0;border-bottom:1px solid var(--b);display:flex;gap:8px;line-height:1.45}
 .holster-home-text .detail-list li strong{color:var(--gl);font-weight:600;font-size:8px;letter-spacing:2px;text-transform:uppercase;min-width:72px;padding-top:2px}
 .holster-home-text .btn-row{display:flex;gap:12px;flex-wrap:wrap}
 .holster-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
 .holster-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}
 .holster-gallery-img{height:320px;overflow:hidden;background:var(--bg-card)}
 .holster-gallery-img img{width:100%;height:100%;object-fit:cover}
-.holster-variants{display:flex;gap:20px;margin-top:14px;margin-bottom:4px}
+.holster-variants{display:flex;gap:18px;margin-top:10px;margin-bottom:0}
 .hv{text-align:center}
-.hv-swatch{width:44px;height:44px;border-radius:50%;border:2px solid var(--b);margin:0 auto 6px;transition:all .3s;cursor:pointer}
+.hv-swatch{width:36px;height:36px;border-radius:50%;border:2px solid var(--b);margin:0 auto 4px;transition:all .3s;cursor:pointer}
 .hv-swatch:hover{border-color:var(--gl);transform:scale(1.08)}
 .hv-swatch.green{background:#3a5a3a}
 .hv-swatch.white{background:#fafaf5;border-color:#d8d6cf}
 .hv-swatch.black{background:#1a1a1a}
 .hv-soon{position:absolute;top:-6px;right:-6px;background:#0a0a0a;color:#fff;font-size:8px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;padding:2px 5px;border-radius:3px;line-height:1.2;pointer-events:none}
 .hv{position:relative}
-.hv-label{font-size:10px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
+.hv-label{font-size:9px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
 .section-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:56px;padding:0 20px}
 .section-card{position:relative;cursor:pointer;overflow:hidden;transition:opacity .3s}
 .section-card:hover{opacity:.85}
@@ -394,7 +394,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-thumbs{display:flex;flex-direction:column;gap:8px}
 .carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
 .carousel-thumb.active{border-color:var(--g)}
-.carousel-thumb img{width:100%;height:100%;object-fit:cover}
+.carousel-thumb img{width:100%;height:100%;object-fit:contain;background:#fff}
 .carousel-main{position:relative;overflow:hidden;background:#fff;aspect-ratio:3/4}
 .carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
 .carousel-main img.active{opacity:1}
