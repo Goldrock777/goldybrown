@@ -14,12 +14,22 @@
   <!-- Hotel programme (B2B) -->
   <url><loc>https://goldybrown.com/hotel/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
 
+  <!-- Cities index -->
+  <url><loc>https://goldybrown.com/cities/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Search -->
+  <url><loc>https://goldybrown.com/search/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+
   <!-- Press -->
   <url><loc>https://goldybrown.com/press/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Journal hub + articles -->
   <url><loc>https://goldybrown.com/journal/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://goldybrown.com/journal/groomsmen-gifts-leather/</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/journal/airport-security-pat-down-etiquette/</loc><lastmod>2026-04-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/hotel-loyalty-milestone-gifting/</loc><lastmod>2026-04-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://goldybrown.com/journal/travel-hands-free-airport-security/</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/leather-repair-vs-replace/</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://goldybrown.com/journal/vegetable-vs-chrome-tanned-leather/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://goldybrown.com/journal/hotel-guest-amenity-kits/</loc><lastmod>2026-04-08</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://goldybrown.com/journal/care-full-grain-leather/</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

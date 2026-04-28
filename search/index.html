@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — Goldy Brown</title>
+<meta name="description" content="Search the Goldy Brown atelier — products, journal articles, city pages, and the Hotel Programme.">
+<link rel="canonical" href="https://goldybrown.com/search/">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fff;--bgc:#f8f7f5;--g:#2d5a3d;--gl:#2a6b3f;--w:#111;--t:#1a1a1a;--td:#555550;--tm:#999590;--b:#e0deda;--fd:'Playfair Display',Georgia,serif;--fb:'Inter',sans-serif}
+body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--gl);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:24px 32px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--fd);font-size:18px;letter-spacing:3px;color:var(--w);text-transform:uppercase}
+nav a{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;margin-left:24px;color:var(--td)}
+.wrap{max-width:780px;margin:0 auto;padding:64px 32px 96px}
+.crumbs{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);margin-bottom:18px}
+h1{font-family:var(--fd);font-size:clamp(34px,4.6vw,52px);font-weight:400;letter-spacing:-1px;color:var(--w);line-height:1.1;margin-bottom:18px}
+.search-box{display:flex;gap:0;border:1px solid var(--b);background:#fff;margin-bottom:8px}
+.search-box input{flex:1;padding:18px 22px;border:0;font-family:var(--fb);font-size:17px;font-weight:300;color:var(--t);background:transparent;outline:none}
+.search-box input::placeholder{color:var(--tm)}
+.search-box button{padding:18px 28px;border:0;border-left:1px solid var(--b);background:var(--w);color:#fff;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer}
+.search-box button:hover{background:var(--g)}
+.hint{font-size:12px;color:var(--tm);margin-bottom:36px}
+.results{display:flex;flex-direction:column;gap:0}
+.result{padding:22px 0;border-bottom:1px solid var(--b)}
+.result a{display:block;color:inherit;text-decoration:none}
+.result .url{font-size:11.5px;color:var(--gl);letter-spacing:1px;margin-bottom:4px}
+.result h3{font-family:var(--fd);font-size:20px;font-weight:500;color:var(--w);margin-bottom:6px;letter-spacing:-.3px}
+.result p{font-size:14px;color:var(--td);margin:0}
+.result .tags{margin-top:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm)}
+.result .tags span{margin-right:14px}
+mark{background:rgba(42,107,63,.18);color:var(--w);padding:0 2px;border-radius:2px}
+.empty{padding:32px 0;text-align:center;color:var(--tm)}
+.popular{margin-top:48px;padding-top:32px;border-top:1px solid var(--b)}
+.popular h4{font-family:var(--fd);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--tm);font-weight:500;margin-bottom:14px}
+.popular a{display:inline-block;margin:0 8px 8px 0;padding:8px 14px;background:var(--bgc);border:1px solid var(--b);font-size:12px;color:var(--t)}
+.popular a:hover{border-color:var(--g);background:#fff;text-decoration:none}
+footer{padding:36px 32px;border-top:1px solid var(--b);text-align:center;font-size:12px;color:var(--tm)}
+@media(max-width:640px){.wrap{padding:42px 22px 72px}.search-box input{font-size:16px;padding:14px 18px}.search-box button{padding:14px 18px;font-size:10px;letter-spacing:1.5px}}
+</style>
+</head>
+<body>
+<header class="top"><a href="/" class="logo">Goldy Brown</a><nav><a href="/">Home</a><a href="/hotel/">Hotel Programme</a><a href="/journal/">Journal</a></nav></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Home</a> &nbsp;/&nbsp; Search</div>
+<h1>Search the atelier</h1>
+
+<form class="search-box" id="searchForm" role="search" autocomplete="off">
+<input type="search" id="q" name="q" placeholder="Search products, journal, cities, hotel programme&hellip;" aria-label="Search the site">
+<button type="submit">Search</button>
+</form>
+<div class="hint">Press Enter to search. Try <em>holster</em>, <em>hotel</em>, <em>vegetable tanning</em>, <em>Toronto</em>, <em>passport</em>.</div>
+
+<div id="results" class="results"></div>
+
+<div class="popular" id="popular">
+<h4>Popular pages</h4>
+<a href="/">The Holster</a>
+<a href="/hotel/">Hotel Programme</a>
+<a href="/journal/">Journal</a>
+<a href="/cities/">Cities served</a>
+<a href="/full-grain-leather/">Full grain leather</a>
+<a href="/journal/care-full-grain-leather/">Leather care</a>
+<a href="/journal/travel-hands-free-airport-security/">Travel hands-free</a>
+<a href="/press/">Press</a>
+</div>
+</main>
+<footer>&copy; Goldy Brown · Vancouver, BC · <a href="/">Home</a> · <a href="/journal/">Journal</a></footer>
+
+<script>
+// Static index of the whole site. Edited when new pages are added.
+var INDEX = [
+{u:"/",t:"The Holster — Luxury Leather Travel Bag",d:"Body-worn full grain calfskin travel bag. Stainless hardware, YKK zipper. $249. Designed in Vancouver, made in South India. Free worldwide shipping. Lifetime warranty.",k:"holster shoulder rig travel bag chest passport calfskin product",g:"Product"},
+{u:"/hotel/",t:"The Hotel Programme",d:"Custom-branded VIP guest amenity kits for 4- and 5-star hotels. Tiers $10K to $100K. Bespoke leather, hot-stamped property crest.",k:"hotel programme b2b amenity kit vip guest five-star property crest",g:"Programme"},
+{u:"/cities/",t:"Cities served",d:"Free worldwide shipping. Dedicated delivery and lifestyle pages for Vancouver, New York, Toronto, Los Angeles, Miami, London, Dubai.",k:"cities served delivery shipping worldwide",g:"Index"},
+{u:"/vancouver/",t:"Luxury Leather Goods Vancouver",d:"Vancouver atelier. Same-week delivery across Yaletown, Kitsilano, Gastown, North Van, Burnaby, Richmond.",k:"vancouver bc canada local delivery yaletown kitsilano",g:"City"},
+{u:"/new-york/",t:"Luxury Leather Bags New York",d:"Free DHL/FedEx to Manhattan, Brooklyn, Queens, Hoboken, Westchester, the Hamptons.",k:"new york nyc manhattan brooklyn queens hamptons hoboken",g:"City"},
+{u:"/toronto/",t:"Luxury Leather Bags Toronto",d:"Free Canada Post Xpresspost to Yorkville, King West, Forest Hill, Rosedale, and the GTA.",k:"toronto yorkville king west forest hill rosedale gta",g:"City"},
+{u:"/los-angeles/",t:"Luxury Leather Bags Los Angeles",d:"Free delivery to Beverly Hills, West Hollywood, Brentwood, Manhattan Beach, Bel-Air, the Palisades.",k:"los angeles la beverly hills west hollywood brentwood manhattan beach",g:"City"},
+{u:"/miami/",t:"Luxury Leather Bags Miami",d:"Free delivery to Miami Beach, Brickell, Coral Gables, Bal Harbour, Coconut Grove, the Sunset Islands.",k:"miami beach brickell coral gables bal harbour coconut grove",g:"City"},
+{u:"/london/",t:"Luxury Leather Bags London",d:"Free DHL across Mayfair, Knightsbridge, Chelsea, Marylebone, Belgravia, the City, and the home counties.",k:"london mayfair knightsbridge chelsea marylebone belgravia uk britain",g:"City"},
+{u:"/dubai/",t:"Luxury Leather Bags Dubai",d:"Free DHL across Downtown Dubai, DIFC, Palm Jumeirah, Emirates Hills, Dubai Marina, plus Abu Dhabi.",k:"dubai uae difc palm jumeirah emirates hills marina abu dhabi",g:"City"},
+{u:"/journal/",t:"The Journal",d:"Field notes from the atelier on leather, travel, and craft.",k:"journal blog editorial articles writing notes",g:"Journal"},
+{u:"/journal/travel-hands-free-airport-security/",t:"How to travel hands-free through airport security",d:"A practical guide to body-worn travel bags, the unwritten rules of TSA carry-on, and the difference between a third bag and a worn accessory.",k:"travel airport security tsa carry-on third bag worn accessory body-worn",g:"Journal"},
+{u:"/journal/vegetable-vs-chrome-tanned-leather/",t:"Vegetable-tanned vs chrome-tanned leather",d:"The two principal ways modern leather is tanned. What each gives you, what it costs, and why most luxury houses use both.",k:"vegetable tanned chrome tanned leather tanning craft material",g:"Journal"},
+{u:"/journal/hotel-guest-amenity-kits/",t:"Choosing a hotel guest amenity kit",d:"What 4- and 5-star properties actually look for in a leather amenity kit. The brief, the budget, the timeline.",k:"hotel guest amenity kit five star vip welcome procurement",g:"Journal"},
+{u:"/journal/care-full-grain-leather/",t:"How to care for full grain leather",d:"The simple care routine that keeps full grain calfskin looking its best for a lifetime — and the three things that ruin it fastest.",k:"leather care full grain calfskin condition balm patina howto",g:"Journal"},
+{u:"/journal/south-indian-leather-luxury-houses/",t:"Why South Indian leather supplies the world's luxury houses",d:"The Tamil Nadu and Kerala tannery belt has fed European luxury for over a century. Why the leather travels.",k:"south india tamil nadu kerala tannery luxury houses europe origin",g:"Journal"},
+{u:"/journal/personal-item-airline-rules/",t:"What counts as a personal item on a flight",d:"Carry-on rules across the major North American, European, and Gulf carriers. Worn accessories, third bags, what gate agents flag.",k:"personal item airline carry-on rules flight gate agent travel emirates",g:"Journal"},
+{u:"/full-grain-leather/",t:"What is full grain leather?",d:"The highest grade of leather. Made from the top layer of the hide with the natural grain surface intact and unsanded.",k:"full grain leather grade quality top grain genuine bonded glossary",g:"Glossary"},
+{u:"/vegetable-tanning/",t:"What is vegetable tanning?",d:"Tannins from tree bark, weeks in stone vats. The slow tanning process behind structured luxury leather.",k:"vegetable tanning veg-tan bark wattle myrobalan tanning process glossary",g:"Glossary"},
+{u:"/saddle-stitch/",t:"What is a saddle stitch?",d:"Two needles, one waxed thread, every hole pulled by hand. The strongest stitch in leatherwork.",k:"saddle stitch hand sewn leather technique stitch lockstitch glossary",g:"Glossary"},
+{u:"/press/",t:"Press & Media",d:"Press kit, fact sheet, founder voice, downloadable imagery, contact for editors.",k:"press media journalist editor brand kit fact sheet contact",g:"About"}
+];
+
+function escapeRe(s){return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}
+function highlight(s,terms){if(!terms.length)return s;var re=new RegExp("("+terms.map(escapeRe).join("|")+")","gi");return s.replace(re,"<mark>$1</mark>")}
+function score(item,terms){var s=0;var hay=(item.t+" "+item.d+" "+item.k).toLowerCase();for(var i=0;i<terms.length;i++){var t=terms[i].toLowerCase();if(!t)continue;var ti=item.t.toLowerCase().indexOf(t);if(ti>=0)s+=ti===0?20:10;if(item.k.toLowerCase().indexOf(t)>=0)s+=6;if(item.d.toLowerCase().indexOf(t)>=0)s+=3;if(hay.indexOf(t)<0)return -1}return s}
+
+function render(q){
+  var out=document.getElementById("results");
+  var pop=document.getElementById("popular");
+  q=(q||"").trim();
+  if(!q){out.innerHTML="";pop.style.display="block";return}
+  pop.style.display="none";
+  var terms=q.split(/\s+/);
+  var hits=INDEX.map(function(i){return{i:i,s:score(i,terms)}}).filter(function(h){return h.s>=0}).sort(function(a,b){return b.s-a.s});
+  if(!hits.length){out.innerHTML='<div class="empty">No results for &ldquo;'+q.replace(/[<>&"]/g,"")+"&rdquo;. Try a broader term.</div>";return}
+  out.innerHTML=hits.map(function(h){var i=h.i;return '<div class="result"><a href="'+i.u+'"><div class="url">goldybrown.com'+i.u+'</div><h3>'+highlight(i.t,terms)+"</h3><p>"+highlight(i.d,terms)+'</p><div class="tags"><span>'+i.g+"</span></div></a></div>"}).join("");
+}
+
+// Wire up
+var qInput=document.getElementById("q");
+var form=document.getElementById("searchForm");
+form.addEventListener("submit",function(e){e.preventDefault();render(qInput.value);history.replaceState(null,"","/search/?q="+encodeURIComponent(qInput.value))});
+qInput.addEventListener("input",function(){render(qInput.value)});
+// Read initial query from URL (?q=...) — also handles the legacy /?q= redirect via SearchAction
+(function(){var p=new URLSearchParams(location.search);var q=p.get("q");if(q){qInput.value=q;render(q)}qInput.focus()})();
+</script>
+</body>
+</html>
