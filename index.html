@@ -1182,6 +1182,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="nav-tabs" id="navTabs">
 <a class="nav-tab" data-page="lookbook">Lookbook</a>
 <a class="nav-tab" data-page="hotel">Hotel Programme</a>
+<a class="nav-tab" href="/journal/">Journal</a>
 <a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
 <a class="nav-tab" data-page="apparel">Apparel</a>
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
@@ -1215,6 +1216,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="javascript:void(0)" onclick="go('home');closeMob()">Home</a>
 <a href="javascript:void(0)" onclick="go('lookbook');closeMob()">Lookbook</a>
 <a href="javascript:void(0)" onclick="go('hotel');closeMob()">Hotel Programme</a>
+<a href="/journal/">Journal</a>
 <a href="javascript:void(0)" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
 <a href="javascript:void(0)" onclick="go('apparel');closeMob()">Apparel</a>
 <a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
@@ -2217,7 +2219,10 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <ul>
 <li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
 <li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
+<li><a href="/journal/">Journal</a></li>
 <li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
+<li><a href="/cities/">Cities Served</a></li>
+<li><a href="/press/">Press</a></li>
 <li><a href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener">Instagram</a></li>
 </ul>
 </div>
@@ -2441,7 +2446,7 @@ function go(page,skipHistory){var cur=document.querySelector('.page.active');var
 function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">You\u2019re on the list.</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
 (function(){var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var p=r.replace('/','');if(p&&document.getElementById('page-'+p)){history.replaceState({page:p},'',r);go(p,true);return}}var p=location.pathname.replace('/','');if(p&&document.getElementById('page-'+p)){go(p,true)}else{history.replaceState({page:'home'},'','/');setBreadcrumb('home')}})();
-document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
+document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){var p=this.getAttribute('data-page');if(!p)return;e.preventDefault();go(p)})});
 (function(){var sx=0,sy=0;var cm=document.getElementById('carouselMain');if(cm){cm.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});cm.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;var dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*0.7)return;if(dx<0)nextSlide();if(dx>0)prevSlide()},{passive:true})}})();
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
