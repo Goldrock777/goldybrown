@@ -1,13 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Goldy Brown</title>
+<meta name="description" content="The page you were looking for is no longer here. Browse the Goldy Brown atelier — full grain leather holsters, travel bags, and the Hotel Programme.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
 <script>
-// Redirect to index with the path stored, so the SPA can pick it up
-var path = location.pathname;
-sessionStorage.setItem('gb-redirect', path);
-location.replace('/');
+// Preserve SPA routing: store the requested path and try the SPA at /
+(function(){
+  var path = location.pathname;
+  // Known SPA routes — let the SPA pick them up
+  var spa = ['/lookbook','/apparel','/fragrance','/manufacturing','/custom','/about','/shipping','/returns','/privacy','/terms'];
+  if (spa.indexOf(path) !== -1 || spa.indexOf(path.replace(/\/$/, '')) !== -1) {
+    sessionStorage.setItem('gb-redirect', path);
+    location.replace('/');
+  }
+})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fff;--bgc:#f8f7f5;--g:#2d5a3d;--gl:#2a6b3f;--w:#111;--t:#1a1a1a;--td:#555550;--tm:#999590;--b:#e0deda}
+body{font-family:'Inter',sans-serif;font-weight:300;color:var(--t);background:var(--bg);line-height:1.75;font-size:15.5px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--gl);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:24px 32px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:18px;letter-spacing:3px;color:var(--w);text-transform:uppercase}
+nav a{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;margin-left:24px;color:var(--td)}
+main{flex:1;display:flex;flex-direction:column;align-items:center;padding:96px 32px 64px;text-align:center}
+.code{font-family:'Playfair Display',serif;font-size:84px;letter-spacing:-3px;color:var(--gl);font-weight:500;margin-bottom:6px;line-height:1}
+h1{font-family:'Playfair Display',serif;font-size:34px;font-weight:400;letter-spacing:-.6px;color:var(--w);margin-bottom:12px}
+p{color:var(--td);max-width:480px;margin-bottom:32px;font-size:15.5px;line-height:1.7}
+.links{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:12px;max-width:520px;width:100%;margin-bottom:32px}
+.link{background:var(--bgc);border:1px solid var(--b);padding:14px 18px;text-align:left;color:var(--t);transition:all .2s;text-decoration:none}
+.link:hover{border-color:var(--g);background:#fff;text-decoration:none}
+.link b{font-family:'Playfair Display',serif;font-size:15px;color:var(--w);display:block;font-weight:500;margin-bottom:2px}
+.link span{font-size:12px;color:var(--tm)}
+.cta{display:inline-block;background:var(--w);color:#fff;padding:14px 28px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;text-decoration:none;margin-top:8px}
+.cta:hover{background:var(--g);color:#fff;text-decoration:none}
+footer{padding:36px 32px;border-top:1px solid var(--b);text-align:center;font-size:12px;color:var(--tm)}
+@media(max-width:520px){.links{grid-template-columns:1fr}.code{font-size:64px}h1{font-size:26px}main{padding:64px 22px 48px}}
+</style>
 </head>
-<body></body>
+<body>
+<header class="top"><a href="/" class="logo">Goldy Brown</a><nav><a href="/journal/">Journal</a><a href="/hotel/">Hotel Programme</a></nav></header>
+<main>
+<div class="code">404</div>
+<h1>Page not found</h1>
+<p>The page you were looking for has moved or was never here. Below are the corners of the atelier most people are after.</p>
+<div class="links">
+<a class="link" href="/"><b>The Holster</b><span>Body-worn leather travel bag · $249</span></a>
+<a class="link" href="/hotel/"><b>Hotel Programme</b><span>VIP guest amenity kits, $10K–$100K</span></a>
+<a class="link" href="/vancouver/"><b>Vancouver</b><span>Same-week local delivery</span></a>
+<a class="link" href="/new-york/"><b>New York</b><span>Free 3–5 day DHL/FedEx</span></a>
+<a class="link" href="/london/"><b>London</b><span>Free DHL across the UK</span></a>
+<a class="link" href="/journal/"><b>The Journal</b><span>Notes from the atelier</span></a>
+<a class="link" href="/full-grain-leather/"><b>Full grain leather</b><span>What it is, how it ages</span></a>
+<a class="link" href="/press/"><b>Press &amp; Media</b><span>Press kit and contact</span></a>
+</div>
+<a href="/" class="cta">Back to the atelier</a>
+</main>
+<footer>&copy; Goldy Brown · Vancouver, BC</footer>
+</body>
 </html>
