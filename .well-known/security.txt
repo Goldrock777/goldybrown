@@ -1,0 +1,26 @@
+# Goldy Brown — Security Policy
+# https://goldybrown.com/.well-known/security.txt
+
+Contact: mailto:security@goldybrown.com
+Contact: mailto:info@goldybrown.com
+Expires: 2027-04-30T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://goldybrown.com/.well-known/security.txt
+
+# If you have discovered a security issue with goldybrown.com or any
+# of our connected services, please email security@goldybrown.com.
+# We respond within 72 hours and credit responsible disclosures
+# (with permission) on our /press/ page.
+#
+# Out of scope:
+#   - Reports about missing security headers without a working exploit
+#   - Self-XSS (must require user interaction beyond clicking a link)
+#   - Outdated browser issues
+#   - Generic vulnerability scanner output without analysis
+#
+# In scope:
+#   - Authentication / authorisation flaws
+#   - Server-side injection (SQLi, command injection, SSRF)
+#   - Sensitive data exposure
+#   - Account takeover paths
+#   - Stored XSS
