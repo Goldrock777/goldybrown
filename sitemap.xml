@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://goldybrown.com/</loc><lastmod>2026-04-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://goldybrown.com/lookbook</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://goldybrown.com/hotel</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://goldybrown.com/fragrance</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://goldybrown.com/apparel</loc><lastmod>2026-04-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://goldybrown.com/manufacturing</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://goldybrown.com/custom</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://goldybrown.com/about</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://goldybrown.com/shipping</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://goldybrown.com/returns</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://goldybrown.com/privacy</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://goldybrown.com/terms</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://goldybrown.com/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- Hotel programme (highest commercial intent) -->
+  <url><loc>https://goldybrown.com/hotel/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+
+  <!-- Travel-bag commercial landing pages -->
+  <url><loc>https://goldybrown.com/travel-bags/</loc><lastmod>2026-04-29</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://goldybrown.com/tsa-friendly-travel-bag/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/personal-item/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Competitor alternatives + free tool -->
+  <url><loc>https://goldybrown.com/alternatives/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://goldybrown.com/alternatives/clg-london/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://goldybrown.com/alternatives/leatherology/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://goldybrown.com/alternatives/billy-tannery/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://goldybrown.com/find-your-piece/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Niche gifting landing pages -->
+  <url><loc>https://goldybrown.com/wedding-gifts/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://goldybrown.com/corporate-leather-gifts/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/golf-club-gifts/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- City landing pages -->
+  <url><loc>https://goldybrown.com/cities/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://goldybrown.com/vancouver/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/new-york/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/toronto/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/los-angeles/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/miami/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/london/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/dubai/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Static brand pages (E-E-A-T + visual surface + FAQ) -->
+  <url><loc>https://goldybrown.com/about/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/lookbook/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://goldybrown.com/faq/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/press/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://goldybrown.com/search/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+
+  <!-- Journal hub + articles -->
+  <url><loc>https://goldybrown.com/journal/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://goldybrown.com/journal/groomsmen-gifts-leather/</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/journal/airport-security-pat-down-etiquette/</loc><lastmod>2026-04-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/hotel-loyalty-milestone-gifting/</loc><lastmod>2026-04-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/journal/travel-hands-free-airport-security/</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/leather-repair-vs-replace/</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/vegetable-vs-chrome-tanned-leather/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/hotel-guest-amenity-kits/</loc><lastmod>2026-04-08</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://goldybrown.com/journal/care-full-grain-leather/</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/south-indian-leather-luxury-houses/</loc><lastmod>2026-03-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://goldybrown.com/journal/personal-item-airline-rules/</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Glossary / topic pages -->
+  <url><loc>https://goldybrown.com/full-grain-leather/</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://goldybrown.com/vegetable-tanning/</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://goldybrown.com/saddle-stitch/</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.65</priority></url>
+
+  <!-- SPA-only routes (no static file; 404.html redirects, SPA picks up) -->
+  <url><loc>https://goldybrown.com/fragrance</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://goldybrown.com/apparel</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://goldybrown.com/manufacturing</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://goldybrown.com/custom</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://goldybrown.com/shipping</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://goldybrown.com/returns</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://goldybrown.com/privacy</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://goldybrown.com/terms</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

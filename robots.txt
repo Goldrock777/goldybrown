@@ -1,3 +1,25 @@
 User-agent: *
 Allow: /
+
+# Block staging assets and source MP4s from crawl (waste of crawl budget)
+Disallow: /*.mp4$
+
+# Allow Googlebot-Image to access product imagery
+User-agent: Googlebot-Image
+Allow: /
+
+# AI crawlers — explicit allow (we want surface in answer engines)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://goldybrown.com/sitemap.xml

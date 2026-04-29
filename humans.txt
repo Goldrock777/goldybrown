@@ -1,0 +1,32 @@
+/* TEAM */
+
+Goldy Brown — Luxury Leather Atelier
+Designed in Vancouver, BC, Canada
+Made in Tamil Nadu and Kerala, South India
+
+Email: info@goldybrown.com
+Press: press@goldybrown.com
+Hotel Programme: hotels@goldybrown.com
+Phone: +1 604 704 0937
+
+Instagram: @goldybrowncouture
+
+/* THANKS */
+
+To the master leather artisans in South India whose tannery houses
+have supplied European luxury for over a century. To the small
+workshops in Tamil Nadu where the leather is cut, stitched, and
+finished by hand. To the early clients who took a chance on a
+holster that nobody had asked for.
+
+/* SITE */
+
+Last update: April 2026
+Standards: HTML5, CSS3, ES6
+Components: Static HTML pages, lightweight SPA core
+Hosted: GitHub Pages
+Type-design: Playfair Display, Inter
+
+/* MANIFESTO */
+
+Designed in Vancouver. Made in South India. Backed for life.

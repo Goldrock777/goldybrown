@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Goldy Brown Piece — A 30-Second Recommender</title>
+<meta name="description" content="A short five-question recommender that points you to the right Goldy Brown piece — the Holster, a bespoke commission, a wedding gift kit, the Hotel Programme, or corporate gifting. No email required.">
+<link rel="canonical" href="https://goldybrown.com/find-your-piece/">
+<link rel="alternate" hreflang="en" href="https://goldybrown.com/find-your-piece/">
+<link rel="alternate" hreflang="x-default" href="https://goldybrown.com/find-your-piece/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Find Your Goldy Brown Piece">
+<meta property="og:description" content="A 30-second recommender. No email required.">
+<meta property="og:image" content="https://goldybrown.com/holster.png">
+<meta property="og:url" content="https://goldybrown.com/find-your-piece/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0f1612">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"},{"@type":"ListItem","position":2,"name":"Find your piece","item":"https://goldybrown.com/find-your-piece/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Find Your Goldy Brown Piece","url":"https://goldybrown.com/find-your-piece/","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free interactive recommender. Five short questions, one matched piece. No email required."}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fff;--bgc:#f8f7f5;--bgs:#0f1612;--g:#2d5a3d;--gl:#2a6b3f;--gold:#b8a070;--w:#111;--t:#1a1a1a;--td:#444;--tm:#999;--b:#e0deda;--fd:'Playfair Display',Georgia,serif;--fb:'Inter',sans-serif}
+body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--gl);text-decoration:none}a:hover{text-decoration:underline}
+header.top{padding:24px 32px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--fd);font-size:18px;letter-spacing:3px;color:var(--w);text-transform:uppercase}
+nav a{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;margin-left:24px;color:var(--td)}
+.wrap{max-width:680px;margin:0 auto;padding:48px 32px 80px}
+.crumbs{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);margin-bottom:18px}
+.intro{text-align:center;margin-bottom:36px}
+.intro .label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gl);margin-bottom:14px}
+.intro h1{font-family:var(--fd);font-size:clamp(32px,4.4vw,46px);font-weight:400;letter-spacing:-1px;color:var(--w);line-height:1.1;margin-bottom:14px}
+.intro p{color:var(--td);font-size:16px;max-width:480px;margin:0 auto}
+.progress{height:3px;background:var(--bgc);margin-bottom:36px;position:relative}
+.progress-bar{height:100%;background:var(--gold);transition:width .35s ease;width:20%}
+.q-text{font-family:var(--fd);font-size:24px;font-weight:500;color:var(--w);line-height:1.25;margin-bottom:24px;letter-spacing:-.3px;min-height:60px}
+.q-num{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);margin-bottom:12px}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{background:#fff;border:1px solid var(--b);padding:16px 22px;font-family:var(--fb);font-size:15.5px;color:var(--t);cursor:pointer;text-align:left;transition:all .15s;font-weight:300}
+.opt:hover{border-color:var(--g);background:var(--bgc)}
+.opt:focus{outline:2px solid var(--gold);outline-offset:2px}
+.opt b{display:block;font-family:var(--fd);font-size:17px;color:var(--w);font-weight:500;margin-bottom:2px}
+.opt span{font-size:13px;color:var(--tm)}
+.controls{display:flex;justify-content:space-between;align-items:center;margin-top:24px;font-size:12.5px;color:var(--tm)}
+.back{background:none;border:0;color:var(--gl);cursor:pointer;font-family:var(--fb);font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;padding:6px 0}
+.back:hover{text-decoration:underline}
+.back[disabled]{visibility:hidden}
+/* Result */
+.result{display:none}
+.result.show{display:block}
+.result-card{background:var(--bgs);color:#f5ede0;padding:36px 32px;text-align:center;margin-bottom:24px}
+.result-card .label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.result-card h2{font-family:var(--fd);font-size:32px;color:#fff;font-weight:500;letter-spacing:-.5px;margin-bottom:10px;line-height:1.15}
+.result-card p{color:rgba(245,237,224,.85);font-size:15px;max-width:480px;margin:0 auto 22px}
+.result-card .price{font-family:var(--fd);font-size:18px;color:var(--gold);margin-bottom:20px}
+.btn{display:inline-block;padding:14px 28px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;border:1px solid;text-decoration:none;margin:0 4px}
+.btn-p{background:var(--gold);color:var(--bgs);border-color:var(--gold)}
+.btn-p:hover{background:#d3b886;color:var(--bgs);text-decoration:none}
+.btn-s{background:transparent;color:#f5ede0;border-color:#f5ede0}
+.btn-s:hover{background:#f5ede0;color:var(--bgs);text-decoration:none}
+.alt{background:var(--bgc);border:1px solid var(--b);padding:18px 22px;font-size:13.5px;color:var(--td);margin-bottom:14px}
+.alt b{font-family:var(--fd);color:var(--w);font-size:14.5px;display:block;margin-bottom:4px;font-weight:500}
+.alt a{color:var(--gl)}
+.restart{text-align:center;margin-top:24px}
+.restart button{background:none;border:0;color:var(--gl);font-family:var(--fb);font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:8px}
+.restart button:hover{color:var(--w)}
+footer{padding:36px 32px;border-top:1px solid var(--b);text-align:center;font-size:12px;color:var(--tm)}
+footer a{color:var(--td);margin:0 10px}
+@media(max-width:640px){.wrap{padding:32px 22px 56px}.q-text{font-size:21px}.result-card{padding:28px 22px}.result-card h2{font-size:26px}}
+</style>
+</head>
+<body>
+<header class="top"><a href="/" class="logo">Goldy Brown</a><nav><a href="/">Home</a><a href="/hotel/">Hotel Programme</a><a href="/journal/">Journal</a></nav></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Home</a> &nbsp;/&nbsp; Find your piece</div>
+<div class="intro">
+<div class="label">A 30-second recommender</div>
+<h1>Find your Goldy Brown piece</h1>
+<p>Five short questions. No email required. Most people land in 30 seconds with the right next step.</p>
+</div>
+
+<div id="quiz">
+<div class="progress"><div id="progress-bar" class="progress-bar"></div></div>
+<div class="q-num" id="q-num">Question 1 of 5</div>
+<div class="q-text" id="q-text"></div>
+<div class="options" id="options"></div>
+<div class="controls">
+<button class="back" id="back" type="button">&larr; Back</button>
+<span id="hint">No data leaves your browser</span>
+</div>
+</div>
+
+<div id="result" class="result">
+<div class="result-card" id="result-card"></div>
+<div id="alt-list"></div>
+<div class="restart"><button type="button" onclick="restart()">Start over</button></div>
+</div>
+</main>
+<footer>&copy; Goldy Brown &middot; <a href="/">Home</a> &middot; <a href="/journal/">Journal</a> &middot; <a href="/hotel/">Hotel Programme</a> &middot; <a href="/about/">About</a></footer>
+
+<script>
+// Five questions. Each option carries a tag; the recommender picks the highest-scoring outcome.
+var QUESTIONS = [
+  { q: "Who's this for?", opts: [
+    { t:"For myself", tags:{self:3} },
+    { t:"For a partner or family member", tags:{self:2,gift:1} },
+    { t:"For a wedding party (groomsmen, bridesmaids)", tags:{wedding:3} },
+    { t:"For a corporate or executive team", tags:{corporate:3} },
+    { t:"For a hotel, club, or property", tags:{hotel:3} },
+  ]},
+  { q: "What's the trigger?", opts: [
+    { t:"I travel a lot and want to upgrade my carry-on situation", tags:{holster:3,self:1} },
+    { t:"A wedding, anniversary, or milestone", tags:{wedding:2,bespoke:1,gift:1} },
+    { t:"Year-end gifting, board offsite, client appreciation", tags:{corporate:3} },
+    { t:"Refreshing a hotel guest amenity or loyalty programme", tags:{hotel:3} },
+    { t:"Just exploring quietly", tags:{self:1,journal:1} },
+  ]},
+  { q: "Headcount?", opts: [
+    { t:"Just one piece", tags:{self:2,bespoke:1} },
+    { t:"2–6 pieces", tags:{wedding:2,gift:1} },
+    { t:"6–25 pieces", tags:{corporate:2,wedding:1} },
+    { t:"25–250 pieces", tags:{corporate:2,hotel:1} },
+    { t:"250+ pieces", tags:{hotel:3} },
+  ]},
+  { q: "Budget per piece?", opts: [
+    { t:"Under $200", tags:{accessory:3} },
+    { t:"$200–$500", tags:{holster:3,gift:1} },
+    { t:"$500–$2,000", tags:{bespoke:3} },
+    { t:"$2,000+ (single bespoke piece, or programme volume)", tags:{bespoke:2,hotel:2} },
+    { t:"Programme budget — $10K to $100K+", tags:{hotel:5} },
+  ]},
+  { q: "How personal do you want it?", opts: [
+    { t:"Standard piece, no personalisation", tags:{holster:1,accessory:1} },
+    { t:"Hot-stamped initials", tags:{holster:1,accessory:1,gift:1} },
+    { t:"Hand-tattooed crest, signature, or design", tags:{bespoke:2,wedding:1,corporate:1} },
+    { t:"Fully bespoke piece — sketch to finished", tags:{bespoke:3} },
+    { t:"Property crest hot-stamped on every piece in a programme", tags:{hotel:3} },
+  ]},
+];
+
+// Outcomes
+var OUTCOMES = {
+  hotel: {
+    title: "The Hotel Programme",
+    desc: "Custom-branded VIP guest amenity kits for 4- and 5-star properties. Tiers from $10K to $100K. Bespoke leather, hot-stamped property crest, end-to-end design and manufacturing.",
+    price: "From $10,000",
+    cta: { url:"/hotel/", label:"See the Hotel Programme" },
+    cta2: { url:"mailto:hotels@goldybrown.com?subject=Hotel%20Programme%20enquiry", label:"Request a sample kit" }
+  },
+  corporate: {
+    title: "Corporate Leather Gifts",
+    desc: "Custom-branded full grain leather gifts for executives, boards, clients, and onboarding kits. Volume pricing from 25 pieces. Net-30 invoicing for established corporate accounts.",
+    price: "From $50 per piece at volume",
+    cta: { url:"/corporate-leather-gifts/", label:"See corporate gifting" },
+    cta2: { url:"mailto:corporate@goldybrown.com?subject=Corporate%20gift%20enquiry", label:"Email the atelier" }
+  },
+  wedding: {
+    title: "Wedding Gifts in Leather",
+    desc: "Personalised full grain leather gifts for groomsmen, bridesmaids, parents, and the couple. Hot-stamped or hand-tattooed personalisation. Volume pricing from six pieces.",
+    price: "From $50 per piece",
+    cta: { url:"/wedding-gifts/", label:"See wedding gifts" },
+    cta2: { url:"mailto:weddings@goldybrown.com?subject=Wedding%20gift%20enquiry", label:"Email the atelier" }
+  },
+  bespoke: {
+    title: "Bespoke Commission",
+    desc: "Made-to-order pieces from sketch to saddle-stitch. Briefcases, weekenders, garment holders, document folios, jewellery rolls. Vegetable- or chrome-tanned full grain calfskin, your choice. Lead time 4–6 weeks.",
+    price: "From $400 USD",
+    cta: { url:"mailto:info@goldybrown.com?subject=Bespoke%20commission%20enquiry", label:"Brief the atelier" },
+    cta2: { url:"/about/", label:"About the atelier" }
+  },
+  holster: {
+    title: "The Holster",
+    desc: "Body-worn full grain calfskin travel bag. Stainless steel hardware, YKK zipper. Sized for passport, iPhone 17 Pro Max, AirPods, and a slim wallet. Worn under a jacket — pairs with your carry-on as a worn accessory rather than a third bag. Lifetime warranty.",
+    price: "$249 USD",
+    cta: { url:"/", label:"Shop the Holster" },
+    cta2: { url:"/travel-bags/", label:"All travel bags" }
+  },
+  accessory: {
+    title: "Leather Accessories",
+    desc: "Passport sleeves, card holders, luggage tags, document folios. Full grain calfskin, hot-stamped initials included, hand-tattooed designs from $50. The right answer when the budget is under $200 and the piece needs to feel personal.",
+    price: "From $80 USD",
+    cta: { url:"/", label:"Shop accessories" },
+    cta2: { url:"/journal/groomsmen-gifts-leather/", label:"Gifting guide" }
+  },
+  gift: {
+    title: "A leather gift",
+    desc: "For the partner, parent, or close friend who'd actually carry it. Card holder, passport sleeve, or holster — all with hot-stamped initials or a hand-tattooed design.",
+    price: "From $80 USD",
+    cta: { url:"/wedding-gifts/", label:"See gifting pages" },
+    cta2: { url:"/", label:"Shop pieces" }
+  },
+  self: {
+    title: "The Holster (or a bespoke commission)",
+    desc: "If you travel a lot, the Holster is the answer. If you want something that doesn't exist in our catalogue, brief us and we'll sketch.",
+    price: "$249 USD (Holster) — bespoke from $400",
+    cta: { url:"/", label:"Shop the Holster" },
+    cta2: { url:"mailto:info@goldybrown.com?subject=Bespoke%20commission%20enquiry", label:"Brief the atelier" }
+  },
+  journal: {
+    title: "Start with the Journal",
+    desc: "If you're exploring quietly, the slow read is the right starting point. The Journal covers leather, travel, and the supply chain behind luxury houses.",
+    price: "Free reading",
+    cta: { url:"/journal/", label:"Read the Journal" },
+    cta2: { url:"/", label:"Browse the atelier" }
+  }
+};
+
+// Order of suggested alternatives by primary outcome
+var ALT_MAP = {
+  hotel: ["corporate","bespoke"],
+  corporate: ["wedding","hotel"],
+  wedding: ["accessory","corporate"],
+  bespoke: ["holster","accessory"],
+  holster: ["bespoke","accessory"],
+  accessory: ["holster","wedding"],
+  gift: ["wedding","accessory"],
+  self: ["holster","bespoke"],
+  journal: ["holster","bespoke"]
+};
+
+var step = 0, scores = {};
+var qText = document.getElementById("q-text");
+var qNum = document.getElementById("q-num");
+var optsEl = document.getElementById("options");
+var bar = document.getElementById("progress-bar");
+var backBtn = document.getElementById("back");
+var quizEl = document.getElementById("quiz");
+var resultEl = document.getElementById("result");
+
+function render(){
+  if (step >= QUESTIONS.length) return finish();
+  var q = QUESTIONS[step];
+  qText.textContent = q.q;
+  qNum.textContent = "Question "+(step+1)+" of "+QUESTIONS.length;
+  bar.style.width = ((step+1)/QUESTIONS.length*100)+"%";
+  backBtn.disabled = step === 0;
+  optsEl.innerHTML = "";
+  q.opts.forEach(function(o, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "opt";
+    b.innerHTML = "<b>"+o.t+"</b>";
+    b.onclick = function(){
+      // accumulate tag scores
+      Object.keys(o.tags).forEach(function(k){ scores[k] = (scores[k]||0) + o.tags[k]; });
+      step++;
+      render();
+    };
+    optsEl.appendChild(b);
+  });
+}
+
+backBtn.onclick = function(){
+  if (step === 0) return;
+  step--;
+  // Reset and rerun from scratch up to step (cleaner than tracking history per option)
+  scores = {};
+  // Actually, simplest: just go back one and let user re-answer (overwrites)
+  // But we don't track which option was picked; safest is to recompute from blank.
+  // Instead: track answered options
+  if (window._answers) window._answers.length = step;
+  render();
+};
+
+function finish(){
+  // Pick top scoring outcome
+  var best = "holster", bestScore = -Infinity;
+  Object.keys(scores).forEach(function(k){
+    if (OUTCOMES[k] && scores[k] > bestScore){ best = k; bestScore = scores[k]; }
+  });
+  var o = OUTCOMES[best];
+  var rc = document.getElementById("result-card");
+  rc.innerHTML =
+    '<div class="label">Recommended</div>'+
+    '<h2>'+o.title+'</h2>'+
+    '<p>'+o.desc+'</p>'+
+    '<div class="price">'+o.price+'</div>'+
+    '<a class="btn btn-p" href="'+o.cta.url+'">'+o.cta.label+'</a>'+
+    (o.cta2 ? '<a class="btn btn-s" href="'+o.cta2.url+'">'+o.cta2.label+'</a>' : '');
+  // Alternatives
+  var alts = ALT_MAP[best] || [];
+  var altList = document.getElementById("alt-list");
+  altList.innerHTML = alts.map(function(k){
+    var a = OUTCOMES[k]; if (!a) return "";
+    return '<div class="alt"><b>Or consider: '+a.title+'</b>'+a.desc.split(".")[0]+'. <a href="'+a.cta.url+'">'+a.cta.label+' &rarr;</a></div>';
+  }).join("");
+  quizEl.style.display = "none";
+  resultEl.classList.add("show");
+  // Update URL with outcome (no email capture, but useful for sharing)
+  history.replaceState(null, "", "/find-your-piece/?r="+best);
+}
+
+function restart(){
+  step = 0; scores = {};
+  history.replaceState(null, "", "/find-your-piece/");
+  resultEl.classList.remove("show");
+  quizEl.style.display = "block";
+  render();
+}
+
+// If URL has ?r=outcome, jump straight to that result (for shareable links)
+(function(){
+  var p = new URLSearchParams(location.search);
+  var r = p.get("r");
+  if (r && OUTCOMES[r]){
+    scores[r] = 99;
+    step = QUESTIONS.length;
+    finish();
+    return;
+  }
+  render();
+})();
+</script>
+</body>
+</html>
