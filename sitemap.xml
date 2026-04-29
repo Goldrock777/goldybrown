@@ -5,6 +5,11 @@
   <!-- Hotel programme (highest commercial intent) -->
   <url><loc>https://goldybrown.com/hotel/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
 
+  <!-- Travel-bag commercial landing pages -->
+  <url><loc>https://goldybrown.com/travel-bags/</loc><lastmod>2026-04-29</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://goldybrown.com/tsa-friendly-travel-bag/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://goldybrown.com/personal-item/</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
   <!-- Niche gifting landing pages -->
   <url><loc>https://goldybrown.com/wedding-gifts/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://goldybrown.com/corporate-leather-gifts/</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
