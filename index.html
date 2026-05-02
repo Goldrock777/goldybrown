@@ -392,7 +392,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lb-thumb.active{opacity:1;border-color:var(--g)}
 .lb-thumb img{width:100%;height:100%;object-fit:cover}
 .lb-thumb-cover{background:#1a1a18;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:6px;color:#faf9f6;letter-spacing:1px;text-transform:uppercase}
-.carousel-wrap{display:grid;grid-template-columns:80px 1fr;gap:12px;min-height:500px}
+.carousel-wrap{display:flex;flex-direction:column;min-height:500px}
+.carousel-dots{display:flex;justify-content:center;align-items:center;gap:10px;padding:20px 0 4px}
+.carousel-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.2);border:0;padding:0;cursor:pointer;transition:all .25s ease}
+.carousel-dot.active{background:#111;width:8px;height:8px}
+.carousel-dot:hover{background:rgba(0,0,0,.45)}
 .carousel-thumbs{display:flex;flex-direction:column;gap:8px}
 .carousel-thumb{width:80px;height:80px;border:2px solid var(--b);cursor:pointer;overflow:hidden;transition:border-color .3s;background:var(--bg-card)}
 .carousel-thumb.active{border-color:var(--g)}
@@ -742,7 +746,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .holster-home-text .warranty-chip .wc-title{font-size:12.5px}
 .holster-home-text .warranty-chip .wc-sub{font-size:9px;letter-spacing:1.2px}
 .holster-variants{margin-top:16px}
-.carousel-wrap{grid-template-columns:1fr;min-height:360px}.carousel-main{aspect-ratio:3/4;order:1}.carousel-thumbs{flex-direction:row;order:2;justify-content:center;padding:8px 0}.carousel-thumb{width:60px;height:60px}
+.carousel-wrap{min-height:360px}.carousel-main{aspect-ratio:3/4}.carousel-dots{padding:14px 0 4px;gap:8px}
 .holster-gallery{grid-template-columns:1fr}.holster-gallery-img{height:240px}
 .section-cards{grid-template-columns:1fr}.section-card .sc-img{height:200px}.section-card-wide .sc-img{height:180px}
 .hotel-deal{padding:0 24px}.hotel-deal-inner{grid-template-columns:1fr;gap:20px;padding:24px 20px}.hotel-deal-imgs{justify-content:center}
@@ -1290,12 +1294,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="holster-home" style="margin-top:76px">
 <div class="holster-home-img">
 <div class="carousel-wrap">
-<div class="carousel-thumbs" id="carouselThumbs">
-<div class="carousel-thumb active" onclick="showSlide(0)"><img loading="lazy" src="blackholster.png" alt="On Body"></div>
-<div class="carousel-thumb" onclick="showSlide(1)"><img loading="lazy" src="blackholsterfront.png" alt="Front"></div>
-<div class="carousel-thumb" onclick="showSlide(2)"><img loading="lazy" src="blackholsterclose.png" alt="Close Up"></div>
-<div class="carousel-thumb" onclick="showSlide(3)" title="First factory prototype — came out exactly as designed"><img loading="lazy" src="holster4.jpeg" alt="Factory Prototype"></div>
-</div>
 <div class="carousel-main" id="carouselMain">
 <div class="proto-cap" id="protoCap"><span class="proto-cap-dot"></span><span class="proto-cap-txt">First factory prototype &mdash; came out exactly as designed. What you order is the piece we drafted.</span></div>
 <img loading="lazy" src="blackholster.png" alt="On Body" class="active">
@@ -1304,6 +1302,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <img loading="lazy" src="holster4.jpeg" alt="First factory prototype — came out exactly as designed">
 <button class="carousel-arr prev" onclick="prevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <button class="carousel-arr next" onclick="nextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
+<div class="carousel-dots" id="carouselDots">
+<button class="carousel-dot active" onclick="showSlide(0)" aria-label="Slide 1"></button>
+<button class="carousel-dot" onclick="showSlide(1)" aria-label="Slide 2"></button>
+<button class="carousel-dot" onclick="showSlide(2)" aria-label="Slide 3"></button>
+<button class="carousel-dot" onclick="showSlide(3)" aria-label="Slide 4"></button>
 </div>
 </div>
 </div>
@@ -2341,11 +2345,13 @@ function switchColor(color){
   var imgHTML='';
   set.imgs.forEach(function(src,i){imgHTML+='<img loading="lazy" src="'+src+'" alt="Holster"'+(i===0?' class="active"':'')+'>'});
   main.innerHTML=capHTML+imgHTML+arrowHTML;
-  // Update thumbs
-  var thumbs=document.getElementById('carouselThumbs');
-  var thHTML='';
-  set.imgs.forEach(function(src,i){thHTML+='<div class="carousel-thumb'+(i===0?' active':'')+'" onclick="showSlide('+i+')"><img loading="lazy" src="'+src+'" alt="Thumb"></div>'});
-  thumbs.innerHTML=thHTML;
+  // Update dots
+  var dots=document.getElementById('carouselDots');
+  if(dots){
+    var dotHTML='';
+    set.imgs.forEach(function(_,i){dotHTML+='<button class="carousel-dot'+(i===0?' active':'')+'" onclick="showSlide('+i+')" aria-label="Slide '+(i+1)+'"></button>'});
+    dots.innerHTML=dotHTML;
+  }
   // Update material
   document.getElementById('materialLine').innerHTML='<strong>Material</strong> '+set.material;
   // Update buy links / Add-to-Cart label. "Soon" colours become pre-orders:
@@ -2377,7 +2383,7 @@ function switchColor(color){
   var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();
   curSlide=0;
 }
-function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var thumbs=document.querySelectorAll('#carouselThumbs .carousel-thumb');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});thumbs.forEach(function(th,i){th.classList.toggle('active',i===curSlide)});var cap=document.getElementById('protoCap');if(cap)cap.classList.toggle('show',curSlide===imgs.length-1)}
+function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var dots=document.querySelectorAll('#carouselDots .carousel-dot');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});dots.forEach(function(d,i){d.classList.toggle('active',i===curSlide)});var cap=document.getElementById('protoCap');if(cap)cap.classList.toggle('show',curSlide===imgs.length-1)}
 function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
