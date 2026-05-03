@@ -744,27 +744,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .a-related a:hover{border-color:var(--g);background:#fff}
 .a-related-cat{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:6px}
 .a-related-title{font-family:var(--fd);font-size:15px;color:var(--w);line-height:1.4;font-weight:500}
-.founders-hero{padding:120px 60px 64px;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#171612 100%);color:#faf9f6;border-bottom:1px solid #2a2826;position:relative}
-.founders-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#b8a070}
-.founders-hero .slabel{color:#b8a070;font-size:10px;letter-spacing:5px;text-transform:uppercase;font-weight:500;margin-bottom:18px}
-.founders-hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,56px);font-weight:500;color:#faf9f6;margin-bottom:14px;letter-spacing:-1px;line-height:1.1}
-.founders-hero .sub{font-size:16px;font-weight:200;color:#c8c5be;max-width:560px;margin:0 auto 22px;line-height:1.8}
-.founders-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(184,160,112,.1);border:1px solid rgba(184,160,112,.3);border-radius:100px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:14px}
-.founders-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:#b8a070;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.founders-form{max-width:480px;margin:32px auto 0;display:flex;gap:8px;flex-direction:column}
-.founders-form input{padding:14px 18px;font-family:var(--fb);font-size:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:#faf9f6;font-weight:300;letter-spacing:.2px}
-.founders-form input::placeholder{color:rgba(250,249,246,.4)}
-.founders-form input:focus{outline:none;border-color:#b8a070;background:rgba(255,255,255,.08)}
-.founders-form button{padding:14px 24px;background:#b8a070;color:#0a0a0a;border:none;font-family:var(--fb);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s}
-.founders-form button:hover{background:#c8b080}
-.founders-form .ff-fine{font-size:11px;color:rgba(250,249,246,.5);font-weight:200;letter-spacing:.3px;line-height:1.6;margin-top:6px;text-align:center}
-.founders-perks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:920px;margin:0 auto;padding:48px 24px 0}
-.fp-perk{padding:28px 24px;background:var(--bg-card);border:1px solid var(--b);text-align:center}
-.fp-perk-num{font-family:var(--fd);font-size:34px;color:#b8a070;font-weight:500;margin-bottom:8px;line-height:1}
-.fp-perk h4{font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:500;margin-bottom:8px;color:var(--w)}
-.fp-perk p{font-size:12.5px;color:var(--td);font-weight:300;line-height:1.7}
-.fp-success{padding:18px 24px;background:rgba(184,160,112,.12);border:1px solid rgba(184,160,112,.4);color:#b8a070;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:center}
 .manifesto{background:#0a0a0a;color:#faf9f6;padding:64px 48px;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
 .manifesto-inner{max-width:760px;margin:0 auto;text-align:center}
 .manifesto .slabel{color:#b8a070;font-size:10px;letter-spacing:5px;text-transform:uppercase;font-weight:500;margin-bottom:18px}
@@ -792,9 +771,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .hjs-cta a:hover{background:var(--w);color:#fff}
 @media(max-width:900px){
 .journal-grid,.hjs-grid{grid-template-columns:1fr}
-.founders-perks{grid-template-columns:1fr;padding:36px 16px 0}
 .manifesto-grid{grid-template-columns:1fr;gap:18px}
-.founders-hero{padding:100px 24px 48px}
 .manifesto{padding:48px 20px}
 .home-journal-strip{padding:48px 20px}
 .a-related-grid{grid-template-columns:1fr}
@@ -1254,7 +1231,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a class="nav-tab" data-page="manufacturing">Manufacturing</a>
 <a class="nav-tab" data-page="custom">Custom</a>
 <a class="nav-tab" data-page="journal">Journal</a>
-<a class="nav-tab" data-page="founders">Founders' List</a>
 <a class="nav-tab" data-page="about">About Us</a>
 </div>
 <div class="nav-right">
@@ -1289,7 +1265,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
 <a href="javascript:void(0)" onclick="go('custom');closeMob()">Custom</a>
 <a href="javascript:void(0)" onclick="go('journal');closeMob()">Journal</a>
-<a href="javascript:void(0)" onclick="go('founders');closeMob()">Founders' List</a>
 <a href="javascript:void(0)" onclick="go('about');closeMob()">About Us</a>
 </div>
 
@@ -1591,10 +1566,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h4>How South India became leather's quiet capital</h4>
 <p>The tannery houses in Tamil Nadu have supplied European luxury for a century. Most buyers will never see the label.</p>
 </div>
-<div class="hjs-card" onclick="go('journal-holster-logbook')">
-<div class="hjs-cat">Process &middot; 8 min read</div>
-<h4>The Holster Logbook: 14 prototypes</h4>
-<p>Every sample, every revision, every reason. The honest record of how a single bag took fifteen months.</p>
+<div class="hjs-card" onclick="go('journal-leather-care')">
+<div class="hjs-cat">Care &middot; 5 min read</div>
+<h4>How to care for full-grain leather</h4>
+<p>When to condition, when to leave it alone, and what to do if your bag gets caught in the rain.</p>
 </div>
 </div>
 <div class="hjs-cta"><a href="javascript:void(0)" onclick="go('journal')">Read the Journal</a></div>
@@ -1642,24 +1617,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="j-card-cta">Read &rarr;</div>
 </div>
 </div>
-<div class="j-card" onclick="go('journal-holster-logbook')">
-<div class="j-card-img" style="background-image:url(holstersketch1.jpg);background-position:center"></div>
-<div class="j-card-body">
-<div class="j-card-meta">Process &middot; 8 min read</div>
-<h3>The Holster logbook: 14 prototypes</h3>
-<div class="j-dek">Every sample, every revision, every dead end. The honest record of how a single travel bag took fifteen months from sketch to first production order. With the receipts.</div>
-<div class="j-card-cta">Read &rarr;</div>
-</div>
-</div>
-<div class="j-card" onclick="go('founders')">
-<div class="j-card-img" style="background-image:url(blackholster.png);background-position:center 40%;background-color:#0a0a0a"></div>
-<div class="j-card-body">
-<div class="j-card-meta">Coming Soon &middot; The Founders' List</div>
-<h3>What we are working on next</h3>
-<div class="j-dek">The Cinch belt. Limited first run, founders' list pricing, and a 24-hour head start before public launch. If you want to wear the early ones, this is where you sign up.</div>
-<div class="j-card-cta">Join the list &rarr;</div>
-</div>
-</div>
 </div>
 </section>
 </div>
@@ -1705,13 +1662,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p>If you want to read more about how that hide was tanned, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. If you want to read where it came from, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
 
 <div class="a-cta-card">
-<span class="slabel">The Journal</span>
-<h4>Be the first to read the next one</h4>
-<p>One letter every two weeks. No promotions, no fluff. Just the next entry from the atelier.</p>
-<form onsubmit="return subscribeFooter(event)" style="max-width:380px;margin:0 auto;display:flex;gap:8px">
-<input type="email" name="email" required placeholder="you@domain.com" style="flex:1;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300">
-<button type="submit" class="btn btn-f" style="white-space:nowrap">Subscribe</button>
-</form>
+<span class="slabel">The Holster</span>
+<h4>Full-grain calfskin. Worn, not carried.</h4>
+<p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
+<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Holster &mdash; $249</a>
 </div>
 
 <div class="a-related">
@@ -1755,13 +1709,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p>If you want a deeper read on what makes the hide itself worth tanning at all, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want the story of where the hides come from, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
 
 <div class="a-cta-card">
-<span class="slabel">The Journal</span>
-<h4>Be the first to read the next one</h4>
-<p>One letter every two weeks. No promotions, no fluff. Just the next entry from the atelier.</p>
-<form onsubmit="return subscribeFooter(event)" style="max-width:380px;margin:0 auto;display:flex;gap:8px">
-<input type="email" name="email" required placeholder="you@domain.com" style="flex:1;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300">
-<button type="submit" class="btn btn-f" style="white-space:nowrap">Subscribe</button>
-</form>
+<span class="slabel">The Holster</span>
+<h4>Full-grain calfskin. Worn, not carried.</h4>
+<p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
+<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Holster &mdash; $249</a>
 </div>
 
 <div class="a-related">
@@ -1800,20 +1751,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p>If you want to understand more about the leather itself, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want to know how the hides are tanned, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. To see the workshops and the steps, visit our <a class="j-internal" href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a> page.</p>
 
 <div class="a-cta-card">
-<span class="slabel">The Journal</span>
-<h4>Be the first to read the next one</h4>
-<p>One letter every two weeks. No promotions, no fluff. Just the next entry from the atelier.</p>
-<form onsubmit="return subscribeFooter(event)" style="max-width:380px;margin:0 auto;display:flex;gap:8px">
-<input type="email" name="email" required placeholder="you@domain.com" style="flex:1;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300">
-<button type="submit" class="btn btn-f" style="white-space:nowrap">Subscribe</button>
-</form>
+<span class="slabel">The Holster</span>
+<h4>Full-grain calfskin. Worn, not carried.</h4>
+<p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
+<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Holster &mdash; $249</a>
 </div>
 
 <div class="a-related">
 <div class="a-related-h">Related Reading</div>
 <div class="a-related-grid">
 <a href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
-<a href="javascript:void(0)" onclick="go('journal-holster-logbook')"><div class="a-related-cat">Process</div><div class="a-related-title">The Holster logbook: 14 prototypes</div></a>
+<a href="javascript:void(0)" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
 </div>
 </div>
 </div></section>
@@ -1854,13 +1802,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p>If something is genuinely wrong, write to <strong>info@goldybrown.com</strong>. We repair or replace at the atelier and cover shipping both ways. See the full <a class="j-internal" href="javascript:void(0)" onclick="go('returns')">warranty terms</a>.</p>
 
 <div class="a-cta-card">
-<span class="slabel">The Journal</span>
-<h4>Be the first to read the next one</h4>
-<p>One letter every two weeks. No promotions, no fluff. Just the next entry from the atelier.</p>
-<form onsubmit="return subscribeFooter(event)" style="max-width:380px;margin:0 auto;display:flex;gap:8px">
-<input type="email" name="email" required placeholder="you@domain.com" style="flex:1;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300">
-<button type="submit" class="btn btn-f" style="white-space:nowrap">Subscribe</button>
-</form>
+<span class="slabel">The Holster</span>
+<h4>Full-grain calfskin. Worn, not carried.</h4>
+<p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
+<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Holster &mdash; $249</a>
 </div>
 
 <div class="a-related">
@@ -1871,135 +1816,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 </div></section>
-</div>
-
-<!-- ======================== JOURNAL: HOLSTER LOGBOOK ======================== -->
-<div class="page" id="page-journal-holster-logbook">
-<div class="page-hero"><div class="slabel">Process &middot; 8 min read</div><h1>The Holster logbook: 14 prototypes</h1><p class="sub">Every sample, every revision, every dead end. The honest record of how a single travel bag took fifteen months from sketch to first production order.</p></div>
-<section class="section fade-in"><div class="article-content">
-<div class="a-meta">Goldy Brown Journal &middot; Process</div>
-<p class="a-lede">Most brands tell you their products were "designed over years." We thought it would be more useful to tell you what those years actually contained. This is a list, with notes, of every prototype of the Holster.</p>
-
-<h2>Sample 1 &middot; Pencil sketch on hotel notepad</h2>
-<p>Vancouver, late winter. The original idea: a worn travel bag, sized for the things you actually need to keep against your body in transit. Not a fanny pack, not a sling, not a holster in the firearm sense. Closer to a chest rig, but cleaner. The sketch was bad. The intent was clear.</p>
-
-<h2>Sample 2 &middot; Card stock mock-up</h2>
-<p>Cut and folded card with paper straps to test the geometry. The first version had two equal pouches. They looked like a lifejacket. We threw it out the next day.</p>
-
-<h2>Sample 3 &middot; First leather prototype, Chennai</h2>
-<p>Sent the revised drawings to Dilvar at the workshop in late spring. The first leather sample arrived three weeks later. Asymmetric pouches, single shoulder, cross-body strap. Wrong leather thickness (too thin, no body), wrong strap geometry (the bag rode too low, near the hip), wrong hardware finish (warm gold; we wanted cooler). Useful sample. Wore it for a day to understand what the wrong version felt like.</p>
-
-<h2>Sample 4 &middot; Heavier leather, same geometry</h2>
-<p>2.0mm vegetable-tanned calfskin. Better body, but now the pouches were rigid in a way that made them hard to access in a hurry. Lesson: structure has to live somewhere, but it does not have to live in the leather. Could be in the lining, in a hidden interior reinforcement, or in the strap tension.</p>
-
-<h2>Sample 5 &middot; Reduced thickness, internal stiffener</h2>
-<p>1.6mm leather with a thin pasteboard insert in the back panel. Right structure, but the insert moved over time and the back panel pillowed. We learned that the inside of a bag has to be engineered with the same care as the outside.</p>
-
-<h2>Sample 6 &middot; Reinforced lining, redesigned strap</h2>
-<p>Full-leather inner panel, replacing the pasteboard. Strap geometry adjusted so the bag sits high on the chest, near the sternum, not near the hip. This was the first sample that someone other than us picked up and said, instinctively, "oh, you wear it." The form started to teach the function.</p>
-
-<h2>Sample 7 &middot; Wrong hardware</h2>
-<p>Brass D-rings. Too warm. Too heavy. The brand was not headed somewhere brass-coloured. Switched to brushed stainless steel for samples 8 onward.</p>
-
-<h2>Sample 8 &middot; Pouch sizing test, version one</h2>
-<p>Tried smaller pouches. Could not fit a passport flat. Returned to original sizing.</p>
-
-<h2>Sample 9 &middot; Pouch sizing test, version two</h2>
-<p>7" x 5". Fits a passport, an iPhone 17 Pro Max with a case, AirPods, a slim wallet, sunglasses. This is the size that shipped.</p>
-
-<h2>Sample 10 &middot; Edge finishing</h2>
-<p>Three options: raw edge (too rustic), painted edge (too hard, prone to chipping), burnished edge (correct). Burnished edge is more labour, but it is the only one that ages cleanly.</p>
-
-<h2>Sample 11 &middot; Stitch density and thread weight</h2>
-<p>0.6mm waxed nylon thread, eight stitches per inch. Tested 0.4mm and 0.8mm. The 0.6mm reads correctly at arms-length, holds up against pull-through tests, and matches the calfskin weight.</p>
-
-<h2>Sample 12 &middot; Strap adjustment system</h2>
-<p>Slide adjuster vs roller buckle vs leather-on-leather hook. Roller buckle was the only one that held the strap exactly in place across a full day of wear. Counterintuitive but obvious in retrospect: any sliding system slips a millimetre at a time, and at the end of an eight-hour transit the bag is in a different position than where you started.</p>
-
-<h2>Sample 13 &middot; Wear test, two weeks</h2>
-<p>Worn through one return-trip Vancouver-Toronto-Vancouver, including a connection in Calgary. Through TSA and CATSA without incident. Worn under a jacket, over a shirt, with a coat over top. Comfortable enough to forget about, which is the criterion we cared about most.</p>
-
-<h2>Sample 14 &middot; Pre-production sample</h2>
-<p>Identical to sample 13 with two changes: tightened the radius on the back-panel curve so it sits flatter against the chest of someone with a smaller frame, and lengthened the adjustment range on the strap so a person with a 50" chest can wear it as comfortably as someone with a 32" chest.</p>
-
-<h2>The first production run</h2>
-<p>Identical to sample 14. The first piece off the production line is the one currently photographed on this site. What you order is the piece we drafted, in calfskin we touched, made by the workshop we visited.</p>
-
-<blockquote>Most "design" lives in the editing, not the inventing.</blockquote>
-
-<h2>What we learned that we did not expect</h2>
-<p>We expected the leather to be the hard part. It was not. The leather was a problem we could solve in three samples. The hard part was hardware, where every fitting we tested introduced a different small failure, and we had to learn the difference between a finish that looked right in the photograph and one that survived a year of friction. The hardware took eight samples to get correct. The leather took three. If we could go back and re-allocate the time, we would have started the hardware decisions on day one.</p>
-<p>We also did not expect that the most important sample would be sample 13, the wear test. Until you actually live with the object, you do not know what is wrong with it. The mind cannot anticipate the small irritations of a real day. Sample 13 was the one that earned the brand.</p>
-
-<h2>What is next</h2>
-<p>The Cinch belt is currently in sample 6 of an estimated 12-sample arc. We will publish the next entry of this logbook when sample 9 lands. If you want to be notified, join the <a class="j-internal" href="javascript:void(0)" onclick="go('founders')">Founders' List</a>.</p>
-
-<div class="a-cta-card">
-<span class="slabel">The Journal</span>
-<h4>Read the next entry as it lands</h4>
-<p>The Cinch belt logbook will publish here. Subscribe to the newsletter or join the Founders' List for first access to the launch.</p>
-<form onsubmit="return subscribeFooter(event)" style="max-width:380px;margin:0 auto;display:flex;gap:8px">
-<input type="email" name="email" required placeholder="you@domain.com" style="flex:1;padding:12px 14px;border:1px solid var(--b);font-family:var(--fb);font-size:13px;font-weight:300">
-<button type="submit" class="btn btn-f" style="white-space:nowrap">Subscribe</button>
-</form>
-</div>
-
-<div class="a-related">
-<div class="a-related-h">Related Reading</div>
-<div class="a-related-grid">
-<a href="javascript:void(0)" onclick="go('journal-south-india')"><div class="a-related-cat">Provenance</div><div class="a-related-title">How South India became leather's quiet capital</div></a>
-<a href="javascript:void(0)" onclick="go('founders')"><div class="a-related-cat">Coming Soon</div><div class="a-related-title">The Founders' List &middot; Cinch belt</div></a>
-</div>
-</div>
-</div></section>
-</div>
-
-<!-- ======================== FOUNDERS' LIST ======================== -->
-<div class="page" id="page-founders">
-<div class="founders-hero">
-<div class="founders-pill">In Development &middot; Sample 6 of 12</div>
-<div class="slabel">The Founders' List</div>
-<h1>The Cinch is coming.</h1>
-<p class="sub">A long, lean leather belt cut from the same full-grain calfskin as the Holster, with a cast brass keeper and a hand-burnished tip. The first 200 from the production run go to founders' list members at launch pricing, with a 24-hour head start before public release.</p>
-<form class="founders-form" onsubmit="return submitFounders(event)">
-<input type="text" name="name" required placeholder="Your name">
-<input type="email" name="email" required placeholder="you@domain.com">
-<button type="submit">Reserve My Place</button>
-<div class="ff-fine">No purchase commitment. We email you the day we open the list to founders, then you decide.</div>
-</form>
-</div>
-<section class="section fade-in" style="padding-top:48px">
-<div style="text-align:center;margin-bottom:36px">
-<div class="slabel">Why Join the List</div>
-<h2>What founders' list members get</h2>
-</div>
-<div class="founders-perks">
-<div class="fp-perk">
-<div class="fp-perk-num">24h</div>
-<h4>Head Start</h4>
-<p>The list is opened a full day before public launch. The first run is small. List members order before anyone else can.</p>
-</div>
-<div class="fp-perk">
-<div class="fp-perk-num">15%</div>
-<h4>Founders' Pricing</h4>
-<p>The first 200 belts ship at fifteen percent below the public launch price. The discount is automatic, single-use, list members only.</p>
-</div>
-<div class="fp-perk">
-<div class="fp-perk-num">01</div>
-<h4>Numbered Card</h4>
-<p>Each founders' list belt ships with a hand-numbered guarantee card and a personal note from the maker. The first belt is number 001.</p>
-</div>
-</div>
-</section>
-<section class="section section-border fade-in">
-<div style="max-width:720px;margin:0 auto;text-align:center">
-<div class="slabel">The Honest Version</div>
-<h2 style="margin-bottom:18px">What this is, and what it is not</h2>
-<p style="font-size:15px;color:var(--td);font-weight:300;line-height:1.85;margin-bottom:14px">The Cinch is currently in development. Sample six of an estimated twelve. We are working through belt-tip geometry, keeper construction, and leather thickness, and we expect to be in production within ten to fourteen weeks.</p>
-<p style="font-size:15px;color:var(--td);font-weight:300;line-height:1.85;margin-bottom:14px">The Founders' List is not a pre-order. We will not charge your card today. When the belt is ready and the first run is complete, you will receive an email with a private link, your founders' price, and a 24-hour window to order before the public launch. If you decide it is not for you, do nothing.</p>
-<p style="font-size:15px;color:var(--td);font-weight:300;line-height:1.85">If you want to read along as the belt comes together, the development logbook publishes in the <a class="j-internal" href="javascript:void(0)" onclick="go('journal')">Journal</a>. The first entry is already there.</p>
-</div>
-</section>
 </div>
 
 <!-- ======================== LOOKBOOK ======================== -->
@@ -2368,7 +2184,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(184,160,112,.15);text-align:center">
-<a href="javascript:void(0)" onclick="go('founders')" style="display:inline-block;padding:12px 28px;border:1px solid #b8a070;color:#b8a070;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s">Join the Founders' List &rarr;</a>
+<a href="javascript:void(0)" onclick="go('journal')" style="display:inline-block;padding:12px 28px;border:1px solid #b8a070;color:#b8a070;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s">Read the Journal &rarr;</a>
 </div>
 </div>
 </section>
@@ -2731,7 +2547,7 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <input type="email" name="email" required placeholder="you@domain.com" aria-label="Email address">
 <button type="submit">Subscribe</button>
 </form>
-<div class="footer-drops" style="margin-top:8px;font-size:10px;letter-spacing:1.5px">One letter every two weeks. Notes from the atelier &middot; first access to new pieces.</div>
+<div class="footer-drops" style="margin-top:8px;font-size:10px;letter-spacing:1.5px">Occasional notes from the atelier.</div>
 <div class="footer-drops">Est. Vancouver, Canada</div>
 </div>
 <div class="footer-col">
@@ -2750,7 +2566,6 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
 <li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
 <li><a href="javascript:void(0)" onclick="go('journal')">Journal</a></li>
-<li><a href="javascript:void(0)" onclick="go('founders')">Founders' List</a></li>
 <li><a href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener">Instagram</a></li>
 </ul>
 </div>
@@ -2968,16 +2783,15 @@ function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.tar
 function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Sending...';fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){if(r.ok)return r.json();throw new Error('Network error')}).then(function(){btn.disabled=false;onSuccess()}).catch(function(){btn.disabled=false;btn.textContent='Send Failed \u2014 Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},3000)})}
 function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Proposal Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a formal proposal for your '+data.tier+' kit and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Designed in Vancouver',d:'Full grain leather holsters and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — holsters, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Programme — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},fragrance:{t:'Fragrance Collection — Leather Sampler Cases with Designer Scents | Goldy Brown',d:'Full grain leather sampler cases housing five curated designer fragrances — Kilian, Chanel, Dior, Armani. Private label and hotel branding available. Free worldwide shipping.'},apparel:{t:'Apparel — Premium Cotton Blank Tees & French Terry from $8 | Goldy Brown',d:'Premium cotton blanks from $8 with free worldwide shipping in 5 business days. Heavyweight 250gsm, 180gsm bio-washed, 150gsm jersey. Volume pricing on 20+ units. Secure Shopify checkout.'},manufacturing:{t:'Manufacturing — South India Leather Craftsmanship | Goldy Brown',d:'Designed in Vancouver. Made in South India by the artisan tannery houses whose leather has supplied European luxury houses for over a century. Vegetable and chrome tanned, full grain calfskin, lifetime warranty.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Custom Tattoo Bag — Personalised Leather Holsters | Goldy Brown',d:'Have any design hand-tattooed into the front face of your Goldy Brown holster bag — names, signatures, sketches, club crests. Starting at $50 USD on top of the holster. One of one, lifetime warranty.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why we use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'},'journal-holster-logbook':{t:'The Holster Logbook: 14 Prototypes and What They Taught Us | Goldy Brown Journal',d:'The honest record of how a single travel bag took fifteen months from sketch to first production order. Every sample, every revision, every dead end. With the receipts.'},founders:{t:"The Founders' List — First Access to The Cinch Belt | Goldy Brown",d:"Reserve your place on the Goldy Brown Founders' List. The first 200 belts from the Cinch production run go to list members at founders' pricing, with a 24-hour head start before public release."}};
-var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Programme',fragrance:'Fragrance Collection',apparel:'Apparel',manufacturing:'Manufacturing',custom:'Custom Tattoo Bag',about:'About Us',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges',journal:'Journal','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather','journal-holster-logbook':'The Holster Logbook',founders:"Founders' List"};
-var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',fragrance:'/fragrance',apparel:'/apparel',manufacturing:'/manufacturing',custom:'/custom',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns',journal:'/journal','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather','journal-holster-logbook':'/journal/holster-prototype-logbook',founders:'/founders'};
+var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Designed in Vancouver',d:'Full grain leather holsters and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — holsters, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Programme — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},fragrance:{t:'Fragrance Collection — Leather Sampler Cases with Designer Scents | Goldy Brown',d:'Full grain leather sampler cases housing five curated designer fragrances — Kilian, Chanel, Dior, Armani. Private label and hotel branding available. Free worldwide shipping.'},apparel:{t:'Apparel — Premium Cotton Blank Tees & French Terry from $8 | Goldy Brown',d:'Premium cotton blanks from $8 with free worldwide shipping in 5 business days. Heavyweight 250gsm, 180gsm bio-washed, 150gsm jersey. Volume pricing on 20+ units. Secure Shopify checkout.'},manufacturing:{t:'Manufacturing — South India Leather Craftsmanship | Goldy Brown',d:'Designed in Vancouver. Made in South India by the artisan tannery houses whose leather has supplied European luxury houses for over a century. Vegetable and chrome tanned, full grain calfskin, lifetime warranty.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Custom Tattoo Bag — Personalised Leather Holsters | Goldy Brown',d:'Have any design hand-tattooed into the front face of your Goldy Brown holster bag — names, signatures, sketches, club crests. Starting at $50 USD on top of the holster. One of one, lifetime warranty.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why we use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
+var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Programme',fragrance:'Fragrance Collection',apparel:'Apparel',manufacturing:'Manufacturing',custom:'Custom Tattoo Bag',about:'About Us',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges',journal:'Journal','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
+var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',fragrance:'/fragrance',apparel:'/apparel',manufacturing:'/manufacturing',custom:'/custom',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns',journal:'/journal','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
 var PATH_TO_PAGE={};(function(){for(var k in PAGE_PATHS){PATH_TO_PAGE[PAGE_PATHS[k]]=k}})();
 function setBreadcrumb(page){var label=BREADCRUMB_LABELS[page]||'Home';var url=page==='home'?'https://goldybrown.com/':'https://goldybrown.com/'+page;var items=[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"}];if(page!=='home')items.push({"@type":"ListItem","position":2,"name":label,"item":url});var bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items};var sc=document.getElementById('bcSchema');if(!sc){sc=document.createElement('script');sc.id='bcSchema';sc.type='application/ld+json';document.head.appendChild(sc)}sc.textContent=JSON.stringify(bc)}
 function pathFor(page){return PAGE_PATHS[page]||(page==='home'?'/':'/'+page)}
 function setPageMeta(page){var m=PAGE_META[page]||PAGE_META.home;document.title=m.t;var dEl=document.querySelector('meta[name="description"]');if(dEl)dEl.setAttribute('content',m.d);var ogT=document.querySelector('meta[property="og:title"]');if(ogT)ogT.setAttribute('content',m.t);var ogD=document.querySelector('meta[property="og:description"]');if(ogD)ogD.setAttribute('content',m.d);var twT=document.querySelector('meta[name="twitter:title"]');if(twT)twT.setAttribute('content',m.t);var twD=document.querySelector('meta[name="twitter:description"]');if(twD)twD.setAttribute('content',m.d);var canon=document.querySelector('link[rel="canonical"]');if(canon)canon.setAttribute('href','https://goldybrown.com'+pathFor(page));setBreadcrumb(page)}
 function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',pathFor(page));setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},180)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
 function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">You\u2019re on the list.</div>'});return false}
-function submitFounders(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:"Founders' List \u2014 "+f.name.value,type:'founders_list',name:f.name.value,email:f.email.value,product:'The Cinch belt'};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="fp-success">You\u2019re on the list, '+data.name.split(' ')[0]+'. We\u2019ll write the day the Cinch opens to founders.</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
 (function(){function resolve(path){if(!path)return null;var clean=path.replace(/\/+$/,'')||'/';if(PATH_TO_PAGE[clean]&&document.getElementById('page-'+PATH_TO_PAGE[clean]))return PATH_TO_PAGE[clean];var legacy=clean.replace(/^\//,'');if(legacy&&document.getElementById('page-'+legacy))return legacy;return null}var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var pg=resolve(r);if(pg){history.replaceState({page:pg},'',pathFor(pg));go(pg,true);return}}var pg2=resolve(location.pathname);if(pg2){history.replaceState({page:pg2},'',pathFor(pg2));go(pg2,true)}else{history.replaceState({page:'home'},'','/');setPageMeta('home')}})();
 window.addEventListener('popstate',function(e){var pg=null;if(e.state&&e.state.page)pg=e.state.page;else{var p=location.pathname.replace(/\/+$/,'')||'/';pg=PATH_TO_PAGE[p]||'home'}if(pg&&document.getElementById('page-'+pg))go(pg,true)});
