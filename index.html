@@ -72,7 +72,6 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 .shoppay-badge .sp-name{color:#5a31f4;font-weight:600;letter-spacing:.2px}
 .shoppay-badge .sp-icon{width:22px;height:22px;flex-shrink:0;display:block}
 .holster-home-text .shoppay-badge{color:var(--w)}
-.ap-card .shoppay-badge{color:#4a5a6c;margin:12px 0 0}
 .shoppay-badge-sm{font-size:11px;padding:7px 11px}
 .shoppay-badge-dark{background:rgba(147,112,250,.1);border-color:rgba(147,112,250,.35);color:rgba(255,255,255,.8);margin:8px 0 12px}
 .shoppay-badge-dark b,.shoppay-badge-dark .sp-name{color:#b49bf8}
@@ -1046,174 +1045,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .img-zoom-close{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.6;transition:opacity .3s;z-index:2001}
 .img-zoom-close:hover{opacity:1}
 .prop-item .prop-img img,.ccard-img img,.pcard-img img,.frag-profile-img img,.carousel-main img.active{cursor:zoom-in}
-/* ===== APPAREL PAGE ===== */
-#page-apparel{background:linear-gradient(180deg,#c8ddec 0%,#e4eff6 30%,#f1f7fb 65%,#fbfcfd 100%)}
-.apparel-hero{position:relative;padding:132px 60px 42px;text-align:center;overflow:hidden;background:linear-gradient(180deg,#b7d1e4 0%,#cfe0ed 40%,#e8f0f6 75%,#f5f9fc 100%)}
-.apparel-hero::before{content:'';position:absolute;inset:0;opacity:.035;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
-.apparel-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:#3d5a75}
-.apparel-clouds{position:absolute;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(ellipse 680px 220px at 12% 14%,rgba(255,255,255,.95),transparent 62%),radial-gradient(ellipse 540px 180px at 82% 28%,rgba(255,255,255,.85),transparent 66%),radial-gradient(ellipse 420px 140px at 44% 70%,rgba(255,255,255,.7),transparent 62%),radial-gradient(ellipse 320px 100px at 70% 88%,rgba(255,255,255,.6),transparent 60%)}
-.apparel-hero-inner{position:relative;max-width:820px;margin:0 auto;z-index:1}
-.apparel-hero .slabel{color:#3d5a75;letter-spacing:5px;font-weight:500;margin-bottom:10px}
-.apparel-hero h1{font-family:var(--fd);font-size:clamp(36px,4.8vw,54px);letter-spacing:-1.2px;color:#1c2d42;margin-bottom:20px;font-weight:400;line-height:1.05}
-.ap-hero-deal{max-width:720px;margin:0 auto;background:linear-gradient(135deg,#6a8caf 0%,#8eaec9 100%);border:1px solid rgba(255,255,255,.35);box-shadow:0 10px 30px rgba(90,130,170,.28);overflow:hidden;color:#fbfcfd;border-radius:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.ap-deal-top{padding:14px 20px 12px;text-align:center;border-bottom:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column;align-items:center;gap:3px}
-.ap-deal-ship{font-family:var(--fd);font-size:clamp(15px,2vw,19px);letter-spacing:2.2px;text-transform:uppercase;font-weight:500;line-height:1.2;color:#fbfcfd}
-.ap-deal-stock{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:rgba(251,252,253,.8);font-weight:400}
-.ap-deal-tiers{display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.08)}
-.ap-chip{padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;border-right:1px solid rgba(255,255,255,.18);transition:background .2s}
-.ap-chip:last-child{border-right:0}
-.ap-chip:hover{background:rgba(255,255,255,.12)}
-.ap-chip b{font-family:var(--fd);font-size:16px;font-weight:500;color:#fbfcfd;letter-spacing:.5px}
-.ap-chip span{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(251,252,253,.78);font-weight:500}
-.ap-chip-custom{background:rgba(255,255,255,.18)}
-.ap-chip-custom b,.ap-chip-custom span{color:#fbfcfd}
-.ap-chip-custom span{color:rgba(251,252,253,.95)}
-.ap-chip-min{background:rgba(255,255,255,.1)}
-.ap-chip-min b{color:#fbfcfd}
-.ap-chip-min span{color:rgba(251,252,253,.78);font-size:9px}
-.ap-min-tag{display:inline-block;padding:4px 10px;background:#f5ede0;color:#8a6d3b;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border:1px solid #c9b89a;margin-left:8px;vertical-align:middle}
-.ap-price-min{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8a6d3b;font-weight:500;margin-left:6px;font-family:inherit}
-.apparel-section{position:relative;padding:64px 60px 72px;background:linear-gradient(180deg,#f5f9fc 0%,#edf4f9 50%,#f7fafd 100%)}
-.apparel-section::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 900px 320px at 15% 0%,rgba(255,255,255,.85),transparent 65%),radial-gradient(ellipse 700px 260px at 85% 10%,rgba(255,255,255,.7),transparent 65%),radial-gradient(ellipse 520px 200px at 50% 85%,rgba(255,255,255,.6),transparent 65%)}
-.apparel-section::after{content:'';position:absolute;inset:0;opacity:.025;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
-.apparel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1180px;margin:0 auto;position:relative;z-index:1}
-.ap-card{background:#fbfdff;border:1px solid rgba(168,198,222,.22);border-radius:14px;display:flex;flex-direction:column;transition:all .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 1px 2px rgba(168,198,222,.18),0 10px 28px rgba(90,140,180,.1),0 24px 60px rgba(168,198,222,.08);overflow:hidden;backdrop-filter:blur(4px)}
-.ap-card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(168,198,222,.25),0 24px 54px rgba(90,140,180,.2),0 40px 90px rgba(168,198,222,.14);border-color:rgba(168,198,222,.55)}
-.ap-card-premium{border-color:rgba(168,198,222,.6)}
-.ap-card-premium::before{content:'';display:block;height:2px;background:linear-gradient(90deg,#a8c6de 0%,#dceaf4 50%,#a8c6de 100%)}
-.ap-img{height:420px;width:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.ap-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.18),transparent 70%);pointer-events:none}
-.ap-img video,.ap-img img.ap-media-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;background:transparent}
-@media(max-width:1024px){.ap-img{height:380px}}
-@media(max-width:768px){.ap-img{height:340px}}
-.ap-img-video .ap-placeholder{position:relative;z-index:0}
-.ap-img-video::after{z-index:2;pointer-events:none}
-.ap-arr{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(28,45,66,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:4;opacity:0;transition:opacity .25s,background .2s,border-color .2s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:0}
-.ap-img-video:hover .ap-arr{opacity:1}
-.ap-arr:hover{background:rgba(28,45,66,.6);border-color:rgba(255,255,255,.7)}
-.ap-arr-prev{left:12px}
-.ap-arr-next{right:12px}
-.ap-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:4;padding:6px 10px;background:rgba(28,45,66,.22);border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.ap-dots:empty{display:none}
-.ap-dot{width:7px;height:7px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;padding:0;transition:all .2s}
-.ap-dot:hover{background:rgba(255,255,255,.75)}
-.ap-dot.active{background:#fff;width:20px;border-radius:4px}
-@media(max-width:768px){.ap-arr{opacity:1;width:34px;height:34px}}
-.ap-badge{position:absolute;top:16px;left:16px;background:#1c2d42;color:#f5ede0;font-size:9px;letter-spacing:2px;font-weight:500;padding:5px 12px;text-transform:uppercase;z-index:2}
-.ap-placeholder{font-family:var(--fd);font-size:18px;color:#3d5a75;letter-spacing:3px;text-transform:uppercase;opacity:.5;position:relative;z-index:1}
-.ap-body{padding:30px 32px 30px;display:flex;flex-direction:column;flex:1;background:linear-gradient(180deg,#fbfdff 0%,#f1f6fa 100%)}
-.ap-slabel{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;margin-bottom:8px;font-weight:500}
-.ap-body h4{font-family:var(--fd);font-size:26px;margin-bottom:12px;letter-spacing:.3px;color:#1c2d42;font-weight:400}
-.ap-body p{font-size:13px;color:#5a6878;line-height:1.8;font-weight:200;margin-bottom:18px}
-.ap-vars{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.ap-fab-row{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
-.ap-fab{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;border:1px solid rgba(168,198,222,.3);border-radius:10px;cursor:pointer;transition:all .25s;background:#fbf6ea}
-.ap-fab:hover{border-color:#a8c6de;background:#f5ecd8}
-.ap-fab.active{border-color:#3d5a75;background:#eee1c2}
-.ap-fab b{font-family:var(--fd);font-size:14px;color:#1c2d42;font-weight:500;letter-spacing:.3px;flex-shrink:0;min-width:56px}
-.ap-fab span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#4a5a6c;font-weight:500;text-align:right}
-.ap-fab.active b,.ap-fab.active span{color:#1c2d42}
-.ap-sw{display:inline-flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;border:1px solid rgba(168,198,222,.3);border-radius:999px;cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:all .25s;background:#fbf6ea;color:#5a6878;font-weight:500}
-.ap-sw:hover{border-color:#a8c6de;color:#1c2d42;background:#f5ecd8}
-.ap-sw.active{border-color:#3d5a75;color:#1c2d42;background:#eee1c2}
-.ap-sw span{width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid #d8e2ec;flex-shrink:0}
-.ap-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid rgba(201,184,154,.35);gap:12px}
-.ap-row .btn,.ap-row .btn-f{background:#1c2d42;color:#fbf6ec;border-color:#1c2d42;border-radius:999px;padding:13px 22px;letter-spacing:2px;transition:all .3s}
-.ap-row .btn-f:hover{background:#3d5a75;border-color:#3d5a75;color:#fff;transform:translateY(-1px);box-shadow:0 8px 18px rgba(28,45,66,.2)}
-.ap-price{font-family:var(--fd);font-size:26px;color:#1c2d42;font-weight:400}
-.ap-price-note{font-size:10px;color:#8295a8;letter-spacing:1.5px;text-transform:uppercase;margin-left:6px;font-family:inherit}
-.ap-row .btn{padding:12px 18px;font-size:10px;flex-shrink:0;background:#1c2d42;color:#f5ede0;border-color:#1c2d42}
-.ap-row .btn:hover{background:#3d5a75;border-color:#3d5a75;color:#fff}
-.apparel-note{position:relative;padding:40px 60px 48px;background:linear-gradient(180deg,#f7fafd 0%,#e4eff6 55%,#d5e4ef 100%);border-top:1px solid rgba(168,198,222,.2);display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1200px;margin:0 auto;overflow:hidden}
-.apparel-note::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(ellipse 600px 200px at 20% 20%,rgba(255,255,255,.8),transparent 60%),radial-gradient(ellipse 500px 160px at 80% 70%,rgba(255,255,255,.55),transparent 60%)}
-.apw{position:relative;display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:rgba(255,255,255,.7);border:1px solid rgba(168,198,222,.28);border-radius:14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 1px 2px rgba(168,198,222,.15),0 8px 24px rgba(90,140,180,.08)}
-.apw-num{font-family:var(--fd);font-size:18px;color:#3d5a75;font-weight:500;flex-shrink:0;min-width:28px;letter-spacing:.5px}
-.apw h4{font-family:var(--fd);font-size:13px;color:#1c2d42;margin-bottom:2px;font-weight:500;letter-spacing:.3px}
-.apw p{font-size:11.5px;color:#4a5a6c;line-height:1.55;font-weight:300;margin:0}
-@media(max-width:1024px){
-.apparel-hero{padding:104px 20px 28px}
-.apparel-section{padding:36px 20px 44px}
-.apparel-grid{grid-template-columns:1fr;gap:18px}
-.apparel-note{padding:22px 20px 28px;grid-template-columns:1fr;gap:10px}
-.ap-deal-tiers{grid-template-columns:repeat(5,1fr)}
-}
-@media(max-width:768px){
-.apparel-hero{padding:98px 16px 24px}
-.apparel-hero h1{font-size:34px;margin-bottom:16px}
-.ap-deal-top{padding:12px 14px 10px}
-.ap-deal-ship{font-size:14px;letter-spacing:1.8px}
-.ap-deal-stock{font-size:9px;letter-spacing:1.5px}
-.ap-chip{padding:9px 4px}
-.ap-chip b{font-size:14px}
-.ap-chip span{font-size:8.5px;letter-spacing:1.2px}
-.ap-body{padding:26px 22px 26px}
-.ap-body h4{font-size:22px}
-}
-/* ===== APPAREL ORDER MODAL ===== */
-.ap-modal{max-width:580px;padding:32px 32px 28px;background:linear-gradient(180deg,#fcf9f2 0%,#f5ede0 100%)}
-.ap-modal-hdr{text-align:center;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(61,90,117,.14)}
-.ap-modal-hdr .slabel{letter-spacing:4px;margin-bottom:8px;font-size:10px}
-.ap-modal-hdr h3{font-family:var(--fd);font-size:24px;color:#1c2d42;font-weight:400;letter-spacing:-.3px;margin-bottom:6px}
-.ap-modal-unit{font-size:11px;color:#4a5a6c;letter-spacing:1.5px;text-transform:uppercase}
-.ap-modal-unit strong{color:#1c2d42;font-weight:500}
-.ap-form{display:flex;flex-direction:column;gap:14px}
-.ap-qty-block{display:flex;flex-direction:column;gap:14px;padding:16px;background:#fff;border:1px solid #d8e2ec}
-.ap-qty-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;font-weight:500;display:block}
-.ap-qty-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.ap-min-pill{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8a6d3b;background:#f5ede0;padding:3px 9px;border:1px solid #c9b89a;font-weight:600}
-.ap-min-pill:empty{display:none}
-.ap-qty-controls{display:flex;align-items:center;gap:10px}
-.ap-qb{width:38px;height:38px;border:1px solid #d8e2ec;background:#fff;font-size:18px;cursor:pointer;color:#1c2d42;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.ap-qb:hover{border-color:#1c2d42;background:#f5ede0}
-#blankQty{flex:1;height:38px;text-align:center;font-family:var(--fd);font-size:18px;border:1px solid #d8e2ec;background:#fff;color:#1c2d42;font-weight:500;-moz-appearance:textfield}
-#blankQty::-webkit-outer-spin-button,#blankQty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
-.ap-size-row{border-top:1px solid #ebe3d0;padding-top:14px}
-.ap-size-opts{display:flex;gap:6px;flex-wrap:wrap}
-.ap-size{flex:1;min-width:40px;padding:8px 10px;border:1px solid #d8e2ec;cursor:pointer;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;transition:all .2s;background:#fff;color:#4a5a6c;font-weight:500}
-.ap-size:hover{border-color:#3d5a75;color:#1c2d42}
-.ap-size.active{border-color:#1c2d42;background:#1c2d42;color:#f5ede0}
-.ap-tier-status{padding:14px 16px;background:#eaf1f7;border:1px solid #c9dcec;border-left:3px solid #3d5a75}
-.ap-ts-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3d5a75;font-weight:500;margin-bottom:4px}
-.ap-ts-val{font-family:var(--fd);font-size:15px;color:#1c2d42;font-weight:500;margin-bottom:2px}
-.ap-ts-next{font-size:11px;color:#4a5a6c;font-style:italic}
-.ap-tier-status.ap-tier-hit{background:#f5ede0;border-color:#c9b89a;border-left-color:#8a6d3b}
-.ap-tier-status.ap-tier-hit .ap-ts-label,.ap-tier-status.ap-tier-hit .ap-ts-next{color:#8a6d3b}
-.ap-tier-status.ap-tier-custom{background:linear-gradient(135deg,#1c2d42 0%,#3d5a75 100%);border-color:#1c2d42;color:#f5ede0}
-.ap-tier-status.ap-tier-custom .ap-ts-label{color:#c9b89a}
-.ap-tier-status.ap-tier-custom .ap-ts-val{color:#f5ede0}
-.ap-tier-status.ap-tier-custom .ap-ts-next{color:rgba(245,237,224,.75)}
-.ap-total-block{padding:14px 16px;background:#fff;border:1px solid #d8e2ec;display:flex;flex-direction:column;gap:6px}
-.ap-total-row{display:flex;justify-content:space-between;font-size:13px;color:#4a5a6c}
-.ap-disc-row{color:#2a6b3f;font-weight:500}
-.ap-free{color:#2a6b3f;font-weight:600;letter-spacing:1px;font-size:11px}
-.ap-total-big{padding-top:10px;border-top:1px solid #ebe3d0;margin-top:4px;font-family:var(--fd);font-size:18px;color:#1c2d42;font-weight:500}
-.ap-total-big span:last-child{font-size:22px}
-.ap-divider{display:flex;align-items:center;gap:12px;margin:6px 0 0;color:#3d5a75;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
-.ap-divider::before,.ap-divider::after{content:'';flex:1;height:1px;background:rgba(61,90,117,.2)}
-.ap-modal .pm-submit{background:#1c2d42;color:#f5ede0;border-color:#1c2d42;margin-top:10px;width:100%;padding:14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .2s}
-.ap-modal .pm-submit:hover{background:#3d5a75}
-.ap-modal .pm-submit[disabled]{background:#cfd6dd;color:#6a7b8c;cursor:not-allowed;border-color:#cfd6dd}
-.ap-modal .pm-submit[disabled]:hover{background:#cfd6dd}
-.ap-modal.ap-modal-custom .pm-submit{background:linear-gradient(135deg,#c9b89a 0%,#8a6d3b 100%);border-color:#8a6d3b}
-.ap-sm-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-.ap-sm-hint{font-size:10.5px;color:#4a5a6c;font-style:italic;font-weight:300;max-width:280px;text-align:right}
-.ap-sm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;background:#fff;border:1px solid #d8e2ec;padding:14px}
-@media(max-width:640px){.ap-sm-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
-.ap-sm-row{display:flex;flex-direction:column;align-items:center;gap:8px}
-.ap-sm-row label{font-family:var(--fd);font-size:11px;color:#1c2d42;font-weight:500;letter-spacing:1.5px}
-.ap-sm-row .ap-qty-controls{flex-direction:column;gap:4px;width:100%}
-.ap-sm-row .ap-qb{width:100%;height:28px;font-size:14px}
-.ap-sm-row input{width:100%;height:34px;text-align:center;font-family:var(--fd);font-size:15px;border:1px solid #d8e2ec;background:#fff;color:#1c2d42;font-weight:500;-moz-appearance:textfield}
-.ap-sm-row input::-webkit-outer-spin-button,.ap-sm-row input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
-.ap-sm-totalpill{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#eaf1f7;border:1px solid #c9dcec;margin-top:-1px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#1c2d42;font-weight:500}
-.ap-sm-totalpill span:last-child{font-family:var(--fd);font-size:18px;color:#1c2d42;font-weight:500}
-.ap-sm-totalpill.ap-sm-hit{background:#f5ede0;border-color:#c9b89a;color:#8a6d3b}
-.ap-sm-totalpill.ap-sm-hit span:last-child{color:#8a6d3b}
-.ap-legal{font-size:11px;color:#4a5a6c;text-align:center;margin-top:6px;line-height:1.6;font-weight:200}
-@media(max-width:768px){
-.ap-modal{padding:24px 20px 22px;max-height:92vh;overflow-y:auto}
-.ap-size{min-width:36px;padding:8px 6px;font-size:10px}
-}
 </style>
 </head>
 <body>
@@ -1313,43 +1144,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="fg"><label>Notes</label><textarea name="notes" placeholder="Number of rooms, timeline, branding requirements..."></textarea></div>
 <button type="submit" class="pm-submit" id="propSubmitBtn">Send Proposal Request</button>
 </form>
-</div>
-</div>
-</div>
-
-<!-- Apparel Direct Order Modal -->
-<div class="prop-ov" id="blankOv" onclick="closeBlank(event)">
-<div class="prop-modal ap-modal">
-<button class="pm-close" onclick="closeBlank()">&times;</button>
-<div id="blankBody">
-<div class="ap-modal-hdr">
-<div class="slabel" style="color:#3d5a75">Direct Order &middot; Free Shipping</div>
-<h3 id="blankProdName">&mdash;</h3>
-<div class="ap-modal-unit">Unit price <strong id="blankProdPrice">&mdash;</strong> &middot; Checkout via Shopify &middot; Free worldwide shipping</div>
-</div>
-<div class="ap-sm-head"><label class="ap-qty-label">Mix Sizes <span class="ap-min-pill" id="apMinNote"></span></label><span class="ap-sm-hint">Pick any sizes &mdash; total must hit the minimum for your chosen colour.</span></div>
-<div class="ap-sm-grid" id="apSizeGrid">
-<div class="ap-sm-row"><label>XS</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XS',-1)">&minus;</button><input id="qSize_XS" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XS',1)">+</button></div></div>
-<div class="ap-sm-row"><label>S</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('S',-1)">&minus;</button><input id="qSize_S" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('S',1)">+</button></div></div>
-<div class="ap-sm-row"><label>M</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('M',-1)">&minus;</button><input id="qSize_M" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('M',1)">+</button></div></div>
-<div class="ap-sm-row"><label>L</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('L',-1)">&minus;</button><input id="qSize_L" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('L',1)">+</button></div></div>
-<div class="ap-sm-row"><label>XL</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XL',-1)">&minus;</button><input id="qSize_XL" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XL',1)">+</button></div></div>
-<div class="ap-sm-row"><label>XXL</label><div class="ap-qty-controls"><button type="button" class="ap-qb" onclick="adjSize('XXL',-1)">&minus;</button><input id="qSize_XXL" type="number" min="0" value="0" oninput="updBlankTotal()"><button type="button" class="ap-qb" onclick="adjSize('XXL',1)">+</button></div></div>
-</div>
-<div class="ap-sm-totalpill"><span>Total pieces</span><span id="apTotalPieces">0</span></div>
-<div class="ap-tier-status" id="apTierStatus">
-<div class="ap-ts-label">Current tier</div>
-<div class="ap-ts-val" id="apTierVal">0 pieces</div>
-<div class="ap-ts-next" id="apTierNext">Add pieces to meet the minimum</div>
-</div>
-<div class="ap-total-block">
-<div class="ap-total-row"><span>Subtotal</span><span id="apSubtotal">$0</span></div>
-<div class="ap-total-row ap-disc-row" id="apDiscRow" style="display:none"><span id="apDiscLbl">Discount</span><span id="apDiscAmt">&mdash;</span></div>
-<div class="ap-total-row"><span>Shipping</span><span class="ap-free">FREE</span></div>
-<div class="ap-total-row ap-total-big"><span>Total</span><span id="apGrand">$0</span></div>
-</div>
-<button type="button" class="pm-submit" id="blankSubmitBtn" onclick="submitBlank()">Continue to Checkout</button>
-<p class="ap-legal">Secure checkout via Shopify. Enter name, address, and payment on the next page. Free worldwide shipping in 5 business days.</p>
 </div>
 </div>
 </div>
@@ -1542,7 +1336,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(greenrobe.png) center 5%/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Programme</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card section-card-wide scale-in" onclick="go('fragrance')"><div class="sc-img" style="position:relative;overflow:hidden"><div class="frag-strip" style="position:absolute;inset:0"><div class="frag-strip-item"><img loading="lazy" src="killian1.jpg" alt="Angels' Share"><div class="fsi-name">Angels' Share<span>Kilian</span></div></div><div class="frag-strip-item"><img loading="lazy" src="kilianblack.jpg" alt="Black Phantom"><div class="fsi-name">Black Phantom<span>Kilian</span></div></div><div class="frag-strip-item fsi-blend"><img loading="lazy" src="chanel2.jpg" alt="Bleu de Chanel"><div class="fsi-name">Bleu de Chanel<span>Chanel</span></div></div><div class="frag-strip-item fsi-blend"><img loading="lazy" src="diorhomme.jpg" alt="Dior Homme"><div class="fsi-name">Dior Homme<span>Dior</span></div></div><div class="frag-strip-item"><img loading="lazy" src="armani.jpg" alt="Stronger With You"><div class="fsi-name">Stronger With You<span>Armani</span></div></div></div></div><div class="sc-overlay"><div class="sc-label">New</div><div class="sc-title">Fragrance Collection</div><div class="sc-desc">Luxury leather sampler cases with curated designer scents. Your brand or ours.</div></div></div>
 <div class="section-card scale-in" onclick="go('manufacturing')"><div class="sc-img" style="background:url(sourcing.png) center/cover"></div><div class="sc-overlay"><div class="sc-label">Craftsmanship</div><div class="sc-title">Manufacturing</div><div class="sc-desc">From sketch to stitch. See the prototype drawings, then six steps from raw hide to finished product.</div></div></div>
-<div class="section-card scale-in" onclick="go('apparel')"><div class="sc-img" style="background:url(240cottonwhite.jpg) center top/contain no-repeat;background-color:#f2ead8"></div><div class="sc-overlay"><div class="sc-label">Direct Order</div><div class="sc-title">Apparel</div><div class="sc-desc">Premium blanks from $8. Free worldwide shipping, 5 day delivery.</div></div></div>
 <div class="section-card scale-in" onclick="go('custom')"><div class="sc-img" style="background:url(blackholsterclose.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Made Personal</div><div class="sc-title">Custom</div><div class="sc-desc">Tattoo any design into the leather. Names, signatures, sketches. From $50.</div></div></div>
 <div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(DSC04620.JPG) center 10%/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About Us</div><div class="sc-desc">Our story, our values, get in touch</div></div></div>
 </div>
@@ -2063,85 +1856,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 </div>
 
-<!-- ======================== APPAREL ======================== -->
-<div class="page" id="page-apparel">
-<div class="apparel-hero">
-<div class="apparel-clouds"></div>
-<div class="apparel-hero-inner">
-<div class="slabel" style="color:#3d5a75">Apparel &middot; Direct Order</div>
-<h1>Blanks &amp; Basics</h1>
-<div class="ap-hero-deal">
-<div class="ap-deal-top"><span class="ap-deal-ship">Free Worldwide Shipping &middot; 5 Business Days</span><span class="ap-deal-stock">Local stock sold out &mdash; shipping direct from our wholesaler</span></div>
-<div class="ap-deal-tiers">
-<div class="ap-chip ap-chip-min"><b>10</b><span>Min Order</span></div>
-<div class="ap-chip"><b>20+</b><span>5% off</span></div>
-<div class="ap-chip"><b>30+</b><span>7% off</span></div>
-<div class="ap-chip"><b>50+</b><span>10% off</span></div>
-<div class="ap-chip ap-chip-custom"><b>100+</b><span>Custom</span></div>
-</div>
-</div>
-</div>
-</div>
-<section class="apparel-section">
-<div class="apparel-grid">
-
-<div class="ap-card fade-in">
-<div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#f5f1e8 0%,#ebe3d2 60%,#dcd0b8 100%)">
-<video id="classicVideo" autoplay muted loop playsinline preload="auto" poster="" src="240gsmwhite.mp4"></video>
-<img id="classicImg" class="ap-media-img" alt="" hidden>
-<button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('classic',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
-<button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('classic',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
-<div class="ap-dots" id="classicDots"></div>
-</div>
-<div class="ap-body">
-<div class="ap-slabel">Cotton &middot; Three Weights</div>
-<h4>The Classic Tee</h4>
-<p>Premium cotton tee in three fabric options &mdash; same price. 250gsm heavyweight for built-to-last oversized fits, 180gsm bio-washed for everyday softness, or 150gsm jersey for summer drops. White or black.</p>
-<div class="ap-vars">
-<label class="ap-sw active" data-var="white" onclick="setBlankVar('classic','white',this)"><span style="background:#fafafa;border-color:#ccc"></span>White</label>
-<label class="ap-sw" data-var="black" onclick="setBlankVar('classic','black',this)"><span style="background:#171717;border-color:#171717"></span>Black</label>
-</div>
-<div class="ap-fab-row">
-<label class="ap-fab active" data-fab="hw250" onclick="setBlankFabric('classic','hw250',this)"><b>250gsm</b><span>Heavyweight Oversized &middot; Premium</span></label>
-<label class="ap-fab" data-fab="biowash180" onclick="setBlankFabric('classic','biowash180',this)"><b>180gsm</b><span>Bio-Washed &middot; Ultra Soft</span></label>
-<label class="ap-fab" data-fab="jersey150" onclick="setBlankFabric('classic','jersey150',this)"><b>150gsm</b><span>Single Jersey &middot; Summer</span></label>
-</div>
-<div class="ap-row"><div class="ap-price">$8<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('classic')">Order Direct</button></div>
-<div class="shoppay-badge shoppay-badge-sm"><span class="spp-msg">4 interest-free installments from <b>$7.22</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span> &middot; min 10</span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('classic')">View sample plans</a></div>
-</div>
-</div>
-
-<div class="ap-card fade-in">
-<div class="ap-img ap-img-video" style="background:linear-gradient(155deg,#e6e4de 0%,#cac7c0 55%,#a5a29a 100%)">
-<video id="acidVideo" autoplay muted loop playsinline preload="auto" poster="" src="240blackacidwash.mp4"></video>
-<img id="acidImg" class="ap-media-img" alt="" hidden>
-<button type="button" class="ap-arr ap-arr-prev" onclick="cycleMedia('acid',-1);event.stopPropagation()" aria-label="Previous"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2L4 6l4 4"/></svg></button>
-<button type="button" class="ap-arr ap-arr-next" onclick="cycleMedia('acid',1);event.stopPropagation()" aria-label="Next"><svg viewBox="0 0 12 12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg></button>
-<div class="ap-dots" id="acidDots"></div>
-</div>
-<div class="ap-body">
-<div class="ap-slabel">240gsm French Terry &middot; Premium</div>
-<h4>The French Terry</h4>
-<p>240gsm French Terry &mdash; looped back for plush density, smooth face for a clean drape. Pick the black or light-blue wash &mdash; each piece washes slightly different, no two alike.</p>
-<div class="ap-vars">
-<label class="ap-sw active" data-var="black" onclick="setBlankVar('acid','black',this)"><span style="background:linear-gradient(135deg,#1d1d1d 20%,#3a3a3a 55%,#1a1a1a 85%);border-color:#0a0a0a"></span>Black</label>
-<label class="ap-sw" data-var="lightblue" onclick="setBlankVar('acid','lightblue',this)"><span style="background:linear-gradient(135deg,#6e8bad 20%,#98b2cb 55%,#b8cde0 85%);border-color:#4a6a8c"></span>Light Blue</label>
-</div>
-<div class="ap-row"><div class="ap-price">$10<span class="ap-price-min">/ ea &middot; min 10</span></div><button class="btn btn-f" onclick="orderBlank('acid')">Order Direct</button></div>
-<div class="shoppay-badge shoppay-badge-sm"><span class="spp-msg">4 interest-free installments from <b>$9.03</b>/mo with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span> &middot; min 10</span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('acid')">View sample plans</a></div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="apparel-note fade-in">
-<div class="apw"><div class="apw-num">01</div><div><h4>Order</h4><p>Pick a piece, quantity, colour, and shipping details.</p></div></div>
-<div class="apw"><div class="apw-num">02</div><div><h4>Confirm</h4><p>Payment link sent by email within 24 hours.</p></div></div>
-<div class="apw"><div class="apw-num">03</div><div><h4>Delivered</h4><p>Free worldwide shipping, 5 business days.</p></div></div>
-</section>
-</div>
-
 <!-- ======================== ABOUT US ======================== -->
 <div class="page" id="page-about">
 <div class="about-hero"><div class="slabel">About Us</div><h1>Goldy Brown</h1><p class="sub">A fashion designer from Vancouver, BC, creating luxury leather goods for discerning individuals, world class hotels, and the global hospitality industry.</p></div>
@@ -2552,7 +2266,6 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <div class="footer-col-h">Shop</div>
 <ul>
 <li><a href="javascript:void(0)" onclick="go('home')">The Holster</a></li>
-<li><a href="javascript:void(0)" onclick="go('apparel')">Apparel</a></li>
 <li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance</a></li>
 <li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
 </ul>
@@ -2670,7 +2383,7 @@ function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
 function sppMonthlyAmt(p){var r=0.15/12,n=12,f=Math.pow(1+r,n);return p*(r*f)/(f-1)}
 function sppFmt(v){return CURR.sym+(Math.round(v*CURR.rate*100)/100).toFixed(2)}
-var SPP_PRODUCTS={holster:{name:'The Holster',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}},discovery:{name:'The Discovery Set',price:299,variant:'53324620529956'},classic:{name:'The Classic Tee (min 10)',price:80,variant:'53339065090340'},acid:{name:'The French Terry (min 10)',price:100,variant:'53339060175140'}};
+var SPP_PRODUCTS={holster:{name:'The Holster',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:249)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}},discovery:{name:'The Discovery Set',price:299,variant:'53324620529956'}};
 function openSpp(key){var cfg=SPP_PRODUCTS[key];if(!cfg)return;var price=(typeof cfg.getPrice==='function'?cfg.getPrice():cfg.price);var variant=(typeof cfg.getVariant==='function'?cfg.getVariant():cfg.variant);var per4=price/4;var perMo=sppMonthlyAmt(price);var totalMo=perMo*12;var intMo=totalMo-price;document.getElementById('sppPurchase').textContent=sppFmt(price);document.getElementById('spp4Amt').textContent=sppFmt(per4);document.getElementById('spp4Total').textContent=sppFmt(price);document.getElementById('sppMoAmt').textContent=sppFmt(perMo);document.getElementById('sppMoInt').textContent=sppFmt(intMo);document.getElementById('sppMoTotal').textContent=sppFmt(totalMo);document.getElementById('sppCta').setAttribute('href','https://'+SHOPIFY_STORE+'/cart/'+variant+':1');document.getElementById('sppOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeSpp(e){if(e&&e.target!==document.getElementById('sppOv')&&!e.target.classList.contains('spp-x'))return;document.getElementById('sppOv').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('sppOv').classList.contains('open'))closeSpp()});
@@ -2781,9 +2494,9 @@ function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.tar
 function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Sending...';fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){if(r.ok)return r.json();throw new Error('Network error')}).then(function(){btn.disabled=false;onSuccess()}).catch(function(){btn.disabled=false;btn.textContent='Send Failed \u2014 Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},3000)})}
 function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Proposal Request Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a formal proposal for your '+data.tier+' kit and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Designed in Vancouver',d:'Full grain leather holsters and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — holsters, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Programme — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},fragrance:{t:'Fragrance Collection — Leather Sampler Cases with Designer Scents | Goldy Brown',d:'Full grain leather sampler cases housing five curated designer fragrances — Kilian, Chanel, Dior, Armani. Private label and hotel branding available. Free worldwide shipping.'},apparel:{t:'Apparel — Premium Cotton Blank Tees & French Terry from $8 | Goldy Brown',d:'Premium cotton blanks from $8 with free worldwide shipping in 5 business days. Heavyweight 250gsm, 180gsm bio-washed, 150gsm jersey. Volume pricing on 20+ units. Secure Shopify checkout.'},manufacturing:{t:'Manufacturing — South India Leather Craftsmanship | Goldy Brown',d:'Designed in Vancouver. Made in South India by the artisan tannery houses whose leather has supplied European luxury houses for over a century. Vegetable and chrome tanned, full grain calfskin, lifetime warranty.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Custom Tattoo Bag — Personalised Leather Holsters | Goldy Brown',d:'Have any design hand-tattooed into the front face of your Goldy Brown holster bag — names, signatures, sketches, club crests. Starting at $50 USD on top of the holster. One of one, lifetime warranty.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why we use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
-var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Programme',fragrance:'Fragrance Collection',apparel:'Apparel',manufacturing:'Manufacturing',custom:'Custom Tattoo Bag',about:'About Us',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges',journal:'Journal','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
-var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',fragrance:'/fragrance',apparel:'/apparel',manufacturing:'/manufacturing',custom:'/custom',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns',journal:'/journal','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
+var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Holsters & Travel Bags | Designed in Vancouver',d:'Full grain leather holsters and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — holsters, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Programme — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},fragrance:{t:'Fragrance Collection — Leather Sampler Cases with Designer Scents | Goldy Brown',d:'Full grain leather sampler cases housing five curated designer fragrances — Kilian, Chanel, Dior, Armani. Private label and hotel branding available. Free worldwide shipping.'},manufacturing:{t:'Manufacturing — South India Leather Craftsmanship | Goldy Brown',d:'Designed in Vancouver. Made in South India by the artisan tannery houses whose leather has supplied European luxury houses for over a century. Vegetable and chrome tanned, full grain calfskin, lifetime warranty.'},about:{t:'About Us — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Custom Tattoo Bag — Personalised Leather Holsters | Goldy Brown',d:'Have any design hand-tattooed into the front face of your Goldy Brown holster bag — names, signatures, sketches, club crests. Starting at $50 USD on top of the holster. One of one, lifetime warranty.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why we use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
+var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Programme',fragrance:'Fragrance Collection',manufacturing:'Manufacturing',custom:'Custom Tattoo Bag',about:'About Us',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges',journal:'Journal','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
+var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',fragrance:'/fragrance',manufacturing:'/manufacturing',custom:'/custom',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns',journal:'/journal','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
 var PATH_TO_PAGE={};(function(){for(var k in PAGE_PATHS){PATH_TO_PAGE[PAGE_PATHS[k]]=k}})();
 function setBreadcrumb(page){var label=BREADCRUMB_LABELS[page]||'Home';var url=page==='home'?'https://goldybrown.com/':'https://goldybrown.com/'+page;var items=[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"}];if(page!=='home')items.push({"@type":"ListItem","position":2,"name":label,"item":url});var bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items};var sc=document.getElementById('bcSchema');if(!sc){sc=document.createElement('script');sc.id='bcSchema';sc.type='application/ld+json';document.head.appendChild(sc)}sc.textContent=JSON.stringify(bc)}
 function pathFor(page){return PAGE_PATHS[page]||(page==='home'?'/':'/'+page)}
@@ -2801,39 +2514,6 @@ function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page
 function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll be in touch within 24 hours.</p></div>'})}
 // ===== FRAGRANCE FORM =====
 function handleFragSubmit(e){e.preventDefault();var f=e.target;var btn=document.getElementById('fragSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Fragrance Collection Inquiry — '+f.packsize.value,type:'fragrance',name:f.name.value,email:f.email.value,company:f.company.value,packsize:f.packsize.value,quantity:f.quantity.value,logo:f.logo.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Inquiry Sent</h3><p>Thank you, '+data.name.split(' ')[0]+'. We\'ll prepare a custom fragrance proposal and send it to <strong>'+data.email+'</strong> within 24 hours.</p><button class="btn btn-f" onclick="location.reload()" style="margin-top:8px">Back to Collection</button></div>'})}
-// ===== APPAREL =====
-var BLANKS={classic:{name:'The Classic Tee',price:8,min:10},acid:{name:'The French Terry Tee',price:10,min:10}};
-var BLANK_COLORS={cream:'Cream White',sky:'Sky Blue',white:'White',black:'Black',stone:'Stone Grey',lightblue:'Light Blue'};
-var BLANK_FABRICS={hw250:'250gsm Heavyweight Oversized',biowash180:'180gsm Bio-Washed',jersey150:'150gsm Single Jersey'};
-var BLANK_TIERS=[{min:100,disc:null,label:'Custom Pricing'},{min:50,disc:0.10,label:'10% off'},{min:30,disc:0.07,label:'7% off'},{min:20,disc:0.05,label:'5% off'}];
-var APP_SIZES=['XS','S','M','L','XL','XXL'];
-var SHOPIFY_STORE='kuibri-ev.myshopify.com';
-// Shopify variant IDs. Same variant per colour for now (no size-level variants
-// set up in Shopify yet) — size breakdown + fabric are sent to Shopify as an
-// order note so fulfilment can see exactly what sizes the buyer wants.
-// Schema: SHOPIFY_VARIANTS[productId][colorKey][fabricKey?][size] = 'numeric_variant_id'
-var CL_W='53339065090340',CL_B='53339065123108',AC_B='53339060175140',AC_LB='53339060207908';
-var SHOPIFY_VARIANTS={classic:{white:{hw250:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W},biowash180:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W},jersey150:{XS:CL_W,S:CL_W,M:CL_W,L:CL_W,XL:CL_W,XXL:CL_W}},black:{hw250:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B},biowash180:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B},jersey150:{XS:CL_B,S:CL_B,M:CL_B,L:CL_B,XL:CL_B,XXL:CL_B}}},acid:{black:{XS:AC_B,S:AC_B,M:AC_B,L:AC_B,XL:AC_B,XXL:AC_B},lightblue:{XS:AC_LB,S:AC_LB,M:AC_LB,L:AC_LB,XL:AC_LB,XXL:AC_LB}}};
-var blankVar={classic:'white',acid:'black'};
-var blankFabric={classic:'hw250'};
-var curBlank=null,curBlankId=null;
-var APP_MEDIA={classic:{white:[{t:'v',s:'240gsmwhite.mp4'},{t:'v',s:'240whitefull.mp4'},{t:'i',s:'240white.jpg'}],black:[{t:'v',s:'240gsmblack.mp4'},{t:'v',s:'240blackfull.mp4'},{t:'i',s:'240black.jpg'}]},acid:{black:[{t:'v',s:'240blackacidwash.mp4'},{t:'v',s:'240blackacidwashfull.mp4'},{t:'i',s:'blackacid.jpg'}],lightblue:[{t:'v',s:'240blueacidwash.mp4'},{t:'v',s:'240blueacidwashfull.mp4'},{t:'i',s:'blueacid.jpg'}]}};
-var mediaIdx={classic:0,acid:0};
-var APP_CARDS={classic:{vid:'classicVideo',img:'classicImg',dots:'classicDots'},acid:{vid:'acidVideo',img:'acidImg',dots:'acidDots'}};
-function setMedia(prodId,idx){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];if(!list||!list[idx])return;mediaIdx[prodId]=idx;var ids=APP_CARDS[prodId];var vid=document.getElementById(ids.vid),img=document.getElementById(ids.img);var m=list[idx];if(m.t==='v'){if(img){img.hidden=true}if(vid){vid.hidden=false;var fname=vid.src?vid.src.split('/').pop():'';if(fname!==m.s){vid.src=m.s;vid.load()}vid.muted=true;var p=vid.play();if(p&&p.catch)p.catch(function(){})}}else{if(vid){vid.hidden=true;vid.pause&&vid.pause()}if(img){img.hidden=false;if(img.getAttribute('src')!==m.s)img.src=m.s}}renderDots(prodId)}
-function renderDots(prodId){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];var dots=document.getElementById(APP_CARDS[prodId].dots);if(!dots)return;if(!list||list.length<2){dots.innerHTML='';return}var html='';for(var i=0;i<list.length;i++){html+='<button type="button" class="ap-dot'+(i===mediaIdx[prodId]?' active':'')+'" onclick="setMedia(\''+prodId+'\','+i+');event.stopPropagation()" aria-label="Slide '+(i+1)+'"></button>'}dots.innerHTML=html}
-function cycleMedia(prodId,dir){var color=blankVar[prodId];var list=APP_MEDIA[prodId]&&APP_MEDIA[prodId][color];if(!list||list.length<2)return;var cur=mediaIdx[prodId]||0;var next=(cur+dir+list.length)%list.length;setMedia(prodId,next)}
-function setBlankVar(id,v,el){blankVar[id]=v;var par=el.parentElement;par.querySelectorAll('.ap-sw').forEach(function(e){e.classList.remove('active')});el.classList.add('active');if(APP_MEDIA[id]){mediaIdx[id]=0;setMedia(id,0)}}
-function setBlankFabric(id,f,el){blankFabric[id]=f;var par=el.parentElement;par.querySelectorAll('.ap-fab').forEach(function(e){e.classList.remove('active')});el.classList.add('active')}
-function getBlankTier(q){for(var i=0;i<BLANK_TIERS.length;i++){if(q>=BLANK_TIERS[i].min)return BLANK_TIERS[i]}return null}
-function getSizeQty(s){var el=document.getElementById('qSize_'+s);return el?Math.max(0,parseInt(el.value,10)||0):0}
-function getTotalPieces(){var t=0;APP_SIZES.forEach(function(s){t+=getSizeQty(s)});return t}
-function adjSize(s,d){var el=document.getElementById('qSize_'+s);var v=Math.max(0,(parseInt(el.value,10)||0)+d);el.value=v;updBlankTotal()}
-function lookupShopifyVariant(id,color,fabric,size){var p=SHOPIFY_VARIANTS[id];if(!p)return null;var c=p[color];if(!c)return null;if(fabric){var f=c[fabric];return f?(f[size]||null):null}return c[size]||null}
-function updBlankTotal(){if(!curBlank)return;var minQ=curBlank.min;var q=getTotalPieces();var unit=curBlank.price;var sub=unit*q;var tier=getBlankTier(q);var status=document.getElementById('apTierStatus');var modal=document.querySelector('.ap-modal');status.classList.remove('ap-tier-hit','ap-tier-custom');if(modal)modal.classList.remove('ap-modal-custom');var btn=document.getElementById('blankSubmitBtn');var minNote=document.getElementById('apMinNote');if(minNote)minNote.textContent=minQ>1?('Min '+minQ+' pieces'):'';document.getElementById('apTotalPieces').textContent=q;var pill=document.querySelector('.ap-sm-totalpill');if(pill){pill.classList.remove('ap-sm-hit');if(q>=minQ)pill.classList.add('ap-sm-hit')}if(q===0){document.getElementById('apTierVal').textContent='0 pieces';document.getElementById('apTierNext').textContent='Add sizes to meet the '+minQ+' piece minimum';document.getElementById('apSubtotal').textContent=fmt(0);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(0);btn.textContent='Add pieces to checkout';btn.disabled=true;return}if(q<minQ){document.getElementById('apTierVal').textContent=q+' piece'+(q>1?'s':'')+' \u2014 Below minimum';document.getElementById('apTierNext').textContent='Add '+(minQ-q)+' more to meet the '+minQ+' piece minimum';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub);btn.textContent='Minimum not met';btn.disabled=true;return}btn.disabled=false;if(q>=100){status.classList.add('ap-tier-custom');if(modal)modal.classList.add('ap-modal-custom');document.getElementById('apTierVal').textContent=q+' pieces \u2014 Custom pricing zone';document.getElementById('apTierNext').textContent='Contact us for volume pricing';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent='Custom Quote';btn.textContent='Request Custom Quote';return}if(tier&&tier.disc&&tier.disc>0){status.classList.add('ap-tier-hit');var discAmt=Math.round(sub*tier.disc);var total=sub-discAmt;document.getElementById('apTierVal').textContent=q+' pieces \u2014 '+tier.label;var next=BLANK_TIERS.filter(function(t){return t.min>q&&t.min<=100}).sort(function(a,b){return a.min-b.min})[0];document.getElementById('apTierNext').textContent=next?('Add '+(next.min-q)+' more for '+(next.disc===null?'custom pricing':next.label)):'Top volume tier reached';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='';document.getElementById('apDiscLbl').textContent='Discount ('+Math.round(tier.disc*100)+'%)';document.getElementById('apDiscAmt').textContent='\u2212'+fmt(discAmt);document.getElementById('apGrand').textContent=fmt(total)}else{document.getElementById('apTierVal').textContent=q+' piece'+(q>1?'s':'')+' \u2014 Base price';document.getElementById('apTierNext').textContent='Add '+(20-q)+' more to unlock 5% off';document.getElementById('apSubtotal').textContent=fmt(sub);document.getElementById('apDiscRow').style.display='none';document.getElementById('apGrand').textContent=fmt(sub)}btn.textContent='Continue to Checkout \u2014 Free Shipping'}
-function orderBlank(id){var b=BLANKS[id];curBlank=b;curBlankId=id;var label=b.name;var v=blankVar[id];if(v&&BLANK_COLORS[v])label+=' \u2014 '+BLANK_COLORS[v];var fab=blankFabric[id];if(fab&&BLANK_FABRICS[fab])label+=' \u2014 '+BLANK_FABRICS[fab];APP_SIZES.forEach(function(s){var el=document.getElementById('qSize_'+s);if(el)el.value=0});document.getElementById('blankProdName').textContent=label;document.getElementById('blankProdPrice').textContent=fmt(b.price);updBlankTotal();document.getElementById('blankOv').classList.add('open');document.body.style.overflow='hidden'}
-function closeBlank(e){if(e&&e.target!==document.getElementById('blankOv')&&!e.target.classList.contains('pm-close'))return;document.getElementById('blankOv').classList.remove('open');document.body.style.overflow=''}
-function submitBlank(){if(!curBlank||!curBlankId)return;var minQ=curBlank.min;var q=getTotalPieces();if(q<minQ){alert('Minimum order is '+minQ+' pieces for this colour. Add '+(minQ-q)+' more across any sizes.');return}var color=blankVar[curBlankId];var fabric=blankFabric[curBlankId];var variantMap={};var sizeBreak=[];var missing=[];APP_SIZES.forEach(function(s){var qty=getSizeQty(s);if(qty<=0)return;var vid=lookupShopifyVariant(curBlankId,color,fabric,s);if(!vid){missing.push(s);return}variantMap[vid]=(variantMap[vid]||0)+qty;sizeBreak.push(s+':'+qty)});if(q>=100){var subj='Custom Quote Request \u2014 '+curBlank.name+' \u2014 '+q+' pieces';var body='Product: '+curBlank.name+'\nColour: '+(BLANK_COLORS[color]||color)+(fabric?('\nFabric: '+BLANK_FABRICS[fabric]):'')+'\nTotal pieces: '+q+'\nSize breakdown:\n'+APP_SIZES.map(function(s){var n=getSizeQty(s);return n>0?('  '+s+': '+n):''}).filter(Boolean).join('\n');window.location.href='mailto:info@goldybrown.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);return}if(missing.length){alert('Checkout setup is still pending for: '+missing.join(', ')+'. Please email info@goldybrown.com to place your order, or try again shortly.');return}var keys=Object.keys(variantMap);if(!keys.length){alert('Please add at least one size.');return}var parts=keys.map(function(v){return v+':'+variantMap[v]});var noteBits=['Sizes: '+sizeBreak.join(', ')];if(fabric&&BLANK_FABRICS[fabric])noteBits.push('Fabric: '+BLANK_FABRICS[fabric]);noteBits.push('Colour: '+(BLANK_COLORS[color]||color));var note=noteBits.join(' | ');window.open('https://'+SHOPIFY_STORE+'/cart/'+parts.join(',')+'?note='+encodeURIComponent(note),'_blank')}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
@@ -2910,7 +2590,7 @@ function shopCheckout(){
   window.open(url,'_blank');
 }
 
-renderCat();initFI();document.getElementById('bbar').style.display='none';renderDots('classic');renderDots('acid');setMedia('classic',0);setMedia('acid',0);updShopPayHolster();(function(){Object.keys(APP_CARDS).forEach(function(pid){var card=document.getElementById(APP_CARDS[pid].vid);if(!card||!card.parentElement)return;var wrap=card.parentElement;var sx=0;wrap.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});wrap.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;if(Math.abs(dx)<40)return;cycleMedia(pid,dx<0?1:-1)},{passive:true})})})();
+renderCat();initFI();document.getElementById('bbar').style.display='none';updShopPayHolster();
 // Image Zoom Lightbox
 (function(){
 var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
