@@ -1055,13 +1055,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="nav-inner">
 <div class="nav-logo" onclick="go('home')"><img src="gb-silver.png" alt="Goldy Brown"></div>
 <div class="nav-tabs" id="navTabs">
-<a class="nav-tab" data-page="lookbook">Lookbook</a>
-<a class="nav-tab" data-page="hotel">Hotel Programme</a>
-<a class="nav-tab" data-page="fragrance">Fragrance Collection</a>
-<a class="nav-tab" data-page="manufacturing">Manufacturing</a>
-<a class="nav-tab" data-page="custom">Custom</a>
-<a class="nav-tab" data-page="journal">Journal</a>
-<a class="nav-tab" data-page="about">About Us</a>
+<a class="nav-tab" data-page="lookbook" href="/lookbook">Lookbook</a>
+<a class="nav-tab" data-page="hotel" href="/hotel">Hotel Programme</a>
+<a class="nav-tab" data-page="fragrance" href="/fragrance">Fragrance Collection</a>
+<a class="nav-tab" data-page="manufacturing" href="/manufacturing">Manufacturing</a>
+<a class="nav-tab" data-page="custom" href="/custom">Custom</a>
+<a class="nav-tab" data-page="journal" href="/journal">Journal</a>
+<a class="nav-tab" data-page="about" href="/about">About Us</a>
 </div>
 <div class="nav-right">
 <div class="curr-toggle" id="currToggle" onclick="toggleCurrMenu()">
@@ -1087,14 +1087,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-<a href="javascript:void(0)" onclick="go('home');closeMob()">Home</a>
-<a href="javascript:void(0)" onclick="go('lookbook');closeMob()">Lookbook</a>
-<a href="javascript:void(0)" onclick="go('hotel');closeMob()">Hotel Programme</a>
-<a href="javascript:void(0)" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
-<a href="javascript:void(0)" onclick="go('manufacturing');closeMob()">Manufacturing</a>
-<a href="javascript:void(0)" onclick="go('custom');closeMob()">Custom</a>
-<a href="javascript:void(0)" onclick="go('journal');closeMob()">Journal</a>
-<a href="javascript:void(0)" onclick="go('about');closeMob()">About Us</a>
+<a href="/" onclick="go('home');closeMob()">Home</a>
+<a href="/lookbook" onclick="go('lookbook');closeMob()">Lookbook</a>
+<a href="/hotel" onclick="go('hotel');closeMob()">Hotel Programme</a>
+<a href="/fragrance" onclick="go('fragrance');closeMob()">Fragrance Collection</a>
+<a href="/manufacturing" onclick="go('manufacturing');closeMob()">Manufacturing</a>
+<a href="/custom" onclick="go('custom');closeMob()">Custom</a>
+<a href="/journal" onclick="go('journal');closeMob()">Journal</a>
+<a href="/about" onclick="go('about');closeMob()">About Us</a>
 </div>
 
 <div class="cart-ov" id="cartOv" onclick="closeCart()"></div>
@@ -1219,7 +1219,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
-<a class="customize-link" href="javascript:void(0)" onclick="go('custom')">
+<a class="customize-link" href="/custom" onclick="go('custom')">
 <span class="cz-ico">&#9670;</span>
 <span class="cz-txt"><span class="cz-title">Make it yours &middot; from $50</span><span class="cz-sub">Tattoo a name, signature, or sketch into the leather. One of one.</span></span>
 <span class="cz-arr">&rsaquo;</span>
@@ -1325,7 +1325,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <div class="btn-row">
 <button class="btn" onclick="addDiscoveryToCart('home')">Add to Cart</button>
-<a class="btn btn-f" href="javascript:void(0)" onclick="go('fragrance')">View Collection</a>
+<a class="btn btn-f" href="/fragrance" onclick="go('fragrance')">View Collection</a>
 </div>
 </div>
 </div>
@@ -1363,7 +1363,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p>When to condition, when to leave it alone, and what to do if your bag gets caught in the rain.</p>
 </div>
 </div>
-<div class="hjs-cta"><a href="javascript:void(0)" onclick="go('journal')">Read the Journal</a></div>
+<div class="hjs-cta"><a href="/journal" onclick="go('journal')">Read the Journal</a></div>
 </section>
 </div>
 
@@ -1450,20 +1450,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <h2>What we use, and why we say so</h2>
 <p>Every Goldy Brown leather piece is full-grain calfskin from the artisan tannery houses of South India, the same region whose hides have supplied European luxury houses for over a century. We do not use top-grain. We do not use corrected-grain. We do not blend in bonded leather for the lining or the trim. The pieces will mark, will deepen, will carry their first scratches forever, and will outlive the conversation about whether they were a good purchase.</p>
-<p>If you want to read more about how that hide was tanned, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. If you want to read where it came from, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
+<p>If you want to read more about how that hide was tanned, see <a class="j-internal" href="/journal/vegetable-vs-chrome-tanning" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. If you want to read where it came from, see <a class="j-internal" href="/journal/south-india-leather-capital" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
 
 <div class="a-cta-card">
 <span class="slabel">The Harness Bag</span>
 <h4>Full-grain calfskin. Worn, not carried.</h4>
 <p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
-<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
+<a href="/" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
 </div>
 
 <div class="a-related">
 <div class="a-related-h">Related Reading</div>
 <div class="a-related-grid">
-<a href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
-<a href="javascript:void(0)" onclick="go('journal-leather-care')"><div class="a-related-cat">Care</div><div class="a-related-title">How to care for full-grain leather</div></a>
+<a href="/journal/vegetable-vs-chrome-tanning" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
+<a href="/journal/how-to-care-for-leather" onclick="go('journal-leather-care')"><div class="a-related-cat">Care</div><div class="a-related-title">How to care for full-grain leather</div></a>
 </div>
 </div>
 </div></section>
@@ -1497,20 +1497,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h2>What we use, and when</h2>
 <p>The Goldy Brown Harness Bag body is full-grain calfskin, vegetable-tanned, in stone vats with wattle, myrobalan, and avaram bark, sun-dried, conditioned over weeks. It is structured. It holds its shape against your chest. It will deepen for years.</p>
 <p>The lining and the softer interior pieces of certain accessories are chrome-tanned full-grain calfskin, dyed for colour-stability and chosen for the way the leather drapes against the body. We choose the method for the piece, not for the marketing copy. We tell you which is which on the product page.</p>
-<p>If you want a deeper read on what makes the hide itself worth tanning at all, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want the story of where the hides come from, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
+<p>If you want a deeper read on what makes the hide itself worth tanning at all, see <a class="j-internal" href="/journal/full-grain-leather" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want the story of where the hides come from, see <a class="j-internal" href="/journal/south-india-leather-capital" onclick="go('journal-south-india')">How South India became leather's quiet capital</a>.</p>
 
 <div class="a-cta-card">
 <span class="slabel">The Harness Bag</span>
 <h4>Full-grain calfskin. Worn, not carried.</h4>
 <p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
-<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
+<a href="/" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
 </div>
 
 <div class="a-related">
 <div class="a-related-h">Related Reading</div>
 <div class="a-related-grid">
-<a href="javascript:void(0)" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
-<a href="javascript:void(0)" onclick="go('journal-south-india')"><div class="a-related-cat">Provenance</div><div class="a-related-title">How South India became leather's quiet capital</div></a>
+<a href="/journal/full-grain-leather" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
+<a href="/journal/south-india-leather-capital" onclick="go('journal-south-india')"><div class="a-related-cat">Provenance</div><div class="a-related-title">How South India became leather's quiet capital</div></a>
 </div>
 </div>
 </div></section>
@@ -1539,20 +1539,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <h2>What we do</h2>
 <p>Goldy Brown is designed in Vancouver. Every piece is made in South India, by an artisan workshop of master leather craftsmen working with hides from the same regional tannery houses that have supplied luxury goods to Europe for over a century. We say so on the box, on the product page, and in the warranty card.</p>
 <p>Naming the supplier and naming the country is not a minor act. It is a deliberate refusal of the mythology that says luxury must come from a small list of European cities. Luxury is craft, and craft has always been wider and older than the labels suggest.</p>
-<p>If you want to understand more about the leather itself, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want to know how the hides are tanned, see <a class="j-internal" href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. To see the workshops and the steps, visit our <a class="j-internal" href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a> page.</p>
+<p>If you want to understand more about the leather itself, see <a class="j-internal" href="/journal/full-grain-leather" onclick="go('journal-full-grain-leather')">What is full-grain leather, really?</a>. If you want to know how the hides are tanned, see <a class="j-internal" href="/journal/vegetable-vs-chrome-tanning" onclick="go('journal-veg-vs-chrome')">Vegetable tanning vs chrome tanning</a>. To see the workshops and the steps, visit our <a class="j-internal" href="/manufacturing" onclick="go('manufacturing')">Manufacturing</a> page.</p>
 
 <div class="a-cta-card">
 <span class="slabel">The Harness Bag</span>
 <h4>Full-grain calfskin. Worn, not carried.</h4>
 <p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
-<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
+<a href="/" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
 </div>
 
 <div class="a-related">
 <div class="a-related-h">Related Reading</div>
 <div class="a-related-grid">
-<a href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
-<a href="javascript:void(0)" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
+<a href="/journal/vegetable-vs-chrome-tanning" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
+<a href="/journal/full-grain-leather" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
 </div>
 </div>
 </div></section>
@@ -1590,20 +1590,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 <h2>What we cover under warranty</h2>
 <p>The Goldy Brown Guarantee covers any defect in stitching, leather, or hardware for life. It does not cover ordinary wear, nor should it. The character that comes from use is the value of the object, not a flaw to be repaired.</p>
-<p>If something is genuinely wrong, write to <strong>info@goldybrown.com</strong>. We repair or replace at the atelier and cover shipping both ways. See the full <a class="j-internal" href="javascript:void(0)" onclick="go('returns')">warranty terms</a>.</p>
+<p>If something is genuinely wrong, write to <strong>info@goldybrown.com</strong>. We repair or replace at the atelier and cover shipping both ways. See the full <a class="j-internal" href="/returns" onclick="go('returns')">warranty terms</a>.</p>
 
 <div class="a-cta-card">
 <span class="slabel">The Harness Bag</span>
 <h4>Full-grain calfskin. Worn, not carried.</h4>
 <p>The first piece off the production line. Designed in Vancouver, made in South India. Lifetime warranty. Free worldwide shipping.</p>
-<a href="javascript:void(0)" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
+<a href="/" onclick="go('home')" class="btn btn-f">Shop the Harness Bag &mdash; $249</a>
 </div>
 
 <div class="a-related">
 <div class="a-related-h">Related Reading</div>
 <div class="a-related-grid">
-<a href="javascript:void(0)" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
-<a href="javascript:void(0)" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
+<a href="/journal/full-grain-leather" onclick="go('journal-full-grain-leather')"><div class="a-related-cat">Material</div><div class="a-related-title">What is full-grain leather, really?</div></a>
+<a href="/journal/vegetable-vs-chrome-tanning" onclick="go('journal-veg-vs-chrome')"><div class="a-related-cat">Process</div><div class="a-related-title">Vegetable tanning vs chrome tanning</div></a>
 </div>
 </div>
 </div></section>
@@ -1676,7 +1676,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <p class="desc" style="font-size:13px;margin-bottom:14px">A leather sample case with 5 designer fragrances (10ml each). The perfect in-room amenity or VIP welcome gift. Custom hotel branding available.</p>
 <div class="price" style="font-size:22px">$299 <span style="font-size:13px;color:rgba(255,255,255,.35);font-family:var(--fb);font-weight:300">USD per unit</span></div>
 <div class="price-note" style="margin-bottom:14px">Volume discounts apply with kit tier pricing</div>
-<a href="javascript:void(0)" onclick="go('fragrance')" class="btn btn-f" style="padding:10px 28px;border-color:#b8a070;background:#b8a070;color:#0a0a0a">Shop Collection</a>
+<a href="/fragrance" onclick="go('fragrance')" class="btn btn-f" style="padding:10px 28px;border-color:#b8a070;background:#b8a070;color:#0a0a0a">Shop Collection</a>
 </div>
 </div>
 </div>
@@ -1896,7 +1896,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </div>
 <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(184,160,112,.15);text-align:center">
-<a href="javascript:void(0)" onclick="go('journal')" style="display:inline-block;padding:12px 28px;border:1px solid #b8a070;color:#b8a070;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s">Read the Journal &rarr;</a>
+<a href="/journal" onclick="go('journal')" style="display:inline-block;padding:12px 28px;border:1px solid #b8a070;color:#b8a070;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s">Read the Journal &rarr;</a>
 </div>
 </div>
 </section>
@@ -2265,28 +2265,28 @@ Thank you for choosing Goldy Brown for your fragrance needs.
 <div class="footer-col">
 <div class="footer-col-h">Shop</div>
 <ul>
-<li><a href="javascript:void(0)" onclick="go('home')">The Harness Bag</a></li>
-<li><a href="javascript:void(0)" onclick="go('fragrance')">Fragrance</a></li>
-<li><a href="javascript:void(0)" onclick="go('hotel')">Hotel Programme</a></li>
+<li><a href="/" onclick="go('home')">The Harness Bag</a></li>
+<li><a href="/fragrance" onclick="go('fragrance')">Fragrance</a></li>
+<li><a href="/hotel" onclick="go('hotel')">Hotel Programme</a></li>
 </ul>
 </div>
 <div class="footer-col">
 <div class="footer-col-h">Goldy Brown</div>
 <ul>
-<li><a href="javascript:void(0)" onclick="go('about')">About Us</a></li>
-<li><a href="javascript:void(0)" onclick="go('lookbook')">Lookbook</a></li>
-<li><a href="javascript:void(0)" onclick="go('manufacturing')">Manufacturing</a></li>
-<li><a href="javascript:void(0)" onclick="go('journal')">Journal</a></li>
+<li><a href="/about" onclick="go('about')">About Us</a></li>
+<li><a href="/lookbook" onclick="go('lookbook')">Lookbook</a></li>
+<li><a href="/manufacturing" onclick="go('manufacturing')">Manufacturing</a></li>
+<li><a href="/journal" onclick="go('journal')">Journal</a></li>
 <li><a href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener">Instagram</a></li>
 </ul>
 </div>
 <div class="footer-col">
 <div class="footer-col-h">Support</div>
 <ul>
-<li><a href="javascript:void(0)" onclick="go('shipping')">Shipping</a></li>
-<li><a href="javascript:void(0)" onclick="go('returns')">Returns</a></li>
-<li><a href="javascript:void(0)" onclick="go('privacy')">Privacy</a></li>
-<li><a href="javascript:void(0)" onclick="go('terms')">Terms</a></li>
+<li><a href="/shipping" onclick="go('shipping')">Shipping</a></li>
+<li><a href="/returns" onclick="go('returns')">Returns</a></li>
+<li><a href="/privacy" onclick="go('privacy')">Privacy</a></li>
+<li><a href="/terms" onclick="go('terms')">Terms</a></li>
 </ul>
 </div>
 </div>
@@ -2507,6 +2507,7 @@ window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.st
 (function(){function resolve(path){if(!path)return null;var clean=path.replace(/\/+$/,'')||'/';if(PATH_TO_PAGE[clean]&&document.getElementById('page-'+PATH_TO_PAGE[clean]))return PATH_TO_PAGE[clean];var legacy=clean.replace(/^\//,'');if(legacy&&document.getElementById('page-'+legacy))return legacy;return null}var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var pg=resolve(r);if(pg){history.replaceState({page:pg},'',pathFor(pg));go(pg,true);return}}var pg2=resolve(location.pathname);if(pg2){history.replaceState({page:pg2},'',pathFor(pg2));go(pg2,true)}else{history.replaceState({page:'home'},'','/');setPageMeta('home')}})();
 window.addEventListener('popstate',function(e){var pg=null;if(e.state&&e.state.page)pg=e.state.page;else{var p=location.pathname.replace(/\/+$/,'')||'/';pg=PATH_TO_PAGE[p]||'home'}if(pg&&document.getElementById('page-'+pg))go(pg,true)});
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;if(a.target==='_blank')return;var h=a.getAttribute('href');if(!h||h.charAt(0)!=='/'||h.indexOf('//')!==-1)return;var pg=PATH_TO_PAGE[h];if(!pg)return;e.preventDefault();if(!a.hasAttribute('onclick'))go(pg)});
 (function(){var sx=0,sy=0;var cm=document.getElementById('carouselMain');if(cm){cm.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});cm.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;var dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*0.7)return;if(dx<0)nextSlide();if(dx>0)prevSlide()},{passive:true})}})();
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
