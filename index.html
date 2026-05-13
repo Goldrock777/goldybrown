@@ -248,6 +248,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .harness-home-text .preorder-note .po-text{display:flex;flex-direction:column;gap:1px;line-height:1.25}
 .harness-home-text .preorder-note .po-text b{font-family:var(--fd);font-size:13px;color:#7a5a1e;font-weight:600;letter-spacing:.2px}
 .harness-home-text .preorder-note .po-eta{font-size:10.5px;color:var(--td);font-weight:400}
+.harness-home-text .mto-note{font-size:10.5px;color:var(--td);letter-spacing:.4px;margin:10px 0 12px;font-weight:300;display:flex;align-items:center;gap:8px}
+.harness-home-text .mto-note::before{content:'';width:5px;height:5px;border-radius:50%;background:#b8a070;flex-shrink:0;opacity:.85}
+.harness-home-text .mto-note em{font-style:italic;color:var(--w);font-weight:400}
 /* Goldy Brown Guarantee band */
 .gb-guar{position:relative;padding:120px 60px 110px;margin-top:32px;background:radial-gradient(ellipse at center top,#1a1a1e 0%,#0a0a0c 70%);color:#e8e8ea;overflow:hidden;border-top:1px solid #1f1f23;border-bottom:1px solid #1f1f23}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
@@ -1086,6 +1089,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="po-pulse" aria-hidden="true"></span>
 <span class="po-text"><b>Pre-Order &middot; <span class="po-color">Green</span></b><span class="po-eta">Made-to-order &middot; arrives in 2&ndash;3 weeks</span></span>
 </div>
+<div class="mto-note"><span><em>Made to order</em> &middot; ships in 7&ndash;10 business days</span></div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
