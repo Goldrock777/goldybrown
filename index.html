@@ -252,6 +252,38 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .harness-home-text .mto-note::before{content:'';width:5px;height:5px;border-radius:50%;background:#b8a070;flex-shrink:0;opacity:.85}
 .harness-home-text .mto-note em{font-style:italic;color:var(--w);font-weight:400}
 /* Goldy Brown Guarantee band */
+/* ===== LANDING EXPLAINER: CALLOUTS + 5 REASONS ===== */
+.callout-section{background:#0a0a0a;color:#faf9f6;padding:100px 40px 110px;text-align:center;border-top:1px solid #1f1f23}
+.callout-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.callout-eyebrow::before,.callout-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
+.callout-section h2{font-family:var(--fd);font-size:clamp(28px,3.4vw,42px);font-weight:400;letter-spacing:-.3px;line-height:1.15;margin:0 0 60px;color:#faf9f6}
+.callout-section h2 em{font-style:italic;color:#b8a070}
+.callout-wrap{max-width:1100px;margin:0 auto}
+.callout-img{width:100%;max-width:520px;height:560px;margin:0 auto;background:#1a1a1a url(blackholster.png) center 30%/cover;border-radius:4px;border:1px solid rgba(184,160,112,.14)}
+.callout-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:760px;margin:48px auto 0}
+.callout-card{padding:24px 22px;background:rgba(255,255,255,.025);border:1px solid rgba(184,160,112,.18);text-align:left;transition:all .35s;border-radius:4px}
+.callout-card:hover{border-color:rgba(184,160,112,.5);background:rgba(184,160,112,.05);transform:translateY(-2px)}
+.callout-card .cc-num{font-size:10px;color:#b8a070;letter-spacing:2.5px;font-weight:500;margin-bottom:8px;text-transform:uppercase}
+.callout-card .cc-title{font-family:var(--fd);font-size:18px;font-weight:500;color:#faf9f6;margin-bottom:8px;letter-spacing:.2px}
+.callout-card .cc-desc{font-size:13px;color:#a8a298;font-weight:300;line-height:1.7}
+@media(max-width:640px){.callout-section{padding:64px 20px 72px}.callout-section h2{margin-bottom:36px}.callout-img{height:440px;max-width:100%}.callout-grid{grid-template-columns:1fr;gap:12px;margin-top:32px}.callout-card{padding:18px 18px}}
+
+.reasons-section{background:#0a0a0c;color:#faf9f6;padding:110px 40px 110px;border-top:1px solid #1f1f23;position:relative;overflow:hidden}
+.reasons-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(184,160,112,.07) 0%,transparent 65%);pointer-events:none}
+.reasons-inner{max-width:780px;margin:0 auto;text-align:center;position:relative}
+.reasons-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+.reasons-eyebrow::before,.reasons-eyebrow::after{content:'';width:24px;height:1px;background:#b8a070}
+.reasons-section h2{font-family:var(--fd);font-size:clamp(30px,3.6vw,46px);font-weight:400;letter-spacing:-.4px;line-height:1.12;margin:0 0 72px;color:#faf9f6}
+.reasons-section h2 em{font-style:italic;color:#b8a070}
+.reason{padding:52px 0;border-bottom:1px solid rgba(184,160,112,.14)}
+.reason:last-of-type{border-bottom:0}
+.reason-num{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid #b8a070;border-radius:50%;color:#b8a070;font-family:var(--fd);font-size:18px;margin:0 auto 24px;font-weight:500}
+.reason h3{font-family:var(--fd);font-size:clamp(20px,2.6vw,28px);font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#faf9f6;margin:0 0 18px}
+.reason p{font-size:15px;color:#c8c5be;font-weight:300;line-height:1.85;max-width:600px;margin:0 auto;letter-spacing:.15px}
+.reasons-cta{margin-top:64px;padding-top:48px;border-top:1px solid rgba(184,160,112,.14)}
+.reasons-cta a{display:inline-block;padding:16px 38px;border:1px solid #b8a070;background:transparent;color:#b8a070;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .3s;cursor:pointer}
+.reasons-cta a:hover{background:#b8a070;color:#0a0a0c}
+@media(max-width:640px){.reasons-section{padding:64px 20px 80px}.reasons-section h2{margin-bottom:48px}.reason{padding:36px 0}.reason p{font-size:14px}.reasons-cta{margin-top:48px;padding-top:36px}}
 .gb-guar{position:relative;padding:120px 60px 110px;margin-top:32px;background:radial-gradient(ellipse at center top,#1a1a1e 0%,#0a0a0c 70%);color:#e8e8ea;overflow:hidden;border-top:1px solid #1f1f23;border-bottom:1px solid #1f1f23}
 .gb-guar::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;mix-blend-mode:screen}
 .gb-guar-inner{position:relative;max-width:980px;margin:0 auto;text-align:center}
@@ -1106,6 +1138,57 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </a>
 </div>
 </div>
+
+<!-- ============== LANDING EXPLAINER: CALLOUTS ============== -->
+<section class="callout-section fade-in">
+<span class="callout-eyebrow">The Anatomy</span>
+<h2>Every detail, <em>by hand.</em></h2>
+<div class="callout-wrap">
+<div class="callout-img" role="img" aria-label="The Goldy Brown Harness Bag worn on the body"></div>
+<div class="callout-grid">
+<div class="callout-card scale-in"><div class="cc-num">01 &middot; The Hide</div><div class="cc-title">Full Grain Calfskin</div><div class="cc-desc">The outermost layer of the hide. Vegetable tanned the slow way, sun dried for weeks. Deepens with every year of wear.</div></div>
+<div class="callout-card scale-in"><div class="cc-num">02 &middot; The Build</div><div class="cc-title">Stainless Steel Hardware</div><div class="cc-desc">YKK zippers, polished fittings. No plated zinc. Moves silently through every airport scanner.</div></div>
+<div class="callout-card scale-in"><div class="cc-num">03 &middot; The Lineage</div><div class="cc-title">Made in South India</div><div class="cc-desc">Cut and stitched by the artisan tannery houses that have supplied European luxury for over a century.</div></div>
+<div class="callout-card scale-in"><div class="cc-num">04 &middot; The Form</div><div class="cc-title">Worn, Not Carried</div><div class="cc-desc">Sits high on the chest under a jacket. Hands free through every checkpoint. Never a third bag.</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============== LANDING EXPLAINER: 5 REASONS ============== -->
+<section class="reasons-section fade-in">
+<div class="reasons-inner">
+<span class="reasons-eyebrow">The Promise</span>
+<h2>Five reasons to <em>choose Goldy Brown</em>.</h2>
+<div class="reason scale-in">
+<div class="reason-num">1</div>
+<h3>Full Grain Calfskin</h3>
+<p>The strongest, most beautiful version of leather you can buy. Not top grain. Not bonded. Not the entry grade splits sold as genuine leather. The same hides European luxury houses are built on, sourced from South India's heritage tanneries.</p>
+</div>
+<div class="reason scale-in">
+<div class="reason-num">2</div>
+<h3>Designed in Vancouver, Made in South India</h3>
+<p>Every piece begins as a pencil sketch on my desk in Vancouver. The master pattern travels to South India to be cut and stitched by leather artisans whose craft has been handed down across generations of tannery families.</p>
+</div>
+<div class="reason scale-in">
+<div class="reason-num">3</div>
+<h3>Worn, Not Carried</h3>
+<p>The Harness Bag sits high on the chest, under a jacket or over a layer. Hands free through every airport security line, every restaurant, every long city walk. The personal item that counts as part of what you are wearing, not a third bag.</p>
+</div>
+<div class="reason scale-in">
+<div class="reason-num">4</div>
+<h3>Lifetime Warranty</h3>
+<p>Any defect in stitching, leather, or hardware, for life. Repaired or replaced at my atelier. Shipping covered both ways. No fine print, no proof of purchase chases. The Goldy Brown Guarantee, in writing.</p>
+</div>
+<div class="reason scale-in">
+<div class="reason-num">5</div>
+<h3>Made to Order, Free Shipping</h3>
+<p>Every Harness Bag is made to order from Vancouver. Lead time is 7 to 10 business days. Free worldwide shipping via DHL, FedEx, and Canada Post &mdash; to New York, Toronto, London, Milan, Dubai, and beyond.</p>
+</div>
+<div class="reasons-cta">
+<a href="#harness-shop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Shop the Harness Bag &mdash; $249</a>
+</div>
+</div>
+</section>
 
 <section class="gb-guar fade-in" id="gb-guarantee">
 <div class="gb-guar-inner">
