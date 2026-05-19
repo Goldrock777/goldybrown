@@ -225,10 +225,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 @keyframes heroImgIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
 @keyframes heroTextIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.harness-home{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:calc(100dvh - 76px)}
-.harness-home-img{overflow:hidden;background:#fff;animation:heroImgIn 1s cubic-bezier(.25,.46,.45,.94) both;position:relative;height:100%;min-height:0}
+.harness-home{display:grid;grid-template-columns:1fr 1fr;align-items:start;min-height:calc(100dvh - 76px)}
+.harness-home-img{overflow:hidden;background:#fff;animation:heroImgIn 1s cubic-bezier(.25,.46,.45,.94) both;position:sticky;top:76px;height:calc(100dvh - 76px);min-height:0}
 .harness-home-img .carousel-main{min-height:0}
-.harness-home-text{padding:24px 44px 20px;display:flex;flex-direction:column;justify-content:center;animation:heroTextIn 1s cubic-bezier(.25,.46,.45,.94) .3s both}
+.harness-home-text{padding:22px 44px 32px;display:flex;flex-direction:column;justify-content:flex-start;gap:0;animation:heroTextIn 1s cubic-bezier(.25,.46,.45,.94) .3s both}
+.harness-home-text .desc-short{font-size:13px;font-weight:300;color:var(--td);line-height:1.55;margin:2px 0 14px;letter-spacing:.2px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .65s both}
+.harness-detail{margin-top:28px;padding-top:24px;border-top:1px solid var(--b);animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1.2s both}
 .harness-home-text .slabel{margin-bottom:4px}
 .harness-home-text .est{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:400;margin-bottom:4px;animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .5s both}
 .harness-home-text h2{animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) .6s both}
@@ -940,11 +942,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .nav-tabs{display:none}
 .mob-toggle{display:block}
 .nav-right{gap:16px}
-.harness-home{height:auto}
+.harness-home{height:auto;min-height:0}
 .section{padding:36px 24px}
 .home-hero{padding:72px 24px 8px}
 .harness-home{grid-template-columns:1fr}
-.harness-home-img{min-height:auto}
+.harness-home-img{min-height:auto;position:relative;top:auto;height:auto}
 .harness-home-text{padding:28px 24px 36px}
 .harness-home-text .est{margin-bottom:4px}
 .harness-home-text h2{font-size:28px}
@@ -1176,17 +1178,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="harness-home-text">
 <div class="est">Est. Vancouver, Canada</div>
 <h2>Goldy Brown's <span>Harness Bag</span></h2>
-<p class="desc">A leather shoulder rig for people who carry with intention. Hand cut from <b>Napa calfskin</b>, the soft, full grain leather European luxury houses use for their finest pieces. Buttery to the touch, light in the hand, built to deepen with wear. Not stiff buffalo. Not the entry grade splits sold as <em>genuine leather</em>. Sourced from <em>South India's heritage tanneries</em>, the same region whose leather has supplied those houses for over a century, assembled with stainless steel hardware. Your essentials stay against your body. Secure, silent, always within reach. <b>Worn, not carried</b>, it travels alongside your carry on and personal item as a body accessory, not a third bag.</p>
-<ul class="detail-list">
-<li id="materialLine"><strong>Material</strong> Napa calfskin &middot; full grain, buttery soft, ages into patina</li>
-<li><strong>Hardware</strong> Stainless steel fittings, YKK zipper</li>
-<li><strong>Stitching</strong> Machine stitched with premium nylon thread</li>
-<li><strong>Finishing</strong> Folded edges, not painted &mdash; no paint to rub off or flake over time</li>
-<li><strong>Pouch</strong> 7 in &times; 5 in (18 &times; 13 cm) &middot; Fits iPhone 17 Pro Max with case</li>
-<li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
-<li><strong>Warranty</strong> Lifetime &mdash; any defect covered, repair &amp; shipping free</li>
-</ul>
-<div class="leather-note">Slight tonal variation and small natural marks are inherent to Napa calfskin. They are the signature of an unfinished, full grain hide, and deepen into a richer patina with wear &mdash; the mark of high quality leather.</div>
+<p class="desc-short">Hand cut Napa calfskin &middot; worn on the body &middot; lifetime warranty.</p>
 <div class="harness-variants">
 <div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack" style="border-color:var(--g)"></div><div class="hv-label">Black</div></div>
 <div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen"></div><span class="hv-soon">Soon</span><div class="hv-label">Green</div></div>
@@ -1233,6 +1225,20 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="cz-txt"><span class="cz-title">Make it yours &middot; from $50</span><span class="cz-sub">Tattoo a name, signature, or sketch into the leather. One of one.</span></span>
 <span class="cz-arr">&rsaquo;</span>
 </a>
+<!-- Below-the-fold product detail (kept for SEO + supporting copy after the buy decision) -->
+<div class="harness-detail">
+<p class="desc">A leather shoulder rig for people who carry with intention. Hand cut from <b>Napa calfskin</b>, the soft, full grain leather European luxury houses use for their finest pieces. Buttery to the touch, light in the hand, built to deepen with wear. Not stiff buffalo. Not the entry grade splits sold as <em>genuine leather</em>. Sourced from <em>South India's heritage tanneries</em>, the same region whose leather has supplied those houses for over a century, assembled with stainless steel hardware. Your essentials stay against your body. Secure, silent, always within reach. <b>Worn, not carried</b>, it travels alongside your carry on and personal item as a body accessory, not a third bag.</p>
+<ul class="detail-list">
+<li id="materialLine"><strong>Material</strong> Napa calfskin &middot; full grain, buttery soft, ages into patina</li>
+<li><strong>Hardware</strong> Stainless steel fittings, YKK zipper</li>
+<li><strong>Stitching</strong> Machine stitched with premium nylon thread</li>
+<li><strong>Finishing</strong> Folded edges, not painted &mdash; no paint to rub off or flake over time</li>
+<li><strong>Pouch</strong> 7 in &times; 5 in (18 &times; 13 cm) &middot; Fits iPhone 17 Pro Max with case</li>
+<li><strong>Fit</strong> Adjustable shoulder straps, one size</li>
+<li><strong>Warranty</strong> Lifetime &mdash; any defect covered, repair &amp; shipping free</li>
+</ul>
+<div class="leather-note">Slight tonal variation and small natural marks are inherent to Napa calfskin. They are the signature of an unfinished, full grain hide, and deepen into a richer patina with wear &mdash; the mark of high quality leather.</div>
+</div>
 </div>
 </div>
 
