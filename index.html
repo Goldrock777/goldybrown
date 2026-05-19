@@ -439,9 +439,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .hv{text-align:center}
 .hv-swatch{width:36px;height:36px;border-radius:50%;border:2px solid var(--b);margin:0 auto 4px;transition:all .3s;cursor:pointer}
 .hv-swatch:hover{border-color:var(--gl);transform:scale(1.08)}
+.hv-swatch.black{background:#1a1a1a}
+.hv-swatch.blue{background:#5e9fd0}
+/* Legacy color classes kept for non-harness UI (smoking robe section) */
 .hv-swatch.green{background:#3a5a3a}
 .hv-swatch.white{background:#fafaf5;border-color:#d8d6cf}
-.hv-swatch.black{background:#1a1a1a}
 .hv-soon{position:absolute;top:-6px;right:-6px;background:#0a0a0a;color:#fff;font-size:8px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;padding:2px 5px;border-radius:3px;line-height:1.2;pointer-events:none}
 .hv{position:relative}
 .hv-label{font-size:9px;color:var(--tm);letter-spacing:1px;text-transform:uppercase}
@@ -1220,8 +1222,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="leather-note">Slight tonal variation and small natural marks are inherent to Napa calfskin. They are the signature of an unfinished, full grain hide, and deepen into a richer patina with wear &mdash; the mark of high quality leather.</div>
 <div class="harness-variants">
 <div class="hv" onclick="switchColor('black')"><div class="hv-swatch black" id="swatchBlack" style="border-color:var(--g)"></div><div class="hv-label">Black</div></div>
-<div class="hv" onclick="switchColor('green')"><div class="hv-swatch green" id="swatchGreen"></div><span class="hv-soon">Soon</span><div class="hv-label">Green</div></div>
-<div class="hv" onclick="switchColor('white')"><div class="hv-swatch white" id="swatchWhite"></div><span class="hv-soon">Soon</span><div class="hv-label">White</div></div>
+<div class="hv" onclick="switchColor('blue')"><div class="hv-swatch blue" id="swatchBlue"></div><div class="hv-label">Blue</div></div>
 </div>
 <div class="price-row">
 <div class="price" id="holsterPrice">$299 <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">USD</span></div>
@@ -3352,19 +3353,12 @@ var colorSets={
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-harness?variant=53325154156836',
     cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   },
-  green:{
-    imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
-    material:'Full grain calfskin — Forest Green (photos coming soon)',
+  blue:{
+    // TODO: replace with dedicated blue harness photos once shot
+    imgs:['blueholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
+    material:'Full grain calfskin — Azure Blue',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-harness?variant=53325154156836',
-    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1',
-    soon:true
-  },
-  white:{
-    imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
-    material:'Full grain calfskin — White (photos coming soon)',
-    product:'https://kuibri-ev.myshopify.com/products/luxury-travel-harness?variant=53325154156836',
-    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1',
-    soon:true
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   }
 };
 var curColor='black';
@@ -3412,8 +3406,7 @@ function switchColor(color){
   if(preNote){preNote.style.display=set.soon?'flex':'none';preNote.querySelector('.po-color').textContent=colorLabel}
   // Update swatch borders
   document.getElementById('swatchBlack').style.borderColor=color==='black'?'var(--g)':'';
-  var sg=document.getElementById('swatchGreen');if(sg)sg.style.borderColor=color==='green'?'var(--g)':'';
-  var sw=document.getElementById('swatchWhite');if(sw)sw.style.borderColor=color==='white'?'var(--g)':'#d8d6cf';
+  var sb=document.getElementById('swatchBlue');if(sb)sb.style.borderColor=color==='blue'?'var(--g)':'';
   // Update hero price
   var hp=document.getElementById('holsterPrice');if(hp)hp.innerHTML=fmt(shopProducts[color].price)+' <span style="font-size:15px;color:var(--tm);font-family:var(--fb);font-weight:300">'+CURR.code+'</span>';updShopPayHolster();
   curSlide=0;
@@ -3471,8 +3464,7 @@ function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelect
 var shopCart=[];
 var shopProducts={
   black:{name:'The Harness Bag — Black',variant:'53325154156836',price:299,img:'blackholster.png',material:'Full grain calfskin'},
-  green:{name:'The Harness Bag — Green',variant:'53325154156836',price:299,img:'blackholster.png',material:'Full grain calfskin'},
-  white:{name:'The Harness Bag — White',variant:'53325154156836',price:299,img:'blackholster.png',material:'Full grain calfskin'}
+  blue:{name:'The Harness Bag — Blue',variant:'53325154156836',price:299,img:'blueholster.png',material:'Full grain calfskin — Azure Blue'}
 };
 function addToShopCart(){
   var p=shopProducts[curColor];
