@@ -3273,10 +3273,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
   <g id="bcHarness" transform="translate(0,40)">
     <!-- Left strap (top-left → bottom-right diagonal) -->
     <path d="M 130 130 L 380 460" id="bcStrapL" stroke="#1a1a1a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.92"/>
-    <path d="M 130 130 L 380 460" stroke="#1a1a1a" stroke-width="22" fill="none" stroke-linecap="round" stroke-dasharray="3,3" opacity="0.18" id="bcStrapLStitch"/>
+    <!-- Centre saddle-stitch line, thin so the leather colour stays visible -->
+    <path d="M 130 130 L 380 460" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-dasharray="3,3" opacity="0.55" id="bcStrapLStitch"/>
     <!-- Right strap (top-right → bottom-left diagonal) -->
     <path d="M 390 130 L 140 460" id="bcStrapR" stroke="#1a1a1a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.92"/>
-    <path d="M 390 130 L 140 460" stroke="#1a1a1a" stroke-width="22" fill="none" stroke-linecap="round" stroke-dasharray="3,3" opacity="0.18" id="bcStrapRStitch"/>
+    <path d="M 390 130 L 140 460" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-dasharray="3,3" opacity="0.55" id="bcStrapRStitch"/>
     <!-- Centre buckle / hardware ring -->
     <circle cx="260" cy="295" r="14" id="bcHardwareC" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="1.2"/>
     <circle cx="260" cy="295" r="7" fill="#fbf8f0" stroke="#1a1a1a" stroke-width="0.8"/>
@@ -3284,18 +3285,61 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
     <!-- Left pouch -->
     <rect x="138" y="200" width="92" height="120" rx="7" ry="7" id="bcPouchL" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
     <rect x="144" y="206" width="80" height="108" rx="4" ry="4" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6" id="bcPouchLStitch"/>
-    <!-- Left pouch closure -->
-    <g id="bcZipLPouch" class="bc-zip-pouch">
+    <!-- LEFT pouch closure: TOP ZIPPER -->
+    <g id="bcLTop" class="bc-closure-grp">
       <rect x="148" y="218" width="72" height="5" fill="url(#bcZipperTeeth)"/>
       <rect x="208" y="216" width="10" height="9" fill="#bfbfbf" id="bcZipLPull"/>
+    </g>
+    <!-- LEFT pouch closure: AMIRI FLAP (snap closure + side expansion zipper) -->
+    <g id="bcLAmiri" class="bc-closure-grp" style="display:none">
+      <!-- Flap body covering top ~70% of pouch -->
+      <path id="bcLAmiriFlap" d="M 138 200 L 230 200 L 230 282 Q 230 292 220 292 L 148 292 Q 138 292 138 282 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
+      <!-- Flap stitching outline -->
+      <path id="bcLAmiriStitch" d="M 144 206 L 224 206 L 224 280 Q 224 286 218 286 L 150 286 Q 144 286 144 280 Z" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6"/>
+      <!-- Snap buttons at flap edge -->
+      <circle cx="160" cy="289" r="4" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.6" class="bc-hw-snap"/>
+      <circle cx="160" cy="289" r="1.6" fill="#1a1a1a"/>
+      <circle cx="208" cy="289" r="4" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.6" class="bc-hw-snap"/>
+      <circle cx="208" cy="289" r="1.6" fill="#1a1a1a"/>
+      <!-- Side expansion zipper, vertical on outer (left) edge of left pouch -->
+      <rect x="130" y="208" width="4" height="104" fill="url(#bcZipperTeeth)"/>
+      <line x1="132" y1="208" x2="132" y2="312" stroke="#1a1a1a" stroke-width="0.4" opacity="0.8"/>
+      <rect x="128" y="252" width="8" height="10" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.4" class="bc-hw-sidepull"/>
+    </g>
+    <!-- LEFT pouch closure: ENVELOPE FLAP (hidden magnet, no zipper) -->
+    <g id="bcLEnv" class="bc-closure-grp" style="display:none">
+      <path id="bcLEnvFlap" d="M 138 200 L 230 200 L 184 264 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
+      <path id="bcLEnvStitch" d="M 144 206 L 224 206 L 184 258 Z" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6"/>
+      <!-- Hidden magnet dot at apex -->
+      <circle cx="184" cy="258" r="2.5" fill="#fbf8f0" opacity="0.35"/>
     </g>
 
     <!-- Right pouch -->
     <rect x="290" y="200" width="92" height="120" rx="7" ry="7" id="bcPouchR" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
     <rect x="296" y="206" width="80" height="108" rx="4" ry="4" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6" id="bcPouchRStitch"/>
-    <g id="bcZipRPouch" class="bc-zip-pouch">
+    <!-- RIGHT pouch closure: TOP ZIPPER -->
+    <g id="bcRTop" class="bc-closure-grp">
       <rect x="300" y="218" width="72" height="5" fill="url(#bcZipperTeeth)"/>
       <rect x="360" y="216" width="10" height="9" fill="#bfbfbf" id="bcZipRPull"/>
+    </g>
+    <!-- RIGHT pouch closure: AMIRI FLAP -->
+    <g id="bcRAmiri" class="bc-closure-grp" style="display:none">
+      <path id="bcRAmiriFlap" d="M 290 200 L 382 200 L 382 282 Q 382 292 372 292 L 300 292 Q 290 292 290 282 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
+      <path id="bcRAmiriStitch" d="M 296 206 L 376 206 L 376 280 Q 376 286 370 286 L 302 286 Q 296 286 296 280 Z" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6"/>
+      <circle cx="312" cy="289" r="4" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.6" class="bc-hw-snap"/>
+      <circle cx="312" cy="289" r="1.6" fill="#1a1a1a"/>
+      <circle cx="360" cy="289" r="4" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.6" class="bc-hw-snap"/>
+      <circle cx="360" cy="289" r="1.6" fill="#1a1a1a"/>
+      <!-- Side expansion zipper, vertical on outer (right) edge of right pouch -->
+      <rect x="386" y="208" width="4" height="104" fill="url(#bcZipperTeeth)"/>
+      <line x1="388" y1="208" x2="388" y2="312" stroke="#1a1a1a" stroke-width="0.4" opacity="0.8"/>
+      <rect x="384" y="252" width="8" height="10" fill="#bfbfbf" stroke="#1a1a1a" stroke-width="0.4" class="bc-hw-sidepull"/>
+    </g>
+    <!-- RIGHT pouch closure: ENVELOPE FLAP -->
+    <g id="bcREnv" class="bc-closure-grp" style="display:none">
+      <path id="bcREnvFlap" d="M 290 200 L 382 200 L 336 264 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.4"/>
+      <path id="bcREnvStitch" d="M 296 206 L 376 206 L 336 258 Z" fill="none" stroke="#fbf8f0" stroke-width="0.55" stroke-dasharray="2.5,2.5" opacity="0.6"/>
+      <circle cx="336" cy="258" r="2.5" fill="#fbf8f0" opacity="0.35"/>
     </g>
 
     <!-- D-rings / adjusters on shoulder ends -->
@@ -4001,41 +4045,66 @@ function bcRender(flash){
   var sw=document.getElementById('bcColorSwatch');if(sw)sw.setAttribute('fill',BAG_COLOR_HEX[bagSel.color]);
   var swL=document.getElementById('bcColorLabel');if(swL)swL.textContent=BAG_COLOR_LABEL[bagSel.color].toUpperCase();
   var swR=document.getElementById('bcColorRef');if(swR)swR.textContent='REF: '+BAG_COLOR_REF[bagSel.color];
-  // Recolour straps and pouches
+  // ─── LEATHER recolour: straps + pouch bodies + every flap variant ───
   var leatherHex=BAG_COLOR_HEX[bagSel.color];
-  ['bcStrapL','bcStrapR','bcPouchL','bcPouchR'].forEach(function(id){
-    var el=document.getElementById(id);if(el)el.setAttribute(bagSel.color==='bone'?'fill':(id.indexOf('Strap')===0?'stroke':'fill'),leatherHex);
-    if(el&&id.indexOf('Strap')===-1)el.setAttribute('fill',leatherHex);
-  });
-  // Strap stroke specifically
+  // Straps (stroke is what draws the visible strap)
   document.getElementById('bcStrapL').setAttribute('stroke',leatherHex);
   document.getElementById('bcStrapR').setAttribute('stroke',leatherHex);
-  // Pouch fill specifically
-  document.getElementById('bcPouchL').setAttribute('fill',leatherHex);
-  document.getElementById('bcPouchR').setAttribute('fill',leatherHex);
-  document.getElementById('bcPouchL').setAttribute('stroke',leatherHex);
-  document.getElementById('bcPouchR').setAttribute('stroke',leatherHex);
-  // Stitch dashes — contrast or tonal
-  var stitchHex=BAG_STITCH_HEX[bagSel.stitch];
-  ['bcStrapLStitch','bcStrapRStitch','bcPouchLStitch','bcPouchRStitch'].forEach(function(id){
-    var el=document.getElementById(id);if(el){el.setAttribute('stroke',stitchHex);el.setAttribute('opacity',bagSel.stitch==='tonal'?'0.18':'0.85');}
+  // Pouch bodies
+  ['bcPouchL','bcPouchR'].forEach(function(id){
+    var el=document.getElementById(id);if(!el)return;
+    el.setAttribute('fill',leatherHex);el.setAttribute('stroke',leatherHex);
   });
-  // Hardware finish color
+  // Flap leather fills (Amiri + Envelope, both pouches) — same leather as bodies
+  ['bcLAmiriFlap','bcRAmiriFlap','bcLEnvFlap','bcREnvFlap'].forEach(function(id){
+    var el=document.getElementById(id);if(!el)return;
+    el.setAttribute('fill',leatherHex);el.setAttribute('stroke',leatherHex);
+  });
+
+  // ─── STITCH recolour: pouches + straps + flap stitching ───
+  var stitchHex=BAG_STITCH_HEX[bagSel.stitch];
+  // Tonal stitches are nearly invisible; contrast stitches read clearly but
+  // don't dominate the leather. Strap stitch is thin (width 1.4) so opacity
+  // can be a bit higher than pouch stitch (width 0.55).
+  var stitchOpPouch=bagSel.stitch==='tonal'?0.18:0.7;
+  var stitchOpStrap=bagSel.stitch==='tonal'?0.35:0.78;
+  ['bcStrapLStitch','bcStrapRStitch'].forEach(function(id){
+    var el=document.getElementById(id);if(!el)return;
+    el.setAttribute('stroke',stitchHex);el.setAttribute('opacity',stitchOpStrap);
+  });
+  ['bcPouchLStitch','bcPouchRStitch','bcLAmiriStitch','bcRAmiriStitch','bcLEnvStitch','bcREnvStitch'].forEach(function(id){
+    var el=document.getElementById(id);if(!el)return;
+    el.setAttribute('stroke',stitchHex);el.setAttribute('opacity',stitchOpPouch);
+  });
+
+  // ─── HARDWARE recolour: center buckle, D-rings, zip pulls, snap rings, side-zip pulls ───
   var hwHex=BAG_HW_HEX[bagSel.hardware];
   ['bcHardwareC','bcZipLPull','bcZipRPull'].forEach(function(id){
     var el=document.getElementById(id);if(el)el.setAttribute('fill',hwHex);
   });
   var hwGroup=document.getElementById('bcHardware');
-  if(hwGroup){var rects=hwGroup.querySelectorAll('rect');rects.forEach(function(r){r.setAttribute('fill',hwHex);});}
-  // Closure label
+  if(hwGroup){hwGroup.querySelectorAll('rect').forEach(function(r){r.setAttribute('fill',hwHex);});}
+  // Snap-button outer rings (Amiri flap) and side-expansion zipper pulls
+  document.querySelectorAll('.bc-hw-snap, .bc-hw-sidepull').forEach(function(el){el.setAttribute('fill',hwHex);});
+
+  // ─── CLOSURE swap: show only the selected variant on each pouch ───
+  var sel=bagSel.closure; // 'top' | 'amiri' | 'envelope'
+  [['bcLTop','bcLAmiri','bcLEnv'],['bcRTop','bcRAmiri','bcREnv']].forEach(function(triplet){
+    var which={top:0,amiri:1,envelope:2}[sel];
+    triplet.forEach(function(id,i){
+      var el=document.getElementById(id);if(el)el.style.display=(i===which)?'':'none';
+    });
+  });
+
+  // Closure label callout
   var clLabel=document.getElementById('bcClosureLbl');
   if(clLabel){
-    var lbl={top:'TOP ZIPPER · YKK EXCELLA · BOTH POUCHES',amiri:'AMIRI-STYLE FLAP · SNAP CLOSURE · SIDE EXPANSION',envelope:'ENVELOPE FLAP · HIDDEN MAGNET · BOTH POUCHES'}[bagSel.closure];
-    clLabel.textContent=lbl;
+    clLabel.textContent={
+      top:'TOP ZIPPER · YKK EXCELLA · BOTH POUCHES',
+      amiri:'AMIRI-STYLE FLAP · SNAP CLOSURE · SIDE EXPANSION ZIP',
+      envelope:'ENVELOPE FLAP · HIDDEN MAGNET · BOTH POUCHES'
+    }[sel];
   }
-  // Closure visual: show/hide zip pulls for envelope/amiri
-  var showZip=bagSel.closure==='top';
-  ['bcZipLPouch','bcZipRPouch'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display=showZip?'':'none';});
   // Dim text
   var d=bcDims();
   var dimText=document.getElementById('bcDimText');
