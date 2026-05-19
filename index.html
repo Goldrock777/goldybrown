@@ -1327,7 +1327,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="mto-note"><span><em>Made to order</em> &middot; ships in 7&ndash;10 business days</span></div>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
-<a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1?currency=USD" target="_blank" class="btn btn-f">Buy Now</a>
+<a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
 </div>
 <a class="customize-link" href="/custom" onclick="go('custom')">
 <span class="cz-ico">&#9670;</span>
@@ -3486,7 +3486,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 <div class="sb-actions">
 <button class="sb-btn sb-btn-out" onclick="addToShopCart()" aria-label="Add to cart">Add to Cart</button>
-<a class="sb-btn sb-btn-fill" id="sbBuyNow" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1?currency=USD" target="_blank" rel="noopener">Buy Now</a>
+<a class="sb-btn sb-btn-fill" id="sbBuyNow" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now</a>
 </div>
 </div>
 </div>
@@ -3557,7 +3557,7 @@ function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[co
 function sppMonthlyAmt(p){var r=0.15/12,n=12,f=Math.pow(1+r,n);return p*(r*f)/(f-1)}
 function sppFmt(v){return CURR.sym+(Math.round(v*CURR.rate*100)/100).toFixed(2)}
 var SPP_PRODUCTS={harness:{name:'The Harness Bag',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:299)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}}};
-function openSpp(key){var cfg=SPP_PRODUCTS[key];if(!cfg)return;var price=(typeof cfg.getPrice==='function'?cfg.getPrice():cfg.price);var variant=(typeof cfg.getVariant==='function'?cfg.getVariant():cfg.variant);var per4=price/4;var perMo=sppMonthlyAmt(price);var totalMo=perMo*12;var intMo=totalMo-price;document.getElementById('sppPurchase').textContent=sppFmt(price);document.getElementById('spp4Amt').textContent=sppFmt(per4);document.getElementById('spp4Total').textContent=sppFmt(price);document.getElementById('sppMoAmt').textContent=sppFmt(perMo);document.getElementById('sppMoInt').textContent=sppFmt(intMo);document.getElementById('sppMoTotal').textContent=sppFmt(totalMo);document.getElementById('sppCta').setAttribute('href','https://kuibri-ev.myshopify.com/cart/'+variant+':1?currency=USD');document.getElementById('sppOv').classList.add('open');document.body.style.overflow='hidden'}
+function openSpp(key){var cfg=SPP_PRODUCTS[key];if(!cfg)return;var price=(typeof cfg.getPrice==='function'?cfg.getPrice():cfg.price);var variant=(typeof cfg.getVariant==='function'?cfg.getVariant():cfg.variant);var per4=price/4;var perMo=sppMonthlyAmt(price);var totalMo=perMo*12;var intMo=totalMo-price;document.getElementById('sppPurchase').textContent=sppFmt(price);document.getElementById('spp4Amt').textContent=sppFmt(per4);document.getElementById('spp4Total').textContent=sppFmt(price);document.getElementById('sppMoAmt').textContent=sppFmt(perMo);document.getElementById('sppMoInt').textContent=sppFmt(intMo);document.getElementById('sppMoTotal').textContent=sppFmt(totalMo);document.getElementById('sppCta').setAttribute('href','https://kuibri-ev.myshopify.com/cart/'+variant+':1');document.getElementById('sppOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeSpp(e){if(e&&e.target!==document.getElementById('sppOv')&&!e.target.classList.contains('spp-x'))return;document.getElementById('sppOv').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('sppOv').classList.contains('open'))closeSpp()});
 function shareArticle(platform){var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title);var img=encodeURIComponent('https://goldybrown.com/blackholster.png');var url='';switch(platform){case 'x':url='https://twitter.com/intent/tweet?url='+u+'&text='+t;break;case 'fb':url='https://www.facebook.com/sharer/sharer.php?u='+u;break;case 'pin':url='https://pinterest.com/pin/create/button/?url='+u+'&description='+t+'&media='+img;break;case 'li':url='https://www.linkedin.com/sharing/share-offsite/?url='+u;break;case 'wa':url='https://api.whatsapp.com/send?text='+t+'%20'+u;break;case 'ig':if(navigator.share){navigator.share({title:document.title,url:location.href}).then(function(){showShareToast('Shared')}).catch(function(){copyToClipboard(location.href);showShareToast('Link copied — paste in Instagram')})}else{copyToClipboard(location.href);showShareToast('Link copied — paste in Instagram');window.open('https://www.instagram.com/','_blank','noopener')}return;case 'email':window.location.href='mailto:?subject='+t+'&body='+u;return;case 'copy':copyToClipboard(location.href);showShareToast('Link copied');return}window.open(url,'_blank','noopener,width=600,height=520')}
@@ -3572,14 +3572,14 @@ var colorSets={
     imgs:['blackholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
     material:'Full grain calfskin',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-harness?variant=53325154156836',
-    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1?currency=USD'
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   },
   blue:{
     // TODO: replace with dedicated blue harness photos once shot
     imgs:['blueholster.png','blackholsterfront.png','blackholsterclose.png','holster4.jpeg'],
     material:'Full grain calfskin — Azure Blue',
     product:'https://kuibri-ev.myshopify.com/products/luxury-travel-harness?variant=53325154156836',
-    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1?currency=USD'
+    cart:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'
   }
 };
 var curColor='black';
@@ -3744,10 +3744,10 @@ function shopCheckout(){
     if(i.type==='pouch'&&i.spec){pouches.push('• Pouch #'+(idx+1)+': '+i.spec+(i.notes?' | NOTES: '+i.notes:''))}
     if(i.type==='bespokeBag'&&i.spec){bespoke.push('• Bespoke Harness #'+(idx+1)+': '+i.spec+(i.notes?' | NOTES: '+i.notes:''))}
   });
-  // currency=USD asks Shopify to keep the cart/checkout in USD instead of
-  // auto-converting to the visitor's IP-detected local currency. Only works
-  // when USD is enabled in Shopify Admin → Markets.
-  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',')+'?currency=USD';
+  // Currency is left to Shopify Markets, which auto-converts the cart
+  // and checkout to the visitor's local currency based on geo-IP. Set
+  // the enabled markets/currencies in Shopify Admin → Settings → Markets.
+  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',');
   var noteLines=[];
   if(preorders.length)noteLines.push('Pre-Order: '+preorders.join(', ')+' — arrives in 2-3 weeks');
   if(bespoke.length)noteLines.push('═══ BESPOKE HARNESS SPEC ═══');
@@ -3756,7 +3756,7 @@ function shopCheckout(){
   if(pouches.length)noteLines.push('═══ CUSTOM POUCH SPEC ═══');
   pouches.forEach(function(p){noteLines.push(p)});
   if(pouches.length)noteLines.push('═══════════════════════');
-  if(noteLines.length){url+='&note='+encodeURIComponent(noteLines.join('\n'))}
+  if(noteLines.length){url+='?note='+encodeURIComponent(noteLines.join('\n'))}
   window.open(url,'_blank');
 }
 // =================== POUCH CONFIGURATOR ===================
@@ -4065,7 +4065,7 @@ document.querySelectorAll('.ap-media-img').forEach(function(img){img.style.curso
     var cEl=document.getElementById('sbColor');if(cEl)cEl.textContent=(typeof curColor==='string')?(curColor.charAt(0).toUpperCase()+curColor.slice(1)):'Black';
     var thumb=document.getElementById('sbThumb');if(thumb&&typeof shopProducts!=='undefined'&&shopProducts[curColor])thumb.src=shopProducts[curColor].img;
     var buyBtn=document.getElementById('sbBuyNow');
-    if(buyBtn&&typeof shopProducts!=='undefined'&&shopProducts[curColor])buyBtn.href='https://kuibri-ev.myshopify.com/cart/'+shopProducts[curColor].variant+':1?currency=USD';
+    if(buyBtn&&typeof shopProducts!=='undefined'&&shopProducts[curColor])buyBtn.href='https://kuibri-ev.myshopify.com/cart/'+shopProducts[curColor].variant+':1';
   }
   function isHomeVisible(){
     var home=document.getElementById('page-home');
