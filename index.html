@@ -471,6 +471,91 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 }
 /* =================== END BAG CONFIGURATOR =================== */
 
+/* =================== REFER & EARN =================== */
+.re-section{padding:24px 60px 96px;background:var(--bg)}
+.re-inner{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:88px}
+.re-band{background:linear-gradient(180deg,#0a0a0a 0%,#141414 100%);color:#e8e4dc;border-radius:4px;padding:64px 60px 56px;position:relative;overflow:hidden;border:1px solid #1f1f23}
+.re-band::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:linear-gradient(90deg,transparent,#b8a070,transparent)}
+.re-band-hd{text-align:center;max-width:680px;margin:0 auto 44px}
+.re-band-hd .slabel{color:#b8a070;letter-spacing:5px;margin-bottom:14px}
+.re-band-hd h2{font-family:var(--fd);font-size:clamp(28px,3vw,38px);font-weight:400;color:#fafaf5;line-height:1.18;letter-spacing:-.2px;margin-bottom:14px}
+.re-band-lede{font-size:14px;color:#bcb6a6;font-weight:300;line-height:1.8;letter-spacing:.2px}
+.re-pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:30px}
+.re-pcard{background:rgba(184,160,112,.04);border:1px solid rgba(184,160,112,.22);padding:32px 26px;border-radius:3px;text-align:center;transition:all .3s}
+.re-pcard:hover{background:rgba(184,160,112,.07);border-color:rgba(184,160,112,.4);transform:translateY(-2px)}
+.re-pcard-mid{background:rgba(184,160,112,.07);border-color:rgba(184,160,112,.35)}
+.re-p-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#b8a070;font-weight:500;margin-bottom:14px}
+.re-p-amt{font-family:var(--fd);font-size:48px;font-weight:500;color:#fafaf5;line-height:1;letter-spacing:-1px;margin-bottom:6px}
+.re-p-amt span{font-family:var(--fb);font-size:13px;color:#8a8579;font-weight:300;letter-spacing:.5px}
+.re-p-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bcb6a6;margin-bottom:18px}
+.re-p-note{font-size:12px;color:#8a8579;line-height:1.7;font-weight:300}
+.re-p-note a{color:#b8a070;text-decoration:underline;text-underline-offset:2px}
+.re-band-fine{text-align:center;font-size:11.5px;color:#8a8579;line-height:1.75;font-weight:300;letter-spacing:.2px;max-width:680px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(184,160,112,.12)}
+
+.re-how{max-width:980px;margin:0 auto;text-align:center}
+.re-how-eyebrow{margin-bottom:14px;display:block;color:#7a5a1e}
+.re-how h2{font-family:var(--fd);font-size:clamp(26px,3vw,36px);font-weight:400;color:var(--w);line-height:1.2;letter-spacing:-.2px;margin-bottom:56px}
+.re-how h2 em{font-style:italic;color:var(--gl)}
+.re-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.re-step{text-align:left;padding:32px 30px;border:1px solid var(--b);background:var(--bg-card);border-radius:3px;transition:all .3s;position:relative}
+.re-step:hover{border-color:var(--gl);transform:translateY(-2px);box-shadow:0 14px 32px -16px rgba(45,90,61,.18)}
+.re-step-num{font-family:var(--fd);font-size:14px;color:var(--gl);font-weight:500;letter-spacing:3px;margin-bottom:18px}
+.re-step-hd{font-family:var(--fd);font-size:21px;font-weight:500;color:var(--w);margin-bottom:12px;line-height:1.2}
+.re-step-body{font-size:13.5px;color:var(--td);line-height:1.8;font-weight:300}
+.re-step-body code{font-family:'SF Mono','Menlo','Monaco','Courier New',monospace;background:var(--gm);color:var(--g);padding:2px 7px;border-radius:2px;font-size:11.5px;letter-spacing:.5px;font-weight:500}
+
+.re-tiers{max-width:980px;margin:0 auto;text-align:center}
+.re-tiers-eyebrow{margin-bottom:14px;display:block;color:#7a5a1e}
+.re-tiers h2{font-family:var(--fd);font-size:clamp(26px,3vw,36px);font-weight:400;color:var(--w);line-height:1.2;letter-spacing:-.2px;margin-bottom:48px}
+.re-tiers h2 em{font-style:italic;color:var(--gl)}
+.re-tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
+.re-tier{display:flex;align-items:flex-start;gap:18px;padding:26px 24px;border:1px solid var(--b);background:var(--bg-card);border-radius:3px;transition:all .3s}
+.re-tier:hover{border-color:var(--gl);background:var(--bg)}
+.re-tier-mark{font-family:var(--fd);font-size:36px;font-weight:500;color:var(--gl);line-height:1;flex-shrink:0;min-width:48px;letter-spacing:-1px}
+.re-tier-body{font-size:13px;color:var(--td);line-height:1.75;font-weight:300}
+.re-tier-body strong{color:var(--w);font-weight:500;display:block;margin-bottom:4px;font-family:var(--fd);font-size:14px}
+
+.re-formbox{max-width:780px;margin:0 auto;padding:48px 48px 44px;background:var(--bg-card);border:1px solid var(--b);border-radius:3px;text-align:center}
+.re-form-eyebrow{margin-bottom:14px;display:block;color:#7a5a1e}
+.re-formbox h2{font-family:var(--fd);font-size:clamp(26px,3vw,34px);font-weight:400;color:var(--w);line-height:1.2;letter-spacing:-.2px;margin-bottom:14px}
+.re-form-lede{font-size:13.5px;color:var(--td);font-weight:300;line-height:1.85;max-width:520px;margin:0 auto 36px}
+.re-form{text-align:left}
+.re-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin-bottom:18px}
+.re-form .fg{display:flex;flex-direction:column;gap:6px}
+.re-form .fg-full{margin-bottom:24px}
+.re-form .fg label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--w);font-weight:500;display:flex;align-items:baseline;gap:8px}
+.re-form .fg label .fg-opt{font-weight:300;color:var(--tm);letter-spacing:1px;text-transform:none;font-size:10px}
+.re-form input,.re-form select,.re-form textarea{padding:11px 14px;border:1px solid var(--b);background:#fff;font-family:var(--fb);font-size:13px;color:var(--w);border-radius:2px;transition:border-color .2s}
+.re-form input:focus,.re-form select:focus,.re-form textarea:focus{outline:none;border-color:var(--gl)}
+.re-form textarea{resize:vertical;line-height:1.6}
+.re-form-cta{width:100%;padding:16px 24px;font-size:12px;letter-spacing:3px;margin-top:8px}
+.re-form-fine{font-size:11px;color:var(--tm);line-height:1.7;font-weight:300;text-align:center;margin-top:16px}
+
+.re-faq{max-width:780px;margin:0 auto}
+.re-faq-eyebrow{margin-bottom:14px;display:block;color:#7a5a1e}
+.re-faq h2{font-family:var(--fd);font-size:clamp(24px,2.6vw,30px);font-weight:400;color:var(--w);line-height:1.25;margin-bottom:36px;text-align:center}
+.re-faq-item{border-bottom:1px solid var(--b);padding:18px 0}
+.re-faq-item summary{cursor:pointer;font-family:var(--fd);font-size:16px;color:var(--w);font-weight:500;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;transition:color .2s}
+.re-faq-item summary::-webkit-details-marker{display:none}
+.re-faq-item summary::after{content:'+';font-family:var(--fd);font-size:22px;color:var(--gl);font-weight:300;transition:transform .3s;flex-shrink:0}
+.re-faq-item[open] summary{color:var(--gl)}
+.re-faq-item[open] summary::after{transform:rotate(45deg)}
+.re-faq-item div{font-size:13.5px;color:var(--td);line-height:1.85;font-weight:300;padding:14px 0 4px;letter-spacing:.1px;max-width:680px}
+
+@media(max-width:880px){
+  .re-section{padding:24px 22px 64px}
+  .re-inner{gap:64px}
+  .re-band{padding:48px 24px 40px}
+  .re-pricing{grid-template-columns:1fr;gap:14px}
+  .re-pcard{padding:26px 22px}
+  .re-p-amt{font-size:40px}
+  .re-steps{grid-template-columns:1fr;gap:18px}
+  .re-tier-grid{grid-template-columns:1fr;gap:14px}
+  .re-formbox{padding:36px 22px 32px}
+  .re-form-grid{grid-template-columns:1fr;gap:14px}
+}
+/* =================== END REFER & EARN =================== */
+
 /* Frequently Asked - travel and leather */
 .gb-faq{padding:88px 60px 96px;background:var(--bg);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
 .gb-faq-inner{max-width:820px;margin:0 auto;text-align:center}
@@ -1352,42 +1437,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </a>
 </div>
 </div>
-
-<!-- ============== LANDING EXPLAINER: 5 REASONS ============== -->
-<section class="reasons-section fade-in">
-<div class="reasons-inner">
-<span class="reasons-eyebrow">The Promise</span>
-<h2>Five reasons to <em>choose Goldy Brown</em>.</h2>
-<div class="reason scale-in">
-<div class="reason-num">1</div>
-<h3>Full Grain Calfskin</h3>
-<p>The strongest, most beautiful version of leather you can buy. Not top grain. Not bonded. Not the entry grade splits sold as genuine leather. The same hides European luxury houses are built on, sourced from South India's heritage tanneries.</p>
-</div>
-<div class="reason scale-in">
-<div class="reason-num">2</div>
-<h3>Designed in Vancouver, Made in South India</h3>
-<p>Every piece begins as a pencil sketch on my desk in Vancouver. The master pattern travels to South India to be cut and stitched by leather artisans whose craft has been handed down across generations of tannery families.</p>
-</div>
-<div class="reason scale-in">
-<div class="reason-num">3</div>
-<h3>Worn, Not Carried</h3>
-<p>The Harness Bag sits high on the chest, under a jacket or over a layer. Hands free through every airport security line, every restaurant, every long city walk. The personal item that counts as part of what you are wearing, not a third bag.</p>
-</div>
-<div class="reason scale-in">
-<div class="reason-num">4</div>
-<h3>Lifetime Warranty</h3>
-<p>Any defect in stitching, leather, or hardware, for life. Repaired or replaced at my atelier. Shipping covered both ways. No fine print, no proof of purchase chases. The Goldy Brown Guarantee, in writing.</p>
-</div>
-<div class="reason scale-in">
-<div class="reason-num">5</div>
-<h3>Made to Order, Free Shipping</h3>
-<p>Every Harness Bag is made to order from Vancouver. Lead time is 7 to 10 business days. Free worldwide shipping via DHL Express, FedEx, and Canada Post &mdash; Vancouver, Toronto, Montreal, Calgary, New York, Los Angeles, Miami, Chicago, San Francisco, Boston, Dallas, Las Vegas, plus London, Paris, Milan, Rome, Zurich, Monaco, Berlin, Madrid, Amsterdam, and Dubai. European and UK orders ship DDP &mdash; all duties and VAT prepaid.</p>
-</div>
-<div class="reasons-cta">
-<a href="#harness-shop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Shop the Harness Bag &mdash; $299</a>
-</div>
-</div>
-</section>
 
 <section class="gb-guar fade-in" id="gb-guarantee">
 <div class="gb-guar-inner">
@@ -3457,6 +3506,123 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 </section>
 </div>
+
+<!-- ======================== REFER & EARN ======================== -->
+<div class="page" id="page-refer">
+<div class="page-hero"><div class="slabel">For Our Customers</div><h1>Refer &amp; <span style="font-style:italic;color:var(--gl)">Earn</span></h1><p class="sub">A personalised discount code for your friends. A cash commission for you on every order they place. Honest numbers, paid the month after their piece ships.</p></div>
+
+<section class="re-section fade-in">
+<div class="re-inner">
+
+<!-- Earnings table -->
+<div class="re-band">
+<div class="re-band-hd">
+<div class="slabel">What You Earn</div>
+<h2>Direct cash, no points, no fine print.</h2>
+<p class="re-band-lede">Every order placed with your personal code pays out at flat USD per piece. Wire, PayPal, Interac e-Transfer, or full store credit at 1.2&times; — your call.</p>
+</div>
+<div class="re-pricing">
+<div class="re-pcard">
+<div class="re-p-eyebrow">The Harness Bag</div>
+<div class="re-p-amt">$30 <span>USD</span></div>
+<div class="re-p-sub">per piece referred</div>
+<div class="re-p-note">Your friend pays $269. You earn $30. Paid out the month after the piece ships.</div>
+</div>
+<div class="re-pcard re-pcard-mid">
+<div class="re-p-eyebrow">Custom Pouch Set</div>
+<div class="re-p-amt">$25 <span>USD</span></div>
+<div class="re-p-sub">per set referred</div>
+<div class="re-p-note">Applies to the live pouch configurator on the home page — 1, 2, or 3 pouches in a set.</div>
+</div>
+<div class="re-pcard">
+<div class="re-p-eyebrow">Bespoke Harness</div>
+<div class="re-p-amt">$40 <span>USD</span></div>
+<div class="re-p-sub">per build referred</div>
+<div class="re-p-note">Any spec from the <a href="/custom" onclick="go('custom')">Customize Your Harness</a> page &mdash; leather, closure, hardware, stitch.</div>
+</div>
+</div>
+<div class="re-band-fine">Friend gets 10% off their order with your code, capped at one use per customer. Codes don&rsquo;t stack with promotions. Commission isn&rsquo;t paid on cancelled or returned orders.</div>
+</div>
+
+<!-- How it works -->
+<div class="re-how">
+<div class="slabel re-how-eyebrow">How it Works</div>
+<h2>Three steps. Fifteen minutes. <em>Then it pays you in your sleep.</em></h2>
+<div class="re-steps">
+<div class="re-step scale-in">
+<div class="re-step-num">01</div>
+<div class="re-step-hd">Sign Up</div>
+<div class="re-step-body">Fill in the form below with your name, the email on your last Goldy Brown order, and how you&rsquo;d like to be paid. I&rsquo;ll review by hand and email back within 48 hours.</div>
+</div>
+<div class="re-step scale-in">
+<div class="re-step-num">02</div>
+<div class="re-step-hd">Get Your Code</div>
+<div class="re-step-body">I create a Shopify discount code with your name &mdash; e.g. <code>SHAWN10</code>, <code>OLIVIA10</code>. Code is yours for life. Share by text, DM, AirDrop, however you live.</div>
+</div>
+<div class="re-step scale-in">
+<div class="re-step-num">03</div>
+<div class="re-step-hd">Get Paid</div>
+<div class="re-step-body">I track every order through Shopify. End of each month I tally referrals against your code and send what you&rsquo;re owed. Wire, PayPal, Interac e-Transfer, or store credit at 1.2&times; the cash value.</div>
+</div>
+</div>
+</div>
+
+<!-- Tier rewards -->
+<div class="re-tiers">
+<div class="slabel re-tiers-eyebrow">Tier Rewards</div>
+<h2>Beyond the cash, <em>a few things you can&rsquo;t buy.</em></h2>
+<div class="re-tier-grid">
+<div class="re-tier">
+<div class="re-tier-mark">5</div>
+<div class="re-tier-body"><strong>Five referrals.</strong> A handwritten thank-you on Goldy Brown atelier card, signed.</div>
+</div>
+<div class="re-tier">
+<div class="re-tier-mark">10</div>
+<div class="re-tier-body"><strong>Ten referrals.</strong> A monogrammed leather card holder in the colour of your choice, sent free with your tenth payout.</div>
+</div>
+<div class="re-tier">
+<div class="re-tier-mark">25</div>
+<div class="re-tier-body"><strong>Twenty-five referrals.</strong> A bespoke Harness Bag of your spec, in any leather, any closure, any hardware &mdash; on the house. Lifetime warranty applies, same as any other piece.</div>
+</div>
+</div>
+</div>
+
+<!-- Sign up form -->
+<div class="re-formbox">
+<div class="slabel re-form-eyebrow">Apply</div>
+<h2>Join the Circle</h2>
+<p class="re-form-lede">I keep this program small and direct. Existing Goldy Brown customers are reviewed first, then close friends of the brand. Both groups by hand, both within 48 hours.</p>
+<form id="referForm" class="re-form" onsubmit="handleReferSubmit(event)">
+<div class="re-form-grid">
+<div class="fg"><label>Full Name</label><input type="text" name="name" required placeholder="Your full name"></div>
+<div class="fg"><label>Email</label><input type="email" name="email" required placeholder="The email on your last order"></div>
+<div class="fg"><label>Preferred Code <span class="fg-opt">(optional)</span></label><input type="text" name="code" placeholder="e.g. SHAWN10 — first name + 10"></div>
+<div class="fg"><label>Phone / WhatsApp <span class="fg-opt">(optional)</span></label><input type="tel" name="phone" placeholder="So I can text the code"></div>
+<div class="fg"><label>Instagram / Social <span class="fg-opt">(optional)</span></label><input type="text" name="social" placeholder="@yourhandle — for tier-reward DMs"></div>
+<div class="fg"><label>Payout Preference</label><select name="payout" required><option value="" disabled selected>Choose one</option><option>PayPal</option><option>Interac e-Transfer (Canada)</option><option>Wire transfer</option><option>Store credit (1.2× the cash)</option></select></div>
+</div>
+<div class="fg fg-full"><label>How do you typically share things you love? <span class="fg-opt">(optional)</span></label><textarea name="reach" rows="2" placeholder="Friends, group chats, social media, work colleagues — helps me tier your code intro right."></textarea></div>
+<button type="submit" class="btn btn-f re-form-cta">Apply for a Code</button>
+<div class="re-form-fine">Reviewed by hand within 48 hours. By submitting you agree commissions are not paid on cancelled or returned orders. Subject to the program terms below.</div>
+</form>
+</div>
+
+<!-- FAQ -->
+<div class="re-faq">
+<div class="slabel re-faq-eyebrow">Honest Answers</div>
+<h2>Program details, plainly stated.</h2>
+<details class="re-faq-item"><summary>When do I get paid?</summary><div>End of every month. I tally every order that used your code in the previous calendar month, deduct anything cancelled or returned, and send the net amount through your chosen payout method by the 5th of the following month.</div></details>
+<details class="re-faq-item"><summary>How do you track which orders are mine?</summary><div>Shopify records the discount code used on every order. Your code is unique to you. As long as the order completes and ships, it counts.</div></details>
+<details class="re-faq-item"><summary>Can I refer myself?</summary><div>Once, for your own first follow-up order, yes. After that the code is meant for friends. I check.</div></details>
+<details class="re-faq-item"><summary>Does the commission apply to bulk Hotel Collection orders?</summary><div>Yes, but at a flat 5% of the order value rather than the per-piece rates above &mdash; we coordinate separately on those because of custom branding work.</div></details>
+<details class="re-faq-item"><summary>What if a friend forgets to use the code?</summary><div>Tell them to email me with your name on the order and I&rsquo;ll honour it manually within 30 days of their purchase.</div></details>
+<details class="re-faq-item"><summary>Can the program end?</summary><div>I reserve the right to wind it down with 30 days&rsquo; notice, but all commissions earned before that date are paid in full. I keep my word.</div></details>
+<details class="re-faq-item"><summary>Tax stuff?</summary><div>Commissions are paid as marketing referral fees. You&rsquo;re responsible for declaring this income in your jurisdiction. I issue a year-end summary on request.</div></details>
+</div>
+
+</div>
+</section>
+</div>
 <button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
 <footer class="footer">
 <div class="footer-main">
@@ -3484,6 +3650,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <li><a href="/about" onclick="go('about')">About</a></li>
 <li><a href="/lookbook" onclick="go('lookbook')">Lookbook</a></li>
 <li><a href="/journal" onclick="go('journal')">Journal</a></li>
+<li><a href="/refer" onclick="go('refer')">Refer &amp; Earn</a></li>
 <li><a href="https://instagram.com/goldybrowncouture" target="_blank" rel="noopener">Instagram</a></li>
 </ul>
 </div>
@@ -3750,9 +3917,9 @@ function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.tar
 function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Opening email...';try{var subject=data._subject||'Goldy Brown Inquiry';var bodyLines=[];Object.keys(data).forEach(function(k){if(k==='_subject')return;var label=k.charAt(0).toUpperCase()+k.slice(1).replace(/_/g,' ');bodyLines.push(label+': '+data[k])});bodyLines.push('','\u2014','Sent from goldybrown.com');var body=bodyLines.join('\n');var to='info'+'@'+'goldybrown.com';var mailto='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);window.location.href=mailto;setTimeout(function(){btn.disabled=false;onSuccess()},400)}catch(e){btn.disabled=false;btn.textContent='Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},2500)}}
 function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Email Ready</h3><p>Thanks '+data.name.split(' ')[0]+'. Your email client just opened with your '+data.tier+' proposal request pre-filled. <strong>Click Send in your email app</strong> and I\'ll get back to you within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Harness Bags & Travel Bags | Designed in Vancouver',d:'Full grain leather harness bags and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — harness bags, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Collection — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},about:{t:'About — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Customize Your Harness Bag — Bespoke Leather, Hardware, Stitch | Goldy Brown',d:'Configure your Goldy Brown Harness Bag to spec: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut and stitched in Vancouver in 2–3 weeks. Free worldwide shipping, lifetime warranty.'},'travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'cityvancouver':{t:'Luxury Leather Harness Bags Delivered Free in Vancouver | Goldy Brown',d:'Free same-week delivery of full grain leather Harness Bags across Vancouver, BC. Designed locally in the Vancouver atelier. Yaletown, Kitsilano, Gastown, North Vancouver and across the GTA.'},'citytoronto':{t:'Luxury Leather Harness Bags Delivered Free in Toronto | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Toronto, Yorkville, Forest Hill, King West and across the GTA. 2 to 4 business days from Vancouver.'},'citynewyork':{t:'Luxury Leather Harness Bags Delivered Free in New York | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Manhattan, Brooklyn, Williamsburg, Hoboken and the greater NYC metro. 3 to 5 business days from Vancouver atelier.'},'citylosangeles':{t:'Luxury Leather Harness Bags Delivered Free in Los Angeles | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Beverly Hills, West Hollywood, Venice, Santa Monica and the greater LA metro. 3 to 5 business days from Vancouver.'},'citymiami':{t:'Luxury Leather Harness Bags Delivered Free in Miami | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Miami Beach, Brickell, Coral Gables, Wynwood and across South Florida. 3 to 5 business days from Vancouver atelier.'},'citymontreal':{t:'Luxury Leather Harness Bags Delivered Free in Montreal | Goldy Brown',d:'Free Canada Post and Purolator delivery of full grain leather Harness Bags to Westmount, Mile End, Outremont, the Plateau, and Old Montreal. Designed in Vancouver, made in South India.'},'citycalgary':{t:'Luxury Leather Harness Bags Delivered Free in Calgary | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Mount Royal, Britannia, Elbow Park, Aspen Woods, the Beltline, and across Calgary. 2 to 3 business days from Vancouver.'},'cityottawa':{t:'Luxury Leather Harness Bags Delivered Free in Ottawa | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Rockcliffe Park, the Glebe, Westboro, Sandy Hill, and across the National Capital Region.'},'citychicago':{t:'Luxury Leather Harness Bags Delivered Free in Chicago | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to the Gold Coast, Lincoln Park, the Loop, River North, and the North Shore including Winnetka and Lake Forest. 3 to 5 business days.'},'citysanfrancisco':{t:'Luxury Leather Harness Bags Delivered Free in San Francisco & the Bay Area | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Pacific Heights, Russian Hill, the Marina, plus Atherton, Palo Alto, and Mill Valley. 3 to 5 business days from Vancouver.'},'cityboston':{t:'Luxury Leather Harness Bags Delivered Free in Boston | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Back Bay, Beacon Hill, Brookline, Cambridge, and out to Wellesley and the North Shore. 3 to 5 business days from Vancouver.'},'citydallas':{t:'Luxury Leather Harness Bags Delivered Free in Dallas & DFW | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Highland Park, University Park, Preston Hollow, Uptown, plus Southlake, Westlake, and Fort Worth. 3 to 5 business days from Vancouver.'},'citylasvegas':{t:'Luxury Leather Harness Bags Delivered Free in Las Vegas | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Summerlin, MacDonald Highlands, Lake Las Vegas, the Strip residential towers, and Henderson. 3 to 5 business days from Vancouver.'},'citylondon':{t:'Luxury Leather Harness Bags Delivered Free in London — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mayfair, Knightsbridge, Chelsea, Notting Hill, and across Greater London. UK duties, import VAT and handling all prepaid — no courier surprise at the door. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityparis':{t:'Luxury Leather Harness Bags Delivered Free in Paris — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to the 1er, 6e, 7e, 8e, 16e, and Le Marais. EU duties and French VAT prepaid. 4 to 6 business days from Vancouver. Cuir pleine fleur, garantie à vie.'},'citymilan':{t:'Luxury Leather Harness Bags Delivered Free in Milan — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Brera, the Quadrilatero della Moda, Porta Nuova, Porta Venezia, and Lake Como. EU duties and Italian IVA prepaid. Pelle pieno fiore, garanzia a vita.'},'cityrome':{t:'Luxury Leather Harness Bags Delivered Free in Rome — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Parioli, Centro Storico, Prati, Trastevere, and across Roma. EU duties and IVA prepaid. 4 to 6 business days from Vancouver. Garanzia a vita.'},'cityzurich':{t:'Luxury Leather Harness Bags Delivered Free in Zürich — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Zürichberg, Seefeld, Enge, the Goldküste, plus Zug, Geneva, and St. Moritz. Swiss customs and MwSt prepaid. 4 to 6 business days from Vancouver.'},'citymonaco':{t:'Luxury Leather Harness Bags Delivered Free in Monaco | Goldy Brown',d:'Free DHL Express delivery to Monte Carlo, La Condamine, Fontvieille, plus Cap Ferrat, Èze, and the Côte d’Azur. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityberlin':{t:'Luxury Leather Harness Bags Delivered Free in Berlin — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mitte, Charlottenburg, Prenzlauer Berg, Kreuzberg, Grunewald, plus Munich, Hamburg, and Frankfurt. EU duties and Mehrwertsteuer prepaid. Lebenslange Garantie.'},'citymadrid':{t:'Luxury Leather Harness Bags Delivered Free in Madrid — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Salamanca, Chamberí, Justicia, Castellana, La Moraleja, plus Barcelona, Marbella, and Mallorca. EU duties and IVA prepaid. Garantía de por vida.'},'cityamsterdam':{t:'Luxury Leather Harness Bags Delivered Free in Amsterdam — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Oud-Zuid, Jordaan, Grachtengordel, the Museum Quarter, plus Rotterdam, The Hague, and Wassenaar. EU duties and BTW prepaid. Levenslange garantie.'},'citydubai':{t:'Luxury Leather Harness Bags Delivered Free in Dubai — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Downtown Dubai, DIFC, Palm Jumeirah, Emirates Hills, Jumeirah, plus Abu Dhabi. UAE customs prepaid. 4 to 6 business days from the Vancouver atelier.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-one-bag-travel':{t:'How to Travel Europe with One Bag (and a Harness) | Goldy Brown Journal',d:'A practical guide to one bag travel: what to pack for a ten-day Europe trip, which carry-on rules every airline lets you bend, and why a leather harness bag beats a sling or a tote at every checkpoint. Hands-free travel, written by the designer.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why I use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
-var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Collection',custom:'Customize Your Bag',about:'About',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges','travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'travel-bags':'Travel Bags','cityvancouver':'Vancouver','citytoronto':'Toronto','citymontreal':'Montreal','citycalgary':'Calgary','cityottawa':'Ottawa','citynewyork':'New York','citylosangeles':'Los Angeles','citymiami':'Miami','citychicago':'Chicago','citysanfrancisco':'San Francisco','cityboston':'Boston','citydallas':'Dallas','citylasvegas':'Las Vegas','citylondon':'London','cityparis':'Paris','citymilan':'Milan','cityrome':'Rome','cityzurich':'Zurich','citymonaco':'Monaco','cityberlin':'Berlin','citymadrid':'Madrid','cityamsterdam':'Amsterdam','citydubai':'Dubai',journal:'Journal','journal-one-bag-travel':'One Bag Travel & The Harness','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
-var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',custom:'/custom',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns','travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'travel-bags':'/travel-bags','cityvancouver':'/vancouver','citytoronto':'/toronto','citymontreal':'/montreal','citycalgary':'/calgary','cityottawa':'/ottawa','citynewyork':'/new-york','citylosangeles':'/los-angeles','citymiami':'/miami','citychicago':'/chicago','citysanfrancisco':'/san-francisco','cityboston':'/boston','citydallas':'/dallas','citylasvegas':'/las-vegas','citylondon':'/london','cityparis':'/paris','citymilan':'/milan','cityrome':'/rome','cityzurich':'/zurich','citymonaco':'/monaco','cityberlin':'/berlin','citymadrid':'/madrid','cityamsterdam':'/amsterdam','citydubai':'/dubai',journal:'/journal','journal-one-bag-travel':'/journal/one-bag-travel','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
+var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Harness Bags & Travel Bags | Designed in Vancouver',d:'Full grain leather harness bags and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — harness bags, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Collection — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},about:{t:'About — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Customize Your Harness Bag — Bespoke Leather, Hardware, Stitch | Goldy Brown',d:'Configure your Goldy Brown Harness Bag to spec: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut and stitched in Vancouver in 2–3 weeks. Free worldwide shipping, lifetime warranty.'},refer:{t:'Refer & Earn — $30 per Harness, $40 per Bespoke Build | Goldy Brown',d:'Apply for a personal Goldy Brown referral code. Friends get 10% off their order, you get $30 per harness referred, $25 per pouch set, $40 per bespoke build. Paid monthly via PayPal, e-Transfer, wire, or 1.2× store credit. Tier rewards at 5, 10, and 25 referrals.'},'travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'cityvancouver':{t:'Luxury Leather Harness Bags Delivered Free in Vancouver | Goldy Brown',d:'Free same-week delivery of full grain leather Harness Bags across Vancouver, BC. Designed locally in the Vancouver atelier. Yaletown, Kitsilano, Gastown, North Vancouver and across the GTA.'},'citytoronto':{t:'Luxury Leather Harness Bags Delivered Free in Toronto | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Toronto, Yorkville, Forest Hill, King West and across the GTA. 2 to 4 business days from Vancouver.'},'citynewyork':{t:'Luxury Leather Harness Bags Delivered Free in New York | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Manhattan, Brooklyn, Williamsburg, Hoboken and the greater NYC metro. 3 to 5 business days from Vancouver atelier.'},'citylosangeles':{t:'Luxury Leather Harness Bags Delivered Free in Los Angeles | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Beverly Hills, West Hollywood, Venice, Santa Monica and the greater LA metro. 3 to 5 business days from Vancouver.'},'citymiami':{t:'Luxury Leather Harness Bags Delivered Free in Miami | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Miami Beach, Brickell, Coral Gables, Wynwood and across South Florida. 3 to 5 business days from Vancouver atelier.'},'citymontreal':{t:'Luxury Leather Harness Bags Delivered Free in Montreal | Goldy Brown',d:'Free Canada Post and Purolator delivery of full grain leather Harness Bags to Westmount, Mile End, Outremont, the Plateau, and Old Montreal. Designed in Vancouver, made in South India.'},'citycalgary':{t:'Luxury Leather Harness Bags Delivered Free in Calgary | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Mount Royal, Britannia, Elbow Park, Aspen Woods, the Beltline, and across Calgary. 2 to 3 business days from Vancouver.'},'cityottawa':{t:'Luxury Leather Harness Bags Delivered Free in Ottawa | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Rockcliffe Park, the Glebe, Westboro, Sandy Hill, and across the National Capital Region.'},'citychicago':{t:'Luxury Leather Harness Bags Delivered Free in Chicago | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to the Gold Coast, Lincoln Park, the Loop, River North, and the North Shore including Winnetka and Lake Forest. 3 to 5 business days.'},'citysanfrancisco':{t:'Luxury Leather Harness Bags Delivered Free in San Francisco & the Bay Area | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Pacific Heights, Russian Hill, the Marina, plus Atherton, Palo Alto, and Mill Valley. 3 to 5 business days from Vancouver.'},'cityboston':{t:'Luxury Leather Harness Bags Delivered Free in Boston | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Back Bay, Beacon Hill, Brookline, Cambridge, and out to Wellesley and the North Shore. 3 to 5 business days from Vancouver.'},'citydallas':{t:'Luxury Leather Harness Bags Delivered Free in Dallas & DFW | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Highland Park, University Park, Preston Hollow, Uptown, plus Southlake, Westlake, and Fort Worth. 3 to 5 business days from Vancouver.'},'citylasvegas':{t:'Luxury Leather Harness Bags Delivered Free in Las Vegas | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Summerlin, MacDonald Highlands, Lake Las Vegas, the Strip residential towers, and Henderson. 3 to 5 business days from Vancouver.'},'citylondon':{t:'Luxury Leather Harness Bags Delivered Free in London — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mayfair, Knightsbridge, Chelsea, Notting Hill, and across Greater London. UK duties, import VAT and handling all prepaid — no courier surprise at the door. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityparis':{t:'Luxury Leather Harness Bags Delivered Free in Paris — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to the 1er, 6e, 7e, 8e, 16e, and Le Marais. EU duties and French VAT prepaid. 4 to 6 business days from Vancouver. Cuir pleine fleur, garantie à vie.'},'citymilan':{t:'Luxury Leather Harness Bags Delivered Free in Milan — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Brera, the Quadrilatero della Moda, Porta Nuova, Porta Venezia, and Lake Como. EU duties and Italian IVA prepaid. Pelle pieno fiore, garanzia a vita.'},'cityrome':{t:'Luxury Leather Harness Bags Delivered Free in Rome — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Parioli, Centro Storico, Prati, Trastevere, and across Roma. EU duties and IVA prepaid. 4 to 6 business days from Vancouver. Garanzia a vita.'},'cityzurich':{t:'Luxury Leather Harness Bags Delivered Free in Zürich — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Zürichberg, Seefeld, Enge, the Goldküste, plus Zug, Geneva, and St. Moritz. Swiss customs and MwSt prepaid. 4 to 6 business days from Vancouver.'},'citymonaco':{t:'Luxury Leather Harness Bags Delivered Free in Monaco | Goldy Brown',d:'Free DHL Express delivery to Monte Carlo, La Condamine, Fontvieille, plus Cap Ferrat, Èze, and the Côte d’Azur. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityberlin':{t:'Luxury Leather Harness Bags Delivered Free in Berlin — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mitte, Charlottenburg, Prenzlauer Berg, Kreuzberg, Grunewald, plus Munich, Hamburg, and Frankfurt. EU duties and Mehrwertsteuer prepaid. Lebenslange Garantie.'},'citymadrid':{t:'Luxury Leather Harness Bags Delivered Free in Madrid — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Salamanca, Chamberí, Justicia, Castellana, La Moraleja, plus Barcelona, Marbella, and Mallorca. EU duties and IVA prepaid. Garantía de por vida.'},'cityamsterdam':{t:'Luxury Leather Harness Bags Delivered Free in Amsterdam — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Oud-Zuid, Jordaan, Grachtengordel, the Museum Quarter, plus Rotterdam, The Hague, and Wassenaar. EU duties and BTW prepaid. Levenslange garantie.'},'citydubai':{t:'Luxury Leather Harness Bags Delivered Free in Dubai — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Downtown Dubai, DIFC, Palm Jumeirah, Emirates Hills, Jumeirah, plus Abu Dhabi. UAE customs prepaid. 4 to 6 business days from the Vancouver atelier.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-one-bag-travel':{t:'How to Travel Europe with One Bag (and a Harness) | Goldy Brown Journal',d:'A practical guide to one bag travel: what to pack for a ten-day Europe trip, which carry-on rules every airline lets you bend, and why a leather harness bag beats a sling or a tote at every checkpoint. Hands-free travel, written by the designer.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why I use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
+var BREADCRUMB_LABELS={home:'Home',lookbook:'Lookbook',hotel:'Hotel Collection',custom:'Customize Your Bag',refer:'Refer & Earn',about:'About',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges','travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'travel-bags':'Travel Bags','cityvancouver':'Vancouver','citytoronto':'Toronto','citymontreal':'Montreal','citycalgary':'Calgary','cityottawa':'Ottawa','citynewyork':'New York','citylosangeles':'Los Angeles','citymiami':'Miami','citychicago':'Chicago','citysanfrancisco':'San Francisco','cityboston':'Boston','citydallas':'Dallas','citylasvegas':'Las Vegas','citylondon':'London','cityparis':'Paris','citymilan':'Milan','cityrome':'Rome','cityzurich':'Zurich','citymonaco':'Monaco','cityberlin':'Berlin','citymadrid':'Madrid','cityamsterdam':'Amsterdam','citydubai':'Dubai',journal:'Journal','journal-one-bag-travel':'One Bag Travel & The Harness','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
+var PAGE_PATHS={home:'/',lookbook:'/lookbook',hotel:'/hotel',custom:'/custom',refer:'/refer',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns','travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'travel-bags':'/travel-bags','cityvancouver':'/vancouver','citytoronto':'/toronto','citymontreal':'/montreal','citycalgary':'/calgary','cityottawa':'/ottawa','citynewyork':'/new-york','citylosangeles':'/los-angeles','citymiami':'/miami','citychicago':'/chicago','citysanfrancisco':'/san-francisco','cityboston':'/boston','citydallas':'/dallas','citylasvegas':'/las-vegas','citylondon':'/london','cityparis':'/paris','citymilan':'/milan','cityrome':'/rome','cityzurich':'/zurich','citymonaco':'/monaco','cityberlin':'/berlin','citymadrid':'/madrid','cityamsterdam':'/amsterdam','citydubai':'/dubai',journal:'/journal','journal-one-bag-travel':'/journal/one-bag-travel','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
 var PATH_TO_PAGE={};(function(){for(var k in PAGE_PATHS){PATH_TO_PAGE[PAGE_PATHS[k]]=k}})();
 function setBreadcrumb(page){var label=BREADCRUMB_LABELS[page]||'Home';var url=page==='home'?'https://goldybrown.com/':'https://goldybrown.com/'+page;var items=[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"}];if(page!=='home')items.push({"@type":"ListItem","position":2,"name":label,"item":url});var bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items};var sc=document.getElementById('bcSchema');if(!sc){sc=document.createElement('script');sc.id='bcSchema';sc.type='application/ld+json';document.head.appendChild(sc)}sc.textContent=JSON.stringify(bc)}
 function pathFor(page){return PAGE_PATHS[page]||(page==='home'?'/':'/'+page)}
@@ -3769,6 +3936,7 @@ function toggleMob(){document.getElementById('mobTog').classList.toggle('open');
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 function initFI(){var els=document.querySelectorAll('.page.active .fade-in,.page.active .slide-left,.page.active .slide-right,.page.active .scale-in');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('visible')});return}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'100px'});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)});function forceShow(){els.forEach(function(el){if(!el.classList.contains('visible')){var r=el.getBoundingClientRect();if(r.top<window.innerHeight+200)el.classList.add('visible')}})}forceShow();requestAnimationFrame(forceShow);setTimeout(forceShow,100);setTimeout(forceShow,500);setTimeout(forceShow,1500);window.addEventListener('scroll',forceShow,{passive:true})}
 function handleSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Goldy Brown Inquiry \u2014 '+f.interest.value,type:'contact',name:f.name.value,company:f.company?f.company.value:'',email:f.email.value,interest:f.interest.value,message:f.message.value};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success"><h3>Email Ready</h3><p>Thanks '+data.name.split(' ')[0]+'. Your email client just opened with your inquiry pre-filled. <strong>Click Send in your email app</strong> and I\'ll be in touch within 24 hours.</p></div>'})}
+function handleReferSubmit(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button[type="submit"]');btn.dataset.label=btn.textContent;var data={_subject:'Refer & Earn Application \u2014 '+f.name.value,type:'refer',name:f.name.value,email:f.email.value,preferred_code:f.code.value||'(auto)',phone:f.phone.value||'(none)',social:f.social.value||'(none)',payout_method:f.payout.value,reach:f.reach.value||'(not specified)'};submitForm(FORM_URL,data,btn,function(){f.innerHTML='<div class="pm-success" style="text-align:center;padding:24px 0"><h3 style="font-family:var(--fd);font-size:22px;color:var(--w);margin-bottom:12px">Application sent</h3><p style="font-size:13.5px;color:var(--td);line-height:1.8;font-weight:300">Thanks '+data.name.split(' ')[0]+'. Your email client just opened with your application pre-filled. <strong style="color:var(--w);font-weight:500">Click Send in your email app</strong> and I&rsquo;ll review by hand and reply with your personal code within 48 hours.</p></div>'})}
 // ===== SHOP CART =====
 var shopCart=[];
 var shopProducts={
