@@ -87,7 +87,7 @@ body{font-family:var(--fb);font-weight:300;color:var(--t);background:var(--bg);l
 ::selection{background:var(--g);color:#fff}
 .btn,.nav-tab,.section-card,.hv-swatch,.carousel-thumb,.carousel-arr,.lb-nav,.lb-thumb,.tier-b,.qb,.nav-cart-icon,.cart-x,.mob-toggle,.prop-item,.pcard{cursor:pointer}
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:1001;background:#0a0a0a;color:var(--gl);text-align:center;padding:8px 16px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:600;border-bottom:1px solid rgba(212,201,181,.1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4;height:32px}
-.top-bar-inner{display:inline-block}
+.top-bar-inner{display:inline-block;transition:opacity .26s ease}
 .shoppay-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;margin:10px 0 6px;background:rgba(90,49,244,.06);border:1px solid rgba(90,49,244,.18);border-radius:8px;font-size:12px;line-height:1.3;color:var(--t);font-weight:300;max-width:fit-content}
 .shoppay-badge b{color:#5a31f4;font-weight:600}
 .shoppay-badge .sp-name{color:#5a31f4;font-weight:600;letter-spacing:.2px}
@@ -583,6 +583,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .harness-home-text .detail-list li strong{color:var(--gl);font-weight:700;font-size:8px;letter-spacing:2px;text-transform:uppercase;min-width:72px;padding-top:2px}
 .harness-home-text .leather-note{font-size:10.5px;color:var(--t);font-weight:300;font-style:italic;line-height:1.55;margin:6px 0 2px;padding:8px 11px;background:rgba(184,160,112,.06);border-left:2px solid #b8a070;border-radius:2px}
 .harness-home-text .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.harness-home-text .buy-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;padding:14px 4px 0;border-top:1px solid var(--b);animation:heroTextIn .8s cubic-bezier(.25,.46,.45,.94) 1.05s both}
+.buy-trust .bt-item{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.buy-trust .bt-item svg{width:20px;height:20px;color:var(--gl);stroke-linecap:round;stroke-linejoin:round}
+.buy-trust .bt-item span{font-size:9.5px;line-height:1.35;letter-spacing:.5px;text-transform:uppercase;color:var(--td);font-weight:400}
+@media(max-width:640px){.harness-home-text .buy-trust{gap:6px}.buy-trust .bt-item svg{width:18px;height:18px}.buy-trust .bt-item span{font-size:8.5px}}
 .harness-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
 .harness-home-text .btn-row .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;box-shadow:0 2px 10px -3px rgba(0,0,0,.5),inset 0 1px 0 rgba(240,240,242,.18)}
 .harness-home-text .btn-row .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%);border-color:#f0f0f2;box-shadow:0 6px 18px -4px rgba(0,0,0,.6),inset 0 1px 0 rgba(240,240,242,.28)}
@@ -1258,7 +1263,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </head>
 <body>
 
-<div class="top-bar" id="topBar"><span class="top-bar-inner">Free Worldwide Shipping</span></div>
+<div class="top-bar" id="topBar"><span class="top-bar-inner" id="topBarMsg">Free Worldwide Shipping</span></div>
 
 <nav class="nav" id="mainNav">
 <div class="nav-inner">
@@ -1429,6 +1434,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
+</div>
+<div class="buy-trust">
+<div class="bt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 19a2 2 0 100-4 2 2 0 000 4zM18.5 19a2 2 0 100-4 2 2 0 000 4z"/></svg><span>Free worldwide<br>shipping</span></div>
+<div class="bt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.6L3 8M3 3v5h5"/></svg><span>14-day<br>returns</span></div>
+<div class="bt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3 6 6 .9-4.5 4.2 1 6.4L12 17l-5.5 2.5 1-6.4L3 8.9 9 8z"/></svg><span>Lifetime<br>warranty</span></div>
+<div class="bt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg><span>Hand cut to<br>order &middot; 7&ndash;10 days</span></div>
 </div>
 <a class="customize-link" href="/custom" onclick="go('custom')">
 <span class="cz-ico">&#9670;</span>
@@ -4314,6 +4325,8 @@ function addCustomBagToCart(){
 document.addEventListener('DOMContentLoaded',function(){bcRender(false)});
 // ================= END BAG CONFIGURATOR =================
 renderCat();initFI();document.getElementById('bbar').style.display='none';updShopPayHolster();
+// Rotating top-bar value props (perceived-value cycle)
+(function(){var el=document.getElementById('topBarMsg');if(!el)return;var msgs=['Free Worldwide Shipping','Lifetime Warranty — Any Defect, For Life','Hand Cut to Order in Vancouver','14-Day Returns · Free Both Ways','EU & UK Orders Ship DDP — Duties Prepaid'];var i=0;setInterval(function(){i=(i+1)%msgs.length;el.style.opacity='0';setTimeout(function(){el.textContent=msgs[i];el.style.opacity='1'},260)},3800)})();
 // Image Zoom Lightbox
 (function(){
 var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
