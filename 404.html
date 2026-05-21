@@ -6,8 +6,15 @@
 <title>Goldy Brown</title>
 <script>
 var path = location.pathname;
-sessionStorage.setItem('gb-redirect', path);
-location.replace('/');
+// Partner referral links: /r/<code> -> Shopify cart with the harness + discount auto-applied
+var ref = path.match(/^\/r\/([A-Za-z0-9_-]{1,40})\/?$/);
+if (ref) {
+  var code = ref[1].toUpperCase();
+  location.replace('https://kuibri-ev.myshopify.com/cart/53325154156836:1?discount=' + encodeURIComponent(code));
+} else {
+  sessionStorage.setItem('gb-redirect', path);
+  location.replace('/');
+}
 </script>
 </head>
 <body><a href="/">Goldy Brown — return home</a></body>
