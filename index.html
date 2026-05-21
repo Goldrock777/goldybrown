@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>(function(){var m=location.pathname.match(/^\/r\/([A-Za-z0-9_-]{1,40})\/?$/);if(m){location.replace('https://kuibri-ev.myshopify.com/cart/53325154156836:1?discount='+encodeURIComponent(m[1].toUpperCase()));}})();</script>
+<script>(function(){var m=location.pathname.match(/^\/r\/([A-Za-z0-9_-]{1,40})\/?$/);if(m){try{localStorage.setItem('gb-discount',JSON.stringify({code:m[1].toUpperCase(),ts:Date.now()}));}catch(e){}location.replace('/');}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Goldy Brown — Luxury Leather Travel Bags & Harness Bags | Vancouver, Toronto, NYC, LA, Miami, London, Paris, Milan</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -626,6 +626,16 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
   .lang-cta-row .btn{min-width:0}
 }
 /* =================== END NATIVE-LANGUAGE LANDING PAGES =================== */
+
+/* =================== PARTNER DISCOUNT BAR =================== */
+#gbDiscBar{position:fixed;left:50%;transform:translateX(-50%);bottom:88px;z-index:1200;display:flex;align-items:center;gap:14px;max-width:calc(100% - 32px);background:rgba(20,20,22,.96);border:1px solid var(--gl);border-radius:4px;padding:11px 14px 11px 18px;box-shadow:0 8px 30px rgba(0,0,0,.45);backdrop-filter:blur(6px);animation:gbDiscIn .4s ease}
+#gbDiscBar span{font-family:var(--fb);font-size:12px;letter-spacing:.3px;color:var(--t);font-weight:300;line-height:1.4}
+#gbDiscBar b{color:var(--gl);font-weight:600;letter-spacing:1px}
+#gbDiscBar button{background:none;border:none;color:var(--tm);font-size:20px;line-height:1;cursor:pointer;padding:0 2px;transition:color .2s}
+#gbDiscBar button:hover{color:var(--w)}
+@keyframes gbDiscIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(max-width:600px){#gbDiscBar{bottom:84px}}
+/* =================== END PARTNER DISCOUNT BAR =================== */
 
 /* Frequently Asked - travel and leather */
 .gb-faq{padding:88px 60px 96px;background:var(--bg);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
@@ -4186,6 +4196,13 @@ window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.st
 window.addEventListener('popstate',function(e){var pg=null;if(e.state&&e.state.page)pg=e.state.page;else{var p=location.pathname.replace(/\/+$/,'')||'/';pg=PATH_TO_PAGE[p]||'home'}if(pg&&document.getElementById('page-'+pg))go(pg,true)});
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;if(a.target==='_blank')return;var h=a.getAttribute('href');if(!h||h.charAt(0)!=='/'||h.indexOf('//')!==-1)return;var pg=PATH_TO_PAGE[h];if(!pg)return;e.preventDefault();if(!a.hasAttribute('onclick'))go(pg)});
+// =================== PARTNER DISCOUNT (referral links) ===================
+// Code is stored by /r/<code> links; we attach it to every Shopify-bound
+// link/checkout so it auto-applies, while the visitor browses goldybrown.com.
+var gbDiscount=(function(){try{var raw=localStorage.getItem('gb-discount');if(!raw)return null;var o=JSON.parse(raw);if(!o||!o.code)return null;if(Date.now()-(o.ts||0)>30*24*60*60*1000){localStorage.removeItem('gb-discount');return null}return o.code}catch(e){return null}})();
+function gbWithDiscount(url){if(!gbDiscount||typeof url!=='string'||url.indexOf('myshopify.com')===-1)return url;if(/[?&]discount=/.test(url))return url;return url+(url.indexOf('?')===-1?'?':'&')+'discount='+encodeURIComponent(gbDiscount)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(!h||h.indexOf('myshopify.com')===-1)return;a.setAttribute('href',gbWithDiscount(h))},true);
+(function(){if(!gbDiscount)return;function showBar(){if(document.getElementById('gbDiscBar'))return;var bar=document.createElement('div');bar.id='gbDiscBar';bar.innerHTML='<span>&#10003; Your <b>'+gbDiscount+'</b> partner discount is applied &mdash; it will show at checkout.</span><button aria-label="Dismiss">&times;</button>';bar.querySelector('button').onclick=function(){bar.remove()};document.body.appendChild(bar)}if(document.body)showBar();else document.addEventListener('DOMContentLoaded',showBar)})();
 (function(){var sx=0,sy=0;var cm=document.getElementById('carouselMain');if(cm){cm.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});cm.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;var dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*0.7)return;if(dx<0)nextSlide();if(dx>0)prevSlide()},{passive:true})}})();
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
@@ -4268,7 +4285,7 @@ function shopCheckout(){
   pouches.forEach(function(p){noteLines.push(p)});
   if(pouches.length)noteLines.push('═══════════════════════');
   if(noteLines.length){url+='?note='+encodeURIComponent(noteLines.join('\n'))}
-  window.open(url,'_blank');
+  window.open(gbWithDiscount(url),'_blank');
 }
 // =================== POUCH CONFIGURATOR ===================
 // Edit these constants to tune pricing. Replace POUCH_VARIANT_ID with a dedicated

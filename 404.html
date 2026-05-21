@@ -6,11 +6,12 @@
 <title>Goldy Brown</title>
 <script>
 var path = location.pathname;
-// Partner referral links: /r/<code> -> Shopify cart with the harness + discount auto-applied
+// Partner referral links: /r/<code> -> store the code, then send to the
+// site homepage. The code rides along to Shopify checkout automatically.
 var ref = path.match(/^\/r\/([A-Za-z0-9_-]{1,40})\/?$/);
 if (ref) {
-  var code = ref[1].toUpperCase();
-  location.replace('https://kuibri-ev.myshopify.com/cart/53325154156836:1?discount=' + encodeURIComponent(code));
+  try { localStorage.setItem('gb-discount', JSON.stringify({ code: ref[1].toUpperCase(), ts: Date.now() })); } catch (e) {}
+  location.replace('/');
 } else {
   sessionStorage.setItem('gb-redirect', path);
   location.replace('/');
