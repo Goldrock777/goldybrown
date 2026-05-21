@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>(function(){var m=location.pathname.match(/^\/r\/([A-Za-z0-9_-]{1,40})\/?$/);if(m){try{localStorage.setItem('gb-discount',JSON.stringify({code:m[1].toUpperCase(),ts:Date.now()}));}catch(e){}location.replace('/');}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Goldy Brown — Luxury Leather Travel Bags & Harness Bags | Vancouver, Toronto, NYC, LA, Miami, London, Paris, Milan</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -626,16 +625,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
   .lang-cta-row .btn{min-width:0}
 }
 /* =================== END NATIVE-LANGUAGE LANDING PAGES =================== */
-
-/* =================== PARTNER DISCOUNT BAR =================== */
-#gbDiscBar{position:fixed;left:50%;transform:translateX(-50%);bottom:88px;z-index:1200;display:flex;align-items:center;gap:14px;max-width:calc(100% - 32px);background:rgba(20,20,22,.96);border:1px solid var(--gl);border-radius:4px;padding:11px 14px 11px 18px;box-shadow:0 8px 30px rgba(0,0,0,.45);backdrop-filter:blur(6px);animation:gbDiscIn .4s ease}
-#gbDiscBar span{font-family:var(--fb);font-size:12px;letter-spacing:.3px;color:var(--t);font-weight:300;line-height:1.4}
-#gbDiscBar b{color:var(--gl);font-weight:600;letter-spacing:1px}
-#gbDiscBar button{background:none;border:none;color:var(--tm);font-size:20px;line-height:1;cursor:pointer;padding:0 2px;transition:color .2s}
-#gbDiscBar button:hover{color:var(--w)}
-@keyframes gbDiscIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
-@media(max-width:600px){#gbDiscBar{bottom:84px}}
-/* =================== END PARTNER DISCOUNT BAR =================== */
 
 /* Frequently Asked - travel and leather */
 .gb-faq{padding:88px 60px 96px;background:var(--bg);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
@@ -4192,7 +4181,12 @@ function setPageMeta(page){var m=PAGE_META[page]||PAGE_META.home;document.title=
 function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',pathFor(page));setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},180)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
 function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">Email opened \u2014 click Send</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
-(function(){function resolve(path){if(!path)return null;var clean=path.replace(/\/+$/,'')||'/';if(PATH_TO_PAGE[clean]&&document.getElementById('page-'+PATH_TO_PAGE[clean]))return PATH_TO_PAGE[clean];var legacy=clean.replace(/^\//,'');if(legacy&&document.getElementById('page-'+legacy))return legacy;return null}var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var pg=resolve(r);if(pg){history.replaceState({page:pg},'',pathFor(pg));go(pg,true);return}}var pg2=resolve(location.pathname);if(pg2){history.replaceState({page:pg2},'',pathFor(pg2));go(pg2,true)}else{history.replaceState({page:'home'},'','/');setPageMeta('home')}})();
+(function(){function resolve(path){if(!path)return null;var clean=path.replace(/\/+$/,'')||'/';if(PATH_TO_PAGE[clean]&&document.getElementById('page-'+PATH_TO_PAGE[clean]))return PATH_TO_PAGE[clean];var legacy=clean.replace(/^\//,'');if(legacy&&document.getElementById('page-'+legacy))return legacy;return null}
+// Any path that isn't a real page and looks like a code (e.g. /rose10 or
+// legacy /r/rose10) is treated as a partner referral code and stored, then
+// the visitor lands on the homepage. The code rides to Shopify checkout.
+function tryDiscount(path){if(!path)return;var m=path.replace(/\/+$/,'').match(/^\/(?:r\/)?([A-Za-z0-9_-]{2,40})$/);if(!m)return;try{localStorage.setItem('gb-discount',JSON.stringify({code:m[1].toUpperCase(),ts:Date.now()}));}catch(e){}}
+var r=sessionStorage.getItem('gb-redirect');if(r){sessionStorage.removeItem('gb-redirect');var pg=resolve(r);if(pg){history.replaceState({page:pg},'',pathFor(pg));go(pg,true);return}tryDiscount(r)}var pg2=resolve(location.pathname);if(pg2){history.replaceState({page:pg2},'',pathFor(pg2));go(pg2,true)}else{tryDiscount(location.pathname);history.replaceState({page:'home'},'','/');setPageMeta('home')}})();
 window.addEventListener('popstate',function(e){var pg=null;if(e.state&&e.state.page)pg=e.state.page;else{var p=location.pathname.replace(/\/+$/,'')||'/';pg=PATH_TO_PAGE[p]||'home'}if(pg&&document.getElementById('page-'+pg))go(pg,true)});
 document.querySelectorAll('.nav-tab').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(this.getAttribute('data-page'))})});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;if(a.target==='_blank')return;var h=a.getAttribute('href');if(!h||h.charAt(0)!=='/'||h.indexOf('//')!==-1)return;var pg=PATH_TO_PAGE[h];if(!pg)return;e.preventDefault();if(!a.hasAttribute('onclick'))go(pg)});
@@ -4202,7 +4196,6 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 var gbDiscount=(function(){try{var raw=localStorage.getItem('gb-discount');if(!raw)return null;var o=JSON.parse(raw);if(!o||!o.code)return null;if(Date.now()-(o.ts||0)>30*24*60*60*1000){localStorage.removeItem('gb-discount');return null}return o.code}catch(e){return null}})();
 function gbWithDiscount(url){if(!gbDiscount||typeof url!=='string'||url.indexOf('myshopify.com')===-1)return url;if(/[?&]discount=/.test(url))return url;return url+(url.indexOf('?')===-1?'?':'&')+'discount='+encodeURIComponent(gbDiscount)}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(!h||h.indexOf('myshopify.com')===-1)return;a.setAttribute('href',gbWithDiscount(h))},true);
-(function(){if(!gbDiscount)return;function showBar(){if(document.getElementById('gbDiscBar'))return;var bar=document.createElement('div');bar.id='gbDiscBar';bar.innerHTML='<span>&#10003; Your <b>'+gbDiscount+'</b> partner discount is applied &mdash; it will show at checkout.</span><button aria-label="Dismiss">&times;</button>';bar.querySelector('button').onclick=function(){bar.remove()};document.body.appendChild(bar)}if(document.body)showBar();else document.addEventListener('DOMContentLoaded',showBar)})();
 (function(){var sx=0,sy=0;var cm=document.getElementById('carouselMain');if(cm){cm.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});cm.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;var dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*0.7)return;if(dx<0)nextSlide();if(dx>0)prevSlide()},{passive:true})}})();
 function toggleMob(){document.getElementById('mobTog').classList.toggle('open');var m=document.getElementById('mobMenu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
 function closeMob(){document.getElementById('mobTog').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
