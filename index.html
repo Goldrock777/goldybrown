@@ -667,7 +667,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END PRESS / MEDIA KIT =================== */
 
 /* =================== SHOP / PRODUCTS INDEX =================== */
-.shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;justify-content:center}
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
 .shop-card-img{display:block;background:#fff;height:340px;overflow:hidden}
@@ -1636,7 +1636,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <section class="tv-feature fade-in" id="tvFeature">
 <div class="tv-feature-inner">
 <a class="tv-feature-img" href="/shop" onclick="goToTechVest();return false;" aria-label="Shop the Tech Vest">
-<img loading="lazy" src="blackholster.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin">
+<img loading="lazy" src="whiteharness.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin">
 </a>
 <div class="tv-feature-body">
 <span class="tv-eyebrow"><span class="tv-dot" aria-hidden="true"></span>New &middot; Just Landed</span>
@@ -4058,16 +4058,16 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
   <article class="shop-card" id="techVestCard" itemscope itemtype="https://schema.org/Product">
     <a class="shop-card-img" id="techVestImgLink" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener" aria-label="Buy The Tech Vest">
-      <img loading="lazy" id="techVestImg" src="blackholster.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin with chest pouch and drop-leg pouch" itemprop="image">
+      <img loading="lazy" id="techVestImg" src="whiteharness.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin with chest pouch and drop-leg pouch" itemprop="image">
     </a>
     <div class="shop-card-body">
       <div class="shop-card-eyebrow">New</div>
       <h2 class="shop-card-name" itemprop="name">The Tech Vest</h2>
       <p class="shop-card-desc" itemprop="description">A full chest harness in hand-cut full-grain calfskin. A sculpted front plate with an integrated zip pouch on the chest, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Worn as a statement piece over a shirt, a tee, or under an open jacket &mdash; cleaner than a sling, more presence than a body bag.</p>
       <div class="tv-swatches" role="radiogroup" aria-label="Tech Vest colour">
-        <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="54049514815780" data-img="blackholster.png" aria-label="Black"></button>
+        <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="54049514815780" data-img="whiteharness.png" aria-label="Black"></button>
         <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="54049514750244" data-img="whiteharness.png" aria-label="White"></button>
-        <button type="button" class="tv-sw tv-sw-blue" data-color="blue" data-variant="54049514783012" data-img="blueholster.png" aria-label="Blue"></button>
+        <button type="button" class="tv-sw tv-sw-blue" data-color="blue" data-variant="54049514783012" data-img="whiteharness.png" aria-label="Blue"></button>
       </div>
       <div class="shop-card-meta">
         <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -4082,47 +4082,6 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
     </div>
   </article>
 
-  <article class="shop-card" itemscope itemtype="https://schema.org/Product">
-    <a class="shop-card-img" href="/custom" onclick="go('custom');return false;" aria-label="Configure your bespoke Harness">
-      <img loading="lazy" src="blueholster.png" alt="Bespoke Harness configuration — leather, hardware, stitch" itemprop="image">
-    </a>
-    <div class="shop-card-body">
-      <div class="shop-card-eyebrow">Bespoke</div>
-      <h2 class="shop-card-name" itemprop="name">Customize Your Harness</h2>
-      <p class="shop-card-desc" itemprop="description">Configure leather colour, pouch size, closure (top zip, Amiri-style flap, or envelope), hardware finish, and stitch colour. Hand cut and stitched in Vancouver in 2&ndash;3 weeks.</p>
-      <div class="shop-card-meta">
-        <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          From <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="299">299</span> <span class="shop-card-cur">USD</span>
-          <meta itemprop="availability" content="https://schema.org/InStock">
-        </span>
-        <span class="shop-card-spec">Live configurator &middot; preview as you build</span>
-      </div>
-      <div class="shop-card-cta">
-        <a class="btn btn-f" href="/custom" onclick="go('custom');return false;">Configure</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="shop-card" itemscope itemtype="https://schema.org/Product">
-    <a class="shop-card-img" href="/hotel" onclick="go('hotel');return false;" aria-label="Hotel Collection — VIP leather kits">
-      <img loading="lazy" src="briefcase.png" alt="Hotel Collection — custom VIP leather guest kits" itemprop="image">
-    </a>
-    <div class="shop-card-body">
-      <div class="shop-card-eyebrow">Hospitality</div>
-      <h2 class="shop-card-name" itemprop="name">Hotel Collection</h2>
-      <p class="shop-card-desc" itemprop="description">Custom-branded leather VIP guest kits for 4 and 5 star hotels, resorts, and private clubs. Turnkey packaging, worldwide delivery, tier pricing.</p>
-      <div class="shop-card-meta">
-        <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          From <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="10000">10,000</span> <span class="shop-card-cur">USD</span>
-          <meta itemprop="availability" content="https://schema.org/InStock">
-        </span>
-        <span class="shop-card-spec">B2B &middot; $10K to $100K tiers</span>
-      </div>
-      <div class="shop-card-cta">
-        <a class="btn btn-f" href="/hotel" onclick="go('hotel');return false;">View collection</a>
-      </div>
-    </div>
-  </article>
 </section>
 
 <section class="shop-trust">
@@ -4154,7 +4113,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection of full-grain leather harness bags, bespoke configurations, and hospitality kits.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Customize Your Harness","description":"Bespoke configurable Harness: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut in Vancouver in 2-3 weeks.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blueholster.png","url":"https://goldybrown.com/custom","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/custom"}}},{"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Hotel Collection","description":"Custom-branded leather VIP guest kits for 4 and 5 star hotels and private clubs. Turnkey packaging, worldwide delivery.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/briefcase.png","url":"https://goldybrown.com/hotel","offers":{"@type":"Offer","price":"10000","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/hotel"}}}]}
+{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection of full-grain leather harness bags and chest vests.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/whiteharness.png","url":"https://goldybrown.com/shop","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}}]}
 </script>
 
 <!-- ======================== PRESS / MEDIA KIT ======================== -->
