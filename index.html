@@ -667,7 +667,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END PRESS / MEDIA KIT =================== */
 
 /* =================== SHOP / PRODUCTS INDEX =================== */
-.shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
 .shop-card-img{display:block;background:#fff;height:340px;overflow:hidden}
@@ -686,6 +686,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .shop-card-cta .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%)}
 .btn-link{font-size:11px;letter-spacing:1.4px;color:var(--gl);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .btn-link:hover{color:var(--w)}
+.tv-swatches{display:flex;gap:10px;margin:4px 0 2px;padding:0}
+.tv-sw{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.18);cursor:pointer;padding:0;transition:border-color .2s,transform .2s}
+.tv-sw:hover{transform:scale(1.08)}
+.tv-sw.active{border-color:var(--gl)}
+.tv-sw-black{background:#1a1a1a}
+.tv-sw-white{background:#f1ede4}
+.tv-sw-blue{background:#5b7fa3}
 .shop-trust{max-width:1200px;margin:64px auto 24px;padding:42px 24px;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
 .shop-trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .shop-trust-item{padding:0 4px}
@@ -701,6 +708,34 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
   .shop-trust-inner{grid-template-columns:1fr;gap:24px}
 }
 /* =================== END SHOP =================== */
+/* =================== TECH VEST FEATURE (home page) =================== */
+.tv-feature{position:relative;background:linear-gradient(135deg,#0d0d0f 0%,#161618 100%);border-top:1px solid var(--b);border-bottom:1px solid var(--b);overflow:hidden}
+.tv-feature-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:520px}
+.tv-feature-img{background:#fff;display:block;overflow:hidden;position:relative}
+.tv-feature-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.6s ease-out}
+.tv-feature:hover .tv-feature-img img{transform:scale(1.03)}
+.tv-feature-body{padding:56px 56px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.tv-feature .tv-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gl);font-weight:600}
+.tv-feature .tv-eyebrow::before{content:'';width:22px;height:1px;background:var(--gl)}
+.tv-feature .tv-eyebrow .tv-dot{width:7px;height:7px;border-radius:50%;background:#c9a94e;box-shadow:0 0 0 0 rgba(201,169,78,.55);animation:poPulse 1.8s ease-in-out infinite}
+.tv-feature h2{font-family:var(--fd);font-size:clamp(28px,3vw,40px);font-weight:400;color:var(--w);margin:0;line-height:1.1}
+.tv-feature h2 em{font-style:italic;color:var(--gl)}
+.tv-feature .tv-feature-desc{font-size:13.5px;color:var(--td);font-weight:300;line-height:1.75;max-width:540px;margin:0}
+.tv-feature-meta{display:flex;align-items:center;gap:22px;margin-top:10px;padding-top:18px;border-top:1px solid var(--b);flex-wrap:wrap}
+.tv-feature-price{font-family:var(--fd);font-size:22px;color:var(--w);font-weight:500}
+.tv-feature-price .tv-cur{font-size:11px;letter-spacing:1.4px;color:var(--tm);font-family:var(--fs);font-weight:400;margin-left:4px}
+.tv-feature-colors{display:flex;gap:8px;align-items:center}
+.tv-feature-colors .tv-fc{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.18)}
+.tv-feature-colors .tv-fc-label{font-size:10.5px;color:var(--tm);letter-spacing:1.4px;text-transform:uppercase;margin-right:4px}
+.tv-feature-cta-row{display:flex;align-items:center;gap:22px;margin-top:14px;flex-wrap:wrap}
+.tv-feature-cta-row .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;padding:13px 32px;font-size:11px;letter-spacing:1.6px;text-decoration:none;display:inline-block;border-radius:2px;transition:background .25s;text-transform:uppercase;font-weight:500;cursor:pointer}
+.tv-feature-cta-row .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%)}
+@media(max-width:900px){
+  .tv-feature-inner{grid-template-columns:1fr;min-height:auto}
+  .tv-feature-img{min-height:320px;height:320px}
+  .tv-feature-body{padding:36px 24px 40px}
+}
+/* =================== END TECH VEST FEATURE =================== */
 
 /* Frequently Asked - travel and leather */
 .gb-faq{padding:88px 60px 96px;background:var(--bg);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
@@ -1597,6 +1632,32 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </a>
 </div>
 </div>
+
+<section class="tv-feature fade-in" id="tvFeature">
+<div class="tv-feature-inner">
+<a class="tv-feature-img" href="/shop" onclick="goToTechVest();return false;" aria-label="Shop the Tech Vest">
+<img loading="lazy" src="blackholster.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin">
+</a>
+<div class="tv-feature-body">
+<span class="tv-eyebrow"><span class="tv-dot" aria-hidden="true"></span>New &middot; Just Landed</span>
+<h2>The <em>Tech Vest</em></h2>
+<p class="tv-feature-desc">A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with an integrated zip pouch on the chest, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Worn as a statement piece over a shirt, a tee, or under an open jacket &mdash; cleaner than a sling, more presence than a body bag.</p>
+<div class="tv-feature-meta">
+<span class="tv-feature-price">$399 <span class="tv-cur">USD</span></span>
+<span class="tv-feature-colors" aria-label="Available colours">
+<span class="tv-fc-label">Colours</span>
+<span class="tv-fc" style="background:#1a1a1a" title="Black"></span>
+<span class="tv-fc" style="background:#f1ede4" title="White"></span>
+<span class="tv-fc" style="background:#5b7fa3" title="Blue"></span>
+</span>
+</div>
+<div class="tv-feature-cta-row">
+<a class="btn-f" href="/shop" onclick="goToTechVest();return false;">Shop the Tech Vest</a>
+<a class="btn-link" href="/shop" onclick="go('shop');return false;">View the collection &rarr;</a>
+</div>
+</div>
+</div>
+</section>
 
 <section class="gb-guar fade-in" id="gb-guarantee">
 <div class="gb-guar-inner">
@@ -3995,6 +4056,32 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
     </div>
   </article>
 
+  <article class="shop-card" id="techVestCard" itemscope itemtype="https://schema.org/Product">
+    <a class="shop-card-img" id="techVestImgLink" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener" aria-label="Buy The Tech Vest">
+      <img loading="lazy" id="techVestImg" src="blackholster.png" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin with chest pouch and drop-leg pouch" itemprop="image">
+    </a>
+    <div class="shop-card-body">
+      <div class="shop-card-eyebrow">New</div>
+      <h2 class="shop-card-name" itemprop="name">The Tech Vest</h2>
+      <p class="shop-card-desc" itemprop="description">A full chest harness in hand-cut full-grain calfskin. A sculpted front plate with an integrated zip pouch on the chest, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Worn as a statement piece over a shirt, a tee, or under an open jacket &mdash; cleaner than a sling, more presence than a body bag.</p>
+      <div class="tv-swatches" role="radiogroup" aria-label="Tech Vest colour">
+        <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="54049514815780" data-img="blackholster.png" aria-label="Black"></button>
+        <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="54049514750244" data-img="whiteharness.png" aria-label="White"></button>
+        <button type="button" class="tv-sw tv-sw-blue" data-color="blue" data-variant="54049514783012" data-img="blueholster.png" aria-label="Blue"></button>
+      </div>
+      <div class="shop-card-meta">
+        <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="399">399</span> <span class="shop-card-cur">USD</span>
+          <meta itemprop="availability" content="https://schema.org/InStock">
+        </span>
+        <span class="shop-card-spec">Black, White, Blue &middot; made to order</span>
+      </div>
+      <div class="shop-card-cta">
+        <a class="btn btn-f" id="techVestBuyBtn" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener">Buy now</a>
+      </div>
+    </div>
+  </article>
+
   <article class="shop-card" itemscope itemtype="https://schema.org/Product">
     <a class="shop-card-img" href="/custom" onclick="go('custom');return false;" aria-label="Configure your bespoke Harness">
       <img loading="lazy" src="blueholster.png" alt="Bespoke Harness configuration — leather, hardware, stitch" itemprop="image">
@@ -4045,10 +4132,29 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
     <div class="shop-trust-item"><div class="st-label">Made by hand</div><div class="st-text">Designed in Vancouver. Hand cut from full-grain Napa calfskin in South India&rsquo;s heritage tanneries.</div></div>
   </div>
 </section>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.tv-sw');
+  if(!btns.length)return;
+  var img=document.getElementById('techVestImg');
+  var buy=document.getElementById('techVestBuyBtn');
+  var imgLink=document.getElementById('techVestImgLink');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      var url='https://kuibri-ev.myshopify.com/cart/'+b.dataset.variant+':1';
+      if(img)img.src=b.dataset.img;
+      if(buy)buy.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+      if(imgLink)imgLink.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+    });
+  });
+})();
+</script>
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection of full-grain leather harness bags, bespoke configurations, and hospitality kits.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Customize Your Harness","description":"Bespoke configurable Harness: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut in Vancouver in 2-3 weeks.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blueholster.png","url":"https://goldybrown.com/custom","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/custom"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Hotel Collection","description":"Custom-branded leather VIP guest kits for 4 and 5 star hotels and private clubs. Turnkey packaging, worldwide delivery.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/briefcase.png","url":"https://goldybrown.com/hotel","offers":{"@type":"Offer","price":"10000","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/hotel"}}}]}
+{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection of full-grain leather harness bags, bespoke configurations, and hospitality kits.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Customize Your Harness","description":"Bespoke configurable Harness: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut in Vancouver in 2-3 weeks.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blueholster.png","url":"https://goldybrown.com/custom","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/custom"}}},{"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Hotel Collection","description":"Custom-branded leather VIP guest kits for 4 and 5 star hotels and private clubs. Turnkey packaging, worldwide delivery.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/briefcase.png","url":"https://goldybrown.com/hotel","offers":{"@type":"Offer","price":"10000","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://goldybrown.com/hotel"}}}]}
 </script>
 
 <!-- ======================== PRESS / MEDIA KIT ======================== -->
@@ -4443,6 +4549,7 @@ var PATH_TO_PAGE={};(function(){for(var k in PAGE_PATHS){PATH_TO_PAGE[PAGE_PATHS
 function setBreadcrumb(page){var label=BREADCRUMB_LABELS[page]||'Home';var url=page==='home'?'https://goldybrown.com/':'https://goldybrown.com/'+page;var items=[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"}];if(page!=='home')items.push({"@type":"ListItem","position":2,"name":label,"item":url});var bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items};var sc=document.getElementById('bcSchema');if(!sc){sc=document.createElement('script');sc.id='bcSchema';sc.type='application/ld+json';document.head.appendChild(sc)}sc.textContent=JSON.stringify(bc)}
 function pathFor(page){return PAGE_PATHS[page]||(page==='home'?'/':'/'+page)}
 function setPageMeta(page){var m=PAGE_META[page]||PAGE_META.home;document.title=m.t;var dEl=document.querySelector('meta[name="description"]');if(dEl)dEl.setAttribute('content',m.d);var ogT=document.querySelector('meta[property="og:title"]');if(ogT)ogT.setAttribute('content',m.t);var ogD=document.querySelector('meta[property="og:description"]');if(ogD)ogD.setAttribute('content',m.d);var twT=document.querySelector('meta[name="twitter:title"]');if(twT)twT.setAttribute('content',m.t);var twD=document.querySelector('meta[name="twitter:description"]');if(twD)twD.setAttribute('content',m.d);var canon=document.querySelector('link[rel="canonical"]');if(canon)canon.setAttribute('href','https://goldybrown.com'+pathFor(page));var LANGS={fr:'fr',it:'it',de:'de',es:'es'};document.documentElement.lang=LANGS[page]||'en';setBreadcrumb(page)}
+function goToTechVest(){go('shop');setTimeout(function(){var el=document.getElementById('techVestCard');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.style.transition='box-shadow .35s,border-color .35s';el.style.boxShadow='0 0 0 1px var(--gl), 0 22px 50px -24px rgba(0,0,0,.7)';setTimeout(function(){el.style.boxShadow=''},1600)}},420)}
 function go(page,skipHistory){var cur=document.querySelector('.page.active');var t=document.getElementById('page-'+page);if(!t||t===cur)return;document.querySelectorAll('.nav-tab').forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-page')===page)a.classList.add('active')});if(!skipHistory)history.pushState({page:page},'',pathFor(page));setPageMeta(page);if(cur){cur.classList.add('fading-out');setTimeout(function(){cur.classList.remove('active','fading-out');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}},180)}else{t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(initFI,100);document.getElementById('bbar').style.display=(page==='hotel')?'':'none';if(page==='hotel')updBudget();if(page==='lookbook'){document.body.style.overflow='hidden';setTimeout(initLookbook,400)}else{document.body.style.overflow=''}}}
 function subscribeFooter(e){e.preventDefault();var f=e.target;var btn=f.querySelector('button');var em=f.email.value;btn.dataset.label=btn.textContent;submitForm(FORM_URL,{_subject:'Newsletter Subscribe \u2014 '+em,type:'newsletter',email:em},btn,function(){f.innerHTML='<div style="padding:14px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b8a070;font-weight:500;text-align:center;width:100%">Email opened \u2014 click Send</div>'});return false}
 window.addEventListener('popstate',function(e){if(e.state&&e.state.page){go(e.state.page,true)}else{var p=location.pathname.replace('/','');go(p||'home',true)}});
