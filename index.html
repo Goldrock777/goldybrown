@@ -741,7 +741,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-feature-body{padding:56px 56px;display:flex;flex-direction:column;justify-content:center;gap:14px}
 .tv-feature .tv-eyebrow .tv-dot{width:7px;height:7px;border-radius:50%;background:#c9a94e;box-shadow:0 0 0 0 rgba(201,169,78,.55);animation:poPulse 1.8s ease-in-out infinite}
 .tv-feature h2{font-family:var(--fd);font-size:clamp(28px,3vw,40px);font-weight:400;color:#f5f5f7;margin:0;line-height:1.1}
-.tv-feature h2 em{font-style:italic;color:#c9a94e}
+.tv-feature h2 em{font-style:italic;color:#b8b8bc}
 .tv-feature .tv-feature-desc{font-size:13.5px;color:rgba(240,240,242,.78);font-weight:300;line-height:1.75;max-width:540px;margin:0}
 .tv-feature-meta{display:flex;align-items:center;gap:22px;margin-top:10px;padding-top:18px;border-top:1px solid rgba(240,240,242,.15);flex-wrap:wrap}
 .tv-feature-price{font-family:var(--fd);font-size:22px;color:#f5f5f7;font-weight:500}
@@ -751,6 +751,9 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-feature-colors .tv-fc-label{font-size:10.5px;color:rgba(240,240,242,.55);letter-spacing:1.4px;text-transform:uppercase;margin-right:4px}
 .tv-feature .tv-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:#c9a94e;font-weight:600}
 .tv-feature .tv-eyebrow::before{content:'';width:22px;height:1px;background:#c9a94e}
+.tv-feature-ddp{display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:10px 14px;border:1px solid rgba(201,169,78,.32);background:rgba(201,169,78,.06);border-radius:6px;font-size:11.5px;line-height:1.55;color:rgba(240,240,242,.82);max-width:540px}
+.tv-feature-ddp svg{flex:0 0 auto;color:#c9a94e;margin-top:2px}
+.tv-feature-ddp b{color:#f5f5f7;font-weight:600;letter-spacing:.2px}
 .tv-feature-cta-row{display:flex;align-items:center;gap:22px;margin-top:14px;flex-wrap:wrap}
 .tv-feature-cta-row .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;padding:13px 32px;font-size:11px;letter-spacing:1.6px;text-decoration:none;display:inline-block;border-radius:2px;transition:background .25s;text-transform:uppercase;font-weight:500;cursor:pointer}
 .tv-feature-cta-row .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%)}
@@ -1691,6 +1694,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="tv-fc" style="background:#f1ede4" title="White"></span>
 <span class="tv-fc" style="background:#5b7fa3" title="Blue"></span>
 </span>
+</div>
+<div class="tv-feature-ddp" aria-label="Shipping to Europe and the UK">
+<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+<span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
 </div>
 <div class="tv-feature-cta-row">
 <a class="btn-f" href="/tech-vest" onclick="go('tech-vest');return false;">Shop the Tech Vest</a>
