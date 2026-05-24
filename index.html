@@ -62,6 +62,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Goldy Brown">
 <meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="fr_CH">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="it_CH">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="de_AT">
+<meta property="og:locale:alternate" content="de_CH">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="nl_NL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Leave the Bag. Take the Harness. — Goldy Brown">
 <meta name="twitter:description" content="Handcrafted luxury leather travel bags from Vancouver. Canada · USA · Europe (DDP) · UAE — free worldwide shipping, all duties prepaid.">
@@ -613,6 +624,19 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .lang-faq details[open] summary{color:var(--gl)}
 .lang-faq details[open] summary::after{transform:rotate(45deg)}
 .lang-faq details div{font-size:13.5px;color:var(--td);line-height:1.8;font-weight:300;padding:12px 0 4px}
+.lang-tv-strip{max-width:680px;margin:0 auto 48px;display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;padding:20px;border:1px solid var(--b);background:var(--bg-card);border-radius:6px}
+.lang-tv-strip-img{background:#fff;height:160px;display:flex;align-items:center;justify-content:center;padding:10px;border-radius:4px}
+.lang-tv-strip-img img{max-width:100%;max-height:100%;object-fit:contain}
+.lang-tv-strip-body{display:flex;flex-direction:column;gap:6px}
+.lang-tv-strip-eyebrow{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gl);font-weight:600}
+.lang-tv-strip-title{font-family:var(--fd);font-size:20px;font-weight:500;color:var(--w);margin:0;line-height:1.2}
+.lang-tv-strip-desc{font-size:12.5px;color:var(--td);font-weight:300;line-height:1.55;margin:0}
+.lang-tv-strip-cta{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gl);text-decoration:none;font-weight:600}
+.lang-tv-strip-cta:hover{color:var(--w)}
+@media(max-width:600px){
+  .lang-tv-strip{grid-template-columns:1fr;gap:16px;padding:18px}
+  .lang-tv-strip-img{height:200px}
+}
 .lang-foot-cta{text-align:center}
 .lang-foot-cta .btn-f{display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;font-size:12px;letter-spacing:3px}
 .lang-foot-cta .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%);border-color:#f0f0f2}
@@ -745,6 +769,13 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 #page-tech-vest .harness-home-text .hero-slogan em{color:#b8b8bc}
 #page-tech-vest .harness-home-text .detail-list li strong{color:#9a9a9f;min-width:108px}
 #page-tech-vest .harness-home-text .price{color:var(--w)}
+.tv-ddp-pill{display:flex;align-items:center;gap:10px;margin:6px 0 12px;padding:9px 14px;border:1px solid rgba(45,90,61,.28);background:rgba(45,90,61,.05);border-radius:6px;font-size:11.5px;line-height:1.5;color:var(--t)}
+.tv-ddp-pill svg{flex:0 0 auto;color:var(--gl)}
+.tv-ddp-pill b{color:var(--g);font-weight:600;letter-spacing:.2px}
+.tv-concierge{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid var(--b)}
+.tv-concierge-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--td);text-decoration:none;font-weight:500;transition:color .2s}
+.tv-concierge-link:hover{color:var(--w)}
+.tv-concierge-link svg{flex:0 0 auto;color:var(--gl)}
 /* =================== END TECH VEST PRODUCT PAGE =================== */
 
 /* Frequently Asked - travel and leather */
@@ -3910,6 +3941,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <details><summary>Quelle est la garantie ?</summary><div>Garantie à vie contre tout défaut de couture, de cuir ou de quincaillerie. Réparé ou remplacé à l&rsquo;atelier, frais de port pris en charge dans les deux sens.</div></details>
 <details><summary>Comment passe-t-il les contrôles de sécurité ?</summary><div>La quincaillerie est en acier inoxydable, le même que celui des montres et ceintures qui passent les portiques chaque jour. Porté sur le corps, il ne compte pas comme un troisième bagage.</div></details>
 </div>
+<div class="lang-tv-strip">
+<a class="lang-tv-strip-img" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="Découvrir Le Tech Vest"><img loading="lazy" src="whiteharness.png" alt="Le Tech Vest &mdash; harnais de poitrine en cuir pleine fleur"></a>
+<div class="lang-tv-strip-body">
+<span class="lang-tv-strip-eyebrow">Nouveau</span>
+<h3 class="lang-tv-strip-title">Le Tech Vest</h3>
+<p class="lang-tv-strip-desc">Harnais de poitrine intégral en cuir de veau pleine fleur, plaque sculptée avec pochette zippée et pochette cuisse détachable. 399 $US, livraison DDP en Europe.</p>
+<a class="lang-tv-strip-cta" href="/tech-vest" onclick="go('tech-vest');return false;">Découvrir &rarr;</a>
+</div>
+</div>
 <div class="lang-foot-cta">
 <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Commander &mdash; 299 $US</a>
 </div>
@@ -3950,6 +3990,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <details><summary>Spedite in Italia e in Europa?</summary><div>Sì. Spedizione gratuita DDP via DHL Express &mdash; Milano, Roma, Firenze, Como e tutta Europa. Dazi e IVA inclusi, 4-6 giorni lavorativi.</div></details>
 <details><summary>Qual è la garanzia?</summary><div>Garanzia a vita contro ogni difetto di cucitura, pelle o ferramenta. Riparata o sostituita in atelier, spedizione a nostro carico in entrambe le direzioni.</div></details>
 <details><summary>Come supera i controlli di sicurezza?</summary><div>La ferramenta è in acciaio inox, lo stesso di orologi e cinture che passano i metal detector ogni giorno. Indossata sul corpo, non conta come terzo bagaglio.</div></details>
+</div>
+<div class="lang-tv-strip">
+<a class="lang-tv-strip-img" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="Scopri Il Tech Vest"><img loading="lazy" src="whiteharness.png" alt="Il Tech Vest &mdash; pettorina in pelle pieno fiore"></a>
+<div class="lang-tv-strip-body">
+<span class="lang-tv-strip-eyebrow">Novit&agrave;</span>
+<h3 class="lang-tv-strip-title">Il Tech Vest</h3>
+<p class="lang-tv-strip-desc">Pettorina integrale in pelle di vitello pieno fiore: pannello scolpito con tasca con zip e tasca da gamba removibile. 399 $US, spedizione DDP in Europa.</p>
+<a class="lang-tv-strip-cta" href="/tech-vest" onclick="go('tech-vest');return false;">Scopri &rarr;</a>
+</div>
 </div>
 <div class="lang-foot-cta">
 <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Ordina &mdash; 299 $US</a>
@@ -3992,6 +4041,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <details><summary>Wie ist die Garantie?</summary><div>Lebenslange Garantie gegen jeden Defekt an Naht, Leder oder Beschlägen. Repariert oder ersetzt im Atelier, Versand in beide Richtungen übernehmen wir.</div></details>
 <details><summary>Wie kommt sie durch die Sicherheitskontrolle?</summary><div>Die Beschläge sind aus Edelstahl &mdash; derselbe wie bei Uhren und Gürteln, die täglich durch die Scanner gehen. Am Körper getragen, gilt sie nicht als drittes Gepäckstück.</div></details>
 </div>
+<div class="lang-tv-strip">
+<a class="lang-tv-strip-img" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="Die Tech Vest entdecken"><img loading="lazy" src="whiteharness.png" alt="Die Tech Vest &mdash; Brust-Harness aus Vollnarbenleder"></a>
+<div class="lang-tv-strip-body">
+<span class="lang-tv-strip-eyebrow">Neu</span>
+<h3 class="lang-tv-strip-title">Die Tech Vest</h3>
+<p class="lang-tv-strip-desc">Brust-Harness aus Vollnarben-Kalbsleder, mit skulptiertem Frontpanel, integrierter Reissverschlusstasche und abnehmbarer Beintasche. 399 $US, DDP-Versand in die EU.</p>
+<a class="lang-tv-strip-cta" href="/tech-vest" onclick="go('tech-vest');return false;">Entdecken &rarr;</a>
+</div>
+</div>
 <div class="lang-foot-cta">
 <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Bestellen &mdash; 299 $US</a>
 </div>
@@ -4032,6 +4090,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <details><summary>¿Envían a España y Europa?</summary><div>Sí. Envío gratuito DDP por DHL Express &mdash; Madrid, Barcelona, Marbella, Valencia y toda Europa. Aranceles e IVA incluidos, 4-6 días laborables.</div></details>
 <details><summary>¿Cuál es la garantía?</summary><div>Garantía de por vida contra cualquier defecto de costura, cuero o herrajes. Reparado o reemplazado en el taller, envío a nuestro cargo en ambos sentidos.</div></details>
 <details><summary>¿Cómo pasa los controles de seguridad?</summary><div>Los herrajes son de acero inoxidable, el mismo de los relojes y cinturones que pasan los escáneres cada día. Llevado sobre el cuerpo, no cuenta como tercer equipaje.</div></details>
+</div>
+<div class="lang-tv-strip">
+<a class="lang-tv-strip-img" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="Descubrir El Tech Vest"><img loading="lazy" src="whiteharness.png" alt="El Tech Vest &mdash; arn&eacute;s de pecho en cuero plena flor"></a>
+<div class="lang-tv-strip-body">
+<span class="lang-tv-strip-eyebrow">Nuevo</span>
+<h3 class="lang-tv-strip-title">El Tech Vest</h3>
+<p class="lang-tv-strip-desc">Arn&eacute;s de pecho integral en cuero de ternera plena flor: panel esculpido con bolsillo con cremallera y bolsa para muslo desmontable. 399 $US, env&iacute;o DDP a Europa.</p>
+<a class="lang-tv-strip-cta" href="/tech-vest" onclick="go('tech-vest');return false;">Descubrir &rarr;</a>
+</div>
 </div>
 <div class="lang-foot-cta">
 <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Comprar &mdash; 299 $US</a>
@@ -4185,9 +4252,23 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </a>
 </div>
 <div class="mto-note"><span><em>Made to order</em> &middot; ships in 2&ndash;3 weeks</span></div>
+<div class="tv-ddp-pill" aria-label="Shipping to Europe and the United Kingdom">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+<span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
+</div>
 <div class="btn-row">
 <button class="btn" onclick="addTechVestToCart()">Add to Cart</button>
 <a id="tvBuyNow" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" class="btn btn-f">Buy Now</a>
+</div>
+<div class="tv-concierge" aria-label="Concierge channels">
+<a href="https://wa.me/16047040937?text=Hi%20%E2%80%94%20I%27d%20like%20to%20enquire%20about%20The%20Tech%20Vest." target="_blank" rel="noopener" class="tv-concierge-link">
+<svg viewBox="0 0 32 32" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M16 .5C7.45.5.5 7.45.5 16c0 2.82.74 5.46 2.03 7.75L.5 31.5l7.96-2.04A15.4 15.4 0 0016 31.5c8.55 0 15.5-6.95 15.5-15.5S24.55.5 16 .5zm0 28.13c-2.5 0-4.84-.66-6.86-1.83l-.49-.29-4.72 1.21 1.24-4.6-.32-.5A12.6 12.6 0 013.38 16C3.38 9.04 9.04 3.38 16 3.38c6.96 0 12.62 5.66 12.62 12.62 0 6.96-5.66 12.63-12.62 12.63zm7.3-9.45c-.4-.2-2.37-1.17-2.74-1.3-.37-.13-.64-.2-.9.2-.27.4-1.04 1.3-1.27 1.57-.23.27-.47.3-.87.1-.4-.2-1.7-.62-3.24-1.99-1.2-1.07-2-2.4-2.24-2.8-.23-.4-.02-.62.18-.82.18-.18.4-.47.6-.7.2-.23.27-.4.4-.67.13-.27.07-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68-.23-.01-.5-.01-.77-.01-.27 0-.7.1-1.07.5-.37.4-1.4 1.37-1.4 3.34s1.44 3.87 1.64 4.13c.2.27 2.83 4.32 6.87 6.06 2.4 1.04 3.34 1.13 4.54.95.73-.11 2.37-.97 2.7-1.9.34-.93.34-1.74.24-1.9-.1-.17-.37-.27-.77-.47z"/></svg>
+Private enquiry &mdash; WhatsApp the atelier
+</a>
+<a href="mailto:info@goldybrown.com?subject=Tech%20Vest%20enquiry" class="tv-concierge-link">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7a2 2 0 012-2h14a2 2 0 012 2"/></svg>
+Email the atelier
+</a>
 </div>
 <div class="buy-trust">
 <div class="bt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 19a2 2 0 100-4 2 2 0 000 4zM18.5 19a2 2 0 100-4 2 2 0 000 4z"/></svg><span>Free worldwide<br>shipping</span></div>
