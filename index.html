@@ -4975,14 +4975,10 @@ function shopCheckout(){
   if(pouches.length)noteLines.push('═══ CUSTOM POUCH SPEC ═══');
   pouches.forEach(function(p){noteLines.push(p)});
   if(pouches.length)noteLines.push('═══════════════════════');
-  var params=[];
-  if(noteLines.length)params.push('note='+encodeURIComponent(noteLines.join('\n')));
-  // Bundle: when both a harness and a tech-vest are in cart as a pair,
-  // apply the BUNDLE50 Shopify discount code (must exist in Admin →
-  // Discounts as "50% off — applies to lower-priced item, max one use
-  // per order").
-  if(bundlePairTarget()!==-1)params.push('discount=BUNDLE50');
-  if(params.length)url+='?'+params.join('&');
+  if(noteLines.length){url+='?note='+encodeURIComponent(noteLines.join('\n'))}
+  // Bundle discount: fires automatically in Shopify Admin via a "Buy X
+  // Get Y" automatic discount (Harness Bag + Tech Vest in cart → 50%
+  // off the Harness Bag). No URL parameter needed.
   window.open(gbWithDiscount(url),'_blank');
 }
 // =================== POUCH CONFIGURATOR ===================
