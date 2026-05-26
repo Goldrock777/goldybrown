@@ -1707,12 +1707,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="po-text"><b>Pre-Order &middot; <span class="po-color">Green</span></b><span class="po-eta">Made-to-order &middot; arrives in 2&ndash;3 weeks</span></span>
 </div>
 <div class="mto-note"><span><em>Made to order</em> &middot; ships in 7&ndash;10 business days</span></div>
-<a class="pair-offer" href="#" onclick="addHarnessTechVestPair();return false;" aria-label="Add the Tech Vest as a pair and save 149.50">
+<a class="pair-offer" href="#" onclick="addHarnessTechVestPair('techvest');return false;" aria-label="Add the Tech Vest at 50 percent off">
 <div class="pair-offer-img"><img loading="lazy" src="whiteharness.png" alt="The Tech Vest"></div>
 <div class="pair-offer-body">
 <div class="pair-offer-eyebrow">+ Pair &amp; save</div>
-<div class="pair-offer-title">Add The Tech Vest &mdash; save <b>$149.50</b></div>
-<div class="pair-offer-sub">Both pieces together for <b>$548.50</b> <s>$698</s> &middot; hands-free, head to toe.</div>
+<div class="pair-offer-title">Add The Tech Vest at <b>50% off</b></div>
+<div class="pair-offer-sub">Save <b>$199.50</b> &middot; both pieces for <b>$498.50</b> <s>$698</s>.</div>
 </div>
 <div class="pair-offer-arrow">&rsaquo;</div>
 </a>
@@ -4321,12 +4321,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
 <span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
 </div>
-<a class="pair-offer" href="#" onclick="addHarnessTechVestPair();return false;" aria-label="Add the Harness Bag as a pair and save 149.50">
+<a class="pair-offer" href="#" onclick="addHarnessTechVestPair('harness');return false;" aria-label="Add the Harness Bag at 50 percent off">
 <div class="pair-offer-img"><img loading="lazy" src="blackholster.png" alt="The Harness Bag"></div>
 <div class="pair-offer-body">
 <div class="pair-offer-eyebrow">+ Pair &amp; save</div>
-<div class="pair-offer-title">Add The Harness Bag &mdash; save <b>$149.50</b></div>
-<div class="pair-offer-sub">Both pieces together for <b>$548.50</b> <s>$698</s> &middot; hands-free, head to toe.</div>
+<div class="pair-offer-title">Add The Harness Bag at <b>50% off</b></div>
+<div class="pair-offer-sub">Save <b>$149.50</b> &middot; both pieces for <b>$548.50</b> <s>$698</s>.</div>
 </div>
 <div class="pair-offer-arrow">&rsaquo;</div>
 </a>
@@ -4867,17 +4867,21 @@ function addTechVestToCart(){
   renderShopCart();toggleShopCart(true);
 }
 // Pair-and-save: adds The Harness Bag + The Tech Vest together, flagged
-// for the bundle discount. Half off is applied to the lower-priced item
-// at checkout via the BUNDLE50 Shopify discount code.
-function addHarnessTechVestPair(){
+// for the bundle discount. The product the customer "added" (not the one
+// they were looking at) is the one that gets 50% off — Tech Vest gets
+// the discount when triggered from the home Harness panel, Harness Bag
+// gets the discount when triggered from /tech-vest.
+function addHarnessTechVestPair(addSide){
   var hColor=(typeof curColor==='string'&&shopProducts[curColor])?curColor:'black';
   var tvColor=(typeof techVestColor==='string'&&techVestProducts[techVestColor])?techVestColor:'black';
   var h=shopProducts[hColor],tv=techVestProducts[tvColor];
-  // If user clicks bundle twice, do not duplicate — just open the cart drawer.
+  // addSide: 'techvest' means Tech Vest is being added (discounted),
+  // 'harness' means Harness Bag is being added (discounted). Default 'techvest'.
+  var addRole=addSide==='harness'?'harness':'techvest';
   var hasHarness=shopCart.find(function(i){return i.type==='harness'&&i.pair});
   var hasTV=shopCart.find(function(i){return i.type==='techvest'&&i.pair});
-  if(!hasHarness){shopCart.push({name:h.name,variant:h.variant,price:h.price,img:h.img,material:h.material,qty:1,type:'harness',color:hColor,pair:true})}
-  if(!hasTV){shopCart.push({name:tv.name,variant:tv.variant,price:tv.price,img:tv.img,material:tv.material,qty:1,type:'techvest',color:tvColor,pair:true})}
+  if(!hasHarness){shopCart.push({name:h.name,variant:h.variant,price:h.price,img:h.img,material:h.material,qty:1,type:'harness',color:hColor,pair:true,pairRole:addRole==='harness'?'addition':'primary'})}
+  if(!hasTV){shopCart.push({name:tv.name,variant:tv.variant,price:tv.price,img:tv.img,material:tv.material,qty:1,type:'techvest',color:tvColor,pair:true,pairRole:addRole==='techvest'?'addition':'primary'})}
   renderShopCart();toggleShopCart(true);
 }
 function addToShopCart(){
@@ -4896,18 +4900,21 @@ function toggleShopCart(forceOpen){
   else{ov.classList.remove('open');dr.classList.remove('open');document.body.style.overflow=''}
 }
 function hasHolsterInCart(){return shopCart.some(function(i){return i.type==='harness'})}
-// Returns the index of the lower-priced item that gets the bundle 50% off,
-// only when both a harness and a tech-vest are present in the cart marked
-// as part of a pair (.pair === true).
+// Returns the index of the pair "addition" item — the one the customer
+// added via the pair button (not the one they were looking at on the
+// page). That item gets 50% off. If no explicit addition is marked
+// (cart created some other way), falls back to the lower-priced item.
 function bundlePairTarget(){
-  var harnessIdx=-1,tvIdx=-1;
+  var harnessIdx=-1,tvIdx=-1,additionIdx=-1;
   for(var i=0;i<shopCart.length;i++){
     var it=shopCart[i];
     if(!it.pair)continue;
+    if(it.pairRole==='addition'&&additionIdx===-1)additionIdx=i;
     if(it.type==='harness'&&harnessIdx===-1)harnessIdx=i;
     else if(it.type==='techvest'&&tvIdx===-1)tvIdx=i;
   }
   if(harnessIdx===-1||tvIdx===-1)return -1;
+  if(additionIdx!==-1)return additionIdx;
   return shopCart[harnessIdx].price<=shopCart[tvIdx].price?harnessIdx:tvIdx;
 }
 function renderShopCart(){
