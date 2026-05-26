@@ -779,6 +779,28 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-concierge-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--td);text-decoration:none;font-weight:500;transition:color .2s}
 .tv-concierge-link:hover{color:var(--w)}
 .tv-concierge-link svg{flex:0 0 auto;color:var(--gl)}
+/* Pair-and-save cross-sell box (home harness panel + /tech-vest panel) */
+.pair-offer{display:flex;align-items:center;gap:14px;margin:12px 0 14px;padding:12px 14px;border:1px solid var(--b);background:linear-gradient(135deg,rgba(201,169,78,.08) 0%,rgba(201,169,78,.02) 100%);border-radius:6px;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s,background .25s;cursor:pointer;position:relative;overflow:hidden}
+.pair-offer::before{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(201,169,78,.18),transparent);transition:left .9s ease;pointer-events:none}
+.pair-offer:hover{border-color:#c9a94e;transform:translateY(-1px);background:linear-gradient(135deg,rgba(201,169,78,.12) 0%,rgba(201,169,78,.04) 100%)}
+.pair-offer:hover::before{left:140%}
+.pair-offer-img{flex:0 0 auto;width:54px;height:54px;background:#fff;border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:4px}
+.pair-offer-img img{max-width:100%;max-height:100%;object-fit:contain}
+.pair-offer-body{flex:1;min-width:0;line-height:1.4}
+.pair-offer-eyebrow{font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:#a07f1e;font-weight:700;margin-bottom:3px}
+.pair-offer-title{font-family:var(--fd);font-size:13.5px;color:var(--w);font-weight:500;margin-bottom:2px}
+.pair-offer-title b{color:#a07f1e;font-weight:700}
+.pair-offer-sub{font-size:11px;color:var(--td);font-weight:300;line-height:1.5}
+.pair-offer-sub b{color:var(--w);font-weight:600}
+.pair-offer-sub s{color:var(--tm);text-decoration:line-through;margin-left:4px}
+.pair-offer-arrow{flex:0 0 auto;font-size:22px;color:#c9a94e;font-family:var(--fd);transition:transform .25s}
+.pair-offer:hover .pair-offer-arrow{transform:translateX(3px)}
+@media(max-width:600px){
+  .pair-offer{padding:10px 12px;gap:10px}
+  .pair-offer-img{width:46px;height:46px}
+  .pair-offer-title{font-size:12.5px}
+  .pair-offer-sub{font-size:10.5px}
+}
 .tv-usecase{padding:88px 60px 64px;background:var(--bg);border-top:1px solid var(--b)}
 .tv-usecase-inner{max-width:1100px;margin:0 auto;text-align:center}
 .tv-usecase-inner h2{font-family:var(--fd);font-size:clamp(24px,2.4vw,34px);font-weight:400;color:var(--w);margin:8px 0 16px;line-height:1.2}
@@ -1685,6 +1707,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="po-text"><b>Pre-Order &middot; <span class="po-color">Green</span></b><span class="po-eta">Made-to-order &middot; arrives in 2&ndash;3 weeks</span></span>
 </div>
 <div class="mto-note"><span><em>Made to order</em> &middot; ships in 7&ndash;10 business days</span></div>
+<a class="pair-offer" href="#" onclick="addHarnessTechVestPair();return false;" aria-label="Add the Tech Vest as a pair and save 149.50">
+<div class="pair-offer-img"><img loading="lazy" src="whiteharness.png" alt="The Tech Vest"></div>
+<div class="pair-offer-body">
+<div class="pair-offer-eyebrow">+ Pair &amp; save</div>
+<div class="pair-offer-title">Add The Tech Vest &mdash; save <b>$149.50</b></div>
+<div class="pair-offer-sub">Both pieces together for <b>$548.50</b> <s>$698</s> &middot; hands-free, head to toe.</div>
+</div>
+<div class="pair-offer-arrow">&rsaquo;</div>
+</a>
 <div class="btn-row">
 <button class="btn" onclick="addToShopCart()">Add to Cart</button>
 <a href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -4290,6 +4321,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
 <span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
 </div>
+<a class="pair-offer" href="#" onclick="addHarnessTechVestPair();return false;" aria-label="Add the Harness Bag as a pair and save 149.50">
+<div class="pair-offer-img"><img loading="lazy" src="blackholster.png" alt="The Harness Bag"></div>
+<div class="pair-offer-body">
+<div class="pair-offer-eyebrow">+ Pair &amp; save</div>
+<div class="pair-offer-title">Add The Harness Bag &mdash; save <b>$149.50</b></div>
+<div class="pair-offer-sub">Both pieces together for <b>$548.50</b> <s>$698</s> &middot; hands-free, head to toe.</div>
+</div>
+<div class="pair-offer-arrow">&rsaquo;</div>
+</a>
 <div class="btn-row">
 <button class="btn" onclick="addTechVestToCart()">Add to Cart</button>
 <a id="tvBuyNow" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" class="btn btn-f">Buy Now</a>
@@ -4826,6 +4866,20 @@ function addTechVestToCart(){
   else{shopCart.push({name:p.name,variant:p.variant,price:p.price,img:p.img,material:p.material,qty:1,type:'techvest',color:techVestColor})}
   renderShopCart();toggleShopCart(true);
 }
+// Pair-and-save: adds The Harness Bag + The Tech Vest together, flagged
+// for the bundle discount. Half off is applied to the lower-priced item
+// at checkout via the BUNDLE50 Shopify discount code.
+function addHarnessTechVestPair(){
+  var hColor=(typeof curColor==='string'&&shopProducts[curColor])?curColor:'black';
+  var tvColor=(typeof techVestColor==='string'&&techVestProducts[techVestColor])?techVestColor:'black';
+  var h=shopProducts[hColor],tv=techVestProducts[tvColor];
+  // If user clicks bundle twice, do not duplicate — just open the cart drawer.
+  var hasHarness=shopCart.find(function(i){return i.type==='harness'&&i.pair});
+  var hasTV=shopCart.find(function(i){return i.type==='techvest'&&i.pair});
+  if(!hasHarness){shopCart.push({name:h.name,variant:h.variant,price:h.price,img:h.img,material:h.material,qty:1,type:'harness',color:hColor,pair:true})}
+  if(!hasTV){shopCart.push({name:tv.name,variant:tv.variant,price:tv.price,img:tv.img,material:tv.material,qty:1,type:'techvest',color:tvColor,pair:true})}
+  renderShopCart();toggleShopCart(true);
+}
 function addToShopCart(){
   var p=shopProducts[curColor];
   var soon=!!(colorSets[curColor]&&colorSets[curColor].soon);
@@ -4842,14 +4896,30 @@ function toggleShopCart(forceOpen){
   else{ov.classList.remove('open');dr.classList.remove('open');document.body.style.overflow=''}
 }
 function hasHolsterInCart(){return shopCart.some(function(i){return i.type==='harness'})}
+// Returns the index of the lower-priced item that gets the bundle 50% off,
+// only when both a harness and a tech-vest are present in the cart marked
+// as part of a pair (.pair === true).
+function bundlePairTarget(){
+  var harnessIdx=-1,tvIdx=-1;
+  for(var i=0;i<shopCart.length;i++){
+    var it=shopCart[i];
+    if(!it.pair)continue;
+    if(it.type==='harness'&&harnessIdx===-1)harnessIdx=i;
+    else if(it.type==='techvest'&&tvIdx===-1)tvIdx=i;
+  }
+  if(harnessIdx===-1||tvIdx===-1)return -1;
+  return shopCart[harnessIdx].price<=shopCart[tvIdx].price?harnessIdx:tvIdx;
+}
 function renderShopCart(){
   var bd=document.getElementById('scartBd'),ft=document.getElementById('scartFt'),badge=document.getElementById('shopCartBadge');
   var totalItems=0,totalPrice=0;
   var holsterPresent=hasHolsterInCart();
-  shopCart.forEach(function(i){
+  var pairIdx=bundlePairTarget();
+  shopCart.forEach(function(i,idx){
     totalItems+=i.qty;
     var price=i.price;
     if(i.variant==='53324620529956'&&holsterPresent)price=Math.round(i.price*0.8);
+    if(idx===pairIdx)price=i.price*0.5;
     totalPrice+=price*i.qty;
   });
   badge.textContent=totalItems;badge.style.display=totalItems>0?'flex':'none';
@@ -4858,11 +4928,21 @@ function renderShopCart(){
   var h='';
   shopCart.forEach(function(item,idx){
     var price=item.price;
-    var discounted=item.variant==='53324620529956'&&holsterPresent;
-    if(discounted)price=Math.round(item.price*0.8);
+    var legacyDiscount=item.variant==='53324620529956'&&holsterPresent;
+    var pairDiscount=idx===pairIdx;
+    if(legacyDiscount)price=Math.round(item.price*0.8);
+    if(pairDiscount)price=item.price*0.5;
     var preBadge=item.preorder?'<div class="sci-preorder">Pre-Order &middot; arrives in 2&ndash;3 weeks</div>':'';
     var specBlock=((item.type==='pouch'||item.type==='bespokeBag')&&item.spec)?'<div class="sci-spec">'+item.spec.replace(/ · /g,'<br>')+(item.notes?'<br><em>Note: '+item.notes.replace(/[<>]/g,'')+'</em>':'')+'</div>':'';
-    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+specBlock+preBadge+(discounted?'<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Harness Bag</div>':'<div class="sci-price">'+fmt(price)+'</div>')+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
+    var priceBlock;
+    if(pairDiscount){
+      priceBlock='<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:#a07f1e;font-weight:600;margin-top:2px;letter-spacing:.4px">PAIR &middot; 50% OFF</div>';
+    } else if(legacyDiscount){
+      priceBlock='<div class="sci-price">'+fmt(price)+' <span style="text-decoration:line-through;color:var(--tm);font-size:11px;margin-left:4px">'+fmt(item.price)+'</span></div><div style="font-size:9px;color:var(--gl);font-weight:400;margin-top:2px">20% off with Harness Bag</div>';
+    } else {
+      priceBlock='<div class="sci-price">'+fmt(price)+'</div>';
+    }
+    h+='<div class="scart-item"><img loading="lazy" src="'+item.img+'" alt="'+item.name+'"><div class="sci-info"><div class="sci-name">'+item.name+'</div><div class="sci-variant">'+item.material+'</div>'+specBlock+preBadge+priceBlock+'<div class="sci-qty"><button onclick="updateShopQty('+idx+',-1)">&minus;</button><span>'+item.qty+'</span><button onclick="updateShopQty('+idx+',1)">+</button></div></div><button class="sci-rm" onclick="removeShopItem('+idx+')">&times;</button></div>';
   });
   bd.innerHTML=h;
   document.getElementById('scItemCount').textContent=totalItems;
@@ -4895,7 +4975,14 @@ function shopCheckout(){
   if(pouches.length)noteLines.push('═══ CUSTOM POUCH SPEC ═══');
   pouches.forEach(function(p){noteLines.push(p)});
   if(pouches.length)noteLines.push('═══════════════════════');
-  if(noteLines.length){url+='?note='+encodeURIComponent(noteLines.join('\n'))}
+  var params=[];
+  if(noteLines.length)params.push('note='+encodeURIComponent(noteLines.join('\n')));
+  // Bundle: when both a harness and a tech-vest are in cart as a pair,
+  // apply the BUNDLE50 Shopify discount code (must exist in Admin →
+  // Discounts as "50% off — applies to lower-priced item, max one use
+  // per order").
+  if(bundlePairTarget()!==-1)params.push('discount=BUNDLE50');
+  if(params.length)url+='?'+params.join('&');
   window.open(gbWithDiscount(url),'_blank');
 }
 // =================== POUCH CONFIGURATOR ===================
