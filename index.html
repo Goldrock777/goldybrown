@@ -1712,7 +1712,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="pair-offer-body">
 <div class="pair-offer-eyebrow">+ Pair &amp; save</div>
 <div class="pair-offer-title">Add The Tech Vest at <b>50% off</b></div>
-<div class="pair-offer-sub">Save <b>$199.50</b> &middot; both pieces for <b>$498.50</b> <s>$698</s>.</div>
+<div class="pair-offer-sub">Save <b>$200</b> &middot; both pieces for <b>$499</b> <s>$698</s>.</div>
 </div>
 <div class="pair-offer-arrow">&rsaquo;</div>
 </a>
@@ -4326,7 +4326,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="pair-offer-body">
 <div class="pair-offer-eyebrow">+ Pair &amp; save</div>
 <div class="pair-offer-title">Add The Harness Bag at <b>50% off</b></div>
-<div class="pair-offer-sub">Save <b>$149.50</b> &middot; both pieces for <b>$548.50</b> <s>$698</s>.</div>
+<div class="pair-offer-sub">Save <b>$150</b> &middot; both pieces for <b>$549</b> <s>$698</s>.</div>
 </div>
 <div class="pair-offer-arrow">&rsaquo;</div>
 </a>
@@ -4878,10 +4878,14 @@ function addHarnessTechVestPair(addSide){
   // addSide: 'techvest' means Tech Vest is being added (discounted),
   // 'harness' means Harness Bag is being added (discounted). Default 'techvest'.
   var addRole=addSide==='harness'?'harness':'techvest';
-  var hasHarness=shopCart.find(function(i){return i.type==='harness'&&i.pair});
-  var hasTV=shopCart.find(function(i){return i.type==='techvest'&&i.pair});
-  if(!hasHarness){shopCart.push({name:h.name,variant:h.variant,price:h.price,img:h.img,material:h.material,qty:1,type:'harness',color:hColor,pair:true,pairRole:addRole==='harness'?'addition':'primary'})}
-  if(!hasTV){shopCart.push({name:tv.name,variant:tv.variant,price:tv.price,img:tv.img,material:tv.material,qty:1,type:'techvest',color:tvColor,pair:true,pairRole:addRole==='techvest'?'addition':'primary'})}
+  // Clear any existing Harness or Tech Vest line items (pair or not) so
+  // the bundle reflects the freshest click. Without this, clicking the
+  // pair button a second time from the OTHER page leaves stale pairRole
+  // on the existing items, and clicking it after a regular Add-to-Cart
+  // would duplicate the line. Pouch / bespoke items are preserved.
+  shopCart=shopCart.filter(function(i){return i.type!=='harness'&&i.type!=='techvest'});
+  shopCart.push({name:h.name,variant:h.variant,price:h.price,img:h.img,material:h.material,qty:1,type:'harness',color:hColor,pair:true,pairRole:addRole==='harness'?'addition':'primary'});
+  shopCart.push({name:tv.name,variant:tv.variant,price:tv.price,img:tv.img,material:tv.material,qty:1,type:'techvest',color:tvColor,pair:true,pairRole:addRole==='techvest'?'addition':'primary'});
   renderShopCart();toggleShopCart(true);
 }
 function addToShopCart(){
