@@ -777,6 +777,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-feature-cta-row .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%)}
 .tv-feature-cta-row .btn-link{color:#c9a94e}
 .tv-feature-cta-row .btn-link:hover{color:#f5f5f7}
+.tv-feature-cta-row .tvf-btn-out{font-family:inherit;background:transparent;border:1px solid rgba(240,240,242,.45);color:#f5f5f7;padding:13px 28px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500;border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s}
+.tv-feature-cta-row .tvf-btn-out:hover{background:rgba(240,240,242,.1);border-color:#f0f0f2}
+/* Harness band swipe gallery (home page) */
+.hb-gallery{position:relative;background:#fff;overflow:hidden}
+.hb-gallery .hbg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:24px;opacity:0;transition:opacity .45s ease;box-sizing:border-box;display:block}
+.hb-gallery .hbg-img.active{opacity:1}
+.hbg-arr{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border:none;background:rgba(255,255,255,.72);color:#1a1a1a;font-size:22px;line-height:1;cursor:pointer;z-index:2;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s;box-shadow:0 2px 8px -2px rgba(0,0,0,.3)}
+.hbg-arr:hover{background:#fff}
+.hbg-prev{left:12px}.hbg-next{right:12px}
+.hbg-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:2}
+.hbg-dot{width:7px;height:7px;border-radius:50%;border:none;background:rgba(26,26,26,.28);cursor:pointer;padding:0;transition:background .2s}
+.hbg-dot.active{background:#1a1a1a}
 @media(max-width:900px){
   .tv-feature-inner{grid-template-columns:1fr;min-height:auto}
   .tv-feature-img{min-height:320px;height:320px}
@@ -785,11 +797,12 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END TECH VEST FEATURE =================== */
 
 /* =================== TECH VEST PRODUCT PAGE (silver accents, aligned spec list) =================== */
-#page-tech-vest .harness-home-text .est{color:#b8b8bc}
-#page-tech-vest .harness-home-text h2 span{color:#b8b8bc}
-#page-tech-vest .harness-home-text .hero-slogan em{color:#b8b8bc}
-#page-tech-vest .harness-home-text .detail-list li strong{color:#9a9a9f;min-width:108px}
-#page-tech-vest .harness-home-text .price{color:var(--w)}
+#page-home .harness-home-text .est{color:#b8b8bc}
+#page-home .harness-home-text h2 span{color:#b8b8bc}
+#page-home .harness-home-text .hero-slogan em{color:#b8b8bc}
+#page-home .harness-home-text .detail-list li strong{color:#9a9a9f;min-width:104px}
+#page-harness .harness-home-text .detail-list li strong{min-width:96px}
+#page-home .harness-home-text .price{color:var(--w)}
 .tv-ddp-pill{display:flex;align-items:center;gap:10px;margin:6px 0 12px;padding:9px 14px;border:1px solid rgba(45,90,61,.28);background:rgba(45,90,61,.05);border-radius:6px;font-size:11.5px;line-height:1.5;color:var(--t)}
 .tv-ddp-pill svg{flex:0 0 auto;color:var(--gl)}
 .tv-ddp-pill b{color:var(--g);font-weight:600;letter-spacing:.2px}
@@ -1800,9 +1813,15 @@ Email the atelier
 
 <section class="tv-feature fade-in" id="harnessFeature">
 <div class="tv-feature-inner">
-<a class="tv-feature-img" href="/harness" onclick="go('harness');return false;" aria-label="Shop the Harness Bag">
-<img loading="lazy" src="blackholster.png" alt="The Harness Bag &mdash; full-grain leather worn across the chest">
-</a>
+<div class="tv-feature-img hb-gallery" id="hbGallery" aria-label="The Harness Bag — swipe through photos">
+<img loading="lazy" src="blackholster.png" class="hbg-img active" alt="The Harness Bag — worn across the chest">
+<img loading="lazy" src="blackholsterfront.png" class="hbg-img" alt="The Harness Bag — front view">
+<img loading="lazy" src="blackholsterclose.png" class="hbg-img" alt="The Harness Bag — close-up detail">
+<img loading="lazy" src="holster4.jpeg" class="hbg-img" alt="The Harness Bag — first factory prototype">
+<button class="hbg-arr hbg-prev" type="button" onclick="hbSlide(-1)" aria-label="Previous photo">&lsaquo;</button>
+<button class="hbg-arr hbg-next" type="button" onclick="hbSlide(1)" aria-label="Next photo">&rsaquo;</button>
+<div class="hbg-dots" id="hbgDots"></div>
+</div>
 <div class="tv-feature-body">
 <span class="tv-eyebrow"><span class="tv-dot" aria-hidden="true"></span>Signature</span>
 <h2>The <em>Harness Bag</em></h2>
@@ -1820,8 +1839,9 @@ Email the atelier
 <span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
 </div>
 <div class="tv-feature-cta-row">
-<a class="btn-f" href="/harness" onclick="go('harness');return false;">Shop the Harness Bag</a>
-<a class="btn-link" href="/shop" onclick="go('shop');return false;">View the collection &rarr;</a>
+<a class="btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now &mdash; $299</a>
+<button class="tvf-btn-out" type="button" onclick="addToShopCart()">Add to Cart</button>
+<a class="btn-link" href="/harness" onclick="go('harness');return false;">Full details &rarr;</a>
 </div>
 </div>
 </div>
@@ -4744,20 +4764,20 @@ Email the atelier
 <!-- ============== STICKY BUY BAR (visible on harness home only) ============== -->
 <div class="sticky-buy" id="stickyBuy" aria-hidden="true">
 <div class="sb-inner">
-<img class="sb-thumb" id="sbThumb" src="blackholster.png" alt="The Harness Bag">
+<img class="sb-thumb" id="sbThumb" src="whiteharness.png" alt="The Tech Vest">
 <div class="sb-mid">
-<div class="sb-name">The Harness Bag</div>
+<div class="sb-name">The Tech Vest</div>
 <div class="sb-meta">
-<span class="sb-price" id="sbPrice">$299</span>
+<span class="sb-price" id="sbPrice">$399</span>
 <span class="sb-divider" aria-hidden="true">&middot;</span>
 <span class="sb-color" id="sbColor">Black</span>
 <span class="sb-divider" aria-hidden="true">&middot;</span>
-<span class="sb-eta">Made to order &middot; 7&ndash;10 days</span>
+<span class="sb-eta">Made to order &middot; 2&ndash;3 weeks</span>
 </div>
 </div>
 <div class="sb-actions">
-<button class="sb-btn sb-btn-out" onclick="addToShopCart()" aria-label="Add to cart">Add to Cart</button>
-<a class="sb-btn sb-btn-fill" id="sbBuyNow" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now</a>
+<button class="sb-btn sb-btn-out" onclick="addTechVestToCart()" aria-label="Add to cart">Add to Cart</button>
+<a class="sb-btn sb-btn-fill" id="sbBuyNow" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener">Buy Now</a>
 </div>
 </div>
 </div>
@@ -5452,12 +5472,14 @@ document.querySelectorAll('.ap-media-img').forEach(function(img){img.style.curso
   var heroBtnRow=document.querySelector('.harness-home-text .btn-row');
   var configCTA=document.querySelector('.pc-cta');
   function updateContent(){
-    var price=(typeof shopProducts!=='undefined'&&typeof curColor!=='undefined'&&shopProducts[curColor])?shopProducts[curColor].price:299;
-    var pEl=document.getElementById('sbPrice');if(pEl)pEl.textContent='$'+price.toLocaleString();
-    var cEl=document.getElementById('sbColor');if(cEl)cEl.textContent=(typeof curColor==='string')?(curColor.charAt(0).toUpperCase()+curColor.slice(1)):'Black';
-    var thumb=document.getElementById('sbThumb');if(thumb&&typeof shopProducts!=='undefined'&&shopProducts[curColor])thumb.src=shopProducts[curColor].img;
+    // The home page hero is the Tech Vest, so the sticky bar tracks it.
+    var c=(typeof techVestColor==='string'&&typeof techVestProducts!=='undefined'&&techVestProducts[techVestColor])?techVestColor:'black';
+    var p=(typeof techVestProducts!=='undefined'&&techVestProducts[c])?techVestProducts[c]:{price:399,img:'whiteharness.png',variant:'54049514815780'};
+    var pEl=document.getElementById('sbPrice');if(pEl)pEl.textContent='$'+p.price.toLocaleString();
+    var cEl=document.getElementById('sbColor');if(cEl)cEl.textContent=c.charAt(0).toUpperCase()+c.slice(1);
+    var thumb=document.getElementById('sbThumb');if(thumb)thumb.src=p.img;
     var buyBtn=document.getElementById('sbBuyNow');
-    if(buyBtn&&typeof shopProducts!=='undefined'&&shopProducts[curColor])buyBtn.href='https://kuibri-ev.myshopify.com/cart/'+shopProducts[curColor].variant+':1';
+    if(buyBtn)buyBtn.href=(typeof gbWithDiscount==='function'?gbWithDiscount('https://kuibri-ev.myshopify.com/cart/'+p.variant+':1'):'https://kuibri-ev.myshopify.com/cart/'+p.variant+':1');
   }
   function isHomeVisible(){
     var home=document.getElementById('page-home');
@@ -5485,6 +5507,12 @@ document.querySelectorAll('.ap-media-img').forEach(function(img){img.style.curso
   setTimeout(update,200);
   setTimeout(update,800);
 })();
+// Harness band swipe gallery (home page)
+var hbIdx=0;
+function hbApply(){var g=document.getElementById('hbGallery');if(!g)return;var imgs=g.querySelectorAll('.hbg-img');var dots=g.querySelectorAll('.hbg-dot');if(!imgs.length)return;if(hbIdx<0)hbIdx=imgs.length-1;if(hbIdx>=imgs.length)hbIdx=0;imgs.forEach(function(im,i){im.classList.toggle('active',i===hbIdx)});dots.forEach(function(dt,i){dt.classList.toggle('active',i===hbIdx)});}
+function hbSlide(d){hbIdx+=d;hbApply();}
+function hbGoto(i){hbIdx=i;hbApply();}
+(function(){var g=document.getElementById('hbGallery');if(!g)return;var imgs=g.querySelectorAll('.hbg-img');var dw=document.getElementById('hbgDots');if(dw){var h='';imgs.forEach(function(_,i){h+='<button class="hbg-dot'+(i===0?' active':'')+'" type="button" onclick="hbGoto('+i+')" aria-label="Photo '+(i+1)+'"></button>'});dw.innerHTML=h;}var sx=0,sy=0;g.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});g.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx,dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))hbSlide(dx<0?1:-1)},{passive:true});})();
 // Lazy load images
 document.addEventListener('DOMContentLoaded',function(){var imgs=document.querySelectorAll('img[data-src]');if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.src=e.target.dataset.src;e.target.removeAttribute('data-src');obs.unobserve(e.target)}})},{rootMargin:'200px'});imgs.forEach(function(img){obs.observe(img)})}else{imgs.forEach(function(img){img.src=img.dataset.src})}});
 </script>
