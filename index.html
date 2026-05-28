@@ -779,6 +779,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-feature-cta-row .btn-link:hover{color:#f5f5f7}
 .tv-feature-cta-row .tvf-btn-out{font-family:inherit;background:transparent;border:1px solid rgba(240,240,242,.45);color:#f5f5f7;padding:13px 28px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500;border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s}
 .tv-feature-cta-row .tvf-btn-out:hover{background:rgba(240,240,242,.1);border-color:#f0f0f2}
+.tv-feature .pair-offer{max-width:540px;border-color:rgba(240,240,242,.18);background:linear-gradient(135deg,rgba(201,169,78,.10) 0%,rgba(201,169,78,.03) 100%)}
+.tv-feature .pair-offer:hover{border-color:#c9a94e;background:linear-gradient(135deg,rgba(201,169,78,.16) 0%,rgba(201,169,78,.05) 100%)}
+.tv-feature .pair-offer-img{background:#fff;border-color:rgba(240,240,242,.2)}
+.tv-feature .pair-offer-eyebrow{color:#c9a94e}
+.tv-feature .pair-offer-title{color:#f5f5f7}
+.tv-feature .pair-offer-title b{color:#c9a94e}
+.tv-feature .pair-offer-sub{color:rgba(240,240,242,.7)}
+.tv-feature .pair-offer-sub b{color:#f5f5f7}
 /* Harness band swipe gallery (home page) */
 .hb-gallery{position:relative;background:#fff;overflow:hidden}
 .hb-gallery .hbg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:24px;opacity:0;transition:opacity .45s ease;box-sizing:border-box;display:block}
@@ -1838,6 +1846,15 @@ Email the atelier
 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
 <span><b>Ships DDP to Europe &amp; the UK</b> &mdash; all duties, VAT, and customs prepaid. The price you see is the price you pay.</span>
 </div>
+<a class="pair-offer" href="#" onclick="addHarnessTechVestPair('techvest');return false;" aria-label="Add the Tech Vest at 50 percent off">
+<div class="pair-offer-img"><img loading="lazy" src="whiteharness.png" alt="The Tech Vest"></div>
+<div class="pair-offer-body">
+<div class="pair-offer-eyebrow">+ Pair &amp; save</div>
+<div class="pair-offer-title">Add The Tech Vest at <b>50% off</b></div>
+<div class="pair-offer-sub">Save <b>$200</b> &middot; both pieces for <b>$499</b> <s>$698</s>.</div>
+</div>
+<div class="pair-offer-arrow">&rsaquo;</div>
+</a>
 <div class="tv-feature-cta-row">
 <a class="btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now &mdash; $299</a>
 <button class="tvf-btn-out" type="button" onclick="addToShopCart()">Add to Cart</button>
