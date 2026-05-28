@@ -811,6 +811,10 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 #page-home .harness-home-text .detail-list li strong{color:#9a9a9f;min-width:104px}
 #page-harness .harness-home-text .detail-list li strong{min-width:96px}
 #page-home .harness-home-text .price{color:var(--w)}
+.tv-rating{display:inline-flex;align-items:center;gap:8px;margin:2px 0 10px;text-decoration:none;color:var(--td);font-size:12px;font-weight:300;transition:color .2s}
+.tv-rating:hover{color:var(--w)}
+.tv-rating-stars{color:#c9a94e;font-size:13px;letter-spacing:1.5px}
+.tv-rating-txt b{color:var(--w);font-weight:600;font-family:var(--fd)}
 .tv-ddp-pill{display:flex;align-items:center;gap:10px;margin:6px 0 12px;padding:9px 14px;border:1px solid rgba(45,90,61,.28);background:rgba(45,90,61,.05);border-radius:6px;font-size:11.5px;line-height:1.5;color:var(--t)}
 .tv-ddp-pill svg{flex:0 0 auto;color:var(--gl)}
 .tv-ddp-pill b{color:var(--g);font-weight:600;letter-spacing:.2px}
@@ -1729,6 +1733,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <span class="wc-text"><span class="wc-title">Lifetime Warranty</span><span class="wc-sub">The Goldy Brown Guarantee</span></span>
 </a>
 </div>
+<a class="tv-rating" href="#reviews" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth',block:'start'});return false;" aria-label="4.8 out of 5 from owner reviews">
+<span class="tv-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+<span class="tv-rating-txt"><b>4.8</b> &middot; 5 owner reviews</span>
+</a>
+<div class="shoppay-badge shoppay-badge-dark" id="techVestShopPay"><span class="spp-msg">4 interest-free payments of <b id="techVestSpp4">$99.75</b> with <span class="spp-logo-wrap"><svg class="spp-logo" viewBox="0 0 68 22" role="img" aria-label="Shop Pay" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="22" rx="5" fill="#5A31F4"/><text x="20" y="16" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="#fff" letter-spacing="-.35">shop</text><text x="44" y="16" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" font-style="italic" fill="currentColor" letter-spacing="-.35">Pay</text></svg></span></span><a class="spp-link" href="javascript:void(0)" onclick="openSpp('techvest')">View sample plans</a></div>
 <div class="mto-note"><span><em>Made to order</em> &middot; ships in 2&ndash;3 weeks</span></div>
 <div class="tv-ddp-pill" aria-label="Shipping to Europe and the United Kingdom">
 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
@@ -4864,7 +4873,7 @@ function toggleCurrMenu(){document.getElementById('currMenu').classList.toggle('
 function setCurrency(code,e){e.stopPropagation();CURR.code=code;CURR.sym=SYMS[code];CURR.rate=RATES[code];var opt=document.querySelector('.curr-opt[data-curr="'+code+'"]');if(opt)document.getElementById('currFlag').src=opt.getAttribute('data-flag');document.getElementById('currSymNav').textContent=SYMS[code];document.querySelectorAll('.curr-opt').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-curr')===code)});document.getElementById('currMenu').classList.remove('open');updateAllPrices()}
 function sppMonthlyAmt(p){var r=0.15/12,n=12,f=Math.pow(1+r,n);return p*(r*f)/(f-1)}
 function sppFmt(v){return CURR.sym+(Math.round(v*CURR.rate*100)/100).toFixed(2)}
-var SPP_PRODUCTS={harness:{name:'The Harness Bag',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:299)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}}};
+var SPP_PRODUCTS={harness:{name:'The Harness Bag',getPrice:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].price:299)},getVariant:function(){return(shopProducts&&shopProducts[curColor]?shopProducts[curColor].variant:'53325154156836')}},techvest:{name:'The Tech Vest',getPrice:function(){return(typeof techVestProducts!=='undefined'&&techVestProducts[techVestColor]?techVestProducts[techVestColor].price:399)},getVariant:function(){return(typeof techVestProducts!=='undefined'&&techVestProducts[techVestColor]?techVestProducts[techVestColor].variant:'54049514815780')}}};
 function openSpp(key){var cfg=SPP_PRODUCTS[key];if(!cfg)return;var price=(typeof cfg.getPrice==='function'?cfg.getPrice():cfg.price);var variant=(typeof cfg.getVariant==='function'?cfg.getVariant():cfg.variant);var per4=price/4;var perMo=sppMonthlyAmt(price);var totalMo=perMo*12;var intMo=totalMo-price;document.getElementById('sppPurchase').textContent=sppFmt(price);document.getElementById('spp4Amt').textContent=sppFmt(per4);document.getElementById('spp4Total').textContent=sppFmt(price);document.getElementById('sppMoAmt').textContent=sppFmt(perMo);document.getElementById('sppMoInt').textContent=sppFmt(intMo);document.getElementById('sppMoTotal').textContent=sppFmt(totalMo);document.getElementById('sppCta').setAttribute('href','https://kuibri-ev.myshopify.com/cart/'+variant+':1');document.getElementById('sppOv').classList.add('open');document.body.style.overflow='hidden'}
 function closeSpp(e){if(e&&e.target!==document.getElementById('sppOv')&&!e.target.classList.contains('spp-x'))return;document.getElementById('sppOv').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('sppOv').classList.contains('open'))closeSpp()});
