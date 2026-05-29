@@ -1014,6 +1014,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .carousel-main{position:relative;overflow:hidden;background:#fff;aspect-ratio:3/4}
 .carousel-main img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s}
 .carousel-main img.active{opacity:1}
+.carousel-main img.tv-framed{padding:6% 8%}
+@media(max-width:760px){.carousel-main img.tv-framed{padding:5% 6%}}
 @media(hover:hover){.carousel-main:hover img.active{transform:scale(1.08);transition:transform 4s ease-out}}
 .proto-cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;display:none;align-items:flex-start;gap:9px;background:rgba(10,10,10,.9);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;font-weight:400;letter-spacing:.25px;line-height:1.55;padding:10px 14px;border-radius:4px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:protoCapIn .35s ease-out}
 .proto-cap.show{display:flex}
@@ -1684,7 +1686,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="carousel-wrap">
 <div class="carousel-main" id="tvCarouselMain">
 <img loading="lazy" src="whiteharness.png" alt="The Tech Vest — full chest harness in full-grain calfskin" class="active">
-<img loading="lazy" src="whiteharnessbag.jpeg" alt="The Tech Vest in Bone White — worn on body over a hoodie with the chest pouch and drop-leg pouch">
+<img loading="lazy" src="whiteharnessbag.jpeg" alt="The Tech Vest in Bone White — worn on body over a hoodie with the chest pouch and drop-leg pouch" class="tv-framed">
 <button class="carousel-arr prev" onclick="tvPrevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
 <button class="carousel-arr next" onclick="tvNextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
 </div>
