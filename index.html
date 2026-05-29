@@ -1682,8 +1682,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="harness-home" style="margin-top:76px">
 <div class="harness-home-img tv-detail-img">
 <div class="carousel-wrap">
-<div class="carousel-main">
+<div class="carousel-main" id="tvCarouselMain">
 <img loading="lazy" src="whiteharness.png" alt="The Tech Vest — full chest harness in full-grain calfskin" class="active">
+<img loading="lazy" src="whiteharnessbag.jpeg" alt="The Tech Vest in Bone White — worn on body over a hoodie with the chest pouch and drop-leg pouch">
+<button class="carousel-arr prev" onclick="tvPrevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+<button class="carousel-arr next" onclick="tvNextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
+<div class="carousel-dots" id="tvCarouselDots">
+<button class="carousel-dot active" onclick="tvShowSlide(0)" aria-label="Slide 1"></button>
+<button class="carousel-dot" onclick="tvShowSlide(1)" aria-label="Slide 2"></button>
 </div>
 </div>
 </div>
@@ -1825,7 +1832,7 @@ Email the atelier
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","image":["https://goldybrown.com/whiteharness.png"],"sku":"GB-TECHVEST-01","brand":{"@type":"Brand","name":"Goldy Brown","logo":"https://goldybrown.com/gb-silver.png"},"category":"Luxury Leather Harness","material":"Full-grain calfskin","manufacturer":{"@type":"Organization","name":"Goldy Brown","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"}},"countryOfAssembly":"IN","countryOfOrigin":"CA","audience":{"@type":"PeopleAudience","suggestedGender":"unisex"},"hasWarrantyPromise":{"@type":"WarrantyPromise","durationOfWarranty":{"@type":"QuantitativeValue","value":"100","unitCode":"ANN"},"warrantyScope":"https://schema.org/PartsAndLabor"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock","url":"https://goldybrown.com/"}}
+{"@context":"https://schema.org","@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","image":["https://goldybrown.com/whiteharness.png","https://goldybrown.com/whiteharnessbag.jpeg"],"sku":"GB-TECHVEST-01","brand":{"@type":"Brand","name":"Goldy Brown","logo":"https://goldybrown.com/gb-silver.png"},"category":"Luxury Leather Harness","material":"Full-grain calfskin","manufacturer":{"@type":"Organization","name":"Goldy Brown","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"}},"countryOfAssembly":"IN","countryOfOrigin":"CA","audience":{"@type":"PeopleAudience","suggestedGender":"unisex"},"hasWarrantyPromise":{"@type":"WarrantyPromise","durationOfWarranty":{"@type":"QuantitativeValue","value":"100","unitCode":"ANN"},"warrantyScope":"https://schema.org/PartsAndLabor"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock","url":"https://goldybrown.com/"}}
 </script>
 
 <section class="tv-feature fade-in" id="harnessFeature">
@@ -4952,6 +4959,13 @@ function switchColor(color){
 function showSlide(n){var imgs=document.querySelectorAll('#carouselMain img');var dots=document.querySelectorAll('#carouselDots .carousel-dot');if(!imgs.length)return;curSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===curSlide)});dots.forEach(function(d,i){d.classList.toggle('active',i===curSlide)});var cap=document.getElementById('protoCap');if(cap)cap.classList.toggle('show',curSlide===imgs.length-1)}
 function nextSlide(){showSlide(curSlide+1)}
 function prevSlide(){showSlide(curSlide-1)}
+// Tech Vest hero carousel — its own state/IDs so it can't collide with the
+// Harness Bag carousel above (which owns #carouselMain / showSlide).
+var tvSlide=0;
+function tvShowSlide(n){var imgs=document.querySelectorAll('#tvCarouselMain img');var dots=document.querySelectorAll('#tvCarouselDots .carousel-dot');if(!imgs.length)return;tvSlide=((n%imgs.length)+imgs.length)%imgs.length;imgs.forEach(function(img,i){img.classList.toggle('active',i===tvSlide)});dots.forEach(function(d,i){d.classList.toggle('active',i===tvSlide)})}
+function tvNextSlide(){tvShowSlide(tvSlide+1)}
+function tvPrevSlide(){tvShowSlide(tvSlide-1)}
+(function(){var sx=0,sy=0;var cm=document.getElementById('tvCarouselMain');if(cm){cm.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});cm.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-sx;var dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)<50||Math.abs(dy)>Math.abs(dx)*0.7)return;if(dx<0)tvNextSlide();if(dx>0)tvPrevSlide()},{passive:true})}})();
 function getTotal(){var d=T[cT].d,t=0;P.forEach(function(p){if(p.qty>0)t+=Math.round(p.price*(1-d))*p.qty});return t}
 function canAdd(i){return(getTotal()+Math.round(P[i].price*(1-T[cT].d)))<=T[cT].b}
 function renderCat(){var g=document.getElementById('catGrid'),d=T[cT].d;g.innerHTML='';P.forEach(function(p,i){var dp=Math.round(p.price*(1-d)),hd=d>0,pd=!canAdd(i),md=p.qty===0,sv=p.price-dp;g.innerHTML+='<div class="ccard'+(p.qty>0?' in-cart':'')+'"><div class="badge">In Kit</div><div class="ccard-img">'+(p.img?'<img loading="lazy" src="'+p.img+'" alt="'+p.name+'">':p.name)+'</div><div class="ccard-info"><h4>'+p.name+'</h4>'+(p.sub?'<div class="csub">'+p.sub+'</div>':'')+'<div class="cdesc">'+p.desc+'</div><div class="price">'+fmt(dp)+(hd?'<span class="og">'+fmt(p.price)+'</span>':'')+'</div>'+(hd?'<div class="ctier">'+T[cT].l+' tier &mdash; save '+fmt(sv)+' per unit ('+(d*100)+'% off)</div>':'')+'<div class="qc"><button class="qb'+(md?' dis':'')+'" onclick="chgQty('+i+',-1)">&minus;</button><div class="qd">'+p.qty+'</div><button class="qb'+(pd?' dis':'')+'" onclick="chgQty('+i+',1)">+</button></div></div></div>'})}
