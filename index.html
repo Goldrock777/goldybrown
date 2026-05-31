@@ -767,6 +767,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-feature-colors{display:flex;gap:8px;align-items:center}
 .tv-feature-colors .tv-fc{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.18)}
 .tv-feature-colors .tv-fc-label{font-size:10.5px;color:rgba(240,240,242,.55);letter-spacing:1.4px;text-transform:uppercase;margin-right:4px}
+#harnessFeature .tvf-specs{list-style:none;margin:4px 0 2px;max-width:560px;padding:0}
+#harnessFeature .tvf-specs li{display:flex;gap:14px;padding:6px 0;border-bottom:1px solid rgba(240,240,242,.12);font-size:12px;line-height:1.5;color:rgba(240,240,242,.82)}
+#harnessFeature .tvf-specs li strong{flex:0 0 auto;min-width:82px;color:var(--gl);font-weight:700;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;padding-top:3px}
+#harnessFeature .tvf-variants{margin:0;gap:18px}
+#harnessFeature .tvf-variants .hv-label{color:rgba(240,240,242,.62)}
 .tv-feature .tv-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:#c9a94e;font-weight:600}
 .tv-feature .tv-eyebrow::before{content:'';width:22px;height:1px;background:#c9a94e}
 .tv-feature-ddp{display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:10px 14px;border:1px solid rgba(201,169,78,.32);background:rgba(201,169,78,.06);border-radius:6px;font-size:11.5px;line-height:1.55;color:rgba(240,240,242,.82);max-width:540px}
@@ -909,8 +914,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-checkout-trust .tco-secure svg{width:13px;height:13px;color:var(--gl)}
 .tv-checkout-trust .tco-divider{width:1px;height:13px;background:var(--b)}
 .tv-checkout-trust .tco-pays{display:inline-flex;align-items:center;gap:9px}
-.tv-checkout-trust .tco-pays img{height:21px;width:auto;opacity:.5;filter:grayscale(1);transition:opacity .3s ease,filter .3s ease}
-.tv-checkout-trust:hover .tco-pays img{opacity:.92;filter:grayscale(0)}
+.tv-checkout-trust .tco-pays img{height:21px;width:auto;opacity:1}
 @media(max-width:640px){.tv-checkout-trust{gap:10px}.tv-checkout-trust .tco-pays img{height:18px}}
 .harness-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
 .harness-home-text .btn-row .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;box-shadow:0 2px 10px -3px rgba(0,0,0,.5),inset 0 1px 0 rgba(240,240,242,.18)}
@@ -1866,14 +1870,22 @@ Email the atelier
 <div class="tv-feature-body">
 <span class="tv-eyebrow"><span class="tv-dot" aria-hidden="true"></span>Signature</span>
 <h2>The <em>Harness Bag</em></h2>
-<p class="tv-feature-desc">The original. A single full-grain calfskin pouch worn high on the chest &mdash; phone, passport, cards against your body, both hands free. Cleaner under a jacket than anything that hangs off one shoulder. The everyday piece you reach for first.</p>
+<p class="tv-feature-desc">The original. A leather shoulder rig for people who carry with intention, hand cut from <b>full-grain Napa calfskin</b> &mdash; the soft, buttery leather European luxury houses use for their finest pieces, sourced from South India's heritage tanneries. Folded (not painted) edges, stainless steel hardware, a YKK zipper. A single pouch worn high on the chest keeps your phone, passport, and cards against your body, both hands free &mdash; cleaner under a jacket than anything that hangs off one shoulder. <b>Worn, not carried</b>, it travels alongside your carry-on as a body accessory, not a third bag.</p>
+<ul class="tvf-specs">
+<li><strong>Material</strong><span>Napa calfskin &middot; full grain, buttery soft, ages into patina</span></li>
+<li><strong>Hardware</strong><span>Stainless steel fittings, YKK zipper</span></li>
+<li><strong>Stitching</strong><span>Machine stitched with premium nylon thread</span></li>
+<li><strong>Finishing</strong><span>Folded edges, not painted &mdash; no paint to flake over time</span></li>
+<li><strong>Pouch</strong><span>7 &times; 5 in (18 &times; 13 cm) &middot; fits iPhone 17 Pro Max with case</span></li>
+<li><strong>Fit</strong><span>Adjustable shoulder straps, one size</span></li>
+<li><strong>Warranty</strong><span>Lifetime &mdash; any defect covered, repair &amp; shipping free</span></li>
+</ul>
 <div class="tv-feature-meta">
 <span class="tv-feature-price">$299 <span class="tv-cur">USD</span></span>
-<span class="tv-feature-colors" aria-label="Available colours">
-<span class="tv-fc-label">Colours</span>
-<span class="tv-fc" style="background:#1a1a1a" title="Black"></span>
-<span class="tv-fc" style="background:#5b7fa3" title="Azure Blue"></span>
-</span>
+<div class="harness-variants tvf-variants" role="radiogroup" aria-label="Harness Bag colour">
+<div class="hv" onclick="hbColor('black')"><div class="hv-swatch black" id="hbSwatchBlack" style="border-color:var(--g)"></div><div class="hv-label">Black</div></div>
+<div class="hv" onclick="hbColor('blue')"><div class="hv-swatch blue" id="hbSwatchBlue"></div><div class="hv-label">Blue</div></div>
+</div>
 </div>
 <div class="tv-feature-ddp" aria-label="Shipping to Europe and the UK">
 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
@@ -1889,7 +1901,7 @@ Email the atelier
 <div class="pair-offer-arrow">&rsaquo;</div>
 </a>
 <div class="tv-feature-cta-row">
-<a class="btn-f" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now &mdash; $299</a>
+<a class="btn-f" id="hbBuyNow" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy Now &mdash; $299</a>
 <button class="tvf-btn-out" type="button" onclick="addToShopCart()">Add to Cart</button>
 <a class="btn-link" href="/harness" onclick="go('harness');return false;">Full details &rarr;</a>
 </div>
@@ -4880,6 +4892,19 @@ document.querySelectorAll('.ap-media-img').forEach(function(img){img.style.curso
 })();
 // Harness band swipe gallery (home page)
 var hbIdx=0;
+// Harness teaser colour swatches (home page) — mirror the Tech Vest swatch
+// behaviour: highlight the selection and point Add-to-Cart / Buy Now at the
+// chosen colour. Uses its own IDs so it never collides with the /harness page.
+function hbColor(c){
+  ['Black','Blue'].forEach(function(n){var el=document.getElementById('hbSwatch'+n);if(el)el.style.borderColor=''});
+  var sel=document.getElementById('hbSwatch'+c.charAt(0).toUpperCase()+c.slice(1));
+  if(sel)sel.style.borderColor='var(--g)';
+  if(typeof shopProducts!=='undefined'&&shopProducts[c]){
+    curColor=c;
+    var buy=document.getElementById('hbBuyNow');
+    if(buy){var u='https://'+(typeof SHOP_DOMAIN!=='undefined'?SHOP_DOMAIN:'kuibri-ev.myshopify.com')+'/cart/'+shopProducts[c].variant+':1';buy.href=(typeof gbWithDiscount==='function'?gbWithDiscount(u):u)}
+  }
+}
 function hbApply(){var g=document.getElementById('hbGallery');if(!g)return;var imgs=g.querySelectorAll('.hbg-img');var dots=g.querySelectorAll('.hbg-dot');if(!imgs.length)return;if(hbIdx<0)hbIdx=imgs.length-1;if(hbIdx>=imgs.length)hbIdx=0;imgs.forEach(function(im,i){im.classList.toggle('active',i===hbIdx)});dots.forEach(function(dt,i){dt.classList.toggle('active',i===hbIdx)});}
 function hbSlide(d){hbIdx+=d;hbApply();}
 function hbGoto(i){hbIdx=i;hbApply();}
