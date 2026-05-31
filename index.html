@@ -904,6 +904,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .buy-trust .bt-item svg{width:20px;height:20px;color:var(--gl);stroke-linecap:round;stroke-linejoin:round}
 .buy-trust .bt-item span{font-size:9.5px;line-height:1.35;letter-spacing:.5px;text-transform:uppercase;color:var(--td);font-weight:400}
 @media(max-width:640px){.harness-home-text .buy-trust{gap:6px}.buy-trust .bt-item svg{width:18px;height:18px}.buy-trust .bt-item span{font-size:8.5px}}
+.tv-checkout-trust{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+.tv-checkout-trust .tco-secure{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--td);font-weight:400}
+.tv-checkout-trust .tco-secure svg{width:13px;height:13px;color:var(--gl)}
+.tv-checkout-trust .tco-divider{width:1px;height:13px;background:var(--b)}
+.tv-checkout-trust .tco-pays{display:inline-flex;align-items:center;gap:9px}
+.tv-checkout-trust .tco-pays img{height:21px;width:auto;opacity:.5;filter:grayscale(1);transition:opacity .3s ease,filter .3s ease}
+.tv-checkout-trust:hover .tco-pays img{opacity:.92;filter:grayscale(0)}
+@media(max-width:640px){.tv-checkout-trust{gap:10px}.tv-checkout-trust .tco-pays img{height:18px}}
 .harness-home-text .btn-row .btn{flex:1;text-align:center;padding:13px 16px}
 .harness-home-text .btn-row .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;box-shadow:0 2px 10px -3px rgba(0,0,0,.5),inset 0 1px 0 rgba(240,240,242,.18)}
 .harness-home-text .btn-row .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%);border-color:#f0f0f2;box-shadow:0 6px 18px -4px rgba(0,0,0,.6),inset 0 1px 0 rgba(240,240,242,.28)}
@@ -1764,6 +1772,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="btn-row">
 <button class="btn" onclick="addTechVestToCart()">Add to Cart</button>
 <a id="tvBuyNow" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" class="btn btn-f">Buy Now</a>
+</div>
+<div class="tv-checkout-trust" aria-label="Secure checkout and accepted payments">
+<span class="tco-secure"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Secure checkout</span>
+<span class="tco-divider" aria-hidden="true"></span>
+<span class="tco-pays">
+<img loading="lazy" src="visa.png" alt="Visa" width="34" height="21">
+<img loading="lazy" src="mastercard.png" alt="Mastercard" width="34" height="21">
+<img loading="lazy" src="applepay.png" alt="Apple Pay" width="34" height="21">
+</span>
 </div>
 <div class="tv-concierge" aria-label="Concierge channels">
 <a href="https://wa.me/16047040937" target="_blank" rel="noopener" class="tv-concierge-link">
