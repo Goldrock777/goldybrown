@@ -5191,19 +5191,36 @@ function updateShopQty(idx,d){
   renderShopCart();
 }
 function removeShopItem(idx){shopCart.splice(idx,1);renderShopCart()}
+var SHOP_DOMAIN='kuibri-ev.myshopify.com';
+// SAFETY GUARD: the pouch & bespoke configurators reuse the Harness Bag
+// variant (PLACEHOLDER_VARIANT) until dedicated, correctly-priced Shopify
+// variants exist. Routing those through the cart permalink would charge the
+// Harness Bag price ($299) instead of the configured price, so we intercept
+// any such item and send the order to the atelier by email for correct
+// invoicing. The moment POUCH_VARIANT_ID / BAG_VARIANT_ID point at real
+// variants, this guard disables itself automatically (the IDs no longer match).
+var PLACEHOLDER_VARIANT='53325154156836';
+function isPlaceholderCustom(i){return (i.type==='pouch'||i.type==='bespokeBag')&&String(i.variant)===PLACEHOLDER_VARIANT}
 function shopCheckout(){
   if(!shopCart.length)return;
+  if(shopCart.some(isPlaceholderCustom)){checkoutCustomByEmail();return}
   var parts=[],preorders=[],pouches=[],bespoke=[];
   shopCart.forEach(function(i,idx){
-    parts.push(i.variant+':'+i.qty);
-    if(i.preorder&&i.type!=='pouch'&&i.type!=='bespokeBag'){var c=(i.color||'').charAt(0).toUpperCase()+(i.color||'').slice(1);preorders.push(c+' x '+i.qty)}
+    // Defensive: only a clean numeric variant and a positive integer qty may
+    // build the Shopify URL — a malformed line can never produce a broken cart.
+    var v=String(i.variant||'').replace(/[^0-9]/g,'');
+    var q=Math.max(1,parseInt(i.qty,10)||1);
+    if(!v)return;
+    parts.push(v+':'+q);
+    if(i.preorder&&i.type!=='pouch'&&i.type!=='bespokeBag'){var c=(i.color||'').charAt(0).toUpperCase()+(i.color||'').slice(1);preorders.push(c+' x '+q)}
     if(i.type==='pouch'&&i.spec){pouches.push('• Pouch #'+(idx+1)+': '+i.spec+(i.notes?' | NOTES: '+i.notes:''))}
     if(i.type==='bespokeBag'&&i.spec){bespoke.push('• Bespoke Harness #'+(idx+1)+': '+i.spec+(i.notes?' | NOTES: '+i.notes:''))}
   });
+  if(!parts.length)return;
   // Currency is left to Shopify Markets, which auto-converts the cart
   // and checkout to the visitor's local currency based on geo-IP. Set
   // the enabled markets/currencies in Shopify Admin → Settings → Markets.
-  var url='https://kuibri-ev.myshopify.com/cart/'+parts.join(',');
+  var url='https://'+SHOP_DOMAIN+'/cart/'+parts.join(',');
   var noteLines=[];
   if(preorders.length)noteLines.push('Pre-Order: '+preorders.join(', ')+' — arrives in 2-3 weeks');
   if(bespoke.length)noteLines.push('═══ BESPOKE HARNESS SPEC ═══');
@@ -5217,6 +5234,20 @@ function shopCheckout(){
   // Get Y" automatic discount (Harness Bag + Tech Vest in cart → 50%
   // off the Harness Bag). No URL parameter needed.
   window.open(gbWithDiscount(url),'_blank');
+}
+// Made-to-order items can't safely go through a standard Shopify variant at
+// the configured price, so capture the full spec + correct total by email.
+function checkoutCustomByEmail(){
+  var lines=[],total=0;
+  shopCart.forEach(function(i,idx){
+    var q=Math.max(1,parseInt(i.qty,10)||1);var lt=(parseFloat(i.price)||0)*q;total+=lt;
+    lines.push((idx+1)+'. '+i.name+' × '+q+' — '+fmt(lt));
+    if(i.spec)lines.push('    Spec: '+i.spec);
+    if(i.notes)lines.push('    Notes: '+i.notes);
+  });
+  lines.push('','Configured total: '+fmt(total),'','— Sent from goldybrown.com. This order includes a made-to-order item; please confirm availability and invoice at the configured price shown above.');
+  var to='info'+'@'+'goldybrown.com';
+  window.location.href='mailto:'+to+'?subject='+encodeURIComponent('Custom order request — '+fmt(total))+'&body='+encodeURIComponent(lines.join('\n'));
 }
 // =================== POUCH CONFIGURATOR ===================
 // Edit these constants to tune pricing. Replace POUCH_VARIANT_ID with a dedicated
