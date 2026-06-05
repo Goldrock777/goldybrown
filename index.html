@@ -670,7 +670,15 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
-.shop-card-img{display:block;background:#fff;height:340px;overflow:hidden}
+.shop-card-img{display:block;background:#fff;height:340px;overflow:hidden;position:relative}
+.shop-card-ribbon{position:absolute;top:14px;left:14px;background:#b8a070;color:#0a0a0c;font-size:9.5px;letter-spacing:2px;font-weight:700;padding:6px 12px;border-radius:2px;text-transform:uppercase;z-index:2;box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+.shop-card-stock{display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px 12px;border:1px solid rgba(184,160,112,.3);background:rgba(184,160,112,.06);border-radius:3px}
+.shop-card-stock .scs-pulse{width:8px;height:8px;border-radius:50%;background:#b8a070;box-shadow:0 0 0 0 rgba(184,160,112,.5);animation:scsPulse 2s infinite;flex:0 0 auto}
+@keyframes scsPulse{0%{box-shadow:0 0 0 0 rgba(184,160,112,.55)}70%{box-shadow:0 0 0 10px rgba(184,160,112,0)}100%{box-shadow:0 0 0 0 rgba(184,160,112,0)}}
+.shop-card-stock .scs-txt{font-size:11.5px;color:var(--td);letter-spacing:.2px}
+.shop-card-stock .scs-txt b{color:var(--w);font-weight:600}
+.shop-card-stock .scs-bar{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;min-width:60px}
+.shop-card-stock .scs-bar-fill{height:100%;background:linear-gradient(90deg,#b8a070,#d4b889);border-radius:99px;transition:width .6s ease}
 .shop-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s ease-out;display:block}
 .shop-card:hover .shop-card-img img{transform:scale(1.04)}
 .shop-card-body{padding:24px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
@@ -1892,7 +1900,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
 
 <div class="section-cards">
-<div class="section-card section-card-wide scale-in" onclick="go('shop')"><div class="sc-img" style="background:url(blackholster.png) center 40%/cover,#111"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop the Collection</div><div class="sc-desc">The Harness Bag &amp; The Tech Vest &mdash; the full Goldy Brown line, made to order.</div></div></div>
+<div class="section-card section-card-wide scale-in" onclick="go('shop')"><div class="sc-img" style="background:#111 url(blackholster.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop the Collection</div><div class="sc-desc">The Harness Bag &amp; The Tech Vest &mdash; the full Goldy Brown line, made to order.</div></div></div>
 <div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(GB111.JPG) center 55%/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(greenrobe.png) center 5%/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Collection</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
 <div class="section-card scale-in" onclick="go('custom')"><div class="sc-img" style="background:url(blackholsterclose.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Made to Your Spec</div><div class="sc-title">Customize</div><div class="sc-desc">Leather, closure, hardware, stitch &mdash; configure live, ships in 2&ndash;3 weeks.</div></div></div>
@@ -4000,6 +4008,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 
   <article class="shop-card" itemscope itemtype="https://schema.org/Product">
     <a class="shop-card-img" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener" aria-label="Buy The Tech Vest in Black">
+      <span class="shop-card-ribbon">New &middot; Launch</span>
       <img loading="lazy" src="techvest.jpg" alt="The Tech Vest — full-grain leather chest plate, integrated front pouch, detachable drop-leg pouch" itemprop="image">
     </a>
     <div class="shop-card-body">
@@ -4013,6 +4022,11 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
           <meta itemprop="url" content="https://kuibri-ev.myshopify.com/cart/54049514815780:1">
         </span>
         <span class="shop-card-spec">Made to order &middot; ships in 2&ndash;3 weeks</span>
+      </div>
+      <div class="shop-card-stock" data-tv-stock>
+        <span class="scs-pulse" aria-hidden="true"></span>
+        <span class="scs-txt"><b id="tvStockN">26</b> of 30 remaining this month</span>
+        <span class="scs-bar"><span class="scs-bar-fill" id="tvStockBar" style="width:87%"></span></span>
       </div>
       <div class="shop-card-cta shop-card-cta-tri">
         <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener">Buy &mdash; Black</a>
@@ -4830,7 +4844,11 @@ document.addEventListener('DOMContentLoaded',function(){bcRender(false)});
 // ================= END BAG CONFIGURATOR =================
 renderCat();initFI();document.getElementById('bbar').style.display='none';updShopPayHolster();
 // Rotating top-bar value props (perceived-value cycle)
-(function(){var el=document.getElementById('topBarMsg');if(!el)return;var msgs=['Leave the bag. Take the harness.','Free Worldwide Shipping','Lifetime Warranty — Any Defect, For Life','Hand Cut to Order in Vancouver','14-Day Returns · Free Both Ways','EU & UK Orders Ship DDP — Duties Prepaid'];var i=0;setInterval(function(){i=(i+1)%msgs.length;el.style.opacity='0';setTimeout(function(){el.textContent=msgs[i];el.style.opacity='1'},260)},3800)})();
+(function(){var el=document.getElementById('topBarMsg');if(!el)return;var msgs=['New: The Tech Vest — 30 pieces this month','Leave the bag. Take the harness.','Free Worldwide Shipping','Lifetime Warranty — Any Defect, For Life','Hand Cut to Order in Vancouver','14-Day Returns · Free Both Ways','EU & UK Orders Ship DDP — Duties Prepaid'];var i=0;setInterval(function(){i=(i+1)%msgs.length;el.style.opacity='0';setTimeout(function(){el.textContent=msgs[i];el.style.opacity='1'},260)},3800)})();
+
+// ===== Tech Vest stock counter — edit these two numbers monthly =====
+var TV_STOCK_REMAINING=26,TV_STOCK_TOTAL=30;
+(function(){var n=document.getElementById('tvStockN'),b=document.getElementById('tvStockBar');if(!n||!b)return;n.textContent=TV_STOCK_REMAINING;var pct=Math.max(0,Math.min(100,Math.round(TV_STOCK_REMAINING/TV_STOCK_TOTAL*100)));b.style.width=pct+'%';if(TV_STOCK_REMAINING<=5)b.style.background='linear-gradient(90deg,#d97757,#e89b6e)'})();
 // Image Zoom Lightbox
 (function(){
 var ov=document.createElement('div');ov.className='img-zoom-ov';ov.innerHTML='<button class="img-zoom-close">&times;</button><img src="" alt="Zoom">';document.body.appendChild(ov);
