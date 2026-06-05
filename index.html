@@ -418,6 +418,107 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 }
 /* =================== END POUCH CONFIGURATOR =================== */
 
+/* =================== STUDIO — REAL-IMAGE CONFIGURATOR (/studio) =================== */
+.studio-wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:0;min-height:calc(100dvh - 120px);background:#0a0a0c;color:#f5f5f7}
+.studio-stage{position:relative;background:radial-gradient(ellipse at center,#16161a 0%,#0a0a0c 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 60px;border-right:1px solid #1f1f23;overflow:hidden}
+.studio-stage::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 14px,rgba(184,160,112,.018) 14px,rgba(184,160,112,.018) 15px);pointer-events:none}
+.studio-product-tabs{position:absolute;top:20px;left:50%;transform:translateX(-50%);display:flex;gap:2px;background:rgba(20,20,26,.85);backdrop-filter:blur(12px);border:1px solid #2a2a30;border-radius:99px;padding:4px;z-index:5}
+.studio-ptab{background:transparent;border:0;color:#999;font-family:var(--fb);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:9px 22px;border-radius:99px;cursor:pointer;transition:all .25s;font-weight:500}
+.studio-ptab.active{background:linear-gradient(135deg,#b8a070 0%,#d4b889 100%);color:#0a0a0c;font-weight:600}
+.studio-ptab:hover:not(.active){color:#f5f5f7}
+.studio-stage-inner{position:relative;width:100%;max-width:640px;display:flex;align-items:center;justify-content:center;flex:1;min-height:0;margin-top:38px}
+.studio-canvas{max-width:100%;max-height:62vh;width:auto;height:auto;display:block;border-radius:2px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(184,160,112,.12);transition:opacity .35s ease,transform .6s cubic-bezier(.25,.46,.45,.94);background:#fff;will-change:opacity}
+.studio-canvas.loading{opacity:.35}
+.studio-stage-empty{color:#666;font-size:13px;text-align:center;padding:60px 20px;border:1px dashed #2a2a30;border-radius:4px;max-width:380px}
+.studio-stage-empty b{display:block;color:#b8a070;font-family:var(--fd);font-size:18px;letter-spacing:.5px;margin-bottom:10px;font-weight:400}
+.studio-spec-strip{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(10,10,12,.78);backdrop-filter:blur(20px);border:1px solid #2a2a30;border-radius:4px;padding:14px 22px;display:flex;align-items:center;gap:18px;font-size:11px;color:#ccc;letter-spacing:.4px;max-width:90%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:5}
+.studio-spec-strip .sss-dot{width:6px;height:6px;border-radius:50%;background:#b8a070;flex:0 0 auto;box-shadow:0 0 8px rgba(184,160,112,.6)}
+.studio-spec-strip .sss-divider{color:#444;flex:0 0 auto}
+.studio-spec-strip b{color:#fff;font-weight:500}
+.studio-zoom{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;z-index:5}
+.studio-zoom button{width:36px;height:36px;border:1px solid #2a2a30;background:rgba(20,20,26,.85);backdrop-filter:blur(8px);color:#999;font-size:18px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s;font-family:var(--fb);font-weight:300;line-height:1}
+.studio-zoom button:hover{color:#b8a070;border-color:#b8a070}
+.studio-render-status{position:absolute;left:20px;top:20px;display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#666;z-index:5}
+.studio-render-status .srs-dot{width:6px;height:6px;border-radius:50%;background:#4caf50;animation:srsBlink 1.8s ease-in-out infinite}
+.studio-render-status.rendering .srs-dot{background:#b8a070;animation-duration:.6s}
+@keyframes srsBlink{0%,100%{opacity:1}50%{opacity:.4}}
+
+.studio-config{padding:36px 40px 120px;background:#0c0c10;overflow-y:auto;max-height:calc(100dvh - 76px);position:relative}
+.studio-config::-webkit-scrollbar{width:8px}
+.studio-config::-webkit-scrollbar-track{background:#0c0c10}
+.studio-config::-webkit-scrollbar-thumb{background:#1f1f23;border-radius:4px}
+.studio-config::-webkit-scrollbar-thumb:hover{background:#2a2a30}
+.cfg-hd{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid #1f1f23}
+.cfg-hd .cfg-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#b8a070;margin-bottom:10px;font-weight:600}
+.cfg-hd h2{font-family:var(--fd);font-size:30px;font-weight:400;color:#fff;margin:0 0 8px;line-height:1.15;letter-spacing:-.3px}
+.cfg-hd h2 em{font-style:italic;color:#b8a070}
+.cfg-hd .cfg-sub{font-size:12.5px;color:#999;font-weight:300;line-height:1.6;margin:0}
+.cfg-block{padding:22px 0;border-bottom:1px solid #16161a}
+.cfg-block:last-of-type{border-bottom:0}
+.cfg-block-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.cfg-num{font-family:var(--fd);font-size:11px;color:#666;letter-spacing:1.5px;font-weight:400;flex:0 0 auto;min-width:18px}
+.cfg-label{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#fff;font-weight:600;flex:1}
+.cfg-current{font-size:11px;color:#b8a070;letter-spacing:.5px;font-style:italic;font-weight:400}
+.cfg-sw-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.cfg-sw{background:transparent;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .2s}
+.cfg-sw:hover{transform:translateY(-2px)}
+.cfg-sw-dot{width:100%;aspect-ratio:1;border-radius:50%;border:2px solid transparent;background:var(--swc,#1a1a1a);transition:border-color .25s,box-shadow .25s;box-shadow:inset 0 -3px 8px rgba(0,0,0,.3),inset 0 2px 4px rgba(255,255,255,.12)}
+.cfg-sw.active .cfg-sw-dot{border-color:#b8a070;box-shadow:0 0 0 2px #0c0c10,0 0 0 3px #b8a070,inset 0 -3px 8px rgba(0,0,0,.3)}
+.cfg-sw-lbl{font-size:9.5px;color:#888;letter-spacing:.8px;text-transform:uppercase;font-weight:500;text-align:center;white-space:nowrap}
+.cfg-sw.active .cfg-sw-lbl{color:#fff}
+.cfg-custom-row{display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 12px;background:#14141a;border:1px solid #1f1f23;border-radius:3px}
+.cfg-custom-row label{font-size:10.5px;color:#999;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px;cursor:pointer;width:100%}
+.cfg-custom-row input[type=color]{width:38px;height:30px;border:0;background:transparent;cursor:pointer;padding:0;border-radius:3px}
+.cfg-custom-row input[type=text]{flex:1;background:transparent;border:0;color:#fff;font-family:var(--fb);font-size:12px;letter-spacing:1px;outline:0}
+.cfg-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cfg-chip{background:#14141a;border:1px solid #1f1f23;color:#aaa;font-family:var(--fb);padding:11px 16px;cursor:pointer;border-radius:3px;font-size:11px;display:flex;flex-direction:column;align-items:flex-start;gap:3px;transition:all .25s;min-width:120px;flex:1 1 calc(50% - 4px)}
+.cfg-chip:hover{border-color:#3a3a40;color:#fff}
+.cfg-chip.active{border-color:#b8a070;background:linear-gradient(135deg,rgba(184,160,112,.12) 0%,rgba(184,160,112,.04) 100%);color:#fff}
+.cfg-chip-t{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.cfg-chip-d{font-size:10px;color:#777;font-weight:300;letter-spacing:.4px}
+.cfg-chip.active .cfg-chip-d{color:#b8a070}
+.cfg-chip-wide{flex:1 1 100%;min-width:100%}
+.cfg-input{width:100%;background:#14141a;border:1px solid #1f1f23;color:#fff;padding:11px 14px;font-family:var(--fb);font-size:12px;letter-spacing:.5px;outline:0;border-radius:3px;margin-top:10px;transition:border-color .2s}
+.cfg-input:focus{border-color:#b8a070}
+.cfg-textarea{width:100%;background:#14141a;border:1px solid #1f1f23;color:#fff;padding:12px 14px;font-family:var(--fb);font-size:12px;line-height:1.6;outline:0;border-radius:3px;resize:vertical;min-height:64px;transition:border-color .2s}
+.cfg-textarea:focus{border-color:#b8a070}
+.cfg-dim-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.cfg-dim-row label{display:flex;flex-direction:column;gap:5px;font-size:10px;color:#888;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.cfg-dim-row input{background:#14141a;border:1px solid #1f1f23;color:#fff;padding:9px 12px;font-family:var(--fb);font-size:12px;outline:0;border-radius:3px;transition:border-color .2s}
+.cfg-dim-row input:focus{border-color:#b8a070}
+
+.cfg-summary{position:sticky;bottom:0;left:0;right:0;margin:32px -40px -120px;padding:24px 40px 28px;background:linear-gradient(180deg,rgba(12,12,16,.6) 0%,#0c0c10 30%);border-top:1px solid #1f1f23;backdrop-filter:blur(12px);z-index:10}
+.cfg-sum-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.cfg-sum-left{flex:1;min-width:160px}
+.cfg-sum-eyebrow{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:#666;margin-bottom:6px;font-weight:600}
+.cfg-sum-spec{font-size:11.5px;color:#bbb;line-height:1.6;letter-spacing:.2px}
+.cfg-sum-price{font-family:var(--fd);font-size:34px;color:#fff;font-weight:400;line-height:1;letter-spacing:-.5px}
+.cfg-sum-price small{font-size:13px;color:#888;font-family:var(--fb);font-weight:300;letter-spacing:1px;margin-left:6px}
+.cfg-sum-lead{font-size:10.5px;color:#777;margin-top:6px}
+.cfg-actions{display:grid;grid-template-columns:1fr auto;gap:10px}
+.cfg-btn{background:linear-gradient(135deg,#b8a070 0%,#d4b889 100%);color:#0a0a0c;border:0;padding:15px 20px;font-family:var(--fb);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;border-radius:3px;font-weight:700;transition:transform .15s,box-shadow .25s;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px}
+.cfg-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(184,160,112,.6)}
+.cfg-btn-ghost{background:transparent;color:#b8a070;border:1px solid #2a2a30;padding:15px 16px;font-family:var(--fb);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:3px;font-weight:600;transition:all .2s;display:flex;align-items:center;gap:6px}
+.cfg-btn-ghost:hover{border-color:#b8a070;background:rgba(184,160,112,.06)}
+.cfg-share-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#16161a;border:1px solid #b8a070;color:#fff;padding:14px 26px;border-radius:4px;font-size:12px;letter-spacing:.5px;opacity:0;pointer-events:none;transition:all .3s;z-index:9999;box-shadow:0 12px 40px -8px rgba(0,0,0,.6)}
+.cfg-share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:1080px){
+  .studio-wrap{grid-template-columns:1fr}
+  .studio-stage{border-right:0;border-bottom:1px solid #1f1f23;padding:36px 24px;min-height:60vh}
+  .studio-stage-inner{margin-top:50px}
+  .studio-canvas{max-height:50vh}
+  .studio-config{max-height:none;padding:32px 24px 140px}
+  .cfg-summary{margin:32px -24px -140px;padding:22px 24px 26px}
+  .cfg-sw-grid{grid-template-columns:repeat(6,1fr)}
+}
+@media(max-width:560px){
+  .cfg-sw-grid{grid-template-columns:repeat(3,1fr)}
+  .cfg-chip{flex:1 1 100%;min-width:100%}
+  .cfg-hd h2{font-size:24px}
+}
+/* =================== END STUDIO =================== */
+
 /* =================== BAG CONFIGURATOR (/custom) =================== */
 /* Visually identical to the pouch configurator — same patterns, separate state. */
 .bc-section{padding:64px 60px 96px;background:linear-gradient(180deg,#fbf8f0 0%,#f6f2e6 100%)}
@@ -1903,7 +2004,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 <div class="section-card section-card-wide scale-in" onclick="go('shop')"><div class="sc-img" style="background:#111 url(blackholster.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Shop</div><div class="sc-title">Shop the Collection</div><div class="sc-desc">The Harness Bag &amp; The Tech Vest &mdash; the full Goldy Brown line, made to order.</div></div></div>
 <div class="section-card scale-in" onclick="go('lookbook')"><div class="sc-img" style="background:url(GB111.JPG) center 55%/cover"></div><div class="sc-overlay"><div class="sc-label">Editorial</div><div class="sc-title">Lookbook</div><div class="sc-desc">See the collection worn, styled, and photographed</div></div></div>
 <div class="section-card scale-in" onclick="go('hotel')"><div class="sc-img" style="background:url(greenrobe.png) center 5%/cover"></div><div class="sc-overlay"><div class="sc-label">B2B</div><div class="sc-title">Hotel Collection</div><div class="sc-desc">Curated VIP guest kits for 4 and 5 star hotels</div></div></div>
-<div class="section-card scale-in" onclick="go('custom')"><div class="sc-img" style="background:url(blackholsterclose.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">Made to Your Spec</div><div class="sc-title">Customize</div><div class="sc-desc">Leather, closure, hardware, stitch &mdash; configure live, ships in 2&ndash;3 weeks.</div></div></div>
+<div class="section-card scale-in" onclick="go('studio')"><div class="sc-img" style="background:url(blackholsterclose.png) center 40%/cover"></div><div class="sc-overlay"><div class="sc-label">The Studio</div><div class="sc-title">Build Your Piece</div><div class="sc-desc">Real product, recolored live. Pick leather, hardware, zippers, size &mdash; see every change instantly.</div></div></div>
 <div class="section-card scale-in" onclick="go('about')"><div class="sc-img" style="background:url(DSC04620.JPG) center 10%/cover"></div><div class="sc-overlay"><div class="sc-label">The Brand</div><div class="sc-title">About</div><div class="sc-desc">My story, my values, get in touch</div></div></div>
 </div>
 
@@ -3698,6 +3799,160 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 </section>
 </div>
 
+<!-- ======================== STUDIO — REAL-IMAGE CONFIGURATOR ======================== -->
+<div class="page" id="page-studio">
+<div class="studio-wrap">
+
+  <!-- LEFT: live recolored preview -->
+  <div class="studio-stage">
+    <div class="studio-render-status" id="stRenderStatus"><span class="srs-dot"></span><span id="stRenderText">Live render</span></div>
+    <div class="studio-product-tabs" role="tablist" aria-label="Product">
+      <button class="studio-ptab active" data-product="vest" onclick="stSelectProduct('vest')">Tech Vest</button>
+      <button class="studio-ptab" data-product="harness" onclick="stSelectProduct('harness')">Harness Bag</button>
+    </div>
+    <div class="studio-zoom" aria-label="Zoom">
+      <button onclick="stZoom(1)" aria-label="Zoom in">+</button>
+      <button onclick="stZoom(-1)" aria-label="Zoom out">&minus;</button>
+    </div>
+    <div class="studio-stage-inner">
+      <canvas class="studio-canvas" id="studioCanvas" aria-label="Configured product preview"></canvas>
+      <div class="studio-stage-empty" id="stEmpty" style="display:none">
+        <b>Preview unavailable</b>
+        Upload the product photo (techvest.jpg / holster.png) and the live recolor will activate. In the meantime, your spec is saved and the price recalculates as you choose.
+      </div>
+    </div>
+    <div class="studio-spec-strip" id="stSpecStrip">
+      <span class="sss-dot"></span>
+      <span id="stSpecStripTxt">Black leather &middot; Stainless hardware &middot; YKK Excella zipper</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: configuration -->
+  <div class="studio-config">
+    <div class="cfg-hd">
+      <div class="cfg-eyebrow">Goldy Brown Atelier</div>
+      <h2>Configure Your <em>Piece</em></h2>
+      <p class="cfg-sub">Real product, recolored live. Every spec from leather to thread is rendered in the preview, hand-cut to your build in Vancouver in 2&ndash;3 weeks.</p>
+    </div>
+
+    <!-- 01: Leather colour -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">01</span><span class="cfg-label">Leather Colour</span><span class="cfg-current" id="cfgCurColor">Black</span></div>
+      <div class="cfg-sw-grid">
+        <button class="cfg-sw active" data-cfg-color="black" style="--swc:#1a1a1a" onclick="stSetColor('black')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Black</span></button>
+        <button class="cfg-sw" data-cfg-color="bone" style="--swc:#ece6d7" onclick="stSetColor('bone')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Bone</span></button>
+        <button class="cfg-sw" data-cfg-color="azure" style="--swc:#5e9fd0" onclick="stSetColor('azure')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Azure</span></button>
+        <button class="cfg-sw" data-cfg-color="cognac" style="--swc:#8b5a2b" onclick="stSetColor('cognac')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Cognac</span></button>
+        <button class="cfg-sw" data-cfg-color="oxblood" style="--swc:#5e1a1a" onclick="stSetColor('oxblood')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Oxblood</span></button>
+        <button class="cfg-sw" data-cfg-color="forest" style="--swc:#2d5a3d" onclick="stSetColor('forest')"><span class="cfg-sw-dot"></span><span class="cfg-sw-lbl">Forest</span></button>
+      </div>
+      <div class="cfg-custom-row">
+        <label><span>Custom hex</span><input type="color" id="cfgHex" value="#1a1a1a" oninput="stSetCustomColor(this.value)"><input type="text" id="cfgHexTxt" value="#1a1a1a" maxlength="7" oninput="stSetCustomColorText(this.value)"></label>
+      </div>
+    </div>
+
+    <!-- 02: Hardware finish -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">02</span><span class="cfg-label">Hardware Finish</span><span class="cfg-current" id="cfgCurHwFinish">Brushed Stainless</span></div>
+      <div class="cfg-chips">
+        <button class="cfg-chip active" data-cfg-hwfin="stainless" onclick="stSetHwFinish('stainless')"><span class="cfg-chip-t">Brushed Stainless</span><span class="cfg-chip-d">316L &middot; included</span></button>
+        <button class="cfg-chip" data-cfg-hwfin="polished" onclick="stSetHwFinish('polished')"><span class="cfg-chip-t">Polished Steel</span><span class="cfg-chip-d">Mirror &middot; included</span></button>
+        <button class="cfg-chip" data-cfg-hwfin="brass" onclick="stSetHwFinish('brass')"><span class="cfg-chip-t">Antique Brass</span><span class="cfg-chip-d">+$30</span></button>
+        <button class="cfg-chip" data-cfg-hwfin="gold" onclick="stSetHwFinish('gold')"><span class="cfg-chip-t">Champagne Gold</span><span class="cfg-chip-d">PVD &middot; +$45</span></button>
+        <button class="cfg-chip" data-cfg-hwfin="matte" onclick="stSetHwFinish('matte')"><span class="cfg-chip-t">Matte Black</span><span class="cfg-chip-d">PVD &middot; +$35</span></button>
+      </div>
+    </div>
+
+    <!-- 03: Hardware type -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">03</span><span class="cfg-label">Hardware Type</span><span class="cfg-current" id="cfgCurHwType">D-Rings</span></div>
+      <div class="cfg-chips">
+        <button class="cfg-chip active" data-cfg-hwtype="dring" onclick="stSetHwType('dring')"><span class="cfg-chip-t">D-Rings</span><span class="cfg-chip-d">Welded &middot; included</span></button>
+        <button class="cfg-chip" data-cfg-hwtype="swivel" onclick="stSetHwType('swivel')"><span class="cfg-chip-t">Swivel Hooks</span><span class="cfg-chip-d">Trigger snap &middot; +$25</span></button>
+        <button class="cfg-chip" data-cfg-hwtype="triglide" onclick="stSetHwType('triglide')"><span class="cfg-chip-t">Tri-Glide</span><span class="cfg-chip-d">Adjustable &middot; +$15</span></button>
+        <button class="cfg-chip" data-cfg-hwtype="rectring" onclick="stSetHwType('rectring')"><span class="cfg-chip-t">Rectangle Rings</span><span class="cfg-chip-d">Solid cast &middot; included</span></button>
+      </div>
+    </div>
+
+    <!-- 04: Zipper -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">04</span><span class="cfg-label">Zipper</span><span class="cfg-current" id="cfgCurZip">YKK Excella</span></div>
+      <div class="cfg-chips">
+        <button class="cfg-chip active" data-cfg-zip="excella" onclick="stSetZip('excella')"><span class="cfg-chip-t">YKK Excella Metal</span><span class="cfg-chip-d">Premium &middot; included</span></button>
+        <button class="cfg-chip" data-cfg-zip="hidden" onclick="stSetZip('hidden')"><span class="cfg-chip-t">Hidden Coil</span><span class="cfg-chip-d">Concealed &middot; +$15</span></button>
+        <button class="cfg-chip" data-cfg-zip="reverse" onclick="stSetZip('reverse')"><span class="cfg-chip-t">Reverse Coil</span><span class="cfg-chip-d">Water-resistant &middot; +$25</span></button>
+        <button class="cfg-chip" data-cfg-zip="none" onclick="stSetZip('none')"><span class="cfg-chip-t">No Zipper</span><span class="cfg-chip-d">Flap / magnet &middot; included</span></button>
+      </div>
+    </div>
+
+    <!-- 05: Closure (Harness Bag only) -->
+    <div class="cfg-block" id="cfgClosureBlock">
+      <div class="cfg-block-head"><span class="cfg-num">05</span><span class="cfg-label">Closure</span><span class="cfg-current" id="cfgCurClosure">Top Zipper</span></div>
+      <div class="cfg-chips">
+        <button class="cfg-chip cfg-chip-wide active" data-cfg-closure="top" onclick="stSetClosure('top')"><span class="cfg-chip-t">Top Zipper</span><span class="cfg-chip-d">Clean &middot; included</span></button>
+        <button class="cfg-chip cfg-chip-wide" data-cfg-closure="amiri" onclick="stSetClosure('amiri')"><span class="cfg-chip-t">Amiri-Style Flap</span><span class="cfg-chip-d">Snap &middot; side expansion &middot; +$35</span></button>
+        <button class="cfg-chip cfg-chip-wide" data-cfg-closure="envelope" onclick="stSetClosure('envelope')"><span class="cfg-chip-t">Envelope Flap</span><span class="cfg-chip-d">Hidden magnet &middot; +$20</span></button>
+      </div>
+    </div>
+
+    <!-- 06: Size -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">06</span><span class="cfg-label">Size</span><span class="cfg-current" id="cfgCurSize">Standard</span></div>
+      <div class="cfg-chips" id="cfgSizeChips">
+        <!-- populated per product -->
+      </div>
+      <div class="cfg-dim-row" id="cfgCustomDims" style="display:none">
+        <label>Chest / pouch W<input type="number" id="cfgCustomW" min="4" max="14" step="0.5" value="7" onchange="stSetCustomDim('w',this.value)"></label>
+        <label>Pouch H / drop length<input type="number" id="cfgCustomH" min="3" max="14" step="0.5" value="5" onchange="stSetCustomDim('h',this.value)"></label>
+      </div>
+    </div>
+
+    <!-- 07: Stitch -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">07</span><span class="cfg-label">Stitch Colour</span><span class="cfg-current" id="cfgCurStitch">Tonal</span></div>
+      <div class="cfg-chips">
+        <button class="cfg-chip active" data-cfg-stitch="tonal" onclick="stSetStitch('tonal')"><span class="cfg-chip-t">Tonal</span><span class="cfg-chip-d">Matches &middot; included</span></button>
+        <button class="cfg-chip" data-cfg-stitch="tan" onclick="stSetStitch('tan')"><span class="cfg-chip-t">Contrast Tan</span><span class="cfg-chip-d">+$15</span></button>
+        <button class="cfg-chip" data-cfg-stitch="bone" onclick="stSetStitch('bone')"><span class="cfg-chip-t">Contrast Bone</span><span class="cfg-chip-d">+$15</span></button>
+        <button class="cfg-chip" data-cfg-stitch="red" onclick="stSetStitch('red')"><span class="cfg-chip-t">Contrast Red</span><span class="cfg-chip-d">+$15</span></button>
+      </div>
+    </div>
+
+    <!-- 08: Monogram -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">08</span><span class="cfg-label">Monogram</span><span class="cfg-current" id="cfgCurMono">None</span></div>
+      <input type="text" id="cfgMono" maxlength="4" class="cfg-input" placeholder="Up to 4 initials, e.g. GSD" oninput="stSetMono(this.value)">
+    </div>
+
+    <!-- 09: Notes -->
+    <div class="cfg-block">
+      <div class="cfg-block-head"><span class="cfg-num">09</span><span class="cfg-label">Notes for the Atelier</span></div>
+      <textarea id="cfgNotes" class="cfg-textarea" rows="3" placeholder="Deadlines, edge paint colour, interior lining swap, strap-length preference, anything else..."></textarea>
+    </div>
+
+    <!-- Summary / actions -->
+    <div class="cfg-summary">
+      <div class="cfg-sum-row">
+        <div class="cfg-sum-left">
+          <div class="cfg-sum-eyebrow">Your Build</div>
+          <div class="cfg-sum-spec" id="cfgSumSpec">Tech Vest &middot; Black &middot; Brushed Stainless &middot; D-Rings &middot; YKK Excella &middot; Standard</div>
+          <div class="cfg-sum-lead">Hand cut in 2&ndash;3 weeks &middot; Free worldwide shipping &middot; Lifetime warranty</div>
+        </div>
+        <div>
+          <div class="cfg-sum-eyebrow">Total</div>
+          <div class="cfg-sum-price"><span id="cfgPrice">$399</span><small>USD</small></div>
+        </div>
+      </div>
+      <div class="cfg-actions">
+        <button class="cfg-btn" onclick="stRequestBuild()">Request This Build &rarr;</button>
+        <button class="cfg-btn-ghost" onclick="stShareSpec()" title="Copy a link to this exact build"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12v7a2 2 0 002 2h12a2 2 0 002-2v-7M16 6l-4-4-4 4M12 2v14"/></svg>Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cfg-share-toast" id="cfgShareToast">Build link copied to clipboard.</div>
+</div>
+
 <!-- ======================== REFER & EARN ======================== -->
 <div class="page" id="page-refer">
 <div class="page-hero"><div class="slabel">For Our Customers</div><h1>Refer &amp; <span style="font-style:italic;color:var(--gl)">Earn</span></h1><p class="sub">A personalised discount code for your friends. A cash commission for you on every order they place. Honest numbers, paid the month after their piece ships.</p></div>
@@ -4033,6 +4288,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
         <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/54049514750244:1" target="_blank" rel="noopener">Buy &mdash; White</a>
         <a class="btn btn-f" href="https://kuibri-ev.myshopify.com/cart/54049514783012:1" target="_blank" rel="noopener">Buy &mdash; Blue</a>
       </div>
+      <a class="btn-link" href="/studio" onclick="go('studio');return false;" style="display:block;margin-top:10px;text-align:center">Want a different colour or hardware? Build it in the Studio &rarr;</a>
     </div>
   </article>
 </section>
@@ -4435,9 +4691,9 @@ function closeProp(e){if(e&&e.target!==document.getElementById('propOv')&&!e.tar
 function submitForm(url,data,btn,onSuccess){btn.disabled=true;btn.textContent='Opening email...';try{var subject=data._subject||'Goldy Brown Inquiry';var bodyLines=[];Object.keys(data).forEach(function(k){if(k==='_subject')return;var label=k.charAt(0).toUpperCase()+k.slice(1).replace(/_/g,' ');bodyLines.push(label+': '+data[k])});bodyLines.push('','\u2014','Sent from goldybrown.com');var body=bodyLines.join('\n');var to='info'+'@'+'goldybrown.com';var mailto='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);window.location.href=mailto;setTimeout(function(){btn.disabled=false;onSuccess()},400)}catch(e){btn.disabled=false;btn.textContent='Try Again';setTimeout(function(){btn.textContent=btn.dataset.label||'Send'},2500)}}
 function submitProp(e){e.preventDefault();var f=e.target;var bd=document.getElementById('propBody');var btn=document.getElementById('propSubmitBtn');btn.dataset.label=btn.textContent;var data={_subject:'Hotel Kit Proposal Request \u2014 '+bd.dataset.tier+' Tier',type:'proposal',name:f.name.value,title:f.title.value,company:f.company.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,tier:bd.dataset.tier,kit_total:bd.dataset.total,kit_items:bd.dataset.items};submitForm(FORM_URL,data,btn,function(){document.getElementById('propBody').innerHTML='<div class="pm-success"><h3>Email Ready</h3><p>Thanks '+data.name.split(' ')[0]+'. Your email client just opened with your '+data.tier+' proposal request pre-filled. <strong>Click Send in your email app</strong> and I\'ll get back to you within 24 hours.</p><button class="btn btn-f" onclick="closeProp()" style="margin-top:8px">Close</button></div>'})}
 (function(){var e='inf'+'o'+String.fromCharCode(64)+'goldy'+'brown.com';var el=document.getElementById('contactEmail');if(el){var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;a.style.color='inherit';a.style.textDecoration='none';el.appendChild(a)}})();
-var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Harness Bags & Travel Bags | Designed in Vancouver',d:'Full grain leather harness bags and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — harness bags, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Collection — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},about:{t:'About — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Customize Your Harness Bag — Bespoke Leather, Hardware, Stitch | Goldy Brown',d:'Configure your Goldy Brown Harness Bag to spec: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut and stitched in Vancouver in 2–3 weeks. Free worldwide shipping, lifetime warranty.'},refer:{t:'Refer & Earn — $30 per Harness, $40 per Bespoke Build | Goldy Brown',d:'Apply for a personal Goldy Brown referral code. Friends get 10% off their order, you get $30 per harness referred, $25 per pouch set, $40 per bespoke build. Paid monthly via PayPal, e-Transfer, wire, or 1.2× store credit. Tier rewards at 5, 10, and 25 referrals.'},press:{t:'Press & Media Kit — Boilerplate, Facts & Images | Goldy Brown',d:'Goldy Brown media kit: brand boilerplate, fast facts, story angles, founder information, and high-resolution images for press and editorial use. Vancouver leather house behind the Harness. Press contact: info@goldybrown.com.'},shop:{t:'Shop — The Goldy Brown Collection | Harness Bag, Bespoke, Hotel',d:'Shop the Goldy Brown collection: the Harness Bag from $299, bespoke configurations, and the Hotel Collection for hospitality. Full-grain leather, free worldwide shipping, lifetime warranty, duties prepaid to Europe and the UK.'},fr:{t:'Sac Harnais en Cuir Pleine Fleur — Livraison DDP en France | Goldy Brown',d:'Sac harnais de voyage en cuir de veau pleine fleur, conçu à Vancouver, fabriqué en Inde du Sud. Porté sur le corps, mains libres. Livraison DDP — droits de douane et TVA inclus. Garantie à vie. Paris, Monaco, Genève.'},it:{t:'Borsa a Tracolla in Pelle Pieno Fiore — Spedizione DDP in Italia | Goldy Brown',d:'Borsa a tracolla da viaggio in pelle di vitello pieno fiore, disegnata a Vancouver, fatta nell’India del Sud. Indossata sul corpo, mani libere. Spedizione DDP — dazi e IVA inclusi. Garanzia a vita. Milano, Roma.'},de:{t:'Leder-Harness-Tasche aus Vollnarbenleder — DDP-Versand nach Deutschland | Goldy Brown',d:'Leder-Brusttasche aus Vollnarben-Kalbsleder, entworfen in Vancouver, gefertigt in Südindien. Am Körper getragen, Hände frei. DDP-Versand — Zoll und MwSt. inklusive. Lebenslange Garantie. Berlin, München, Zürich, Wien.'},es:{t:'Bolso Arnés de Cuero Plena Flor — Envío DDP a España | Goldy Brown',d:'Bolso arnés de viaje en cuero de ternera plena flor, diseñado en Vancouver, hecho en el sur de la India. Llevado sobre el cuerpo, manos libres. Envío DDP — aranceles e IVA incluidos. Garantía de por vida. Madrid, Barcelona.'},'travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'cityvancouver':{t:'Luxury Leather Harness Bags Delivered Free in Vancouver | Goldy Brown',d:'Free same-week delivery of full grain leather Harness Bags across Vancouver, BC. Designed locally in the Vancouver atelier. Yaletown, Kitsilano, Gastown, North Vancouver and across the GTA.'},'citytoronto':{t:'Luxury Leather Harness Bags Delivered Free in Toronto | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Toronto, Yorkville, Forest Hill, King West and across the GTA. 2 to 4 business days from Vancouver.'},'citynewyork':{t:'Luxury Leather Harness Bags Delivered Free in New York | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Manhattan, Brooklyn, Williamsburg, Hoboken and the greater NYC metro. 3 to 5 business days from Vancouver atelier.'},'citylosangeles':{t:'Luxury Leather Harness Bags Delivered Free in Los Angeles | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Beverly Hills, West Hollywood, Venice, Santa Monica and the greater LA metro. 3 to 5 business days from Vancouver.'},'citymiami':{t:'Luxury Leather Harness Bags Delivered Free in Miami | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Miami Beach, Brickell, Coral Gables, Wynwood and across South Florida. 3 to 5 business days from Vancouver atelier.'},'citymontreal':{t:'Luxury Leather Harness Bags Delivered Free in Montreal | Goldy Brown',d:'Free Canada Post and Purolator delivery of full grain leather Harness Bags to Westmount, Mile End, Outremont, the Plateau, and Old Montreal. Designed in Vancouver, made in South India.'},'citycalgary':{t:'Luxury Leather Harness Bags Delivered Free in Calgary | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Mount Royal, Britannia, Elbow Park, Aspen Woods, the Beltline, and across Calgary. 2 to 3 business days from Vancouver.'},'cityottawa':{t:'Luxury Leather Harness Bags Delivered Free in Ottawa | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Rockcliffe Park, the Glebe, Westboro, Sandy Hill, and across the National Capital Region.'},'citychicago':{t:'Luxury Leather Harness Bags Delivered Free in Chicago | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to the Gold Coast, Lincoln Park, the Loop, River North, and the North Shore including Winnetka and Lake Forest. 3 to 5 business days.'},'citysanfrancisco':{t:'Luxury Leather Harness Bags Delivered Free in San Francisco & the Bay Area | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Pacific Heights, Russian Hill, the Marina, plus Atherton, Palo Alto, and Mill Valley. 3 to 5 business days from Vancouver.'},'cityboston':{t:'Luxury Leather Harness Bags Delivered Free in Boston | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Back Bay, Beacon Hill, Brookline, Cambridge, and out to Wellesley and the North Shore. 3 to 5 business days from Vancouver.'},'citydallas':{t:'Luxury Leather Harness Bags Delivered Free in Dallas & DFW | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Highland Park, University Park, Preston Hollow, Uptown, plus Southlake, Westlake, and Fort Worth. 3 to 5 business days from Vancouver.'},'citylasvegas':{t:'Luxury Leather Harness Bags Delivered Free in Las Vegas | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Summerlin, MacDonald Highlands, Lake Las Vegas, the Strip residential towers, and Henderson. 3 to 5 business days from Vancouver.'},'citylondon':{t:'Luxury Leather Harness Bags Delivered Free in London — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mayfair, Knightsbridge, Chelsea, Notting Hill, and across Greater London. UK duties, import VAT and handling all prepaid — no courier surprise at the door. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityparis':{t:'Luxury Leather Harness Bags Delivered Free in Paris — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to the 1er, 6e, 7e, 8e, 16e, and Le Marais. EU duties and French VAT prepaid. 4 to 6 business days from Vancouver. Cuir pleine fleur, garantie à vie.'},'citymilan':{t:'Luxury Leather Harness Bags Delivered Free in Milan — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Brera, the Quadrilatero della Moda, Porta Nuova, Porta Venezia, and Lake Como. EU duties and Italian IVA prepaid. Pelle pieno fiore, garanzia a vita.'},'cityrome':{t:'Luxury Leather Harness Bags Delivered Free in Rome — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Parioli, Centro Storico, Prati, Trastevere, and across Roma. EU duties and IVA prepaid. 4 to 6 business days from Vancouver. Garanzia a vita.'},'cityzurich':{t:'Luxury Leather Harness Bags Delivered Free in Zürich — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Zürichberg, Seefeld, Enge, the Goldküste, plus Zug, Geneva, and St. Moritz. Swiss customs and MwSt prepaid. 4 to 6 business days from Vancouver.'},'citymonaco':{t:'Luxury Leather Harness Bags Delivered Free in Monaco | Goldy Brown',d:'Free DHL Express delivery to Monte Carlo, La Condamine, Fontvieille, plus Cap Ferrat, Èze, and the Côte d’Azur. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityberlin':{t:'Luxury Leather Harness Bags Delivered Free in Berlin — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mitte, Charlottenburg, Prenzlauer Berg, Kreuzberg, Grunewald, plus Munich, Hamburg, and Frankfurt. EU duties and Mehrwertsteuer prepaid. Lebenslange Garantie.'},'citymadrid':{t:'Luxury Leather Harness Bags Delivered Free in Madrid — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Salamanca, Chamberí, Justicia, Castellana, La Moraleja, plus Barcelona, Marbella, and Mallorca. EU duties and IVA prepaid. Garantía de por vida.'},'cityamsterdam':{t:'Luxury Leather Harness Bags Delivered Free in Amsterdam — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Oud-Zuid, Jordaan, Grachtengordel, the Museum Quarter, plus Rotterdam, The Hague, and Wassenaar. EU duties and BTW prepaid. Levenslange garantie.'},'citydubai':{t:'Luxury Leather Harness Bags Delivered Free in Dubai — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Downtown Dubai, DIFC, Palm Jumeirah, Emirates Hills, Jumeirah, plus Abu Dhabi. UAE customs prepaid. 4 to 6 business days from the Vancouver atelier.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-one-bag-travel':{t:'How to Travel Europe with One Bag (and a Harness) | Goldy Brown Journal',d:'A practical guide to one bag travel: what to pack for a ten-day Europe trip, which carry-on rules every airline lets you bend, and why a leather harness bag beats a sling or a tote at every checkpoint. Hands-free travel, written by the designer.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why I use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
+var PAGE_META={home:{t:'Goldy Brown — Luxury Leather Harness Bags & Travel Bags | Designed in Vancouver',d:'Full grain leather harness bags and travel bags, designed in Vancouver and made in South India by master artisans. Lifetime warranty, free worldwide shipping. Sourced from heritage tanneries whose leather has supplied European luxury houses for over a century.'},lookbook:{t:'Lookbook — Goldy Brown Leather Collection Styled & Worn',d:'Editorial lookbook of the Goldy Brown leather collection — harness bags, travel bags, and accessories styled, worn, and photographed. Full grain, lifetime warranty.'},hotel:{t:'Hotel Collection — VIP Leather Gift Kits for 5-Star Hotels | Goldy Brown',d:'Curated leather VIP guest kits for 4 and 5 star hotels and resorts. Tier pricing from $10K to $100K, custom branding, turnkey packaging, and worldwide delivery. Lifetime warranty.'},about:{t:'About — Vancouver Luxury Leather Designer | Goldy Brown',d:'Goldy Brown designs luxury leather goods for discerning individuals, world-class hotels, and the hospitality industry. Full grain leather, lifetime warranty, made in South India by master artisans.'},privacy:{t:'Privacy Policy | Goldy Brown',d:'How Goldy Brown collects, uses, and protects your personal information.'},terms:{t:'Terms & Conditions | Goldy Brown',d:'Terms of service for orders placed with Goldy Brown.'},shipping:{t:'Shipping & Handling — Free Worldwide Delivery | Goldy Brown',d:'Free worldwide shipping from Vancouver via DHL, FedEx, and Canada Post. Typical delivery 3–7 business days after handling. All shipping costs covered for warranty repairs and exchanges.'},returns:{t:'Returns, Exchanges & Lifetime Warranty | Goldy Brown',d:'Easy 14-day returns on unused items, free worldwide return shipping, and a lifetime warranty against any defect in stitching, leather, or hardware. The Goldy Brown Guarantee.'},custom:{t:'Customize Your Harness Bag — Bespoke Leather, Hardware, Stitch | Goldy Brown',d:'Configure your Goldy Brown Harness Bag to spec: leather colour, pouch size, closure style, hardware finish, stitch colour. Hand cut and stitched in Vancouver in 2–3 weeks. Free worldwide shipping, lifetime warranty.'},studio:{t:'Studio — Real-Image Configurator | Tech Vest & Harness Bag | Goldy Brown',d:'Build your piece live: pick the leather colour, hardware finish, hardware type (D-rings, swivel hooks, tri-glide), zipper, size, stitch, and monogram. Real product photography, recolored in real time. Hand cut in Vancouver in 2–3 weeks.'},refer:{t:'Refer & Earn — $30 per Harness, $40 per Bespoke Build | Goldy Brown',d:'Apply for a personal Goldy Brown referral code. Friends get 10% off their order, you get $30 per harness referred, $25 per pouch set, $40 per bespoke build. Paid monthly via PayPal, e-Transfer, wire, or 1.2× store credit. Tier rewards at 5, 10, and 25 referrals.'},press:{t:'Press & Media Kit — Boilerplate, Facts & Images | Goldy Brown',d:'Goldy Brown media kit: brand boilerplate, fast facts, story angles, founder information, and high-resolution images for press and editorial use. Vancouver leather house behind the Harness. Press contact: info@goldybrown.com.'},shop:{t:'Shop — The Goldy Brown Collection | Harness Bag, Bespoke, Hotel',d:'Shop the Goldy Brown collection: the Harness Bag from $299, bespoke configurations, and the Hotel Collection for hospitality. Full-grain leather, free worldwide shipping, lifetime warranty, duties prepaid to Europe and the UK.'},fr:{t:'Sac Harnais en Cuir Pleine Fleur — Livraison DDP en France | Goldy Brown',d:'Sac harnais de voyage en cuir de veau pleine fleur, conçu à Vancouver, fabriqué en Inde du Sud. Porté sur le corps, mains libres. Livraison DDP — droits de douane et TVA inclus. Garantie à vie. Paris, Monaco, Genève.'},it:{t:'Borsa a Tracolla in Pelle Pieno Fiore — Spedizione DDP in Italia | Goldy Brown',d:'Borsa a tracolla da viaggio in pelle di vitello pieno fiore, disegnata a Vancouver, fatta nell’India del Sud. Indossata sul corpo, mani libere. Spedizione DDP — dazi e IVA inclusi. Garanzia a vita. Milano, Roma.'},de:{t:'Leder-Harness-Tasche aus Vollnarbenleder — DDP-Versand nach Deutschland | Goldy Brown',d:'Leder-Brusttasche aus Vollnarben-Kalbsleder, entworfen in Vancouver, gefertigt in Südindien. Am Körper getragen, Hände frei. DDP-Versand — Zoll und MwSt. inklusive. Lebenslange Garantie. Berlin, München, Zürich, Wien.'},es:{t:'Bolso Arnés de Cuero Plena Flor — Envío DDP a España | Goldy Brown',d:'Bolso arnés de viaje en cuero de ternera plena flor, diseñado en Vancouver, hecho en el sur de la India. Llevado sobre el cuerpo, manos libres. Envío DDP — aranceles e IVA incluidos. Garantía de por vida. Madrid, Barcelona.'},'travel-bags':{t:'Luxury Leather Travel Bags | Full Grain, Worldwide Shipping | Goldy Brown',d:'Luxury leather travel bags, hand cut from full grain calfskin in Vancouver, made in South India by master leather artisans. Worn-on-body travel harness bag, free worldwide shipping, lifetime warranty. The cleanest one-bag travel setup.'},'cityvancouver':{t:'Luxury Leather Harness Bags Delivered Free in Vancouver | Goldy Brown',d:'Free same-week delivery of full grain leather Harness Bags across Vancouver, BC. Designed locally in the Vancouver atelier. Yaletown, Kitsilano, Gastown, North Vancouver and across the GTA.'},'citytoronto':{t:'Luxury Leather Harness Bags Delivered Free in Toronto | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Toronto, Yorkville, Forest Hill, King West and across the GTA. 2 to 4 business days from Vancouver.'},'citynewyork':{t:'Luxury Leather Harness Bags Delivered Free in New York | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Manhattan, Brooklyn, Williamsburg, Hoboken and the greater NYC metro. 3 to 5 business days from Vancouver atelier.'},'citylosangeles':{t:'Luxury Leather Harness Bags Delivered Free in Los Angeles | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Beverly Hills, West Hollywood, Venice, Santa Monica and the greater LA metro. 3 to 5 business days from Vancouver.'},'citymiami':{t:'Luxury Leather Harness Bags Delivered Free in Miami | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Miami Beach, Brickell, Coral Gables, Wynwood and across South Florida. 3 to 5 business days from Vancouver atelier.'},'citymontreal':{t:'Luxury Leather Harness Bags Delivered Free in Montreal | Goldy Brown',d:'Free Canada Post and Purolator delivery of full grain leather Harness Bags to Westmount, Mile End, Outremont, the Plateau, and Old Montreal. Designed in Vancouver, made in South India.'},'citycalgary':{t:'Luxury Leather Harness Bags Delivered Free in Calgary | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Mount Royal, Britannia, Elbow Park, Aspen Woods, the Beltline, and across Calgary. 2 to 3 business days from Vancouver.'},'cityottawa':{t:'Luxury Leather Harness Bags Delivered Free in Ottawa | Goldy Brown',d:'Free Canada Post Xpresspost delivery of full grain leather Harness Bags to Rockcliffe Park, the Glebe, Westboro, Sandy Hill, and across the National Capital Region.'},'citychicago':{t:'Luxury Leather Harness Bags Delivered Free in Chicago | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to the Gold Coast, Lincoln Park, the Loop, River North, and the North Shore including Winnetka and Lake Forest. 3 to 5 business days.'},'citysanfrancisco':{t:'Luxury Leather Harness Bags Delivered Free in San Francisco & the Bay Area | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Pacific Heights, Russian Hill, the Marina, plus Atherton, Palo Alto, and Mill Valley. 3 to 5 business days from Vancouver.'},'cityboston':{t:'Luxury Leather Harness Bags Delivered Free in Boston | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Back Bay, Beacon Hill, Brookline, Cambridge, and out to Wellesley and the North Shore. 3 to 5 business days from Vancouver.'},'citydallas':{t:'Luxury Leather Harness Bags Delivered Free in Dallas & DFW | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Highland Park, University Park, Preston Hollow, Uptown, plus Southlake, Westlake, and Fort Worth. 3 to 5 business days from Vancouver.'},'citylasvegas':{t:'Luxury Leather Harness Bags Delivered Free in Las Vegas | Goldy Brown',d:'Free DHL or FedEx delivery of full grain leather Harness Bags to Summerlin, MacDonald Highlands, Lake Las Vegas, the Strip residential towers, and Henderson. 3 to 5 business days from Vancouver.'},'citylondon':{t:'Luxury Leather Harness Bags Delivered Free in London — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mayfair, Knightsbridge, Chelsea, Notting Hill, and across Greater London. UK duties, import VAT and handling all prepaid — no courier surprise at the door. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityparis':{t:'Luxury Leather Harness Bags Delivered Free in Paris — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to the 1er, 6e, 7e, 8e, 16e, and Le Marais. EU duties and French VAT prepaid. 4 to 6 business days from Vancouver. Cuir pleine fleur, garantie à vie.'},'citymilan':{t:'Luxury Leather Harness Bags Delivered Free in Milan — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Brera, the Quadrilatero della Moda, Porta Nuova, Porta Venezia, and Lake Como. EU duties and Italian IVA prepaid. Pelle pieno fiore, garanzia a vita.'},'cityrome':{t:'Luxury Leather Harness Bags Delivered Free in Rome — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Parioli, Centro Storico, Prati, Trastevere, and across Roma. EU duties and IVA prepaid. 4 to 6 business days from Vancouver. Garanzia a vita.'},'cityzurich':{t:'Luxury Leather Harness Bags Delivered Free in Zürich — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Zürichberg, Seefeld, Enge, the Goldküste, plus Zug, Geneva, and St. Moritz. Swiss customs and MwSt prepaid. 4 to 6 business days from Vancouver.'},'citymonaco':{t:'Luxury Leather Harness Bags Delivered Free in Monaco | Goldy Brown',d:'Free DHL Express delivery to Monte Carlo, La Condamine, Fontvieille, plus Cap Ferrat, Èze, and the Côte d’Azur. 4 to 6 business days from Vancouver. Lifetime warranty.'},'cityberlin':{t:'Luxury Leather Harness Bags Delivered Free in Berlin — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Mitte, Charlottenburg, Prenzlauer Berg, Kreuzberg, Grunewald, plus Munich, Hamburg, and Frankfurt. EU duties and Mehrwertsteuer prepaid. Lebenslange Garantie.'},'citymadrid':{t:'Luxury Leather Harness Bags Delivered Free in Madrid — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Salamanca, Chamberí, Justicia, Castellana, La Moraleja, plus Barcelona, Marbella, and Mallorca. EU duties and IVA prepaid. Garantía de por vida.'},'cityamsterdam':{t:'Luxury Leather Harness Bags Delivered Free in Amsterdam — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Oud-Zuid, Jordaan, Grachtengordel, the Museum Quarter, plus Rotterdam, The Hague, and Wassenaar. EU duties and BTW prepaid. Levenslange garantie.'},'citydubai':{t:'Luxury Leather Harness Bags Delivered Free in Dubai — DDP | Goldy Brown',d:'Free DHL Express DDP delivery to Downtown Dubai, DIFC, Palm Jumeirah, Emirates Hills, Jumeirah, plus Abu Dhabi. UAE customs prepaid. 4 to 6 business days from the Vancouver atelier.'},journal:{t:'The Journal — Notes from the Atelier | Goldy Brown',d:'Field notes on full-grain leather, vegetable tanning, the heritage tanneries of South India, and the work of building a small luxury leather house. Updated regularly.'},'journal-one-bag-travel':{t:'How to Travel Europe with One Bag (and a Harness) | Goldy Brown Journal',d:'A practical guide to one bag travel: what to pack for a ten-day Europe trip, which carry-on rules every airline lets you bend, and why a leather harness bag beats a sling or a tote at every checkpoint. Hands-free travel, written by the designer.'},'journal-full-grain-leather':{t:'What is Full-Grain Leather, Really? | Goldy Brown Journal',d:'A plain-language guide to full-grain leather — what it actually is, how it differs from top-grain, genuine, bonded, and corrected-grain leather, and how to tell which one is in your hands within a minute.'},'journal-veg-vs-chrome':{t:'Vegetable Tanning vs Chrome Tanning: A Field Guide | Goldy Brown Journal',d:'The practical difference between vegetable-tanned and chrome-tanned leather. Which method is right for which piece, the environmental conversation, and why I use both.'},'journal-south-india':{t:"How South India Became Leather's Quiet Capital | Goldy Brown Journal",d:'The hidden history of how Tamil Nadu and Andhra Pradesh tanneries came to supply European luxury houses for over a century, and why most labels never mention them.'},'journal-leather-care':{t:'How to Care for Full-Grain Leather: A Working Guide | Goldy Brown Journal',d:'When to condition, when to leave it alone, what to do if your bag gets wet, and how to handle scratches. A practical guide to caring for full-grain calfskin from the people who make it.'}};
 var BREADCRUMB_LABELS={home:'Home',shop:'Shop',lookbook:'Lookbook',hotel:'Hotel Collection',custom:'Customize Your Bag',refer:'Refer & Earn',press:'Press & Media',fr:'Français',it:'Italiano',de:'Deutsch',es:'Español',about:'About',privacy:'Privacy Policy',terms:'Terms & Conditions',shipping:'Shipping & Handling',returns:'Returns & Exchanges','travel-bags':'Travel Bags','cityvancouver':'Vancouver','citytoronto':'Toronto','citymontreal':'Montreal','citycalgary':'Calgary','cityottawa':'Ottawa','citynewyork':'New York','citylosangeles':'Los Angeles','citymiami':'Miami','citychicago':'Chicago','citysanfrancisco':'San Francisco','cityboston':'Boston','citydallas':'Dallas','citylasvegas':'Las Vegas','citylondon':'London','cityparis':'Paris','citymilan':'Milan','cityrome':'Rome','cityzurich':'Zurich','citymonaco':'Monaco','cityberlin':'Berlin','citymadrid':'Madrid','cityamsterdam':'Amsterdam','citydubai':'Dubai',journal:'Journal','journal-one-bag-travel':'One Bag Travel & The Harness','journal-full-grain-leather':'What is Full-Grain Leather','journal-veg-vs-chrome':'Vegetable vs Chrome Tanning','journal-south-india':"South India: Leather's Quiet Capital",'journal-leather-care':'How to Care for Leather'};
-var PAGE_PATHS={home:'/',shop:'/shop',lookbook:'/lookbook',hotel:'/hotel',custom:'/custom',refer:'/refer',press:'/press',fr:'/fr',it:'/it',de:'/de',es:'/es',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns','travel-bags':'/travel-bags','cityvancouver':'/vancouver','citytoronto':'/toronto','citymontreal':'/montreal','citycalgary':'/calgary','cityottawa':'/ottawa','citynewyork':'/new-york','citylosangeles':'/los-angeles','citymiami':'/miami','citychicago':'/chicago','citysanfrancisco':'/san-francisco','cityboston':'/boston','citydallas':'/dallas','citylasvegas':'/las-vegas','citylondon':'/london','cityparis':'/paris','citymilan':'/milan','cityrome':'/rome','cityzurich':'/zurich','citymonaco':'/monaco','cityberlin':'/berlin','citymadrid':'/madrid','cityamsterdam':'/amsterdam','citydubai':'/dubai',journal:'/journal','journal-one-bag-travel':'/journal/one-bag-travel','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
+var PAGE_PATHS={home:'/',shop:'/shop',lookbook:'/lookbook',hotel:'/hotel',custom:'/custom',studio:'/studio',refer:'/refer',press:'/press',fr:'/fr',it:'/it',de:'/de',es:'/es',about:'/about',privacy:'/privacy',terms:'/terms',shipping:'/shipping',returns:'/returns','travel-bags':'/travel-bags','cityvancouver':'/vancouver','citytoronto':'/toronto','citymontreal':'/montreal','citycalgary':'/calgary','cityottawa':'/ottawa','citynewyork':'/new-york','citylosangeles':'/los-angeles','citymiami':'/miami','citychicago':'/chicago','citysanfrancisco':'/san-francisco','cityboston':'/boston','citydallas':'/dallas','citylasvegas':'/las-vegas','citylondon':'/london','cityparis':'/paris','citymilan':'/milan','cityrome':'/rome','cityzurich':'/zurich','citymonaco':'/monaco','cityberlin':'/berlin','citymadrid':'/madrid','cityamsterdam':'/amsterdam','citydubai':'/dubai',journal:'/journal','journal-one-bag-travel':'/journal/one-bag-travel','journal-full-grain-leather':'/journal/full-grain-leather','journal-veg-vs-chrome':'/journal/vegetable-vs-chrome-tanning','journal-south-india':'/journal/south-india-leather-capital','journal-leather-care':'/journal/how-to-care-for-leather'};
 var PATH_TO_PAGE={};(function(){for(var k in PAGE_PATHS){PATH_TO_PAGE[PAGE_PATHS[k]]=k}})();
 function setBreadcrumb(page){var label=BREADCRUMB_LABELS[page]||'Home';var url=page==='home'?'https://goldybrown.com/':'https://goldybrown.com/'+page;var items=[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldybrown.com/"}];if(page!=='home')items.push({"@type":"ListItem","position":2,"name":label,"item":url});var bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items};var sc=document.getElementById('bcSchema');if(!sc){sc=document.createElement('script');sc.id='bcSchema';sc.type='application/ld+json';document.head.appendChild(sc)}sc.textContent=JSON.stringify(bc)}
 function pathFor(page){return PAGE_PATHS[page]||(page==='home'?'/':'/'+page)}
@@ -4909,6 +5165,438 @@ document.querySelectorAll('.ap-media-img').forEach(function(img){img.style.curso
   setTimeout(update,200);
   setTimeout(update,800);
 })();
+
+/* =================== STUDIO — REAL-IMAGE CONFIGURATOR =================== */
+(function(){
+  var ST = {
+    product: 'vest',
+    color: 'black',
+    customColor: null,
+    hwfin: 'stainless',
+    hwtype: 'dring',
+    zip: 'excella',
+    closure: 'top',
+    size: 'standard',
+    customW: 7, customH: 5,
+    stitch: 'tonal',
+    mono: '',
+    notes: '',
+    zoom: 1
+  };
+
+  var PRODUCTS = {
+    vest:    {name:'Tech Vest',    img:'techvest.jpg',     base:399, variantUrl:{black:'https://kuibri-ev.myshopify.com/cart/54049514815780:1',bone:'https://kuibri-ev.myshopify.com/cart/54049514750244:1',azure:'https://kuibri-ev.myshopify.com/cart/54049514783012:1'}, sizes:[['standard','Standard','Fits 32–46″ chest'],['tall','Tall','+2″ drop · +$30'],['plus','Plus','46–54″ chest · +$45'],['custom','Custom','+$60']], showClosure:false},
+    harness: {name:'Harness Bag',  img:'blackholster.png', base:299, variantUrl:{black:'https://kuibri-ev.myshopify.com/cart/53325154156836:1'}, sizes:[['small','Small','5×4″ pouches'],['standard','Standard','7×5″ pouches'],['large','Large','9×6″ pouches'],['custom','Custom','+$40']], showClosure:true}
+  };
+
+  var COLORS = {
+    black:   {label:'Black',       rgb:[28,28,30]},
+    bone:    {label:'Bone White',  rgb:[232,228,215]},
+    azure:   {label:'Azure Blue',  rgb:[88,156,200]},
+    cognac:  {label:'Cognac',      rgb:[133,86,42]},
+    oxblood: {label:'Oxblood',     rgb:[92,28,30]},
+    forest:  {label:'Forest Green',rgb:[44,86,58]}
+  };
+
+  var HW_FINISH = {
+    stainless: {label:'Brushed Stainless', rgb:[180,180,184], price:0},
+    polished:  {label:'Polished Steel',    rgb:[220,222,228], price:0},
+    brass:     {label:'Antique Brass',     rgb:[178,140,72],  price:30},
+    gold:      {label:'Champagne Gold',    rgb:[212,180,124], price:45},
+    matte:     {label:'Matte Black',       rgb:[42,42,46],    price:35}
+  };
+
+  var HW_TYPE = {
+    dring:    {label:'D-Rings',         price:0},
+    swivel:   {label:'Swivel Hooks',    price:25},
+    triglide: {label:'Tri-Glide',       price:15},
+    rectring: {label:'Rectangle Rings', price:0}
+  };
+
+  var ZIP = {
+    excella: {label:'YKK Excella', price:0},
+    hidden:  {label:'Hidden Coil', price:15},
+    reverse: {label:'Reverse Coil',price:25},
+    none:    {label:'No Zipper',   price:0}
+  };
+
+  var CLOSURE = {
+    top:      {label:'Top Zipper',     price:0},
+    amiri:    {label:'Amiri-Style Flap',price:35},
+    envelope: {label:'Envelope Flap',  price:20}
+  };
+
+  var STITCH = {
+    tonal:{label:'Tonal',price:0},
+    tan:{label:'Contrast Tan',price:15},
+    bone:{label:'Contrast Bone',price:15},
+    red:{label:'Contrast Red',price:15}
+  };
+
+  function hexToRgb(h){
+    h = (h||'').replace('#','');
+    if (h.length === 3) h = h.split('').map(function(c){return c+c;}).join('');
+    if (h.length !== 6) return null;
+    var n = parseInt(h, 16);
+    return [(n>>16)&255, (n>>8)&255, n&255];
+  }
+  function rgbToHex(rgb){
+    return '#' + rgb.map(function(v){var s=Math.round(v).toString(16);return s.length===1?'0'+s:s;}).join('');
+  }
+
+  var srcImageCache = {};
+  function loadImage(src){
+    if (srcImageCache[src]) return Promise.resolve(srcImageCache[src]);
+    return new Promise(function(resolve, reject){
+      var img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function(){ srcImageCache[src] = img; resolve(img); };
+      img.onerror = function(){ reject(new Error('Image failed to load: ' + src)); };
+      img.src = src;
+    });
+  }
+
+  // Luminance-preserving recolor with background detection and hardware mask.
+  // Pixel passes: 1) skip backgrounds (color close to corner samples),
+  // 2) hardware = low saturation + mid luminance → recolor with hardware target,
+  // 3) leather = otherwise → recolor with leather target, preserving shading via lum/maxLum.
+  function recolor(canvas, srcImg, leatherRgb, hardwareRgb){
+    var ctx = canvas.getContext('2d');
+    canvas.width = srcImg.naturalWidth;
+    canvas.height = srcImg.naturalHeight;
+    ctx.drawImage(srcImg, 0, 0);
+    var id, d;
+    try {
+      id = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      d = id.data;
+    } catch (e) {
+      // Cross-origin / tainted canvas — bail silently, image still shows untinted.
+      return false;
+    }
+
+    var w = canvas.width, h = canvas.height;
+    // Sample background from 4 corners
+    var sx = [[2,2],[w-3,2],[2,h-3],[w-3,h-3]];
+    var bgR=0, bgG=0, bgB=0;
+    for (var s=0; s<4; s++){
+      var px = (sx[s][1]*w + sx[s][0])*4;
+      bgR += d[px]; bgG += d[px+1]; bgB += d[px+2];
+    }
+    bgR/=4; bgG/=4; bgB/=4;
+    var bgLum = 0.299*bgR + 0.587*bgG + 0.114*bgB;
+    var bgIsLight = bgLum > 200; // white-ish background → matte product cutout
+
+    // Pass 1: find max leather luminance (for normalization on dark sources)
+    var maxLum = 1;
+    for (var i=0; i<d.length; i+=4){
+      var r=d[i], g=d[i+1], b=d[i+2];
+      // skip background
+      if (Math.abs(r-bgR)<24 && Math.abs(g-bgG)<24 && Math.abs(b-bgB)<24) continue;
+      var lum = 0.299*r + 0.587*g + 0.114*b;
+      if (lum > maxLum) maxLum = lum;
+    }
+    if (maxLum < 60) maxLum = 60; // floor
+
+    var lr=leatherRgb[0], lg=leatherRgb[1], lb=leatherRgb[2];
+    var hr=hardwareRgb[0], hgC=hardwareRgb[1], hbC=hardwareRgb[2];
+
+    // Pass 2: recolor
+    for (var j=0; j<d.length; j+=4){
+      var r2=d[j], g2=d[j+1], b2=d[j+2];
+      // Background
+      if (Math.abs(r2-bgR)<22 && Math.abs(g2-bgG)<22 && Math.abs(b2-bgB)<22) {
+        if (bgIsLight) { d[j]=255; d[j+1]=255; d[j+2]=255; }
+        continue;
+      }
+      var lum2 = 0.299*r2 + 0.587*g2 + 0.114*b2;
+      var sat = Math.max(r2,g2,b2) - Math.min(r2,g2,b2);
+      // Hardware classification
+      var isHw = sat < 32 && lum2 > 78 && lum2 < 235;
+
+      var tr, tg, tb;
+      if (isHw){ tr=hr; tg=hgC; tb=hbC; }
+      else      { tr=lr; tg=lg; tb=lb; }
+
+      // Normalize and apply gentle gamma for natural highlights
+      var norm = lum2 / maxLum;
+      if (norm > 1) norm = 1;
+      var f = Math.pow(norm, 0.82);
+      // slight brightening cap so darkest leather doesn't go pitch black
+      var out_r = tr * f + (1 - f) * tr * 0.12;
+      var out_g = tg * f + (1 - f) * tg * 0.12;
+      var out_b = tb * f + (1 - f) * tb * 0.12;
+      d[j]   = out_r < 0 ? 0 : (out_r > 255 ? 255 : out_r);
+      d[j+1] = out_g < 0 ? 0 : (out_g > 255 ? 255 : out_g);
+      d[j+2] = out_b < 0 ? 0 : (out_b > 255 ? 255 : out_b);
+    }
+
+    ctx.putImageData(id, 0, 0);
+    return true;
+  }
+
+  var renderToken = 0;
+  function render(){
+    var canvas = document.getElementById('studioCanvas');
+    var empty = document.getElementById('stEmpty');
+    var status = document.getElementById('stRenderStatus');
+    var statusTxt = document.getElementById('stRenderText');
+    if (!canvas) return;
+    var prod = PRODUCTS[ST.product];
+    var leather = ST.customColor || COLORS[ST.color].rgb;
+    var hardware = HW_FINISH[ST.hwfin].rgb;
+
+    var myToken = ++renderToken;
+    canvas.classList.add('loading');
+    if (status){ status.classList.add('rendering'); }
+    if (statusTxt) statusTxt.textContent = 'Rendering…';
+
+    loadImage(prod.img).then(function(img){
+      if (myToken !== renderToken) return;
+      var ok = recolor(canvas, img, leather, hardware);
+      canvas.classList.remove('loading');
+      canvas.style.display = '';
+      if (empty) empty.style.display = 'none';
+      if (status) status.classList.remove('rendering');
+      if (statusTxt) statusTxt.textContent = ok ? 'Live render' : 'Preview (untinted)';
+    }).catch(function(){
+      if (myToken !== renderToken) return;
+      canvas.classList.remove('loading');
+      canvas.style.display = 'none';
+      if (empty) empty.style.display = '';
+      if (status) status.classList.remove('rendering');
+      if (statusTxt) statusTxt.textContent = 'Image missing';
+    });
+  }
+
+  // debounced render so dragging the color picker doesn't thrash
+  var renderTimer;
+  function scheduleRender(){
+    clearTimeout(renderTimer);
+    renderTimer = setTimeout(render, 40);
+  }
+
+  function setActive(selector, value){
+    document.querySelectorAll(selector).forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-' + selector.replace(/.*\[data-/,'').replace(/="[^"]+".*/,'')) === value);
+    });
+  }
+  function activate(group, value){
+    document.querySelectorAll('[data-cfg-' + group + ']').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-cfg-' + group) === value);
+    });
+  }
+
+  function priceCalc(){
+    var prod = PRODUCTS[ST.product];
+    var p = prod.base;
+    p += HW_FINISH[ST.hwfin].price;
+    p += HW_TYPE[ST.hwtype].price;
+    p += ZIP[ST.zip].price;
+    if (prod.showClosure) p += CLOSURE[ST.closure].price;
+    p += STITCH[ST.stitch].price;
+    // size pricing
+    var sizeMap = {};
+    prod.sizes.forEach(function(s){
+      var m = (s[2]||'').match(/\+\$(\d+)/);
+      sizeMap[s[0]] = m ? parseInt(m[1],10) : 0;
+    });
+    p += sizeMap[ST.size] || 0;
+    if (ST.mono && ST.mono.length) p += 25;
+    return p;
+  }
+
+  function specSummary(){
+    var prod = PRODUCTS[ST.product];
+    var colorLbl = ST.customColor ? rgbToHex(ST.customColor) : COLORS[ST.color].label;
+    var parts = [
+      prod.name,
+      colorLbl,
+      HW_FINISH[ST.hwfin].label,
+      HW_TYPE[ST.hwtype].label,
+      ZIP[ST.zip].label
+    ];
+    var sizeLbl = (prod.sizes.filter(function(s){return s[0]===ST.size;})[0]||[])[1] || ST.size;
+    if (ST.size === 'custom') sizeLbl = 'Custom ' + ST.customW + '×' + ST.customH + '″';
+    parts.push(sizeLbl);
+    if (prod.showClosure) parts.push(CLOSURE[ST.closure].label);
+    if (ST.stitch !== 'tonal') parts.push(STITCH[ST.stitch].label + ' stitch');
+    if (ST.mono) parts.push('Monogram: ' + ST.mono.toUpperCase());
+    return parts.join(' · ');
+  }
+
+  function renderSizeChips(){
+    var wrap = document.getElementById('cfgSizeChips');
+    if (!wrap) return;
+    var prod = PRODUCTS[ST.product];
+    // pick a default size that exists for this product
+    if (!prod.sizes.some(function(s){return s[0]===ST.size;})) {
+      ST.size = prod.sizes.find(function(s){return s[0]==='standard';}) ? 'standard' : prod.sizes[0][0];
+    }
+    wrap.innerHTML = prod.sizes.map(function(s){
+      return '<button class="cfg-chip' + (s[0]===ST.size?' active':'') + '" data-cfg-size="' + s[0] + '" onclick="stSetSize(\'' + s[0] + '\')"><span class="cfg-chip-t">' + s[1] + '</span><span class="cfg-chip-d">' + s[2] + '</span></button>';
+    }).join('');
+    document.getElementById('cfgCustomDims').style.display = ST.size === 'custom' ? '' : 'none';
+  }
+
+  function updateUI(){
+    activate('color', ST.customColor ? '__custom__' : ST.color);
+    activate('hwfin', ST.hwfin);
+    activate('hwtype', ST.hwtype);
+    activate('zip', ST.zip);
+    activate('closure', ST.closure);
+    activate('size', ST.size);
+    activate('stitch', ST.stitch);
+
+    var prod = PRODUCTS[ST.product];
+    document.querySelectorAll('.studio-ptab').forEach(function(t){
+      t.classList.toggle('active', t.getAttribute('data-product') === ST.product);
+    });
+    var clsBlock = document.getElementById('cfgClosureBlock');
+    if (clsBlock) clsBlock.style.display = prod.showClosure ? '' : 'none';
+
+    var colorLbl = ST.customColor ? rgbToHex(ST.customColor).toUpperCase() : COLORS[ST.color].label;
+    var s = document.getElementById('cfgCurColor'); if(s) s.textContent = colorLbl;
+    document.getElementById('cfgCurHwFinish').textContent = HW_FINISH[ST.hwfin].label;
+    document.getElementById('cfgCurHwType').textContent   = HW_TYPE[ST.hwtype].label;
+    document.getElementById('cfgCurZip').textContent      = ZIP[ST.zip].label;
+    var cc = document.getElementById('cfgCurClosure'); if (cc) cc.textContent = CLOSURE[ST.closure].label;
+    var sizeLbl = (prod.sizes.filter(function(x){return x[0]===ST.size;})[0]||[])[1] || ST.size;
+    if (ST.size === 'custom') sizeLbl = ST.customW + '×' + ST.customH + '″';
+    document.getElementById('cfgCurSize').textContent = sizeLbl;
+    document.getElementById('cfgCurStitch').textContent = STITCH[ST.stitch].label;
+    document.getElementById('cfgCurMono').textContent = ST.mono ? ST.mono.toUpperCase() : 'None';
+
+    document.getElementById('cfgSumSpec').textContent = specSummary();
+    document.getElementById('stSpecStripTxt').innerHTML = '<b>' + colorLbl + '</b> &middot; ' + HW_FINISH[ST.hwfin].label + ' &middot; ' + (ST.zip==='none' ? 'No zipper' : ZIP[ST.zip].label);
+    var pr = priceCalc();
+    document.getElementById('cfgPrice').textContent = '$' + pr;
+    document.getElementById('cfgHexTxt').value = ST.customColor ? rgbToHex(ST.customColor) : rgbToHex(COLORS[ST.color].rgb);
+    document.getElementById('cfgHex').value = document.getElementById('cfgHexTxt').value;
+  }
+
+  // ===== public handlers (called from inline onclick) =====
+  window.stSelectProduct = function(p){
+    if (!PRODUCTS[p]) return;
+    ST.product = p;
+    renderSizeChips();
+    updateUI();
+    scheduleRender();
+  };
+  window.stSetColor = function(c){ ST.color = c; ST.customColor = null; updateUI(); scheduleRender(); };
+  window.stSetCustomColor = function(hex){
+    var rgb = hexToRgb(hex); if (!rgb) return;
+    ST.customColor = rgb;
+    document.getElementById('cfgHexTxt').value = hex;
+    document.querySelectorAll('[data-cfg-color]').forEach(function(el){el.classList.remove('active');});
+    document.getElementById('cfgCurColor').textContent = hex.toUpperCase();
+    scheduleRender();
+    updateSpecOnly();
+  };
+  window.stSetCustomColorText = function(hex){
+    var rgb = hexToRgb(hex); if (!rgb) return;
+    ST.customColor = rgb;
+    document.getElementById('cfgHex').value = hex;
+    document.querySelectorAll('[data-cfg-color]').forEach(function(el){el.classList.remove('active');});
+    document.getElementById('cfgCurColor').textContent = hex.toUpperCase();
+    scheduleRender();
+    updateSpecOnly();
+  };
+  function updateSpecOnly(){
+    document.getElementById('cfgSumSpec').textContent = specSummary();
+    document.getElementById('cfgPrice').textContent = '$' + priceCalc();
+  }
+  window.stSetHwFinish = function(v){ ST.hwfin = v; updateUI(); scheduleRender(); };
+  window.stSetHwType   = function(v){ ST.hwtype = v; updateUI(); };
+  window.stSetZip      = function(v){ ST.zip = v; updateUI(); };
+  window.stSetClosure  = function(v){ ST.closure = v; updateUI(); };
+  window.stSetSize     = function(v){ ST.size = v; renderSizeChips(); updateUI(); };
+  window.stSetCustomDim= function(axis,val){ if(axis==='w') ST.customW=parseFloat(val)||7; else ST.customH=parseFloat(val)||5; updateUI(); };
+  window.stSetStitch   = function(v){ ST.stitch = v; updateUI(); };
+  window.stSetMono     = function(v){ ST.mono = (v||'').replace(/[^A-Za-z0-9 .&-]/g,'').slice(0,4); updateUI(); };
+  window.stZoom = function(dir){
+    ST.zoom = Math.max(0.6, Math.min(2, ST.zoom + dir*0.18));
+    var c = document.getElementById('studioCanvas');
+    if (c) c.style.transform = 'scale(' + ST.zoom + ')';
+  };
+
+  window.stRequestBuild = function(){
+    var prod = PRODUCTS[ST.product];
+    var subj = 'Custom build — ' + prod.name + ' (' + specSummary() + ')';
+    var body = 'Hi Goldy Brown,\n\nI configured this build in the studio:\n\n' +
+               specSummary() + '\n\n' +
+               'Estimated total: $' + priceCalc() + ' USD\n' +
+               (ST.notes ? '\nNotes: ' + ST.notes + '\n' : '') +
+               '\nShare link: ' + buildShareUrl() + '\n\nThanks.';
+    location.href = 'mailto:info@goldybrown.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  };
+
+  function buildShareUrl(){
+    var st = {p:ST.product,c:ST.color,cc:ST.customColor?rgbToHex(ST.customColor):null,hf:ST.hwfin,ht:ST.hwtype,z:ST.zip,cl:ST.closure,s:ST.size,cw:ST.customW,ch:ST.customH,st:ST.stitch,m:ST.mono};
+    var enc = btoa(JSON.stringify(st)).replace(/=+$/,'');
+    return location.origin + '/studio?b=' + enc;
+  }
+  window.stShareSpec = function(){
+    var url = buildShareUrl();
+    var toast = document.getElementById('cfgShareToast');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function(){
+        if (toast){ toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show');},2200); }
+      });
+    } else {
+      prompt('Copy your build link:', url);
+    }
+  };
+
+  function loadFromUrl(){
+    try {
+      var params = new URLSearchParams(location.search);
+      var b = params.get('b');
+      if (!b) return;
+      var st = JSON.parse(atob(b));
+      if (st.p && PRODUCTS[st.p]) ST.product = st.p;
+      if (st.c && COLORS[st.c]) ST.color = st.c;
+      if (st.cc) { var rgb = hexToRgb(st.cc); if(rgb) ST.customColor = rgb; }
+      if (st.hf && HW_FINISH[st.hf]) ST.hwfin = st.hf;
+      if (st.ht && HW_TYPE[st.ht]) ST.hwtype = st.ht;
+      if (st.z && ZIP[st.z]) ST.zip = st.z;
+      if (st.cl && CLOSURE[st.cl]) ST.closure = st.cl;
+      if (st.s) ST.size = st.s;
+      if (typeof st.cw === 'number') ST.customW = st.cw;
+      if (typeof st.ch === 'number') ST.customH = st.ch;
+      if (st.st && STITCH[st.st]) ST.stitch = st.st;
+      if (st.m) ST.mono = st.m;
+    } catch(e) {}
+  }
+
+  // Init when the studio page first appears
+  var inited = false;
+  function init(){
+    if (inited) return;
+    inited = true;
+    loadFromUrl();
+    renderSizeChips();
+    updateUI();
+    render();
+    var notes = document.getElementById('cfgNotes');
+    if (notes) notes.addEventListener('input', function(e){ ST.notes = e.target.value; });
+  }
+
+  // Hook into the page-router: when /studio becomes active, init
+  var obs = new MutationObserver(function(){
+    var s = document.getElementById('page-studio');
+    if (s && s.classList.contains('active')) init();
+  });
+  if (document.body) obs.observe(document.body, {attributes:true, subtree:true, attributeFilter:['class']});
+  // Also init immediately if loaded on /studio
+  if (location.pathname === '/studio') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      setTimeout(init, 50);
+    }
+  }
+})();
+
 // Lazy load images
 document.addEventListener('DOMContentLoaded',function(){var imgs=document.querySelectorAll('img[data-src]');if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.src=e.target.dataset.src;e.target.removeAttribute('data-src');obs.unobserve(e.target)}})},{rootMargin:'200px'});imgs.forEach(function(img){obs.observe(img)})}else{imgs.forEach(function(img){img.src=img.dataset.src})}});
 </script>
