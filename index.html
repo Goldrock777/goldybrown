@@ -5255,78 +5255,86 @@ function hbGoto(i){hbIdx=i;hbApply();}
     });
   }
 
-  // Luminance-preserving recolor with background detection and hardware mask.
-  // Pixel passes: 1) skip backgrounds (color close to corner samples),
-  // 2) hardware = low saturation + mid luminance → recolor with hardware target,
-  // 3) leather = otherwise → recolor with leather target, preserving shading via lum/maxLum.
+  // Luminance-preserving recolor.
+  // Pixel passes:
+  //  1) detect background by sampling MANY edge points and finding the median lum (
+  //     handles photos with decorative borders or textured edges);
+  //  2) skip pixels matching background (or pure black/pure white sat<15) — alpha 0;
+  //  3) classify remaining pixels: leather = brighter portion, hardware = darker low-sat;
+  //  4) remap luminance/maxLum onto the target colour with a gentle 0.82 gamma.
   function recolor(canvas, srcImg, leatherRgb, hardwareRgb){
     var ctx = canvas.getContext('2d');
     canvas.width = srcImg.naturalWidth;
     canvas.height = srcImg.naturalHeight;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(srcImg, 0, 0);
     var id, d;
     try {
       id = ctx.getImageData(0, 0, canvas.width, canvas.height);
       d = id.data;
-    } catch (e) {
-      // Cross-origin / tainted canvas — bail silently, image still shows untinted.
-      return false;
-    }
+    } catch (e) { return false; }
 
     var w = canvas.width, h = canvas.height;
-    // Sample background from 4 corners
-    var sx = [[2,2],[w-3,2],[2,h-3],[w-3,h-3]];
-    var bgR=0, bgG=0, bgB=0;
-    for (var s=0; s<4; s++){
-      var px = (sx[s][1]*w + sx[s][0])*4;
-      bgR += d[px]; bgG += d[px+1]; bgB += d[px+2];
-    }
-    bgR/=4; bgG/=4; bgB/=4;
-    var bgLum = 0.299*bgR + 0.587*bgG + 0.114*bgB;
-    var bgIsLight = bgLum > 200; // white-ish background → matte product cutout
 
-    // Pass 1: find max leather luminance (for normalization on dark sources)
+    // ===== Pass A: sample edges to characterise background =====
+    var stepX = Math.max(1, Math.floor(w/40)), stepY = Math.max(1, Math.floor(h/40));
+    var lums = [];
+    function pushSample(x,y){
+      var p = (y*w + x) * 4;
+      lums.push(0.299*d[p] + 0.587*d[p+1] + 0.114*d[p+2]);
+    }
+    for (var x=4; x<w-4; x+=stepX){ pushSample(x,4); pushSample(x,h-5); }
+    for (var y=4; y<h-4; y+=stepY){ pushSample(4,y); pushSample(w-5,y); }
+    lums.sort(function(a,b){return a-b;});
+    var medianEdge = lums[Math.floor(lums.length/2)] || 0;
+    var bgIsDark  = medianEdge < 80;
+    var bgIsLight = medianEdge > 200;
+
+    // ===== Pass B: find max non-background luminance for normalisation =====
     var maxLum = 1;
     for (var i=0; i<d.length; i+=4){
       var r=d[i], g=d[i+1], b=d[i+2];
-      // skip background
-      if (Math.abs(r-bgR)<24 && Math.abs(g-bgG)<24 && Math.abs(b-bgB)<24) continue;
       var lum = 0.299*r + 0.587*g + 0.114*b;
+      var sat = Math.max(r,g,b) - Math.min(r,g,b);
+      // skip near-pure backgrounds (both dark and light variants)
+      if (sat < 18 && lum < 28) continue;
+      if (sat < 18 && lum > 232) continue;
       if (lum > maxLum) maxLum = lum;
     }
-    if (maxLum < 60) maxLum = 60; // floor
+    if (maxLum < 60) maxLum = 60;
 
     var lr=leatherRgb[0], lg=leatherRgb[1], lb=leatherRgb[2];
     var hr=hardwareRgb[0], hgC=hardwareRgb[1], hbC=hardwareRgb[2];
 
-    // Pass 2: recolor
+    // hardware = low saturation + lower-than-leather luminance (relative to maxLum).
+    // tightened from previous version so bright low-sat leather stays leather.
+    var hwLumCap = Math.min(170, maxLum * 0.55);
+
+    // ===== Pass C: recolor =====
     for (var j=0; j<d.length; j+=4){
       var r2=d[j], g2=d[j+1], b2=d[j+2];
-      // Background
-      if (Math.abs(r2-bgR)<22 && Math.abs(g2-bgG)<22 && Math.abs(b2-bgB)<22) {
-        if (bgIsLight) { d[j]=255; d[j+1]=255; d[j+2]=255; }
-        continue;
-      }
       var lum2 = 0.299*r2 + 0.587*g2 + 0.114*b2;
-      var sat = Math.max(r2,g2,b2) - Math.min(r2,g2,b2);
-      // Hardware classification
-      var isHw = sat < 32 && lum2 > 78 && lum2 < 235;
+      var sat2 = Math.max(r2,g2,b2) - Math.min(r2,g2,b2);
 
+      // Background — make transparent so the site's canvas shows through
+      var isBg = (sat2 < 22 && lum2 < 32) || (sat2 < 22 && lum2 > 230 && bgIsLight) || (bgIsDark && lum2 < 22);
+      if (isBg) { d[j+3] = 0; continue; }
+
+      var isHw = sat2 < 24 && lum2 < hwLumCap && lum2 > 30;
       var tr, tg, tb;
       if (isHw){ tr=hr; tg=hgC; tb=hbC; }
-      else      { tr=lr; tg=lg; tb=lb; }
+      else     { tr=lr; tg=lg; tb=lb; }
 
-      // Normalize and apply gentle gamma for natural highlights
       var norm = lum2 / maxLum;
       if (norm > 1) norm = 1;
       var f = Math.pow(norm, 0.82);
-      // slight brightening cap so darkest leather doesn't go pitch black
-      var out_r = tr * f + (1 - f) * tr * 0.12;
-      var out_g = tg * f + (1 - f) * tg * 0.12;
-      var out_b = tb * f + (1 - f) * tb * 0.12;
+      var out_r = tr * f;
+      var out_g = tg * f;
+      var out_b = tb * f;
       d[j]   = out_r < 0 ? 0 : (out_r > 255 ? 255 : out_r);
       d[j+1] = out_g < 0 ? 0 : (out_g > 255 ? 255 : out_g);
       d[j+2] = out_b < 0 ? 0 : (out_b > 255 ? 255 : out_b);
+      d[j+3] = 255;
     }
 
     ctx.putImageData(id, 0, 0);
