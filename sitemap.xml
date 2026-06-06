@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://goldybrown.com/</loc><lastmod>2026-05-18</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+  <url><loc>https://goldybrown.com/</loc><lastmod>2026-06-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-FR" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-IT" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-DE" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-ES" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-CH" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-NL" href="https://goldybrown.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-AE" href="https://goldybrown.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://goldybrown.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://goldybrown.com/it"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://goldybrown.com/de"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://goldybrown.com/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://goldybrown.com/"/>
   </url>
   <url><loc>https://goldybrown.com/lookbook</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
