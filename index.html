@@ -1486,8 +1486,69 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .mfg-rfp-btn:hover{background:#d4b889;transform:translateY(-1px)}
 .mfg-rfp-btn-ghost{background:transparent;color:#e5cfa1;border:1px solid #b8a070;padding:13px 22px;font-family:var(--fb);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;text-align:center;border-radius:2px}
 .mfg-rfp-btn-ghost:hover{background:rgba(184,160,112,.08)}
-@media(max-width:1000px){.mfg-uni-head{grid-template-columns:1fr;gap:32px}.mfg-cap{grid-template-columns:repeat(2,1fr)}.mfg-comp-grid{grid-template-columns:repeat(2,1fr)}.mfg-fab-grid{grid-template-columns:repeat(2,1fr)}.mfg-rfp{grid-template-columns:1fr;gap:22px}}
-@media(max-width:640px){.mfg-uniform{padding:52px 22px 64px}.mfg-uni-head-r{grid-template-columns:1fr}.mfg-cap{grid-template-columns:1fr}.mfg-comp-grid,.mfg-fab-grid{grid-template-columns:1fr}.mfg-comp,.mfg-fab{padding:22px 18px}.mfg-rfp{padding:26px 20px}.mfg-lx{padding:24px 18px}.mfg-lx-cards{grid-template-columns:1fr}.mfg-lx-card-img{height:180px}}
+@media(max-width:1000px){
+  .atelier-hero{padding:80px 32px 44px}
+  .atelier-hero-inner{grid-template-columns:1fr;gap:36px}
+  .mfg-uniform{padding:60px 32px 68px}
+  .mfg-uni-head{grid-template-columns:1fr;gap:32px}
+  .mfg-cap{grid-template-columns:repeat(2,1fr)}
+  .mfg-comp-grid{grid-template-columns:repeat(2,1fr)}
+  .mfg-fab-grid{grid-template-columns:repeat(2,1fr)}
+  .mfg-rfp{grid-template-columns:1fr;gap:22px}
+  .mfg-lx-cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .atelier-hero{padding:64px 22px 40px}
+  .atelier-hero-l h1{font-size:clamp(28px,7vw,38px);line-height:1.1;letter-spacing:-.3px;margin-bottom:16px}
+  .atelier-hero-l .sub{font-size:14px;line-height:1.72;margin-bottom:14px}
+  .atelier-hero-l .atelier-flag{font-size:10.5px;letter-spacing:1.5px;padding:10px 14px}
+  .atelier-hero-l .atelier-flag svg{width:20px}
+  .atelier-hero-r{grid-template-columns:1fr 1fr;gap:10px}
+  .mu-stat{padding:14px 14px 16px}
+  .mu-stat .mus-num{font-size:22px;margin-bottom:4px}
+  .mu-stat .mus-lbl{font-size:9.5px;letter-spacing:1.6px}
+  .mu-stat .mus-desc{font-size:11px;margin-top:6px;line-height:1.5}
+  .mfg-uniform{padding:52px 22px 60px}
+  .mfg-uni-head-l h2{font-size:clamp(24px,6vw,32px);line-height:1.15}
+  .mfg-uni-head .mu-lede{font-size:13.5px;line-height:1.7}
+  .mfg-uni-head-r{grid-template-columns:1fr 1fr}
+  .mfg-cap{grid-template-columns:1fr;gap:12px}
+  .mfg-cap-card{padding:20px 18px}
+  .mfg-cap-card h4{font-size:16px}
+  .mfg-cap-card p{font-size:12px}
+  .mfg-cap-card li{font-size:11px}
+  .mfg-comp,.mfg-fab{padding:22px 18px}
+  .mfg-comp-head,.mfg-fab-head{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:16px}
+  .mfg-comp-head h3,.mfg-fab-head h3{font-size:19px}
+  .mfg-comp-grid,.mfg-fab-grid{grid-template-columns:1fr}
+  .mfg-comp-row,.mfg-fab-row{padding:16px 16px}
+  .mfg-lx{padding:24px 18px}
+  .mfg-lx-head h3{font-size:20px}
+  .mfg-lx-lede{font-size:12.5px;line-height:1.7}
+  .mfg-lx-cards{grid-template-columns:1fr;gap:12px}
+  .mfg-lx-card-img{height:200px;padding:18px}
+  .mfg-lx-card-body{padding:20px 18px 22px}
+  .mfg-lx-card-body h4{font-size:18px}
+  .mfg-lx-card-body p{font-size:12px;line-height:1.65}
+  .mfg-lx-note{padding:16px 18px}
+  .mfg-lx-note p{font-size:12px;line-height:1.65}
+  .mfg-rfp{padding:24px 20px}
+  .mfg-rfp-l h3{font-size:20px;line-height:1.22;margin-bottom:10px}
+  .mfg-rfp-l p{font-size:12.5px;line-height:1.65}
+  .mfg-rfp-r{gap:8px}
+  .mfg-rfp-btn,.mfg-rfp-btn-ghost{padding:14px 16px;font-size:10.5px;letter-spacing:1.8px}
+}
+@media(max-width:420px){
+  .atelier-hero{padding:56px 18px 36px}
+  .atelier-hero-r{grid-template-columns:1fr;gap:8px}
+  .mu-stat{padding:12px 14px}
+  .mu-stat .mus-num{font-size:20px}
+  .mfg-uniform{padding:44px 18px 52px}
+  .mfg-uni-head-r{grid-template-columns:1fr;gap:8px}
+  .mfg-cap-card{padding:18px 16px}
+  .mfg-lx-card-img{height:180px}
+  .atelier-hero-l h1{font-size:26px}
+}
 /* ===== FOR MY FATHER (about page) ===== */
 .father-tribute{position:relative;padding:88px 60px 96px;background:linear-gradient(180deg,#1a1a1a 0%,#0d0d0d 100%);text-align:center;border-top:1px solid var(--b);border-bottom:1px solid var(--b);color:#e8e4dc;overflow:hidden}
 .father-tribute::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:48px;background:linear-gradient(180deg,transparent,#b8a070)}
