@@ -813,14 +813,18 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END PRESS / MEDIA KIT =================== */
 
 /* =================== SHOP / PRODUCTS INDEX =================== */
-.shop-section{max-width:1200px;margin:0 auto;padding:0 24px 8px}
-.shop-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:44px 0 20px;border-bottom:1px solid var(--b);margin-bottom:24px;flex-wrap:wrap}
+.shop-cats{max-width:1600px;margin:0 auto;padding:32px 24px 8px;display:grid;grid-template-columns:1fr 1fr;gap:32px;position:relative}
+.shop-cats::before{content:'';position:absolute;top:32px;bottom:8px;left:50%;width:1px;background:var(--b);transform:translateX(-16px)}
+.shop-section{min-width:0}
+.shop-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0 20px;border-bottom:1px solid var(--b);margin-bottom:24px;flex-wrap:wrap}
 .shop-section-head .ss-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:6px;display:block}
 .shop-section-head h2{font-family:var(--fd);font-size:clamp(22px,2.6vw,32px);font-weight:500;color:var(--w);letter-spacing:-.3px;line-height:1.1}
 .shop-section-head h2 em{font-style:italic;color:var(--gl)}
 .shop-section-head .ss-note{font-size:12px;color:var(--td);font-weight:300;text-align:right;line-height:1.5;max-width:280px}
-@media(max-width:640px){.shop-section-head{padding:32px 0 16px}.shop-section-head .ss-note{text-align:left}}
-.shop-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;justify-content:center}
+.shop-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:0}
+@media(min-width:1400px){.shop-cats>.shop-section:first-child .shop-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.shop-cats{grid-template-columns:1fr;gap:0;padding-top:16px}.shop-cats::before{display:none}}
+@media(max-width:640px){.shop-section-head{padding:8px 0 16px}.shop-section-head .ss-note{text-align:left}}
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
 .shop-card-img{display:block;background:#fff;height:440px;overflow:hidden}
@@ -4586,6 +4590,8 @@ Made in our home village &middot; South India
 <div class="page" id="page-shop">
 <div class="about-hero"><div class="slabel">Shop</div><h1>The Collection</h1><p class="sub">Hand-cut leather goods and heavyweight apparel. Free worldwide shipping &middot; lifetime warranty on leather &middot; duties prepaid to Europe &amp; the UK.</p></div>
 
+<div class="shop-cats">
+
 <!-- =========== LEATHER =========== -->
 <section class="shop-section" id="shop-leather">
   <div class="shop-section-head">
@@ -4658,7 +4664,7 @@ Made in our home village &middot; South India
   </div>
   <div class="shop-grid">
     <article class="shop-card" id="claudeTeeCard" itemscope itemtype="https://schema.org/Product">
-      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/cart/CLAUDE_TEE_BLACK_VARIANT:1" target="_blank" rel="noopener" aria-label="Buy The Claude T-Shirt">
+      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/products/claude-t-shirt" target="_blank" rel="noopener" aria-label="Shop The Claude T-Shirt">
         <img loading="lazy" id="claudeTeeImg" src="claude-tee-black.jpg" alt="The Claude T-Shirt — heavyweight cotton" itemprop="image" onerror="this.style.background='#1a1a1a';this.alt='Product image pending upload';">
       </a>
       <div class="shop-card-body">
@@ -4666,8 +4672,8 @@ Made in our home village &middot; South India
         <h2 class="shop-card-name" itemprop="name">The Claude T-Shirt</h2>
         <p class="shop-card-desc" itemprop="description">Heavyweight 240 GSM cotton. Boxy fit, drop shoulder, ribbed collar that holds its shape through hundreds of launder cycles. Garment-dyed, pre-shrunk, printed in Vancouver. A tee that reads as a uniform.</p>
         <div class="tv-swatches" role="radiogroup" aria-label="Claude T-Shirt colour">
-          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="CLAUDE_TEE_BLACK_VARIANT" data-img="claude-tee-black.jpg" aria-label="Black"></button>
-          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="CLAUDE_TEE_WHITE_VARIANT" data-img="claude-tee-white.jpg" aria-label="White"></button>
+          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="" data-img="claude-tee-black.jpg" aria-label="Black"></button>
+          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="" data-img="claude-tee-white.jpg" aria-label="White"></button>
         </div>
         <div class="shop-card-meta">
           <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -4677,12 +4683,15 @@ Made in our home village &middot; South India
           <span class="shop-card-spec">Black &middot; White &middot; heavyweight 240 GSM</span>
         </div>
         <div class="shop-card-cta">
-          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/cart/CLAUDE_TEE_BLACK_VARIANT:1" target="_blank" rel="noopener">Buy now &rarr;</a>
+          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/products/claude-t-shirt" target="_blank" rel="noopener">Shop &mdash; pick size &rarr;</a>
         </div>
       </div>
     </article>
   </div>
 </section>
+
+</div>
+<!-- /shop-cats -->
 
 <section class="shop-trust">
   <div class="shop-trust-inner">
@@ -4694,7 +4703,12 @@ Made in our home village &middot; South India
 <script>
 // Generic swatch wiring — pass a card id and it wires up any .tv-sw inside it
 (function(){
-  function wire(cardId, imgId, buyId, imgLinkId){
+  // mode 'cart'    → /cart/<variant>:1                     (single-option products, direct to checkout)
+  // mode 'product' → /products/<handle>?variant=<variant>  (multi-option like size+colour, choose size on product page)
+  function wire(cardId, imgId, buyId, imgLinkId, opts){
+    opts = opts || {};
+    var mode = opts.mode || 'cart';
+    var handle = opts.handle;
     var card=document.getElementById(cardId);
     if(!card)return;
     var btns=card.querySelectorAll('.tv-sw');
@@ -4706,15 +4720,21 @@ Made in our home village &middot; South India
       b.addEventListener('click',function(){
         btns.forEach(function(x){x.classList.remove('active')});
         b.classList.add('active');
-        var url='https://kuibri-ev.myshopify.com/cart/'+b.dataset.variant+':1';
+        var url;
+        if(mode==='product' && handle){
+          url='https://kuibri-ev.myshopify.com/products/'+handle+(b.dataset.variant?'?variant='+b.dataset.variant:'');
+        } else {
+          url='https://kuibri-ev.myshopify.com/cart/'+b.dataset.variant+':1';
+        }
         if(img&&b.dataset.img)img.src=b.dataset.img;
-        if(buy)buy.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
-        if(imgLink)imgLink.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+        var finalUrl=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+        if(buy)buy.href=finalUrl;
+        if(imgLink)imgLink.href=finalUrl;
       });
     });
   }
   wire('techVestCard','techVestImg','techVestBuyBtn','techVestImgLink');
-  wire('claudeTeeCard','claudeTeeImg','claudeTeeBuyBtn','claudeTeeImgLink');
+  wire('claudeTeeCard','claudeTeeImg','claudeTeeBuyBtn','claudeTeeImgLink',{mode:'product',handle:'claude-t-shirt'});
 })();
 </script>
 </div>
