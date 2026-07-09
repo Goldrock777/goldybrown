@@ -813,7 +813,14 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END PRESS / MEDIA KIT =================== */
 
 /* =================== SHOP / PRODUCTS INDEX =================== */
-.shop-grid{max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;justify-content:center}
+.shop-section{max-width:1200px;margin:0 auto;padding:0 24px 8px}
+.shop-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:44px 0 20px;border-bottom:1px solid var(--b);margin-bottom:24px;flex-wrap:wrap}
+.shop-section-head .ss-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:6px;display:block}
+.shop-section-head h2{font-family:var(--fd);font-size:clamp(22px,2.6vw,32px);font-weight:500;color:var(--w);letter-spacing:-.3px;line-height:1.1}
+.shop-section-head h2 em{font-style:italic;color:var(--gl)}
+.shop-section-head .ss-note{font-size:12px;color:var(--td);font-weight:300;text-align:right;line-height:1.5;max-width:280px}
+@media(max-width:640px){.shop-section-head{padding:32px 0 16px}.shop-section-head .ss-note{text-align:left}}
+.shop-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;justify-content:center}
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
 .shop-card-img{display:block;background:#fff;height:440px;overflow:hidden}
@@ -4577,58 +4584,104 @@ Made in our home village &middot; South India
 
 <!-- ======================== SHOP / PRODUCTS INDEX ======================== -->
 <div class="page" id="page-shop">
-<div class="about-hero"><div class="slabel">Shop</div><h1>The Collection</h1><p class="sub">Hand-cut full-grain leather. Worn on the body, not carried. Free worldwide shipping &middot; lifetime warranty &middot; duties prepaid to Europe &amp; the UK.</p></div>
+<div class="about-hero"><div class="slabel">Shop</div><h1>The Collection</h1><p class="sub">Hand-cut leather goods and heavyweight apparel. Free worldwide shipping &middot; lifetime warranty on leather &middot; duties prepaid to Europe &amp; the UK.</p></div>
 
-<section class="shop-grid">
-  <article class="shop-card" itemscope itemtype="https://schema.org/Product">
-    <a class="shop-card-img" href="/harness" onclick="go('harness');return false;" aria-label="View The Harness Bag">
-      <img loading="lazy" src="blackholster.webp" alt="The Harness Bag — full-grain leather, worn across the chest" itemprop="image">
-    </a>
-    <div class="shop-card-body">
-      <div class="shop-card-eyebrow">Signature</div>
-      <h2 class="shop-card-name" itemprop="name">The Harness Bag</h2>
-      <p class="shop-card-desc" itemprop="description">A leather bag worn across the chest &mdash; hands-free travel, secure essentials, both hands available. Full-grain calfskin, stainless hardware. Available in Black, Azure Blue, Cognac, and more.</p>
-      <div class="shop-card-meta">
-        <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="299">299</span> <span class="shop-card-cur">USD</span>
-          <meta itemprop="availability" content="https://schema.org/InStock">
-        </span>
-        <span class="shop-card-spec">Made to order &middot; ships in 2&ndash;3 weeks</span>
-      </div>
-      <div class="shop-card-cta">
-        <a class="btn btn-f" href="/harness" onclick="go('harness');return false;">View product</a>
-        <a class="btn-link" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy now &rarr;</a>
-      </div>
+<!-- =========== LEATHER =========== -->
+<section class="shop-section" id="shop-leather">
+  <div class="shop-section-head">
+    <div>
+      <span class="ss-eyebrow">Category</span>
+      <h2><em>Leather.</em></h2>
     </div>
-  </article>
+    <div class="ss-note">Full-grain calfskin, made to order. Hand cut in South India's heritage tanneries. Lifetime warranty.</div>
+  </div>
+  <div class="shop-grid">
+    <article class="shop-card" itemscope itemtype="https://schema.org/Product">
+      <a class="shop-card-img" href="/harness" onclick="go('harness');return false;" aria-label="View The Harness Bag">
+        <img loading="lazy" src="blackholster.webp" alt="The Harness Bag — full-grain leather, worn across the chest" itemprop="image">
+      </a>
+      <div class="shop-card-body">
+        <div class="shop-card-eyebrow">Signature</div>
+        <h2 class="shop-card-name" itemprop="name">The Harness Bag</h2>
+        <p class="shop-card-desc" itemprop="description">A leather bag worn across the chest &mdash; hands-free travel, secure essentials, both hands available. Full-grain calfskin, stainless hardware. Available in Black, Azure Blue, Cognac, and more.</p>
+        <div class="shop-card-meta">
+          <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="299">299</span> <span class="shop-card-cur">USD</span>
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </span>
+          <span class="shop-card-spec">Made to order &middot; ships in 2&ndash;3 weeks</span>
+        </div>
+        <div class="shop-card-cta">
+          <a class="btn btn-f" href="/harness" onclick="go('harness');return false;">View product</a>
+          <a class="btn-link" href="https://kuibri-ev.myshopify.com/cart/53325154156836:1" target="_blank" rel="noopener">Buy now &rarr;</a>
+        </div>
+      </div>
+    </article>
 
-  <article class="shop-card" id="techVestCard" itemscope itemtype="https://schema.org/Product">
-    <a class="shop-card-img" id="techVestImgLink" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="View The Tech Vest">
-      <img loading="lazy" id="techVestImg" src="whiteharness.webp" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin with chest pouch and drop-leg pouch" itemprop="image">
-    </a>
-    <div class="shop-card-body">
-      <div class="shop-card-eyebrow">New</div>
-      <h2 class="shop-card-name" itemprop="name">The Tech Vest</h2>
-      <p class="shop-card-desc" itemprop="description">Hand-cut to order from heritage full-grain calfskin. A sculpted, padded front plate with an integrated zip pouch, two adjustable buckle straps, and a detachable drop-leg pouch. Hand-burnished edges, reinforced seams, solid stainless hardware &mdash; nothing plated or glued. A piece made to order, built to last decades and backed for life.</p>
-      <div class="tv-swatches" role="radiogroup" aria-label="Tech Vest colour">
-        <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="54049514815780" data-img="whiteharness.png" aria-label="Black"></button>
-        <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="54049514750244" data-img="whiteharness.png" aria-label="White"></button>
-        <button type="button" class="tv-sw tv-sw-blue" data-color="blue" data-variant="54049514783012" data-img="whiteharness.png" aria-label="Blue"></button>
+    <article class="shop-card" id="techVestCard" itemscope itemtype="https://schema.org/Product">
+      <a class="shop-card-img" id="techVestImgLink" href="/tech-vest" onclick="go('tech-vest');return false;" aria-label="View The Tech Vest">
+        <img loading="lazy" id="techVestImg" src="whiteharness.webp" alt="The Tech Vest &mdash; full chest harness in full-grain calfskin with chest pouch and drop-leg pouch" itemprop="image">
+      </a>
+      <div class="shop-card-body">
+        <div class="shop-card-eyebrow">New</div>
+        <h2 class="shop-card-name" itemprop="name">The Tech Vest</h2>
+        <p class="shop-card-desc" itemprop="description">Hand-cut to order from heritage full-grain calfskin. A sculpted, padded front plate with an integrated zip pouch, two adjustable buckle straps, and a detachable drop-leg pouch. Hand-burnished edges, reinforced seams, solid stainless hardware &mdash; nothing plated or glued. A piece made to order, built to last decades and backed for life.</p>
+        <div class="tv-swatches" role="radiogroup" aria-label="Tech Vest colour">
+          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="54049514815780" data-img="whiteharness.png" aria-label="Black"></button>
+          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="54049514750244" data-img="whiteharness.png" aria-label="White"></button>
+          <button type="button" class="tv-sw tv-sw-blue" data-color="blue" data-variant="54049514783012" data-img="whiteharness.png" aria-label="Blue"></button>
+        </div>
+        <div class="shop-card-meta">
+          <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="399">399</span> <span class="shop-card-cur">USD</span>
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </span>
+          <span class="shop-card-spec">Black, White, Blue &middot; made to order</span>
+        </div>
+        <div class="shop-card-cta">
+          <a class="btn btn-f" href="/tech-vest" onclick="go('tech-vest');return false;">View product</a>
+          <a class="btn-link" id="techVestBuyBtn" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener">Buy now &rarr;</a>
+        </div>
       </div>
-      <div class="shop-card-meta">
-        <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="399">399</span> <span class="shop-card-cur">USD</span>
-          <meta itemprop="availability" content="https://schema.org/InStock">
-        </span>
-        <span class="shop-card-spec">Black, White, Blue &middot; made to order</span>
-      </div>
-      <div class="shop-card-cta">
-        <a class="btn btn-f" href="/tech-vest" onclick="go('tech-vest');return false;">View product</a>
-        <a class="btn-link" id="techVestBuyBtn" href="https://kuibri-ev.myshopify.com/cart/54049514815780:1" target="_blank" rel="noopener">Buy now &rarr;</a>
-      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =========== APPAREL =========== -->
+<section class="shop-section" id="shop-apparel">
+  <div class="shop-section-head">
+    <div>
+      <span class="ss-eyebrow">Category</span>
+      <h2><em>Apparel.</em></h2>
     </div>
-  </article>
-
+    <div class="ss-note">Heavyweight cotton and structured wear, cut and sewn at our atelier. New drops added regularly.</div>
+  </div>
+  <div class="shop-grid">
+    <article class="shop-card" id="claudeTeeCard" itemscope itemtype="https://schema.org/Product">
+      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/cart/CLAUDE_TEE_BLACK_VARIANT:1" target="_blank" rel="noopener" aria-label="Buy The Claude T-Shirt">
+        <img loading="lazy" id="claudeTeeImg" src="claude-tee-black.jpg" alt="The Claude T-Shirt — heavyweight cotton" itemprop="image" onerror="this.style.background='#1a1a1a';this.alt='Product image pending upload';">
+      </a>
+      <div class="shop-card-body">
+        <div class="shop-card-eyebrow">New Drop</div>
+        <h2 class="shop-card-name" itemprop="name">The Claude T-Shirt</h2>
+        <p class="shop-card-desc" itemprop="description">Heavyweight 240 GSM cotton. Boxy fit, drop shoulder, ribbed collar that holds its shape through hundreds of launder cycles. Garment-dyed, pre-shrunk, printed in Vancouver. A tee that reads as a uniform.</p>
+        <div class="tv-swatches" role="radiogroup" aria-label="Claude T-Shirt colour">
+          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="CLAUDE_TEE_BLACK_VARIANT" data-img="claude-tee-black.jpg" aria-label="Black"></button>
+          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="CLAUDE_TEE_WHITE_VARIANT" data-img="claude-tee-white.jpg" aria-label="White"></button>
+        </div>
+        <div class="shop-card-meta">
+          <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="65">65</span> <span class="shop-card-cur">USD</span>
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </span>
+          <span class="shop-card-spec">Black &middot; White &middot; heavyweight 240 GSM</span>
+        </div>
+        <div class="shop-card-cta">
+          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/cart/CLAUDE_TEE_BLACK_VARIANT:1" target="_blank" rel="noopener">Buy now &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section class="shop-trust">
@@ -4639,28 +4692,35 @@ Made in our home village &middot; South India
   </div>
 </section>
 <script>
+// Generic swatch wiring — pass a card id and it wires up any .tv-sw inside it
 (function(){
-  var btns=document.querySelectorAll('.tv-sw');
-  if(!btns.length)return;
-  var img=document.getElementById('techVestImg');
-  var buy=document.getElementById('techVestBuyBtn');
-  var imgLink=document.getElementById('techVestImgLink');
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      btns.forEach(function(x){x.classList.remove('active')});
-      b.classList.add('active');
-      var url='https://kuibri-ev.myshopify.com/cart/'+b.dataset.variant+':1';
-      if(img)img.src=b.dataset.img;
-      if(buy)buy.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
-      if(imgLink)imgLink.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+  function wire(cardId, imgId, buyId, imgLinkId){
+    var card=document.getElementById(cardId);
+    if(!card)return;
+    var btns=card.querySelectorAll('.tv-sw');
+    if(!btns.length)return;
+    var img=document.getElementById(imgId);
+    var buy=document.getElementById(buyId);
+    var imgLink=imgLinkId?document.getElementById(imgLinkId):null;
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('active')});
+        b.classList.add('active');
+        var url='https://kuibri-ev.myshopify.com/cart/'+b.dataset.variant+':1';
+        if(img&&b.dataset.img)img.src=b.dataset.img;
+        if(buy)buy.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+        if(imgLink)imgLink.href=(typeof gbWithDiscount==='function'?gbWithDiscount(url):url);
+      });
     });
-  });
+  }
+  wire('techVestCard','techVestImg','techVestBuyBtn','techVestImgLink');
+  wire('claudeTeeCard','claudeTeeImg','claudeTeeBuyBtn','claudeTeeImgLink');
 })();
 </script>
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection of full-grain leather harness bags and chest vests.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"image":"https://goldybrown.com/whiteharness.png","url":"https://goldybrown.com/shop","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}}]}
+{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection: full-grain leather chest harnesses and heavyweight apparel.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/whiteharness.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"The Claude T-Shirt","description":"Heavyweight 240 GSM cotton tee. Boxy fit, drop shoulder, ribbed collar. Garment-dyed, pre-shrunk, printed in Vancouver. Available in Black and White.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Apparel","material":"240 GSM Cotton","image":"https://goldybrown.com/claude-tee-black.jpg","url":"https://goldybrown.com/shop#shop-apparel","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"65","highPrice":"65","offerCount":2,"availability":"https://schema.org/InStock"}}}]}
 </script>
 
 <!-- ======================== HARNESS BAG PRODUCT PAGE ======================== -->
