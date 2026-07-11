@@ -813,34 +813,38 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 /* =================== END PRESS / MEDIA KIT =================== */
 
 /* =================== SHOP / PRODUCTS INDEX =================== */
-.shop-cats{max-width:1600px;margin:0 auto;padding:32px 24px 8px;display:grid;grid-template-columns:1fr 1fr;gap:32px;position:relative}
-.shop-cats::before{content:'';position:absolute;top:32px;bottom:8px;left:50%;width:1px;background:var(--b);transform:translateX(-16px)}
+/* Shop page: two-column category layout (Leather | Apparel) */
+.shop-cats{max-width:1400px;margin:0 auto;padding:36px clamp(16px,3vw,32px) 8px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,44px);position:relative}
+.shop-cats::before{content:'';position:absolute;top:36px;bottom:8px;left:50%;width:1px;background:var(--b)}
 .shop-section{min-width:0}
-.shop-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0 20px;border-bottom:1px solid var(--b);margin-bottom:24px;flex-wrap:wrap}
+.shop-section-head{padding:8px 0 22px;border-bottom:1px solid var(--b);margin-bottom:26px}
 .shop-section-head .ss-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:6px;display:block}
-.shop-section-head h2{font-family:var(--fd);font-size:clamp(22px,2.6vw,32px);font-weight:500;color:var(--w);letter-spacing:-.3px;line-height:1.1}
+.shop-section-head h2{font-family:var(--fd);font-size:clamp(24px,3.2vw,36px);font-weight:500;color:var(--w);letter-spacing:-.4px;line-height:1.05;margin:0 0 10px}
 .shop-section-head h2 em{font-style:italic;color:var(--gl)}
-.shop-section-head .ss-note{font-size:12px;color:var(--td);font-weight:300;text-align:right;line-height:1.5;max-width:280px}
-.shop-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:0}
-@media(min-width:1400px){.shop-cats>.shop-section:first-child .shop-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.shop-cats{grid-template-columns:1fr;gap:0;padding-top:16px}.shop-cats::before{display:none}}
-@media(max-width:640px){.shop-section-head{padding:8px 0 16px}.shop-section-head .ss-note{text-align:left}}
+.shop-section-head .ss-note{font-size:12.5px;color:var(--td);font-weight:300;line-height:1.6;max-width:520px;margin:0}
+.shop-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:1200px){.shop-cats>.shop-section:first-child .shop-grid{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:900px){.shop-cats{grid-template-columns:1fr;gap:8px;padding-top:16px}.shop-cats::before{display:none}.shop-section+.shop-section{margin-top:12px}}
+
+/* Product card */
 .shop-card{background:var(--bg-card);border:1px solid var(--b);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .shop-card:hover{transform:translateY(-4px);border-color:var(--gl);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
-.shop-card-img{display:block;background:#fff;height:440px;overflow:hidden}
-.shop-card-img img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform 1.6s ease-out;display:block;padding:16px}
+.shop-card-img{display:block;background:#fff;overflow:hidden;aspect-ratio:4/5;width:100%;position:relative}
+.shop-card-img img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform 1.6s ease-out;display:block;padding:14px}
 .shop-card:hover .shop-card-img img{transform:scale(1.04)}
-.shop-card-body{padding:24px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.shop-card-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
 .shop-card-eyebrow{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gl);font-weight:600}
 .shop-card-name{font-family:var(--fd);font-size:22px;font-weight:400;color:var(--w);margin:0;line-height:1.2}
-.shop-card-desc{font-size:13px;color:var(--td);font-weight:300;line-height:1.65;margin:0;flex:1}
-.shop-card-meta{display:flex;flex-direction:column;gap:4px;margin-top:6px;padding-top:14px;border-top:1px solid var(--b)}
-.shop-card-price{font-family:var(--fd);font-size:19px;color:var(--w);font-weight:500;letter-spacing:.4px}
+.shop-card-desc{font-size:13px;color:var(--td);font-weight:300;line-height:1.7;margin:0;flex:1}
+.shop-card-meta{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:8px;padding-top:14px;border-top:1px solid var(--b);flex-wrap:wrap}
+.shop-card-price{font-family:var(--fd);font-size:20px;color:var(--w);font-weight:500;letter-spacing:.4px;white-space:nowrap}
 .shop-card-cur{font-size:10.5px;letter-spacing:1.4px;color:var(--tm);font-family:var(--fs);font-weight:400;margin-left:4px}
-.shop-card-spec{font-size:11.5px;color:var(--tm);font-weight:300;letter-spacing:.3px}
-.shop-card-cta{display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap}
-.shop-card-cta .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;padding:12px 26px;font-size:11px;letter-spacing:1.5px;text-decoration:none;display:inline-block;border-radius:2px;transition:background .25s}
+.shop-card-spec{font-size:11.5px;color:var(--tm);font-weight:300;letter-spacing:.3px;text-align:right;flex:1;min-width:0}
+.shop-card-cta{display:flex;align-items:stretch;gap:10px;margin-top:10px;flex-wrap:wrap}
+.shop-card-cta .btn-f{background:linear-gradient(135deg,#3a3a3e 0%,#1a1a1e 100%);border:1px solid #c8c8cc;color:#f5f5f7;padding:13px 22px;font-size:11px;letter-spacing:1.5px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;transition:background .25s;flex:1;text-align:center;white-space:nowrap}
 .shop-card-cta .btn-f:hover{background:linear-gradient(135deg,#4a4a4f 0%,#26262a 100%)}
+.shop-card-cta .btn-link{font-size:11px;letter-spacing:1.5px;color:var(--gl);text-decoration:none;padding:13px 0;display:inline-flex;align-items:center;white-space:nowrap;font-weight:500;text-transform:uppercase}
+.shop-card-cta .btn-link:hover{color:var(--w)}
 .btn-link{font-size:11px;letter-spacing:1.4px;color:var(--gl);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .btn-link:hover{color:var(--w)}
 .tv-swatches{display:flex;gap:10px;margin:4px 0 2px;padding:0}
@@ -850,19 +854,35 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-sw-black{background:#1a1a1a}
 .tv-sw-white{background:#f1ede4}
 .tv-sw-blue{background:#5b7fa3}
-.shop-trust{max-width:1200px;margin:64px auto 24px;padding:42px 24px;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.shop-trust{max-width:1200px;margin:56px auto 24px;padding:36px clamp(16px,3vw,32px);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
 .shop-trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .shop-trust-item{padding:0 4px}
 .st-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gl);font-weight:600;margin-bottom:8px}
 .st-text{font-size:12.5px;color:var(--td);font-weight:300;line-height:1.65}
-@media(max-width:900px){
-  .shop-grid{grid-template-columns:1fr 1fr}
-  .shop-card-img{height:360px}
+/* Shop responsive tiers */
+@media(max-width:720px){
+  #page-shop .about-hero{padding:80px 22px 40px}
+  #page-shop .about-hero h1{font-size:clamp(28px,8vw,42px);margin-bottom:12px}
+  #page-shop .about-hero .sub{font-size:13.5px;line-height:1.7}
+  .shop-card-body{padding:20px 18px 22px;gap:8px}
+  .shop-card-name{font-size:19px}
+  .shop-card-desc{font-size:12.5px;line-height:1.65}
+  .shop-card-meta{gap:8px;padding-top:12px}
+  .shop-card-spec{text-align:left;flex-basis:100%;font-size:11px}
+  .shop-card-cta .btn-f{padding:14px 18px;font-size:10.5px;letter-spacing:1.3px}
+  .shop-card-cta .btn-link{padding:12px 0;font-size:10.5px}
+  .shop-trust{margin:36px auto 16px;padding:28px 22px}
+  .shop-trust-inner{grid-template-columns:1fr;gap:20px}
 }
-@media(max-width:600px){
-  .shop-grid{grid-template-columns:1fr;gap:18px}
-  .shop-card-img{height:380px}
-  .shop-trust-inner{grid-template-columns:1fr;gap:24px}
+@media(max-width:420px){
+  #page-shop .about-hero{padding:68px 18px 32px}
+  .shop-cats{padding:24px 14px 8px}
+  .shop-card-img img{padding:10px}
+  .shop-card-body{padding:18px 16px 20px}
+  .shop-card-name{font-size:18px}
+  .shop-card-price{font-size:18px}
+  .tv-swatches{gap:8px}
+  .tv-sw{width:20px;height:20px}
 }
 /* =================== END SHOP =================== */
 /* =================== TECH VEST FEATURE (home page) =================== */
@@ -4588,7 +4608,7 @@ Made in our home village &middot; South India
 
 <!-- ======================== SHOP / PRODUCTS INDEX ======================== -->
 <div class="page" id="page-shop">
-<div class="about-hero"><div class="slabel">Shop</div><h1>The Collection</h1><p class="sub">Hand-cut leather goods and heavyweight apparel. Free worldwide shipping &middot; lifetime warranty on leather &middot; duties prepaid to Europe &amp; the UK.</p></div>
+<div class="about-hero"><div class="slabel">Shop</div><h1>The Collection</h1><p class="sub">Leather goods and heavyweight apparel. Free worldwide shipping. Duties prepaid to Europe &amp; the UK.</p></div>
 
 <div class="shop-cats">
 
@@ -4599,7 +4619,7 @@ Made in our home village &middot; South India
       <span class="ss-eyebrow">Category</span>
       <h2><em>Leather.</em></h2>
     </div>
-    <div class="ss-note">Full-grain calfskin, made to order. Hand cut in South India's heritage tanneries. Lifetime warranty.</div>
+    <p class="ss-note">Full-grain calfskin, made to order. Lifetime warranty.</p>
   </div>
   <div class="shop-grid">
     <article class="shop-card" itemscope itemtype="https://schema.org/Product">
@@ -4660,20 +4680,20 @@ Made in our home village &middot; South India
       <span class="ss-eyebrow">Category</span>
       <h2><em>Apparel.</em></h2>
     </div>
-    <div class="ss-note">Heavyweight cotton and structured wear, cut and sewn at our atelier. New drops added regularly.</div>
+    <p class="ss-note">Heavyweight cotton, cut and sewn at our atelier.</p>
   </div>
   <div class="shop-grid">
     <article class="shop-card" id="claudeTeeCard" itemscope itemtype="https://schema.org/Product">
       <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/products/claude-t-shirt?variant=55715912548644" target="_blank" rel="noopener" aria-label="Shop The Claude T-Shirt">
-        <img loading="lazy" id="claudeTeeImg" src="claude-tee-black.jpg" alt="The Claude T-Shirt — heavyweight cotton" itemprop="image" onerror="this.style.background='#1a1a1a';this.alt='Product image pending upload';">
+        <img loading="lazy" id="claudeTeeImg" src="claude-black.webp" alt="The Claude T-Shirt — heavyweight cotton, Black" itemprop="image">
       </a>
       <div class="shop-card-body">
         <div class="shop-card-eyebrow">New Drop</div>
         <h2 class="shop-card-name" itemprop="name">The Claude T-Shirt</h2>
-        <p class="shop-card-desc" itemprop="description">Heavyweight 240 GSM cotton. Boxy fit, drop shoulder, ribbed collar that holds its shape through hundreds of launder cycles. Garment-dyed, pre-shrunk, printed in Vancouver. A tee that reads as a uniform.</p>
+        <p class="shop-card-desc" itemprop="description">Heavyweight 240 GSM cotton. Boxy fit, drop shoulder, ribbed collar. Garment-dyed and pre-shrunk. Available in Black and White.</p>
         <div class="tv-swatches" role="radiogroup" aria-label="Claude T-Shirt colour">
-          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="55715912548644" data-img="claude-tee-black.jpg" aria-label="Black"></button>
-          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="55715912712484" data-img="claude-tee-white.jpg" aria-label="White"></button>
+          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="55715912548644" data-img="claude-black.webp" aria-label="Black"></button>
+          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="55715912712484" data-img="claude-white.webp" aria-label="White"></button>
         </div>
         <div class="shop-card-meta">
           <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -4740,7 +4760,7 @@ Made in our home village &middot; South India
 </div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection: full-grain leather chest harnesses and heavyweight apparel.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/whiteharness.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"The Claude T-Shirt","description":"Heavyweight 240 GSM cotton tee. Boxy fit, drop shoulder, ribbed collar. Garment-dyed, pre-shrunk, printed in Vancouver. Available in Black and White.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Apparel","material":"240 GSM Cotton","image":"https://goldybrown.com/claude-tee-black.jpg","url":"https://goldybrown.com/shop#shop-apparel","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"40","highPrice":"40","offerCount":2,"availability":"https://schema.org/InStock"}}}]}
+{"@context":"https://schema.org","@type":"ItemList","name":"Goldy Brown — The Collection","description":"Goldy Brown's full collection: full-grain leather chest harnesses and heavyweight apparel.","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"The Harness Bag","description":"Full-grain leather bag worn across the chest — hands-free travel, secure essentials, both hands available. Stainless steel hardware, YKK zippers.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/blackholster.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"Offer","price":"299","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://kuibri-ev.myshopify.com/cart/53325154156836:1","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"}}}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"The Tech Vest","description":"A full chest harness in hand-cut full-grain calfskin. Sculpted front plate with a padded, integrated zip chest pouch, two adjustable buckle straps over the shoulders, and a detachable drop-leg pouch carried on the hip. Stainless steel hardware. Available in Black, White, Blue.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Leather","image":"https://goldybrown.com/whiteharness.png","url":"https://goldybrown.com/shop#shop-leather","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"399","highPrice":"399","offerCount":3,"availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"The Claude T-Shirt","description":"Heavyweight 240 GSM cotton tee. Boxy fit, drop shoulder, ribbed collar. Garment-dyed, pre-shrunk, printed in Vancouver. Available in Black and White.","brand":{"@type":"Brand","name":"Goldy Brown"},"category":"Apparel","material":"240 GSM Cotton","image":"https://goldybrown.com/claude-black.png","url":"https://goldybrown.com/shop#shop-apparel","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"40","highPrice":"40","offerCount":2,"availability":"https://schema.org/InStock"}}}]}
 </script>
 
 <!-- ======================== HARNESS BAG PRODUCT PAGE ======================== -->
