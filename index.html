@@ -4684,7 +4684,7 @@ Made in our home village &middot; South India
   </div>
   <div class="shop-grid">
     <article class="shop-card" id="claudeTeeCard" itemscope itemtype="https://schema.org/Product">
-      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener" aria-label="Shop The Claude T-Shirt">
+      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener" aria-label="Shop The Claude T-Shirt" onclick="return openClaudeTee(event, '55715912548644')">
         <img loading="lazy" id="claudeTeeImg" src="claude-black.webp" alt="The Claude T-Shirt — heavyweight cotton, Black" itemprop="image">
       </a>
       <div class="shop-card-body">
@@ -4703,7 +4703,7 @@ Made in our home village &middot; South India
           <span class="shop-card-spec">Black &middot; White &middot; heavyweight 240 GSM</span>
         </div>
         <div class="shop-card-cta">
-          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener">Buy Now &rarr;</a>
+          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener" onclick="return openClaudeTee(event, '55715912548644')">Shop &mdash; pick size &rarr;</a>
         </div>
       </div>
     </article>
@@ -4755,6 +4755,70 @@ Made in our home village &middot; South India
   }
   wire('techVestCard','techVestImg','techVestBuyBtn','techVestImgLink');
   wire('claudeTeeCard','claudeTeeImg','claudeTeeBuyBtn','claudeTeeImgLink');
+})();
+
+/* ===== Claude Tee: resolve the real Shopify handle at click time =====
+   The tee product has size+colour options, so the customer needs to land on
+   the product page to pick their size. We don't want to hard-code a handle
+   we might guess wrong. Instead, on first click we call Shopify's public
+   /products.json endpoint (CORS-open), find the product that contains
+   "claude" in the title, cache its handle in sessionStorage, and open the
+   product page URL with the correct variant pre-selected. If the lookup
+   fails (offline, blocked, etc.), we fall back to the /cart URL so at
+   worst the item still adds to cart. */
+var _claudeHandlePromise = null;
+function resolveClaudeHandle(){
+  if (_claudeHandlePromise) return _claudeHandlePromise;
+  var cached = null;
+  try { cached = sessionStorage.getItem('gb-claude-handle'); } catch(e){}
+  if (cached) {
+    _claudeHandlePromise = Promise.resolve(cached);
+    return _claudeHandlePromise;
+  }
+  _claudeHandlePromise = fetch('https://kuibri-ev.myshopify.com/products.json?limit=250', {
+    method: 'GET', mode: 'cors', credentials: 'omit'
+  }).then(function(r){ return r.json(); }).then(function(d){
+    if (!d || !d.products) return null;
+    var p = d.products.find(function(p){ return p.title && p.title.toLowerCase().indexOf('claude') !== -1; });
+    var handle = p && p.handle ? p.handle : null;
+    if (handle) { try { sessionStorage.setItem('gb-claude-handle', handle); } catch(e){} }
+    return handle;
+  }).catch(function(){ _claudeHandlePromise = null; return null; });
+  return _claudeHandlePromise;
+}
+function openClaudeTee(ev, variantId){
+  if (ev && ev.preventDefault) ev.preventDefault();
+  var win = window.open('about:blank', '_blank');
+  resolveClaudeHandle().then(function(handle){
+    var url;
+    if (handle) {
+      url = 'https://kuibri-ev.myshopify.com/products/' + handle + (variantId ? '?variant=' + variantId : '');
+    } else {
+      // Fallback: cart URL locks the size but the button still works
+      url = 'https://kuibri-ev.myshopify.com/cart/' + variantId + ':1';
+    }
+    if (typeof gbWithDiscount === 'function') url = gbWithDiscount(url);
+    if (win) { win.location.href = url; } else { window.location.href = url; }
+  });
+  return false;
+}
+// Pre-warm the handle lookup so first click is instant
+if (document.readyState !== 'loading') setTimeout(resolveClaudeHandle, 500);
+else document.addEventListener('DOMContentLoaded', function(){ setTimeout(resolveClaudeHandle, 500); });
+
+// Keep onclick handler in sync with the current swatch selection
+(function(){
+  var card = document.getElementById('claudeTeeCard');
+  if (!card) return;
+  var buy = document.getElementById('claudeTeeBuyBtn');
+  var imgLink = document.getElementById('claudeTeeImgLink');
+  card.querySelectorAll('.tv-sw').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.dataset.variant;
+      if (buy) buy.setAttribute('onclick', "return openClaudeTee(event, '" + v + "')");
+      if (imgLink) imgLink.setAttribute('onclick', "return openClaudeTee(event, '" + v + "')");
+    });
+  });
 })();
 </script>
 </div>
