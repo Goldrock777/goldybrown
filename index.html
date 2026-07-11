@@ -854,6 +854,17 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .tv-sw-black{background:#1a1a1a}
 .tv-sw-white{background:#f1ede4}
 .tv-sw-blue{background:#5b7fa3}
+/* Size chips (tee card) */
+.tee-sizes{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:4px 0 2px}
+.tee-sizes-label{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--tm);font-weight:600;margin-right:4px}
+.tee-size{background:transparent;border:1px solid var(--b);color:var(--td);font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.5px;padding:8px 11px;min-width:38px;cursor:pointer;border-radius:2px;transition:all .18s;line-height:1}
+.tee-size:hover{border-color:var(--gl);color:var(--w)}
+.tee-size.active{background:var(--gl);border-color:var(--gl);color:#0a0a0c;font-weight:700}
+.tee-size.is-out{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.tee-size.is-out:hover{border-color:var(--b);color:var(--td)}
+/* Disabled Buy button */
+.shop-card-cta .btn-f.is-disabled{background:linear-gradient(135deg,#2a2a2e 0%,#1a1a1e 100%);color:#666;cursor:not-allowed;border-color:#333}
+.shop-card-cta .btn-f.is-disabled:hover{background:linear-gradient(135deg,#2a2a2e 0%,#1a1a1e 100%)}
 .shop-trust{max-width:1200px;margin:56px auto 24px;padding:36px clamp(16px,3vw,32px);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
 .shop-trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .shop-trust-item{padding:0 4px}
@@ -4684,7 +4695,7 @@ Made in our home village &middot; South India
   </div>
   <div class="shop-grid">
     <article class="shop-card" id="claudeTeeCard" itemscope itemtype="https://schema.org/Product">
-      <a class="shop-card-img" id="claudeTeeImgLink" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener" aria-label="Shop The Claude T-Shirt" onclick="return openClaudeTee(event, '55715912548644')">
+      <a class="shop-card-img" id="claudeTeeImgLink" href="#" aria-label="The Claude T-Shirt" onclick="event.preventDefault();var s=document.getElementById('claudeTeeSizes');if(s)s.scrollIntoView({behavior:'smooth',block:'center'});return false;">
         <img loading="lazy" id="claudeTeeImg" src="claude-black.webp" alt="The Claude T-Shirt — heavyweight cotton, Black" itemprop="image">
       </a>
       <div class="shop-card-body">
@@ -4692,8 +4703,16 @@ Made in our home village &middot; South India
         <h2 class="shop-card-name" itemprop="name">The Claude T-Shirt</h2>
         <p class="shop-card-desc" itemprop="description">Heavyweight 240 GSM cotton. Boxy fit, drop shoulder, ribbed collar. Garment-dyed and pre-shrunk. Available in Black and White.</p>
         <div class="tv-swatches" role="radiogroup" aria-label="Claude T-Shirt colour">
-          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-variant="55715912548644" data-img="claude-black.webp" aria-label="Black"></button>
-          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-variant="55715912712484" data-img="claude-white.webp" aria-label="White"></button>
+          <button type="button" class="tv-sw tv-sw-black active" data-color="black" data-color-name="Black" data-img="claude-black.webp" aria-label="Black"></button>
+          <button type="button" class="tv-sw tv-sw-white" data-color="white" data-color-name="White" data-img="claude-white.webp" aria-label="White"></button>
+        </div>
+        <div class="tee-sizes" id="claudeTeeSizes" role="radiogroup" aria-label="Size">
+          <span class="tee-sizes-label">Size</span>
+          <button type="button" class="tee-size" data-size="S" aria-label="Small">S</button>
+          <button type="button" class="tee-size" data-size="M" aria-label="Medium">M</button>
+          <button type="button" class="tee-size" data-size="L" aria-label="Large">L</button>
+          <button type="button" class="tee-size" data-size="XL" aria-label="Extra Large">XL</button>
+          <button type="button" class="tee-size" data-size="2XL" aria-label="2XL">2XL</button>
         </div>
         <div class="shop-card-meta">
           <span class="shop-card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -4703,7 +4722,7 @@ Made in our home village &middot; South India
           <span class="shop-card-spec">Black &middot; White &middot; heavyweight 240 GSM</span>
         </div>
         <div class="shop-card-cta">
-          <a class="btn btn-f" id="claudeTeeBuyBtn" href="https://kuibri-ev.myshopify.com/cart/55715912548644:1" target="_blank" rel="noopener" onclick="return openClaudeTee(event, '55715912548644')">Shop &mdash; pick size &rarr;</a>
+          <a class="btn btn-f is-disabled" id="claudeTeeBuyBtn" href="#" target="_blank" rel="noopener" aria-disabled="true">Select a size</a>
         </div>
       </div>
     </article>
@@ -4754,72 +4773,155 @@ Made in our home village &middot; South India
     });
   }
   wire('techVestCard','techVestImg','techVestBuyBtn','techVestImgLink');
-  wire('claudeTeeCard','claudeTeeImg','claudeTeeBuyBtn','claudeTeeImgLink');
+  // Note: Claude Tee is NOT wired via the generic function — it has its own
+  // colour + size picker below that resolves variants against Shopify data.
+  // We still want the colour swatches to flip the image though, so do that
+  // minimal binding here:
+  (function(){
+    var card = document.getElementById('claudeTeeCard');
+    if (!card) return;
+    var img = document.getElementById('claudeTeeImg');
+    var btns = card.querySelectorAll('.tv-sw');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        btns.forEach(function(x){ x.classList.remove('active'); });
+        b.classList.add('active');
+        if (img && b.dataset.img) img.src = b.dataset.img;
+      });
+    });
+  })();
 })();
 
-/* ===== Claude Tee: resolve the real Shopify handle at click time =====
-   The tee product has size+colour options, so the customer needs to land on
-   the product page to pick their size. We don't want to hard-code a handle
-   we might guess wrong. Instead, on first click we call Shopify's public
-   /products.json endpoint (CORS-open), find the product that contains
-   "claude" in the title, cache its handle in sessionStorage, and open the
-   product page URL with the correct variant pre-selected. If the lookup
-   fails (offline, blocked, etc.), we fall back to the /cart URL so at
-   worst the item still adds to cart. */
-var _claudeHandlePromise = null;
-function resolveClaudeHandle(){
-  if (_claudeHandlePromise) return _claudeHandlePromise;
-  var cached = null;
-  try { cached = sessionStorage.getItem('gb-claude-handle'); } catch(e){}
-  if (cached) {
-    _claudeHandlePromise = Promise.resolve(cached);
-    return _claudeHandlePromise;
-  }
-  _claudeHandlePromise = fetch('https://kuibri-ev.myshopify.com/products.json?limit=250', {
+/* ===== Claude Tee: colour + size picker resolves variant on our card =====
+   The tee has two Shopify options (Colour + Size, ~10 variants). Rather
+   than send the customer to Shopify's product page to pick size, we
+   render size chips on our shop card and resolve the specific variant
+   from Shopify's public /products.json endpoint. Click Buy → straight to
+   /cart/<variant>:1 with the right colour + size baked in.
+
+   Handles missing product / offline / API failure by disabling the button
+   with a clear message, and marks out-of-stock sizes as struck-through. */
+var _claudeProduct = null;
+var _claudeProductPromise = null;
+function resolveClaudeProduct(){
+  if (_claudeProduct) return Promise.resolve(_claudeProduct);
+  if (_claudeProductPromise) return _claudeProductPromise;
+  try {
+    var cached = sessionStorage.getItem('gb-claude-product-v2');
+    if (cached) { _claudeProduct = JSON.parse(cached); return Promise.resolve(_claudeProduct); }
+  } catch(e){}
+  _claudeProductPromise = fetch('https://kuibri-ev.myshopify.com/products.json?limit=250', {
     method: 'GET', mode: 'cors', credentials: 'omit'
   }).then(function(r){ return r.json(); }).then(function(d){
     if (!d || !d.products) return null;
-    var p = d.products.find(function(p){ return p.title && p.title.toLowerCase().indexOf('claude') !== -1; });
-    var handle = p && p.handle ? p.handle : null;
-    if (handle) { try { sessionStorage.setItem('gb-claude-handle', handle); } catch(e){} }
-    return handle;
-  }).catch(function(){ _claudeHandlePromise = null; return null; });
-  return _claudeHandlePromise;
+    var p = d.products.find(function(x){ return x.title && x.title.toLowerCase().indexOf('claude') !== -1; });
+    if (!p) return null;
+    var minimal = {
+      handle: p.handle,
+      variants: (p.variants||[]).map(function(v){
+        return { id: v.id, title: v.title, option1: v.option1, option2: v.option2, option3: v.option3, available: v.available !== false };
+      })
+    };
+    _claudeProduct = minimal;
+    try { sessionStorage.setItem('gb-claude-product-v2', JSON.stringify(minimal)); } catch(e){}
+    return minimal;
+  }).catch(function(){ _claudeProductPromise = null; return null; });
+  return _claudeProductPromise;
 }
-function openClaudeTee(ev, variantId){
-  if (ev && ev.preventDefault) ev.preventDefault();
-  var win = window.open('about:blank', '_blank');
-  resolveClaudeHandle().then(function(handle){
-    var url;
-    if (handle) {
-      url = 'https://kuibri-ev.myshopify.com/products/' + handle + (variantId ? '?variant=' + variantId : '');
-    } else {
-      // Fallback: cart URL locks the size but the button still works
-      url = 'https://kuibri-ev.myshopify.com/cart/' + variantId + ':1';
-    }
-    if (typeof gbWithDiscount === 'function') url = gbWithDiscount(url);
-    if (win) { win.location.href = url; } else { window.location.href = url; }
-  });
-  return false;
-}
-// Pre-warm the handle lookup so first click is instant
-if (document.readyState !== 'loading') setTimeout(resolveClaudeHandle, 500);
-else document.addEventListener('DOMContentLoaded', function(){ setTimeout(resolveClaudeHandle, 500); });
 
-// Keep onclick handler in sync with the current swatch selection
-(function(){
-  var card = document.getElementById('claudeTeeCard');
-  if (!card) return;
+// Find the variant matching (colour, size) — case-insensitive, checks all option slots.
+function findClaudeVariant(product, colour, size){
+  if (!product || !product.variants) return null;
+  var lc = String(colour||'').toLowerCase();
+  var ls = String(size||'').toLowerCase();
+  return product.variants.find(function(v){
+    var vals = [v.option1, v.option2, v.option3].filter(Boolean).map(function(x){ return String(x).toLowerCase(); });
+    return vals.indexOf(lc) !== -1 && vals.indexOf(ls) !== -1;
+  }) || null;
+}
+
+// Track selection state + refresh Buy button / size chip availability.
+var teeState = { colour: 'Black', size: null };
+function refreshClaudeTee(){
   var buy = document.getElementById('claudeTeeBuyBtn');
   var imgLink = document.getElementById('claudeTeeImgLink');
-  card.querySelectorAll('.tv-sw').forEach(function(b){
-    b.addEventListener('click', function(){
-      var v = b.dataset.variant;
-      if (buy) buy.setAttribute('onclick', "return openClaudeTee(event, '" + v + "')");
-      if (imgLink) imgLink.setAttribute('onclick', "return openClaudeTee(event, '" + v + "')");
+  if (!buy) return;
+
+  // Mark out-of-stock sizes for the currently selected colour
+  if (_claudeProduct) {
+    var chips = document.querySelectorAll('#claudeTeeSizes .tee-size');
+    chips.forEach(function(chip){
+      var v = findClaudeVariant(_claudeProduct, teeState.colour, chip.dataset.size);
+      chip.classList.toggle('is-out', !!v && v.available === false);
+      chip.disabled = (!!v && v.available === false);
+    });
+  }
+
+  if (!teeState.size) {
+    buy.textContent = 'Select a size';
+    buy.classList.add('is-disabled');
+    buy.setAttribute('aria-disabled', 'true');
+    buy.setAttribute('href', '#');
+    buy.removeAttribute('target');
+    if (imgLink) imgLink.setAttribute('href', '#');
+    return;
+  }
+
+  if (!_claudeProduct) {
+    buy.textContent = 'Loading…';
+    buy.classList.add('is-disabled');
+    buy.setAttribute('aria-disabled', 'true');
+    return;
+  }
+
+  var variant = findClaudeVariant(_claudeProduct, teeState.colour, teeState.size);
+  if (!variant) {
+    buy.textContent = 'Unavailable';
+    buy.classList.add('is-disabled');
+    buy.setAttribute('aria-disabled', 'true');
+    return;
+  }
+  var url = 'https://kuibri-ev.myshopify.com/cart/' + variant.id + ':1';
+  if (typeof gbWithDiscount === 'function') url = gbWithDiscount(url);
+  buy.textContent = 'Add to Cart &mdash; $40';
+  buy.innerHTML = 'Add to Cart &mdash; $40';
+  buy.classList.remove('is-disabled');
+  buy.removeAttribute('aria-disabled');
+  buy.setAttribute('href', url);
+  buy.setAttribute('target', '_blank');
+  if (imgLink) imgLink.setAttribute('href', url);
+}
+
+// Wire size chips
+(function(){
+  var wrap = document.getElementById('claudeTeeSizes');
+  if (!wrap) return;
+  wrap.querySelectorAll('.tee-size').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      if (chip.classList.contains('is-out')) return;
+      wrap.querySelectorAll('.tee-size').forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      teeState.size = chip.dataset.size;
+      refreshClaudeTee();
     });
   });
 })();
+
+// Wire colour swatches to update state (image swap is already done by the generic wire())
+(function(){
+  var card = document.getElementById('claudeTeeCard');
+  if (!card) return;
+  card.querySelectorAll('.tv-sw').forEach(function(b){
+    b.addEventListener('click', function(){
+      teeState.colour = b.dataset.colorName || (b.dataset.color === 'white' ? 'White' : 'Black');
+      refreshClaudeTee();
+    });
+  });
+})();
+
+// Prewarm on load so the first size click is instant.
+if (document.readyState !== 'loading') resolveClaudeProduct().then(refreshClaudeTee);
+else document.addEventListener('DOMContentLoaded', function(){ resolveClaudeProduct().then(refreshClaudeTee); });
 </script>
 </div>
 
