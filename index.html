@@ -253,9 +253,8 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .home-hero .sub{font-size:13px;font-weight:200;color:var(--td);max-width:460px;line-height:1.75;margin:0 auto}
 @keyframes heroImgIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
 @keyframes heroTextIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hb-lead{position:relative;overflow:hidden;height:86vh;min-height:520px;max-height:840px;background:#111}
-.hb-lead-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(40px) brightness(.5) saturate(1.1);transform:scale(1.15)}
-.hb-lead-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+.hb-lead{position:relative;overflow:hidden;height:100vh;min-height:640px;background:#111}
+.hb-lead-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
 .hb-lead-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.1) 60%,rgba(0,0,0,.75) 100%)}
 .hb-lead-content{position:absolute;left:0;right:0;bottom:0;padding:0 60px 56px;max-width:640px}
 .hb-lead-content .est{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.75);margin-bottom:10px}
@@ -263,7 +262,7 @@ h4{font-family:var(--fd);font-weight:500;font-size:16px;color:var(--w)}
 .hb-lead-content p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.88);font-weight:300;max-width:520px;margin:0 0 26px}
 .hb-lead-content .btn-f{padding:16px 44px}
 @media(max-width:1024px){
-.hb-lead{height:78vh;min-height:460px}
+.hb-lead{height:100vh;min-height:560px}
 .hb-lead-content{padding:0 24px 36px}
 .hb-lead-content p{font-size:13.5px;max-width:100%}
 }
@@ -4947,7 +4946,6 @@ else document.addEventListener('DOMContentLoaded', function(){ resolveClaudeProd
 <div class="page active" id="page-home">
 
 <section class="hb-lead" aria-label="The Harness Bag" style="margin-top:76px">
-<img loading="eager" src="jake-banner.webp" alt="" aria-hidden="true" class="hb-lead-bg">
 <img loading="eager" fetchpriority="high" src="jake-banner.webp" alt="The Harness Bag worn across the chest, styled with a vintage hockey jersey" class="hb-lead-img">
 <div class="hb-lead-overlay" aria-hidden="true"></div>
 <div class="hb-lead-content">
